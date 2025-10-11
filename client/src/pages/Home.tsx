@@ -5,6 +5,7 @@ import Process, { Phone, Lightbulb, Rocket, TrendingUp } from "@/components/Proc
 import Testimonial from "@/components/Testimonial";
 import CTASection from "@/components/CTASection";
 import Footer from "@/components/Footer";
+import SEO from "@/components/SEO";
 import heroImage from "@assets/Black and white photography _ black and white…_1760215489978.jpeg";
 import valueImage from "@assets/Scaling Your Business with Chat GPT _ AI-Powered…_1760215543216.jpeg";
 import ctaImage from "@assets/cta_background_1760215628693.jpeg";
@@ -35,6 +36,12 @@ export default function Home() {
 
   return (
     <div className="min-h-screen">
+      <SEO 
+        title="Elevate Growth Solutions - Boutique Full-Stack Marketing Agency"
+        description="Marketing that moves people and brands forward. We blend strategy with soul to help businesses grow with intention, clarity, and impact. Full-stack marketing services including branding, web design, SEO, and social media strategy."
+        ogTitle="Elevate Growth Solutions - Strategic Marketing That Drives Growth"
+        ogDescription="Transform your marketing with expert strategy, creative branding, and proven execution. Boutique full-stack marketing services tailored for growing businesses."
+      />
       <Navbar />
       
       <Hero

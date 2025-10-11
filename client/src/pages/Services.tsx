@@ -4,6 +4,7 @@ import ServicesGrid from "@/components/ServicesGrid";
 import FAQ from "@/components/FAQ";
 import CTASection from "@/components/CTASection";
 import Footer from "@/components/Footer";
+import SEO from "@/components/SEO";
 import servicesHero from "@assets/services_hero_team.jpg";
 
 export default function Services() {
@@ -67,6 +68,12 @@ export default function Services() {
 
   return (
     <div className="min-h-screen">
+      <SEO 
+        title="Marketing Services - Full-Stack Digital Marketing | Elevate Growth Solutions"
+        description="Comprehensive marketing services including full-stack marketing management, branding, web design, SEO, social media strategy, ad campaigns, and content creation. Expert solutions designed to help your business grow."
+        ogTitle="Professional Marketing Services That Drive Results"
+        ogDescription="From strategy to execution - discover our full range of marketing services including branding, SEO, social media, and more. Tailored solutions for growing businesses."
+      />
       <Navbar />
       
       <Hero

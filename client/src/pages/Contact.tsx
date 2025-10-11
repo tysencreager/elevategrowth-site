@@ -1,5 +1,6 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import SEO from "@/components/SEO";
 import { Button } from "@/components/ui/button";
 import { Mail } from "lucide-react";
 import contactHero from "@assets/contact_hero.jpg";
@@ -7,6 +8,12 @@ import contactHero from "@assets/contact_hero.jpg";
 export default function Contact() {
   return (
     <div className="min-h-screen flex flex-col">
+      <SEO 
+        title="Contact Us - Let's Elevate Your Marketing | Elevate Growth Solutions"
+        description="Ready to elevate your marketing? Get in touch with Elevate Growth Solutions today. Email tysen@elevategrowth.solutions to discuss your marketing needs and start building something great together."
+        ogTitle="Contact Elevate Growth Solutions - Start Your Marketing Journey"
+        ogDescription="Let's connect and discuss how we can help your business grow. Expert marketing strategy and execution tailored to your goals."
+      />
       <Navbar />
       
       <div 

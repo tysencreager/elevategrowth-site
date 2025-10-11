@@ -1,10 +1,17 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import SEO from "@/components/SEO";
 import tysenPhoto from "@assets/Untitled design.png_1760212641967.jpg";
 
 export default function BehindElevate() {
   return (
     <div className="min-h-screen">
+      <SEO 
+        title="Behind Elevate - Meet Tysen Creager | Elevate Growth Solutions"
+        description="Meet Tysen Creager, founder of Elevate Growth Solutions. Full-stack marketer with nearly a decade of experience in branding, digital marketing, SEO, and strategy. Certified in Digital Marketing and UX Design."
+        ogTitle="Meet the Founder - Tysen Creager, Marketing Strategist"
+        ogDescription="Nearly a decade of experience helping businesses grow through strategic marketing, branding, and digital solutions. Certified marketing expert with proven results."
+      />
       <Navbar />
       
       <section className="py-24 md:py-32 lg:py-40 bg-background">

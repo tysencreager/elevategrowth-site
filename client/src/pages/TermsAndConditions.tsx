@@ -1,9 +1,14 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import SEO from "@/components/SEO";
 
 export default function TermsAndConditions() {
   return (
     <div className="min-h-screen">
+      <SEO 
+        title="Terms and Conditions | Elevate Growth Solutions"
+        description="Terms and Conditions for Elevate Growth Solutions. Read our terms of service for using our marketing services and website."
+      />
       <Navbar />
       
       <section className="py-16 md:py-24 bg-background">

@@ -1,9 +1,14 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import SEO from "@/components/SEO";
 
 export default function PrivacyPolicy() {
   return (
     <div className="min-h-screen">
+      <SEO 
+        title="Privacy Policy | Elevate Growth Solutions"
+        description="Privacy Policy for Elevate Growth Solutions. Learn how we collect, use, and protect your personal information when you use our marketing services."
+      />
       <Navbar />
       
       <section className="py-16 md:py-24 bg-background">
