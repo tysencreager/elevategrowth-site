@@ -41,6 +41,11 @@ export default function Navbar() {
                 Services
               </a>
             </Link>
+            <Link href="/behind-elevate" data-testid="link-nav-behind-elevate">
+              <a className={`font-sans font-medium transition-colors hover:text-primary ${isScrolled ? "text-foreground" : "text-white"}`}>
+                Behind Elevate
+              </a>
+            </Link>
             <Link href="/portfolio" data-testid="link-nav-portfolio">
               <a className={`font-sans font-medium transition-colors hover:text-primary ${isScrolled ? "text-foreground" : "text-white"}`}>
                 Portfolio
@@ -86,6 +91,14 @@ export default function Navbar() {
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 Services
+              </a>
+            </Link>
+            <Link href="/behind-elevate" data-testid="link-mobile-behind-elevate">
+              <a
+                className="block font-sans font-medium text-foreground hover:text-primary py-2"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Behind Elevate
               </a>
             </Link>
             <Link href="/portfolio" data-testid="link-mobile-portfolio">
