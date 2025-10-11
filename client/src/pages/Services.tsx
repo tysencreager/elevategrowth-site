@@ -12,16 +12,16 @@ export default function Services() {
       description: "Strategy, scheduling, content creation, and analytics across platforms"
     },
     {
-      title: "E-Commerce Optimization & Management",
-      description: "Amazon, Walmart, and Target storefront optimization for independent sellers. We offer branding, listing audits, product photography, and full storefront management to elevate your online sales"
-    },
-    {
       title: "Branding & Creative Direction",
       description: "Visual identity, brand messaging, and storytelling that resonates"
     },
     {
       title: "Website Design & Optimization",
       description: "UX-focused builds with SEO in mind, built for growth, not just looks"
+    },
+    {
+      title: "SEO Services",
+      description: "Comprehensive search engine optimization to improve your visibility and drive organic traffic"
     },
     {
       title: "Social Media Strategy",
@@ -43,7 +43,7 @@ export default function Services() {
       
       <Hero
         backgroundImage={servicesHero}
-        title="Marketing & E-Commerce Solutions That Work Together"
+        title="Marketing Solutions Designed to Help Your Business Grow"
         subtitle="Strategy. Branding. Execution. Optimization."
         height="70vh"
       />
