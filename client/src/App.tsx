@@ -8,6 +8,7 @@ import Services from "@/pages/Services";
 import BehindElevate from "@/pages/BehindElevate";
 import Portfolio from "@/pages/Portfolio";
 import Contact from "@/pages/Contact";
+import PrivacyPolicy from "@/pages/PrivacyPolicy";
 import NotFound from "@/pages/not-found";
 
 function Router() {
@@ -18,6 +19,7 @@ function Router() {
       <Route path="/behind-elevate" component={BehindElevate} />
       <Route path="/portfolio" component={Portfolio} />
       <Route path="/contact" component={Contact} />
+      <Route path="/privacy-policy" component={PrivacyPolicy} />
       <Route component={NotFound} />
     </Switch>
   );

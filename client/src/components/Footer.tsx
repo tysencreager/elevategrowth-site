@@ -5,7 +5,7 @@ export default function Footer() {
   return (
     <footer className="bg-card border-t border-card-border py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-12">
           <div className="space-y-4">
             <img src={logo} alt="Elevate Growth Solutions" className="h-16 w-auto" data-testid="img-footer-logo" />
             <p className="font-serif text-sm text-muted-foreground max-w-xs">
@@ -39,6 +39,22 @@ export default function Footer() {
               <Link href="/contact" data-testid="link-footer-contact">
                 <a className="block font-sans text-sm text-muted-foreground hover:text-primary transition-colors">
                   Contact
+                </a>
+              </Link>
+            </nav>
+          </div>
+          
+          <div>
+            <h3 className="font-sans font-semibold text-foreground mb-4" data-testid="text-footer-legal-title">Legal</h3>
+            <nav className="space-y-2">
+              <Link href="/privacy-policy" data-testid="link-footer-privacy">
+                <a className="block font-sans text-sm text-muted-foreground hover:text-primary transition-colors">
+                  Privacy Policy
+                </a>
+              </Link>
+              <Link href="/terms-and-conditions" data-testid="link-footer-terms">
+                <a className="block font-sans text-sm text-muted-foreground hover:text-primary transition-colors">
+                  Terms & Conditions
                 </a>
               </Link>
             </nav>
