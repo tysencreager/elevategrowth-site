@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import ogImageDefault from "@assets/EGS LOGO E icon_1760220238741.png";
 
 interface SEOProps {
   title: string;
@@ -13,8 +14,9 @@ export default function SEO({
   description, 
   ogTitle, 
   ogDescription,
-  ogImage = "https://elevategrowth.solutions/og-image.jpg"
+  ogImage
 }: SEOProps) {
+  const defaultOgImage = ogImage || ogImageDefault;
   useEffect(() => {
     document.title = title;
     
@@ -45,7 +47,7 @@ export default function SEO({
       ogImageTag.setAttribute('property', 'og:image');
       document.head.appendChild(ogImageTag);
     }
-    ogImageTag.setAttribute('content', ogImage);
+    ogImageTag.setAttribute('content', defaultOgImage);
     
     let ogTypeTag = document.querySelector('meta[property="og:type"]');
     if (!ogTypeTag) {
@@ -62,7 +64,15 @@ export default function SEO({
       document.head.appendChild(twitterCardTag);
     }
     twitterCardTag.setAttribute('content', 'summary_large_image');
-  }, [title, description, ogTitle, ogDescription, ogImage]);
+    
+    let twitterImageTag = document.querySelector('meta[name="twitter:image"]');
+    if (!twitterImageTag) {
+      twitterImageTag = document.createElement('meta');
+      twitterImageTag.setAttribute('name', 'twitter:image');
+      document.head.appendChild(twitterImageTag);
+    }
+    twitterImageTag.setAttribute('content', defaultOgImage);
+  }, [title, description, ogTitle, ogDescription, defaultOgImage]);
 
   return null;
 }
