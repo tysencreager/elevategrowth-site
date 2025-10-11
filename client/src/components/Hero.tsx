@@ -20,7 +20,7 @@ export default function Hero({
 }: HeroProps) {
   return (
     <div 
-      className="relative flex items-center justify-center text-center px-4"
+      className="relative flex items-center justify-center text-center px-4 pt-20"
       style={{ minHeight: height }}
     >
       <div
