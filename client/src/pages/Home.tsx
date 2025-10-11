@@ -4,9 +4,9 @@ import ValueProp from "@/components/ValueProp";
 import Testimonial from "@/components/Testimonial";
 import CTASection from "@/components/CTASection";
 import Footer from "@/components/Footer";
-import heroImage from "@assets/stock_images/modern_marketing_and_a25f67ec.jpg";
-import valueImage from "@assets/stock_images/professional_busines_e0d6a108.jpg";
-import ctaImage from "@assets/stock_images/professional_busines_11b4652a.jpg";
+import heroImage from "@assets/stock_images/black_and_white_mode_319eff6f.jpg";
+import valueImage from "@assets/stock_images/black_and_white_prof_325156c7.jpg";
+import ctaImage from "@assets/stock_images/black_and_white_desk_69514a94.jpg";
 
 export default function Home() {
   return (

@@ -3,7 +3,7 @@ import Hero from "@/components/Hero";
 import ServicesGrid from "@/components/ServicesGrid";
 import CTASection from "@/components/CTASection";
 import Footer from "@/components/Footer";
-import servicesHero from "@assets/stock_images/marketing_strategy_b_a5648336.jpg";
+import servicesHero from "@assets/stock_images/black_and_white_busi_73b6a31c.jpg";
 
 export default function Services() {
   const services = [
