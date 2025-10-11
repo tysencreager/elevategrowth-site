@@ -21,7 +21,7 @@ export default function ValueProp({
             <img
               src={image}
               alt={imageAlt}
-              className="w-auto h-full max-h-96 rounded-lg object-cover"
+              className="w-auto h-full max-h-[600px] rounded-lg object-cover"
               data-testid="img-value-prop"
             />
           </div>
