@@ -48,9 +48,9 @@ export default function Services() {
         height="70vh"
       />
       
-      <div className="py-12 md:py-16 bg-background">
+      <div className="pt-12 md:pt-16 bg-background">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="font-display font-semibold text-3xl md:text-4xl lg:text-5xl text-center text-foreground mb-16" data-testid="text-services-header">
+          <h2 className="font-display font-semibold text-3xl md:text-4xl lg:text-5xl text-center text-foreground mb-12" data-testid="text-services-header">
             What We Offer:
           </h2>
         </div>

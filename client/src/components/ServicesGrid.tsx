@@ -9,7 +9,7 @@ interface ServicesGridProps {
 
 export default function ServicesGrid({ services }: ServicesGridProps) {
   return (
-    <section className="py-16 md:py-24 lg:py-32 bg-background">
+    <section className="pb-16 md:pb-24 lg:pb-32 bg-background">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
           {services.map((service, index) => (
