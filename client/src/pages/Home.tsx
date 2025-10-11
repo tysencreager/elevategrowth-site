@@ -6,7 +6,7 @@ import CTASection from "@/components/CTASection";
 import Footer from "@/components/Footer";
 import heroImage from "@assets/Black and white photography _ black and white…_1760215489978.jpeg";
 import valueImage from "@assets/Scaling Your Business with Chat GPT _ AI-Powered…_1760215543216.jpeg";
-import ctaImage from "@assets/What Is a Service Agreement - #крипто #трейдинг…_1760215628693.jpeg";
+import ctaImage from "@assets/cta_background_1760215628693.jpeg";
 
 export default function Home() {
   return (
