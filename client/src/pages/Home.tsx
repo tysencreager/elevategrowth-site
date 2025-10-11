@@ -1,6 +1,7 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import ValueProp from "@/components/ValueProp";
+import Process, { Phone, Lightbulb, Rocket, TrendingUp } from "@/components/Process";
 import Testimonial from "@/components/Testimonial";
 import CTASection from "@/components/CTASection";
 import Footer from "@/components/Footer";
@@ -9,6 +10,29 @@ import valueImage from "@assets/Scaling Your Business with Chat GPT _ AI-Powered
 import ctaImage from "@assets/cta_background_1760215628693.jpeg";
 
 export default function Home() {
+  const processSteps = [
+    {
+      icon: Phone,
+      title: "Discovery Call",
+      description: "We start with a conversation to understand your goals, challenges, and vision for your brand."
+    },
+    {
+      icon: Lightbulb,
+      title: "Strategy Development",
+      description: "We craft a custom marketing strategy tailored to your business objectives and target audience."
+    },
+    {
+      icon: Rocket,
+      title: "Execution & Launch",
+      description: "We bring your strategy to life with expert design, development, and campaign implementation."
+    },
+    {
+      icon: TrendingUp,
+      title: "Optimization & Growth",
+      description: "We continuously analyze performance and refine strategies to maximize your marketing ROI."
+    }
+  ];
+
   return (
     <div className="min-h-screen">
       <Navbar />
@@ -25,6 +49,11 @@ export default function Home() {
         imageAlt="Professional working on laptop"
         title="At Elevate Growth Solutions, we blend strategy with soul, helping businesses grow with intention, clarity, and impact."
         description="Whether you're launching something new or ready to scale with confidence, we offer full-stack marketing services that meet you where you are and take you where you want to go. With a balance of creative strategy and real-world experience, we're here to simplify your marketing, amplify your presence, and help you create momentum that lasts, both online and offline."
+      />
+      
+      <Process 
+        steps={processSteps}
+        subtitle="A simple, proven approach to elevating your brand"
       />
       
       <Testimonial
