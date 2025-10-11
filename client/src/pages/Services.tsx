@@ -42,7 +42,7 @@ export default function Services() {
   const faqs = [
     {
       question: "How long does a typical project take?",
-      answer: "Project timelines vary based on scope and complexity. A brand identity project typically takes 2-4 weeks, website builds range from 4-8 weeks, and ongoing marketing management is structured in monthly or quarterly engagements. During our discovery call, we'll provide a detailed timeline specific to your project needs."
+      answer: "Project timelines vary based on scope and complexity. A singular project or audit typically takes 1-2 weeks, website builds range from 2-4 weeks, and ongoing marketing management is structured in monthly or quarterly engagements. During our discovery call, we'll provide a detailed timeline specific to your project needs."
     },
     {
       question: "What makes Elevate Growth Solutions different?",
