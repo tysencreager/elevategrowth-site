@@ -19,7 +19,7 @@ export default function Navbar() {
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? "bg-background/95 backdrop-blur-sm shadow-sm" : "bg-transparent"
+        isScrolled ? "bg-background/95 backdrop-blur-sm shadow-sm" : "bg-background/90 backdrop-blur-sm"
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -32,22 +32,22 @@ export default function Navbar() {
 
           <div className="hidden md:flex items-center gap-8">
             <Link href="/" data-testid="link-nav-home">
-              <a className={`font-serif font-medium transition-colors hover:text-primary ${isScrolled ? "text-foreground" : "text-white"}`}>
+              <a className="font-serif font-medium transition-colors hover:text-primary text-foreground">
                 Home
               </a>
             </Link>
             <Link href="/services" data-testid="link-nav-services">
-              <a className={`font-serif font-medium transition-colors hover:text-primary ${isScrolled ? "text-foreground" : "text-white"}`}>
+              <a className="font-serif font-medium transition-colors hover:text-primary text-foreground">
                 Services
               </a>
             </Link>
             <Link href="/behind-elevate" data-testid="link-nav-behind-elevate">
-              <a className={`font-serif font-medium transition-colors hover:text-primary ${isScrolled ? "text-foreground" : "text-white"}`}>
+              <a className="font-serif font-medium transition-colors hover:text-primary text-foreground">
                 Behind Elevate
               </a>
             </Link>
             <Link href="/portfolio" data-testid="link-nav-portfolio">
-              <a className={`font-serif font-medium transition-colors hover:text-primary ${isScrolled ? "text-foreground" : "text-white"}`}>
+              <a className="font-serif font-medium transition-colors hover:text-primary text-foreground">
                 Portfolio
               </a>
             </Link>
@@ -66,9 +66,9 @@ export default function Navbar() {
             data-testid="button-mobile-menu"
           >
             {isMobileMenuOpen ? (
-              <X className={`h-6 w-6 ${isScrolled ? "text-foreground" : "text-white"}`} />
+              <X className="h-6 w-6 text-foreground" />
             ) : (
-              <Menu className={`h-6 w-6 ${isScrolled ? "text-foreground" : "text-white"}`} />
+              <Menu className="h-6 w-6 text-foreground" />
             )}
           </button>
         </div>
