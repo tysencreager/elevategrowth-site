@@ -9,31 +9,31 @@ export default function Services() {
   const services = [
     {
       title: "Full-Stack Marketing Management",
-      description: "Strategy, scheduling, content creation, and analytics across platforms"
+      description: "End-to-end digital marketing strategy, campaign scheduling, content creation, and performance analytics across all platforms. We handle everything from brand positioning to execution, ensuring your marketing efforts are cohesive, data-driven, and aligned with your business goals."
     },
     {
       title: "Branding & Creative Direction",
-      description: "Visual identity, brand messaging, and storytelling that resonates"
+      description: "Comprehensive brand identity development including logo design, visual identity systems, brand messaging, and storytelling that connects with your target audience. We create memorable brands that stand out in competitive markets and resonate with your ideal customers."
     },
     {
-      title: "Website Design & Optimization",
-      description: "UX-focused builds with SEO in mind, built for growth, not just looks"
+      title: "Website Building, Design & Optimization",
+      description: "Custom website development from concept to launch. User experience (UX) focused design with mobile-responsive layouts, fast loading speeds, and SEO optimization built in from the ground up. We create websites that convert visitors into customers and grow with your business."
     },
     {
       title: "SEO Services",
-      description: "Comprehensive search engine optimization to improve your visibility and drive organic traffic"
+      description: "Comprehensive search engine optimization including keyword research, on-page SEO, technical SEO audits, local SEO, and content optimization. We improve your search rankings, increase organic traffic, and help you get found by customers actively searching for your services."
     },
     {
       title: "Social Media Strategy",
-      description: "Platform-specific strategy, engagement, and performance-focused content"
+      description: "Platform-specific social media marketing strategies for Instagram, Facebook, LinkedIn, and more. We create engaging content calendars, manage community engagement, track key performance metrics, and build authentic connections that drive brand awareness and conversions."
     },
     {
       title: "Ad Campaign Management",
-      description: "Paid social and Google Ads management with clear ROI tracking"
+      description: "Paid advertising management across Google Ads, Facebook Ads, Instagram Ads, and LinkedIn Ads. We create targeted campaigns with optimized ad copy, audience targeting, budget management, and detailed ROI tracking to maximize your advertising spend and generate qualified leads."
     },
     {
       title: "Content Creation",
-      description: "Blog posts, email copy, lead magnets, and more, all with your audience in mind"
+      description: "Strategic content marketing including blog posts, email newsletters, lead magnets, social media content, and website copy. All content is crafted with your target audience in mind, optimized for SEO, and designed to establish your authority while driving engagement and conversions."
     }
   ];
 
