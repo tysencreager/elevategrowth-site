@@ -24,7 +24,7 @@ export default function Home() {
         image={valueImage}
         imageAlt="Professional working on laptop"
         title="At Elevate Growth Solutions, we blend strategy with soul, helping businesses grow with intention, clarity, and impact."
-        description="Whether you're launching something new, optimizing your e-commerce storefront, or ready to scale with confidence, we offer full-stack marketing services that meet you where you are and take you where you want to go. With a balance of creative strategy and real-world experience, we're here to simplify your marketing, amplify your presence, and help you create momentum that lasts, both online and offline."
+        description="Whether you're launching something new or ready to scale with confidence, we offer full-stack marketing services that meet you where you are and take you where you want to go. With a balance of creative strategy and real-world experience, we're here to simplify your marketing, amplify your presence, and help you create momentum that lasts, both online and offline."
       />
       
       <Testimonial

@@ -38,7 +38,7 @@ export default function BehindElevate() {
                 </p>
                 
                 <p className="font-serif text-lg text-foreground leading-relaxed" data-testid="text-bio-paragraph-2">
-                  With certifications in Digital Marketing, E-Commerce Strategy, and UX design—She understands all facets of attaining marketing success. Tysen has rebranded companies, implemented many successful lead generation flows, and led full-scale marketing campaigns that deliver real results. Her work spans everything from design and content creation to website building and ad strategy; all guided by a deep understanding of how to move customers from first impression to loyal customer.
+                  With certifications in Digital Marketing and UX design—She understands all facets of attaining marketing success. Tysen has rebranded companies, implemented many successful lead generation flows, and led full-scale marketing campaigns that deliver real results. Her work spans everything from design and content creation to website building and ad strategy; all guided by a deep understanding of how to move customers from first impression to loyal customer.
                 </p>
                 
                 <p className="font-serif text-lg text-foreground leading-relaxed" data-testid="text-bio-paragraph-3">

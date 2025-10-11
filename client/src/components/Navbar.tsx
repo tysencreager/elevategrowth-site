@@ -24,39 +24,27 @@ export default function Navbar() {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
-          <Link href="/" data-testid="link-home">
-            <a className="flex items-center gap-3 hover-elevate active-elevate-2 rounded-md p-2 -ml-2">
-              <img src={logo} alt="Elevate Growth Solutions" className="h-16 w-auto" />
-            </a>
+          <Link href="/" data-testid="link-home" className="flex items-center gap-3 hover-elevate active-elevate-2 rounded-md p-2 -ml-2">
+            <img src={logo} alt="Elevate Growth Solutions" className="h-16 w-auto" />
           </Link>
 
           <div className="hidden md:flex items-center gap-8">
-            <Link href="/" data-testid="link-nav-home">
-              <a className="font-serif font-medium transition-colors hover:text-primary text-foreground">
-                Home
-              </a>
+            <Link href="/" data-testid="link-nav-home" className="font-serif font-medium transition-colors hover:text-primary text-foreground">
+              Home
             </Link>
-            <Link href="/services" data-testid="link-nav-services">
-              <a className="font-serif font-medium transition-colors hover:text-primary text-foreground">
-                Services
-              </a>
+            <Link href="/services" data-testid="link-nav-services" className="font-serif font-medium transition-colors hover:text-primary text-foreground">
+              Services
             </Link>
-            <Link href="/behind-elevate" data-testid="link-nav-behind-elevate">
-              <a className="font-serif font-medium transition-colors hover:text-primary text-foreground">
-                Behind Elevate
-              </a>
+            <Link href="/behind-elevate" data-testid="link-nav-behind-elevate" className="font-serif font-medium transition-colors hover:text-primary text-foreground">
+              Behind Elevate
             </Link>
-            <Link href="/portfolio" data-testid="link-nav-portfolio">
-              <a className="font-serif font-medium transition-colors hover:text-primary text-foreground">
-                Portfolio
-              </a>
+            <Link href="/portfolio" data-testid="link-nav-portfolio" className="font-serif font-medium transition-colors hover:text-primary text-foreground">
+              Portfolio
             </Link>
             <Link href="/contact" data-testid="link-nav-contact">
-              <a>
-                <Button className="font-serif font-medium">
-                  Contact
-                </Button>
-              </a>
+              <Button className="font-serif font-medium">
+                Contact
+              </Button>
             </Link>
           </div>
 
@@ -77,47 +65,47 @@ export default function Navbar() {
       {isMobileMenuOpen && (
         <div className="md:hidden bg-background/98 backdrop-blur-md border-t border-border">
           <div className="px-4 py-6 space-y-4">
-            <Link href="/" data-testid="link-mobile-home">
-              <a
-                className="block font-serif font-medium text-foreground hover:text-primary py-2"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                Home
-              </a>
+            <Link 
+              href="/" 
+              data-testid="link-mobile-home"
+              className="block font-serif font-medium text-foreground hover:text-primary py-2"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              Home
             </Link>
-            <Link href="/services" data-testid="link-mobile-services">
-              <a
-                className="block font-serif font-medium text-foreground hover:text-primary py-2"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                Services
-              </a>
+            <Link 
+              href="/services" 
+              data-testid="link-mobile-services"
+              className="block font-serif font-medium text-foreground hover:text-primary py-2"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              Services
             </Link>
-            <Link href="/behind-elevate" data-testid="link-mobile-behind-elevate">
-              <a
-                className="block font-serif font-medium text-foreground hover:text-primary py-2"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                Behind Elevate
-              </a>
+            <Link 
+              href="/behind-elevate" 
+              data-testid="link-mobile-behind-elevate"
+              className="block font-serif font-medium text-foreground hover:text-primary py-2"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              Behind Elevate
             </Link>
-            <Link href="/portfolio" data-testid="link-mobile-portfolio">
-              <a
-                className="block font-serif font-medium text-foreground hover:text-primary py-2"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                Portfolio
-              </a>
+            <Link 
+              href="/portfolio" 
+              data-testid="link-mobile-portfolio"
+              className="block font-serif font-medium text-foreground hover:text-primary py-2"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              Portfolio
             </Link>
-            <Link href="/contact" data-testid="link-mobile-contact">
-              <a
-                onClick={() => setIsMobileMenuOpen(false)}
-                className="block"
-              >
-                <Button className="w-full font-serif font-medium">
-                  Contact
-                </Button>
-              </a>
+            <Link 
+              href="/contact" 
+              data-testid="link-mobile-contact"
+              onClick={() => setIsMobileMenuOpen(false)}
+              className="block"
+            >
+              <Button className="w-full font-serif font-medium">
+                Contact
+              </Button>
             </Link>
           </div>
         </div>
