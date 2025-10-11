@@ -1,5 +1,6 @@
 import logo from "@assets/EGS LOGO Full_1760211529668.png";
 import { Link } from "wouter";
+import { Instagram, Linkedin } from "lucide-react";
 
 export default function Footer() {
   return (
@@ -11,6 +12,28 @@ export default function Footer() {
             <p className="font-serif text-sm text-muted-foreground max-w-xs">
               Boutique Full-Stack Marketing
             </p>
+            <div className="flex gap-4 pt-2">
+              <a 
+                href="https://www.instagram.com/elevategrowthsolutions" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-muted-foreground hover:text-primary transition-colors"
+                data-testid="link-footer-instagram"
+                aria-label="Instagram"
+              >
+                <Instagram className="h-5 w-5" />
+              </a>
+              <a 
+                href="https://www.linkedin.com/company/elevate-growth-solutions" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-muted-foreground hover:text-primary transition-colors"
+                data-testid="link-footer-linkedin"
+                aria-label="LinkedIn"
+              >
+                <Linkedin className="h-5 w-5" />
+              </a>
+            </div>
           </div>
           
           <div>
