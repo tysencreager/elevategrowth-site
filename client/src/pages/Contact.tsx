@@ -10,7 +10,7 @@ export default function Contact() {
       
       <main className="flex-1 flex items-center justify-center px-4 py-24">
         <div className="max-w-3xl mx-auto text-center">
-          <h1 className="font-display font-bold text-5xl md:text-6xl lg:text-7xl text-foreground mb-6" data-testid="text-contact-title">
+          <h1 className="font-display font-semibold text-5xl md:text-6xl lg:text-7xl text-foreground mb-6" data-testid="text-contact-title">
             Let's Connect
           </h1>
           

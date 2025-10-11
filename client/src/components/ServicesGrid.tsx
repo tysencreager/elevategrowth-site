@@ -14,7 +14,7 @@ export default function ServicesGrid({ services }: ServicesGridProps) {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
           {services.map((service, index) => (
             <div key={index} className="space-y-4" data-testid={`service-${index}`}>
-              <h3 className="font-display font-bold text-2xl md:text-3xl text-primary" data-testid={`text-service-title-${index}`}>
+              <h3 className="font-display font-semibold text-2xl md:text-3xl text-primary" data-testid={`text-service-title-${index}`}>
                 {service.title}
               </h3>
               <p className="font-serif text-lg text-foreground leading-relaxed" data-testid={`text-service-description-${index}`}>

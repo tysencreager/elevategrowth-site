@@ -8,7 +8,7 @@ export default function PrivacyPolicy() {
       
       <section className="py-16 md:py-24 bg-background">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h1 className="font-display font-bold text-4xl md:text-5xl text-primary mb-8" data-testid="text-privacy-title">
+          <h1 className="font-display font-semibold text-4xl md:text-5xl text-primary mb-8" data-testid="text-privacy-title">
             Privacy Policy
           </h1>
           
@@ -22,7 +22,7 @@ export default function PrivacyPolicy() {
             </p>
 
             <div>
-              <h2 className="font-display font-bold text-2xl md:text-3xl text-primary mb-4">Interpretation and Definitions</h2>
+              <h2 className="font-display font-semibold text-2xl md:text-3xl text-primary mb-4">Interpretation and Definitions</h2>
               
               <h3 className="font-display font-semibold text-xl text-foreground mb-3 mt-6">Interpretation</h3>
               <p className="text-lg leading-relaxed">
@@ -49,7 +49,7 @@ export default function PrivacyPolicy() {
             </div>
 
             <div>
-              <h2 className="font-display font-bold text-2xl md:text-3xl text-primary mb-4">Collecting and Using Your Personal Data</h2>
+              <h2 className="font-display font-semibold text-2xl md:text-3xl text-primary mb-4">Collecting and Using Your Personal Data</h2>
               
               <h3 className="font-display font-semibold text-xl text-foreground mb-3 mt-6">Types of Data Collected</h3>
               
@@ -140,14 +140,14 @@ export default function PrivacyPolicy() {
             </div>
 
             <div>
-              <h2 className="font-display font-bold text-2xl md:text-3xl text-primary mb-4 mt-8">Changes to this Privacy Policy</h2>
+              <h2 className="font-display font-semibold text-2xl md:text-3xl text-primary mb-4 mt-8">Changes to this Privacy Policy</h2>
               <p className="text-lg leading-relaxed">
                 We may update Our Privacy Policy from time to time. We will notify You of any changes by posting the new Privacy Policy on this page and updating the date at the top of this Privacy Policy.
               </p>
             </div>
 
             <div>
-              <h2 className="font-display font-bold text-2xl md:text-3xl text-primary mb-4 mt-8">Contact Us</h2>
+              <h2 className="font-display font-semibold text-2xl md:text-3xl text-primary mb-4 mt-8">Contact Us</h2>
               <p className="text-lg leading-relaxed">
                 If you have any questions about this Privacy Policy, You can contact us by visiting our{" "}
                 <a href="/contact" className="text-primary hover:underline">contact page</a>.

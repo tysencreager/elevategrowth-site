@@ -30,7 +30,7 @@ export default function Hero({
       <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/50 to-black/70" />
       
       <div className="relative z-10 max-w-5xl mx-auto">
-        <h1 className="font-display font-bold text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-white mb-6 leading-tight" data-testid="text-hero-title">
+        <h1 className="font-display font-semibold text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-white mb-6 leading-tight" data-testid="text-hero-title">
           {title}
         </h1>
         {subtitle && (

@@ -21,7 +21,7 @@ export default function BehindElevate() {
             
             <div className="md:w-3/5 space-y-6">
               <div>
-                <h2 className="font-display font-bold text-3xl md:text-4xl lg:text-5xl text-primary mb-4" data-testid="text-meet-tysen">
+                <h2 className="font-display font-semibold text-3xl md:text-4xl lg:text-5xl text-primary mb-4" data-testid="text-meet-tysen">
                   Meet Tysen
                 </h2>
                 <p className="font-serif text-xl md:text-2xl text-foreground" data-testid="text-tysen-tagline">

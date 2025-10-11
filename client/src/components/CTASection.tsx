@@ -31,7 +31,7 @@ export default function CTASection({
       )}
       
       <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <h2 className="font-display font-bold text-4xl md:text-5xl lg:text-6xl text-white mb-8 leading-tight" data-testid="text-cta-title">
+        <h2 className="font-display font-semibold text-4xl md:text-5xl lg:text-6xl text-white mb-8 leading-tight" data-testid="text-cta-title">
           {title}
         </h2>
         <a href={ctaHref} data-testid="button-cta">

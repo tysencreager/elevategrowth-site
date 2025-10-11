@@ -8,7 +8,7 @@ export default function TermsAndConditions() {
       
       <section className="py-16 md:py-24 bg-background">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h1 className="font-display font-bold text-4xl md:text-5xl text-primary mb-8" data-testid="text-terms-title">
+          <h1 className="font-display font-semibold text-4xl md:text-5xl text-primary mb-8" data-testid="text-terms-title">
             Terms and Conditions
           </h1>
           
@@ -18,7 +18,7 @@ export default function TermsAndConditions() {
             </p>
 
             <div>
-              <h2 className="font-display font-bold text-2xl md:text-3xl text-primary mb-4">1. Interpretation and Definitions</h2>
+              <h2 className="font-display font-semibold text-2xl md:text-3xl text-primary mb-4">1. Interpretation and Definitions</h2>
               
               <h3 className="font-display font-semibold text-xl text-foreground mb-3 mt-6">Interpretation</h3>
               <p className="text-lg leading-relaxed mb-4">
@@ -38,7 +38,7 @@ export default function TermsAndConditions() {
             </div>
 
             <div>
-              <h2 className="font-display font-bold text-2xl md:text-3xl text-primary mb-4">2. Acknowledgment</h2>
+              <h2 className="font-display font-semibold text-2xl md:text-3xl text-primary mb-4">2. Acknowledgment</h2>
               <p className="text-lg leading-relaxed mb-3">
                 These Terms govern the relationship between You and the Company and set out the rules and obligations related to the use of our Service.
               </p>
@@ -54,21 +54,21 @@ export default function TermsAndConditions() {
             </div>
 
             <div>
-              <h2 className="font-display font-bold text-2xl md:text-3xl text-primary mb-4">3. Links to Other Websites</h2>
+              <h2 className="font-display font-semibold text-2xl md:text-3xl text-primary mb-4">3. Links to Other Websites</h2>
               <p className="text-lg leading-relaxed">
                 Our Service may contain links to third-party websites or services not owned or controlled by the Company. We assume no responsibility for the content, policies, or practices of any third-party websites. You acknowledge that any use of third-party services is at your own risk.
               </p>
             </div>
 
             <div>
-              <h2 className="font-display font-bold text-2xl md:text-3xl text-primary mb-4">4. Termination</h2>
+              <h2 className="font-display font-semibold text-2xl md:text-3xl text-primary mb-4">4. Termination</h2>
               <p className="text-lg leading-relaxed">
                 We may terminate or suspend access to the Service immediately, without prior notice, for any reason, including a breach of these Terms. Upon termination, Your right to use the Service will cease immediately.
               </p>
             </div>
 
             <div>
-              <h2 className="font-display font-bold text-2xl md:text-3xl text-primary mb-4">5. Limitation of Liability</h2>
+              <h2 className="font-display font-semibold text-2xl md:text-3xl text-primary mb-4">5. Limitation of Liability</h2>
               <p className="text-lg leading-relaxed mb-3">
                 To the maximum extent permitted by law, the Company and its suppliers shall not be liable for any indirect, incidental, special, or consequential damages—including loss of profits, data, or goodwill—arising from or related to the use of the Service.
               </p>
@@ -78,21 +78,21 @@ export default function TermsAndConditions() {
             </div>
 
             <div>
-              <h2 className="font-display font-bold text-2xl md:text-3xl text-primary mb-4">6. "AS IS" and "AS AVAILABLE" Disclaimer</h2>
+              <h2 className="font-display font-semibold text-2xl md:text-3xl text-primary mb-4">6. "AS IS" and "AS AVAILABLE" Disclaimer</h2>
               <p className="text-lg leading-relaxed">
                 The Service is provided "as is" and "as available," without warranties of any kind. We do not guarantee that the Service will be uninterrupted, error-free, or free of harmful components. Your use is at your own risk.
               </p>
             </div>
 
             <div>
-              <h2 className="font-display font-bold text-2xl md:text-3xl text-primary mb-4">7. Intellectual Property</h2>
+              <h2 className="font-display font-semibold text-2xl md:text-3xl text-primary mb-4">7. Intellectual Property</h2>
               <p className="text-lg leading-relaxed">
                 All content, designs, branding, and materials created by or for Elevate Growth Solutions—including logos, templates, blog posts, graphics, and marketing deliverables—are the intellectual property of the Company or its licensors. You may not reproduce, copy, modify, or distribute any of our materials without prior written consent.
               </p>
             </div>
 
             <div>
-              <h2 className="font-display font-bold text-2xl md:text-3xl text-primary mb-4">8. Payments and Refunds</h2>
+              <h2 className="font-display font-semibold text-2xl md:text-3xl text-primary mb-4">8. Payments and Refunds</h2>
               <p className="text-lg leading-relaxed mb-3">
                 Fees for our services will be clearly outlined in proposals, invoices, or contracts. All payments are due as specified and are non-refundable unless otherwise agreed in writing. Failure to pay may result in delayed or suspended services.
               </p>
@@ -102,56 +102,56 @@ export default function TermsAndConditions() {
             </div>
 
             <div>
-              <h2 className="font-display font-bold text-2xl md:text-3xl text-primary mb-4">9. Indemnification</h2>
+              <h2 className="font-display font-semibold text-2xl md:text-3xl text-primary mb-4">9. Indemnification</h2>
               <p className="text-lg leading-relaxed">
                 You agree to indemnify and hold harmless Elevate Growth Solutions LLC and its affiliates, employees, and partners from any claims, damages, liabilities, or legal fees arising from your use of the Service, your violation of these Terms, or your infringement of any third-party rights.
               </p>
             </div>
 
             <div>
-              <h2 className="font-display font-bold text-2xl md:text-3xl text-primary mb-4">10. Governing Law</h2>
+              <h2 className="font-display font-semibold text-2xl md:text-3xl text-primary mb-4">10. Governing Law</h2>
               <p className="text-lg leading-relaxed">
                 These Terms are governed by the laws of the State of Utah, United States, without regard to conflict of laws principles. Use of the Service may be subject to other local, state, or international laws.
               </p>
             </div>
 
             <div>
-              <h2 className="font-display font-bold text-2xl md:text-3xl text-primary mb-4">11. Dispute Resolution</h2>
+              <h2 className="font-display font-semibold text-2xl md:text-3xl text-primary mb-4">11. Dispute Resolution</h2>
               <p className="text-lg leading-relaxed">
                 If you have a concern or dispute, you agree to contact us first to attempt informal resolution. If that fails, legal action may be pursued under the jurisdiction of Utah courts.
               </p>
             </div>
 
             <div>
-              <h2 className="font-display font-bold text-2xl md:text-3xl text-primary mb-4">12. European Union (EU) Users</h2>
+              <h2 className="font-display font-semibold text-2xl md:text-3xl text-primary mb-4">12. European Union (EU) Users</h2>
               <p className="text-lg leading-relaxed">
                 If you are an EU resident, you are entitled to the protections of the country in which you reside, in addition to those listed here.
               </p>
             </div>
 
             <div>
-              <h2 className="font-display font-bold text-2xl md:text-3xl text-primary mb-4">13. U.S. Export Compliance</h2>
+              <h2 className="font-display font-semibold text-2xl md:text-3xl text-primary mb-4">13. U.S. Export Compliance</h2>
               <p className="text-lg leading-relaxed">
                 You represent and warrant that you are not located in a country subject to U.S. government embargo or on a U.S. government restricted party list.
               </p>
             </div>
 
             <div>
-              <h2 className="font-display font-bold text-2xl md:text-3xl text-primary mb-4">14. Severability and Waiver</h2>
+              <h2 className="font-display font-semibold text-2xl md:text-3xl text-primary mb-4">14. Severability and Waiver</h2>
               <p className="text-lg leading-relaxed">
                 If any part of these Terms is held invalid or unenforceable, the rest shall remain in effect. Our failure to enforce any right under these Terms is not a waiver of that right.
               </p>
             </div>
 
             <div>
-              <h2 className="font-display font-bold text-2xl md:text-3xl text-primary mb-4">15. Changes to These Terms</h2>
+              <h2 className="font-display font-semibold text-2xl md:text-3xl text-primary mb-4">15. Changes to These Terms</h2>
               <p className="text-lg leading-relaxed">
                 We reserve the right to update or modify these Terms at any time. If changes are material, we will provide notice at least 30 days before they take effect. Continued use of the Service after the changes take effect means you accept the revised Terms.
               </p>
             </div>
 
             <div>
-              <h2 className="font-display font-bold text-2xl md:text-3xl text-primary mb-4">16. Contact Us</h2>
+              <h2 className="font-display font-semibold text-2xl md:text-3xl text-primary mb-4">16. Contact Us</h2>
               <p className="text-lg leading-relaxed">
                 If you have any questions about these Terms and Conditions, please contact us by visiting our{" "}
                 <a href="/contact" className="text-primary hover:underline">contact page</a>.
