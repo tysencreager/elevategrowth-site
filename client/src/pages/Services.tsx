@@ -1,6 +1,7 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import ServicesGrid from "@/components/ServicesGrid";
+import FAQ from "@/components/FAQ";
 import CTASection from "@/components/CTASection";
 import Footer from "@/components/Footer";
 import servicesHero from "@assets/services_hero_team.jpg";
@@ -37,6 +38,33 @@ export default function Services() {
     }
   ];
 
+  const faqs = [
+    {
+      question: "How long does a typical project take?",
+      answer: "Project timelines vary based on scope and complexity. A brand identity project typically takes 2-4 weeks, website builds range from 4-8 weeks, and ongoing marketing management is structured in monthly or quarterly engagements. During our discovery call, we'll provide a detailed timeline specific to your project needs."
+    },
+    {
+      question: "What makes Elevate Growth Solutions different?",
+      answer: "We're a boutique agency offering full-stack marketing with a personal touch. Unlike larger agencies, you work directly with an experienced marketing strategist who understands your business intimately. We combine strategic thinking with hands-on execution, ensuring every marketing dollar is spent wisely and every campaign is optimized for results."
+    },
+    {
+      question: "Do you work with businesses in my industry?",
+      answer: "We've successfully partnered with businesses across various industries including professional services, real estate, finance, wellness, and B2B services. Our strategic approach adapts to any industry, focusing on your unique value proposition and target audience rather than one-size-fits-all templates."
+    },
+    {
+      question: "What's included in your marketing packages?",
+      answer: "We create custom packages based on your specific goals and budget. Services can include strategy development, brand identity, website design and development, SEO optimization, content creation, social media management, and paid advertising. We'll recommend the right mix of services to achieve your growth objectives."
+    },
+    {
+      question: "Can I start with one service and add more later?",
+      answer: "Absolutely! Many clients start with a specific need like website design or brand development, then expand to ongoing marketing management. We're flexible and can scale our services as your business grows and your needs evolve."
+    },
+    {
+      question: "How do you measure success?",
+      answer: "Success metrics are defined together at the project start and may include website traffic growth, conversion rate improvements, lead generation numbers, social media engagement, search ranking improvements, or revenue attribution. We provide regular reporting and analytics to track progress toward your specific goals."
+    }
+  ];
+
   return (
     <div className="min-h-screen">
       <Navbar />
@@ -57,6 +85,11 @@ export default function Services() {
       </div>
       
       <ServicesGrid services={services} />
+      
+      <FAQ 
+        items={faqs}
+        subtitle="Everything you need to know about working with Elevate Growth Solutions"
+      />
       
       <CTASection
         title="Ready to elevate your marketing?"
