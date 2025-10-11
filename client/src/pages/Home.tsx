@@ -2,6 +2,7 @@ import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import ValueProp from "@/components/ValueProp";
 import Process, { Phone, Lightbulb, Rocket, TrendingUp } from "@/components/Process";
+import LeadMagnet from "@/components/LeadMagnet";
 import Testimonial from "@/components/Testimonial";
 import CTASection from "@/components/CTASection";
 import Footer from "@/components/Footer";
@@ -61,6 +62,12 @@ export default function Home() {
       <Process 
         steps={processSteps}
         subtitle="A simple, proven approach to elevating your brand"
+      />
+      
+      <LeadMagnet 
+        title="Free 90-Day Growth Starter Pack"
+        description="Kickstart your marketing journey with our comprehensive growth checklist. Get actionable strategies, proven tactics, and expert tips to elevate your brand in the first 90 days—completely free."
+        ctaText="Claim Your Free Pack"
       />
       
       <Testimonial
