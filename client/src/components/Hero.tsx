@@ -42,7 +42,7 @@ export default function Hero({
           <a href={ctaHref} data-testid="button-hero-cta">
             <Button 
               size="lg" 
-              className="font-sans font-medium text-base md:text-lg px-8 py-6 gap-2"
+              className="font-serif font-medium text-base md:text-lg px-8 py-6 gap-2"
             >
               {ctaText}
               <ArrowRight className="h-5 w-5" />

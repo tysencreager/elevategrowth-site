@@ -38,7 +38,7 @@ export default function CTASection({
           <Button 
             size="lg" 
             variant={backgroundImage ? "outline" : "default"}
-            className={`font-sans font-medium text-base md:text-lg px-8 py-6 ${backgroundImage ? 'bg-white/10 backdrop-blur-sm border-white text-white hover:bg-white/20' : ''}`}
+            className={`font-serif font-medium text-base md:text-lg px-8 py-6 ${backgroundImage ? 'bg-white/10 backdrop-blur-sm border-white text-white hover:bg-white/20' : ''}`}
           >
             {ctaText}
           </Button>

@@ -19,7 +19,7 @@ export default function Contact() {
           </p>
           
           <a href="mailto:tysen@elevategrowth.solutions" data-testid="button-contact-email">
-            <Button size="lg" className="font-sans font-medium text-base md:text-lg px-8 py-6 gap-3">
+            <Button size="lg" className="font-serif font-medium text-base md:text-lg px-8 py-6 gap-3">
               <Mail className="h-5 w-5" />
               tysen@elevategrowth.solutions
             </Button>
