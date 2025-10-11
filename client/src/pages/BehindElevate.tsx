@@ -33,7 +33,7 @@ export default function BehindElevate() {
       />
       <Navbar />
       
-      <section className="py-24 md:py-32 lg:py-40 bg-background">
+      <section className="pt-24 md:pt-32 lg:pt-40 pb-8 md:pb-12 lg:pb-16 bg-background">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row gap-12 md:gap-16 items-center">
             <div className="md:w-2/5">
