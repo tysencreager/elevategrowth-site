@@ -26,6 +26,11 @@ export default function Footer() {
                   Services
                 </a>
               </Link>
+              <Link href="/portfolio" data-testid="link-footer-portfolio">
+                <a className="block font-sans text-sm text-muted-foreground hover:text-primary transition-colors">
+                  Portfolio
+                </a>
+              </Link>
             </nav>
           </div>
           

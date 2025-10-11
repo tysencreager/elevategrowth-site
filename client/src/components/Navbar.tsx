@@ -41,6 +41,11 @@ export default function Navbar() {
                 Services
               </a>
             </Link>
+            <Link href="/portfolio" data-testid="link-nav-portfolio">
+              <a className={`font-sans font-medium transition-colors hover:text-primary ${isScrolled ? "text-foreground" : "text-white"}`}>
+                Portfolio
+              </a>
+            </Link>
             <a
               href="mailto:tysen@elevategrowth.solutions"
               data-testid="button-contact-nav"
@@ -82,6 +87,14 @@ export default function Navbar() {
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 Services
+              </a>
+            </Link>
+            <Link href="/portfolio" data-testid="link-mobile-portfolio">
+              <a
+                className="block font-sans font-medium text-foreground hover:text-primary py-2"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Portfolio
               </a>
             </Link>
             <a
