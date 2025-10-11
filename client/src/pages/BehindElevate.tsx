@@ -1,9 +1,28 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
+import Credentials, { Award, GraduationCap, TrendingUp } from "@/components/Credentials";
 import tysenPhoto from "@assets/Untitled design.png_1760212641967.jpg";
 
 export default function BehindElevate() {
+  const credentials = [
+    {
+      icon: GraduationCap,
+      title: "Digital Marketing & E-Commerce Certification",
+      description: "Certified expert in digital marketing strategy, e-commerce optimization, and online customer acquisition."
+    },
+    {
+      icon: Award,
+      title: "UX Design Certification",
+      description: "Certified in user experience design, creating intuitive interfaces that drive engagement and conversions."
+    },
+    {
+      icon: TrendingUp,
+      title: "5+ Years Marketing Experience",
+      description: "Proven track record helping small businesses scale into booming brands through strategic marketing."
+    }
+  ];
+
   return (
     <div className="min-h-screen">
       <SEO 
@@ -56,6 +75,8 @@ export default function BehindElevate() {
           </div>
         </div>
       </section>
+      
+      <Credentials credentials={credentials} />
       
       <Footer />
     </div>
