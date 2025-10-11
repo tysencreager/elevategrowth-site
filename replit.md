@@ -152,7 +152,7 @@ Preferred communication style: Simple, everyday language.
 - **Google Fonts**: Typography (Noto Serif, Lora, Montserrat)
 - **Email**: Contact form uses mailto: links to tysen@elevategrowth.solutions
 - **External Portfolio**: Redirects to tysencreager.com for portfolio showcase
-- **Social Media**: Instagram (@elevategrowthsolutions) and LinkedIn links in footer
+- **Social Media**: Instagram (@elevategrowthsolutions) and LinkedIn (personal profile) links in footer
 
 ### Assets & Media
 - Static images stored in `/attached_assets` directory
