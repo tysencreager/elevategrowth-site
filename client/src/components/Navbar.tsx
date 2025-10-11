@@ -32,28 +32,28 @@ export default function Navbar() {
 
           <div className="hidden md:flex items-center gap-8">
             <Link href="/" data-testid="link-nav-home">
-              <a className={`font-sans font-medium transition-colors hover:text-primary ${isScrolled ? "text-foreground" : "text-white"}`}>
+              <a className={`font-serif font-medium transition-colors hover:text-primary ${isScrolled ? "text-foreground" : "text-white"}`}>
                 Home
               </a>
             </Link>
             <Link href="/services" data-testid="link-nav-services">
-              <a className={`font-sans font-medium transition-colors hover:text-primary ${isScrolled ? "text-foreground" : "text-white"}`}>
+              <a className={`font-serif font-medium transition-colors hover:text-primary ${isScrolled ? "text-foreground" : "text-white"}`}>
                 Services
               </a>
             </Link>
             <Link href="/behind-elevate" data-testid="link-nav-behind-elevate">
-              <a className={`font-sans font-medium transition-colors hover:text-primary ${isScrolled ? "text-foreground" : "text-white"}`}>
+              <a className={`font-serif font-medium transition-colors hover:text-primary ${isScrolled ? "text-foreground" : "text-white"}`}>
                 Behind Elevate
               </a>
             </Link>
             <Link href="/portfolio" data-testid="link-nav-portfolio">
-              <a className={`font-sans font-medium transition-colors hover:text-primary ${isScrolled ? "text-foreground" : "text-white"}`}>
+              <a className={`font-serif font-medium transition-colors hover:text-primary ${isScrolled ? "text-foreground" : "text-white"}`}>
                 Portfolio
               </a>
             </Link>
             <Link href="/contact" data-testid="link-nav-contact">
               <a>
-                <Button className="font-sans font-medium">
+                <Button className="font-serif font-medium">
                   Contact
                 </Button>
               </a>
@@ -79,7 +79,7 @@ export default function Navbar() {
           <div className="px-4 py-6 space-y-4">
             <Link href="/" data-testid="link-mobile-home">
               <a
-                className="block font-sans font-medium text-foreground hover:text-primary py-2"
+                className="block font-serif font-medium text-foreground hover:text-primary py-2"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 Home
@@ -87,7 +87,7 @@ export default function Navbar() {
             </Link>
             <Link href="/services" data-testid="link-mobile-services">
               <a
-                className="block font-sans font-medium text-foreground hover:text-primary py-2"
+                className="block font-serif font-medium text-foreground hover:text-primary py-2"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 Services
@@ -95,7 +95,7 @@ export default function Navbar() {
             </Link>
             <Link href="/behind-elevate" data-testid="link-mobile-behind-elevate">
               <a
-                className="block font-sans font-medium text-foreground hover:text-primary py-2"
+                className="block font-serif font-medium text-foreground hover:text-primary py-2"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 Behind Elevate
@@ -103,7 +103,7 @@ export default function Navbar() {
             </Link>
             <Link href="/portfolio" data-testid="link-mobile-portfolio">
               <a
-                className="block font-sans font-medium text-foreground hover:text-primary py-2"
+                className="block font-serif font-medium text-foreground hover:text-primary py-2"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 Portfolio
@@ -114,7 +114,7 @@ export default function Navbar() {
                 onClick={() => setIsMobileMenuOpen(false)}
                 className="block"
               >
-                <Button className="w-full font-sans font-medium">
+                <Button className="w-full font-serif font-medium">
                   Contact
                 </Button>
               </a>

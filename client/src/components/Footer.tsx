@@ -14,30 +14,30 @@ export default function Footer() {
           </div>
           
           <div>
-            <h3 className="font-sans font-semibold text-foreground mb-4" data-testid="text-footer-nav-title">Quick Links</h3>
+            <h3 className="font-serif font-semibold text-foreground mb-4" data-testid="text-footer-nav-title">Quick Links</h3>
             <nav className="space-y-2">
               <Link href="/" data-testid="link-footer-home">
-                <a className="block font-sans text-sm text-muted-foreground hover:text-primary transition-colors">
+                <a className="block font-serif text-sm text-muted-foreground hover:text-primary transition-colors">
                   Home
                 </a>
               </Link>
               <Link href="/services" data-testid="link-footer-services">
-                <a className="block font-sans text-sm text-muted-foreground hover:text-primary transition-colors">
+                <a className="block font-serif text-sm text-muted-foreground hover:text-primary transition-colors">
                   Services
                 </a>
               </Link>
               <Link href="/behind-elevate" data-testid="link-footer-behind-elevate">
-                <a className="block font-sans text-sm text-muted-foreground hover:text-primary transition-colors">
+                <a className="block font-serif text-sm text-muted-foreground hover:text-primary transition-colors">
                   Behind Elevate
                 </a>
               </Link>
               <Link href="/portfolio" data-testid="link-footer-portfolio">
-                <a className="block font-sans text-sm text-muted-foreground hover:text-primary transition-colors">
+                <a className="block font-serif text-sm text-muted-foreground hover:text-primary transition-colors">
                   Portfolio
                 </a>
               </Link>
               <Link href="/contact" data-testid="link-footer-contact">
-                <a className="block font-sans text-sm text-muted-foreground hover:text-primary transition-colors">
+                <a className="block font-serif text-sm text-muted-foreground hover:text-primary transition-colors">
                   Contact
                 </a>
               </Link>
@@ -45,15 +45,15 @@ export default function Footer() {
           </div>
           
           <div>
-            <h3 className="font-sans font-semibold text-foreground mb-4" data-testid="text-footer-legal-title">Legal</h3>
+            <h3 className="font-serif font-semibold text-foreground mb-4" data-testid="text-footer-legal-title">Legal</h3>
             <nav className="space-y-2">
               <Link href="/privacy-policy" data-testid="link-footer-privacy">
-                <a className="block font-sans text-sm text-muted-foreground hover:text-primary transition-colors">
+                <a className="block font-serif text-sm text-muted-foreground hover:text-primary transition-colors">
                   Privacy Policy
                 </a>
               </Link>
               <Link href="/terms-and-conditions" data-testid="link-footer-terms">
-                <a className="block font-sans text-sm text-muted-foreground hover:text-primary transition-colors">
+                <a className="block font-serif text-sm text-muted-foreground hover:text-primary transition-colors">
                   Terms & Conditions
                 </a>
               </Link>
@@ -61,10 +61,10 @@ export default function Footer() {
           </div>
           
           <div>
-            <h3 className="font-sans font-semibold text-foreground mb-4" data-testid="text-footer-email-title">Email</h3>
+            <h3 className="font-serif font-semibold text-foreground mb-4" data-testid="text-footer-email-title">Email</h3>
             <a 
               href="mailto:tysen@elevategrowth.solutions" 
-              className="block font-sans text-sm text-muted-foreground hover:text-primary transition-colors"
+              className="block font-serif text-sm text-muted-foreground hover:text-primary transition-colors"
               data-testid="link-footer-email"
             >
               tysen@elevategrowth.solutions
@@ -73,7 +73,7 @@ export default function Footer() {
         </div>
         
         <div className="mt-12 pt-8 border-t border-card-border">
-          <p className="font-sans text-sm text-muted-foreground text-center" data-testid="text-footer-copyright">
+          <p className="font-serif text-sm text-muted-foreground text-center" data-testid="text-footer-copyright">
             © {new Date().getFullYear()} Elevate Growth Solutions. All rights reserved.
           </p>
         </div>
