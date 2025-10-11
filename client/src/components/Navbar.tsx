@@ -46,14 +46,13 @@ export default function Navbar() {
                 Portfolio
               </a>
             </Link>
-            <a
-              href="mailto:tysen@elevategrowth.solutions"
-              data-testid="button-contact-nav"
-            >
-              <Button className="font-sans font-medium">
-                Contact
-              </Button>
-            </a>
+            <Link href="/contact" data-testid="link-nav-contact">
+              <a>
+                <Button className="font-sans font-medium">
+                  Contact
+                </Button>
+              </a>
+            </Link>
           </div>
 
           <button
@@ -97,15 +96,16 @@ export default function Navbar() {
                 Portfolio
               </a>
             </Link>
-            <a
-              href="mailto:tysen@elevategrowth.solutions"
-              className="block"
-              data-testid="button-contact-mobile"
-            >
-              <Button className="w-full font-sans font-medium">
-                Contact
-              </Button>
-            </a>
+            <Link href="/contact" data-testid="link-mobile-contact">
+              <a
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="block"
+              >
+                <Button className="w-full font-sans font-medium">
+                  Contact
+                </Button>
+              </a>
+            </Link>
           </div>
         </div>
       )}

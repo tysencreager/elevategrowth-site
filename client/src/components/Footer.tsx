@@ -31,11 +31,16 @@ export default function Footer() {
                   Portfolio
                 </a>
               </Link>
+              <Link href="/contact" data-testid="link-footer-contact">
+                <a className="block font-sans text-sm text-muted-foreground hover:text-primary transition-colors">
+                  Contact
+                </a>
+              </Link>
             </nav>
           </div>
           
           <div>
-            <h3 className="font-sans font-semibold text-foreground mb-4" data-testid="text-footer-contact-title">Contact</h3>
+            <h3 className="font-sans font-semibold text-foreground mb-4" data-testid="text-footer-email-title">Email</h3>
             <a 
               href="mailto:tysen@elevategrowth.solutions" 
               className="block font-sans text-sm text-muted-foreground hover:text-primary transition-colors"
