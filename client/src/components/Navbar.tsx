@@ -26,7 +26,7 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-20">
           <Link href="/" data-testid="link-home">
             <a className="flex items-center gap-3 hover-elevate active-elevate-2 rounded-md p-2 -ml-2">
-              <img src={logo} alt="Elevate Growth Solutions" className="h-12 w-auto" />
+              <img src={logo} alt="Elevate Growth Solutions" className="h-16 w-auto" />
             </a>
           </Link>
 
