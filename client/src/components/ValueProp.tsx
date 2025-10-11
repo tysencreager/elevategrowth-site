@@ -14,7 +14,7 @@ export default function ValueProp({
   imagePosition = "left"
 }: ValuePropProps) {
   return (
-    <section className="py-16 md:py-24 lg:py-32 bg-background">
+    <section className="pt-16 md:pt-24 lg:pt-32 pb-12 md:pb-16 lg:pb-20 bg-background">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className={`flex flex-col ${imagePosition === "right" ? "md:flex-row-reverse" : "md:flex-row"} gap-12 md:gap-16 items-center md:items-start`}>
           <div className="flex-1 flex justify-center">

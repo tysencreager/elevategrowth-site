@@ -16,30 +16,20 @@ export default function Footer() {
           <div>
             <h3 className="font-serif font-semibold text-foreground mb-4" data-testid="text-footer-nav-title">Quick Links</h3>
             <nav className="space-y-2">
-              <Link href="/" data-testid="link-footer-home">
-                <a className="block font-serif text-sm text-muted-foreground hover:text-primary transition-colors">
-                  Home
-                </a>
+              <Link href="/" data-testid="link-footer-home" className="block font-serif text-sm text-muted-foreground hover:text-primary transition-colors">
+                Home
               </Link>
-              <Link href="/services" data-testid="link-footer-services">
-                <a className="block font-serif text-sm text-muted-foreground hover:text-primary transition-colors">
-                  Services
-                </a>
+              <Link href="/services" data-testid="link-footer-services" className="block font-serif text-sm text-muted-foreground hover:text-primary transition-colors">
+                Services
               </Link>
-              <Link href="/behind-elevate" data-testid="link-footer-behind-elevate">
-                <a className="block font-serif text-sm text-muted-foreground hover:text-primary transition-colors">
-                  Behind Elevate
-                </a>
+              <Link href="/behind-elevate" data-testid="link-footer-behind-elevate" className="block font-serif text-sm text-muted-foreground hover:text-primary transition-colors">
+                Behind Elevate
               </Link>
-              <Link href="/portfolio" data-testid="link-footer-portfolio">
-                <a className="block font-serif text-sm text-muted-foreground hover:text-primary transition-colors">
-                  Portfolio
-                </a>
+              <Link href="/portfolio" data-testid="link-footer-portfolio" className="block font-serif text-sm text-muted-foreground hover:text-primary transition-colors">
+                Portfolio
               </Link>
-              <Link href="/contact" data-testid="link-footer-contact">
-                <a className="block font-serif text-sm text-muted-foreground hover:text-primary transition-colors">
-                  Contact
-                </a>
+              <Link href="/contact" data-testid="link-footer-contact" className="block font-serif text-sm text-muted-foreground hover:text-primary transition-colors">
+                Contact
               </Link>
             </nav>
           </div>
@@ -47,15 +37,11 @@ export default function Footer() {
           <div>
             <h3 className="font-serif font-semibold text-foreground mb-4" data-testid="text-footer-legal-title">Legal</h3>
             <nav className="space-y-2">
-              <Link href="/privacy-policy" data-testid="link-footer-privacy">
-                <a className="block font-serif text-sm text-muted-foreground hover:text-primary transition-colors">
-                  Privacy Policy
-                </a>
+              <Link href="/privacy-policy" data-testid="link-footer-privacy" className="block font-serif text-sm text-muted-foreground hover:text-primary transition-colors">
+                Privacy Policy
               </Link>
-              <Link href="/terms-and-conditions" data-testid="link-footer-terms">
-                <a className="block font-serif text-sm text-muted-foreground hover:text-primary transition-colors">
-                  Terms & Conditions
-                </a>
+              <Link href="/terms-and-conditions" data-testid="link-footer-terms" className="block font-serif text-sm text-muted-foreground hover:text-primary transition-colors">
+                Terms & Conditions
               </Link>
             </nav>
           </div>
