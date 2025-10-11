@@ -5,7 +5,7 @@ import Testimonial from "@/components/Testimonial";
 import CTASection from "@/components/CTASection";
 import Footer from "@/components/Footer";
 import heroImage from "@assets/Black and white photography _ black and white…_1760215489978.jpeg";
-import valueImage from "@assets/stock_images/black_and_white_prof_325156c7.jpg";
+import valueImage from "@assets/Scaling Your Business with Chat GPT _ AI-Powered…_1760215543216.jpeg";
 import ctaImage from "@assets/stock_images/black_and_white_desk_69514a94.jpg";
 
 export default function Home() {

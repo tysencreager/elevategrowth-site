@@ -16,12 +16,12 @@ export default function ValueProp({
   return (
     <section className="py-16 md:py-24 lg:py-32 bg-background">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className={`flex flex-col ${imagePosition === "right" ? "md:flex-row-reverse" : "md:flex-row"} gap-12 md:gap-16 items-center`}>
-          <div className="flex-1">
+        <div className={`flex flex-col ${imagePosition === "right" ? "md:flex-row-reverse" : "md:flex-row"} gap-12 md:gap-16 items-center md:items-start`}>
+          <div className="flex-1 flex justify-center">
             <img
               src={image}
               alt={imageAlt}
-              className="w-full h-auto rounded-lg"
+              className="w-auto h-full max-h-96 rounded-lg object-cover"
               data-testid="img-value-prop"
             />
           </div>
