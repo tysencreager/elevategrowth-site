@@ -1,0 +1,20 @@
+[build]
+  command = "npm ci && npm run build"
+  publish = "dist/public"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+[[redirects]]
+  from = "http://*elevategrowth.solutions/*"
+  to = "https://www.elevategrowth.solutions/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://elevategrowth.solutions/*"
+  to = "https://www.elevategrowth.solutions/:splat"
+  status = 301
+  force = true
