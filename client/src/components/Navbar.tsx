@@ -38,6 +38,9 @@ export default function Navbar() {
             <Link href="/behind-elevate" data-testid="link-nav-behind-elevate" className="font-serif font-medium transition-colors hover:text-primary text-foreground">
               Behind Elevate
             </Link>
+            <Link href="/blog" data-testid="link-nav-blog" className="font-serif font-medium transition-colors hover:text-primary text-foreground">
+              Blog
+            </Link>
             <a href="https://tysencreager.com" target="_blank" rel="noopener noreferrer" data-testid="link-nav-portfolio" className="font-serif font-medium transition-colors hover:text-primary text-foreground">
               Portfolio
             </a>
@@ -81,13 +84,21 @@ export default function Navbar() {
             >
               Services
             </Link>
-            <Link 
-              href="/behind-elevate" 
+            <Link
+              href="/behind-elevate"
               data-testid="link-mobile-behind-elevate"
               className="block font-serif font-medium text-foreground hover:text-primary py-2"
               onClick={() => setIsMobileMenuOpen(false)}
             >
               Behind Elevate
+            </Link>
+            <Link
+              href="/blog"
+              data-testid="link-mobile-blog"
+              className="block font-serif font-medium text-foreground hover:text-primary py-2"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              Blog
             </Link>
             <a
               href="https://tysencreager.com"

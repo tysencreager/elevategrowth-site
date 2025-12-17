@@ -7,6 +7,7 @@ import Testimonial from "@/components/Testimonial";
 import CTASection from "@/components/CTASection";
 import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
+import SchemaMarkup from "@/components/SchemaMarkup";
 import heroImage from "@assets/Black and white photography _ black and white…_1760215489978.jpeg";
 import valueImage from "@assets/Scaling Your Business with Chat GPT _ AI-Powered…_1760215543216.jpeg";
 import ctaImage from "@assets/cta_background_1760215628693.jpeg";
@@ -37,26 +38,29 @@ export default function Home() {
 
   return (
     <div className="min-h-screen">
-      <SEO 
-        title="Elevate Growth Solutions - Boutique Full-Stack Marketing Agency"
-        description="Marketing that moves people and brands forward. We blend strategy with soul to help businesses grow with intention, clarity, and impact. Full-stack marketing services including branding, web design, SEO, and social media strategy."
-        ogTitle="Elevate Growth Solutions - Strategic Marketing That Drives Growth"
-        ogDescription="Transform your marketing with expert strategy, creative branding, and proven execution. Boutique full-stack marketing services tailored for growing businesses."
+      <SEO
+        title="Web Design Agency & Full-Stack Marketing | Elevate Growth Solutions"
+        description="Boutique web design agency and full-stack marketing services for small businesses, startups, and entrepreneurs. Custom websites built in weeks, not months. SEO, social media, branding, and conversion-focused design. Serving Salt Lake City and nationwide."
+        ogTitle="Web Design & Full-Stack Marketing for Small Businesses | Elevate Growth Solutions"
+        ogDescription="Custom websites in weeks, not months. Boutique marketing agency providing web design, SEO, social media management, and branding for small businesses and startups."
       />
+      <SchemaMarkup type="organization" />
+      <SchemaMarkup type="localBusiness" />
       <Navbar />
       
       <Hero
         backgroundImage={heroImage}
-        title="Marketing that moves people and brands forward"
-        ctaText="Learn More"
+        title="Web Design & Full-Stack Marketing for Growing Businesses"
+        subtitle="Custom websites in weeks, not months. Boutique marketing services that treat your business like our own."
+        ctaText="See Our Services"
         ctaHref="/services"
       />
       
       <ValueProp
         image={valueImage}
         imageAlt="Professional working on laptop"
-        title="At Elevate Growth Solutions, we blend strategy with soul, helping businesses grow with intention, clarity, and impact."
-        description="Whether you're launching something new or ready to scale with confidence, we offer full-stack marketing services that meet you where you are and take you where you want to go. With a balance of creative strategy and real-world experience, we're here to simplify your marketing, amplify your presence, and help you create momentum that lasts, both online and offline."
+        title="You're Not Just Another Client. Your Business Deserves Marketing That Actually Works."
+        description="Tired of being just a number at big agencies? At Elevate Growth Solutions, we're a boutique firm that gives every client the care and attention they deserve. We handle everything—web design, SEO, social media, branding, and ad campaigns—so you can save time, relieve stress, and focus on what you do best: running your business. Whether you're launching your first website or ready to scale with confidence, we're here to help you generate more leads and grow."
       />
       
       <Process 
