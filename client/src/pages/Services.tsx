@@ -5,9 +5,14 @@ import FAQ from "@/components/FAQ";
 import CTASection from "@/components/CTASection";
 import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
+import { motion, useInView } from "framer-motion";
+import { useRef } from "react";
 import servicesHero from "@assets/services_hero_team.jpg";
 
 export default function Services() {
+  const headerRef = useRef(null);
+  const isHeaderInView = useInView(headerRef, { once: true, amount: 0.5 });
+
   const services = [
     {
       title: "Full-Stack Marketing Management",
@@ -66,45 +71,63 @@ export default function Services() {
     }
   ];
 
+  const headerVariants = {
+    hidden: { opacity: 0, y: 40 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.8,
+        ease: [0.22, 1, 0.36, 1]
+      }
+    }
+  };
+
   return (
     <div className="min-h-screen">
-      <SEO 
+      <SEO
         title="Marketing Services - Full-Stack Digital Marketing | Elevate Growth Solutions"
         description="Comprehensive marketing services including full-stack marketing management, branding, web design, SEO, social media strategy, ad campaigns, and content creation. Expert solutions designed to help your business grow."
         ogTitle="Professional Marketing Services That Drive Results"
         ogDescription="From strategy to execution - discover our full range of marketing services including branding, SEO, social media, and more. Tailored solutions for growing businesses."
       />
       <Navbar />
-      
+
       <Hero
         backgroundImage={servicesHero}
         title="Marketing Solutions Designed to Help Your Business Grow"
         subtitle="Strategy. Branding. Execution. Optimization."
         height="70vh"
       />
-      
-      <div className="pt-12 md:pt-16 bg-background">
+
+      <div ref={headerRef} className="pt-12 md:pt-16 bg-background overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="font-display font-semibold text-3xl md:text-4xl lg:text-5xl text-center text-foreground mb-12" data-testid="text-services-header">
+          <motion.h2
+            className="font-display font-semibold text-3xl md:text-4xl lg:text-5xl text-center text-foreground mb-12"
+            data-testid="text-services-header"
+            variants={headerVariants}
+            initial="hidden"
+            animate={isHeaderInView ? "visible" : "hidden"}
+          >
             What We Offer:
-          </h2>
+          </motion.h2>
         </div>
       </div>
-      
+
       <ServicesGrid services={services} />
-      
-      <FAQ 
+
+      <FAQ
         items={faqs}
         subtitle="Everything you need to know about working with Elevate Growth Solutions"
       />
-      
+
       <CTASection
         title="Ready to elevate your marketing?"
         ctaText="Get In Touch"
         ctaHref="mailto:tysen@elevategrowth.solutions"
         backgroundColor="bg-primary"
       />
-      
+
       <Footer />
     </div>
   );
