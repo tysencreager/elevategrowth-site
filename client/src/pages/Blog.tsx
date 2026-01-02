@@ -69,7 +69,7 @@ export default function Blog() {
                   <span className="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm font-medium">
                     Featured
                   </span>
-                  <span className="text-gray-500 text-sm font-serif flex items-center gap-1">
+                  <span className="text-gray-600 text-sm font-serif flex items-center gap-1">
                     <Tag className="w-4 h-4" />
                     {featuredPost.category}
                   </span>
@@ -83,7 +83,7 @@ export default function Blog() {
                   {featuredPost.excerpt}
                 </p>
                 <div className="flex items-center justify-between">
-                  <div className="flex items-center gap-4 text-sm text-gray-500 font-serif">
+                  <div className="flex items-center gap-4 text-sm text-gray-600 font-serif">
                     <span className="flex items-center gap-1">
                       <User className="w-4 h-4" />
                       {featuredPost.author}
@@ -94,7 +94,7 @@ export default function Blog() {
                     </span>
                   </div>
                   <Link href={`/blog/${featuredPost.slug}`}>
-                    <span className="text-primary font-medium flex items-center gap-1 hover:gap-2 transition-all cursor-pointer">
+                    <span className="text-primary font-medium flex items-center gap-1 hover:gap-2 transition-all cursor-pointer py-2 min-h-[44px]">
                       Read more <ArrowRight className="w-4 h-4" />
                     </span>
                   </Link>
@@ -128,13 +128,13 @@ export default function Blog() {
                   <p className="font-serif text-gray-600 text-sm leading-relaxed mb-4 line-clamp-3">
                     {post.excerpt}
                   </p>
-                  <div className="flex items-center justify-between text-sm text-gray-500 font-serif">
+                  <div className="flex items-center justify-between text-sm text-gray-600 font-serif">
                     <span className="flex items-center gap-1">
                       <Calendar className="w-4 h-4" />
                       {formatDate(post.date)}
                     </span>
                     <Link href={`/blog/${post.slug}`}>
-                      <span className="text-primary font-medium flex items-center gap-1 hover:gap-2 transition-all cursor-pointer">
+                      <span className="text-primary font-medium flex items-center gap-1 hover:gap-2 transition-all cursor-pointer py-2 min-h-[44px]">
                         Read <ArrowRight className="w-4 h-4" />
                       </span>
                     </Link>

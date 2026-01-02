@@ -193,7 +193,7 @@ export default function BlogPost() {
       {/* Breadcrumb */}
       <div className="bg-gray-50 pt-28 pb-4">
         <div className="max-w-3xl mx-auto px-4">
-          <nav className="flex items-center gap-2 text-sm font-serif text-gray-500">
+          <nav className="flex items-center gap-2 text-sm font-serif text-gray-600">
             <Link href="/">
               <span className="hover:text-primary cursor-pointer">Home</span>
             </Link>
@@ -223,7 +223,7 @@ export default function BlogPost() {
             <p className="font-serif text-xl text-gray-600 mb-6">
               {post.excerpt}
             </p>
-            <div className="flex items-center gap-4 text-sm text-gray-500 font-serif">
+            <div className="flex items-center gap-4 text-sm text-gray-600 font-serif">
               <span className="flex items-center gap-1">
                 <User className="w-4 h-4" />
                 {post.author}
@@ -280,7 +280,7 @@ export default function BlogPost() {
                       {relatedPost.excerpt}
                     </p>
                     <Link href={`/blog/${relatedPost.slug}`}>
-                      <span className="text-primary font-medium flex items-center gap-1 hover:gap-2 transition-all cursor-pointer text-sm">
+                      <span className="text-primary font-medium flex items-center gap-1 hover:gap-2 transition-all cursor-pointer text-sm py-2 min-h-[44px]">
                         Read article <ArrowRight className="w-4 h-4" />
                       </span>
                     </Link>
