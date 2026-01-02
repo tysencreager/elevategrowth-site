@@ -241,6 +241,16 @@
   body {
     @apply font-serif antialiased bg-background text-foreground;
   }
+
+  /* Reduce layout recalculations by containing sections */
+  section {
+    contain: layout style;
+  }
+
+  /* Optimize images to not cause reflows */
+  img {
+    content-visibility: auto;
+  }
 }
 
 /**

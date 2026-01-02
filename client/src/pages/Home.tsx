@@ -9,8 +9,9 @@ import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
 import SchemaMarkup from "@/components/SchemaMarkup";
 // Optimized WebP images
-import heroImage from "@assets/hero_bw_1920.webp";
-import heroImage768 from "@assets/hero_bw_768.webp";
+// LCP images use public folder paths for early discovery (preloaded in HTML head)
+const heroImage = "/hero_bw_1920.webp";
+const heroImage768 = "/hero_bw_768.webp";
 import valueImage from "@assets/value_prop.webp";
 import ctaImage from "@assets/cta_background.webp";
 import ctaImage768 from "@assets/cta_background_768.webp";
