@@ -54,6 +54,7 @@ export default function Home() {
         subtitle="Custom websites in weeks, not months. Boutique marketing services that treat your business like our own."
         ctaText="See Our Services"
         ctaHref="/services"
+        isLCP={true}
       />
       
       <ValueProp

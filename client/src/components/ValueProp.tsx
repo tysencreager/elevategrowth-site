@@ -106,6 +106,10 @@ export default function ValueProp({
               <motion.img
                 src={image}
                 alt={imageAlt}
+                width={450}
+                height={600}
+                loading="lazy"
+                decoding="async"
                 className="w-auto h-full max-h-[600px] rounded-lg object-cover"
                 data-testid="img-value-prop"
                 whileHover={{ scale: 1.05 }}

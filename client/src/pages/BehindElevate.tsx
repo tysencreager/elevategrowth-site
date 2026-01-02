@@ -133,6 +133,10 @@ export default function BehindElevate() {
                 <motion.img
                   src={tysenPhoto}
                   alt="Tysen Creager, Founder of Elevate Growth Solutions"
+                  width={400}
+                  height={500}
+                  loading="eager"
+                  decoding="async"
                   className="w-full h-auto rounded-lg"
                   data-testid="img-tysen-photo"
                   whileHover={{ scale: 1.05 }}

@@ -85,6 +85,10 @@ export default function Footer() {
               <motion.img
                 src={logo}
                 alt="Elevate Growth Solutions"
+                width={180}
+                height={64}
+                loading="lazy"
+                decoding="async"
                 className="h-16 w-auto"
                 data-testid="img-footer-logo"
                 whileHover={{ scale: 1.05 }}

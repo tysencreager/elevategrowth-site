@@ -98,6 +98,7 @@ export default function Services() {
         title="Marketing Solutions Designed to Help Your Business Grow"
         subtitle="Strategy. Branding. Execution. Optimization."
         height="70vh"
+        isLCP={true}
       />
 
       <div ref={headerRef} className="pt-12 md:pt-16 bg-background overflow-hidden">

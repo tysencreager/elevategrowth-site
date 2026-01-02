@@ -86,6 +86,8 @@ export default function Navbar() {
             <motion.img
               src={logo}
               alt="Elevate Growth Solutions"
+              width={180}
+              height={64}
               className="h-16 w-auto"
               whileHover={{ scale: 1.05 }}
               transition={{ duration: 0.2 }}

@@ -94,9 +94,15 @@ export default function CTASection({
     <section ref={sectionRef} className="relative py-20 md:py-32 lg:py-40 overflow-hidden">
       {backgroundImage && (
         <>
-          <motion.div
-            className="absolute inset-0 bg-cover bg-center"
-            style={{ backgroundImage: `url(${backgroundImage})` }}
+          {/* Use img element for better performance - lazy loaded since below fold */}
+          <motion.img
+            src={backgroundImage}
+            alt=""
+            width={1920}
+            height={1080}
+            loading="lazy"
+            decoding="async"
+            className="absolute inset-0 w-full h-full object-cover"
             variants={backgroundVariants}
             initial="hidden"
             animate={isInView ? "visible" : "hidden"}
