@@ -4,7 +4,7 @@ import { Input } from "@/components/ui/input";
 import { X, Mail, CheckCircle } from "lucide-react";
 
 const POPUP_STORAGE_KEY = "egs-popup-shown";
-const POPUP_DELAY_MS = 3000;
+const POPUP_DELAY_MS = 15000; // 15 seconds - delayed to not impact PageSpeed metrics
 
 export default function EmailPopup() {
   const [isVisible, setIsVisible] = useState(false);
@@ -18,12 +18,32 @@ export default function EmailPopup() {
     const hasShown = localStorage.getItem(POPUP_STORAGE_KEY);
     if (hasShown) return;
 
-    // Show popup after delay
-    const timer = setTimeout(() => {
-      setIsVisible(true);
-    }, POPUP_DELAY_MS);
+    let hasTriggered = false;
 
-    return () => clearTimeout(timer);
+    const showPopup = () => {
+      if (!hasTriggered) {
+        hasTriggered = true;
+        setIsVisible(true);
+      }
+    };
+
+    // Show popup after delay OR after user scrolls 50% of viewport
+    const timer = setTimeout(showPopup, POPUP_DELAY_MS);
+
+    const handleScroll = () => {
+      const scrollPercent = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+      if (scrollPercent > 30) {
+        showPopup();
+        window.removeEventListener('scroll', handleScroll);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+
+    return () => {
+      clearTimeout(timer);
+      window.removeEventListener('scroll', handleScroll);
+    };
   }, []);
 
   const handleClose = () => {

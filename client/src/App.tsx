@@ -1,5 +1,5 @@
 import { Switch, Route, useLocation } from "wouter";
-import { useEffect } from "react";
+import { useEffect, lazy, Suspense } from "react";
 import { queryClient } from "./lib/queryClient";
 import { QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
@@ -16,31 +16,46 @@ function ScrollToTop() {
 
   return null;
 }
+
+// Home page loaded eagerly (most common landing page)
 import Home from "@/pages/Home";
-import Services from "@/pages/Services";
-import BehindElevate from "@/pages/BehindElevate";
-import Contact from "@/pages/Contact";
-import PrivacyPolicy from "@/pages/PrivacyPolicy";
-import TermsAndConditions from "@/pages/TermsAndConditions";
-import SaltLakeCity from "@/pages/SaltLakeCity";
-import Blog from "@/pages/Blog";
-import BlogPost from "@/pages/BlogPost";
-import NotFound from "@/pages/not-found";
+
+// Lazy load other pages to reduce initial bundle
+const Services = lazy(() => import("@/pages/Services"));
+const BehindElevate = lazy(() => import("@/pages/BehindElevate"));
+const Contact = lazy(() => import("@/pages/Contact"));
+const PrivacyPolicy = lazy(() => import("@/pages/PrivacyPolicy"));
+const TermsAndConditions = lazy(() => import("@/pages/TermsAndConditions"));
+const SaltLakeCity = lazy(() => import("@/pages/SaltLakeCity"));
+const Blog = lazy(() => import("@/pages/Blog"));
+const BlogPost = lazy(() => import("@/pages/BlogPost"));
+const NotFound = lazy(() => import("@/pages/not-found"));
+
+// Loading fallback component
+function PageLoader() {
+  return (
+    <div className="min-h-screen flex items-center justify-center">
+      <div className="animate-pulse text-primary font-serif">Loading...</div>
+    </div>
+  );
+}
 
 function Router() {
   return (
-    <Switch>
-      <Route path="/" component={Home} />
-      <Route path="/services" component={Services} />
-      <Route path="/behind-elevate" component={BehindElevate} />
-      <Route path="/contact" component={Contact} />
-      <Route path="/privacy-policy" component={PrivacyPolicy} />
-      <Route path="/terms-and-conditions" component={TermsAndConditions} />
-      <Route path="/salt-lake-city" component={SaltLakeCity} />
-      <Route path="/blog" component={Blog} />
-      <Route path="/blog/:slug" component={BlogPost} />
-      <Route component={NotFound} />
-    </Switch>
+    <Suspense fallback={<PageLoader />}>
+      <Switch>
+        <Route path="/" component={Home} />
+        <Route path="/services" component={Services} />
+        <Route path="/behind-elevate" component={BehindElevate} />
+        <Route path="/contact" component={Contact} />
+        <Route path="/privacy-policy" component={PrivacyPolicy} />
+        <Route path="/terms-and-conditions" component={TermsAndConditions} />
+        <Route path="/salt-lake-city" component={SaltLakeCity} />
+        <Route path="/blog" component={Blog} />
+        <Route path="/blog/:slug" component={BlogPost} />
+        <Route component={NotFound} />
+      </Switch>
+    </Suspense>
   );
 }
 
