@@ -5,6 +5,8 @@ import { AnimatedButton } from "@/components/ui/motion";
 
 interface HeroProps {
   backgroundImage: string;
+  /** Responsive image sources for different viewport sizes */
+  imageSrcSet?: string;
   title: string;
   subtitle?: string;
   ctaText?: string;
@@ -16,6 +18,7 @@ interface HeroProps {
 
 export default function Hero({
   backgroundImage,
+  imageSrcSet,
   title,
   subtitle,
   ctaText,
@@ -113,6 +116,7 @@ export default function Hero({
       {/* Use img element for LCP optimization - discovered earlier than CSS background-image */}
       <motion.img
         src={backgroundImage}
+        srcSet={imageSrcSet}
         alt=""
         width={1920}
         height={1080}

@@ -4,7 +4,9 @@ import SEO from "@/components/SEO";
 import Credentials, { Award, GraduationCap, TrendingUp } from "@/components/Credentials";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import tysenPhoto from "@assets/Untitled design.png_1760212641967.jpg";
+// Optimized WebP images
+import tysenPhoto from "@assets/tysen_photo_800.webp";
+import tysenPhoto400 from "@assets/tysen_photo_400.webp";
 
 export default function BehindElevate() {
   const sectionRef = useRef(null);
@@ -132,6 +134,8 @@ export default function BehindElevate() {
               >
                 <motion.img
                   src={tysenPhoto}
+                  srcSet={`${tysenPhoto400} 400w, ${tysenPhoto} 800w`}
+                  sizes="(max-width: 768px) 100vw, 400px"
                   alt="Tysen Creager, Founder of Elevate Growth Solutions"
                   width={400}
                   height={500}

@@ -5,6 +5,8 @@ import { AnimatedButton } from "@/components/ui/motion";
 
 interface CTASectionProps {
   backgroundImage?: string;
+  /** Responsive image sources for different viewport sizes */
+  imageSrcSet?: string;
   title: string;
   ctaText: string;
   ctaHref: string;
@@ -13,6 +15,7 @@ interface CTASectionProps {
 
 export default function CTASection({
   backgroundImage,
+  imageSrcSet,
   title,
   ctaText,
   ctaHref,
@@ -97,6 +100,7 @@ export default function CTASection({
           {/* Use img element for better performance - lazy loaded since below fold */}
           <motion.img
             src={backgroundImage}
+            srcSet={imageSrcSet}
             alt=""
             width={1920}
             height={1080}

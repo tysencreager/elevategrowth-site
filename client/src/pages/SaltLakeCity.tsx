@@ -5,8 +5,11 @@ import SEO from "@/components/SEO";
 import SchemaMarkup from "@/components/SchemaMarkup";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, CheckCircle, MapPin, Clock, Users, Award } from "lucide-react";
-import heroImage from "@assets/Black and white photography _ black and white…_1760215489978.jpeg";
-import ctaImage from "@assets/cta_background_1760215628693.jpeg";
+// Optimized WebP images
+import heroImage from "@assets/hero_bw_1920.webp";
+import heroImage768 from "@assets/hero_bw_768.webp";
+import ctaImage from "@assets/cta_background.webp";
+import ctaImage768 from "@assets/cta_background_768.webp";
 
 const localBusinessSchemaData = {
   "@context": "https://schema.org",
@@ -134,6 +137,7 @@ export default function SaltLakeCity() {
 
       <Hero
         backgroundImage={heroImage}
+        imageSrcSet={`${heroImage768} 768w, ${heroImage} 1920w`}
         title="Salt Lake City Web Design & Digital Marketing"
         subtitle="Boutique marketing agency serving Utah businesses from Silicon Slopes to Park City"
         ctaText="Get a Free Consultation"
@@ -287,6 +291,7 @@ export default function SaltLakeCity() {
       <section className="relative py-24 px-4 overflow-hidden">
         <img
           src={ctaImage}
+          srcSet={`${ctaImage768} 768w, ${ctaImage} 1920w`}
           alt=""
           width={1920}
           height={1080}

@@ -7,7 +7,10 @@ import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import servicesHero from "@assets/services_hero_team.jpg";
+// Optimized WebP images with responsive sizes
+import servicesHero from "@assets/services_hero_team_1920.webp";
+import servicesHero768 from "@assets/services_hero_team_768.webp";
+import servicesHero1280 from "@assets/services_hero_team_1280.webp";
 
 export default function Services() {
   const headerRef = useRef(null);
@@ -95,6 +98,7 @@ export default function Services() {
 
       <Hero
         backgroundImage={servicesHero}
+        imageSrcSet={`${servicesHero768} 768w, ${servicesHero1280} 1280w, ${servicesHero} 1920w`}
         title="Marketing Solutions Designed to Help Your Business Grow"
         subtitle="Strategy. Branding. Execution. Optimization."
         height="70vh"
