@@ -113,8 +113,8 @@ export default function Hero({
       className="relative flex items-center justify-center text-center px-4 pt-32 overflow-hidden"
       style={{ minHeight: height }}
     >
-      {/* Use img element for LCP optimization - discovered earlier than CSS background-image */}
-      <motion.img
+      {/* Use plain img element for LCP optimization - no animation overhead, discovered early */}
+      <img
         src={backgroundImage}
         srcSet={imageSrcSet}
         alt=""
@@ -123,10 +123,8 @@ export default function Hero({
         sizes="100vw"
         fetchPriority={isLCP ? "high" : "auto"}
         decoding={isLCP ? "sync" : "async"}
+        loading={isLCP ? "eager" : "lazy"}
         className="absolute inset-0 w-full h-full object-cover"
-        variants={backgroundVariants}
-        initial="hidden"
-        animate="visible"
       />
       <motion.div
         className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/50 to-black/70"

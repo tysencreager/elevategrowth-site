@@ -97,8 +97,8 @@ export default function CTASection({
     <section ref={sectionRef} className="relative py-20 md:py-32 lg:py-40 overflow-hidden">
       {backgroundImage && (
         <>
-          {/* Use img element for better performance - lazy loaded since below fold */}
-          <motion.img
+          {/* Plain img for better performance - lazy loaded since below fold */}
+          <img
             src={backgroundImage}
             srcSet={imageSrcSet}
             alt=""
@@ -108,16 +108,8 @@ export default function CTASection({
             loading="lazy"
             decoding="async"
             className="absolute inset-0 w-full h-full object-cover"
-            variants={backgroundVariants}
-            initial="hidden"
-            animate={isInView ? "visible" : "hidden"}
           />
-          <motion.div
-            className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/50 to-black/70"
-            variants={overlayVariants}
-            initial="hidden"
-            animate={isInView ? "visible" : "hidden"}
-          />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/50 to-black/70" />
         </>
       )}
       {!backgroundImage && (
