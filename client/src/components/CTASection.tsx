@@ -100,6 +100,7 @@ export default function CTASection({
             alt=""
             width={1920}
             height={1080}
+            sizes="100vw"
             loading="lazy"
             decoding="async"
             className="absolute inset-0 w-full h-full object-cover"

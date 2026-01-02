@@ -79,7 +79,7 @@ export default function EmailPopup() {
         {/* Close button */}
         <button
           onClick={handleClose}
-          className="absolute top-4 right-4 text-gray-400 hover:text-gray-600 transition-colors"
+          className="absolute top-4 right-4 p-2 min-w-[44px] min-h-[44px] flex items-center justify-center text-gray-500 hover:text-gray-700 transition-colors rounded-full hover:bg-gray-100"
           aria-label="Close popup"
         >
           <X className="w-6 h-6" />
@@ -132,7 +132,7 @@ export default function EmailPopup() {
                 {isSubmitting ? "Subscribing..." : "Subscribe"}
               </Button>
 
-              <p className="text-xs text-gray-500 text-center font-serif">
+              <p className="text-xs text-gray-600 text-center font-serif">
                 No spam, ever. Unsubscribe anytime.
               </p>
             </form>

@@ -116,6 +116,7 @@ export default function Hero({
         alt=""
         width={1920}
         height={1080}
+        sizes="100vw"
         fetchPriority={isLCP ? "high" : "auto"}
         decoding={isLCP ? "sync" : "async"}
         className="absolute inset-0 w-full h-full object-cover"
