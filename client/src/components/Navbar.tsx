@@ -86,6 +86,8 @@ export default function Navbar() {
             <motion.img
               src={logo}
               alt="Elevate Growth Solutions"
+              width={180}
+              height={64}
               className="h-16 w-auto"
               whileHover={{ scale: 1.05 }}
               transition={{ duration: 0.2 }}
@@ -148,9 +150,11 @@ export default function Navbar() {
           </div>
 
           <motion.button
-            className="md:hidden p-2 rounded-md hover-elevate active-elevate-2"
+            className="md:hidden p-3 min-w-[48px] min-h-[48px] rounded-md hover-elevate active-elevate-2 flex items-center justify-center"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             data-testid="button-mobile-menu"
+            aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
+            aria-expanded={isMobileMenuOpen}
             variants={iconVariants}
             animate={isMobileMenuOpen ? "open" : "closed"}
             transition={{ duration: 0.3 }}
@@ -191,12 +195,12 @@ export default function Navbar() {
             animate="visible"
             exit="hidden"
           >
-            <div className="px-4 py-6 space-y-4">
+            <div className="px-4 py-6 space-y-2">
               <motion.div variants={mobileItemVariants}>
                 <Link
                   href="/"
                   data-testid="link-mobile-home"
-                  className="block font-serif font-medium text-foreground hover:text-primary py-2"
+                  className="block font-serif font-medium text-foreground hover:text-primary py-3 min-h-[48px]"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   Home
@@ -206,7 +210,7 @@ export default function Navbar() {
                 <Link
                   href="/services"
                   data-testid="link-mobile-services"
-                  className="block font-serif font-medium text-foreground hover:text-primary py-2"
+                  className="block font-serif font-medium text-foreground hover:text-primary py-3 min-h-[48px]"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   Services
@@ -216,7 +220,7 @@ export default function Navbar() {
                 <Link
                   href="/behind-elevate"
                   data-testid="link-mobile-behind-elevate"
-                  className="block font-serif font-medium text-foreground hover:text-primary py-2"
+                  className="block font-serif font-medium text-foreground hover:text-primary py-3 min-h-[48px]"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   Behind Elevate
@@ -226,7 +230,7 @@ export default function Navbar() {
                 <Link
                   href="/blog"
                   data-testid="link-mobile-blog"
-                  className="block font-serif font-medium text-foreground hover:text-primary py-2"
+                  className="block font-serif font-medium text-foreground hover:text-primary py-3 min-h-[48px]"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   Blog
@@ -238,20 +242,20 @@ export default function Navbar() {
                   target="_blank"
                   rel="noopener noreferrer"
                   data-testid="link-mobile-portfolio"
-                  className="block font-serif font-medium text-foreground hover:text-primary py-2"
+                  className="block font-serif font-medium text-foreground hover:text-primary py-3 min-h-[48px]"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   Portfolio
                 </a>
               </motion.div>
-              <motion.div variants={mobileItemVariants}>
+              <motion.div variants={mobileItemVariants} className="pt-2">
                 <Link
                   href="/contact"
                   data-testid="link-mobile-contact"
                   onClick={() => setIsMobileMenuOpen(false)}
                   className="block"
                 >
-                  <Button className="w-full font-serif font-medium">
+                  <Button className="w-full font-serif font-medium min-h-[48px]">
                     Contact
                   </Button>
                 </Link>

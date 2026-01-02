@@ -8,9 +8,12 @@ import CTASection from "@/components/CTASection";
 import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
 import SchemaMarkup from "@/components/SchemaMarkup";
-import heroImage from "@assets/Black and white photography _ black and white…_1760215489978.jpeg";
-import valueImage from "@assets/Scaling Your Business with Chat GPT _ AI-Powered…_1760215543216.jpeg";
-import ctaImage from "@assets/cta_background_1760215628693.jpeg";
+// Optimized WebP images
+import heroImage from "@assets/hero_bw_1920.webp";
+import heroImage768 from "@assets/hero_bw_768.webp";
+import valueImage from "@assets/value_prop.webp";
+import ctaImage from "@assets/cta_background.webp";
+import ctaImage768 from "@assets/cta_background_768.webp";
 
 export default function Home() {
   const processSteps = [
@@ -50,10 +53,12 @@ export default function Home() {
       
       <Hero
         backgroundImage={heroImage}
+        imageSrcSet={`${heroImage768} 768w, ${heroImage} 1920w`}
         title="Web Design & Full-Stack Marketing for Growing Businesses"
         subtitle="Custom websites in weeks, not months. Boutique marketing services that treat your business like our own."
         ctaText="See Our Services"
         ctaHref="/services"
+        isLCP={true}
       />
       
       <ValueProp
@@ -82,6 +87,7 @@ export default function Home() {
       
       <CTASection
         backgroundImage={ctaImage}
+        imageSrcSet={`${ctaImage768} 768w, ${ctaImage} 1920w`}
         title="Let's build something that stands the test of time."
         ctaText="Contact Us"
         ctaHref="mailto:tysen@elevategrowth.solutions"

@@ -85,6 +85,10 @@ export default function Footer() {
               <motion.img
                 src={logo}
                 alt="Elevate Growth Solutions"
+                width={180}
+                height={64}
+                loading="lazy"
+                decoding="async"
                 className="h-16 w-auto"
                 data-testid="img-footer-logo"
                 whileHover={{ scale: 1.05 }}
@@ -97,34 +101,34 @@ export default function Footer() {
                 Boutique Full-Stack Marketing
               </motion.p>
               <motion.div
-                className="flex gap-4 pt-2"
+                className="flex gap-2 pt-2"
                 variants={containerVariants}
               >
                 <motion.a
                   href="https://www.instagram.com/elevategrowthsolutions"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-muted-foreground hover:text-primary transition-colors"
+                  className="text-muted-foreground hover:text-primary transition-colors p-2 min-w-[44px] min-h-[44px] flex items-center justify-center"
                   data-testid="link-footer-instagram"
-                  aria-label="Instagram"
+                  aria-label="Follow us on Instagram"
                   variants={socialVariants}
-                  whileHover={{ scale: 1.2, rotate: 5 }}
-                  whileTap={{ scale: 0.9 }}
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.95 }}
                 >
-                  <Instagram className="h-5 w-5" />
+                  <Instagram className="h-6 w-6" />
                 </motion.a>
                 <motion.a
                   href="https://www.linkedin.com/in/tysen-creager-a75914207/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-muted-foreground hover:text-primary transition-colors"
+                  className="text-muted-foreground hover:text-primary transition-colors p-2 min-w-[44px] min-h-[44px] flex items-center justify-center"
                   data-testid="link-footer-linkedin"
-                  aria-label="LinkedIn"
+                  aria-label="Connect on LinkedIn"
                   variants={socialVariants}
-                  whileHover={{ scale: 1.2, rotate: -5 }}
-                  whileTap={{ scale: 0.9 }}
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.95 }}
                 >
-                  <Linkedin className="h-5 w-5" />
+                  <Linkedin className="h-6 w-6" />
                 </motion.a>
               </motion.div>
             </motion.div>

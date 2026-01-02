@@ -32,6 +32,19 @@ export default defineConfig({
   build: {
     outDir: path.resolve(import.meta.dirname, "dist/public"),
     emptyOutDir: true,
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          // Split vendor chunks to improve caching and reduce initial bundle
+          'vendor-react': ['react', 'react-dom'],
+          'vendor-motion': ['framer-motion'],
+          'vendor-ui': ['@radix-ui/react-dialog', '@radix-ui/react-dropdown-menu', '@radix-ui/react-tooltip', '@radix-ui/react-accordion'],
+          'vendor-query': ['@tanstack/react-query'],
+        },
+      },
+    },
+    // Improve chunk size warnings threshold
+    chunkSizeWarningLimit: 500,
   },
   server: {
     fs: {

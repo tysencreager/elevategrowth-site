@@ -5,20 +5,26 @@ import { AnimatedButton } from "@/components/ui/motion";
 
 interface HeroProps {
   backgroundImage: string;
+  /** Responsive image sources for different viewport sizes */
+  imageSrcSet?: string;
   title: string;
   subtitle?: string;
   ctaText?: string;
   ctaHref?: string;
   height?: string;
+  /** Mark as LCP element for priority loading */
+  isLCP?: boolean;
 }
 
 export default function Hero({
   backgroundImage,
+  imageSrcSet,
   title,
   subtitle,
   ctaText,
   ctaHref,
-  height = "90vh"
+  height = "90vh",
+  isLCP = false
 }: HeroProps) {
   // Split title into words for staggered animation
   const titleWords = title.split(" ");
@@ -107,9 +113,17 @@ export default function Hero({
       className="relative flex items-center justify-center text-center px-4 pt-32 overflow-hidden"
       style={{ minHeight: height }}
     >
-      <motion.div
-        className="absolute inset-0 bg-cover bg-center"
-        style={{ backgroundImage: `url(${backgroundImage})` }}
+      {/* Use img element for LCP optimization - discovered earlier than CSS background-image */}
+      <motion.img
+        src={backgroundImage}
+        srcSet={imageSrcSet}
+        alt=""
+        width={1920}
+        height={1080}
+        sizes="100vw"
+        fetchPriority={isLCP ? "high" : "auto"}
+        decoding={isLCP ? "sync" : "async"}
+        className="absolute inset-0 w-full h-full object-cover"
         variants={backgroundVariants}
         initial="hidden"
         animate="visible"
