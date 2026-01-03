@@ -21,6 +21,7 @@ export default function Navbar() {
     { href: "/", label: "Home", testId: "link-nav-home" },
     { href: "/services", label: "Services", testId: "link-nav-services" },
     { href: "/behind-elevate", label: "Behind Elevate", testId: "link-nav-behind-elevate" },
+    { href: "/testimonials", label: "Testimonials", testId: "link-nav-testimonials" },
     { href: "/blog", label: "Blog", testId: "link-nav-blog" }
   ];
 
@@ -224,6 +225,16 @@ export default function Navbar() {
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   Behind Elevate
+                </Link>
+              </motion.div>
+              <motion.div variants={mobileItemVariants}>
+                <Link
+                  href="/testimonials"
+                  data-testid="link-mobile-testimonials"
+                  className="block font-serif font-medium text-foreground hover:text-primary py-3 min-h-[48px]"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  Testimonials
                 </Link>
               </motion.div>
               <motion.div variants={mobileItemVariants}>
