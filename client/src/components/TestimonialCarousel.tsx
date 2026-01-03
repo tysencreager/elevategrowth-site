@@ -157,7 +157,7 @@ export default function TestimonialCarousel({
           </button>
 
           {/* Testimonial card */}
-          <div className="relative min-h-[280px] md:min-h-[250px]">
+          <div className="relative min-h-[420px] sm:min-h-[350px] md:min-h-[280px]">
             <AnimatePresence mode="wait" custom={direction}>
               <motion.div
                 key={currentIndex}
@@ -168,7 +168,7 @@ export default function TestimonialCarousel({
                 exit="exit"
                 className="absolute inset-0"
               >
-                <div className="bg-background/60 backdrop-blur-sm rounded-2xl p-8 md:p-10 border border-primary/10 shadow-xl relative overflow-hidden">
+                <div className="bg-background/60 backdrop-blur-sm rounded-2xl p-6 sm:p-8 md:p-10 border border-primary/10 shadow-xl relative overflow-hidden">
                   {/* Large quote mark */}
                   <motion.div
                     className="absolute -top-4 -left-2 text-9xl font-serif text-primary/10 pointer-events-none select-none leading-none"
@@ -195,7 +195,7 @@ export default function TestimonialCarousel({
 
                   {/* Quote */}
                   <blockquote className="relative z-10">
-                    <p className="font-serif italic text-xl md:text-2xl text-foreground leading-relaxed mb-6">
+                    <p className="font-serif italic text-lg sm:text-xl md:text-2xl text-foreground leading-relaxed mb-6">
                       "{currentTestimonial.quote}"
                     </p>
 
