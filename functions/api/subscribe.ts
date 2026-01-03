@@ -44,7 +44,7 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
       },
       body: JSON.stringify({
         email: email,
-        listIds: [2], // Newsletter Subscribers list - update this ID after checking Brevo
+        listIds: [3], // Newsletter Subscribers list
         updateEnabled: true,
         attributes: {
           SOURCE: source || "website",

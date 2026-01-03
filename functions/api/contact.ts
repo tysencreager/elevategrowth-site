@@ -50,7 +50,7 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
       },
       body: JSON.stringify({
         email: email,
-        listIds: [3], // Contact Form Leads list - update this ID after checking Brevo
+        listIds: [4], // Contact Form Leads list
         updateEnabled: true,
         attributes: {
           FIRSTNAME: firstName,
