@@ -1,5 +1,6 @@
 import { useEffect, useRef } from "react";
 import { motion, useInView } from "framer-motion";
+import { Star } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import CTASection from "@/components/CTASection";
@@ -37,79 +38,157 @@ const testimonials: Testimonial[] = [
 ];
 
 const clientLogos = [
-  { src: "https://i.postimg.cc/Hn6YV0GB/Dial_In_Logo_png.png", alt: "Dial In" },
-  { src: "https://i.postimg.cc/BbFyfGT5/1.png", alt: "Client Logo" },
-  { src: "https://i.postimg.cc/PrkVv9zt/7.png", alt: "Client Logo" },
-  { src: "https://i.postimg.cc/PrhK5ZTf/So_Crystal_Designs_Horizontal_Logo.png", alt: "So Crystal Designs" },
-  { src: "https://i.postimg.cc/rwZ9jPW9/white_True_Partner_logo.png", alt: "True Partner" },
-  { src: "https://i.postimg.cc/kGZnf9JC/3e5c0d_91aae8e3345e442fb309b3eac35ebca4_mv2.png", alt: "Client Logo" },
-  { src: "https://i.postimg.cc/QCPX0s8j/3e5c0d_d20fbb27914a4eea89bf638baf4c35f7_mv2.png", alt: "Client Logo" },
-  { src: "https://i.postimg.cc/90SWJVW6/3e5c0d_d34f81ec9fce437f8b2e8b32eb8306c5_mv2.png", alt: "Client Logo" },
-  { src: "https://i.postimg.cc/90SWJVmH/images_(5).png", alt: "Client Logo" }
+  { src: "https://i.postimg.cc/3N6Kn78Y/Dial_In_Logo_png.png", alt: "Dial In" },
+  { src: "https://i.postimg.cc/8FCq8ydW/1.png", alt: "Client Logo" },
+  { src: "https://i.postimg.cc/xkdWrsGN/2.png", alt: "Client Logo" },
+  { src: "https://i.postimg.cc/hJGHFC8m/3.png", alt: "Client Logo" },
+  { src: "https://i.postimg.cc/QBMRL6gT/4.png", alt: "Client Logo" },
+  { src: "https://i.postimg.cc/94fv3xPy/5.png", alt: "Client Logo" },
+  { src: "https://i.postimg.cc/d7SgJ8n3/6.png", alt: "Client Logo" },
+  { src: "https://i.postimg.cc/p913PDky/7.png", alt: "Client Logo" },
+  { src: "https://i.postimg.cc/KKYdX97n/8.png", alt: "Client Logo" },
+  { src: "https://i.postimg.cc/qtZWp8Qz/9.png", alt: "Client Logo" },
+  { src: "https://i.postimg.cc/p913PDk5/10.png", alt: "Client Logo" },
+  { src: "https://i.postimg.cc/CZ69wjJf/11.png", alt: "Client Logo" },
+  { src: "https://i.postimg.cc/Lq0Gmzv1/12.png", alt: "Client Logo" },
+  { src: "https://i.postimg.cc/d7SgJ8nd/13.png", alt: "Client Logo" },
+  { src: "https://i.postimg.cc/f3g1Mx5m/14.png", alt: "Client Logo" }
 ];
+
+function StarRating() {
+  return (
+    <div className="flex gap-1 mb-4">
+      {[...Array(5)].map((_, i) => (
+        <motion.div
+          key={i}
+          initial={{ opacity: 0, scale: 0 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ delay: i * 0.1, duration: 0.3, type: "spring" }}
+        >
+          <Star className="w-5 h-5 fill-primary text-primary" />
+        </motion.div>
+      ))}
+    </div>
+  );
+}
 
 function TestimonialCard({ testimonial, index }: { testimonial: Testimonial; index: number }) {
   const cardRef = useRef(null);
   const isInView = useInView(cardRef, { once: true, amount: 0.2 });
 
+  // Alternate card styles for visual variety
+  const isFeature = index === 0;
+  const cardColors = [
+    "from-primary/10 to-accent/20 border-primary/20",
+    "from-accent/15 to-primary/10 border-accent/30",
+    "from-primary/5 to-accent/15 border-primary/15",
+    "from-accent/10 to-primary/15 border-accent/25",
+    "from-primary/15 to-accent/10 border-primary/25"
+  ];
+
   const cardVariants = {
-    hidden: { opacity: 0, y: 40 },
+    hidden: { opacity: 0, y: 50, scale: 0.95 },
     visible: {
       opacity: 1,
       y: 0,
+      scale: 1,
       transition: {
-        duration: 0.6,
+        duration: 0.7,
         ease: [0.22, 1, 0.36, 1],
-        delay: index * 0.1
+        delay: index * 0.12
       }
+    }
+  };
+
+  const hoverVariants = {
+    rest: { scale: 1, y: 0 },
+    hover: {
+      scale: 1.02,
+      y: -5,
+      transition: { duration: 0.3, ease: "easeOut" }
     }
   };
 
   return (
     <motion.article
       ref={cardRef}
-      className="bg-accent/20 rounded-2xl p-6 md:p-8 relative overflow-hidden group hover:bg-accent/30 transition-colors duration-300"
+      className={`relative rounded-2xl p-6 md:p-8 overflow-hidden border-2 bg-gradient-to-br ${cardColors[index % cardColors.length]} ${isFeature ? 'md:col-span-2' : ''}`}
       variants={cardVariants}
       initial="hidden"
       animate={isInView ? "visible" : "hidden"}
+      whileHover="hover"
       itemScope
       itemType="https://schema.org/Review"
     >
-      {/* Decorative quote mark */}
-      <div className="absolute top-4 right-4 text-6xl md:text-7xl font-serif text-primary/10 pointer-events-none select-none leading-none">
+      {/* Animated background glow */}
+      <motion.div
+        className="absolute inset-0 bg-gradient-to-r from-primary/5 via-transparent to-primary/5 opacity-0"
+        variants={{
+          rest: { opacity: 0 },
+          hover: { opacity: 1 }
+        }}
+      />
+
+      {/* Decorative quote mark with animation */}
+      <motion.div
+        className="absolute -top-2 -right-2 text-8xl md:text-9xl font-serif text-primary/15 pointer-events-none select-none leading-none"
+        variants={{
+          rest: { rotate: 0, scale: 1 },
+          hover: { rotate: 5, scale: 1.1 }
+        }}
+        transition={{ duration: 0.3 }}
+      >
         "
-      </div>
+      </motion.div>
 
-      <blockquote className="relative z-10">
-        <p
-          className="font-serif italic text-lg md:text-xl text-foreground leading-relaxed mb-6"
-          itemProp="reviewBody"
-        >
-          "{testimonial.quote}"
-        </p>
+      {/* Floating decorative circles */}
+      <motion.div
+        className="absolute -bottom-10 -left-10 w-32 h-32 rounded-full bg-primary/5"
+        variants={{
+          rest: { scale: 1 },
+          hover: { scale: 1.2 }
+        }}
+        transition={{ duration: 0.5 }}
+      />
 
-        <footer className="flex items-center gap-3">
-          <div className="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center">
-            <span className="font-display font-semibold text-primary text-sm">
-              {testimonial.author.charAt(0)}
-            </span>
-          </div>
-          <div>
-            <cite className="not-italic font-sans font-medium text-foreground" itemProp="author">
-              {testimonial.author}
-            </cite>
-            {testimonial.role && (
-              <p className="text-sm text-muted-foreground">{testimonial.role}</p>
-            )}
-          </div>
-        </footer>
-      </blockquote>
+      <motion.div variants={hoverVariants} className="relative z-10">
+        <StarRating />
 
-      {/* Rating for schema */}
-      <div itemProp="reviewRating" itemScope itemType="https://schema.org/Rating" className="sr-only">
-        <meta itemProp="ratingValue" content="5" />
-        <meta itemProp="bestRating" content="5" />
-      </div>
+        <blockquote>
+          <p
+            className={`font-serif italic text-foreground leading-relaxed mb-6 ${isFeature ? 'text-xl md:text-2xl' : 'text-lg md:text-xl'}`}
+            itemProp="reviewBody"
+          >
+            "{testimonial.quote}"
+          </p>
+
+          <footer className="flex items-center gap-4">
+            <motion.div
+              className="w-12 h-12 rounded-full bg-gradient-to-br from-primary to-primary/70 flex items-center justify-center shadow-lg"
+              whileHover={{ scale: 1.1, rotate: 5 }}
+              transition={{ type: "spring", stiffness: 400 }}
+            >
+              <span className="font-display font-bold text-primary-foreground text-lg">
+                {testimonial.author.charAt(0)}
+              </span>
+            </motion.div>
+            <div>
+              <cite className="not-italic font-sans font-semibold text-foreground text-lg" itemProp="author">
+                {testimonial.author}
+              </cite>
+              {testimonial.role && (
+                <p className="text-sm text-primary font-medium">{testimonial.role}</p>
+              )}
+            </div>
+          </footer>
+        </blockquote>
+
+        {/* Rating for schema */}
+        <div itemProp="reviewRating" itemScope itemType="https://schema.org/Rating" className="sr-only">
+          <meta itemProp="ratingValue" content="5" />
+          <meta itemProp="bestRating" content="5" />
+        </div>
+      </motion.div>
     </motion.article>
   );
 }
@@ -117,6 +196,8 @@ function TestimonialCard({ testimonial, index }: { testimonial: Testimonial; ind
 export default function Testimonials() {
   const headerRef = useRef(null);
   const isHeaderInView = useInView(headerRef, { once: true, amount: 0.5 });
+  const statsRef = useRef(null);
+  const isStatsInView = useInView(statsRef, { once: true, amount: 0.5 });
 
   // Add structured data for SEO
   useEffect(() => {
@@ -182,6 +263,12 @@ export default function Testimonials() {
     }
   };
 
+  const stats = [
+    { value: "100%", label: "Client Satisfaction" },
+    { value: "5", label: "Average Rating", isStar: true },
+    { value: "50+", label: "Projects Completed" }
+  ];
+
   return (
     <div className="min-h-screen">
       <SEO
@@ -193,16 +280,54 @@ export default function Testimonials() {
 
       <Navbar />
 
-      {/* Hero Section */}
-      <section className="pt-32 pb-12 md:pt-40 md:pb-16 bg-background">
-        <div ref={headerRef} className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      {/* Hero Section with gradient background */}
+      <section className="pt-32 pb-16 md:pt-40 md:pb-20 bg-gradient-to-b from-primary/5 via-accent/10 to-background relative overflow-hidden">
+        {/* Animated background shapes */}
+        <motion.div
+          className="absolute top-20 left-10 w-64 h-64 rounded-full bg-primary/5 blur-3xl"
+          animate={{
+            x: [0, 30, 0],
+            y: [0, -20, 0],
+          }}
+          transition={{
+            duration: 8,
+            repeat: Infinity,
+            ease: "easeInOut"
+          }}
+        />
+        <motion.div
+          className="absolute bottom-10 right-10 w-96 h-96 rounded-full bg-accent/10 blur-3xl"
+          animate={{
+            x: [0, -40, 0],
+            y: [0, 30, 0],
+          }}
+          transition={{
+            duration: 10,
+            repeat: Infinity,
+            ease: "easeInOut"
+          }}
+        />
+
+        <div ref={headerRef} className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+          <motion.div
+            className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full mb-6"
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={isHeaderInView ? { opacity: 1, scale: 1 } : {}}
+            transition={{ duration: 0.5 }}
+          >
+            <Star className="w-4 h-4 fill-primary" />
+            <span className="font-medium text-sm">5-Star Reviews</span>
+          </motion.div>
+
           <motion.h1
             className="font-display font-bold text-4xl md:text-5xl lg:text-6xl text-foreground mb-6"
             variants={headerVariants}
             initial="hidden"
             animate={isHeaderInView ? "visible" : "hidden"}
           >
-            What Our Clients Say
+            What Our{" "}
+            <span className="text-primary">Clients</span>{" "}
+            Say
           </motion.h1>
           <motion.p
             className="font-sans text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto"
@@ -215,6 +340,35 @@ export default function Testimonials() {
         </div>
       </section>
 
+      {/* Stats Section */}
+      <section ref={statsRef} className="py-12 bg-primary text-primary-foreground">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-3 gap-8 text-center">
+            {stats.map((stat, index) => (
+              <motion.div
+                key={stat.label}
+                initial={{ opacity: 0, y: 20 }}
+                animate={isStatsInView ? { opacity: 1, y: 0 } : {}}
+                transition={{ delay: index * 0.15, duration: 0.5 }}
+              >
+                <motion.div
+                  className="font-display font-bold text-3xl md:text-4xl lg:text-5xl mb-2 flex items-center justify-center gap-1"
+                  initial={{ scale: 0.5 }}
+                  animate={isStatsInView ? { scale: 1 } : {}}
+                  transition={{ delay: index * 0.15 + 0.2, type: "spring", stiffness: 200 }}
+                >
+                  {stat.value}
+                  {stat.isStar && <Star className="w-8 h-8 md:w-10 md:h-10 fill-primary-foreground" />}
+                </motion.div>
+                <div className="font-sans text-sm md:text-base text-primary-foreground/80">
+                  {stat.label}
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Logo Banner */}
       <LogoBanner
         logos={clientLogos}
@@ -223,7 +377,7 @@ export default function Testimonials() {
       />
 
       {/* Testimonials Grid */}
-      <section className="py-12 md:py-16 lg:py-20 bg-background">
+      <section className="py-16 md:py-20 lg:py-24 bg-gradient-to-b from-background via-accent/5 to-background">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
             {testimonials.map((testimonial, index) => (
