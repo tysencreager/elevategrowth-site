@@ -18,15 +18,21 @@ import ctaImage from "@assets/cta_background.webp";
 import ctaImage768 from "@assets/cta_background_768.webp";
 
 const clientLogos = [
-  { src: "https://i.postimg.cc/Hn6YV0GB/Dial_In_Logo_png.png", alt: "Dial In" },
-  { src: "https://i.postimg.cc/BbFyfGT5/1.png", alt: "Client Logo" },
-  { src: "https://i.postimg.cc/PrkVv9zt/7.png", alt: "Client Logo" },
-  { src: "https://i.postimg.cc/PrhK5ZTf/So_Crystal_Designs_Horizontal_Logo.png", alt: "So Crystal Designs" },
-  { src: "https://i.postimg.cc/rwZ9jPW9/white_True_Partner_logo.png", alt: "True Partner" },
-  { src: "https://i.postimg.cc/kGZnf9JC/3e5c0d_91aae8e3345e442fb309b3eac35ebca4_mv2.png", alt: "Client Logo" },
-  { src: "https://i.postimg.cc/QCPX0s8j/3e5c0d_d20fbb27914a4eea89bf638baf4c35f7_mv2.png", alt: "Client Logo" },
-  { src: "https://i.postimg.cc/90SWJVW6/3e5c0d_d34f81ec9fce437f8b2e8b32eb8306c5_mv2.png", alt: "Client Logo" },
-  { src: "https://i.postimg.cc/90SWJVmH/images_(5).png", alt: "Client Logo" }
+  { src: "https://i.postimg.cc/3N6Kn78Y/Dial_In_Logo_png.png", alt: "Dial In" },
+  { src: "https://i.postimg.cc/8FCq8ydW/1.png", alt: "Client Logo" },
+  { src: "https://i.postimg.cc/xkdWrsGN/2.png", alt: "Client Logo" },
+  { src: "https://i.postimg.cc/hJGHFC8m/3.png", alt: "Client Logo" },
+  { src: "https://i.postimg.cc/QBMRL6gT/4.png", alt: "Client Logo" },
+  { src: "https://i.postimg.cc/94fv3xPy/5.png", alt: "Client Logo" },
+  { src: "https://i.postimg.cc/d7SgJ8n3/6.png", alt: "Client Logo" },
+  { src: "https://i.postimg.cc/p913PDky/7.png", alt: "Client Logo" },
+  { src: "https://i.postimg.cc/KKYdX97n/8.png", alt: "Client Logo" },
+  { src: "https://i.postimg.cc/qtZWp8Qz/9.png", alt: "Client Logo" },
+  { src: "https://i.postimg.cc/p913PDk5/10.png", alt: "Client Logo" },
+  { src: "https://i.postimg.cc/CZ69wjJf/11.png", alt: "Client Logo" },
+  { src: "https://i.postimg.cc/Lq0Gmzv1/12.png", alt: "Client Logo" },
+  { src: "https://i.postimg.cc/d7SgJ8nd/13.png", alt: "Client Logo" },
+  { src: "https://i.postimg.cc/f3g1Mx5m/14.png", alt: "Client Logo" }
 ];
 
 const testimonials = [

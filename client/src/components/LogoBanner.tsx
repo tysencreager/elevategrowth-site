@@ -114,11 +114,10 @@ export default function LogoBanner({ logos, title, subtitle }: LogoBannerProps) 
                       alt={logo.alt}
                       loading="lazy"
                       decoding="async"
-                      className="h-10 md:h-14 w-auto max-w-[120px] md:max-w-[160px] object-contain transition-all duration-300 hover:scale-110"
+                      className="h-10 md:h-14 w-auto max-w-[120px] md:max-w-[160px] object-contain transition-all duration-300 opacity-90 hover:opacity-100 hover:scale-110"
                       style={{
                         maxHeight: '56px',
-                        mixBlendMode: 'multiply',
-                        filter: 'contrast(1.1) saturate(0.9)',
+                        filter: 'brightness(0) invert(1)',
                       }}
                     />
                   </div>
