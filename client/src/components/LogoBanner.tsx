@@ -34,7 +34,7 @@ export default function LogoBanner({ logos, title, subtitle }: LogoBannerProps) 
   return (
     <section
       ref={sectionRef}
-      className="py-12 md:py-16 lg:py-20 bg-background overflow-hidden"
+      className="py-12 md:py-16 lg:py-20 bg-gradient-to-b from-primary/5 via-primary/10 to-primary/5 overflow-hidden border-y border-primary/10"
       aria-label="Trusted by these companies"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -61,9 +61,9 @@ export default function LogoBanner({ logos, title, subtitle }: LogoBannerProps) 
 
       {/* Infinite scrolling logo container */}
       <div className="relative">
-        {/* Gradient fade on edges */}
-        <div className="absolute left-0 top-0 bottom-0 w-16 md:w-32 bg-gradient-to-r from-background to-transparent z-10 pointer-events-none" />
-        <div className="absolute right-0 top-0 bottom-0 w-16 md:w-32 bg-gradient-to-l from-background to-transparent z-10 pointer-events-none" />
+        {/* Gradient fade on edges - matching teal background */}
+        <div className="absolute left-0 top-0 bottom-0 w-16 md:w-32 bg-gradient-to-r from-primary/10 to-transparent z-10 pointer-events-none" />
+        <div className="absolute right-0 top-0 bottom-0 w-16 md:w-32 bg-gradient-to-l from-primary/10 to-transparent z-10 pointer-events-none" />
 
         <motion.div
           className="flex items-center gap-12 md:gap-16 lg:gap-20"
@@ -82,9 +82,16 @@ export default function LogoBanner({ logos, title, subtitle }: LogoBannerProps) 
                   alt={logo.alt}
                   loading="lazy"
                   decoding="async"
-                  className="h-10 md:h-14 w-auto max-w-[120px] md:max-w-[160px] object-contain filter grayscale hover:grayscale-0 transition-all duration-300 opacity-70 hover:opacity-100"
+                  className="h-10 md:h-14 w-auto max-w-[120px] md:max-w-[160px] object-contain transition-all duration-300 opacity-80 hover:opacity-100 hover:scale-105"
                   style={{
                     maxHeight: '56px',
+                    filter: 'grayscale(100%) brightness(0.4) sepia(100%) hue-rotate(140deg) saturate(200%)',
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.filter = 'none';
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.filter = 'grayscale(100%) brightness(0.4) sepia(100%) hue-rotate(140deg) saturate(200%)';
                   }}
                 />
               </div>
