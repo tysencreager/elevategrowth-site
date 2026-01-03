@@ -74,7 +74,7 @@ export default function LogoBanner({ logos, title, subtitle }: LogoBannerProps) 
 
         {/* 3D Pop-up Banner */}
         <motion.div
-          className="relative bg-primary rounded-2xl md:rounded-3xl py-8 md:py-10 overflow-hidden"
+          className="relative bg-accent rounded-2xl md:rounded-3xl py-8 md:py-10 overflow-hidden"
           variants={bannerVariants}
           initial="hidden"
           animate={isInView ? "visible" : "hidden"}
@@ -99,8 +99,8 @@ export default function LogoBanner({ logos, title, subtitle }: LogoBannerProps) 
           {/* Logo scroll container */}
           <div className="relative">
             {/* Gradient fade on edges */}
-            <div className="absolute left-0 top-0 bottom-0 w-16 md:w-24 bg-gradient-to-r from-primary to-transparent z-10 pointer-events-none" />
-            <div className="absolute right-0 top-0 bottom-0 w-16 md:w-24 bg-gradient-to-l from-primary to-transparent z-10 pointer-events-none" />
+            <div className="absolute left-0 top-0 bottom-0 w-16 md:w-24 bg-gradient-to-r from-accent to-transparent z-10 pointer-events-none" />
+            <div className="absolute right-0 top-0 bottom-0 w-16 md:w-24 bg-gradient-to-l from-accent to-transparent z-10 pointer-events-none" />
 
             <div className="flex items-center gap-12 md:gap-16 lg:gap-20">
               <div className="flex items-center gap-12 md:gap-16 lg:gap-20 animate-scroll">
@@ -117,7 +117,6 @@ export default function LogoBanner({ logos, title, subtitle }: LogoBannerProps) 
                       className="h-10 md:h-14 w-auto max-w-[120px] md:max-w-[160px] object-contain transition-all duration-300 opacity-90 hover:opacity-100 hover:scale-110"
                       style={{
                         maxHeight: '56px',
-                        filter: 'brightness(0) invert(1)',
                       }}
                     />
                   </div>
