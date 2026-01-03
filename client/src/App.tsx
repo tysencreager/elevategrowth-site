@@ -29,6 +29,7 @@ const TermsAndConditions = lazy(() => import("@/pages/TermsAndConditions"));
 const SaltLakeCity = lazy(() => import("@/pages/SaltLakeCity"));
 const Blog = lazy(() => import("@/pages/Blog"));
 const BlogPost = lazy(() => import("@/pages/BlogPost"));
+const Testimonials = lazy(() => import("@/pages/Testimonials"));
 const NotFound = lazy(() => import("@/pages/not-found"));
 
 // Loading fallback component
@@ -53,6 +54,7 @@ function Router() {
         <Route path="/salt-lake-city" component={SaltLakeCity} />
         <Route path="/blog" component={Blog} />
         <Route path="/blog/:slug" component={BlogPost} />
+        <Route path="/testimonials" component={Testimonials} />
         <Route component={NotFound} />
       </Switch>
     </Suspense>
