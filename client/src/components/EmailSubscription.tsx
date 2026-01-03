@@ -15,7 +15,7 @@ export default function EmailSubscription() {
     setError("");
 
     try {
-      const response = await fetch("https://formspree.io/f/mkowrgng", {
+      const response = await fetch("/api/subscribe", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
