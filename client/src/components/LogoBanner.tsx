@@ -117,16 +117,8 @@ export default function LogoBanner({ logos, title, subtitle }: LogoBannerProps) 
                       className="h-10 md:h-14 w-auto max-w-[120px] md:max-w-[160px] object-contain transition-all duration-300 hover:scale-110"
                       style={{
                         maxHeight: '56px',
-                        filter: 'grayscale(100%) brightness(1.5) contrast(0.8)',
-                        opacity: 0.85,
-                      }}
-                      onMouseEnter={(e) => {
-                        e.currentTarget.style.filter = 'grayscale(0%) brightness(1) contrast(1)';
-                        e.currentTarget.style.opacity = '1';
-                      }}
-                      onMouseLeave={(e) => {
-                        e.currentTarget.style.filter = 'grayscale(100%) brightness(1.5) contrast(0.8)';
-                        e.currentTarget.style.opacity = '0.85';
+                        mixBlendMode: 'multiply',
+                        filter: 'contrast(1.1) saturate(0.9)',
                       }}
                     />
                   </div>
