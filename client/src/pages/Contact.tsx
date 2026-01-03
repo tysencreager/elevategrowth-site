@@ -33,8 +33,7 @@ export default function Contact() {
     setError("");
 
     try {
-      // Using Formspree for form submission (free tier)
-      const response = await fetch("https://formspree.io/f/xdkqqvak", {
+      const response = await fetch("/api/contact", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
