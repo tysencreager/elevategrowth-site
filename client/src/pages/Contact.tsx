@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
-import { Mail, Send, CheckCircle, Instagram } from "lucide-react";
+import { Mail, Send, CheckCircle, Instagram, Calendar } from "lucide-react";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -230,6 +230,35 @@ export default function Contact() {
                   marketing overhaul, we're here to help. Fill out the form and we'll respond within
                   24 hours to discuss your project.
                 </p>
+              </div>
+
+              {/* Book a Discovery Call CTA */}
+              <div className="bg-primary/5 border border-primary/20 rounded-xl p-6">
+                <div className="flex items-center gap-3 mb-3">
+                  <div className="w-10 h-10 bg-primary rounded-full flex items-center justify-center">
+                    <Calendar className="w-5 h-5 text-primary-foreground" />
+                  </div>
+                  <h3 className="font-display font-semibold text-gray-900">
+                    Ready to Talk?
+                  </h3>
+                </div>
+                <p className="font-serif text-gray-600 text-sm mb-4">
+                  Skip the form and book a free 30-minute discovery call directly on my calendar.
+                </p>
+                <Button
+                  asChild
+                  size="lg"
+                  className="w-full font-serif font-medium gap-2"
+                >
+                  <a
+                    href="https://calendly.com/tysencreager/30minutes"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <Calendar className="w-5 h-5" />
+                    Book a Discovery Call Now
+                  </a>
+                </Button>
               </div>
 
               <div className="space-y-4">
