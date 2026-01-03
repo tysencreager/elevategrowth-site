@@ -3,7 +3,8 @@ import Hero from "@/components/Hero";
 import ValueProp from "@/components/ValueProp";
 import Process, { Phone, Lightbulb, Rocket, TrendingUp } from "@/components/Process";
 import LeadMagnet from "@/components/LeadMagnet";
-import Testimonial from "@/components/Testimonial";
+import LogoBanner from "@/components/LogoBanner";
+import TestimonialCarousel from "@/components/TestimonialCarousel";
 import CTASection from "@/components/CTASection";
 import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
@@ -15,6 +16,42 @@ const heroImage768 = "/hero_bw_768.webp";
 import valueImage from "@assets/value_prop.webp";
 import ctaImage from "@assets/cta_background.webp";
 import ctaImage768 from "@assets/cta_background_768.webp";
+
+const clientLogos = [
+  { src: "https://i.postimg.cc/Hn6YV0GB/Dial_In_Logo_png.png", alt: "Dial In" },
+  { src: "https://i.postimg.cc/BbFyfGT5/1.png", alt: "Client Logo" },
+  { src: "https://i.postimg.cc/PrkVv9zt/7.png", alt: "Client Logo" },
+  { src: "https://i.postimg.cc/PrhK5ZTf/So_Crystal_Designs_Horizontal_Logo.png", alt: "So Crystal Designs" },
+  { src: "https://i.postimg.cc/rwZ9jPW9/white_True_Partner_logo.png", alt: "True Partner" },
+  { src: "https://i.postimg.cc/kGZnf9JC/3e5c0d_91aae8e3345e442fb309b3eac35ebca4_mv2.png", alt: "Client Logo" },
+  { src: "https://i.postimg.cc/QCPX0s8j/3e5c0d_d20fbb27914a4eea89bf638baf4c35f7_mv2.png", alt: "Client Logo" },
+  { src: "https://i.postimg.cc/90SWJVW6/3e5c0d_d34f81ec9fce437f8b2e8b32eb8306c5_mv2.png", alt: "Client Logo" },
+  { src: "https://i.postimg.cc/90SWJVmH/images_(5).png", alt: "Client Logo" }
+];
+
+const testimonials = [
+  {
+    quote: "Working with Tysen was seamless from start to finish. She quickly understood the vision for my brand and delivered thoughtful, strategic designs that aligned perfectly with my marketing goals. Her creativity and professionalism made the entire process easy and efficient. I'm so impressed with the final product!",
+    author: "Cassidy",
+    role: "Loan Officer"
+  },
+  {
+    quote: "My business has skyrocketed since Tysen (Elevate Growth Solutions) created my website. It's seriously SO stunning and seamless. Hire her! You will not regret it.",
+    author: "McKenzie M."
+  },
+  {
+    quote: "I have loved working with Tysen, she's incredible! If you need help with marketing, she's your gal!",
+    author: "Cassidy G."
+  },
+  {
+    quote: "So grateful Tysen built my site. I have no regrets hiring her, she has done an incredible job!",
+    author: "Jessica P."
+  },
+  {
+    quote: "From the most basic detail to the biggest detail in marketing a business and it being a success, Tysen doesn't shy away from any of it. Her confidence in you and your business gives a new growth within you and lights a fire under you that helps you succeed.",
+    author: "Abagail D."
+  }
+];
 
 export default function Home() {
   const processSteps = [
@@ -51,7 +88,7 @@ export default function Home() {
       <SchemaMarkup type="organization" />
       <SchemaMarkup type="localBusiness" />
       <Navbar />
-      
+
       <Hero
         backgroundImage={heroImage}
         imageSrcSet={`${heroImage768} 768w, ${heroImage} 1920w`}
@@ -61,31 +98,34 @@ export default function Home() {
         ctaHref="/services"
         isLCP={true}
       />
-      
+
+      {/* Logo Banner - Social proof right after hero */}
+      <LogoBanner
+        logos={clientLogos}
+        title="Trusted By Growing Businesses"
+      />
+
       <ValueProp
         image={valueImage}
         imageAlt="Professional working on laptop"
         title="You're Not Just Another Client. Your Business Deserves Marketing That Actually Works."
         description="Tired of being just a number at big agencies? At Elevate Growth Solutions, we're a boutique firm that gives every client the care and attention they deserve. We handle everything—web design, SEO, social media, branding, and ad campaigns—so you can save time, relieve stress, and focus on what you do best: running your business. Whether you're launching your first website or ready to scale with confidence, we're here to help you generate more leads and grow."
       />
-      
-      <Process 
+
+      <Process
         steps={processSteps}
         subtitle="A simple, proven approach to elevating your brand"
       />
-      
-      <LeadMagnet 
+
+      <LeadMagnet
         title="Free 90-Day Growth Starter Pack"
         description="Kickstart your marketing journey with our comprehensive growth checklist. Get actionable strategies, proven tactics, and expert tips to elevate your brand in the first 90 days—completely free."
         ctaText="Claim Your Free Pack"
       />
-      
-      <Testimonial
-        quote="Working with Tysen was seamless from start to finish. She quickly understood the vision for my brand and delivered thoughtful, strategic designs that aligned perfectly with my marketing goals. Her creativity and professionalism made the entire process easy and efficient. I'm so impressed with the final product!"
-        author="Cassidy"
-        role="Loan Officer"
-      />
-      
+
+      {/* Testimonial Carousel - Rotating testimonials */}
+      <TestimonialCarousel testimonials={testimonials} autoPlayInterval={6000} />
+
       <CTASection
         backgroundImage={ctaImage}
         imageSrcSet={`${ctaImage768} 768w, ${ctaImage} 1920w`}
@@ -93,7 +133,7 @@ export default function Home() {
         ctaText="Contact Us"
         ctaHref="mailto:tysen@elevategrowth.solutions"
       />
-      
+
       <Footer />
     </div>
   );
