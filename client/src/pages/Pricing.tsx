@@ -301,15 +301,15 @@ function PricingCTA() {
         >
           <div className="flex items-center gap-2">
             <Check className="w-5 h-5 text-white" />
-            <span className="font-serif text-sm">No contracts required</span>
-          </div>
-          <div className="flex items-center gap-2">
-            <Check className="w-5 h-5 text-white" />
             <span className="font-serif text-sm">Free initial consultation</span>
           </div>
           <div className="flex items-center gap-2">
             <Check className="w-5 h-5 text-white" />
             <span className="font-serif text-sm">Transparent pricing</span>
+          </div>
+          <div className="flex items-center gap-2">
+            <Check className="w-5 h-5 text-white" />
+            <span className="font-serif text-sm">Personalized service</span>
           </div>
         </motion.div>
       </motion.div>
