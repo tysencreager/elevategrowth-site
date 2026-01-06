@@ -20,6 +20,7 @@ export default function Navbar() {
   const navLinks = [
     { href: "/", label: "Home", testId: "link-nav-home" },
     { href: "/services", label: "Services", testId: "link-nav-services" },
+    { href: "/pricing", label: "Pricing", testId: "link-nav-pricing" },
     { href: "/behind-elevate", label: "Behind Elevate", testId: "link-nav-behind-elevate" },
     { href: "/testimonials", label: "Testimonials", testId: "link-nav-testimonials" },
     { href: "/blog", label: "Blog", testId: "link-nav-blog" }
@@ -215,6 +216,16 @@ export default function Navbar() {
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   Services
+                </Link>
+              </motion.div>
+              <motion.div variants={mobileItemVariants}>
+                <Link
+                  href="/pricing"
+                  data-testid="link-mobile-pricing"
+                  className="block font-serif font-medium text-foreground hover:text-primary py-3 min-h-[48px]"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  Pricing
                 </Link>
               </motion.div>
               <motion.div variants={mobileItemVariants}>
