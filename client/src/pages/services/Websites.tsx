@@ -123,10 +123,6 @@ export default function Websites() {
         {
           question: "What if I already have a website?",
           answer: "I can either redesign your existing site or build something completely new. We'll discuss what makes the most sense for your goals and budget."
-        },
-        {
-          question: "Do you help with domain and email setup?",
-          answer: "Yes! I can help you secure a domain name and set up professional email addresses as part of the project."
         }
       ]}
     />
