@@ -4,7 +4,7 @@ import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
 import { Button } from "@/components/ui/button";
 import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
+import { useRef, ReactNode } from "react";
 import { Check, ArrowRight, Sparkles } from "lucide-react";
 import { Link } from "wouter";
 
@@ -57,6 +57,9 @@ interface ServicePageLayoutProps {
     question: string;
     answer: string;
   }[];
+
+  // Optional custom content to render before CTA
+  children?: ReactNode;
 }
 
 function PricingCard({ tier, index }: { tier: PricingTier; index: number }) {
@@ -144,7 +147,8 @@ export default function ServicePageLayout({
   pricing,
   pricingSubtitle = "Transparent pricing with no hidden fees. Choose the option that fits your needs.",
   process,
-  faqs
+  faqs,
+  children
 }: ServicePageLayoutProps) {
   const featuresRef = useRef(null);
   const isFeaturesInView = useInView(featuresRef, { once: true, amount: 0.2 });
@@ -361,6 +365,9 @@ export default function ServicePageLayout({
           </div>
         </section>
       )}
+
+      {/* Custom content (portfolio, etc.) */}
+      {children}
 
       {/* Enhanced CTA Section */}
       <section className="relative py-20 md:py-28 lg:py-32 overflow-hidden bg-gradient-to-br from-primary via-primary to-[hsl(191,60%,25%)]">
