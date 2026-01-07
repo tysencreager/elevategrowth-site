@@ -7,6 +7,9 @@ import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
+import { Button } from "@/components/ui/button";
+import { Link } from "wouter";
+import { MessageCircle } from "lucide-react";
 // Optimized WebP images with responsive sizes
 import servicesHero from "@assets/services_hero_team_1920.webp";
 import servicesHero768 from "@assets/services_hero_team_768.webp";
@@ -120,6 +123,42 @@ export default function Services() {
       </div>
 
       <ServicesGrid services={services} />
+
+      {/* Don't see your service section */}
+      <section className="py-16 md:py-20 bg-gradient-to-b from-background to-primary/5">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.5 }}
+            transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+          >
+            <div className="inline-flex items-center justify-center w-16 h-16 bg-primary/10 rounded-full mb-6">
+              <MessageCircle className="w-8 h-8 text-primary" />
+            </div>
+            <h3 className="font-display font-semibold text-2xl md:text-3xl text-foreground mb-4">
+              Don't see the service you need?
+            </h3>
+            <p className="font-serif text-lg text-muted-foreground mb-8 max-w-2xl mx-auto leading-relaxed">
+              Just because it's not listed doesn't mean I can't help. With expertise across all marketing disciplines, I can likely tackle whatever challenge you're facing. Let's talk about what you need.
+            </p>
+            <Link href="/contact">
+              <motion.div
+                whileHover={{ scale: 1.03 }}
+                whileTap={{ scale: 0.98 }}
+                className="inline-block"
+              >
+                <Button
+                  size="lg"
+                  className="font-sans font-semibold text-base px-8 py-6"
+                >
+                  Ask About Your Project
+                </Button>
+              </motion.div>
+            </Link>
+          </motion.div>
+        </div>
+      </section>
 
       <FAQ
         items={faqs}

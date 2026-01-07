@@ -18,6 +18,7 @@ import searchImg from "@assets/stock_images/black_and_white_mode_319eff6f.jpg";
 import socialImg from "@assets/stock_images/black_and_white_prof_325156c7.jpg";
 import contentImg from "@assets/stock_images/black_and_white_busi_73b6a31c.jpg";
 import advertisingImg from "@assets/stock_images/modern_marketing_and_a25f67ec.jpg";
+import brandingImg from "@assets/stock_images/professional_busines_e0d6a108.jpg";
 
 interface PricingCardProps {
   image: string;
@@ -360,6 +361,16 @@ export default function Pricing() {
       featured: false
     },
     {
+      image: brandingImg,
+      title: "Branding",
+      description: "Build a memorable brand identity that connects with your audience and sets you apart from competitors.",
+      items: [
+        { label: "Brand Launch (logo suite, colors, templates)", price: "$999" },
+        { label: "Brand Authority (full identity system + collateral)", price: "$3,995" }
+      ],
+      note: "Brand Launch includes logo suite, color palette, brand board, social templates, and business card design. Brand Authority adds competitor audit, brand voice guide, custom patterns, iconography, brand bible, and your choice of 3 collateral pieces."
+    },
+    {
       image: searchImg,
       title: "Search & Local Presence",
       description: "Get found where it matters. Dominate local search and own your Google presence.",
@@ -438,6 +449,32 @@ export default function Pricing() {
           "price": "80",
           "priceCurrency": "USD",
           "unitText": "per month"
+        }
+      },
+      {
+        "@type": "Offer",
+        "name": "Brand Launch Package",
+        "description": "Brand strategy, logo suite, color palette, brand board, social media templates, and business card design",
+        "price": "999",
+        "priceCurrency": "USD",
+        "priceSpecification": {
+          "@type": "UnitPriceSpecification",
+          "price": "999",
+          "priceCurrency": "USD",
+          "unitText": "one-time"
+        }
+      },
+      {
+        "@type": "Offer",
+        "name": "Brand Authority Package",
+        "description": "Comprehensive branding with competitor audit, brand voice guide, full visual identity system, brand bible, and custom collateral",
+        "price": "3995",
+        "priceCurrency": "USD",
+        "priceSpecification": {
+          "@type": "UnitPriceSpecification",
+          "price": "3995",
+          "priceCurrency": "USD",
+          "unitText": "one-time"
         }
       },
       {
