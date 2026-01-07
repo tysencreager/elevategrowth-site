@@ -390,11 +390,12 @@ export default function Pricing() {
     },
     {
       image: advertisingImg,
-      title: "Advertising",
-      description: "Strategic ad management across Google and Meta. Data-driven campaigns that deliver ROI.",
+      title: "Ad Campaign Management",
+      description: "Strategic ad management across Google, Meta, and other platforms. Data-driven campaigns tailored to your goals and budget.",
       items: [
-        { label: "Per platform (up to 3 campaigns)", price: "$600/mo" }
-      ]
+        { label: "Custom pricing based on your needs", price: "Inquire" }
+      ],
+      note: "Pricing varies based on platform, campaign size, ad spend, and complexity. Let's discuss your goals to create a custom quote."
     }
   ];
 
@@ -493,15 +494,12 @@ export default function Pricing() {
       },
       {
         "@type": "Offer",
-        "name": "Advertising Management",
-        "description": "Google and Meta ad campaign management",
-        "price": "600",
-        "priceCurrency": "USD",
+        "name": "Ad Campaign Management",
+        "description": "Strategic ad campaign management across Google, Meta, and other platforms with custom pricing",
         "priceSpecification": {
-          "@type": "UnitPriceSpecification",
-          "price": "600",
+          "@type": "PriceSpecification",
           "priceCurrency": "USD",
-          "unitText": "per platform per month"
+          "description": "Custom pricing based on platform, campaign size, ad spend, and complexity"
         }
       }
     ]
