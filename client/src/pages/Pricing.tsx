@@ -354,10 +354,10 @@ export default function Pricing() {
       title: "Websites",
       description: "Custom-coded websites built in days, not months. Fast, responsive, and designed to convert.",
       items: [
-        { label: "One-page sites", price: "From $1,299" },
+        { label: "Custom built websites", price: "From $1,299" },
         { label: "Hosting & maintenance", price: "$80/mo" }
       ],
-      note: "Hosting includes managed hosting, 1 hour of monthly content edits, and uptime monitoring.",
+      note: "Single-page sites start at $1,299. Price increases with additional pages and functionality. Hosting includes 1 hour of monthly content edits and uptime monitoring.",
       featured: false
     },
     {
@@ -427,8 +427,8 @@ export default function Pricing() {
     "itemListElement": [
       {
         "@type": "Offer",
-        "name": "Custom Website Design",
-        "description": "One-page custom-coded websites built in days",
+        "name": "Custom Built Website",
+        "description": "Custom-coded websites starting at $1,299 for single-page sites, with pricing increasing for additional pages and functionality",
         "price": "1299",
         "priceCurrency": "USD",
         "priceSpecification": {

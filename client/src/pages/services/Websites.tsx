@@ -78,9 +78,9 @@ export default function Websites() {
       // Pricing
       pricing={[
         {
-          name: "One-Page Website",
+          name: "Custom Built Website",
           price: "From $1,299",
-          description: "Perfect for small businesses, landing pages, or getting started online.",
+          description: "Single-page sites start at $1,299. Price increases with additional pages and functionality.",
           features: [
             "Custom responsive design",
             "Mobile-optimized",
@@ -88,8 +88,7 @@ export default function Websites() {
             "Basic SEO setup",
             "Fast hosting included (first month)",
             "2-3 week turnaround"
-          ],
-          note: "Multi-page sites quoted based on scope and complexity."
+          ]
         },
         {
           name: "Hosting & Maintenance",
