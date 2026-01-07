@@ -18,6 +18,7 @@ import searchImg from "@assets/stock_images/black_and_white_mode_319eff6f.jpg";
 import socialImg from "@assets/stock_images/black_and_white_prof_325156c7.jpg";
 import contentImg from "@assets/stock_images/black_and_white_busi_73b6a31c.jpg";
 import advertisingImg from "@assets/stock_images/modern_marketing_and_a25f67ec.jpg";
+import brandingImg from "@assets/stock_images/professional_busines_e0d6a108.jpg";
 
 interface PricingCardProps {
   image: string;
@@ -353,11 +354,21 @@ export default function Pricing() {
       title: "Websites",
       description: "Custom-coded websites built in days, not months. Fast, responsive, and designed to convert.",
       items: [
-        { label: "One-page sites", price: "From $1,299" },
+        { label: "Custom built websites", price: "From $1,299" },
         { label: "Hosting & maintenance", price: "$80/mo" }
       ],
-      note: "Hosting includes managed hosting, 1 hour of monthly content edits, and uptime monitoring.",
+      note: "Single-page sites start at $1,299. Price increases with additional pages and functionality. Hosting includes 1 hour of monthly content edits and uptime monitoring.",
       featured: false
+    },
+    {
+      image: brandingImg,
+      title: "Branding",
+      description: "Build a memorable brand identity that connects with your audience and sets you apart from competitors.",
+      items: [
+        { label: "Brand Launch (logo suite, colors, templates)", price: "$999" },
+        { label: "Brand Authority (full identity system + collateral)", price: "$3,995" }
+      ],
+      note: "Brand Launch includes logo suite, color palette, brand board, social templates, and business card design. Brand Authority adds competitor audit, brand voice guide, custom patterns, iconography, brand bible, and your choice of 3 collateral pieces."
     },
     {
       image: searchImg,
@@ -390,11 +401,12 @@ export default function Pricing() {
     },
     {
       image: advertisingImg,
-      title: "Advertising",
-      description: "Strategic ad management across Google and Meta. Data-driven campaigns that deliver ROI.",
+      title: "Ad Campaign Management",
+      description: "Strategic ad management across Google, Meta, and other platforms. Data-driven campaigns tailored to your goals and budget.",
       items: [
-        { label: "Per platform (up to 3 campaigns)", price: "$600/mo" }
-      ]
+        { label: "Custom pricing based on your needs", price: "Inquire" }
+      ],
+      note: "Pricing varies based on platform, campaign size, ad spend, and complexity. Let's discuss your goals to create a custom quote."
     }
   ];
 
@@ -415,8 +427,8 @@ export default function Pricing() {
     "itemListElement": [
       {
         "@type": "Offer",
-        "name": "Custom Website Design",
-        "description": "One-page custom-coded websites built in days",
+        "name": "Custom Built Website",
+        "description": "Custom-coded websites starting at $1,299 for single-page sites, with pricing increasing for additional pages and functionality",
         "price": "1299",
         "priceCurrency": "USD",
         "priceSpecification": {
@@ -437,6 +449,32 @@ export default function Pricing() {
           "price": "80",
           "priceCurrency": "USD",
           "unitText": "per month"
+        }
+      },
+      {
+        "@type": "Offer",
+        "name": "Brand Launch Package",
+        "description": "Brand strategy, logo suite, color palette, brand board, social media templates, and business card design",
+        "price": "999",
+        "priceCurrency": "USD",
+        "priceSpecification": {
+          "@type": "UnitPriceSpecification",
+          "price": "999",
+          "priceCurrency": "USD",
+          "unitText": "one-time"
+        }
+      },
+      {
+        "@type": "Offer",
+        "name": "Brand Authority Package",
+        "description": "Comprehensive branding with competitor audit, brand voice guide, full visual identity system, brand bible, and custom collateral",
+        "price": "3995",
+        "priceCurrency": "USD",
+        "priceSpecification": {
+          "@type": "UnitPriceSpecification",
+          "price": "3995",
+          "priceCurrency": "USD",
+          "unitText": "one-time"
         }
       },
       {
@@ -493,15 +531,12 @@ export default function Pricing() {
       },
       {
         "@type": "Offer",
-        "name": "Advertising Management",
-        "description": "Google and Meta ad campaign management",
-        "price": "600",
-        "priceCurrency": "USD",
+        "name": "Ad Campaign Management",
+        "description": "Strategic ad campaign management across Google, Meta, and other platforms with custom pricing",
         "priceSpecification": {
-          "@type": "UnitPriceSpecification",
-          "price": "600",
+          "@type": "PriceSpecification",
           "priceCurrency": "USD",
-          "unitText": "per platform per month"
+          "description": "Custom pricing based on platform, campaign size, ad spend, and complexity"
         }
       }
     ]

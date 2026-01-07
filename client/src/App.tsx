@@ -31,6 +31,15 @@ const Blog = lazy(() => import("@/pages/Blog"));
 const BlogPost = lazy(() => import("@/pages/BlogPost"));
 const Testimonials = lazy(() => import("@/pages/Testimonials"));
 const Pricing = lazy(() => import("@/pages/Pricing"));
+
+// Individual service pages
+const ServiceWebsites = lazy(() => import("@/pages/services/Websites"));
+const ServiceBranding = lazy(() => import("@/pages/services/Branding"));
+const ServiceSEO = lazy(() => import("@/pages/services/SEO"));
+const ServiceSocialMedia = lazy(() => import("@/pages/services/SocialMedia"));
+const ServiceContentCreation = lazy(() => import("@/pages/services/ContentCreation"));
+const ServiceAdCampaigns = lazy(() => import("@/pages/services/AdCampaigns"));
+
 const NotFound = lazy(() => import("@/pages/not-found"));
 
 // Loading fallback component
@@ -48,6 +57,12 @@ function Router() {
       <Switch>
         <Route path="/" component={Home} />
         <Route path="/services" component={Services} />
+        <Route path="/services/websites" component={ServiceWebsites} />
+        <Route path="/services/branding" component={ServiceBranding} />
+        <Route path="/services/seo" component={ServiceSEO} />
+        <Route path="/services/social-media" component={ServiceSocialMedia} />
+        <Route path="/services/content-creation" component={ServiceContentCreation} />
+        <Route path="/services/ad-campaigns" component={ServiceAdCampaigns} />
         <Route path="/behind-elevate" component={BehindElevate} />
         <Route path="/contact" component={Contact} />
         <Route path="/privacy-policy" component={PrivacyPolicy} />

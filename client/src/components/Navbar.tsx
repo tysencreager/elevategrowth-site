@@ -1,13 +1,37 @@
 import { Link } from "wouter";
-import { useState, useEffect } from "react";
-import { Menu, X } from "lucide-react";
+import { useState, useEffect, useRef } from "react";
+import { Menu, X, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { motion, AnimatePresence } from "framer-motion";
 import logo from "@assets/EGS LOGO Full_1760211529668.png";
 
+const serviceSubLinks = [
+  { href: "/services", label: "All Services" },
+  { href: "/services/websites", label: "Websites" },
+  { href: "/services/branding", label: "Branding" },
+  { href: "/services/seo", label: "SEO & Local Search" },
+  { href: "/services/social-media", label: "Social Media" },
+  { href: "/services/content-creation", label: "Content Creation" },
+  { href: "/services/ad-campaigns", label: "Ad Campaigns" }
+];
+
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isServicesOpen, setIsServicesOpen] = useState(false);
+  const [isMobileServicesOpen, setIsMobileServicesOpen] = useState(false);
+  const servicesRef = useRef<HTMLDivElement>(null);
+
+  // Close services dropdown when clicking outside
+  useEffect(() => {
+    function handleClickOutside(event: MouseEvent) {
+      if (servicesRef.current && !servicesRef.current.contains(event.target as Node)) {
+        setIsServicesOpen(false);
+      }
+    }
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -19,12 +43,25 @@ export default function Navbar() {
 
   const navLinks = [
     { href: "/", label: "Home", testId: "link-nav-home" },
-    { href: "/services", label: "Services", testId: "link-nav-services" },
+    { href: "/services", label: "Services", testId: "link-nav-services", hasDropdown: true },
     { href: "/pricing", label: "Pricing", testId: "link-nav-pricing" },
     { href: "/behind-elevate", label: "Behind Elevate", testId: "link-nav-behind-elevate" },
     { href: "/testimonials", label: "Testimonials", testId: "link-nav-testimonials" },
     { href: "/blog", label: "Blog", testId: "link-nav-blog" }
   ];
+
+  const dropdownVariants = {
+    hidden: { opacity: 0, y: -10, scale: 0.95 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      scale: 1,
+      transition: {
+        duration: 0.2,
+        ease: [0.22, 1, 0.36, 1]
+      }
+    }
+  };
 
   const mobileMenuVariants = {
     hidden: {
@@ -98,26 +135,71 @@ export default function Navbar() {
 
           <div className="hidden md:flex items-center gap-8">
             {navLinks.map((link, index) => (
-              <motion.div
-                key={link.href}
-                initial={{ opacity: 0, y: -20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.1 + index * 0.05, duration: 0.4 }}
-                variants={linkHoverVariants}
-                whileHover="hover"
-              >
-                <Link
-                  href={link.href}
-                  data-testid={link.testId}
-                  className="font-serif font-medium transition-colors hover:text-primary text-foreground relative group"
+              link.hasDropdown ? (
+                <motion.div
+                  key={link.href}
+                  ref={servicesRef}
+                  initial={{ opacity: 0, y: -20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.1 + index * 0.05, duration: 0.4 }}
+                  className="relative"
+                  onMouseEnter={() => setIsServicesOpen(true)}
+                  onMouseLeave={() => setIsServicesOpen(false)}
                 >
-                  {link.label}
-                  <motion.span
-                    className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary group-hover:w-full transition-all duration-300"
-                    layoutId="underline"
-                  />
-                </Link>
-              </motion.div>
+                  <button
+                    data-testid={link.testId}
+                    className="font-serif font-medium transition-colors hover:text-primary text-foreground relative group flex items-center gap-1"
+                    onClick={() => setIsServicesOpen(!isServicesOpen)}
+                  >
+                    {link.label}
+                    <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${isServicesOpen ? 'rotate-180' : ''}`} />
+                  </button>
+
+                  <AnimatePresence>
+                    {isServicesOpen && (
+                      <motion.div
+                        variants={dropdownVariants}
+                        initial="hidden"
+                        animate="visible"
+                        exit="hidden"
+                        className="absolute top-full left-0 mt-2 w-56 bg-primary rounded-lg shadow-xl shadow-primary/20 py-2 z-50"
+                      >
+                        {serviceSubLinks.map((subLink) => (
+                          <Link
+                            key={subLink.href}
+                            href={subLink.href}
+                            className="block px-4 py-2.5 font-serif text-sm text-white/90 hover:bg-white/20 hover:text-white transition-colors"
+                            onClick={() => setIsServicesOpen(false)}
+                          >
+                            {subLink.label}
+                          </Link>
+                        ))}
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </motion.div>
+              ) : (
+                <motion.div
+                  key={link.href}
+                  initial={{ opacity: 0, y: -20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.1 + index * 0.05, duration: 0.4 }}
+                  variants={linkHoverVariants}
+                  whileHover="hover"
+                >
+                  <Link
+                    href={link.href}
+                    data-testid={link.testId}
+                    className="font-serif font-medium transition-colors hover:text-primary text-foreground relative group"
+                  >
+                    {link.label}
+                    <motion.span
+                      className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary group-hover:w-full transition-all duration-300"
+                      layoutId="underline"
+                    />
+                  </Link>
+                </motion.div>
+              )
             ))}
             <motion.div
               initial={{ opacity: 0, y: -20 }}
@@ -209,14 +291,39 @@ export default function Navbar() {
                 </Link>
               </motion.div>
               <motion.div variants={mobileItemVariants}>
-                <Link
-                  href="/services"
+                <button
                   data-testid="link-mobile-services"
-                  className="block font-serif font-medium text-foreground hover:text-primary py-3 min-h-[48px]"
-                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="w-full flex items-center justify-between font-serif font-medium text-foreground hover:text-primary py-3 min-h-[48px]"
+                  onClick={() => setIsMobileServicesOpen(!isMobileServicesOpen)}
                 >
                   Services
-                </Link>
+                  <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${isMobileServicesOpen ? 'rotate-180' : ''}`} />
+                </button>
+                <AnimatePresence>
+                  {isMobileServicesOpen && (
+                    <motion.div
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: "auto", opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      transition={{ duration: 0.2 }}
+                      className="overflow-hidden pl-4 border-l-2 border-primary/20 ml-2"
+                    >
+                      {serviceSubLinks.map((subLink) => (
+                        <Link
+                          key={subLink.href}
+                          href={subLink.href}
+                          className="block font-serif text-sm text-muted-foreground hover:text-primary py-2.5"
+                          onClick={() => {
+                            setIsMobileMenuOpen(false);
+                            setIsMobileServicesOpen(false);
+                          }}
+                        >
+                          {subLink.label}
+                        </Link>
+                      ))}
+                    </motion.div>
+                  )}
+                </AnimatePresence>
               </motion.div>
               <motion.div variants={mobileItemVariants}>
                 <Link

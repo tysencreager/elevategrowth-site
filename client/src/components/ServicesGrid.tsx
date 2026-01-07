@@ -1,10 +1,13 @@
 import { Card, CardHeader, CardContent } from "@/components/ui/card";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
+import { Link } from "wouter";
+import { ArrowRight } from "lucide-react";
 
 interface Service {
   title: string;
   description: string;
+  href?: string;
 }
 
 interface ServicesGridProps {
@@ -79,18 +82,10 @@ export default function ServicesGrid({ services }: ServicesGridProps) {
           initial="hidden"
           animate={isInView ? "visible" : "hidden"}
         >
-          {services.map((service, index) => (
-            <motion.div
-              key={index}
-              variants={cardVariants}
-              whileHover={{
-                y: -8,
-                scale: 1.02,
-                transition: { duration: 0.3, ease: [0.22, 1, 0.36, 1] }
-              }}
-            >
+          {services.map((service, index) => {
+            const cardContent = (
               <Card
-                className="h-full hover-elevate transition-all duration-300 overflow-hidden group"
+                className="h-full hover-elevate transition-all duration-300 overflow-hidden group cursor-pointer"
                 data-testid={`service-${index}`}
               >
                 <CardHeader className="pb-3">
@@ -110,10 +105,38 @@ export default function ServicesGrid({ services }: ServicesGridProps) {
                   >
                     {service.description}
                   </motion.p>
+                  {service.href && (
+                    <motion.div
+                      className="flex items-center gap-2 mt-4 text-primary font-sans font-medium text-sm group-hover:gap-3 transition-all duration-300"
+                      variants={descriptionVariants}
+                    >
+                      Learn more <ArrowRight className="w-4 h-4" />
+                    </motion.div>
+                  )}
                 </CardContent>
               </Card>
-            </motion.div>
-          ))}
+            );
+
+            return (
+              <motion.div
+                key={index}
+                variants={cardVariants}
+                whileHover={{
+                  y: -8,
+                  scale: 1.02,
+                  transition: { duration: 0.3, ease: [0.22, 1, 0.36, 1] }
+                }}
+              >
+                {service.href ? (
+                  <Link href={service.href} className="block h-full">
+                    {cardContent}
+                  </Link>
+                ) : (
+                  cardContent
+                )}
+              </motion.div>
+            );
+          })}
         </motion.div>
       </div>
     </section>
