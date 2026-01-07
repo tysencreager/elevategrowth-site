@@ -12,6 +12,7 @@ const portfolioProjects = [
     description: "Event planning and connection coaching website. Empowering connection through experience, story, and soul.",
     tags: ["Event Planning", "Coaching", "Design"],
     url: "https://jpennplanning.com",
+    image: "https://i.postimg.cc/R0ssqYxY/jpennplanning_screenshot.png",
     active: true
   },
   {
@@ -19,6 +20,7 @@ const portfolioProjects = [
     description: "Natural skincare e-commerce website featuring Wagyu tallow cream products. Holistic, nourishing, and healing skincare with a warm, organic aesthetic.",
     tags: ["E-commerce", "Skincare", "Web Design"],
     url: "https://macandmeadow.co",
+    image: "https://i.postimg.cc/66Gj5zjg/M_M_header.png",
     active: true
   },
   {
@@ -26,6 +28,7 @@ const portfolioProjects = [
     description: "Fashion designer portfolio & booking platform. Showcasing universal style, personal styling services, and custom creations.",
     tags: ["Fashion", "Booking System", "Portfolio"],
     url: "https://socrystaldesigns.com",
+    image: "https://i.postimg.cc/5tNK4VDW/socrystaldesigns_screenshot.png",
     active: true
   },
   {
@@ -33,6 +36,7 @@ const portfolioProjects = [
     description: "A comprehensive retail platform featuring a multi-page product catalog, financing integration, and a community foundation blog.",
     tags: ["Retail Platform", "Multi-page App", "Archived"],
     url: null,
+    image: "https://i.postimg.cc/prDJQG3L/PIFF_header3.png",
     active: false
   }
 ];
@@ -41,72 +45,82 @@ function PortfolioCard({ project, index }: { project: typeof portfolioProjects[0
   const cardRef = useRef(null);
   const isInView = useInView(cardRef, { once: true, amount: 0.2 });
 
+  const CardWrapper = project.active && project.url ? 'a' : 'div';
+  const wrapperProps = project.active && project.url ? {
+    href: project.url,
+    target: "_blank",
+    rel: "noopener noreferrer"
+  } : {};
+
   return (
     <motion.div
       ref={cardRef}
       initial={{ opacity: 0, y: 40 }}
       animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
       transition={{ duration: 0.6, delay: index * 0.1 }}
-      whileHover={{ y: -5, transition: { duration: 0.2 } }}
-      className="group bg-card rounded-xl overflow-hidden border border-border hover:border-primary/50 hover:shadow-lg hover:shadow-primary/5 transition-all duration-300"
+      whileHover={{ y: -8, transition: { duration: 0.3 } }}
+      className="group bg-card rounded-xl overflow-hidden border border-border hover:border-primary/50 hover:shadow-xl hover:shadow-primary/10 transition-all duration-300"
     >
+      {/* Project Image */}
+      <div className="relative aspect-[16/10] overflow-hidden">
+        <img
+          src={project.image}
+          alt={`${project.name} website screenshot`}
+          className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
+        />
+        {/* Overlay on hover */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+
+        {/* Visit Site overlay for active projects */}
+        {project.active && project.url && (
+          <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            <div className="bg-primary text-white px-5 py-2.5 rounded-lg font-sans font-semibold flex items-center gap-2 shadow-xl">
+              Visit Site
+              <ExternalLink className="w-4 h-4" />
+            </div>
+          </div>
+        )}
+
+        {/* Archived badge */}
+        {!project.active && (
+          <div className="absolute top-4 right-4 bg-muted/90 backdrop-blur-sm text-muted-foreground px-3 py-1 rounded-full text-xs font-sans font-medium">
+            Archived
+          </div>
+        )}
+      </div>
+
       {/* Card content */}
-      <div className="p-6 md:p-8">
-        <h3 className="font-display font-bold text-xl md:text-2xl text-primary mb-3 group-hover:text-primary/80 transition-colors">
+      <div className="p-6">
+        <h3 className="font-display font-bold text-xl text-primary mb-2 group-hover:text-primary/80 transition-colors">
           {project.name}
         </h3>
-        <p className="font-serif text-muted-foreground leading-relaxed mb-4">
+        <p className="font-serif text-muted-foreground leading-relaxed mb-4 text-sm">
           {project.description}
         </p>
 
         {/* Features */}
-        <div className="flex gap-4 mb-4 text-sm text-muted-foreground">
-          <span className="flex items-center gap-1.5">
-            <Smartphone className="w-4 h-4" />
+        <div className="flex gap-4 mb-4 text-xs text-muted-foreground">
+          <span className="flex items-center gap-1">
+            <Smartphone className="w-3.5 h-3.5" />
             Mobile Responsive
           </span>
-          <span className="flex items-center gap-1.5">
-            <Search className="w-4 h-4" />
+          <span className="flex items-center gap-1">
+            <Search className="w-3.5 h-3.5" />
             SEO Optimized
           </span>
         </div>
 
         {/* Tags */}
-        <div className="flex flex-wrap gap-2 mb-6">
+        <div className="flex flex-wrap gap-2">
           {project.tags.map((tag, i) => (
             <span
               key={i}
-              className="bg-muted text-muted-foreground px-3 py-1 rounded-full text-xs font-sans font-medium"
+              className="bg-muted text-muted-foreground px-2.5 py-1 rounded-full text-xs font-sans font-medium"
             >
               {tag}
             </span>
           ))}
         </div>
-
-        {/* CTA */}
-        {project.active && project.url ? (
-          <a
-            href={project.url}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
-              <Button size="sm" className="font-sans font-medium">
-                Visit Site
-                <ExternalLink className="w-4 h-4 ml-2" />
-              </Button>
-            </motion.div>
-          </a>
-        ) : (
-          <Button
-            size="sm"
-            variant="outline"
-            disabled
-            className="font-sans font-medium cursor-not-allowed opacity-50"
-          >
-            Archived Project
-          </Button>
-        )}
       </div>
     </motion.div>
   );
@@ -117,88 +131,64 @@ function PortfolioSection() {
   const isInView = useInView(sectionRef, { once: true, amount: 0.1 });
 
   return (
-    <>
-      {/* Portfolio Section */}
-      <section ref={sectionRef} className="py-12 md:py-16 bg-background">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-            transition={{ duration: 0.6 }}
-            className="text-center mb-12"
-          >
-            <h2 className="font-display font-bold text-3xl md:text-4xl text-foreground mb-4">
-              Selected Website Work
-            </h2>
-            <div className="w-24 h-1 bg-primary mx-auto rounded-full mb-6" />
-            <p className="font-serif text-muted-foreground max-w-2xl mx-auto text-lg">
-              A collection of projects that showcase my expertise in website building and development.
-            </p>
-          </motion.div>
+    <section ref={sectionRef} className="py-12 md:py-16 bg-background">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-12"
+        >
+          <h2 className="font-display font-bold text-3xl md:text-4xl text-foreground mb-4">
+            Selected Website Work
+          </h2>
+          <div className="w-24 h-1 bg-primary mx-auto rounded-full mb-6" />
+          <p className="font-serif text-muted-foreground max-w-2xl mx-auto text-lg">
+            A collection of projects that showcase my expertise in website building and development.
+          </p>
+        </motion.div>
 
-          {/* Portfolio Grid */}
-          <div className="grid md:grid-cols-2 gap-6 md:gap-8 mb-12">
-            {portfolioProjects.map((project, index) => (
-              <PortfolioCard key={project.name} project={project} index={index} />
-            ))}
-          </div>
-
-          {/* Marketing Portfolio Link */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.3 }}
-            className="text-center"
-          >
+        {/* Portfolio Grid */}
+        <div className="grid md:grid-cols-2 gap-6 md:gap-8 mb-12">
+          {portfolioProjects.map((project, index) => (
             <a
-              href="https://tysencreager.my.canva.site/"
-              target="_blank"
-              rel="noopener noreferrer"
+              key={project.name}
+              href={project.active && project.url ? project.url : undefined}
+              target={project.active && project.url ? "_blank" : undefined}
+              rel={project.active && project.url ? "noopener noreferrer" : undefined}
+              className={project.active && project.url ? "cursor-pointer" : "cursor-default"}
             >
-              <motion.div whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.98 }} className="inline-block">
-                <Button variant="outline" size="lg" className="font-sans font-semibold">
-                  View Full Marketing Portfolio
-                  <ArrowRight className="w-5 h-5 ml-2" />
-                </Button>
-              </motion.div>
+              <PortfolioCard project={project} index={index} />
             </a>
-          </motion.div>
+          ))}
         </div>
-      </section>
 
-      {/* Real Estate Preview Panel */}
-      <section className="py-12 md:py-16 bg-muted/30">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="text-center mb-10"
-          >
-            <span className="inline-block font-sans text-sm font-medium text-primary bg-primary/10 px-4 py-2 rounded-full mb-6">
+        {/* Real Estate Preview Panel */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="mb-12"
+        >
+          <div className="text-center mb-8">
+            <span className="inline-block font-sans text-sm font-medium text-primary bg-primary/10 px-4 py-2 rounded-full mb-4">
               Real Estate Agents
             </span>
-            <h2 className="font-display font-bold text-3xl md:text-4xl text-foreground mb-4">
+            <h3 className="font-display font-bold text-2xl md:text-3xl text-foreground mb-3">
               Websites Built for Realtors
-            </h2>
-            <p className="font-serif text-muted-foreground max-w-2xl mx-auto text-lg">
+            </h3>
+            <p className="font-serif text-muted-foreground max-w-xl mx-auto">
               I can customize any site to fit your brand. This is just a taste of what I can do for real estate professionals.
             </p>
-          </motion.div>
+          </div>
 
-          {/* Real Estate Preview Widget */}
           <motion.a
             href="https://realestate.elevategrowth.solutions/"
             target="_blank"
             rel="noopener noreferrer"
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
             whileHover={{ y: -8, transition: { duration: 0.3 } }}
-            className="block group"
+            className="block group max-w-4xl mx-auto"
           >
             <div className="relative bg-card rounded-2xl overflow-hidden border-2 border-border hover:border-primary/50 hover:shadow-xl hover:shadow-primary/10 transition-all duration-300">
               {/* Preview Image */}
@@ -224,9 +214,9 @@ function PortfolioSection() {
               <div className="p-6 bg-gradient-to-r from-primary/5 to-transparent">
                 <div className="flex items-center justify-between">
                   <div>
-                    <h3 className="font-display font-semibold text-lg text-foreground mb-1">
+                    <h4 className="font-display font-semibold text-lg text-foreground mb-1">
                       Real Estate Website Preview Panel
-                    </h3>
+                    </h4>
                     <p className="font-serif text-sm text-muted-foreground">
                       Browse different styles and find the perfect fit for your real estate business
                     </p>
@@ -239,9 +229,31 @@ function PortfolioSection() {
               </div>
             </div>
           </motion.a>
-        </div>
-      </section>
-    </>
+        </motion.div>
+
+        {/* Marketing Portfolio Link */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.3 }}
+          className="text-center"
+        >
+          <a
+            href="https://tysencreager.my.canva.site/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <motion.div whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.98 }} className="inline-block">
+              <Button variant="outline" size="lg" className="font-sans font-semibold">
+                View Full Marketing Portfolio
+                <ArrowRight className="w-5 h-5 ml-2" />
+              </Button>
+            </motion.div>
+          </a>
+        </motion.div>
+      </div>
+    </section>
   );
 }
 
@@ -291,6 +303,9 @@ export default function Websites() {
           description: "Built with maintainability in mind. Need content updates? I handle monthly edits as part of the hosting package."
         }
       ]}
+
+      // Portfolio section before process
+      beforeProcess={<PortfolioSection />}
 
       // Process
       process={[
@@ -366,8 +381,6 @@ export default function Websites() {
           answer: "I can either redesign your existing site or build something completely new. We'll discuss what makes the most sense for your goals and budget."
         }
       ]}
-    >
-      <PortfolioSection />
-    </ServicePageLayout>
+    />
   );
 }

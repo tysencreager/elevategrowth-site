@@ -60,6 +60,9 @@ interface ServicePageLayoutProps {
 
   // Optional custom content to render before CTA
   children?: ReactNode;
+
+  // Optional custom content to render before Process section
+  beforeProcess?: ReactNode;
 }
 
 function PricingCard({ tier, index }: { tier: PricingTier; index: number }) {
@@ -148,7 +151,8 @@ export default function ServicePageLayout({
   pricingSubtitle = "Transparent pricing with no hidden fees. Choose the option that fits your needs.",
   process,
   faqs,
-  children
+  children,
+  beforeProcess
 }: ServicePageLayoutProps) {
   const featuresRef = useRef(null);
   const isFeaturesInView = useInView(featuresRef, { once: true, amount: 0.2 });
@@ -240,6 +244,9 @@ export default function ServicePageLayout({
           </div>
         </div>
       </section>
+
+      {/* Custom content before process (portfolio, etc.) */}
+      {beforeProcess}
 
       {/* Process Steps (if provided) */}
       {process && process.length > 0 && (
