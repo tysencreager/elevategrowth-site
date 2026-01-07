@@ -5,11 +5,12 @@ import { useRef } from "react";
 import { ExternalLink, Smartphone, Search, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
-// Portfolio project data
+// Portfolio project data with SEO-friendly descriptions
 const portfolioProjects = [
   {
     name: "J Penn Planning",
     description: "Event planning and connection coaching website. Empowering connection through experience, story, and soul.",
+    fullDescription: "Custom website design for J Penn Planning, an event planning and connection coaching business based in Utah",
     tags: ["Event Planning", "Coaching", "Design"],
     url: "https://jpennplanning.com",
     image: "https://i.postimg.cc/R0ssqYxY/jpennplanning_screenshot.png",
@@ -18,6 +19,7 @@ const portfolioProjects = [
   {
     name: "Mac & Meadow Co.",
     description: "Natural skincare e-commerce website featuring Wagyu tallow cream products. Holistic, nourishing, and healing skincare with a warm, organic aesthetic.",
+    fullDescription: "E-commerce website design for Mac & Meadow Co., a natural Wagyu tallow skincare brand",
     tags: ["E-commerce", "Skincare", "Web Design"],
     url: "https://macandmeadow.co",
     image: "https://i.postimg.cc/66Gj5zjg/M_M_header.png",
@@ -26,6 +28,7 @@ const portfolioProjects = [
   {
     name: "So Crystal Designs",
     description: "Fashion designer portfolio & booking platform. Showcasing universal style, personal styling services, and custom creations.",
+    fullDescription: "Portfolio and booking website for So Crystal Designs, a fashion designer and personal stylist",
     tags: ["Fashion", "Booking System", "Portfolio"],
     url: "https://socrystaldesigns.com",
     image: "https://i.postimg.cc/5tNK4VDW/socrystaldesigns_screenshot.png",
@@ -34,6 +37,7 @@ const portfolioProjects = [
   {
     name: "Pay It Forward Flooring",
     description: "A comprehensive retail platform featuring a multi-page product catalog, financing integration, and a community foundation blog.",
+    fullDescription: "Retail website with product catalog for Pay It Forward Flooring company",
     tags: ["Retail Platform", "Multi-page App", "Archived"],
     url: null,
     image: "https://i.postimg.cc/prDJQG3L/PIFF_header3.png",
@@ -45,84 +49,91 @@ function PortfolioCard({ project, index }: { project: typeof portfolioProjects[0
   const cardRef = useRef(null);
   const isInView = useInView(cardRef, { once: true, amount: 0.2 });
 
-  const CardWrapper = project.active && project.url ? 'a' : 'div';
-  const wrapperProps = project.active && project.url ? {
-    href: project.url,
-    target: "_blank",
-    rel: "noopener noreferrer"
-  } : {};
-
   return (
-    <motion.div
+    <motion.article
       ref={cardRef}
       initial={{ opacity: 0, y: 40 }}
       animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
       transition={{ duration: 0.6, delay: index * 0.1 }}
       whileHover={{ y: -8, transition: { duration: 0.3 } }}
       className="group bg-card rounded-xl overflow-hidden border border-border hover:border-primary/50 hover:shadow-xl hover:shadow-primary/10 transition-all duration-300"
+      itemScope
+      itemType="https://schema.org/WebSite"
     >
       {/* Project Image */}
       <div className="relative aspect-[16/10] overflow-hidden">
         <img
           src={project.image}
-          alt={`${project.name} website screenshot`}
+          alt={project.fullDescription}
+          loading="lazy"
+          decoding="async"
           className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
+          itemProp="image"
         />
-        {/* Overlay on hover */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+        {/* Overlay on hover - hidden on touch devices, visible tap indicator on mobile */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-100 sm:opacity-0 sm:group-hover:opacity-100 transition-opacity duration-300" />
 
-        {/* Visit Site overlay for active projects */}
+        {/* Visit Site overlay - always visible on mobile for active projects */}
         {project.active && project.url && (
-          <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-            <div className="bg-primary text-white px-5 py-2.5 rounded-lg font-sans font-semibold flex items-center gap-2 shadow-xl">
+          <div className="absolute inset-0 flex items-end sm:items-center justify-center pb-4 sm:pb-0 opacity-100 sm:opacity-0 sm:group-hover:opacity-100 transition-opacity duration-300">
+            <div className="bg-primary text-white px-4 py-2 sm:px-5 sm:py-2.5 rounded-lg font-sans font-semibold text-sm sm:text-base flex items-center gap-2 shadow-xl">
               Visit Site
-              <ExternalLink className="w-4 h-4" />
+              <ExternalLink className="w-4 h-4" aria-hidden="true" />
             </div>
           </div>
         )}
 
         {/* Archived badge */}
         {!project.active && (
-          <div className="absolute top-4 right-4 bg-muted/90 backdrop-blur-sm text-muted-foreground px-3 py-1 rounded-full text-xs font-sans font-medium">
+          <div className="absolute top-3 right-3 sm:top-4 sm:right-4 bg-muted/90 backdrop-blur-sm text-muted-foreground px-2.5 py-1 sm:px-3 rounded-full text-xs font-sans font-medium">
             Archived
           </div>
         )}
       </div>
 
       {/* Card content */}
-      <div className="p-6">
-        <h3 className="font-display font-bold text-xl text-primary mb-2 group-hover:text-primary/80 transition-colors">
+      <div className="p-4 sm:p-6">
+        <h3
+          className="font-display font-bold text-lg sm:text-xl text-primary mb-2 group-hover:text-primary/80 transition-colors"
+          itemProp="name"
+        >
           {project.name}
         </h3>
-        <p className="font-serif text-muted-foreground leading-relaxed mb-4 text-sm">
+        <p
+          className="font-serif text-muted-foreground leading-relaxed mb-3 sm:mb-4 text-sm"
+          itemProp="description"
+        >
           {project.description}
         </p>
 
-        {/* Features */}
-        <div className="flex gap-4 mb-4 text-xs text-muted-foreground">
-          <span className="flex items-center gap-1">
-            <Smartphone className="w-3.5 h-3.5" />
-            Mobile Responsive
+        {/* Features - stack on mobile */}
+        <div className="flex flex-col xs:flex-row gap-2 xs:gap-4 mb-3 sm:mb-4 text-xs text-muted-foreground">
+          <span className="flex items-center gap-1.5">
+            <Smartphone className="w-3.5 h-3.5 flex-shrink-0" aria-hidden="true" />
+            <span>Mobile Responsive</span>
           </span>
-          <span className="flex items-center gap-1">
-            <Search className="w-3.5 h-3.5" />
-            SEO Optimized
+          <span className="flex items-center gap-1.5">
+            <Search className="w-3.5 h-3.5 flex-shrink-0" aria-hidden="true" />
+            <span>SEO Optimized</span>
           </span>
         </div>
 
         {/* Tags */}
-        <div className="flex flex-wrap gap-2">
+        <div className="flex flex-wrap gap-1.5 sm:gap-2">
           {project.tags.map((tag, i) => (
             <span
               key={i}
-              className="bg-muted text-muted-foreground px-2.5 py-1 rounded-full text-xs font-sans font-medium"
+              className="bg-muted text-muted-foreground px-2 py-0.5 sm:px-2.5 sm:py-1 rounded-full text-xs font-sans font-medium"
             >
               {tag}
             </span>
           ))}
         </div>
+
+        {/* Hidden structured data */}
+        {project.url && <meta itemProp="url" content={project.url} />}
       </div>
-    </motion.div>
+    </motion.article>
   );
 }
 
@@ -130,36 +141,77 @@ function PortfolioSection() {
   const sectionRef = useRef(null);
   const isInView = useInView(sectionRef, { once: true, amount: 0.1 });
 
+  // Schema.org structured data for the portfolio
+  const portfolioSchema = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "Website Portfolio",
+    "description": "Selected website design and development projects by Elevate Growth Solutions",
+    "numberOfItems": portfolioProjects.length,
+    "itemListElement": portfolioProjects.map((project, index) => ({
+      "@type": "ListItem",
+      "position": index + 1,
+      "item": {
+        "@type": "WebSite",
+        "name": project.name,
+        "description": project.description,
+        "url": project.url || undefined,
+        "image": project.image
+      }
+    }))
+  };
+
   return (
-    <section ref={sectionRef} className="py-12 md:py-16 bg-background">
+    <section
+      ref={sectionRef}
+      className="py-10 sm:py-12 md:py-16 bg-background"
+      aria-labelledby="portfolio-heading"
+    >
+      {/* Structured data for SEO */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(portfolioSchema) }}
+      />
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-12"
+          className="text-center mb-8 sm:mb-12"
         >
-          <h2 className="font-display font-bold text-3xl md:text-4xl text-foreground mb-4">
+          <h2
+            id="portfolio-heading"
+            className="font-display font-bold text-2xl sm:text-3xl md:text-4xl text-foreground mb-3 sm:mb-4"
+          >
             Selected Website Work
           </h2>
-          <div className="w-24 h-1 bg-primary mx-auto rounded-full mb-6" />
-          <p className="font-serif text-muted-foreground max-w-2xl mx-auto text-lg">
+          <div className="w-20 sm:w-24 h-1 bg-primary mx-auto rounded-full mb-4 sm:mb-6" />
+          <p className="font-serif text-muted-foreground max-w-2xl mx-auto text-base sm:text-lg">
             A collection of projects that showcase my expertise in website building and development.
           </p>
         </motion.div>
 
         {/* Portfolio Grid */}
-        <div className="grid md:grid-cols-2 gap-6 md:gap-8 mb-12">
+        <div className="grid sm:grid-cols-2 gap-4 sm:gap-6 md:gap-8 mb-10 sm:mb-12">
           {portfolioProjects.map((project, index) => (
-            <a
-              key={project.name}
-              href={project.active && project.url ? project.url : undefined}
-              target={project.active && project.url ? "_blank" : undefined}
-              rel={project.active && project.url ? "noopener noreferrer" : undefined}
-              className={project.active && project.url ? "cursor-pointer" : "cursor-default"}
-            >
-              <PortfolioCard project={project} index={index} />
-            </a>
+            project.active && project.url ? (
+              <a
+                key={project.name}
+                href={project.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded-xl"
+                aria-label={`Visit ${project.name} website (opens in new tab)`}
+                title={`View ${project.name} - ${project.description}`}
+              >
+                <PortfolioCard project={project} index={index} />
+              </a>
+            ) : (
+              <div key={project.name}>
+                <PortfolioCard project={project} index={index} />
+              </div>
+            )
           ))}
         </div>
 
@@ -169,16 +221,16 @@ function PortfolioSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="mb-12"
+          className="mb-10 sm:mb-12"
         >
-          <div className="text-center mb-8">
-            <span className="inline-block font-sans text-sm font-medium text-primary bg-primary/10 px-4 py-2 rounded-full mb-4">
+          <div className="text-center mb-6 sm:mb-8">
+            <span className="inline-block font-sans text-xs sm:text-sm font-medium text-primary bg-primary/10 px-3 py-1.5 sm:px-4 sm:py-2 rounded-full mb-3 sm:mb-4">
               Real Estate Agents
             </span>
-            <h3 className="font-display font-bold text-2xl md:text-3xl text-foreground mb-3">
+            <h3 className="font-display font-bold text-xl sm:text-2xl md:text-3xl text-foreground mb-2 sm:mb-3">
               Websites Built for Realtors
             </h3>
-            <p className="font-serif text-muted-foreground max-w-xl mx-auto">
+            <p className="font-serif text-muted-foreground max-w-xl mx-auto text-sm sm:text-base">
               I can customize any site to fit your brand. This is just a taste of what I can do for real estate professionals.
             </p>
           </div>
@@ -188,42 +240,47 @@ function PortfolioSection() {
             target="_blank"
             rel="noopener noreferrer"
             whileHover={{ y: -8, transition: { duration: 0.3 } }}
-            className="block group max-w-4xl mx-auto"
+            className="block group max-w-4xl mx-auto focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded-2xl"
+            aria-label="Explore real estate website templates (opens in new tab)"
+            title="Browse real estate website design templates"
           >
-            <div className="relative bg-card rounded-2xl overflow-hidden border-2 border-border hover:border-primary/50 hover:shadow-xl hover:shadow-primary/10 transition-all duration-300">
+            <div className="relative bg-card rounded-xl sm:rounded-2xl overflow-hidden border-2 border-border hover:border-primary/50 hover:shadow-xl hover:shadow-primary/10 transition-all duration-300">
               {/* Preview Image */}
               <div className="relative aspect-[16/9] overflow-hidden">
                 <img
                   src="https://i.postimg.cc/nhwBmfMv/real-estate-preview-panel-screenshot.png"
-                  alt="Real Estate Website Preview Panel"
+                  alt="Real estate website template preview panel showing multiple design options for realtors"
+                  loading="lazy"
+                  decoding="async"
                   className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
                 />
-                {/* Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                {/* Overlay - visible on mobile */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-100 sm:opacity-0 sm:group-hover:opacity-100 transition-opacity duration-300" />
 
                 {/* CTA overlay */}
-                <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <div className="bg-primary text-white px-6 py-3 rounded-lg font-sans font-semibold flex items-center gap-2 shadow-xl">
+                <div className="absolute inset-0 flex items-end sm:items-center justify-center pb-4 sm:pb-0 opacity-100 sm:opacity-0 sm:group-hover:opacity-100 transition-opacity duration-300">
+                  <div className="bg-primary text-white px-4 py-2 sm:px-6 sm:py-3 rounded-lg font-sans font-semibold text-sm sm:text-base flex items-center gap-2 shadow-xl">
                     Explore Real Estate Templates
-                    <ExternalLink className="w-5 h-5" />
+                    <ExternalLink className="w-4 h-4 sm:w-5 sm:h-5" aria-hidden="true" />
                   </div>
                 </div>
               </div>
 
               {/* Widget Footer */}
-              <div className="p-6 bg-gradient-to-r from-primary/5 to-transparent">
-                <div className="flex items-center justify-between">
+              <div className="p-4 sm:p-6 bg-gradient-to-r from-primary/5 to-transparent">
+                <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 sm:gap-4">
                   <div>
-                    <h4 className="font-display font-semibold text-lg text-foreground mb-1">
+                    <h4 className="font-display font-semibold text-base sm:text-lg text-foreground mb-0.5 sm:mb-1">
                       Real Estate Website Preview Panel
                     </h4>
-                    <p className="font-serif text-sm text-muted-foreground">
+                    <p className="font-serif text-xs sm:text-sm text-muted-foreground">
                       Browse different styles and find the perfect fit for your real estate business
                     </p>
                   </div>
-                  <div className="hidden sm:flex items-center text-primary font-sans font-medium">
-                    View Templates
-                    <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+                  <div className="flex items-center text-primary font-sans font-medium text-sm sm:text-base">
+                    <span className="sm:hidden">Tap to view</span>
+                    <span className="hidden sm:inline">View Templates</span>
+                    <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
                   </div>
                 </div>
               </div>
@@ -243,11 +300,17 @@ function PortfolioSection() {
             href="https://tysencreager.my.canva.site/"
             target="_blank"
             rel="noopener noreferrer"
+            aria-label="View full marketing portfolio (opens in new tab)"
+            title="See more marketing and design work"
           >
             <motion.div whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.98 }} className="inline-block">
-              <Button variant="outline" size="lg" className="font-sans font-semibold">
+              <Button
+                variant="outline"
+                size="lg"
+                className="font-sans font-semibold text-sm sm:text-base px-6 sm:px-8"
+              >
                 View Full Marketing Portfolio
-                <ArrowRight className="w-5 h-5 ml-2" />
+                <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 ml-2" aria-hidden="true" />
               </Button>
             </motion.div>
           </a>
