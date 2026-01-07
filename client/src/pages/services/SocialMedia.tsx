@@ -1,7 +1,5 @@
 import ServicePageLayout from "@/components/ServicePageLayout";
-import servicesHero from "@assets/services_hero_team_1920.webp";
-import servicesHero768 from "@assets/services_hero_team_768.webp";
-import servicesHero1280 from "@assets/services_hero_team_1280.webp";
+import socialHero from "@assets/stock_images/black_and_white_prof_325156c7.jpg";
 
 export default function SocialMedia() {
   return (
@@ -15,8 +13,7 @@ export default function SocialMedia() {
       // Hero
       heroTitle="Social Media Management"
       heroSubtitle="Build your brand with consistent, strategic content that actually connects."
-      heroImage={servicesHero}
-      heroImageSrcSet={`${servicesHero768} 768w, ${servicesHero1280} 1280w, ${servicesHero} 1920w`}
+      heroImage={socialHero}
 
       // Main content
       serviceName="Social Media"

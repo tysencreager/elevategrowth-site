@@ -1,7 +1,5 @@
 import ServicePageLayout from "@/components/ServicePageLayout";
-import servicesHero from "@assets/services_hero_team_1920.webp";
-import servicesHero768 from "@assets/services_hero_team_768.webp";
-import servicesHero1280 from "@assets/services_hero_team_1280.webp";
+import brandingHero from "@assets/stock_images/professional_busines_e0d6a108.jpg";
 
 export default function Branding() {
   return (
@@ -15,8 +13,7 @@ export default function Branding() {
       // Hero
       heroTitle="Branding & Identity"
       heroSubtitle="Build a brand that connects, converts, and stands the test of time."
-      heroImage={servicesHero}
-      heroImageSrcSet={`${servicesHero768} 768w, ${servicesHero1280} 1280w, ${servicesHero} 1920w`}
+      heroImage={brandingHero}
 
       // Main content
       serviceName="Brand Identity"

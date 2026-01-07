@@ -1,7 +1,5 @@
 import ServicePageLayout from "@/components/ServicePageLayout";
-import servicesHero from "@assets/services_hero_team_1920.webp";
-import servicesHero768 from "@assets/services_hero_team_768.webp";
-import servicesHero1280 from "@assets/services_hero_team_1280.webp";
+import websiteHero from "@assets/stock_images/black_and_white_desk_69514a94.jpg";
 
 export default function Websites() {
   return (
@@ -15,8 +13,7 @@ export default function Websites() {
       // Hero
       heroTitle="Website Design & Development"
       heroSubtitle="Custom-coded websites built to convert, not just look pretty."
-      heroImage={servicesHero}
-      heroImageSrcSet={`${servicesHero768} 768w, ${servicesHero1280} 1280w, ${servicesHero} 1920w`}
+      heroImage={websiteHero}
 
       // Main content
       serviceName="Web Development"

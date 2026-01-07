@@ -1,7 +1,5 @@
 import ServicePageLayout from "@/components/ServicePageLayout";
-import servicesHero from "@assets/services_hero_team_1920.webp";
-import servicesHero768 from "@assets/services_hero_team_768.webp";
-import servicesHero1280 from "@assets/services_hero_team_1280.webp";
+import adCampaignsHero from "@assets/stock_images/modern_marketing_and_a25f67ec.jpg";
 
 export default function AdCampaigns() {
   return (
@@ -15,8 +13,7 @@ export default function AdCampaigns() {
       // Hero
       heroTitle="Ad Campaign Management"
       heroSubtitle="Data-driven advertising that delivers real, measurable results."
-      heroImage={servicesHero}
-      heroImageSrcSet={`${servicesHero768} 768w, ${servicesHero1280} 1280w, ${servicesHero} 1920w`}
+      heroImage={adCampaignsHero}
 
       // Main content
       serviceName="Paid Advertising"
