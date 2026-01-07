@@ -43,6 +43,7 @@ interface ServicePageLayoutProps {
 
   // Pricing
   pricing: PricingTier[];
+  pricingSubtitle?: string;
 
   // Optional process steps
   process?: {
@@ -133,6 +134,7 @@ export default function ServicePageLayout({
   serviceDescription,
   features,
   pricing,
+  pricingSubtitle = "Transparent pricing with no hidden fees. Choose the option that fits your needs.",
   process,
   faqs
 }: ServicePageLayoutProps) {
@@ -276,9 +278,11 @@ export default function ServicePageLayout({
               Pricing
             </h2>
             <div className="w-24 h-1 bg-primary mx-auto rounded-full mb-6" />
-            <p className="font-serif text-muted-foreground max-w-2xl mx-auto">
-              Transparent pricing with no hidden fees. Choose the option that fits your needs.
-            </p>
+            {pricingSubtitle && (
+              <p className="font-serif text-muted-foreground max-w-2xl mx-auto">
+                {pricingSubtitle}
+              </p>
+            )}
           </motion.div>
 
           <div className={`grid gap-8 ${pricing.length === 1 ? 'max-w-md mx-auto' : pricing.length === 2 ? 'md:grid-cols-2 max-w-3xl mx-auto' : 'md:grid-cols-2 lg:grid-cols-3'}`}>

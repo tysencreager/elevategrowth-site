@@ -76,6 +76,7 @@ export default function AdCampaigns() {
       ]}
 
       // Pricing
+      pricingSubtitle=""
       pricing={[
         {
           name: "Ad Campaign Management",
