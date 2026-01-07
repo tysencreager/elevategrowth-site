@@ -38,8 +38,8 @@ export default function SocialMedia() {
           description: "Regular, reliable posting keeps you top of mind. No more weeks of silence followed by sporadic updates."
         },
         {
-          title: "Community Engagement",
-          description: "Responding to comments and messages, engaging with your audience, and building genuine relationships."
+          title: "Comment Engagement",
+          description: "Responding to comments on your posts to keep conversations going and build genuine connections with your audience."
         },
         {
           title: "Hashtag & Caption Strategy",
@@ -70,8 +70,8 @@ export default function SocialMedia() {
         },
         {
           step: 4,
-          title: "Posting & Engagement",
-          description: "Content goes live according to schedule. I monitor engagement and interact with your community on your behalf."
+          title: "Posting & Monitoring",
+          description: "Content goes live according to schedule. I monitor performance and respond to comments to keep your audience engaged."
         }
       ]}
 
@@ -87,7 +87,7 @@ export default function SocialMedia() {
             "Custom graphics",
             "Caption writing",
             "Hashtag research",
-            "Basic community management",
+            "Comment engagement",
             "Monthly analytics report"
           ],
           note: "Covers 1-2 platforms (Instagram, Facebook, or LinkedIn)."
@@ -102,7 +102,7 @@ export default function SocialMedia() {
             "Custom graphics & Reels/video",
             "Caption writing & storytelling",
             "Hashtag & trend research",
-            "Active community management",
+            "Active comment engagement",
             "Story/post scheduling",
             "Bi-weekly strategy calls",
             "Detailed monthly analytics"
