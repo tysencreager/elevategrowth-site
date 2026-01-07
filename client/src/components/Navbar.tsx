@@ -162,13 +162,13 @@ export default function Navbar() {
                         initial="hidden"
                         animate="visible"
                         exit="hidden"
-                        className="absolute top-full left-0 mt-2 w-56 bg-background/98 backdrop-blur-md rounded-lg shadow-lg border border-border py-2 z-50"
+                        className="absolute top-full left-0 mt-2 w-56 bg-primary rounded-lg shadow-xl shadow-primary/20 py-2 z-50"
                       >
                         {serviceSubLinks.map((subLink) => (
                           <Link
                             key={subLink.href}
                             href={subLink.href}
-                            className="block px-4 py-2.5 font-serif text-sm text-foreground hover:bg-primary/10 hover:text-primary transition-colors"
+                            className="block px-4 py-2.5 font-serif text-sm text-white/90 hover:bg-white/20 hover:text-white transition-colors"
                             onClick={() => setIsServicesOpen(false)}
                           >
                             {subLink.label}
