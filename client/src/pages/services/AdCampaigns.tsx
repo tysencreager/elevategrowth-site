@@ -1,5 +1,6 @@
 import ServicePageLayout from "@/components/ServicePageLayout";
-import adCampaignsHero from "@assets/stock_images/modern_marketing_and_a25f67ec.jpg";
+
+const adCampaignsHero = "https://i.postimg.cc/kMyKNC3b/ads-header-photo.png";
 
 export default function AdCampaigns() {
   return (
