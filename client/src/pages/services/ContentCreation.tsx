@@ -1,5 +1,6 @@
 import ServicePageLayout from "@/components/ServicePageLayout";
-import contentHero from "@assets/stock_images/black_and_white_busi_73b6a31c.jpg";
+
+const contentHero = "https://i.postimg.cc/pryWnKMY/content-creation-header-phoot.png";
 
 export default function ContentCreation() {
   return (
