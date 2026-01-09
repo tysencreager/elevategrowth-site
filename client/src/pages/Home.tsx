@@ -93,7 +93,7 @@ export default function Home() {
       <Navbar />
 
       <Hero
-        backgroundVideo="1152894724"
+        backgroundImage="https://i.postimg.cc/bNrvWcMm/EGS-HOME-PAGE-header-photo.png"
         title="Web Design & Full-Stack Marketing for Growing Businesses"
         subtitle="Custom websites in weeks, not months. Boutique marketing services that treat your business like our own."
         ctaText="See Our Services"
