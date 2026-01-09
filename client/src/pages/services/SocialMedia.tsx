@@ -1,5 +1,6 @@
 import ServicePageLayout from "@/components/ServicePageLayout";
-import socialHero from "@assets/stock_images/black_and_white_prof_325156c7.jpg";
+
+const socialHero = "https://i.postimg.cc/J4yvDPvS/EGS-social-media-service-header.png";
 
 export default function SocialMedia() {
   return (

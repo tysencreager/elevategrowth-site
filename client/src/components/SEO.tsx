@@ -1,5 +1,6 @@
 import { useEffect } from "react";
-import ogImageDefault from "@assets/EGS LOGO E icon_1760220238741.png";
+
+const ogImageDefault = "https://i.postimg.cc/SR0G5fQL/EGS-SOCIAL-SHARING-IMAGE.png";
 
 interface SEOProps {
   title: string;

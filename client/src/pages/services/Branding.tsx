@@ -1,5 +1,6 @@
 import ServicePageLayout from "@/components/ServicePageLayout";
-import brandingHero from "@assets/stock_images/professional_busines_e0d6a108.jpg";
+
+const brandingHero = "https://i.postimg.cc/yx26HW3z/branding-photo.png";
 
 export default function Branding() {
   return (
