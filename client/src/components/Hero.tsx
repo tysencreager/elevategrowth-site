@@ -4,9 +4,11 @@ import { motion } from "framer-motion";
 import { AnimatedButton } from "@/components/ui/motion";
 
 interface HeroProps {
-  backgroundImage: string;
+  backgroundImage?: string;
   /** Responsive image sources for different viewport sizes */
   imageSrcSet?: string;
+  /** Vimeo video ID for video background (overrides backgroundImage) */
+  backgroundVideo?: string;
   title: string;
   subtitle?: string;
   ctaText?: string;
@@ -19,6 +21,7 @@ interface HeroProps {
 export default function Hero({
   backgroundImage,
   imageSrcSet,
+  backgroundVideo,
   title,
   subtitle,
   ctaText,
@@ -113,19 +116,31 @@ export default function Hero({
       className="relative flex items-center justify-center text-center px-4 pt-32 overflow-hidden"
       style={{ minHeight: height }}
     >
-      {/* Use plain img element for LCP optimization - no animation overhead, discovered early */}
-      <img
-        src={backgroundImage}
-        srcSet={imageSrcSet}
-        alt=""
-        width={1920}
-        height={1080}
-        sizes="100vw"
-        fetchPriority={isLCP ? "high" : "auto"}
-        decoding={isLCP ? "sync" : "async"}
-        loading={isLCP ? "eager" : "lazy"}
-        className="absolute inset-0 w-full h-full object-cover"
-      />
+      {/* Background: Video (Vimeo) or Image */}
+      {backgroundVideo ? (
+        <div className="absolute inset-0 w-full h-full overflow-hidden">
+          <iframe
+            src={`https://player.vimeo.com/video/${backgroundVideo}?background=1&autoplay=1&loop=1&muted=1`}
+            className="absolute top-1/2 left-1/2 w-[177.78vh] min-w-full h-[56.25vw] min-h-full -translate-x-1/2 -translate-y-1/2"
+            frameBorder="0"
+            allow="autoplay; fullscreen"
+            title="Background video"
+          />
+        </div>
+      ) : backgroundImage ? (
+        <img
+          src={backgroundImage}
+          srcSet={imageSrcSet}
+          alt=""
+          width={1920}
+          height={1080}
+          sizes="100vw"
+          fetchPriority={isLCP ? "high" : "auto"}
+          decoding={isLCP ? "sync" : "async"}
+          loading={isLCP ? "eager" : "lazy"}
+          className="absolute inset-0 w-full h-full object-cover"
+        />
+      ) : null}
       <motion.div
         className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/50 to-black/70"
         variants={overlayVariants}

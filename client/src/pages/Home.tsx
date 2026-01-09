@@ -10,9 +10,6 @@ import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
 import SchemaMarkup from "@/components/SchemaMarkup";
 // Optimized WebP images
-// LCP images use public folder paths for early discovery (preloaded in HTML head)
-const heroImage = "/hero_bw_1920.webp";
-const heroImage768 = "/hero_bw_768.webp";
 import valueImage from "@assets/value_prop.webp";
 import ctaImage from "@assets/cta_background.webp";
 import ctaImage768 from "@assets/cta_background_768.webp";
@@ -96,13 +93,11 @@ export default function Home() {
       <Navbar />
 
       <Hero
-        backgroundImage={heroImage}
-        imageSrcSet={`${heroImage768} 768w, ${heroImage} 1920w`}
+        backgroundVideo="1152894724"
         title="Web Design & Full-Stack Marketing for Growing Businesses"
         subtitle="Custom websites in weeks, not months. Boutique marketing services that treat your business like our own."
         ctaText="See Our Services"
         ctaHref="/services"
-        isLCP={true}
       />
 
       {/* Logo Banner - Social proof right after hero */}
