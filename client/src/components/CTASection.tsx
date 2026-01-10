@@ -94,7 +94,7 @@ export default function CTASection({
   };
 
   return (
-    <section ref={sectionRef} className="relative py-20 md:py-32 lg:py-40 overflow-hidden">
+    <section ref={sectionRef} className="relative py-12 md:py-20 lg:py-24 overflow-hidden">
       {backgroundImage && (
         <>
           {/* Plain img for better performance - lazy loaded since below fold */}

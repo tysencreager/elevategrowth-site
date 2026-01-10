@@ -87,7 +87,7 @@ export default function LeadMagnet({
   };
 
   return (
-    <section ref={sectionRef} className="py-16 md:py-24 lg:py-32 bg-primary/5 overflow-hidden">
+    <section ref={sectionRef} className="py-10 md:py-16 lg:py-20 bg-primary/5 overflow-hidden">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center">
           <motion.div

@@ -7,6 +7,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Mail, Send, CheckCircle, Instagram, Calendar } from "lucide-react";
+import { BokehEffect, FloatingOrbs, WaveDivider, GradientTransition } from "@/components/decorative";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -71,8 +72,10 @@ export default function Contact() {
       <Navbar />
 
       {/* Hero Section */}
-      <section className="bg-gray-50 pt-32 pb-16">
-        <div className="max-w-4xl mx-auto px-4 text-center">
+      <section className="relative bg-gradient-to-b from-gray-50 to-primary/5 pt-32 pb-16 overflow-hidden">
+        <BokehEffect opacity={0.4} />
+        <FloatingOrbs variant="light" />
+        <div className="relative z-10 max-w-4xl mx-auto px-4 text-center">
           <h1 className="font-display text-4xl md:text-5xl font-semibold text-gray-900 mb-4" data-testid="text-contact-title">
             Let's Connect
           </h1>
@@ -80,11 +83,13 @@ export default function Contact() {
             Ready to elevate your marketing? Fill out the form below and we'll get back to you within 24 hours.
           </p>
         </div>
+        <GradientTransition from="transparent" to="hsl(var(--background))" height="60px" />
       </section>
 
       {/* Contact Form Section */}
-      <section className="py-16 bg-white flex-1">
-        <div className="max-w-6xl mx-auto px-4">
+      <section className="relative py-16 bg-white flex-1 overflow-hidden">
+        <BokehEffect opacity={0.25} />
+        <div className="relative z-10 max-w-6xl mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-12">
             {/* Form */}
             <div>
@@ -320,6 +325,9 @@ export default function Contact() {
             </div>
           </div>
         </div>
+
+        {/* Wave divider before footer */}
+        <WaveDivider position="bottom" fillColor="hsl(var(--muted) / 0.5)" />
       </section>
 
       <Footer />

@@ -12,6 +12,211 @@ import servicesHero from "@assets/services_hero_team_1920.webp";
 import servicesHero768 from "@assets/services_hero_team_768.webp";
 import servicesHero1280 from "@assets/services_hero_team_1280.webp";
 
+// ============================================
+// DECORATIVE COMPONENTS
+// ============================================
+
+// Bokeh/light spots background effect
+function BokehEffect({ className = "", opacity = 0.6 }: { className?: string; opacity?: number }) {
+  return (
+    <div className={`absolute inset-0 pointer-events-none overflow-hidden ${className}`} style={{ opacity }}>
+      {/* Large soft bokeh circles */}
+      <div className="absolute top-[10%] left-[5%] w-32 h-32 bg-primary/20 rounded-full blur-2xl" />
+      <div className="absolute top-[15%] right-[15%] w-48 h-48 bg-primary/15 rounded-full blur-3xl" />
+      <div className="absolute top-[50%] left-[20%] w-24 h-24 bg-primary/25 rounded-full blur-xl" />
+      <div className="absolute top-[60%] right-[8%] w-40 h-40 bg-primary/10 rounded-full blur-2xl" />
+      <div className="absolute top-[80%] left-[40%] w-36 h-36 bg-primary/15 rounded-full blur-2xl" />
+
+      {/* Medium bokeh spots */}
+      <div className="absolute top-[25%] left-[45%] w-20 h-20 bg-primary/20 rounded-full blur-xl" />
+      <div className="absolute top-[35%] right-[30%] w-16 h-16 bg-primary/25 rounded-full blur-lg" />
+      <div className="absolute top-[70%] left-[10%] w-28 h-28 bg-primary/15 rounded-full blur-2xl" />
+      <div className="absolute top-[45%] right-[45%] w-14 h-14 bg-primary/20 rounded-full blur-lg" />
+
+      {/* Small accent spots */}
+      <div className="absolute top-[20%] left-[70%] w-10 h-10 bg-primary/30 rounded-full blur-md" />
+      <div className="absolute top-[55%] left-[55%] w-8 h-8 bg-primary/25 rounded-full blur-md" />
+      <div className="absolute top-[75%] right-[25%] w-12 h-12 bg-primary/20 rounded-full blur-lg" />
+      <div className="absolute top-[40%] left-[8%] w-10 h-10 bg-primary/25 rounded-full blur-md" />
+      <div className="absolute top-[85%] right-[60%] w-8 h-8 bg-primary/30 rounded-full blur-md" />
+    </div>
+  );
+}
+
+// Gradient fade transition between sections
+function GradientTransition({
+  from = "transparent",
+  to = "transparent",
+  height = "120px",
+  className = ""
+}: {
+  from?: string;
+  to?: string;
+  height?: string;
+  className?: string;
+}) {
+  return (
+    <div
+      className={`absolute left-0 right-0 bottom-0 pointer-events-none ${className}`}
+      style={{
+        height,
+        background: `linear-gradient(to bottom, ${from}, ${to})`
+      }}
+    />
+  );
+}
+
+// Wave divider SVG component
+function WaveDivider({
+  position = "bottom",
+  fillColor = "var(--background)",
+  className = ""
+}: {
+  position?: "top" | "bottom";
+  fillColor?: string;
+  className?: string;
+}) {
+  const isTop = position === "top";
+
+  return (
+    <div
+      className={`absolute left-0 right-0 w-full overflow-hidden leading-none ${
+        isTop ? 'top-0 rotate-180' : 'bottom-0'
+      } ${className}`}
+      style={{ height: '60px' }}
+    >
+      <svg
+        className="relative block w-full h-full"
+        viewBox="0 0 1200 120"
+        preserveAspectRatio="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z"
+          fill={fillColor}
+          opacity="0.25"
+        />
+        <path
+          d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z"
+          fill={fillColor}
+          opacity="0.5"
+        />
+        <path
+          d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z"
+          fill={fillColor}
+        />
+      </svg>
+    </div>
+  );
+}
+
+// Curved divider (gentler curve)
+function CurvedDivider({
+  position = "bottom",
+  fillColor = "var(--background)",
+  className = ""
+}: {
+  position?: "top" | "bottom";
+  fillColor?: string;
+  className?: string;
+}) {
+  const isTop = position === "top";
+
+  return (
+    <div
+      className={`absolute left-0 right-0 w-full overflow-hidden leading-none ${
+        isTop ? 'top-0 rotate-180' : 'bottom-0'
+      } ${className}`}
+      style={{ height: '80px' }}
+    >
+      <svg
+        className="relative block w-full h-full"
+        viewBox="0 0 1200 120"
+        preserveAspectRatio="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M600,112.77C268.63,112.77,0,65.52,0,7.23V120H1200V7.23C1200,65.52,931.37,112.77,600,112.77Z"
+          fill={fillColor}
+        />
+      </svg>
+    </div>
+  );
+}
+
+// Floating decorative orbs
+function FloatingOrbs({ variant = "light" }: { variant?: "light" | "primary" }) {
+  const floatingVariants = {
+    animate: {
+      y: [-15, 15, -15],
+      x: [-5, 5, -5],
+      transition: {
+        duration: 8,
+        repeat: Infinity,
+        ease: "easeInOut"
+      }
+    }
+  };
+
+  const floatingVariants2 = {
+    animate: {
+      y: [10, -20, 10],
+      x: [5, -5, 5],
+      transition: {
+        duration: 10,
+        repeat: Infinity,
+        ease: "easeInOut"
+      }
+    }
+  };
+
+  const floatingVariants3 = {
+    animate: {
+      y: [-20, 10, -20],
+      x: [-8, 8, -8],
+      transition: {
+        duration: 12,
+        repeat: Infinity,
+        ease: "easeInOut"
+      }
+    }
+  };
+
+  const baseColor = "bg-primary";
+  const opacityLow = variant === "primary" ? "opacity-20" : "opacity-[0.08]";
+  const opacityMed = variant === "primary" ? "opacity-25" : "opacity-[0.12]";
+  const opacityHigh = variant === "primary" ? "opacity-30" : "opacity-[0.15]";
+
+  return (
+    <div className="absolute inset-0 overflow-hidden pointer-events-none">
+      <motion.div
+        variants={floatingVariants}
+        animate="animate"
+        className={`absolute top-[10%] left-[5%] w-64 h-64 ${baseColor} ${opacityMed} rounded-full blur-3xl`}
+      />
+      <motion.div
+        variants={floatingVariants2}
+        animate="animate"
+        className={`absolute top-[60%] right-[10%] w-96 h-96 ${baseColor} ${opacityLow} rounded-full blur-3xl`}
+      />
+      <motion.div
+        variants={floatingVariants3}
+        animate="animate"
+        className={`absolute top-[30%] right-[20%] w-48 h-48 ${baseColor} ${opacityHigh} rounded-full blur-2xl`}
+      />
+      <motion.div
+        variants={floatingVariants}
+        animate="animate"
+        className={`absolute bottom-[20%] left-[15%] w-72 h-72 ${baseColor} ${opacityLow} rounded-full blur-3xl`}
+      />
+    </div>
+  );
+}
+
+// ============================================
+// PRICING COMPONENTS
+// ============================================
+
 // Import B&W stock images for service cards
 import websiteImg from "@assets/stock_images/black_and_white_desk_69514a94.jpg";
 import searchImg from "@assets/stock_images/black_and_white_mode_319eff6f.jpg";
@@ -60,20 +265,23 @@ function PricingCard({ image, title, description, items, note, index, featured }
       }}
       className={`group relative bg-card rounded-xl overflow-hidden border-2 transition-all duration-500 ${
         featured
-          ? 'border-primary shadow-lg shadow-primary/10'
-          : 'border-border hover:border-primary/50 hover:shadow-xl hover:shadow-primary/5'
+          ? 'border-primary shadow-lg shadow-primary/20 ring-1 ring-primary/10'
+          : 'border-border hover:border-primary/50 hover:shadow-2xl hover:shadow-primary/10'
       }`}
     >
+      {/* Glow effect on hover */}
+      <div className="absolute -inset-px bg-gradient-to-r from-primary/0 via-primary/10 to-primary/0 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-sm" />
+
       {/* Featured badge */}
       {featured && (
-        <div className="absolute top-4 right-4 z-10 bg-primary text-white px-3 py-1 rounded-full text-sm font-sans font-medium flex items-center gap-1">
+        <div className="absolute top-4 right-4 z-10 bg-primary text-white px-3 py-1 rounded-full text-sm font-sans font-medium flex items-center gap-1 shadow-lg shadow-primary/30">
           <Sparkles className="w-3 h-3" />
           Popular
         </div>
       )}
 
       {/* Image container with overlay */}
-      <div className="relative h-48 md:h-56 overflow-hidden">
+      <div className="relative h-48 md:h-56 overflow-hidden z-10">
         <motion.img
           src={image}
           alt={title}
@@ -102,7 +310,7 @@ function PricingCard({ image, title, description, items, note, index, featured }
       </div>
 
       {/* Content */}
-      <div className="p-6 md:p-8">
+      <div className="relative z-10 p-6 md:p-8 bg-card">
         <p className="font-serif text-muted-foreground leading-relaxed mb-6">
           {description}
         </p>
@@ -138,6 +346,105 @@ function PricingCard({ image, title, description, items, note, index, featured }
             {note}
           </motion.p>
         )}
+      </div>
+    </motion.div>
+  );
+}
+
+// Audit Card Component for one-time services
+interface AuditCardProps {
+  title: string;
+  price: string;
+  description: string;
+  features: string[];
+  index: number;
+  featured?: boolean;
+  badge?: string;
+}
+
+function AuditCard({ title, price, description, features, index, featured, badge }: AuditCardProps) {
+  const cardRef = useRef(null);
+  const isInView = useInView(cardRef, { once: true, amount: 0.2 });
+
+  const cardVariants = {
+    hidden: { opacity: 0, y: 60, scale: 0.95 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      scale: 1,
+      transition: {
+        duration: 0.7,
+        ease: [0.22, 1, 0.36, 1],
+        delay: index * 0.12
+      }
+    }
+  };
+
+  return (
+    <motion.div
+      ref={cardRef}
+      variants={cardVariants}
+      initial="hidden"
+      animate={isInView ? "visible" : "hidden"}
+      whileHover={{
+        y: -8,
+        transition: { duration: 0.3, ease: [0.22, 1, 0.36, 1] }
+      }}
+      className={`group relative bg-card rounded-xl overflow-hidden border-2 transition-all duration-500 ${
+        featured
+          ? 'border-primary shadow-lg shadow-primary/20 ring-1 ring-primary/10'
+          : 'border-border hover:border-primary/50 hover:shadow-2xl hover:shadow-primary/10'
+      }`}
+    >
+      {/* Glow effect on hover */}
+      <div className="absolute -inset-px bg-gradient-to-r from-primary/0 via-primary/10 to-primary/0 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-sm" />
+
+      {/* Featured badge */}
+      {featured && badge && (
+        <div className="absolute top-4 right-4 z-20 bg-primary text-white px-3 py-1 rounded-full text-sm font-sans font-medium flex items-center gap-1 shadow-lg shadow-primary/30">
+          <Sparkles className="w-3 h-3" />
+          {badge}
+        </div>
+      )}
+
+      {/* Header with title and price */}
+      <div className={`relative z-10 px-6 pt-6 pb-4 md:px-8 md:pt-8 md:pb-5 ${featured ? 'bg-primary/5' : 'bg-muted/30'}`}>
+        <h3 className="font-display font-semibold text-xl md:text-2xl text-foreground mb-2 pr-20">
+          {title}
+        </h3>
+        <div className="flex items-baseline gap-1">
+          <span className="font-display font-bold text-3xl md:text-4xl text-primary">{price}</span>
+        </div>
+        {/* Accent line */}
+        <motion.div
+          className="absolute bottom-0 left-0 h-1 bg-primary"
+          initial={{ width: "0%" }}
+          whileInView={{ width: "100%" }}
+          transition={{ duration: 0.8, delay: 0.3 + index * 0.1, ease: [0.22, 1, 0.36, 1] }}
+        />
+      </div>
+
+      {/* Content */}
+      <div className="relative z-10 p-6 md:p-8 bg-card">
+        <p className="font-serif text-muted-foreground leading-relaxed mb-6">
+          {description}
+        </p>
+
+        {/* Features list */}
+        <div className="space-y-3">
+          {features.map((feature, i) => (
+            <motion.div
+              key={i}
+              className="flex items-start gap-3"
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ delay: 0.4 + i * 0.08, duration: 0.5 }}
+            >
+              <Check className="w-5 h-5 text-primary mt-0.5 shrink-0" />
+              <span className="font-serif text-foreground text-sm md:text-base">{feature}</span>
+            </motion.div>
+          ))}
+        </div>
       </div>
     </motion.div>
   );
@@ -323,6 +630,8 @@ export default function Pricing() {
   const isHeaderInView = useInView(headerRef, { once: true, amount: 0.5 });
   const valueRef = useRef(null);
   const isValueInView = useInView(valueRef, { once: true, amount: 0.3 });
+  const auditHeaderRef = useRef(null);
+  const isAuditHeaderInView = useInView(auditHeaderRef, { once: true, amount: 0.5 });
 
   const headerVariants = {
     hidden: { opacity: 0, y: 40 },
@@ -407,6 +716,46 @@ export default function Pricing() {
         { label: "Custom pricing based on your needs", price: "Inquire" }
       ],
       note: "Pricing varies based on platform, campaign size, ad spend, and complexity. Let's discuss your goals to create a custom quote."
+    }
+  ];
+
+  const auditServices = [
+    {
+      title: "Strategic Growth Audit (SEO)",
+      price: "$1,200",
+      description: "Stop guessing what works. We build a data-backed roadmap to get your brand found. This isn't just a keyword list; it's a blueprint for revenue.",
+      features: [
+        "Deep-Dive Keyword Research & Competitor Analysis",
+        "Content Gap Strategy & Integration Plan",
+        "Google Business Profile Optimization",
+        "Backlink Strategy & Outreach Templates",
+        "Comprehensive SEO Strategy Roadmap"
+      ]
+    },
+    {
+      title: "Technical Health Check (Web Audit)",
+      price: "$900",
+      description: "A beautiful website is useless if Google can't read it. We look under the hood to fix the invisible breaks slowing you down.",
+      features: [
+        "Core Web Vitals & Speed Assessment",
+        "Indexability, Robots.txt & Sitemap Review",
+        "Mobile Usability & Schema Markup Check",
+        "Metadata, H-Tag & Broken Link Analysis",
+        "Prioritized \"Fix It\" Action List"
+      ]
+    },
+    {
+      title: "The Full Stack Bundle",
+      price: "$2,000",
+      description: "The ultimate foundation. Combines technical repairs with forward-looking strategy for maximum impact.",
+      features: [
+        "Everything in the Strategic SEO Audit",
+        "Everything in the Technical Health Check",
+        "Executive \"State of the Union\" Report",
+        "6-Month Priority Growth Roadmap"
+      ],
+      featured: true,
+      badge: "Best Value"
     }
   ];
 
@@ -562,8 +911,11 @@ export default function Pricing() {
       />
 
       {/* Value proposition section */}
-      <section className="py-12 md:py-16 bg-gradient-to-b from-primary/5 to-background">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="relative py-8 md:py-12 bg-gradient-to-b from-primary/10 via-primary/5 to-background overflow-hidden">
+        {/* Floating orbs */}
+        <FloatingOrbs variant="light" />
+
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             ref={valueRef}
             className="text-center"
@@ -586,14 +938,87 @@ export default function Pricing() {
             </motion.p>
           </motion.div>
         </div>
+
+        {/* Gradient fade transition to next section */}
+        <GradientTransition
+          from="transparent"
+          to="hsl(var(--background))"
+          height="80px"
+        />
       </section>
 
-      {/* Pricing cards section */}
-      <section className="py-16 md:py-24 bg-background">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div ref={headerRef} className="text-center mb-12 md:mb-16">
+      {/* Audits & Strategy section - NOW FIRST */}
+      <section className="relative py-10 md:py-16 bg-background overflow-hidden">
+        {/* Bokeh light spots */}
+        <BokehEffect opacity={0.5} />
+
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div ref={auditHeaderRef} className="text-center mb-8 md:mb-12">
+            <motion.div
+              className="inline-flex items-center gap-2 bg-primary/10 border border-primary/20 rounded-full px-4 py-2 mb-6"
+              initial={{ opacity: 0, y: 20 }}
+              animate={isAuditHeaderInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+              transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+            >
+              <span className="w-2 h-2 bg-primary rounded-full" />
+              <span className="font-sans text-sm font-medium text-primary">Audits & Strategy</span>
+            </motion.div>
             <motion.h2
-              className="font-display font-bold text-3xl md:text-4xl lg:text-5xl text-foreground mb-4"
+              className="font-display font-bold text-3xl md:text-4xl lg:text-5xl mb-4 bg-gradient-to-r from-foreground via-primary to-foreground bg-clip-text text-transparent bg-[length:200%_auto] animate-gradient"
+              variants={headerVariants}
+              initial="hidden"
+              animate={isAuditHeaderInView ? "visible" : "hidden"}
+            >
+              Audits & Strategy
+            </motion.h2>
+            <motion.div
+              variants={lineVariants}
+              initial="hidden"
+              animate={isAuditHeaderInView ? "visible" : "hidden"}
+              className="w-24 h-1 bg-gradient-to-r from-transparent via-primary to-transparent mx-auto rounded-full origin-center"
+            />
+            <motion.p
+              className="font-serif text-lg text-muted-foreground max-w-2xl mx-auto mt-6"
+              initial={{ opacity: 0, y: 20 }}
+              animate={isAuditHeaderInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+              transition={{ duration: 0.6, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
+            >
+              Get the clarity you need to move forward. These comprehensive audits deliver actionable insights—no ongoing commitment required.
+            </motion.p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+            {auditServices.map((service, index) => (
+              <AuditCard
+                key={service.title}
+                title={service.title}
+                price={service.price}
+                description={service.description}
+                features={service.features}
+                index={index}
+                featured={service.featured}
+                badge={service.badge}
+              />
+            ))}
+          </div>
+        </div>
+
+        {/* Wave divider at bottom */}
+        <WaveDivider position="bottom" fillColor="hsl(var(--muted) / 0.3)" />
+      </section>
+
+      {/* Monthly/Retainer Services section */}
+      <section className="relative py-10 md:py-16 bg-gradient-to-b from-muted/40 via-muted/30 to-muted/50 overflow-hidden">
+        {/* Bokeh light spots */}
+        <BokehEffect opacity={0.4} />
+
+        {/* Floating orbs */}
+        <FloatingOrbs variant="primary" />
+
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div ref={headerRef} className="text-center mb-8 md:mb-12">
+            <motion.h2
+              className="font-display font-bold text-3xl md:text-4xl lg:text-5xl mb-4 bg-gradient-to-r from-foreground via-primary to-foreground bg-clip-text text-transparent bg-[length:200%_auto] animate-gradient"
               variants={headerVariants}
               initial="hidden"
               animate={isHeaderInView ? "visible" : "hidden"}
@@ -604,7 +1029,7 @@ export default function Pricing() {
               variants={lineVariants}
               initial="hidden"
               animate={isHeaderInView ? "visible" : "hidden"}
-              className="w-24 h-1 bg-primary mx-auto rounded-full origin-center"
+              className="w-24 h-1 bg-gradient-to-r from-transparent via-primary to-transparent mx-auto rounded-full origin-center"
             />
           </div>
 
@@ -623,6 +1048,9 @@ export default function Pricing() {
             ))}
           </div>
         </div>
+
+        {/* Curved divider at bottom */}
+        <CurvedDivider position="bottom" fillColor="hsl(var(--primary))" />
       </section>
 
       {/* Enhanced CTA Section */}

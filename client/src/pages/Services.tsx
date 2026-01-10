@@ -9,6 +9,7 @@ import { useRef } from "react";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
 import { MessageCircle, Sparkles, ArrowRight, Check } from "lucide-react";
+import { BokehEffect, FloatingOrbs, WaveDivider, GradientTransition } from "@/components/decorative";
 // Optimized WebP images with responsive sizes
 import servicesHero from "@assets/services_hero_team_1920.webp";
 import servicesHero768 from "@assets/services_hero_team_768.webp";
@@ -109,8 +110,9 @@ export default function Services() {
         isLCP={true}
       />
 
-      <div ref={headerRef} className="pt-12 md:pt-16 bg-background overflow-hidden">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div ref={headerRef} className="relative pt-12 md:pt-16 bg-background overflow-hidden">
+        <BokehEffect opacity={0.3} />
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.h2
             className="font-display font-semibold text-3xl md:text-4xl lg:text-5xl text-center text-foreground mb-12"
             data-testid="text-services-header"
@@ -123,11 +125,20 @@ export default function Services() {
         </div>
       </div>
 
-      <ServicesGrid services={services} />
+      <div className="relative overflow-hidden">
+        <FloatingOrbs variant="light" />
+        <ServicesGrid services={services} />
+      </div>
+
+      {/* Wave divider before "don't see your service" section */}
+      <div className="relative bg-gradient-to-b from-background to-primary/5 h-16">
+        <WaveDivider position="top" fillColor="hsl(var(--background))" />
+      </div>
 
       {/* Don't see your service section */}
-      <section className="py-16 md:py-20 bg-gradient-to-b from-background to-primary/5">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <section className="relative py-16 md:py-20 bg-gradient-to-b from-primary/5 to-primary/10 overflow-hidden">
+        <BokehEffect opacity={0.35} />
+        <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -159,12 +170,16 @@ export default function Services() {
             </Link>
           </motion.div>
         </div>
+        <GradientTransition from="transparent" to="hsl(var(--background))" height="80px" />
       </section>
 
-      <FAQ
-        items={faqs}
-        subtitle="Everything you need to know about working with Elevate Growth Solutions"
-      />
+      <div className="relative overflow-hidden">
+        <FloatingOrbs variant="light" />
+        <FAQ
+          items={faqs}
+          subtitle="Everything you need to know about working with Elevate Growth Solutions"
+        />
+      </div>
 
       {/* Enhanced CTA Section */}
       <section className="relative py-20 md:py-28 lg:py-32 overflow-hidden bg-gradient-to-br from-primary via-primary to-[hsl(191,60%,25%)]">
