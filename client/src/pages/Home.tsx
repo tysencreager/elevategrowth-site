@@ -9,6 +9,7 @@ import CTASection from "@/components/CTASection";
 import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
 import SchemaMarkup from "@/components/SchemaMarkup";
+import { BokehEffect, FloatingOrbs, WaveDivider, GradientTransition } from "@/components/decorative";
 // Optimized WebP images
 import valueImage from "@assets/value_prop.webp";
 import ctaImage from "@assets/cta_background.webp";
@@ -101,31 +102,62 @@ export default function Home() {
       />
 
       {/* Logo Banner - Social proof right after hero */}
-      <LogoBanner
-        logos={clientLogos}
-        title="Trusted By Growing Businesses"
-      />
+      <div className="relative overflow-hidden">
+        <FloatingOrbs variant="light" />
+        <LogoBanner
+          logos={clientLogos}
+          title="Trusted By Growing Businesses"
+        />
+      </div>
 
-      <ValueProp
-        image={valueImage}
-        imageAlt="Professional working on laptop"
-        title="You're Not Just Another Client. Your Business Deserves Marketing That Actually Works."
-        description="Tired of being just a number at big agencies? At Elevate Growth Solutions, we're a boutique firm that gives every client the care and attention they deserve. We handle everything—web design, SEO, social media, branding, and ad campaigns—so you can save time, relieve stress, and focus on what you do best: running your business. Whether you're launching your first website or ready to scale with confidence, we're here to help you generate more leads and grow."
-      />
+      {/* Wave divider before Value Prop */}
+      <div className="relative bg-background">
+        <WaveDivider position="top" fillColor="hsl(var(--muted) / 0.3)" />
+      </div>
 
-      <Process
-        steps={processSteps}
-        subtitle="A simple, proven approach to elevating your brand"
-      />
+      <div className="relative overflow-hidden">
+        <BokehEffect opacity={0.4} />
+        <ValueProp
+          image={valueImage}
+          imageAlt="Professional working on laptop"
+          title="You're Not Just Another Client. Your Business Deserves Marketing That Actually Works."
+          description="Tired of being just a number at big agencies? At Elevate Growth Solutions, we're a boutique firm that gives every client the care and attention they deserve. We handle everything—web design, SEO, social media, branding, and ad campaigns—so you can save time, relieve stress, and focus on what you do best: running your business. Whether you're launching your first website or ready to scale with confidence, we're here to help you generate more leads and grow."
+        />
+      </div>
 
-      <LeadMagnet
-        title="Free 90-Day Growth Starter Pack"
-        description="Kickstart your marketing journey with our comprehensive growth checklist. Get actionable strategies, proven tactics, and expert tips to elevate your brand in the first 90 days—completely free."
-        ctaText="Claim Your Free Pack"
-      />
+      {/* Gradient transition before Process */}
+      <div className="relative h-20 bg-background">
+        <GradientTransition from="transparent" to="hsl(var(--primary) / 0.05)" height="80px" />
+      </div>
+
+      <div className="relative overflow-hidden bg-gradient-to-b from-primary/5 to-transparent">
+        <FloatingOrbs variant="light" />
+        <Process
+          steps={processSteps}
+          subtitle="A simple, proven approach to elevating your brand"
+        />
+      </div>
+
+      <div className="relative overflow-hidden">
+        <BokehEffect opacity={0.3} />
+        <LeadMagnet
+          title="Free 90-Day Growth Starter Pack"
+          description="Kickstart your marketing journey with our comprehensive growth checklist. Get actionable strategies, proven tactics, and expert tips to elevate your brand in the first 90 days—completely free."
+          ctaText="Claim Your Free Pack"
+        />
+      </div>
+
+      {/* Wave divider before testimonials */}
+      <div className="relative bg-muted/30 h-16">
+        <WaveDivider position="top" fillColor="hsl(var(--background))" />
+      </div>
 
       {/* Testimonial Carousel - Rotating testimonials */}
-      <TestimonialCarousel testimonials={testimonials} autoPlayInterval={6000} />
+      <div className="relative overflow-hidden bg-muted/30">
+        <FloatingOrbs variant="light" />
+        <TestimonialCarousel testimonials={testimonials} autoPlayInterval={6000} />
+        <GradientTransition from="transparent" to="hsl(var(--background))" height="60px" />
+      </div>
 
       <CTASection
         backgroundImage={ctaImage}

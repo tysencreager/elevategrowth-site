@@ -6,6 +6,7 @@ import Footer from "@/components/Footer";
 import CTASection from "@/components/CTASection";
 import SEO from "@/components/SEO";
 import LogoBanner from "@/components/LogoBanner";
+import { BokehEffect, FloatingOrbs, WaveDivider, GradientTransition } from "@/components/decorative";
 
 interface Testimonial {
   quote: string;
@@ -282,31 +283,9 @@ export default function Testimonials() {
 
       {/* Hero Section with gradient background */}
       <section className="pt-32 pb-16 md:pt-40 md:pb-20 bg-gradient-to-b from-primary/5 via-accent/10 to-background relative overflow-hidden">
-        {/* Animated background shapes */}
-        <motion.div
-          className="absolute top-20 left-10 w-64 h-64 rounded-full bg-primary/5 blur-3xl"
-          animate={{
-            x: [0, 30, 0],
-            y: [0, -20, 0],
-          }}
-          transition={{
-            duration: 8,
-            repeat: Infinity,
-            ease: "easeInOut"
-          }}
-        />
-        <motion.div
-          className="absolute bottom-10 right-10 w-96 h-96 rounded-full bg-accent/10 blur-3xl"
-          animate={{
-            x: [0, -40, 0],
-            y: [0, 30, 0],
-          }}
-          transition={{
-            duration: 10,
-            repeat: Infinity,
-            ease: "easeInOut"
-          }}
-        />
+        {/* Decorative elements */}
+        <BokehEffect opacity={0.4} />
+        <FloatingOrbs variant="light" />
 
         <div ref={headerRef} className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
           <motion.div
@@ -377,8 +356,9 @@ export default function Testimonials() {
       />
 
       {/* Testimonials Grid */}
-      <section className="py-16 md:py-20 lg:py-24 bg-gradient-to-b from-background via-accent/5 to-background">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="relative py-10 md:py-14 lg:py-16 bg-gradient-to-b from-background via-accent/5 to-background overflow-hidden">
+        <BokehEffect opacity={0.3} />
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
             {testimonials.map((testimonial, index) => (
               <TestimonialCard

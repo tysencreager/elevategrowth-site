@@ -4,6 +4,7 @@ import SEO from "@/components/SEO";
 import Credentials, { Award, GraduationCap, TrendingUp } from "@/components/Credentials";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
+import { BokehEffect, FloatingOrbs, WaveDivider, GradientTransition } from "@/components/decorative";
 // Optimized WebP images
 import tysenPhoto from "@assets/tysen_photo_800.webp";
 import tysenPhoto400 from "@assets/tysen_photo_400.webp";
@@ -118,8 +119,12 @@ export default function BehindElevate() {
       />
       <Navbar />
 
-      <section ref={sectionRef} className="pt-24 md:pt-32 lg:pt-40 pb-8 md:pb-12 lg:pb-16 bg-background overflow-hidden">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section ref={sectionRef} className="relative pt-24 md:pt-32 lg:pt-40 pb-8 md:pb-12 lg:pb-16 bg-background overflow-hidden">
+        {/* Subtle bokeh effect for depth */}
+        <BokehEffect opacity={0.35} />
+        <FloatingOrbs variant="light" />
+
+        <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row gap-12 md:gap-16 items-center">
             <motion.div
               className="md:w-2/5"
@@ -222,9 +227,20 @@ export default function BehindElevate() {
             </motion.div>
           </div>
         </div>
+
+        {/* Gradient transition to credentials section */}
+        <GradientTransition from="transparent" to="hsl(var(--muted) / 0.3)" height="80px" />
       </section>
 
-      <Credentials credentials={credentials} />
+      {/* Wave divider before credentials */}
+      <div className="relative bg-muted/30">
+        <WaveDivider position="top" fillColor="hsl(var(--background))" />
+      </div>
+
+      <div className="relative overflow-hidden bg-muted/30">
+        <BokehEffect opacity={0.25} />
+        <Credentials credentials={credentials} />
+      </div>
 
       <Footer />
     </div>
