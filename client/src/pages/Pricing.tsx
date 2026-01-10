@@ -26,65 +26,52 @@ function TopographicPattern({ className = "", opacity = 0.08 }: { className?: st
         xmlns="http://www.w3.org/2000/svg"
       >
         <defs>
-          <pattern id="topo-pattern" x="0" y="0" width="200" height="200" patternUnits="userSpaceOnUse">
-            {/* Organic wavy contour lines */}
-            <path
-              d="M20,100 Q50,60 100,80 T180,100 T260,90"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="1"
-              className="text-primary"
-            />
-            <path
-              d="M0,140 Q40,100 90,120 T170,110 T250,130"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="1"
-              className="text-primary"
-            />
-            <path
-              d="M10,60 Q60,30 110,50 T190,40 T270,60"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="1"
-              className="text-primary"
-            />
-            <path
-              d="M-20,180 Q30,150 80,170 T160,160 T240,180"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="1"
-              className="text-primary"
-            />
-            <path
-              d="M30,20 Q70,0 120,15 T200,10 T280,25"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="1"
-              className="text-primary"
-            />
-            {/* Secondary offset wavy lines for depth */}
-            <path
-              d="M-10,120 Q35,85 85,100 T165,95 T245,115"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="0.5"
-              className="text-primary"
-            />
-            <path
-              d="M5,80 Q55,50 105,65 T185,55 T265,75"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="0.5"
-              className="text-primary"
-            />
-            <path
-              d="M-5,160 Q45,130 95,145 T175,135 T255,155"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="0.5"
-              className="text-primary"
-            />
+          <pattern id="topo-pattern" x="0" y="0" width="400" height="400" patternUnits="userSpaceOnUse">
+            {/* Cluster 1 - Large organic nested contours */}
+            <path d="M80,90 Q95,45 140,50 Q185,55 195,100 Q205,145 170,175 Q135,205 90,185 Q45,165 50,120 Q55,75 80,90 Z" fill="none" stroke="currentColor" strokeWidth="1" className="text-primary" />
+            <path d="M90,95 Q102,60 135,65 Q168,70 175,105 Q182,140 155,162 Q128,184 95,168 Q62,152 67,118 Q72,84 90,95 Z" fill="none" stroke="currentColor" strokeWidth="1" className="text-primary" />
+            <path d="M100,100 Q110,75 132,78 Q154,81 158,108 Q162,135 142,150 Q122,165 102,152 Q82,139 85,115 Q88,91 100,100 Z" fill="none" stroke="currentColor" strokeWidth="1" className="text-primary" />
+            <path d="M110,108 Q116,92 128,94 Q140,96 142,112 Q144,128 130,138 Q116,148 106,136 Q96,124 100,112 Q104,100 110,108 Z" fill="none" stroke="currentColor" strokeWidth="1" className="text-primary" />
+
+            {/* Cluster 2 - Medium nested contours offset */}
+            <path d="M260,140 Q290,100 340,115 Q390,130 385,185 Q380,240 330,260 Q280,280 245,245 Q210,210 225,170 Q240,130 260,140 Z" fill="none" stroke="currentColor" strokeWidth="1" className="text-primary" />
+            <path d="M270,155 Q292,125 330,135 Q368,145 364,188 Q360,231 320,245 Q280,259 255,232 Q230,205 242,175 Q254,145 270,155 Z" fill="none" stroke="currentColor" strokeWidth="1" className="text-primary" />
+            <path d="M282,170 Q298,148 325,155 Q352,162 349,192 Q346,222 315,232 Q284,242 266,220 Q248,198 258,178 Q268,158 282,170 Z" fill="none" stroke="currentColor" strokeWidth="1" className="text-primary" />
+            <path d="M295,185 Q305,170 320,175 Q335,180 333,198 Q331,216 315,222 Q299,228 288,214 Q277,200 283,190 Q289,180 295,185 Z" fill="none" stroke="currentColor" strokeWidth="1" className="text-primary" />
+            <path d="M304,195 Q310,188 318,190 Q326,192 325,202 Q324,212 316,215 Q308,218 302,210 Q296,202 300,197 Q304,192 304,195 Z" fill="none" stroke="currentColor" strokeWidth="1" className="text-primary" />
+
+            {/* Cluster 3 - Small nested contours */}
+            <path d="M55,280 Q75,250 115,260 Q155,270 150,310 Q145,350 105,360 Q65,370 50,335 Q35,300 55,280 Z" fill="none" stroke="currentColor" strokeWidth="1" className="text-primary" />
+            <path d="M65,288 Q80,265 110,272 Q140,279 136,310 Q132,341 100,348 Q68,355 56,328 Q44,301 65,288 Z" fill="none" stroke="currentColor" strokeWidth="1" className="text-primary" />
+            <path d="M75,298 Q86,282 106,287 Q126,292 123,314 Q120,336 98,341 Q76,346 66,324 Q56,302 75,298 Z" fill="none" stroke="currentColor" strokeWidth="1" className="text-primary" />
+            <path d="M85,308 Q92,298 104,301 Q116,304 114,318 Q112,332 99,335 Q86,338 80,326 Q74,314 85,308 Z" fill="none" stroke="currentColor" strokeWidth="1" className="text-primary" />
+
+            {/* Cluster 4 - Elongated organic shape */}
+            <path d="M220,320 Q260,280 320,290 Q380,300 390,350 Q400,400 350,390 Q300,380 260,370 Q220,360 210,340 Q200,320 220,320 Z" fill="none" stroke="currentColor" strokeWidth="1" className="text-primary" />
+            <path d="M235,325 Q268,295 315,302 Q362,309 370,348 Q378,387 338,379 Q298,371 264,363 Q230,355 222,340 Q214,325 235,325 Z" fill="none" stroke="currentColor" strokeWidth="1" className="text-primary" />
+            <path d="M250,332 Q276,310 312,315 Q348,320 354,350 Q360,380 328,374 Q296,368 268,360 Q240,352 236,342 Q232,332 250,332 Z" fill="none" stroke="currentColor" strokeWidth="1" className="text-primary" />
+
+            {/* Cluster 5 - Top right corner organic shape */}
+            <path d="M320,30 Q350,10 380,25 Q410,40 400,75 Q390,110 355,105 Q320,100 310,70 Q300,40 320,30 Z" fill="none" stroke="currentColor" strokeWidth="1" className="text-primary" />
+            <path d="M328,40 Q350,25 372,36 Q394,47 386,72 Q378,97 352,93 Q326,89 320,66 Q314,43 328,40 Z" fill="none" stroke="currentColor" strokeWidth="1" className="text-primary" />
+            <path d="M338,50 Q352,40 368,48 Q384,56 378,74 Q372,92 354,89 Q336,86 332,70 Q328,54 338,50 Z" fill="none" stroke="currentColor" strokeWidth="1" className="text-primary" />
+            <path d="M348,58 Q356,52 366,57 Q376,62 372,74 Q368,86 358,84 Q348,82 346,72 Q344,62 348,58 Z" fill="none" stroke="currentColor" strokeWidth="1" className="text-primary" />
+
+            {/* Cluster 6 - Small accent near center */}
+            <path d="M180,220 Q200,200 230,210 Q260,220 255,250 Q250,280 220,280 Q190,280 180,255 Q170,230 180,220 Z" fill="none" stroke="currentColor" strokeWidth="1" className="text-primary" />
+            <path d="M190,228 Q204,212 225,220 Q246,228 242,250 Q238,272 215,272 Q192,272 185,252 Q178,232 190,228 Z" fill="none" stroke="currentColor" strokeWidth="1" className="text-primary" />
+            <path d="M200,238 Q210,228 224,233 Q238,238 235,254 Q232,270 216,270 Q200,270 195,256 Q190,242 200,238 Z" fill="none" stroke="currentColor" strokeWidth="1" className="text-primary" />
+
+            {/* Additional smaller clusters for density */}
+            <path d="M160,380 Q175,365 195,372 Q215,379 210,400 Q205,421 185,420 Q165,419 160,400 Q155,381 160,380 Z" fill="none" stroke="currentColor" strokeWidth="0.75" className="text-primary" />
+            <path d="M168,386 Q178,376 192,381 Q206,386 202,400 Q198,414 184,413 Q170,412 167,400 Q164,388 168,386 Z" fill="none" stroke="currentColor" strokeWidth="0.75" className="text-primary" />
+
+            <path d="M380,220 Q392,208 408,214 Q424,220 420,238 Q416,256 400,256 Q384,256 380,240 Q376,224 380,220 Z" fill="none" stroke="currentColor" strokeWidth="0.75" className="text-primary" />
+            <path d="M388,226 Q396,218 406,222 Q416,226 413,238 Q410,250 400,250 Q390,250 387,240 Q384,230 388,226 Z" fill="none" stroke="currentColor" strokeWidth="0.75" className="text-primary" />
+
+            {/* Flowing accent lines connecting regions */}
+            <path d="M0,200 Q40,180 80,190 Q120,200 140,220" fill="none" stroke="currentColor" strokeWidth="0.5" className="text-primary" />
+            <path d="M200,0 Q220,30 210,60 Q200,90 220,110" fill="none" stroke="currentColor" strokeWidth="0.5" className="text-primary" />
           </pattern>
         </defs>
         <rect width="100%" height="100%" fill="url(#topo-pattern)" />
