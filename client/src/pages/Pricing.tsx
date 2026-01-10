@@ -16,49 +16,29 @@ import servicesHero1280 from "@assets/services_hero_team_1280.webp";
 // DECORATIVE COMPONENTS
 // ============================================
 
-// Noise/grain texture background
-function NoiseTexture({ className = "", opacity = 0.5 }: { className?: string; opacity?: number }) {
+// Bokeh/light spots background effect
+function BokehEffect({ className = "", opacity = 0.6 }: { className?: string; opacity?: number }) {
   return (
-    <div className={`absolute inset-0 pointer-events-none overflow-hidden ${className}`}>
-      <svg
-        className="absolute w-full h-full"
-        style={{ opacity }}
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <defs>
-          <filter id="noise-filter" x="0%" y="0%" width="100%" height="100%">
-            <feTurbulence
-              type="fractalNoise"
-              baseFrequency="1.5"
-              numOctaves="5"
-              stitchTiles="stitch"
-              result="noise"
-            />
-            <feColorMatrix
-              type="saturate"
-              values="0"
-              in="noise"
-              result="monoNoise"
-            />
-            <feComponentTransfer in="monoNoise" result="contrastNoise">
-              <feFuncR type="linear" slope="1.5" intercept="-0.25" />
-              <feFuncG type="linear" slope="1.5" intercept="-0.25" />
-              <feFuncB type="linear" slope="1.5" intercept="-0.25" />
-            </feComponentTransfer>
-            <feBlend
-              in="SourceGraphic"
-              in2="contrastNoise"
-              mode="multiply"
-            />
-          </filter>
-        </defs>
-        <rect
-          width="100%"
-          height="100%"
-          filter="url(#noise-filter)"
-          fill="hsl(var(--primary))"
-        />
-      </svg>
+    <div className={`absolute inset-0 pointer-events-none overflow-hidden ${className}`} style={{ opacity }}>
+      {/* Large soft bokeh circles */}
+      <div className="absolute top-[10%] left-[5%] w-32 h-32 bg-primary/20 rounded-full blur-2xl" />
+      <div className="absolute top-[15%] right-[15%] w-48 h-48 bg-primary/15 rounded-full blur-3xl" />
+      <div className="absolute top-[50%] left-[20%] w-24 h-24 bg-primary/25 rounded-full blur-xl" />
+      <div className="absolute top-[60%] right-[8%] w-40 h-40 bg-primary/10 rounded-full blur-2xl" />
+      <div className="absolute top-[80%] left-[40%] w-36 h-36 bg-primary/15 rounded-full blur-2xl" />
+
+      {/* Medium bokeh spots */}
+      <div className="absolute top-[25%] left-[45%] w-20 h-20 bg-primary/20 rounded-full blur-xl" />
+      <div className="absolute top-[35%] right-[30%] w-16 h-16 bg-primary/25 rounded-full blur-lg" />
+      <div className="absolute top-[70%] left-[10%] w-28 h-28 bg-primary/15 rounded-full blur-2xl" />
+      <div className="absolute top-[45%] right-[45%] w-14 h-14 bg-primary/20 rounded-full blur-lg" />
+
+      {/* Small accent spots */}
+      <div className="absolute top-[20%] left-[70%] w-10 h-10 bg-primary/30 rounded-full blur-md" />
+      <div className="absolute top-[55%] left-[55%] w-8 h-8 bg-primary/25 rounded-full blur-md" />
+      <div className="absolute top-[75%] right-[25%] w-12 h-12 bg-primary/20 rounded-full blur-lg" />
+      <div className="absolute top-[40%] left-[8%] w-10 h-10 bg-primary/25 rounded-full blur-md" />
+      <div className="absolute top-[85%] right-[60%] w-8 h-8 bg-primary/30 rounded-full blur-md" />
     </div>
   );
 }
@@ -434,7 +414,6 @@ function AuditCard({ title, price, description, features, index, featured, badge
         </h3>
         <div className="flex items-baseline gap-1">
           <span className="font-display font-bold text-3xl md:text-4xl text-primary">{price}</span>
-          <span className="font-serif text-muted-foreground text-sm">one-time</span>
         </div>
         {/* Accent line */}
         <motion.div
@@ -932,7 +911,7 @@ export default function Pricing() {
       />
 
       {/* Value proposition section */}
-      <section className="relative py-12 md:py-16 bg-gradient-to-b from-primary/10 via-primary/5 to-background overflow-hidden">
+      <section className="relative py-8 md:py-12 bg-gradient-to-b from-primary/10 via-primary/5 to-background overflow-hidden">
         {/* Floating orbs */}
         <FloatingOrbs variant="light" />
 
@@ -964,63 +943,17 @@ export default function Pricing() {
         <GradientTransition
           from="transparent"
           to="hsl(var(--background))"
-          height="100px"
+          height="80px"
         />
       </section>
 
-      {/* Pricing cards section */}
-      <section className="relative py-16 md:py-24 bg-background overflow-hidden">
-        {/* Noise/grain texture */}
-        <NoiseTexture opacity={0.35} />
+      {/* Audits & Strategy section - NOW FIRST */}
+      <section className="relative py-10 md:py-16 bg-background overflow-hidden">
+        {/* Bokeh light spots */}
+        <BokehEffect opacity={0.5} />
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div ref={headerRef} className="text-center mb-12 md:mb-16">
-            <motion.h2
-              className="font-display font-bold text-3xl md:text-4xl lg:text-5xl mb-4 bg-gradient-to-r from-foreground via-primary to-foreground bg-clip-text text-transparent bg-[length:200%_auto] animate-gradient"
-              variants={headerVariants}
-              initial="hidden"
-              animate={isHeaderInView ? "visible" : "hidden"}
-            >
-              Our Services
-            </motion.h2>
-            <motion.div
-              variants={lineVariants}
-              initial="hidden"
-              animate={isHeaderInView ? "visible" : "hidden"}
-              className="w-24 h-1 bg-gradient-to-r from-transparent via-primary to-transparent mx-auto rounded-full origin-center"
-            />
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-            {pricingCategories.map((category, index) => (
-              <PricingCard
-                key={category.title}
-                image={category.image}
-                title={category.title}
-                description={category.description}
-                items={category.items}
-                note={category.note}
-                index={index}
-                featured={category.featured}
-              />
-            ))}
-          </div>
-        </div>
-
-        {/* Wave divider at bottom */}
-        <WaveDivider position="bottom" fillColor="hsl(var(--muted) / 0.3)" />
-      </section>
-
-      {/* One-Time Audits & Strategy section */}
-      <section className="relative py-16 md:py-24 bg-gradient-to-b from-muted/40 via-muted/30 to-muted/50 overflow-hidden">
-        {/* Noise/grain texture */}
-        <NoiseTexture opacity={0.30} />
-
-        {/* Floating orbs */}
-        <FloatingOrbs variant="primary" />
-
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div ref={auditHeaderRef} className="text-center mb-12 md:mb-16">
+          <div ref={auditHeaderRef} className="text-center mb-8 md:mb-12">
             <motion.div
               className="inline-flex items-center gap-2 bg-primary/10 border border-primary/20 rounded-full px-4 py-2 mb-6"
               initial={{ opacity: 0, y: 20 }}
@@ -1028,7 +961,7 @@ export default function Pricing() {
               transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
             >
               <span className="w-2 h-2 bg-primary rounded-full" />
-              <span className="font-sans text-sm font-medium text-primary">One-Time Projects</span>
+              <span className="font-sans text-sm font-medium text-primary">Audits & Strategy</span>
             </motion.div>
             <motion.h2
               className="font-display font-bold text-3xl md:text-4xl lg:text-5xl mb-4 bg-gradient-to-r from-foreground via-primary to-foreground bg-clip-text text-transparent bg-[length:200%_auto] animate-gradient"
@@ -1036,7 +969,7 @@ export default function Pricing() {
               initial="hidden"
               animate={isAuditHeaderInView ? "visible" : "hidden"}
             >
-              One-Time Audits & Strategy
+              Audits & Strategy
             </motion.h2>
             <motion.div
               variants={lineVariants}
@@ -1065,6 +998,52 @@ export default function Pricing() {
                 index={index}
                 featured={service.featured}
                 badge={service.badge}
+              />
+            ))}
+          </div>
+        </div>
+
+        {/* Wave divider at bottom */}
+        <WaveDivider position="bottom" fillColor="hsl(var(--muted) / 0.3)" />
+      </section>
+
+      {/* Monthly/Retainer Services section */}
+      <section className="relative py-10 md:py-16 bg-gradient-to-b from-muted/40 via-muted/30 to-muted/50 overflow-hidden">
+        {/* Bokeh light spots */}
+        <BokehEffect opacity={0.4} />
+
+        {/* Floating orbs */}
+        <FloatingOrbs variant="primary" />
+
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div ref={headerRef} className="text-center mb-8 md:mb-12">
+            <motion.h2
+              className="font-display font-bold text-3xl md:text-4xl lg:text-5xl mb-4 bg-gradient-to-r from-foreground via-primary to-foreground bg-clip-text text-transparent bg-[length:200%_auto] animate-gradient"
+              variants={headerVariants}
+              initial="hidden"
+              animate={isHeaderInView ? "visible" : "hidden"}
+            >
+              Our Services
+            </motion.h2>
+            <motion.div
+              variants={lineVariants}
+              initial="hidden"
+              animate={isHeaderInView ? "visible" : "hidden"}
+              className="w-24 h-1 bg-gradient-to-r from-transparent via-primary to-transparent mx-auto rounded-full origin-center"
+            />
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+            {pricingCategories.map((category, index) => (
+              <PricingCard
+                key={category.title}
+                image={category.image}
+                title={category.title}
+                description={category.description}
+                items={category.items}
+                note={category.note}
+                index={index}
+                featured={category.featured}
               />
             ))}
           </div>

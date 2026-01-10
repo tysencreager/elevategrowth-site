@@ -105,7 +105,7 @@ export default function Process({
   };
 
   return (
-    <section ref={sectionRef} className="py-16 md:py-24 lg:py-32 bg-background overflow-hidden">
+    <section ref={sectionRef} className="py-10 md:py-16 lg:py-20 bg-background overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <motion.h2

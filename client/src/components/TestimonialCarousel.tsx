@@ -85,7 +85,7 @@ export default function TestimonialCarousel({
   return (
     <section
       ref={sectionRef}
-      className="py-16 md:py-20 lg:py-24 bg-gradient-to-b from-accent/20 via-primary/5 to-accent/20 overflow-hidden relative"
+      className="py-10 md:py-14 lg:py-16 bg-gradient-to-b from-accent/20 via-primary/5 to-accent/20 overflow-hidden relative"
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
     >
