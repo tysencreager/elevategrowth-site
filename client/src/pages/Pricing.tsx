@@ -143,6 +143,103 @@ function PricingCard({ image, title, description, items, note, index, featured }
   );
 }
 
+// Audit Card Component for one-time services
+interface AuditCardProps {
+  title: string;
+  price: string;
+  description: string;
+  features: string[];
+  index: number;
+  featured?: boolean;
+  badge?: string;
+}
+
+function AuditCard({ title, price, description, features, index, featured, badge }: AuditCardProps) {
+  const cardRef = useRef(null);
+  const isInView = useInView(cardRef, { once: true, amount: 0.2 });
+
+  const cardVariants = {
+    hidden: { opacity: 0, y: 60, scale: 0.95 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      scale: 1,
+      transition: {
+        duration: 0.7,
+        ease: [0.22, 1, 0.36, 1],
+        delay: index * 0.12
+      }
+    }
+  };
+
+  return (
+    <motion.div
+      ref={cardRef}
+      variants={cardVariants}
+      initial="hidden"
+      animate={isInView ? "visible" : "hidden"}
+      whileHover={{
+        y: -8,
+        transition: { duration: 0.3, ease: [0.22, 1, 0.36, 1] }
+      }}
+      className={`group relative bg-card rounded-xl overflow-hidden border-2 transition-all duration-500 ${
+        featured
+          ? 'border-primary shadow-lg shadow-primary/10'
+          : 'border-border hover:border-primary/50 hover:shadow-xl hover:shadow-primary/5'
+      }`}
+    >
+      {/* Featured badge */}
+      {featured && badge && (
+        <div className="absolute top-4 right-4 z-10 bg-primary text-white px-3 py-1 rounded-full text-sm font-sans font-medium flex items-center gap-1">
+          <Sparkles className="w-3 h-3" />
+          {badge}
+        </div>
+      )}
+
+      {/* Header with title and price */}
+      <div className={`relative px-6 pt-6 pb-4 md:px-8 md:pt-8 md:pb-5 ${featured ? 'bg-primary/5' : 'bg-muted/30'}`}>
+        <h3 className="font-display font-semibold text-xl md:text-2xl text-foreground mb-2 pr-20">
+          {title}
+        </h3>
+        <div className="flex items-baseline gap-1">
+          <span className="font-display font-bold text-3xl md:text-4xl text-primary">{price}</span>
+          <span className="font-serif text-muted-foreground text-sm">one-time</span>
+        </div>
+        {/* Accent line */}
+        <motion.div
+          className="absolute bottom-0 left-0 h-1 bg-primary"
+          initial={{ width: "0%" }}
+          whileInView={{ width: "100%" }}
+          transition={{ duration: 0.8, delay: 0.3 + index * 0.1, ease: [0.22, 1, 0.36, 1] }}
+        />
+      </div>
+
+      {/* Content */}
+      <div className="p-6 md:p-8">
+        <p className="font-serif text-muted-foreground leading-relaxed mb-6">
+          {description}
+        </p>
+
+        {/* Features list */}
+        <div className="space-y-3">
+          {features.map((feature, i) => (
+            <motion.div
+              key={i}
+              className="flex items-start gap-3"
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ delay: 0.4 + i * 0.08, duration: 0.5 }}
+            >
+              <Check className="w-5 h-5 text-primary mt-0.5 shrink-0" />
+              <span className="font-serif text-foreground text-sm md:text-base">{feature}</span>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </motion.div>
+  );
+}
+
 // Enhanced CTA Section Component
 function PricingCTA() {
   const ctaRef = useRef(null);
@@ -323,6 +420,8 @@ export default function Pricing() {
   const isHeaderInView = useInView(headerRef, { once: true, amount: 0.5 });
   const valueRef = useRef(null);
   const isValueInView = useInView(valueRef, { once: true, amount: 0.3 });
+  const auditHeaderRef = useRef(null);
+  const isAuditHeaderInView = useInView(auditHeaderRef, { once: true, amount: 0.5 });
 
   const headerVariants = {
     hidden: { opacity: 0, y: 40 },
@@ -407,6 +506,46 @@ export default function Pricing() {
         { label: "Custom pricing based on your needs", price: "Inquire" }
       ],
       note: "Pricing varies based on platform, campaign size, ad spend, and complexity. Let's discuss your goals to create a custom quote."
+    }
+  ];
+
+  const auditServices = [
+    {
+      title: "Strategic Growth Audit (SEO)",
+      price: "$1,200",
+      description: "Stop guessing what works. We build a data-backed roadmap to get your brand found. This isn't just a keyword list; it's a blueprint for revenue.",
+      features: [
+        "Deep-Dive Keyword Research & Competitor Analysis",
+        "Content Gap Strategy & Integration Plan",
+        "Google Business Profile Optimization",
+        "Backlink Strategy & Outreach Templates",
+        "Comprehensive SEO Strategy Roadmap"
+      ]
+    },
+    {
+      title: "Technical Health Check (Web Audit)",
+      price: "$900",
+      description: "A beautiful website is useless if Google can't read it. We look under the hood to fix the invisible breaks slowing you down.",
+      features: [
+        "Core Web Vitals & Speed Assessment",
+        "Indexability, Robots.txt & Sitemap Review",
+        "Mobile Usability & Schema Markup Check",
+        "Metadata, H-Tag & Broken Link Analysis",
+        "Prioritized \"Fix It\" Action List"
+      ]
+    },
+    {
+      title: "The Full Stack Bundle",
+      price: "$2,000",
+      description: "The ultimate foundation. Combines technical repairs with forward-looking strategy for maximum impact.",
+      features: [
+        "Everything in the Strategic SEO Audit",
+        "Everything in the Technical Health Check",
+        "Executive \"State of the Union\" Report",
+        "6-Month Priority Growth Roadmap"
+      ],
+      featured: true,
+      badge: "Best Value"
     }
   ];
 
@@ -619,6 +758,60 @@ export default function Pricing() {
                 note={category.note}
                 index={index}
                 featured={category.featured}
+              />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* One-Time Audits & Strategy section */}
+      <section className="py-16 md:py-24 bg-muted/30">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div ref={auditHeaderRef} className="text-center mb-12 md:mb-16">
+            <motion.div
+              className="inline-flex items-center gap-2 bg-primary/10 border border-primary/20 rounded-full px-4 py-2 mb-6"
+              initial={{ opacity: 0, y: 20 }}
+              animate={isAuditHeaderInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+              transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+            >
+              <span className="w-2 h-2 bg-primary rounded-full" />
+              <span className="font-sans text-sm font-medium text-primary">One-Time Projects</span>
+            </motion.div>
+            <motion.h2
+              className="font-display font-bold text-3xl md:text-4xl lg:text-5xl text-foreground mb-4"
+              variants={headerVariants}
+              initial="hidden"
+              animate={isAuditHeaderInView ? "visible" : "hidden"}
+            >
+              One-Time Audits & Strategy
+            </motion.h2>
+            <motion.div
+              variants={lineVariants}
+              initial="hidden"
+              animate={isAuditHeaderInView ? "visible" : "hidden"}
+              className="w-24 h-1 bg-primary mx-auto rounded-full origin-center"
+            />
+            <motion.p
+              className="font-serif text-lg text-muted-foreground max-w-2xl mx-auto mt-6"
+              initial={{ opacity: 0, y: 20 }}
+              animate={isAuditHeaderInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+              transition={{ duration: 0.6, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
+            >
+              Get the clarity you need to move forward. These comprehensive audits deliver actionable insights—no ongoing commitment required.
+            </motion.p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+            {auditServices.map((service, index) => (
+              <AuditCard
+                key={service.title}
+                title={service.title}
+                price={service.price}
+                description={service.description}
+                features={service.features}
+                index={index}
+                featured={service.featured}
+                badge={service.badge}
               />
             ))}
           </div>
