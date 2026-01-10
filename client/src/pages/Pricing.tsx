@@ -17,7 +17,7 @@ import servicesHero1280 from "@assets/services_hero_team_1280.webp";
 // ============================================
 
 // Noise/grain texture background
-function NoiseTexture({ className = "", opacity = 0.4 }: { className?: string; opacity?: number }) {
+function NoiseTexture({ className = "", opacity = 0.5 }: { className?: string; opacity?: number }) {
   return (
     <div className={`absolute inset-0 pointer-events-none overflow-hidden ${className}`}>
       <svg
@@ -29,8 +29,8 @@ function NoiseTexture({ className = "", opacity = 0.4 }: { className?: string; o
           <filter id="noise-filter" x="0%" y="0%" width="100%" height="100%">
             <feTurbulence
               type="fractalNoise"
-              baseFrequency="0.9"
-              numOctaves="4"
+              baseFrequency="1.5"
+              numOctaves="5"
               stitchTiles="stitch"
               result="noise"
             />
@@ -40,9 +40,14 @@ function NoiseTexture({ className = "", opacity = 0.4 }: { className?: string; o
               in="noise"
               result="monoNoise"
             />
+            <feComponentTransfer in="monoNoise" result="contrastNoise">
+              <feFuncR type="linear" slope="1.5" intercept="-0.25" />
+              <feFuncG type="linear" slope="1.5" intercept="-0.25" />
+              <feFuncB type="linear" slope="1.5" intercept="-0.25" />
+            </feComponentTransfer>
             <feBlend
               in="SourceGraphic"
-              in2="monoNoise"
+              in2="contrastNoise"
               mode="multiply"
             />
           </filter>
