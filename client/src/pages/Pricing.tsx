@@ -16,8 +16,8 @@ import servicesHero1280 from "@assets/services_hero_team_1280.webp";
 // DECORATIVE COMPONENTS
 // ============================================
 
-// Topographic/contour pattern background
-function TopographicPattern({ className = "", opacity = 0.03 }: { className?: string; opacity?: number }) {
+// Wavy topographic/contour pattern background with organic lines
+function TopographicPattern({ className = "", opacity = 0.08 }: { className?: string; opacity?: number }) {
   return (
     <div className={`absolute inset-0 pointer-events-none overflow-hidden ${className}`}>
       <svg
@@ -26,21 +26,93 @@ function TopographicPattern({ className = "", opacity = 0.03 }: { className?: st
         xmlns="http://www.w3.org/2000/svg"
       >
         <defs>
-          <pattern id="topo-pattern" x="0" y="0" width="100" height="100" patternUnits="userSpaceOnUse">
-            {/* Contour lines */}
-            <circle cx="50" cy="50" r="45" fill="none" stroke="currentColor" strokeWidth="0.5" className="text-primary" />
-            <circle cx="50" cy="50" r="35" fill="none" stroke="currentColor" strokeWidth="0.5" className="text-primary" />
-            <circle cx="50" cy="50" r="25" fill="none" stroke="currentColor" strokeWidth="0.5" className="text-primary" />
-            <circle cx="50" cy="50" r="15" fill="none" stroke="currentColor" strokeWidth="0.5" className="text-primary" />
-            <circle cx="0" cy="0" r="20" fill="none" stroke="currentColor" strokeWidth="0.5" className="text-primary" />
-            <circle cx="100" cy="0" r="20" fill="none" stroke="currentColor" strokeWidth="0.5" className="text-primary" />
-            <circle cx="0" cy="100" r="20" fill="none" stroke="currentColor" strokeWidth="0.5" className="text-primary" />
-            <circle cx="100" cy="100" r="20" fill="none" stroke="currentColor" strokeWidth="0.5" className="text-primary" />
+          <pattern id="topo-pattern" x="0" y="0" width="200" height="200" patternUnits="userSpaceOnUse">
+            {/* Organic wavy contour lines */}
+            <path
+              d="M20,100 Q50,60 100,80 T180,100 T260,90"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="1"
+              className="text-primary"
+            />
+            <path
+              d="M0,140 Q40,100 90,120 T170,110 T250,130"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="1"
+              className="text-primary"
+            />
+            <path
+              d="M10,60 Q60,30 110,50 T190,40 T270,60"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="1"
+              className="text-primary"
+            />
+            <path
+              d="M-20,180 Q30,150 80,170 T160,160 T240,180"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="1"
+              className="text-primary"
+            />
+            <path
+              d="M30,20 Q70,0 120,15 T200,10 T280,25"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="1"
+              className="text-primary"
+            />
+            {/* Secondary offset wavy lines for depth */}
+            <path
+              d="M-10,120 Q35,85 85,100 T165,95 T245,115"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="0.5"
+              className="text-primary"
+            />
+            <path
+              d="M5,80 Q55,50 105,65 T185,55 T265,75"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="0.5"
+              className="text-primary"
+            />
+            <path
+              d="M-5,160 Q45,130 95,145 T175,135 T255,155"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="0.5"
+              className="text-primary"
+            />
           </pattern>
         </defs>
         <rect width="100%" height="100%" fill="url(#topo-pattern)" />
       </svg>
     </div>
+  );
+}
+
+// Gradient fade transition between sections
+function GradientTransition({
+  from = "transparent",
+  to = "transparent",
+  height = "120px",
+  className = ""
+}: {
+  from?: string;
+  to?: string;
+  height?: string;
+  className?: string;
+}) {
+  return (
+    <div
+      className={`absolute left-0 right-0 bottom-0 pointer-events-none ${className}`}
+      style={{
+        height,
+        background: `linear-gradient(to bottom, ${from}, ${to})`
+      }}
+    />
   );
 }
 
@@ -160,10 +232,10 @@ function FloatingOrbs({ variant = "light" }: { variant?: "light" | "primary" }) 
     }
   };
 
-  const baseColor = variant === "primary" ? "bg-primary" : "bg-primary";
-  const opacityLow = variant === "primary" ? "opacity-10" : "opacity-[0.03]";
-  const opacityMed = variant === "primary" ? "opacity-15" : "opacity-[0.05]";
-  const opacityHigh = variant === "primary" ? "opacity-20" : "opacity-[0.07]";
+  const baseColor = "bg-primary";
+  const opacityLow = variant === "primary" ? "opacity-20" : "opacity-[0.08]";
+  const opacityMed = variant === "primary" ? "opacity-25" : "opacity-[0.12]";
+  const opacityHigh = variant === "primary" ? "opacity-30" : "opacity-[0.15]";
 
   return (
     <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -890,10 +962,7 @@ export default function Pricing() {
       />
 
       {/* Value proposition section */}
-      <section className="relative py-12 md:py-16 bg-gradient-to-b from-primary/5 to-background overflow-hidden">
-        {/* Wave divider at top */}
-        <WaveDivider position="top" fillColor="hsl(var(--background))" className="opacity-50" />
-
+      <section className="relative py-12 md:py-16 bg-gradient-to-b from-primary/10 via-primary/5 to-background overflow-hidden">
         {/* Floating orbs */}
         <FloatingOrbs variant="light" />
 
@@ -921,14 +990,18 @@ export default function Pricing() {
           </motion.div>
         </div>
 
-        {/* Curved divider at bottom */}
-        <CurvedDivider position="bottom" fillColor="hsl(var(--background))" />
+        {/* Gradient fade transition to next section */}
+        <GradientTransition
+          from="transparent"
+          to="hsl(var(--background))"
+          height="100px"
+        />
       </section>
 
       {/* Pricing cards section */}
       <section className="relative py-16 md:py-24 bg-background overflow-hidden">
-        {/* Topographic pattern */}
-        <TopographicPattern opacity={0.04} />
+        {/* Topographic pattern - darker and more visible */}
+        <TopographicPattern opacity={0.12} />
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div ref={headerRef} className="text-center mb-12 md:mb-16">
@@ -969,9 +1042,9 @@ export default function Pricing() {
       </section>
 
       {/* One-Time Audits & Strategy section */}
-      <section className="relative py-16 md:py-24 bg-muted/30 overflow-hidden">
-        {/* Topographic pattern */}
-        <TopographicPattern opacity={0.03} />
+      <section className="relative py-16 md:py-24 bg-gradient-to-b from-muted/40 via-muted/30 to-muted/50 overflow-hidden">
+        {/* Topographic pattern - darker and more visible */}
+        <TopographicPattern opacity={0.10} />
 
         {/* Floating orbs */}
         <FloatingOrbs variant="primary" />
