@@ -12,6 +12,189 @@ import servicesHero from "@assets/services_hero_team_1920.webp";
 import servicesHero768 from "@assets/services_hero_team_768.webp";
 import servicesHero1280 from "@assets/services_hero_team_1280.webp";
 
+// ============================================
+// DECORATIVE COMPONENTS
+// ============================================
+
+// Topographic/contour pattern background
+function TopographicPattern({ className = "", opacity = 0.03 }: { className?: string; opacity?: number }) {
+  return (
+    <div className={`absolute inset-0 pointer-events-none overflow-hidden ${className}`}>
+      <svg
+        className="absolute w-full h-full"
+        style={{ opacity }}
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <defs>
+          <pattern id="topo-pattern" x="0" y="0" width="100" height="100" patternUnits="userSpaceOnUse">
+            {/* Contour lines */}
+            <circle cx="50" cy="50" r="45" fill="none" stroke="currentColor" strokeWidth="0.5" className="text-primary" />
+            <circle cx="50" cy="50" r="35" fill="none" stroke="currentColor" strokeWidth="0.5" className="text-primary" />
+            <circle cx="50" cy="50" r="25" fill="none" stroke="currentColor" strokeWidth="0.5" className="text-primary" />
+            <circle cx="50" cy="50" r="15" fill="none" stroke="currentColor" strokeWidth="0.5" className="text-primary" />
+            <circle cx="0" cy="0" r="20" fill="none" stroke="currentColor" strokeWidth="0.5" className="text-primary" />
+            <circle cx="100" cy="0" r="20" fill="none" stroke="currentColor" strokeWidth="0.5" className="text-primary" />
+            <circle cx="0" cy="100" r="20" fill="none" stroke="currentColor" strokeWidth="0.5" className="text-primary" />
+            <circle cx="100" cy="100" r="20" fill="none" stroke="currentColor" strokeWidth="0.5" className="text-primary" />
+          </pattern>
+        </defs>
+        <rect width="100%" height="100%" fill="url(#topo-pattern)" />
+      </svg>
+    </div>
+  );
+}
+
+// Wave divider SVG component
+function WaveDivider({
+  position = "bottom",
+  fillColor = "var(--background)",
+  className = ""
+}: {
+  position?: "top" | "bottom";
+  fillColor?: string;
+  className?: string;
+}) {
+  const isTop = position === "top";
+
+  return (
+    <div
+      className={`absolute left-0 right-0 w-full overflow-hidden leading-none ${
+        isTop ? 'top-0 rotate-180' : 'bottom-0'
+      } ${className}`}
+      style={{ height: '60px' }}
+    >
+      <svg
+        className="relative block w-full h-full"
+        viewBox="0 0 1200 120"
+        preserveAspectRatio="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z"
+          fill={fillColor}
+          opacity="0.25"
+        />
+        <path
+          d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z"
+          fill={fillColor}
+          opacity="0.5"
+        />
+        <path
+          d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z"
+          fill={fillColor}
+        />
+      </svg>
+    </div>
+  );
+}
+
+// Curved divider (gentler curve)
+function CurvedDivider({
+  position = "bottom",
+  fillColor = "var(--background)",
+  className = ""
+}: {
+  position?: "top" | "bottom";
+  fillColor?: string;
+  className?: string;
+}) {
+  const isTop = position === "top";
+
+  return (
+    <div
+      className={`absolute left-0 right-0 w-full overflow-hidden leading-none ${
+        isTop ? 'top-0 rotate-180' : 'bottom-0'
+      } ${className}`}
+      style={{ height: '80px' }}
+    >
+      <svg
+        className="relative block w-full h-full"
+        viewBox="0 0 1200 120"
+        preserveAspectRatio="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M600,112.77C268.63,112.77,0,65.52,0,7.23V120H1200V7.23C1200,65.52,931.37,112.77,600,112.77Z"
+          fill={fillColor}
+        />
+      </svg>
+    </div>
+  );
+}
+
+// Floating decorative orbs
+function FloatingOrbs({ variant = "light" }: { variant?: "light" | "primary" }) {
+  const floatingVariants = {
+    animate: {
+      y: [-15, 15, -15],
+      x: [-5, 5, -5],
+      transition: {
+        duration: 8,
+        repeat: Infinity,
+        ease: "easeInOut"
+      }
+    }
+  };
+
+  const floatingVariants2 = {
+    animate: {
+      y: [10, -20, 10],
+      x: [5, -5, 5],
+      transition: {
+        duration: 10,
+        repeat: Infinity,
+        ease: "easeInOut"
+      }
+    }
+  };
+
+  const floatingVariants3 = {
+    animate: {
+      y: [-20, 10, -20],
+      x: [-8, 8, -8],
+      transition: {
+        duration: 12,
+        repeat: Infinity,
+        ease: "easeInOut"
+      }
+    }
+  };
+
+  const baseColor = variant === "primary" ? "bg-primary" : "bg-primary";
+  const opacityLow = variant === "primary" ? "opacity-10" : "opacity-[0.03]";
+  const opacityMed = variant === "primary" ? "opacity-15" : "opacity-[0.05]";
+  const opacityHigh = variant === "primary" ? "opacity-20" : "opacity-[0.07]";
+
+  return (
+    <div className="absolute inset-0 overflow-hidden pointer-events-none">
+      <motion.div
+        variants={floatingVariants}
+        animate="animate"
+        className={`absolute top-[10%] left-[5%] w-64 h-64 ${baseColor} ${opacityMed} rounded-full blur-3xl`}
+      />
+      <motion.div
+        variants={floatingVariants2}
+        animate="animate"
+        className={`absolute top-[60%] right-[10%] w-96 h-96 ${baseColor} ${opacityLow} rounded-full blur-3xl`}
+      />
+      <motion.div
+        variants={floatingVariants3}
+        animate="animate"
+        className={`absolute top-[30%] right-[20%] w-48 h-48 ${baseColor} ${opacityHigh} rounded-full blur-2xl`}
+      />
+      <motion.div
+        variants={floatingVariants}
+        animate="animate"
+        className={`absolute bottom-[20%] left-[15%] w-72 h-72 ${baseColor} ${opacityLow} rounded-full blur-3xl`}
+      />
+    </div>
+  );
+}
+
+// ============================================
+// PRICING COMPONENTS
+// ============================================
+
 // Import B&W stock images for service cards
 import websiteImg from "@assets/stock_images/black_and_white_desk_69514a94.jpg";
 import searchImg from "@assets/stock_images/black_and_white_mode_319eff6f.jpg";
@@ -60,20 +243,23 @@ function PricingCard({ image, title, description, items, note, index, featured }
       }}
       className={`group relative bg-card rounded-xl overflow-hidden border-2 transition-all duration-500 ${
         featured
-          ? 'border-primary shadow-lg shadow-primary/10'
-          : 'border-border hover:border-primary/50 hover:shadow-xl hover:shadow-primary/5'
+          ? 'border-primary shadow-lg shadow-primary/20 ring-1 ring-primary/10'
+          : 'border-border hover:border-primary/50 hover:shadow-2xl hover:shadow-primary/10'
       }`}
     >
+      {/* Glow effect on hover */}
+      <div className="absolute -inset-px bg-gradient-to-r from-primary/0 via-primary/10 to-primary/0 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-sm" />
+
       {/* Featured badge */}
       {featured && (
-        <div className="absolute top-4 right-4 z-10 bg-primary text-white px-3 py-1 rounded-full text-sm font-sans font-medium flex items-center gap-1">
+        <div className="absolute top-4 right-4 z-10 bg-primary text-white px-3 py-1 rounded-full text-sm font-sans font-medium flex items-center gap-1 shadow-lg shadow-primary/30">
           <Sparkles className="w-3 h-3" />
           Popular
         </div>
       )}
 
       {/* Image container with overlay */}
-      <div className="relative h-48 md:h-56 overflow-hidden">
+      <div className="relative h-48 md:h-56 overflow-hidden z-10">
         <motion.img
           src={image}
           alt={title}
@@ -102,7 +288,7 @@ function PricingCard({ image, title, description, items, note, index, featured }
       </div>
 
       {/* Content */}
-      <div className="p-6 md:p-8">
+      <div className="relative z-10 p-6 md:p-8 bg-card">
         <p className="font-serif text-muted-foreground leading-relaxed mb-6">
           {description}
         </p>
@@ -184,20 +370,23 @@ function AuditCard({ title, price, description, features, index, featured, badge
       }}
       className={`group relative bg-card rounded-xl overflow-hidden border-2 transition-all duration-500 ${
         featured
-          ? 'border-primary shadow-lg shadow-primary/10'
-          : 'border-border hover:border-primary/50 hover:shadow-xl hover:shadow-primary/5'
+          ? 'border-primary shadow-lg shadow-primary/20 ring-1 ring-primary/10'
+          : 'border-border hover:border-primary/50 hover:shadow-2xl hover:shadow-primary/10'
       }`}
     >
+      {/* Glow effect on hover */}
+      <div className="absolute -inset-px bg-gradient-to-r from-primary/0 via-primary/10 to-primary/0 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-sm" />
+
       {/* Featured badge */}
       {featured && badge && (
-        <div className="absolute top-4 right-4 z-10 bg-primary text-white px-3 py-1 rounded-full text-sm font-sans font-medium flex items-center gap-1">
+        <div className="absolute top-4 right-4 z-20 bg-primary text-white px-3 py-1 rounded-full text-sm font-sans font-medium flex items-center gap-1 shadow-lg shadow-primary/30">
           <Sparkles className="w-3 h-3" />
           {badge}
         </div>
       )}
 
       {/* Header with title and price */}
-      <div className={`relative px-6 pt-6 pb-4 md:px-8 md:pt-8 md:pb-5 ${featured ? 'bg-primary/5' : 'bg-muted/30'}`}>
+      <div className={`relative z-10 px-6 pt-6 pb-4 md:px-8 md:pt-8 md:pb-5 ${featured ? 'bg-primary/5' : 'bg-muted/30'}`}>
         <h3 className="font-display font-semibold text-xl md:text-2xl text-foreground mb-2 pr-20">
           {title}
         </h3>
@@ -215,7 +404,7 @@ function AuditCard({ title, price, description, features, index, featured, badge
       </div>
 
       {/* Content */}
-      <div className="p-6 md:p-8">
+      <div className="relative z-10 p-6 md:p-8 bg-card">
         <p className="font-serif text-muted-foreground leading-relaxed mb-6">
           {description}
         </p>
@@ -701,8 +890,14 @@ export default function Pricing() {
       />
 
       {/* Value proposition section */}
-      <section className="py-12 md:py-16 bg-gradient-to-b from-primary/5 to-background">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="relative py-12 md:py-16 bg-gradient-to-b from-primary/5 to-background overflow-hidden">
+        {/* Wave divider at top */}
+        <WaveDivider position="top" fillColor="hsl(var(--background))" className="opacity-50" />
+
+        {/* Floating orbs */}
+        <FloatingOrbs variant="light" />
+
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             ref={valueRef}
             className="text-center"
@@ -725,14 +920,20 @@ export default function Pricing() {
             </motion.p>
           </motion.div>
         </div>
+
+        {/* Curved divider at bottom */}
+        <CurvedDivider position="bottom" fillColor="hsl(var(--background))" />
       </section>
 
       {/* Pricing cards section */}
-      <section className="py-16 md:py-24 bg-background">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="relative py-16 md:py-24 bg-background overflow-hidden">
+        {/* Topographic pattern */}
+        <TopographicPattern opacity={0.04} />
+
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div ref={headerRef} className="text-center mb-12 md:mb-16">
             <motion.h2
-              className="font-display font-bold text-3xl md:text-4xl lg:text-5xl text-foreground mb-4"
+              className="font-display font-bold text-3xl md:text-4xl lg:text-5xl mb-4 bg-gradient-to-r from-foreground via-primary to-foreground bg-clip-text text-transparent bg-[length:200%_auto] animate-gradient"
               variants={headerVariants}
               initial="hidden"
               animate={isHeaderInView ? "visible" : "hidden"}
@@ -743,7 +944,7 @@ export default function Pricing() {
               variants={lineVariants}
               initial="hidden"
               animate={isHeaderInView ? "visible" : "hidden"}
-              className="w-24 h-1 bg-primary mx-auto rounded-full origin-center"
+              className="w-24 h-1 bg-gradient-to-r from-transparent via-primary to-transparent mx-auto rounded-full origin-center"
             />
           </div>
 
@@ -762,11 +963,20 @@ export default function Pricing() {
             ))}
           </div>
         </div>
+
+        {/* Wave divider at bottom */}
+        <WaveDivider position="bottom" fillColor="hsl(var(--muted) / 0.3)" />
       </section>
 
       {/* One-Time Audits & Strategy section */}
-      <section className="py-16 md:py-24 bg-muted/30">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="relative py-16 md:py-24 bg-muted/30 overflow-hidden">
+        {/* Topographic pattern */}
+        <TopographicPattern opacity={0.03} />
+
+        {/* Floating orbs */}
+        <FloatingOrbs variant="primary" />
+
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div ref={auditHeaderRef} className="text-center mb-12 md:mb-16">
             <motion.div
               className="inline-flex items-center gap-2 bg-primary/10 border border-primary/20 rounded-full px-4 py-2 mb-6"
@@ -778,7 +988,7 @@ export default function Pricing() {
               <span className="font-sans text-sm font-medium text-primary">One-Time Projects</span>
             </motion.div>
             <motion.h2
-              className="font-display font-bold text-3xl md:text-4xl lg:text-5xl text-foreground mb-4"
+              className="font-display font-bold text-3xl md:text-4xl lg:text-5xl mb-4 bg-gradient-to-r from-foreground via-primary to-foreground bg-clip-text text-transparent bg-[length:200%_auto] animate-gradient"
               variants={headerVariants}
               initial="hidden"
               animate={isAuditHeaderInView ? "visible" : "hidden"}
@@ -789,7 +999,7 @@ export default function Pricing() {
               variants={lineVariants}
               initial="hidden"
               animate={isAuditHeaderInView ? "visible" : "hidden"}
-              className="w-24 h-1 bg-primary mx-auto rounded-full origin-center"
+              className="w-24 h-1 bg-gradient-to-r from-transparent via-primary to-transparent mx-auto rounded-full origin-center"
             />
             <motion.p
               className="font-serif text-lg text-muted-foreground max-w-2xl mx-auto mt-6"
@@ -816,6 +1026,9 @@ export default function Pricing() {
             ))}
           </div>
         </div>
+
+        {/* Curved divider at bottom */}
+        <CurvedDivider position="bottom" fillColor="hsl(var(--primary))" />
       </section>
 
       {/* Enhanced CTA Section */}
