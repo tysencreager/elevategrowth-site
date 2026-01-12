@@ -8,6 +8,8 @@ import SEO from "@/components/SEO";
 import LogoBanner from "@/components/LogoBanner";
 import { BokehEffect, FloatingOrbs, WaveDivider, GradientTransition } from "@/components/decorative";
 
+const testimonialsImage = "https://i.postimg.cc/j50kTV2H/website_photo.png";
+
 interface Testimonial {
   quote: string;
   author: string;
@@ -368,6 +370,27 @@ export default function Testimonials() {
               />
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Visual Break Section */}
+      <section className="py-12 md:py-16 bg-muted/20">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="rounded-xl overflow-hidden shadow-lg"
+          >
+            <img
+              src={testimonialsImage}
+              alt="Elevate Growth Solutions team at work"
+              className="w-full h-auto"
+              loading="lazy"
+              decoding="async"
+            />
+          </motion.div>
         </div>
       </section>
 

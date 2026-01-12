@@ -98,6 +98,7 @@ export default function Home() {
       <Navbar />
 
       <Hero
+        backgroundVideo="1153597967"
         backgroundImage={heroImage}
         imageSrcSet={`${heroImage768} 768w, ${heroImage} 1920w`}
         title="Web Design & Full-Stack Marketing for Growing Businesses"

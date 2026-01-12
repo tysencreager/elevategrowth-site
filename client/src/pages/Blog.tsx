@@ -6,6 +6,8 @@ import SchemaMarkup from "@/components/SchemaMarkup";
 import { blogPosts } from "@/data/blogPosts";
 import { Calendar, User, ArrowRight, Tag } from "lucide-react";
 
+const blogHeroImage = "https://i.postimg.cc/85QnG8cH/egs_website_photo.png";
+
 const blogSchemaData = {
   "@context": "https://schema.org",
   "@type": "Blog",
@@ -48,14 +50,27 @@ export default function Blog() {
 
       {/* Hero Section */}
       <section className="bg-gray-50 pt-32 pb-16">
-        <div className="max-w-6xl mx-auto px-4 text-center">
-          <h1 className="font-display text-4xl md:text-5xl font-semibold text-gray-900 mb-4">
-            Marketing Insights for Growing Businesses
-          </h1>
-          <p className="font-serif text-xl text-gray-600 max-w-2xl mx-auto">
-            Tips, strategies, and insights to help small businesses thrive online.
-            From web design to SEO to full-stack marketing.
-          </p>
+        <div className="max-w-6xl mx-auto px-4">
+          <div className="grid md:grid-cols-2 gap-8 items-center">
+            <div className="text-center md:text-left">
+              <h1 className="font-display text-4xl md:text-5xl font-semibold text-gray-900 mb-4">
+                Marketing Insights for Growing Businesses
+              </h1>
+              <p className="font-serif text-xl text-gray-600">
+                Tips, strategies, and insights to help small businesses thrive online.
+                From web design to SEO to full-stack marketing.
+              </p>
+            </div>
+            <div className="hidden md:block">
+              <img
+                src={blogHeroImage}
+                alt="Marketing and business growth insights"
+                className="w-full h-auto rounded-lg shadow-lg"
+                loading="eager"
+                decoding="async"
+              />
+            </div>
+          </div>
         </div>
       </section>
 
