@@ -2,22 +2,23 @@ import { motion, useInView, useAnimation, Variants } from "framer-motion";
 import { useRef, useEffect, ReactNode } from "react";
 import { useShouldReduceAnimations } from "@/hooks/use-reduced-motion";
 
-// Animation variants for common use cases
+// Animation variants for common use cases - optimized for performance
+// Reduced durations and simpler easing for smoother experience
 export const fadeInUp: Variants = {
-  hidden: { opacity: 0, y: 30 },
+  hidden: { opacity: 0, y: 20 },
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] }
+    transition: { duration: 0.4, ease: "easeOut" }
   }
 };
 
 export const fadeInDown: Variants = {
-  hidden: { opacity: 0, y: -30 },
+  hidden: { opacity: 0, y: -20 },
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] }
+    transition: { duration: 0.4, ease: "easeOut" }
   }
 };
 
@@ -25,34 +26,34 @@ export const fadeIn: Variants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
-    transition: { duration: 0.6, ease: "easeOut" }
+    transition: { duration: 0.4, ease: "easeOut" }
   }
 };
 
 export const fadeInLeft: Variants = {
-  hidden: { opacity: 0, x: -50 },
+  hidden: { opacity: 0, x: -30 },
   visible: {
     opacity: 1,
     x: 0,
-    transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1] }
+    transition: { duration: 0.4, ease: "easeOut" }
   }
 };
 
 export const fadeInRight: Variants = {
-  hidden: { opacity: 0, x: 50 },
+  hidden: { opacity: 0, x: 30 },
   visible: {
     opacity: 1,
     x: 0,
-    transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1] }
+    transition: { duration: 0.4, ease: "easeOut" }
   }
 };
 
 export const scaleIn: Variants = {
-  hidden: { opacity: 0, scale: 0.9 },
+  hidden: { opacity: 0, scale: 0.95 },
   visible: {
     opacity: 1,
     scale: 1,
-    transition: { duration: 0.5, ease: [0.22, 1, 0.36, 1] }
+    transition: { duration: 0.3, ease: "easeOut" }
   }
 };
 
@@ -61,8 +62,8 @@ export const staggerContainer: Variants = {
   visible: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.1,
-      delayChildren: 0.1
+      staggerChildren: 0.05,
+      delayChildren: 0.05
     }
   }
 };
@@ -72,8 +73,8 @@ export const staggerContainerSlow: Variants = {
   visible: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.15,
-      delayChildren: 0.2
+      staggerChildren: 0.08,
+      delayChildren: 0.1
     }
   }
 };
@@ -198,49 +199,30 @@ export function AnimatedText({
   type = "words"
 }: AnimatedTextProps) {
   const words = text.split(" ");
-  const shouldReduceAnimations = useShouldReduceAnimations();
 
   const container: Variants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: type === "words" ? 0.08 : 0.03,
+        staggerChildren: type === "words" ? 0.04 : 0.02,
         delayChildren: delay
       }
     }
   };
 
-  // Simpler animation on mobile - no 3D rotateX which causes jank
-  const child: Variants = shouldReduceAnimations
-    ? {
-        hidden: { opacity: 0, y: 15 },
-        visible: {
-          opacity: 1,
-          y: 0,
-          transition: {
-            duration: 0.4,
-            ease: [0.22, 1, 0.36, 1]
-          }
-        }
+  // Simple 2D animation for all devices - no 3D rotateX which causes jank
+  const child: Variants = {
+    hidden: { opacity: 0, y: 12 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.3,
+        ease: "easeOut"
       }
-    : {
-        hidden: {
-          opacity: 0,
-          y: 20,
-          rotateX: -90
-        },
-        visible: {
-          opacity: 1,
-          y: 0,
-          rotateX: 0,
-          transition: {
-            type: "spring",
-            damping: 12,
-            stiffness: 100
-          }
-        }
-      };
+    }
+  };
 
   return (
     <motion.span
@@ -248,11 +230,7 @@ export function AnimatedText({
       initial="hidden"
       animate="visible"
       className={className}
-      style={{
-        display: "inline-block",
-        // Only use perspective on desktop where 3D transforms are used
-        ...(shouldReduceAnimations ? {} : { perspective: 500 })
-      }}
+      style={{ display: "inline-block" }}
     >
       {words.map((word, i) => (
         <motion.span
@@ -260,9 +238,7 @@ export function AnimatedText({
           variants={child}
           style={{
             display: "inline-block",
-            marginRight: "0.25em",
-            transformOrigin: "bottom",
-            willChange: "transform, opacity"
+            marginRight: "0.25em"
           }}
         >
           {word}
@@ -312,7 +288,7 @@ export function Floating({
   );
 }
 
-// Parallax scroll effect
+// Parallax scroll effect - simplified for better performance
 interface ParallaxProps {
   children: ReactNode;
   className?: string;
@@ -328,16 +304,16 @@ export function Parallax({
     <motion.div
       className={className}
       initial={{ y: 0 }}
-      whileInView={{ y: speed * -50 }}
-      viewport={{ once: false }}
-      transition={{ duration: 0.8, ease: "easeOut" }}
+      whileInView={{ y: speed * -20 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.4, ease: "easeOut" }}
     >
       {children}
     </motion.div>
   );
 }
 
-// Card hover animation
+// Card hover animation - simplified
 interface AnimatedCardProps {
   children: ReactNode;
   className?: string;
@@ -348,17 +324,16 @@ export function AnimatedCard({ children, className = "" }: AnimatedCardProps) {
     <motion.div
       className={className}
       whileHover={{
-        y: -8,
-        transition: { duration: 0.3, ease: [0.22, 1, 0.36, 1] }
+        y: -4,
+        transition: { duration: 0.2, ease: "easeOut" }
       }}
-      whileTap={{ scale: 0.98 }}
     >
       {children}
     </motion.div>
   );
 }
 
-// Button animation wrapper
+// Button animation wrapper - simplified
 interface AnimatedButtonProps {
   children: ReactNode;
   className?: string;
@@ -368,9 +343,9 @@ export function AnimatedButton({ children, className = "" }: AnimatedButtonProps
   return (
     <motion.div
       className={className}
-      whileHover={{ scale: 1.02 }}
-      whileTap={{ scale: 0.98 }}
-      transition={{ duration: 0.2 }}
+      whileHover={{ scale: 1.01 }}
+      whileTap={{ scale: 0.99 }}
+      transition={{ duration: 0.15 }}
     >
       {children}
     </motion.div>
@@ -394,10 +369,10 @@ export function ImageReveal({
 
   const getTransform = () => {
     switch (direction) {
-      case "left": return { x: -100, y: 0 };
-      case "right": return { x: 100, y: 0 };
-      case "up": return { x: 0, y: -100 };
-      case "down": return { x: 0, y: 100 };
+      case "left": return { x: -40, y: 0 };
+      case "right": return { x: 40, y: 0 };
+      case "up": return { x: 0, y: -40 };
+      case "down": return { x: 0, y: 40 };
     }
   };
 
@@ -407,14 +382,14 @@ export function ImageReveal({
       className={`overflow-hidden ${className}`}
       initial={{ opacity: 0, ...getTransform() }}
       animate={isInView ? { opacity: 1, x: 0, y: 0 } : { opacity: 0, ...getTransform() }}
-      transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+      transition={{ duration: 0.4, ease: "easeOut" }}
     >
       {children}
     </motion.div>
   );
 }
 
-// Section reveal with line animation
+// Section reveal with fade animation - simplified
 interface SectionRevealProps {
   children: ReactNode;
   className?: string;
@@ -430,7 +405,7 @@ export function SectionReveal({ children, className = "" }: SectionRevealProps) 
       className={className}
       initial={{ opacity: 0 }}
       animate={isInView ? { opacity: 1 } : { opacity: 0 }}
-      transition={{ duration: 0.6 }}
+      transition={{ duration: 0.3 }}
     >
       {children}
     </motion.div>

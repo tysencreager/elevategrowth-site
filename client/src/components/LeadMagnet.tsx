@@ -23,66 +23,55 @@ export default function LeadMagnet({
   const sectionRef = useRef(null);
   const isInView = useInView(sectionRef, { once: true, amount: 0.3 });
 
+  // Simplified animation variants for better performance
   const iconVariants = {
-    hidden: { scale: 0, rotate: -180, opacity: 0 },
+    hidden: { scale: 0.8, opacity: 0 },
     visible: {
       scale: 1,
-      rotate: 0,
       opacity: 1,
       transition: {
-        type: "spring",
-        damping: 12,
-        stiffness: 100
+        duration: 0.3,
+        ease: "easeOut"
       }
     }
   };
 
   const titleVariants = {
-    hidden: { opacity: 0, y: 30 },
+    hidden: { opacity: 0, y: 15 },
     visible: {
       opacity: 1,
       y: 0,
       transition: {
-        duration: 0.7,
-        ease: [0.22, 1, 0.36, 1],
-        delay: 0.2
+        duration: 0.4,
+        ease: "easeOut",
+        delay: 0.1
       }
     }
   };
 
   const descriptionVariants = {
-    hidden: { opacity: 0, y: 30 },
+    hidden: { opacity: 0, y: 15 },
     visible: {
       opacity: 1,
       y: 0,
       transition: {
-        duration: 0.7,
-        ease: [0.22, 1, 0.36, 1],
-        delay: 0.4
+        duration: 0.4,
+        ease: "easeOut",
+        delay: 0.2
       }
     }
   };
 
   const buttonVariants = {
-    hidden: { opacity: 0, y: 30, scale: 0.9 },
+    hidden: { opacity: 0, y: 15 },
     visible: {
       opacity: 1,
       y: 0,
-      scale: 1,
       transition: {
-        duration: 0.6,
-        ease: [0.22, 1, 0.36, 1],
-        delay: 0.6
+        duration: 0.4,
+        ease: "easeOut",
+        delay: 0.3
       }
-    }
-  };
-
-  const floatingAnimation = {
-    y: [-5, 5, -5],
-    transition: {
-      duration: 3,
-      repeat: Infinity,
-      ease: "easeInOut"
     }
   };
 
@@ -95,11 +84,8 @@ export default function LeadMagnet({
             variants={iconVariants}
             initial="hidden"
             animate={isInView ? "visible" : "hidden"}
-            whileHover={{ scale: 1.1, rotate: 10 }}
           >
-            <motion.div animate={floatingAnimation}>
-              <Download className="w-8 h-8 text-primary" />
-            </motion.div>
+            <Download className="w-8 h-8 text-primary" />
           </motion.div>
 
           <motion.h2
@@ -130,13 +116,7 @@ export default function LeadMagnet({
             <a href={mailtoLink} data-testid="button-lead-magnet">
               <AnimatedButton>
                 <Button size="lg" className="font-serif font-medium text-base md:text-lg px-8 py-6 gap-3 group">
-                  <motion.span
-                    className="inline-block"
-                    whileHover={{ rotate: 15 }}
-                    transition={{ type: "spring", stiffness: 300 }}
-                  >
-                    <Mail className="h-5 w-5" />
-                  </motion.span>
+                  <Mail className="h-5 w-5" />
                   {ctaText}
                 </Button>
               </AnimatedButton>

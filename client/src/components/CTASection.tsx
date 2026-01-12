@@ -2,7 +2,6 @@ import { Button } from "@/components/ui/button";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { AnimatedButton } from "@/components/ui/motion";
-import { useShouldReduceAnimations } from "@/hooks/use-reduced-motion";
 
 interface CTASectionProps {
   backgroundImage?: string;
@@ -24,86 +23,44 @@ export default function CTASection({
 }: CTASectionProps) {
   const sectionRef = useRef(null);
   const isInView = useInView(sectionRef, { once: true, amount: 0.4 });
-  const shouldReduceAnimations = useShouldReduceAnimations();
 
   // Split title into words for staggered animation
   const titleWords = title.split(" ");
 
-  const backgroundVariants = {
-    hidden: { scale: 1.1, opacity: 0 },
-    visible: {
-      scale: 1,
-      opacity: 1,
-      transition: {
-        duration: 1.2,
-        ease: [0.22, 1, 0.36, 1]
-      }
-    }
-  };
-
-  const overlayVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        duration: 0.8,
-        delay: 0.2
-      }
-    }
-  };
-
+  // Simplified animation variants for better performance
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.06,
-        delayChildren: 0.3
+        staggerChildren: 0.04,
+        delayChildren: 0.1
       }
     }
   };
 
-  // Simpler 2D animation on mobile - no rotateX which causes jank
-  const wordVariants = shouldReduceAnimations
-    ? {
-        hidden: { opacity: 0, y: 15 },
-        visible: {
-          opacity: 1,
-          y: 0,
-          transition: {
-            duration: 0.4,
-            ease: [0.22, 1, 0.36, 1]
-          }
-        }
-      }
-    : {
-        hidden: {
-          opacity: 0,
-          y: 30,
-          rotateX: -45
-        },
-        visible: {
-          opacity: 1,
-          y: 0,
-          rotateX: 0,
-          transition: {
-            type: "spring",
-            damping: 15,
-            stiffness: 100
-          }
-        }
-      };
-
-  const buttonVariants = {
-    hidden: { opacity: 0, y: 30, scale: 0.9 },
+  // Simple 2D animation for all devices
+  const wordVariants = {
+    hidden: { opacity: 0, y: 15 },
     visible: {
       opacity: 1,
       y: 0,
-      scale: 1,
       transition: {
-        duration: 0.6,
-        ease: [0.22, 1, 0.36, 1],
-        delay: 0.8
+        duration: 0.3,
+        ease: "easeOut"
+      }
+    }
+  };
+
+  const buttonVariants = {
+    hidden: { opacity: 0, y: 15 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.4,
+        ease: "easeOut",
+        delay: 0.4
       }
     }
   };
@@ -136,10 +93,7 @@ export default function CTASection({
         />
       )}
 
-      <div
-        className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center"
-        style={shouldReduceAnimations ? {} : { perspective: 1000 }}
-      >
+      <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <motion.h2
           className="font-display font-semibold text-4xl md:text-5xl lg:text-6xl text-white mb-8 leading-tight"
           data-testid="text-cta-title"
@@ -153,9 +107,7 @@ export default function CTASection({
               variants={wordVariants}
               style={{
                 display: "inline-block",
-                marginRight: "0.25em",
-                transformOrigin: "bottom center",
-                willChange: "transform, opacity"
+                marginRight: "0.25em"
               }}
             >
               {word}
