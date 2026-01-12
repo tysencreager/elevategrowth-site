@@ -1,5 +1,6 @@
 import { motion, useInView, useAnimation, Variants } from "framer-motion";
 import { useRef, useEffect, ReactNode } from "react";
+import { useShouldReduceAnimations } from "@/hooks/use-reduced-motion";
 
 // Animation variants for common use cases
 export const fadeInUp: Variants = {
@@ -182,6 +183,7 @@ export function StaggerItem({
 }
 
 // Hero text animation with character/word stagger
+// Uses simpler 2D transforms on mobile for better performance
 interface AnimatedTextProps {
   text: string;
   className?: string;
@@ -196,6 +198,7 @@ export function AnimatedText({
   type = "words"
 }: AnimatedTextProps) {
   const words = text.split(" ");
+  const shouldReduceAnimations = useShouldReduceAnimations();
 
   const container: Variants = {
     hidden: { opacity: 0 },
@@ -208,23 +211,36 @@ export function AnimatedText({
     }
   };
 
-  const child: Variants = {
-    hidden: {
-      opacity: 0,
-      y: 20,
-      rotateX: -90
-    },
-    visible: {
-      opacity: 1,
-      y: 0,
-      rotateX: 0,
-      transition: {
-        type: "spring",
-        damping: 12,
-        stiffness: 100
+  // Simpler animation on mobile - no 3D rotateX which causes jank
+  const child: Variants = shouldReduceAnimations
+    ? {
+        hidden: { opacity: 0, y: 15 },
+        visible: {
+          opacity: 1,
+          y: 0,
+          transition: {
+            duration: 0.4,
+            ease: [0.22, 1, 0.36, 1]
+          }
+        }
       }
-    }
-  };
+    : {
+        hidden: {
+          opacity: 0,
+          y: 20,
+          rotateX: -90
+        },
+        visible: {
+          opacity: 1,
+          y: 0,
+          rotateX: 0,
+          transition: {
+            type: "spring",
+            damping: 12,
+            stiffness: 100
+          }
+        }
+      };
 
   return (
     <motion.span
@@ -232,13 +248,22 @@ export function AnimatedText({
       initial="hidden"
       animate="visible"
       className={className}
-      style={{ display: "inline-block", perspective: 500 }}
+      style={{
+        display: "inline-block",
+        // Only use perspective on desktop where 3D transforms are used
+        ...(shouldReduceAnimations ? {} : { perspective: 500 })
+      }}
     >
       {words.map((word, i) => (
         <motion.span
           key={i}
           variants={child}
-          style={{ display: "inline-block", marginRight: "0.25em", transformOrigin: "bottom" }}
+          style={{
+            display: "inline-block",
+            marginRight: "0.25em",
+            transformOrigin: "bottom",
+            willChange: "transform, opacity"
+          }}
         >
           {word}
         </motion.span>
@@ -248,6 +273,7 @@ export function AnimatedText({
 }
 
 // Floating animation for decorative elements
+// Disables infinite animations on mobile for better performance
 interface FloatingProps {
   children: ReactNode;
   className?: string;
@@ -261,6 +287,13 @@ export function Floating({
   duration = 3,
   distance = 10
 }: FloatingProps) {
+  const shouldReduceAnimations = useShouldReduceAnimations();
+
+  // Skip infinite animations on mobile
+  if (shouldReduceAnimations) {
+    return <div className={className}>{children}</div>;
+  }
+
   return (
     <motion.div
       className={className}
@@ -272,6 +305,7 @@ export function Floating({
         repeat: Infinity,
         ease: "easeInOut"
       }}
+      style={{ willChange: "transform" }}
     >
       {children}
     </motion.div>

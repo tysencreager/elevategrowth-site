@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 import { AnimatedButton } from "@/components/ui/motion";
+import { useShouldReduceAnimations } from "@/hooks/use-reduced-motion";
 
 interface HeroProps {
   backgroundImage?: string;
@@ -31,6 +32,7 @@ export default function Hero({
 }: HeroProps) {
   // Split title into words for staggered animation
   const titleWords = title.split(" ");
+  const shouldReduceAnimations = useShouldReduceAnimations();
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -43,23 +45,36 @@ export default function Hero({
     }
   };
 
-  const wordVariants = {
-    hidden: {
-      opacity: 0,
-      y: 40,
-      rotateX: -45
-    },
-    visible: {
-      opacity: 1,
-      y: 0,
-      rotateX: 0,
-      transition: {
-        type: "spring",
-        damping: 15,
-        stiffness: 100
+  // Simpler 2D animation on mobile - no rotateX which causes jank
+  const wordVariants = shouldReduceAnimations
+    ? {
+        hidden: { opacity: 0, y: 20 },
+        visible: {
+          opacity: 1,
+          y: 0,
+          transition: {
+            duration: 0.4,
+            ease: [0.22, 1, 0.36, 1]
+          }
+        }
       }
-    }
-  };
+    : {
+        hidden: {
+          opacity: 0,
+          y: 40,
+          rotateX: -45
+        },
+        visible: {
+          opacity: 1,
+          y: 0,
+          rotateX: 0,
+          transition: {
+            type: "spring",
+            damping: 15,
+            stiffness: 100
+          }
+        }
+      };
 
   const subtitleVariants = {
     hidden: { opacity: 0, y: 30 },
@@ -148,7 +163,10 @@ export default function Hero({
         animate="visible"
       />
 
-      <div className="relative z-10 max-w-5xl mx-auto" style={{ perspective: 1000 }}>
+      <div
+        className="relative z-10 max-w-5xl mx-auto"
+        style={shouldReduceAnimations ? {} : { perspective: 1000 }}
+      >
         <motion.h1
           className="font-display font-semibold text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-white mb-6 leading-tight"
           data-testid="text-hero-title"
@@ -163,7 +181,8 @@ export default function Hero({
               style={{
                 display: "inline-block",
                 marginRight: "0.25em",
-                transformOrigin: "bottom center"
+                transformOrigin: "bottom center",
+                willChange: "transform, opacity"
               }}
             >
               {word}
