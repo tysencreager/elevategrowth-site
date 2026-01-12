@@ -98,13 +98,11 @@ export default function Home() {
       <Navbar />
 
       <Hero
-        backgroundImage={heroImage}
-        imageSrcSet={`${heroImage768} 768w, ${heroImage} 1920w`}
+        backgroundVideo="1153597967"
         title="Web Design & Full-Stack Marketing for Growing Businesses"
         subtitle="Custom websites in weeks, not months. Boutique marketing services that treat your business like our own."
         ctaText="See Our Services"
         ctaHref="/services"
-        isLCP={true}
       />
 
       {/* Logo Banner - Social proof right after hero */}
