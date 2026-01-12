@@ -99,10 +99,13 @@ export default function Home() {
 
       <Hero
         backgroundVideo="1153597967"
+        backgroundImage={heroImage}
+        imageSrcSet={`${heroImage768} 768w, ${heroImage} 1920w`}
         title="Web Design & Full-Stack Marketing for Growing Businesses"
         subtitle="Custom websites in weeks, not months. Boutique marketing services that treat your business like our own."
         ctaText="See Our Services"
         ctaHref="/services"
+        isLCP={true}
       />
 
       {/* Logo Banner - Social proof right after hero */}

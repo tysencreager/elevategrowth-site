@@ -131,18 +131,8 @@ export default function Hero({
       className="relative flex items-center justify-center text-center px-4 pt-32 overflow-hidden"
       style={{ minHeight: height }}
     >
-      {/* Background: Video (Vimeo) or Image */}
-      {backgroundVideo ? (
-        <div className="absolute inset-0 w-full h-full overflow-hidden">
-          <iframe
-            src={`https://player.vimeo.com/video/${backgroundVideo}?background=1&autoplay=1&loop=1&muted=1`}
-            className="absolute top-1/2 left-1/2 w-[177.78vh] min-w-full h-[56.25vw] min-h-full -translate-x-1/2 -translate-y-1/2"
-            frameBorder="0"
-            allow="autoplay; fullscreen"
-            title="Background video"
-          />
-        </div>
-      ) : backgroundImage ? (
+      {/* Background: Image shown immediately, video layers on top when loaded */}
+      {backgroundImage && (
         <img
           src={backgroundImage}
           srcSet={imageSrcSet}
@@ -155,7 +145,18 @@ export default function Hero({
           loading={isLCP ? "eager" : "lazy"}
           className="absolute inset-0 w-full h-full object-cover"
         />
-      ) : null}
+      )}
+      {backgroundVideo && (
+        <div className="absolute inset-0 w-full h-full overflow-hidden">
+          <iframe
+            src={`https://player.vimeo.com/video/${backgroundVideo}?background=1&autoplay=1&loop=1&muted=1`}
+            className="absolute top-1/2 left-1/2 w-[177.78vh] min-w-full h-[56.25vw] min-h-full -translate-x-1/2 -translate-y-1/2"
+            frameBorder="0"
+            allow="autoplay; fullscreen"
+            title="Background video"
+          />
+        </div>
+      )}
       <motion.div
         className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/50 to-black/70"
         variants={overlayVariants}
@@ -169,6 +170,7 @@ export default function Hero({
       >
         <motion.h1
           className="font-display font-semibold text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-white mb-6 leading-tight"
+          style={{ textShadow: "0 2px 4px rgba(0,0,0,0.5), 0 4px 12px rgba(0,0,0,0.4), 0 8px 24px rgba(0,0,0,0.3)" }}
           data-testid="text-hero-title"
           variants={containerVariants}
           initial="hidden"
@@ -193,6 +195,7 @@ export default function Hero({
         {subtitle && (
           <motion.p
             className="font-serif italic text-xl sm:text-2xl md:text-3xl text-white/95 mb-8 max-w-3xl mx-auto leading-relaxed"
+            style={{ textShadow: "0 2px 4px rgba(0,0,0,0.5), 0 4px 12px rgba(0,0,0,0.3)" }}
             data-testid="text-hero-subtitle"
             variants={subtitleVariants}
             initial="hidden"
