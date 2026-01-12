@@ -2,7 +2,6 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 import { AnimatedButton } from "@/components/ui/motion";
-import { useShouldReduceAnimations } from "@/hooks/use-reduced-motion";
 
 interface HeroProps {
   backgroundImage?: string;
@@ -32,85 +31,54 @@ export default function Hero({
 }: HeroProps) {
   // Split title into words for staggered animation
   const titleWords = title.split(" ");
-  const shouldReduceAnimations = useShouldReduceAnimations();
 
+  // Simplified animation variants for better performance
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.08,
-        delayChildren: 0.3
+        staggerChildren: 0.04,
+        delayChildren: 0.2
       }
     }
   };
 
-  // Simpler 2D animation on mobile - no rotateX which causes jank
-  const wordVariants = shouldReduceAnimations
-    ? {
-        hidden: { opacity: 0, y: 20 },
-        visible: {
-          opacity: 1,
-          y: 0,
-          transition: {
-            duration: 0.4,
-            ease: [0.22, 1, 0.36, 1]
-          }
-        }
-      }
-    : {
-        hidden: {
-          opacity: 0,
-          y: 40,
-          rotateX: -45
-        },
-        visible: {
-          opacity: 1,
-          y: 0,
-          rotateX: 0,
-          transition: {
-            type: "spring",
-            damping: 15,
-            stiffness: 100
-          }
-        }
-      };
-
-  const subtitleVariants = {
-    hidden: { opacity: 0, y: 30 },
+  // Simple 2D animation for all devices - no 3D rotateX which causes jank
+  const wordVariants = {
+    hidden: { opacity: 0, y: 15 },
     visible: {
       opacity: 1,
       y: 0,
       transition: {
-        duration: 0.8,
-        ease: [0.22, 1, 0.36, 1],
-        delay: 0.8
+        duration: 0.3,
+        ease: "easeOut"
+      }
+    }
+  };
+
+  const subtitleVariants = {
+    hidden: { opacity: 0, y: 15 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.4,
+        ease: "easeOut",
+        delay: 0.4
       }
     }
   };
 
   const ctaVariants = {
-    hidden: { opacity: 0, y: 30, scale: 0.9 },
+    hidden: { opacity: 0, y: 15 },
     visible: {
       opacity: 1,
       y: 0,
-      scale: 1,
       transition: {
-        duration: 0.6,
-        ease: [0.22, 1, 0.36, 1],
-        delay: 1.1
-      }
-    }
-  };
-
-  const backgroundVariants = {
-    hidden: { scale: 1.1, opacity: 0 },
-    visible: {
-      scale: 1,
-      opacity: 1,
-      transition: {
-        duration: 1.4,
-        ease: [0.22, 1, 0.36, 1]
+        duration: 0.4,
+        ease: "easeOut",
+        delay: 0.6
       }
     }
   };
@@ -120,8 +88,7 @@ export default function Hero({
     visible: {
       opacity: 1,
       transition: {
-        duration: 0.8,
-        delay: 0.2
+        duration: 0.4
       }
     }
   };
@@ -164,10 +131,7 @@ export default function Hero({
         animate="visible"
       />
 
-      <div
-        className="relative z-10 max-w-5xl mx-auto"
-        style={shouldReduceAnimations ? {} : { perspective: 1000 }}
-      >
+      <div className="relative z-10 max-w-5xl mx-auto">
         <motion.h1
           className="font-display font-semibold text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-white mb-6 leading-tight"
           style={{ textShadow: "0 2px 4px rgba(0,0,0,0.5), 0 4px 12px rgba(0,0,0,0.4), 0 8px 24px rgba(0,0,0,0.3)" }}
@@ -182,9 +146,7 @@ export default function Hero({
               variants={wordVariants}
               style={{
                 display: "inline-block",
-                marginRight: "0.25em",
-                transformOrigin: "bottom center",
-                willChange: "transform, opacity"
+                marginRight: "0.25em"
               }}
             >
               {word}
@@ -218,13 +180,7 @@ export default function Hero({
                   className="font-serif font-medium text-base md:text-lg px-8 py-6 gap-2 group"
                 >
                   {ctaText}
-                  <motion.span
-                    className="inline-block"
-                    whileHover={{ x: 5 }}
-                    transition={{ type: "spring", stiffness: 400 }}
-                  >
-                    <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
-                  </motion.span>
+                  <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
                 </Button>
               </AnimatedButton>
             </a>

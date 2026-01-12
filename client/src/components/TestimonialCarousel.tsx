@@ -89,31 +89,9 @@ export default function TestimonialCarousel({
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
     >
-      {/* Decorative background elements */}
-      <motion.div
-        className="absolute top-10 left-1/4 w-64 h-64 rounded-full bg-primary/5 blur-3xl"
-        animate={{
-          scale: [1, 1.2, 1],
-          opacity: [0.3, 0.5, 0.3]
-        }}
-        transition={{
-          duration: 6,
-          repeat: Infinity,
-          ease: "easeInOut"
-        }}
-      />
-      <motion.div
-        className="absolute bottom-10 right-1/4 w-80 h-80 rounded-full bg-accent/10 blur-3xl"
-        animate={{
-          scale: [1.2, 1, 1.2],
-          opacity: [0.3, 0.5, 0.3]
-        }}
-        transition={{
-          duration: 8,
-          repeat: Infinity,
-          ease: "easeInOut"
-        }}
-      />
+      {/* Static decorative background elements - no infinite animations for better performance */}
+      <div className="absolute top-10 left-1/4 w-64 h-64 rounded-full bg-primary/5 blur-3xl opacity-40" />
+      <div className="absolute bottom-10 right-1/4 w-80 h-80 rounded-full bg-accent/10 blur-3xl opacity-40" />
 
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section header */}

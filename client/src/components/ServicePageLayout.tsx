@@ -485,47 +485,12 @@ export default function ServicePageLayout({
         className="relative py-16 sm:py-20 md:py-28 lg:py-32 overflow-hidden bg-gradient-to-br from-primary via-primary to-[hsl(191,60%,25%)]"
         aria-labelledby="cta-heading"
       >
-        {/* Animated background elements */}
+        {/* Static background elements - no infinite animations for better performance */}
         <div className="absolute inset-0 overflow-hidden" aria-hidden="true">
-          {/* Floating shapes */}
-          <motion.div
-            animate={{
-              y: [-10, 10, -10],
-              rotate: [-5, 5, -5],
-            }}
-            transition={{
-              duration: 6,
-              repeat: Infinity,
-              ease: "easeInOut"
-            }}
-            className="absolute top-20 left-[10%] w-24 sm:w-32 h-24 sm:h-32 bg-white/5 rounded-full blur-2xl"
-          />
-          <motion.div
-            animate={{
-              y: [10, -10, 10],
-              rotate: [5, -5, 5],
-            }}
-            transition={{
-              duration: 8,
-              repeat: Infinity,
-              ease: "easeInOut",
-              delay: 2
-            }}
-            className="absolute bottom-20 right-[15%] w-32 sm:w-48 h-32 sm:h-48 bg-white/5 rounded-full blur-3xl"
-          />
-          <motion.div
-            animate={{
-              y: [-15, 15, -15],
-              scale: [1, 1.1, 1],
-            }}
-            transition={{
-              duration: 7,
-              repeat: Infinity,
-              ease: "easeInOut",
-              delay: 4
-            }}
-            className="absolute top-1/2 right-[5%] w-20 sm:w-24 h-20 sm:h-24 bg-white/10 rounded-full blur-xl"
-          />
+          {/* Static decorative shapes */}
+          <div className="absolute top-20 left-[10%] w-24 sm:w-32 h-24 sm:h-32 bg-white/5 rounded-full blur-2xl" />
+          <div className="absolute bottom-20 right-[15%] w-32 sm:w-48 h-32 sm:h-48 bg-white/5 rounded-full blur-3xl" />
+          <div className="absolute top-1/2 right-[5%] w-20 sm:w-24 h-20 sm:h-24 bg-white/10 rounded-full blur-xl" />
 
           {/* Grid pattern overlay */}
           <div
