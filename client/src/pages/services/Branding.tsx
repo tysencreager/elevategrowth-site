@@ -1,10 +1,53 @@
 import ServicePageLayout from "@/components/ServicePageLayout";
+import { motion, useInView } from "framer-motion";
+import { useRef } from "react";
 
 const brandingHero = "https://i.postimg.cc/yx26HW3z/branding-photo.png";
+const brandingShowcase = "https://i.postimg.cc/50dkJcyp/EGS_logobranding_for_website.png";
+
+function BrandingShowcase() {
+  const sectionRef = useRef(null);
+  const isInView = useInView(sectionRef, { once: true, amount: 0.2 });
+
+  return (
+    <section ref={sectionRef} className="py-12 md:py-16 bg-muted/30">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-8"
+        >
+          <h2 className="font-display font-bold text-2xl md:text-3xl text-foreground mb-3">
+            Brand Identity in Action
+          </h2>
+          <p className="font-serif text-muted-foreground max-w-2xl mx-auto">
+            See how cohesive branding elements come together to create a memorable brand presence.
+          </p>
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0, scale: 0.95 }}
+          animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.95 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="rounded-xl overflow-hidden shadow-lg"
+        >
+          <img
+            src={brandingShowcase}
+            alt="Branding and logo design showcase for Elevate Growth Solutions"
+            className="w-full h-auto"
+            loading="lazy"
+            decoding="async"
+          />
+        </motion.div>
+      </div>
+    </section>
+  );
+}
 
 export default function Branding() {
   return (
     <ServicePageLayout
+      beforeProcess={<BrandingShowcase />}
       // SEO
       title="Branding & Brand Identity Design | Elevate Growth Solutions"
       metaDescription="Build a memorable brand identity that connects with your audience. Logo design, visual identity systems, brand strategy, and complete brand guidelines. Packages from $999."

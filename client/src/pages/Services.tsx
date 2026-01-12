@@ -10,10 +10,9 @@ import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
 import { MessageCircle, Sparkles, ArrowRight, Check } from "lucide-react";
 import { BokehEffect, FloatingOrbs, WaveDivider, GradientTransition } from "@/components/decorative";
-// Optimized WebP images with responsive sizes
-import servicesHero from "@assets/services_hero_team_1920.webp";
-import servicesHero768 from "@assets/services_hero_team_768.webp";
-import servicesHero1280 from "@assets/services_hero_team_1280.webp";
+
+// Services page header
+const servicesHero = "https://i.postimg.cc/DZkYhV0c/egs_header_4.png";
 
 export default function Services() {
   const headerRef = useRef(null);
@@ -103,7 +102,6 @@ export default function Services() {
 
       <Hero
         backgroundImage={servicesHero}
-        imageSrcSet={`${servicesHero768} 768w, ${servicesHero1280} 1280w, ${servicesHero} 1920w`}
         title="Marketing Solutions Designed to Help Your Business Grow"
         subtitle="Strategy. Branding. Execution. Optimization."
         height="70vh"
