@@ -15,6 +15,10 @@ import valueImage from "@assets/value_prop.webp";
 import ctaImage from "@assets/cta_background.webp";
 import ctaImage768 from "@assets/cta_background_768.webp";
 
+// Hero images from public folder - matches preload hints in index.html
+const heroImage = "/hero_bw_1920.webp";
+const heroImage768 = "/hero_bw_768.webp";
+
 const clientLogos = [
   { src: "https://i.postimg.cc/3N6Kn78Y/Dial_In_Logo_png.png", alt: "Dial In" },
   { src: "https://i.postimg.cc/8FCq8ydW/1.png", alt: "Client Logo" },
@@ -94,11 +98,13 @@ export default function Home() {
       <Navbar />
 
       <Hero
-        backgroundImage="https://i.postimg.cc/bNrvWcMm/EGS-HOME-PAGE-header-photo.png"
+        backgroundImage={heroImage}
+        imageSrcSet={`${heroImage768} 768w, ${heroImage} 1920w`}
         title="Web Design & Full-Stack Marketing for Growing Businesses"
         subtitle="Custom websites in weeks, not months. Boutique marketing services that treat your business like our own."
         ctaText="See Our Services"
         ctaHref="/services"
+        isLCP={true}
       />
 
       {/* Logo Banner - Social proof right after hero */}

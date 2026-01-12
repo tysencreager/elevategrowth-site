@@ -112,11 +112,13 @@ export default function LogoBanner({ logos, title, subtitle }: LogoBannerProps) 
                     <img
                       src={logo.src}
                       alt={logo.alt}
+                      width={160}
+                      height={56}
                       loading="lazy"
                       decoding="async"
                       className="h-10 md:h-14 w-auto max-w-[120px] md:max-w-[160px] object-contain transition-all duration-300 opacity-90 hover:opacity-100 hover:scale-110"
                       style={{
-                        maxHeight: '56px',
+                        aspectRatio: '160 / 56',
                       }}
                     />
                   </div>
