@@ -12,21 +12,44 @@ const serviceSubLinks = [
   { href: "/services/seo", label: "SEO & Local Search" },
   { href: "/services/social-media", label: "Social Media" },
   { href: "/services/content-creation", label: "Content Creation" },
-  { href: "/services/ad-campaigns", label: "Ad Campaigns" }
+  { href: "/services/ad-campaigns", label: "Ad Campaigns" },
+  { href: "/pricing", label: "Pricing" }
+];
+
+const resultsSubLinks = [
+  { href: "/testimonials", label: "Testimonials" },
+  { href: "https://tysencreager.com", label: "Portfolio", external: true }
+];
+
+const resourcesSubLinks = [
+  { href: "/behind-elevate", label: "Behind Elevate" },
+  { href: "/blog", label: "Blog" }
 ];
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isServicesOpen, setIsServicesOpen] = useState(false);
+  const [isResultsOpen, setIsResultsOpen] = useState(false);
+  const [isResourcesOpen, setIsResourcesOpen] = useState(false);
   const [isMobileServicesOpen, setIsMobileServicesOpen] = useState(false);
+  const [isMobileResultsOpen, setIsMobileResultsOpen] = useState(false);
+  const [isMobileResourcesOpen, setIsMobileResourcesOpen] = useState(false);
   const servicesRef = useRef<HTMLDivElement>(null);
+  const resultsRef = useRef<HTMLDivElement>(null);
+  const resourcesRef = useRef<HTMLDivElement>(null);
 
-  // Close services dropdown when clicking outside
+  // Close dropdowns when clicking outside
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
       if (servicesRef.current && !servicesRef.current.contains(event.target as Node)) {
         setIsServicesOpen(false);
+      }
+      if (resultsRef.current && !resultsRef.current.contains(event.target as Node)) {
+        setIsResultsOpen(false);
+      }
+      if (resourcesRef.current && !resourcesRef.current.contains(event.target as Node)) {
+        setIsResourcesOpen(false);
       }
     }
     document.addEventListener("mousedown", handleClickOutside);
@@ -42,14 +65,42 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const navLinks = [
-    { href: "/", label: "Home", testId: "link-nav-home" },
-    { href: "/services", label: "Services", testId: "link-nav-services", hasDropdown: true },
-    { href: "/pricing", label: "Pricing", testId: "link-nav-pricing" },
-    { href: "/behind-elevate", label: "Behind Elevate", testId: "link-nav-behind-elevate" },
-    { href: "/testimonials", label: "Testimonials", testId: "link-nav-testimonials" },
-    { href: "/blog", label: "Blog", testId: "link-nav-blog" }
-  ];
+  // Simplified nav structure with dropdowns
+  type DropdownType = 'services' | 'results' | 'resources';
+
+  const dropdownConfig: Record<DropdownType, {
+    label: string;
+    testId: string;
+    links: typeof serviceSubLinks;
+    isOpen: boolean;
+    setOpen: (open: boolean) => void;
+    ref: React.RefObject<HTMLDivElement>;
+  }> = {
+    services: {
+      label: "Services",
+      testId: "link-nav-services",
+      links: serviceSubLinks,
+      isOpen: isServicesOpen,
+      setOpen: setIsServicesOpen,
+      ref: servicesRef
+    },
+    results: {
+      label: "Results",
+      testId: "link-nav-results",
+      links: resultsSubLinks,
+      isOpen: isResultsOpen,
+      setOpen: setIsResultsOpen,
+      ref: resultsRef
+    },
+    resources: {
+      label: "Resources",
+      testId: "link-nav-resources",
+      links: resourcesSubLinks,
+      isOpen: isResourcesOpen,
+      setOpen: setIsResourcesOpen,
+      ref: resourcesRef
+    }
+  };
 
   const dropdownVariants = {
     hidden: { opacity: 0, y: -10, scale: 0.95 },
@@ -135,29 +186,52 @@ export default function Navbar() {
           </Link>
 
           <div className="hidden md:flex items-center gap-8">
-            {navLinks.map((link, index) => (
-              link.hasDropdown ? (
+            {/* Home link */}
+            <motion.div
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.1, duration: 0.4 }}
+              variants={linkHoverVariants}
+              whileHover="hover"
+            >
+              <Link
+                href="/"
+                data-testid="link-nav-home"
+                className="font-serif font-medium transition-colors hover:text-primary text-foreground relative group"
+              >
+                Home
+                <motion.span
+                  className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary group-hover:w-full transition-all duration-300"
+                  layoutId="underline"
+                />
+              </Link>
+            </motion.div>
+
+            {/* Dropdown menus */}
+            {(Object.keys(dropdownConfig) as DropdownType[]).map((key, index) => {
+              const config = dropdownConfig[key];
+              return (
                 <motion.div
-                  key={link.href}
-                  ref={servicesRef}
+                  key={key}
+                  ref={config.ref as React.RefObject<HTMLDivElement>}
                   initial={{ opacity: 0, y: -20 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.1 + index * 0.05, duration: 0.4 }}
+                  transition={{ delay: 0.15 + index * 0.05, duration: 0.4 }}
                   className="relative"
-                  onMouseEnter={() => setIsServicesOpen(true)}
-                  onMouseLeave={() => setIsServicesOpen(false)}
+                  onMouseEnter={() => config.setOpen(true)}
+                  onMouseLeave={() => config.setOpen(false)}
                 >
                   <button
-                    data-testid={link.testId}
+                    data-testid={config.testId}
                     className="font-serif font-medium transition-colors hover:text-primary text-foreground relative group flex items-center gap-1"
-                    onClick={() => setIsServicesOpen(!isServicesOpen)}
+                    onClick={() => config.setOpen(!config.isOpen)}
                   >
-                    {link.label}
-                    <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${isServicesOpen ? 'rotate-180' : ''}`} />
+                    {config.label}
+                    <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${config.isOpen ? 'rotate-180' : ''}`} />
                   </button>
 
                   <AnimatePresence>
-                    {isServicesOpen && (
+                    {config.isOpen && (
                       <motion.div
                         variants={dropdownVariants}
                         initial="hidden"
@@ -165,60 +239,37 @@ export default function Navbar() {
                         exit="hidden"
                         className="absolute top-full left-0 mt-2 w-56 bg-primary rounded-lg shadow-xl shadow-primary/20 py-2 z-50"
                       >
-                        {serviceSubLinks.map((subLink) => (
-                          <Link
-                            key={subLink.href}
-                            href={subLink.href}
-                            className="block px-4 py-2.5 font-serif text-sm text-white/90 hover:bg-white/20 hover:text-white transition-colors"
-                            onClick={() => setIsServicesOpen(false)}
-                          >
-                            {subLink.label}
-                          </Link>
+                        {config.links.map((subLink) => (
+                          'external' in subLink && subLink.external ? (
+                            <a
+                              key={subLink.href}
+                              href={subLink.href}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="block px-4 py-2.5 font-serif text-sm text-white/90 hover:bg-white/20 hover:text-white transition-colors"
+                              onClick={() => config.setOpen(false)}
+                            >
+                              {subLink.label}
+                            </a>
+                          ) : (
+                            <Link
+                              key={subLink.href}
+                              href={subLink.href}
+                              className="block px-4 py-2.5 font-serif text-sm text-white/90 hover:bg-white/20 hover:text-white transition-colors"
+                              onClick={() => config.setOpen(false)}
+                            >
+                              {subLink.label}
+                            </Link>
+                          )
                         ))}
                       </motion.div>
                     )}
                   </AnimatePresence>
                 </motion.div>
-              ) : (
-                <motion.div
-                  key={link.href}
-                  initial={{ opacity: 0, y: -20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.1 + index * 0.05, duration: 0.4 }}
-                  variants={linkHoverVariants}
-                  whileHover="hover"
-                >
-                  <Link
-                    href={link.href}
-                    data-testid={link.testId}
-                    className="font-serif font-medium transition-colors hover:text-primary text-foreground relative group"
-                  >
-                    {link.label}
-                    <motion.span
-                      className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary group-hover:w-full transition-all duration-300"
-                      layoutId="underline"
-                    />
-                  </Link>
-                </motion.div>
-              )
-            ))}
-            <motion.div
-              initial={{ opacity: 0, y: -20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.3, duration: 0.4 }}
-              variants={linkHoverVariants}
-              whileHover="hover"
-            >
-              <a
-                href="https://tysencreager.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                data-testid="link-nav-portfolio"
-                className="font-serif font-medium transition-colors hover:text-primary text-foreground"
-              >
-                Portfolio
-              </a>
-            </motion.div>
+              );
+            })}
+
+            {/* Contact CTA */}
             <motion.div
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -281,6 +332,7 @@ export default function Navbar() {
             exit="hidden"
           >
             <div className="px-4 py-6 space-y-2">
+              {/* Home */}
               <motion.div variants={mobileItemVariants}>
                 <Link
                   href="/"
@@ -291,6 +343,8 @@ export default function Navbar() {
                   Home
                 </Link>
               </motion.div>
+
+              {/* Services Dropdown */}
               <motion.div variants={mobileItemVariants}>
                 <button
                   data-testid="link-mobile-services"
@@ -326,58 +380,98 @@ export default function Navbar() {
                   )}
                 </AnimatePresence>
               </motion.div>
+
+              {/* Results Dropdown */}
               <motion.div variants={mobileItemVariants}>
-                <Link
-                  href="/pricing"
-                  data-testid="link-mobile-pricing"
-                  className="block font-serif font-medium text-foreground hover:text-primary py-3 min-h-[48px]"
-                  onClick={() => setIsMobileMenuOpen(false)}
+                <button
+                  data-testid="link-mobile-results"
+                  className="w-full flex items-center justify-between font-serif font-medium text-foreground hover:text-primary py-3 min-h-[48px]"
+                  onClick={() => setIsMobileResultsOpen(!isMobileResultsOpen)}
                 >
-                  Pricing
-                </Link>
+                  Results
+                  <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${isMobileResultsOpen ? 'rotate-180' : ''}`} />
+                </button>
+                <AnimatePresence>
+                  {isMobileResultsOpen && (
+                    <motion.div
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: "auto", opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      transition={{ duration: 0.2 }}
+                      className="overflow-hidden pl-4 border-l-2 border-primary/20 ml-2"
+                    >
+                      {resultsSubLinks.map((subLink) => (
+                        'external' in subLink && subLink.external ? (
+                          <a
+                            key={subLink.href}
+                            href={subLink.href}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="block font-serif text-sm text-muted-foreground hover:text-primary py-2.5"
+                            onClick={() => {
+                              setIsMobileMenuOpen(false);
+                              setIsMobileResultsOpen(false);
+                            }}
+                          >
+                            {subLink.label}
+                          </a>
+                        ) : (
+                          <Link
+                            key={subLink.href}
+                            href={subLink.href}
+                            className="block font-serif text-sm text-muted-foreground hover:text-primary py-2.5"
+                            onClick={() => {
+                              setIsMobileMenuOpen(false);
+                              setIsMobileResultsOpen(false);
+                            }}
+                          >
+                            {subLink.label}
+                          </Link>
+                        )
+                      ))}
+                    </motion.div>
+                  )}
+                </AnimatePresence>
               </motion.div>
+
+              {/* Resources Dropdown */}
               <motion.div variants={mobileItemVariants}>
-                <Link
-                  href="/behind-elevate"
-                  data-testid="link-mobile-behind-elevate"
-                  className="block font-serif font-medium text-foreground hover:text-primary py-3 min-h-[48px]"
-                  onClick={() => setIsMobileMenuOpen(false)}
+                <button
+                  data-testid="link-mobile-resources"
+                  className="w-full flex items-center justify-between font-serif font-medium text-foreground hover:text-primary py-3 min-h-[48px]"
+                  onClick={() => setIsMobileResourcesOpen(!isMobileResourcesOpen)}
                 >
-                  Behind Elevate
-                </Link>
+                  Resources
+                  <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${isMobileResourcesOpen ? 'rotate-180' : ''}`} />
+                </button>
+                <AnimatePresence>
+                  {isMobileResourcesOpen && (
+                    <motion.div
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: "auto", opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      transition={{ duration: 0.2 }}
+                      className="overflow-hidden pl-4 border-l-2 border-primary/20 ml-2"
+                    >
+                      {resourcesSubLinks.map((subLink) => (
+                        <Link
+                          key={subLink.href}
+                          href={subLink.href}
+                          className="block font-serif text-sm text-muted-foreground hover:text-primary py-2.5"
+                          onClick={() => {
+                            setIsMobileMenuOpen(false);
+                            setIsMobileResourcesOpen(false);
+                          }}
+                        >
+                          {subLink.label}
+                        </Link>
+                      ))}
+                    </motion.div>
+                  )}
+                </AnimatePresence>
               </motion.div>
-              <motion.div variants={mobileItemVariants}>
-                <Link
-                  href="/testimonials"
-                  data-testid="link-mobile-testimonials"
-                  className="block font-serif font-medium text-foreground hover:text-primary py-3 min-h-[48px]"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  Testimonials
-                </Link>
-              </motion.div>
-              <motion.div variants={mobileItemVariants}>
-                <Link
-                  href="/blog"
-                  data-testid="link-mobile-blog"
-                  className="block font-serif font-medium text-foreground hover:text-primary py-3 min-h-[48px]"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  Blog
-                </Link>
-              </motion.div>
-              <motion.div variants={mobileItemVariants}>
-                <a
-                  href="https://tysencreager.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  data-testid="link-mobile-portfolio"
-                  className="block font-serif font-medium text-foreground hover:text-primary py-3 min-h-[48px]"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  Portfolio
-                </a>
-              </motion.div>
+
+              {/* Contact CTA */}
               <motion.div variants={mobileItemVariants} className="pt-2">
                 <Link
                   href="/contact"
