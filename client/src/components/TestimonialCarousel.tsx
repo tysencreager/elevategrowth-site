@@ -69,13 +69,12 @@ export default function TestimonialCarousel({
   };
 
   const headerVariants = {
-    hidden: { opacity: 0, y: 30 },
+    hidden: { opacity: 0 },
     visible: {
       opacity: 1,
-      y: 0,
       transition: {
-        duration: 0.8,
-        ease: [0.22, 1, 0.36, 1]
+        duration: 0.3,
+        ease: "easeOut"
       }
     }
   };
@@ -101,15 +100,10 @@ export default function TestimonialCarousel({
           initial="hidden"
           animate={isInView ? "visible" : "hidden"}
         >
-          <motion.div
-            className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full mb-4"
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={isInView ? { opacity: 1, scale: 1 } : {}}
-            transition={{ delay: 0.2, duration: 0.5 }}
-          >
+          <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full mb-4">
             <Star className="w-4 h-4 fill-primary" />
             <span className="font-medium text-sm">Client Love</span>
-          </motion.div>
+          </div>
           <h2 className="font-display font-semibold text-3xl md:text-4xl lg:text-5xl text-foreground">
             What People Are Saying
           </h2>
@@ -148,26 +142,14 @@ export default function TestimonialCarousel({
               >
                 <div className="bg-background/60 backdrop-blur-sm rounded-2xl p-6 sm:p-8 md:p-10 border border-primary/10 shadow-xl relative overflow-hidden">
                   {/* Large quote mark */}
-                  <motion.div
-                    className="absolute -top-4 -left-2 text-9xl font-serif text-primary/10 pointer-events-none select-none leading-none"
-                    initial={{ opacity: 0, scale: 0.5 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    transition={{ delay: 0.2, duration: 0.5 }}
-                  >
+                  <div className="absolute -top-4 -left-2 text-9xl font-serif text-primary/10 pointer-events-none select-none leading-none">
                     "
-                  </motion.div>
+                  </div>
 
-                  {/* Star rating */}
+                  {/* Star rating - no individual stagger animation */}
                   <div className="flex gap-1 mb-4 relative z-10">
                     {[...Array(5)].map((_, i) => (
-                      <motion.div
-                        key={i}
-                        initial={{ opacity: 0, y: -10 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 0.1 + i * 0.05, duration: 0.3 }}
-                      >
-                        <Star className="w-5 h-5 fill-primary text-primary" />
-                      </motion.div>
+                      <Star key={i} className="w-5 h-5 fill-primary text-primary" />
                     ))}
                   </div>
 

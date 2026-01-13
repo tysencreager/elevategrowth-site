@@ -24,43 +24,14 @@ export default function CTASection({
   const sectionRef = useRef(null);
   const isInView = useInView(sectionRef, { once: true, amount: 0.4 });
 
-  // Split title into words for staggered animation
-  const titleWords = title.split(" ");
-
-  // Simplified animation variants for better performance
-  const containerVariants = {
+  // Simple, fast fade-in - no word stagger that looks like buffering
+  const contentVariants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.04,
-        delayChildren: 0.1
-      }
-    }
-  };
-
-  // Simple 2D animation for all devices
-  const wordVariants = {
-    hidden: { opacity: 0, y: 15 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
         duration: 0.3,
         ease: "easeOut"
-      }
-    }
-  };
-
-  const buttonVariants = {
-    hidden: { opacity: 0, y: 15 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.4,
-        ease: "easeOut",
-        delay: 0.4
       }
     }
   };
@@ -93,46 +64,31 @@ export default function CTASection({
         />
       )}
 
-      <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <motion.h2
+      <motion.div
+        className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center"
+        variants={contentVariants}
+        initial="hidden"
+        animate={isInView ? "visible" : "hidden"}
+      >
+        <h2
           className="font-display font-semibold text-4xl md:text-5xl lg:text-6xl text-white mb-8 leading-tight"
           data-testid="text-cta-title"
-          variants={containerVariants}
-          initial="hidden"
-          animate={isInView ? "visible" : "hidden"}
         >
-          {titleWords.map((word, i) => (
-            <motion.span
-              key={i}
-              variants={wordVariants}
-              style={{
-                display: "inline-block",
-                marginRight: "0.25em"
-              }}
-            >
-              {word}
-            </motion.span>
-          ))}
-        </motion.h2>
+          {title}
+        </h2>
 
-        <motion.div
-          variants={buttonVariants}
-          initial="hidden"
-          animate={isInView ? "visible" : "hidden"}
-        >
-          <a href={ctaHref} data-testid="button-cta">
-            <AnimatedButton>
-              <Button
-                size="lg"
-                variant={backgroundImage ? "outline" : "default"}
-                className={`font-serif font-medium text-base md:text-lg px-8 py-6 ${backgroundImage ? 'bg-white/10 backdrop-blur-sm border-white text-white hover:bg-white/20' : ''}`}
-              >
-                {ctaText}
-              </Button>
-            </AnimatedButton>
-          </a>
-        </motion.div>
-      </div>
+        <a href={ctaHref} data-testid="button-cta">
+          <AnimatedButton>
+            <Button
+              size="lg"
+              variant={backgroundImage ? "outline" : "default"}
+              className={`font-serif font-medium text-base md:text-lg px-8 py-6 ${backgroundImage ? 'bg-white/10 backdrop-blur-sm border-white text-white hover:bg-white/20' : ''}`}
+            >
+              {ctaText}
+            </Button>
+          </AnimatedButton>
+        </a>
+      </motion.div>
     </section>
   );
 }

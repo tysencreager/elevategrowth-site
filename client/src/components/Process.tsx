@@ -41,9 +41,8 @@ export default function Process({
       opacity: 1,
       y: 0,
       transition: {
-        duration: 0.4,
-        ease: "easeOut",
-        delay: 0.1
+        duration: 0.3,
+        ease: "easeOut"
       }
     }
   };
@@ -53,8 +52,8 @@ export default function Process({
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.08,
-        delayChildren: 0.2
+        staggerChildren: 0.03,
+        delayChildren: 0
       }
     }
   };

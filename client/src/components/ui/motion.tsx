@@ -62,8 +62,8 @@ export const staggerContainer: Variants = {
   visible: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.05,
-      delayChildren: 0.05
+      staggerChildren: 0.02,
+      delayChildren: 0
     }
   }
 };
@@ -73,8 +73,8 @@ export const staggerContainerSlow: Variants = {
   visible: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.08,
-      delayChildren: 0.1
+      staggerChildren: 0.03,
+      delayChildren: 0
     }
   }
 };
@@ -136,7 +136,7 @@ export function StaggerContainer({
   children,
   className = "",
   delay = 0,
-  staggerDelay = 0.1,
+  staggerDelay = 0.03, // Reduced from 0.1 for faster appearance
   once = true
 }: StaggerContainerProps) {
   const ref = useRef(null);
@@ -183,67 +183,27 @@ export function StaggerItem({
   );
 }
 
-// Hero text animation with character/word stagger
-// Uses simpler 2D transforms on mobile for better performance
+// Simple text fade-in animation - no word-by-word stagger to avoid buffering effect
 interface AnimatedTextProps {
   text: string;
   className?: string;
   delay?: number;
-  type?: "words" | "chars";
+  type?: "words" | "chars"; // Kept for API compatibility but ignored
 }
 
 export function AnimatedText({
   text,
   className = "",
-  delay = 0,
-  type = "words"
+  delay = 0
 }: AnimatedTextProps) {
-  const words = text.split(" ");
-
-  const container: Variants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: type === "words" ? 0.04 : 0.02,
-        delayChildren: delay
-      }
-    }
-  };
-
-  // Simple 2D animation for all devices - no 3D rotateX which causes jank
-  const child: Variants = {
-    hidden: { opacity: 0, y: 12 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.3,
-        ease: "easeOut"
-      }
-    }
-  };
-
   return (
     <motion.span
-      variants={container}
-      initial="hidden"
-      animate="visible"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.3, ease: "easeOut", delay }}
       className={className}
-      style={{ display: "inline-block" }}
     >
-      {words.map((word, i) => (
-        <motion.span
-          key={i}
-          variants={child}
-          style={{
-            display: "inline-block",
-            marginRight: "0.25em"
-          }}
-        >
-          {word}
-        </motion.span>
-      ))}
+      {text}
     </motion.span>
   );
 }
