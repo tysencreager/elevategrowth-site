@@ -684,9 +684,9 @@ export default function Pricing() {
       title: "Search & Local Presence",
       description: "Get found where it matters. Dominate local search and own your Google presence.",
       items: [
-        { label: "SEO & Google Business Profile optimization", price: "$300/mo" }
+        { label: "SEO & Google Business Profile optimization", price: "$400/mo" }
       ],
-      note: "Per location pricing."
+      note: "Per location pricing. Includes local citations, backlink outreach, technical SEO, keyword strategy, and monthly reporting. Blog posts/articles available for an additional fee. 3-month minimum commitment."
     },
     {
       image: socialImg,
@@ -715,7 +715,7 @@ export default function Pricing() {
       items: [
         { label: "Custom pricing based on your needs", price: "Inquire" }
       ],
-      note: "Pricing varies based on platform, campaign size, ad spend, and complexity. Let's discuss your goals to create a custom quote."
+      note: "Pricing varies based on platform, campaign size, ad spend, and complexity. 3-month minimum commitment. Let's discuss your goals to create a custom quote."
     }
   ];
 
@@ -829,12 +829,12 @@ export default function Pricing() {
       {
         "@type": "Offer",
         "name": "SEO & Local Search Optimization",
-        "description": "SEO and Google Business Profile optimization",
-        "price": "300",
+        "description": "SEO and Google Business Profile optimization including local citations, backlink outreach, technical SEO, keyword strategy, and monthly reporting",
+        "price": "400",
         "priceCurrency": "USD",
         "priceSpecification": {
           "@type": "UnitPriceSpecification",
-          "price": "300",
+          "price": "400",
           "priceCurrency": "USD",
           "unitText": "per month per location"
         }
@@ -895,9 +895,9 @@ export default function Pricing() {
     <div className="min-h-screen">
       <SEO
         title="Pricing - Affordable Marketing Services | Elevate Growth Solutions"
-        description="Transparent, affordable pricing for quality marketing services. Custom websites from $1,299, SEO from $300/month, social media from $1,000/month. No hidden fees. Get a free consultation today."
+        description="Transparent, affordable pricing for quality marketing services. Custom websites from $1,299, SEO from $400/month, social media from $1,000/month. No hidden fees. Get a free consultation today."
         ogTitle="Marketing Services Pricing | Quality Services, Honest Prices"
-        ogDescription="Custom websites starting at $1,299. SEO from $300/month. Social media management from $1,000/month. Transparent pricing with no surprises. Schedule your free consultation."
+        ogDescription="Custom websites starting at $1,299. SEO from $400/month. Social media management from $1,000/month. Transparent pricing with no surprises. Schedule your free consultation."
       />
       <SchemaMarkup type="service" data={serviceOfferSchema} />
       <Navbar />

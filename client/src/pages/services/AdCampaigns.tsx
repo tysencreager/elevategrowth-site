@@ -91,7 +91,7 @@ export default function AdCampaigns() {
             "Monthly performance reports",
             "Regular strategy calls"
           ],
-          note: "Pricing varies based on: number of platforms, campaign complexity, monthly ad spend, and your specific goals. Let's talk about what you need.",
+          note: "3-month minimum commitment required. Pricing varies based on: number of platforms, campaign complexity, monthly ad spend, and your specific goals. Let's talk about what you need.",
           featured: true
         }
       ]}
