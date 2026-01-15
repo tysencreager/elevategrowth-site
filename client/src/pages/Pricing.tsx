@@ -401,9 +401,10 @@ export default function Pricing() {
       title: "Search & Local Presence",
       description: "Get found where it matters. Dominate local search and own your Google presence.",
       items: [
-        { label: "SEO & Google Business Profile optimization", price: "$400/mo" }
+        { label: "Local SEO & Google Business Profile", price: "$400/mo" },
+        { label: "Organic SEO (broader keyword targeting)", price: "$600/mo" }
       ],
-      note: "Per location pricing. Includes local citations, backlink outreach, technical SEO, keyword strategy, and monthly reporting. Blog posts/articles available for an additional fee. 3-month minimum commitment."
+      note: "Per location pricing for Local SEO. Includes local citations, backlink outreach, technical SEO, keyword strategy, and monthly reporting. Blog posts/articles available for an additional fee. 3-month minimum commitment."
     },
     {
       image: socialImg,
@@ -536,8 +537,8 @@ export default function Pricing() {
       },
       {
         "@type": "Offer",
-        "name": "SEO & Local Search Optimization",
-        "description": "SEO and Google Business Profile optimization including local citations, backlink outreach, technical SEO, keyword strategy, and monthly reporting",
+        "name": "Local SEO & Google Business Profile",
+        "description": "Local SEO and Google Business Profile optimization including local citations, backlink outreach, technical SEO, keyword strategy, and monthly reporting",
         "price": "400",
         "priceCurrency": "USD",
         "priceSpecification": {
@@ -545,6 +546,19 @@ export default function Pricing() {
           "price": "400",
           "priceCurrency": "USD",
           "unitText": "per month per location"
+        }
+      },
+      {
+        "@type": "Offer",
+        "name": "Organic SEO",
+        "description": "Broader keyword targeting and content strategy to rank beyond local searches, including comprehensive keyword research, content planning, and backlink building",
+        "price": "600",
+        "priceCurrency": "USD",
+        "priceSpecification": {
+          "@type": "UnitPriceSpecification",
+          "price": "600",
+          "priceCurrency": "USD",
+          "unitText": "per month"
         }
       },
       {
