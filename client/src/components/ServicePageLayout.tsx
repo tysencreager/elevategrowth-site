@@ -296,7 +296,7 @@ export default function ServicePageLayout({
             <div className="w-20 sm:w-24 h-1 bg-primary mx-auto rounded-full" />
           </motion.div>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
+          <div className="flex flex-wrap justify-center gap-4 sm:gap-6 md:gap-8">
             {features.map((feature, index) => (
               <motion.article
                 key={index}
@@ -304,7 +304,7 @@ export default function ServicePageLayout({
                 animate={isFeaturesInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 whileHover={{ y: -5, transition: { duration: 0.2 } }}
-                className="group relative bg-card rounded-xl p-4 sm:p-5 md:p-6 border border-border hover:border-primary/50 hover:shadow-lg hover:shadow-primary/5 transition-all duration-300"
+                className="group relative bg-card rounded-xl p-4 sm:p-5 md:p-6 border border-border hover:border-primary/50 hover:shadow-lg hover:shadow-primary/5 transition-all duration-300 w-full sm:w-[calc(50%-0.75rem)] lg:w-[calc(33.333%-1.4rem)]"
               >
                 {/* Animated accent line */}
                 <motion.div

@@ -20,70 +20,26 @@ export default function ValueProp({
   const isInView = useInView(sectionRef, { once: true, amount: 0.3 });
 
   const imageVariants = {
-    hidden: {
-      opacity: 0,
-      x: imagePosition === "left" ? -80 : 80,
-      scale: 0.95
-    },
+    hidden: { opacity: 0, x: imagePosition === "left" ? -30 : 30 },
     visible: {
       opacity: 1,
       x: 0,
-      scale: 1,
       transition: {
-        duration: 0.9,
-        ease: [0.22, 1, 0.36, 1]
+        duration: 0.6,
+        ease: "easeOut"
       }
     }
   };
 
   const contentVariants = {
-    hidden: {
-      opacity: 0,
-      x: imagePosition === "left" ? 80 : -80
-    },
+    hidden: { opacity: 0, x: imagePosition === "left" ? 30 : -30 },
     visible: {
       opacity: 1,
       x: 0,
       transition: {
-        duration: 0.9,
-        ease: [0.22, 1, 0.36, 1],
-        delay: 0.2
-      }
-    }
-  };
-
-  const titleVariants = {
-    hidden: { opacity: 0, y: 30 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.7,
-        ease: [0.22, 1, 0.36, 1],
-        delay: 0.4
-      }
-    }
-  };
-
-  const descriptionVariants = {
-    hidden: { opacity: 0, y: 30 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.7,
-        ease: [0.22, 1, 0.36, 1],
-        delay: 0.6
-      }
-    }
-  };
-
-  const imageHoverVariants = {
-    hover: {
-      scale: 1.03,
-      transition: {
-        duration: 0.4,
-        ease: [0.22, 1, 0.36, 1]
+        duration: 0.6,
+        ease: "easeOut",
+        delay: 0.15
       }
     }
   };
@@ -98,12 +54,8 @@ export default function ValueProp({
             initial="hidden"
             animate={isInView ? "visible" : "hidden"}
           >
-            <motion.div
-              className="overflow-hidden rounded-lg"
-              whileHover="hover"
-              variants={imageHoverVariants}
-            >
-              <motion.img
+            <div className="overflow-hidden rounded-lg">
+              <img
                 src={image}
                 alt={imageAlt}
                 width={450}
@@ -112,10 +64,8 @@ export default function ValueProp({
                 decoding="async"
                 className="w-auto h-full max-h-[600px] rounded-lg object-cover"
                 data-testid="img-value-prop"
-                whileHover={{ scale: 1.05 }}
-                transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
               />
-            </motion.div>
+            </div>
           </motion.div>
           <motion.div
             className="flex-1"
@@ -123,24 +73,18 @@ export default function ValueProp({
             initial="hidden"
             animate={isInView ? "visible" : "hidden"}
           >
-            <motion.h2
+            <h2
               className="font-serif text-2xl md:text-3xl lg:text-4xl text-primary mb-6 leading-tight"
               data-testid="text-value-prop-title"
-              variants={titleVariants}
-              initial="hidden"
-              animate={isInView ? "visible" : "hidden"}
             >
               {title}
-            </motion.h2>
-            <motion.p
+            </h2>
+            <p
               className="font-serif text-lg md:text-xl text-foreground leading-relaxed"
               data-testid="text-value-prop-description"
-              variants={descriptionVariants}
-              initial="hidden"
-              animate={isInView ? "visible" : "hidden"}
             >
               {description}
-            </motion.p>
+            </p>
           </motion.div>
         </div>
       </div>

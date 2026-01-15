@@ -1,6 +1,3 @@
-import { motion } from "framer-motion";
-import { useShouldReduceAnimations } from "@/hooks/use-reduced-motion";
-
 // ============================================
 // DECORATIVE COMPONENTS
 // Shared visual effects for consistent site-wide styling
@@ -136,91 +133,19 @@ export function CurvedDivider({
   );
 }
 
-// Floating decorative orbs with animation
-// Disables animations on mobile and when user prefers reduced motion for performance
+// Static decorative orbs - no animations for better performance
 export function FloatingOrbs({ variant = "light" }: { variant?: "light" | "primary" }) {
-  const shouldReduceAnimations = useShouldReduceAnimations();
-
   const baseColor = "bg-primary";
   const opacityLow = variant === "primary" ? "opacity-20" : "opacity-[0.08]";
   const opacityMed = variant === "primary" ? "opacity-25" : "opacity-[0.12]";
   const opacityHigh = variant === "primary" ? "opacity-30" : "opacity-[0.15]";
 
-  // Static orbs for mobile/reduced motion - no animations, better performance
-  if (shouldReduceAnimations) {
-    return (
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className={`absolute top-[10%] left-[5%] w-64 h-64 ${baseColor} ${opacityMed} rounded-full blur-3xl`} />
-        <div className={`absolute top-[60%] right-[10%] w-96 h-96 ${baseColor} ${opacityLow} rounded-full blur-3xl`} />
-        <div className={`absolute top-[30%] right-[20%] w-48 h-48 ${baseColor} ${opacityHigh} rounded-full blur-2xl`} />
-        <div className={`absolute bottom-[20%] left-[15%] w-72 h-72 ${baseColor} ${opacityLow} rounded-full blur-3xl`} />
-      </div>
-    );
-  }
-
-  // Animated orbs for desktop with GPU acceleration hints
-  const floatingVariants = {
-    animate: {
-      y: [-15, 15, -15],
-      x: [-5, 5, -5],
-      transition: {
-        duration: 8,
-        repeat: Infinity,
-        ease: "easeInOut"
-      }
-    }
-  };
-
-  const floatingVariants2 = {
-    animate: {
-      y: [10, -20, 10],
-      x: [5, -5, 5],
-      transition: {
-        duration: 10,
-        repeat: Infinity,
-        ease: "easeInOut"
-      }
-    }
-  };
-
-  const floatingVariants3 = {
-    animate: {
-      y: [-20, 10, -20],
-      x: [-8, 8, -8],
-      transition: {
-        duration: 12,
-        repeat: Infinity,
-        ease: "easeInOut"
-      }
-    }
-  };
-
   return (
     <div className="absolute inset-0 overflow-hidden pointer-events-none">
-      <motion.div
-        variants={floatingVariants}
-        animate="animate"
-        className={`absolute top-[10%] left-[5%] w-64 h-64 ${baseColor} ${opacityMed} rounded-full blur-3xl`}
-        style={{ willChange: "transform" }}
-      />
-      <motion.div
-        variants={floatingVariants2}
-        animate="animate"
-        className={`absolute top-[60%] right-[10%] w-96 h-96 ${baseColor} ${opacityLow} rounded-full blur-3xl`}
-        style={{ willChange: "transform" }}
-      />
-      <motion.div
-        variants={floatingVariants3}
-        animate="animate"
-        className={`absolute top-[30%] right-[20%] w-48 h-48 ${baseColor} ${opacityHigh} rounded-full blur-2xl`}
-        style={{ willChange: "transform" }}
-      />
-      <motion.div
-        variants={floatingVariants}
-        animate="animate"
-        className={`absolute bottom-[20%] left-[15%] w-72 h-72 ${baseColor} ${opacityLow} rounded-full blur-3xl`}
-        style={{ willChange: "transform" }}
-      />
+      <div className={`absolute top-[10%] left-[5%] w-64 h-64 ${baseColor} ${opacityMed} rounded-full blur-3xl`} />
+      <div className={`absolute top-[60%] right-[10%] w-96 h-96 ${baseColor} ${opacityLow} rounded-full blur-3xl`} />
+      <div className={`absolute top-[30%] right-[20%] w-48 h-48 ${baseColor} ${opacityHigh} rounded-full blur-2xl`} />
+      <div className={`absolute bottom-[20%] left-[15%] w-72 h-72 ${baseColor} ${opacityLow} rounded-full blur-3xl`} />
     </div>
   );
 }
