@@ -4,8 +4,6 @@ import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
 import SchemaMarkup from "@/components/SchemaMarkup";
 import { Button } from "@/components/ui/button";
-import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
 import { ArrowRight, Check, Sparkles } from "lucide-react";
 import { Link } from "wouter";
 import servicesHero from "@assets/services_hero_team_1920.webp";
@@ -13,37 +11,21 @@ import servicesHero768 from "@assets/services_hero_team_768.webp";
 import servicesHero1280 from "@assets/services_hero_team_1280.webp";
 
 // ============================================
-// DECORATIVE COMPONENTS
+// DECORATIVE COMPONENTS (Static - No Animations)
 // ============================================
 
-// Bokeh/light spots background effect
 function BokehEffect({ className = "", opacity = 0.6 }: { className?: string; opacity?: number }) {
   return (
     <div className={`absolute inset-0 pointer-events-none overflow-hidden ${className}`} style={{ opacity }}>
-      {/* Large soft bokeh circles */}
       <div className="absolute top-[10%] left-[5%] w-32 h-32 bg-primary/20 rounded-full blur-2xl" />
       <div className="absolute top-[15%] right-[15%] w-48 h-48 bg-primary/15 rounded-full blur-3xl" />
       <div className="absolute top-[50%] left-[20%] w-24 h-24 bg-primary/25 rounded-full blur-xl" />
       <div className="absolute top-[60%] right-[8%] w-40 h-40 bg-primary/10 rounded-full blur-2xl" />
       <div className="absolute top-[80%] left-[40%] w-36 h-36 bg-primary/15 rounded-full blur-2xl" />
-
-      {/* Medium bokeh spots */}
-      <div className="absolute top-[25%] left-[45%] w-20 h-20 bg-primary/20 rounded-full blur-xl" />
-      <div className="absolute top-[35%] right-[30%] w-16 h-16 bg-primary/25 rounded-full blur-lg" />
-      <div className="absolute top-[70%] left-[10%] w-28 h-28 bg-primary/15 rounded-full blur-2xl" />
-      <div className="absolute top-[45%] right-[45%] w-14 h-14 bg-primary/20 rounded-full blur-lg" />
-
-      {/* Small accent spots */}
-      <div className="absolute top-[20%] left-[70%] w-10 h-10 bg-primary/30 rounded-full blur-md" />
-      <div className="absolute top-[55%] left-[55%] w-8 h-8 bg-primary/25 rounded-full blur-md" />
-      <div className="absolute top-[75%] right-[25%] w-12 h-12 bg-primary/20 rounded-full blur-lg" />
-      <div className="absolute top-[40%] left-[8%] w-10 h-10 bg-primary/25 rounded-full blur-md" />
-      <div className="absolute top-[85%] right-[60%] w-8 h-8 bg-primary/30 rounded-full blur-md" />
     </div>
   );
 }
 
-// Gradient fade transition between sections
 function GradientTransition({
   from = "transparent",
   to = "transparent",
@@ -66,7 +48,6 @@ function GradientTransition({
   );
 }
 
-// Wave divider SVG component
 function WaveDivider({
   position = "bottom",
   fillColor = "var(--background)",
@@ -110,7 +91,6 @@ function WaveDivider({
   );
 }
 
-// Curved divider (gentler curve)
 function CurvedDivider({
   position = "bottom",
   fillColor = "var(--background)",
@@ -144,44 +124,8 @@ function CurvedDivider({
   );
 }
 
-// Floating decorative orbs
+// Static decorative orbs
 function FloatingOrbs({ variant = "light" }: { variant?: "light" | "primary" }) {
-  const floatingVariants = {
-    animate: {
-      y: [-15, 15, -15],
-      x: [-5, 5, -5],
-      transition: {
-        duration: 8,
-        repeat: Infinity,
-        ease: "easeInOut"
-      }
-    }
-  };
-
-  const floatingVariants2 = {
-    animate: {
-      y: [10, -20, 10],
-      x: [5, -5, 5],
-      transition: {
-        duration: 10,
-        repeat: Infinity,
-        ease: "easeInOut"
-      }
-    }
-  };
-
-  const floatingVariants3 = {
-    animate: {
-      y: [-20, 10, -20],
-      x: [-8, 8, -8],
-      transition: {
-        duration: 12,
-        repeat: Infinity,
-        ease: "easeInOut"
-      }
-    }
-  };
-
   const baseColor = "bg-primary";
   const opacityLow = variant === "primary" ? "opacity-20" : "opacity-[0.08]";
   const opacityMed = variant === "primary" ? "opacity-25" : "opacity-[0.12]";
@@ -189,35 +133,18 @@ function FloatingOrbs({ variant = "light" }: { variant?: "light" | "primary" }) 
 
   return (
     <div className="absolute inset-0 overflow-hidden pointer-events-none">
-      <motion.div
-        variants={floatingVariants}
-        animate="animate"
-        className={`absolute top-[10%] left-[5%] w-64 h-64 ${baseColor} ${opacityMed} rounded-full blur-3xl`}
-      />
-      <motion.div
-        variants={floatingVariants2}
-        animate="animate"
-        className={`absolute top-[60%] right-[10%] w-96 h-96 ${baseColor} ${opacityLow} rounded-full blur-3xl`}
-      />
-      <motion.div
-        variants={floatingVariants3}
-        animate="animate"
-        className={`absolute top-[30%] right-[20%] w-48 h-48 ${baseColor} ${opacityHigh} rounded-full blur-2xl`}
-      />
-      <motion.div
-        variants={floatingVariants}
-        animate="animate"
-        className={`absolute bottom-[20%] left-[15%] w-72 h-72 ${baseColor} ${opacityLow} rounded-full blur-3xl`}
-      />
+      <div className={`absolute top-[10%] left-[5%] w-64 h-64 ${baseColor} ${opacityMed} rounded-full blur-3xl`} />
+      <div className={`absolute top-[60%] right-[10%] w-96 h-96 ${baseColor} ${opacityLow} rounded-full blur-3xl`} />
+      <div className={`absolute top-[30%] right-[20%] w-48 h-48 ${baseColor} ${opacityHigh} rounded-full blur-2xl`} />
+      <div className={`absolute bottom-[20%] left-[15%] w-72 h-72 ${baseColor} ${opacityLow} rounded-full blur-3xl`} />
     </div>
   );
 }
 
 // ============================================
-// PRICING COMPONENTS
+// PRICING COMPONENTS (Simplified - CSS transitions only)
 // ============================================
 
-// Import B&W stock images for service cards
 import websiteImg from "@assets/stock_images/black_and_white_desk_69514a94.jpg";
 import searchImg from "@assets/stock_images/black_and_white_mode_319eff6f.jpg";
 import socialImg from "@assets/stock_images/black_and_white_prof_325156c7.jpg";
@@ -231,47 +158,18 @@ interface PricingCardProps {
   description: string;
   items: { label: string; price: string }[];
   note?: string;
-  index: number;
   featured?: boolean;
 }
 
-function PricingCard({ image, title, description, items, note, index, featured }: PricingCardProps) {
-  const cardRef = useRef(null);
-  const isInView = useInView(cardRef, { once: true, amount: 0.2 });
-
-  const cardVariants = {
-    hidden: { opacity: 0, y: 60, scale: 0.95 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      scale: 1,
-      transition: {
-        duration: 0.7,
-        ease: [0.22, 1, 0.36, 1],
-        delay: index * 0.12
-      }
-    }
-  };
-
+function PricingCard({ image, title, description, items, note, featured }: PricingCardProps) {
   return (
-    <motion.div
-      ref={cardRef}
-      variants={cardVariants}
-      initial="hidden"
-      animate={isInView ? "visible" : "hidden"}
-      whileHover={{
-        y: -8,
-        transition: { duration: 0.3, ease: [0.22, 1, 0.36, 1] }
-      }}
-      className={`group relative bg-card rounded-xl overflow-hidden border-2 transition-all duration-500 ${
+    <div
+      className={`group relative bg-card rounded-xl overflow-hidden border-2 transition-all duration-300 hover:-translate-y-2 ${
         featured
           ? 'border-primary shadow-lg shadow-primary/20 ring-1 ring-primary/10'
-          : 'border-border hover:border-primary/50 hover:shadow-2xl hover:shadow-primary/10'
+          : 'border-border hover:border-primary/50 hover:shadow-xl hover:shadow-primary/10'
       }`}
     >
-      {/* Glow effect on hover */}
-      <div className="absolute -inset-px bg-gradient-to-r from-primary/0 via-primary/10 to-primary/0 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-sm" />
-
       {/* Featured badge */}
       {featured && (
         <div className="absolute top-4 right-4 z-10 bg-primary text-white px-3 py-1 rounded-full text-sm font-sans font-medium flex items-center gap-1 shadow-lg shadow-primary/30">
@@ -282,24 +180,16 @@ function PricingCard({ image, title, description, items, note, index, featured }
 
       {/* Image container with overlay */}
       <div className="relative h-48 md:h-56 overflow-hidden z-10">
-        <motion.img
+        <img
           src={image}
           alt={title}
-          className="w-full h-full object-cover grayscale"
-          initial={{ scale: 1.1 }}
-          whileHover={{ scale: 1.15 }}
-          transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+          className="w-full h-full object-cover grayscale group-hover:scale-105 transition-transform duration-500"
         />
         {/* Gradient overlay */}
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
 
         {/* Teal accent line */}
-        <motion.div
-          className="absolute bottom-0 left-0 h-1 bg-primary"
-          initial={{ width: "0%" }}
-          whileInView={{ width: "100%" }}
-          transition={{ duration: 0.8, delay: 0.3 + index * 0.1, ease: [0.22, 1, 0.36, 1] }}
-        />
+        <div className="absolute bottom-0 left-0 h-1 w-full bg-primary" />
 
         {/* Title overlay on image */}
         <div className="absolute bottom-4 left-6 right-6">
@@ -318,12 +208,9 @@ function PricingCard({ image, title, description, items, note, index, featured }
         {/* Pricing items */}
         <div className="space-y-4">
           {items.map((item, i) => (
-            <motion.div
+            <div
               key={i}
               className="flex justify-between items-start gap-4 py-3 border-b border-border/50 last:border-0"
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.4 + i * 0.1, duration: 0.5 }}
             >
               <div className="flex items-start gap-2">
                 <Check className="w-5 h-5 text-primary mt-0.5 shrink-0" />
@@ -332,73 +219,38 @@ function PricingCard({ image, title, description, items, note, index, featured }
               <span className="font-sans font-bold text-primary text-lg whitespace-nowrap">
                 {item.price}
               </span>
-            </motion.div>
+            </div>
           ))}
         </div>
 
         {note && (
-          <motion.p
-            className="mt-5 text-sm font-serif text-muted-foreground bg-primary/5 p-3 rounded-lg border-l-2 border-primary"
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ delay: 0.6, duration: 0.5 }}
-          >
+          <p className="mt-5 text-sm font-serif text-muted-foreground bg-primary/5 p-3 rounded-lg border-l-2 border-primary">
             {note}
-          </motion.p>
+          </p>
         )}
       </div>
-    </motion.div>
+    </div>
   );
 }
 
-// Audit Card Component for one-time services
 interface AuditCardProps {
   title: string;
   price: string;
   description: string;
   features: string[];
-  index: number;
   featured?: boolean;
   badge?: string;
 }
 
-function AuditCard({ title, price, description, features, index, featured, badge }: AuditCardProps) {
-  const cardRef = useRef(null);
-  const isInView = useInView(cardRef, { once: true, amount: 0.2 });
-
-  const cardVariants = {
-    hidden: { opacity: 0, y: 60, scale: 0.95 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      scale: 1,
-      transition: {
-        duration: 0.7,
-        ease: [0.22, 1, 0.36, 1],
-        delay: index * 0.12
-      }
-    }
-  };
-
+function AuditCard({ title, price, description, features, featured, badge }: AuditCardProps) {
   return (
-    <motion.div
-      ref={cardRef}
-      variants={cardVariants}
-      initial="hidden"
-      animate={isInView ? "visible" : "hidden"}
-      whileHover={{
-        y: -8,
-        transition: { duration: 0.3, ease: [0.22, 1, 0.36, 1] }
-      }}
-      className={`group relative bg-card rounded-xl overflow-hidden border-2 transition-all duration-500 ${
+    <div
+      className={`group relative bg-card rounded-xl overflow-hidden border-2 transition-all duration-300 hover:-translate-y-2 ${
         featured
           ? 'border-primary shadow-lg shadow-primary/20 ring-1 ring-primary/10'
-          : 'border-border hover:border-primary/50 hover:shadow-2xl hover:shadow-primary/10'
+          : 'border-border hover:border-primary/50 hover:shadow-xl hover:shadow-primary/10'
       }`}
     >
-      {/* Glow effect on hover */}
-      <div className="absolute -inset-px bg-gradient-to-r from-primary/0 via-primary/10 to-primary/0 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-sm" />
-
       {/* Featured badge */}
       {featured && badge && (
         <div className="absolute top-4 right-4 z-20 bg-primary text-white px-3 py-1 rounded-full text-sm font-sans font-medium flex items-center gap-1 shadow-lg shadow-primary/30">
@@ -416,12 +268,7 @@ function AuditCard({ title, price, description, features, index, featured, badge
           <span className="font-display font-bold text-3xl md:text-4xl text-primary">{price}</span>
         </div>
         {/* Accent line */}
-        <motion.div
-          className="absolute bottom-0 left-0 h-1 bg-primary"
-          initial={{ width: "0%" }}
-          whileInView={{ width: "100%" }}
-          transition={{ duration: 0.8, delay: 0.3 + index * 0.1, ease: [0.22, 1, 0.36, 1] }}
-        />
+        <div className="absolute bottom-0 left-0 h-1 w-full bg-primary" />
       </div>
 
       {/* Content */}
@@ -433,88 +280,25 @@ function AuditCard({ title, price, description, features, index, featured, badge
         {/* Features list */}
         <div className="space-y-3">
           {features.map((feature, i) => (
-            <motion.div
-              key={i}
-              className="flex items-start gap-3"
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.4 + i * 0.08, duration: 0.5 }}
-            >
+            <div key={i} className="flex items-start gap-3">
               <Check className="w-5 h-5 text-primary mt-0.5 shrink-0" />
               <span className="font-serif text-foreground text-sm md:text-base">{feature}</span>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>
-    </motion.div>
+    </div>
   );
 }
 
-// Enhanced CTA Section Component
 function PricingCTA() {
-  const ctaRef = useRef(null);
-  const isInView = useInView(ctaRef, { once: true, amount: 0.3 });
-
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1,
-        delayChildren: 0.2
-      }
-    }
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 30 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.6,
-        ease: [0.22, 1, 0.36, 1]
-      }
-    }
-  };
-
-  const floatingVariants = {
-    animate: {
-      y: [-10, 10, -10],
-      rotate: [-5, 5, -5],
-      transition: {
-        duration: 6,
-        repeat: Infinity,
-        ease: "easeInOut"
-      }
-    }
-  };
-
   return (
-    <section
-      ref={ctaRef}
-      className="relative py-24 md:py-32 lg:py-40 overflow-hidden bg-gradient-to-br from-primary via-primary to-[hsl(191,60%,25%)]"
-    >
-      {/* Animated background elements */}
+    <section className="relative py-24 md:py-32 lg:py-40 overflow-hidden bg-gradient-to-br from-primary via-primary to-[hsl(191,60%,25%)]">
+      {/* Static background elements */}
       <div className="absolute inset-0 overflow-hidden">
-        {/* Floating shapes */}
-        <motion.div
-          variants={floatingVariants}
-          animate="animate"
-          className="absolute top-20 left-[10%] w-32 h-32 bg-white/5 rounded-full blur-2xl"
-        />
-        <motion.div
-          variants={floatingVariants}
-          animate="animate"
-          style={{ animationDelay: "2s" }}
-          className="absolute bottom-20 right-[15%] w-48 h-48 bg-white/5 rounded-full blur-3xl"
-        />
-        <motion.div
-          variants={floatingVariants}
-          animate="animate"
-          style={{ animationDelay: "4s" }}
-          className="absolute top-1/2 right-[5%] w-24 h-24 bg-white/10 rounded-full blur-xl"
-        />
+        <div className="absolute top-20 left-[10%] w-32 h-32 bg-white/5 rounded-full blur-2xl" />
+        <div className="absolute bottom-20 right-[15%] w-48 h-48 bg-white/5 rounded-full blur-3xl" />
+        <div className="absolute top-1/2 right-[5%] w-24 h-24 bg-white/10 rounded-full blur-xl" />
 
         {/* Grid pattern overlay */}
         <div
@@ -529,84 +313,48 @@ function PricingCTA() {
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-white/5 rounded-full blur-3xl" />
       </div>
 
-      <motion.div
-        variants={containerVariants}
-        initial="hidden"
-        animate={isInView ? "visible" : "hidden"}
-        className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center"
-      >
+      <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         {/* Badge */}
-        <motion.div
-          variants={itemVariants}
-          className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-2 mb-8"
-        >
+        <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-2 mb-8">
           <Sparkles className="w-4 h-4 text-white" />
           <span className="font-sans text-sm font-medium text-white">Quality services, honest pricing</span>
-        </motion.div>
+        </div>
 
         {/* Main headline */}
-        <motion.h2
-          variants={itemVariants}
-          className="font-display font-bold text-4xl md:text-5xl lg:text-6xl text-white mb-6 leading-tight"
-        >
+        <h2 className="font-display font-bold text-4xl md:text-5xl lg:text-6xl text-white mb-6 leading-tight">
           Ready to grow your business?
-        </motion.h2>
+        </h2>
 
         {/* Subheadline */}
-        <motion.p
-          variants={itemVariants}
-          className="font-serif text-xl md:text-2xl text-white/90 mb-10 max-w-2xl mx-auto leading-relaxed"
-        >
+        <p className="font-serif text-xl md:text-2xl text-white/90 mb-10 max-w-2xl mx-auto leading-relaxed">
           Let's have a real conversation about your goals. No pressure, no jargon—just honest advice on what will actually move the needle.
-        </motion.p>
+        </p>
 
         {/* CTA Buttons */}
-        <motion.div
-          variants={itemVariants}
-          className="flex flex-col sm:flex-row items-center justify-center gap-4"
-        >
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
           <Link href="/contact">
-            <motion.div
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.98 }}
+            <Button
+              size="lg"
+              className="font-sans font-semibold text-lg px-8 py-6 bg-white text-primary hover:bg-white/90 shadow-xl shadow-black/20 group transition-transform hover:scale-105"
             >
-              <Button
-                size="lg"
-                className="font-sans font-semibold text-lg px-8 py-6 bg-white text-primary hover:bg-white/90 shadow-xl shadow-black/20 group"
-              >
-                Schedule a Call
-                <motion.span
-                  className="inline-block ml-2"
-                  initial={{ x: 0 }}
-                  whileHover={{ x: 5 }}
-                >
-                  <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
-                </motion.span>
-              </Button>
-            </motion.div>
+              Schedule a Call
+              <ArrowRight className="w-5 h-5 ml-2 transition-transform group-hover:translate-x-1" />
+            </Button>
           </Link>
 
           <a href="mailto:tysen@elevategrowth.solutions">
-            <motion.div
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.98 }}
+            <Button
+              size="lg"
+              variant="outline"
+              className="font-sans font-semibold text-lg px-8 py-6 bg-transparent border-2 border-white/50 text-white hover:bg-white/10 hover:border-white transition-transform hover:scale-105"
             >
-              <Button
-                size="lg"
-                variant="outline"
-                className="font-sans font-semibold text-lg px-8 py-6 bg-transparent border-2 border-white/50 text-white hover:bg-white/10 hover:border-white"
-              >
-                Email Me Directly
-              </Button>
-            </motion.div>
+              Email Me Directly
+            </Button>
           </a>
-        </motion.div>
+        </div>
 
         {/* Trust indicators */}
-        <motion.div
-          variants={itemVariants}
-          className="mt-12 flex flex-wrap items-center justify-center gap-6 text-white/70"
-        >
+        <div className="mt-12 flex flex-wrap items-center justify-center gap-6 text-white/70">
           <div className="flex items-center gap-2">
             <Check className="w-5 h-5 text-white" />
             <span className="font-serif text-sm">Free initial consultation</span>
@@ -619,44 +367,13 @@ function PricingCTA() {
             <Check className="w-5 h-5 text-white" />
             <span className="font-serif text-sm">Personalized service</span>
           </div>
-        </motion.div>
-      </motion.div>
+        </div>
+      </div>
     </section>
   );
 }
 
 export default function Pricing() {
-  const headerRef = useRef(null);
-  const isHeaderInView = useInView(headerRef, { once: true, amount: 0.5 });
-  const valueRef = useRef(null);
-  const isValueInView = useInView(valueRef, { once: true, amount: 0.3 });
-  const auditHeaderRef = useRef(null);
-  const isAuditHeaderInView = useInView(auditHeaderRef, { once: true, amount: 0.5 });
-
-  const headerVariants = {
-    hidden: { opacity: 0, y: 40 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.8,
-        ease: [0.22, 1, 0.36, 1]
-      }
-    }
-  };
-
-  const lineVariants = {
-    hidden: { scaleX: 0 },
-    visible: {
-      scaleX: 1,
-      transition: {
-        duration: 0.8,
-        ease: [0.22, 1, 0.36, 1],
-        delay: 0.3
-      }
-    }
-  };
-
   const pricingCategories = [
     {
       image: websiteImg,
@@ -758,15 +475,6 @@ export default function Pricing() {
       badge: "Best Value"
     }
   ];
-
-  // Schema markup for pricing page
-  const pricingSchema = {
-    "@context": "https://schema.org",
-    "@type": "PriceSpecification",
-    "name": "Marketing Services Pricing",
-    "description": "Transparent pricing for web design, SEO, social media management, content creation, and advertising services.",
-    "priceCurrency": "USD"
-  };
 
   const serviceOfferSchema = {
     "@context": "https://schema.org",
@@ -912,34 +620,21 @@ export default function Pricing() {
 
       {/* Value proposition section */}
       <section className="relative py-8 md:py-12 bg-gradient-to-b from-primary/10 via-primary/5 to-background overflow-hidden">
-        {/* Floating orbs */}
         <FloatingOrbs variant="light" />
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            ref={valueRef}
-            className="text-center"
-            initial="hidden"
-            animate={isValueInView ? "visible" : "hidden"}
-          >
-            <motion.div
-              variants={headerVariants}
-              className="inline-flex items-center gap-2 bg-primary/10 border border-primary/20 rounded-full px-4 py-2 mb-6"
-            >
-              <span className="w-2 h-2 bg-primary rounded-full animate-pulse" />
+          <div className="text-center">
+            <div className="inline-flex items-center gap-2 bg-primary/10 border border-primary/20 rounded-full px-4 py-2 mb-6">
+              <span className="w-2 h-2 bg-primary rounded-full" />
               <span className="font-sans text-sm font-medium text-primary">Transparent Pricing</span>
-            </motion.div>
+            </div>
 
-            <motion.p
-              variants={headerVariants}
-              className="font-serif text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed"
-            >
+            <p className="font-serif text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
               Quality marketing shouldn't break the bank. All prices shown are starting points—your actual investment depends on your unique goals and scope.
-            </motion.p>
-          </motion.div>
+            </p>
+          </div>
         </div>
 
-        {/* Gradient fade transition to next section */}
         <GradientTransition
           from="transparent"
           to="hsl(var(--background))"
@@ -947,55 +642,33 @@ export default function Pricing() {
         />
       </section>
 
-      {/* Audits & Strategy section - NOW FIRST */}
+      {/* Audits & Strategy section */}
       <section className="relative py-10 md:py-16 bg-background overflow-hidden">
-        {/* Bokeh light spots */}
         <BokehEffect opacity={0.5} />
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div ref={auditHeaderRef} className="text-center mb-8 md:mb-12">
-            <motion.div
-              className="inline-flex items-center gap-2 bg-primary/10 border border-primary/20 rounded-full px-4 py-2 mb-6"
-              initial={{ opacity: 0, y: 20 }}
-              animate={isAuditHeaderInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-              transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-            >
+          <div className="text-center mb-8 md:mb-12">
+            <div className="inline-flex items-center gap-2 bg-primary/10 border border-primary/20 rounded-full px-4 py-2 mb-6">
               <span className="w-2 h-2 bg-primary rounded-full" />
               <span className="font-sans text-sm font-medium text-primary">Audits & Strategy</span>
-            </motion.div>
-            <motion.h2
-              className="font-display font-bold text-3xl md:text-4xl lg:text-5xl mb-4 bg-gradient-to-r from-foreground via-primary to-foreground bg-clip-text text-transparent bg-[length:200%_auto] animate-gradient"
-              variants={headerVariants}
-              initial="hidden"
-              animate={isAuditHeaderInView ? "visible" : "hidden"}
-            >
+            </div>
+            <h2 className="font-display font-bold text-3xl md:text-4xl lg:text-5xl mb-4 text-foreground">
               Audits & Strategy
-            </motion.h2>
-            <motion.div
-              variants={lineVariants}
-              initial="hidden"
-              animate={isAuditHeaderInView ? "visible" : "hidden"}
-              className="w-24 h-1 bg-gradient-to-r from-transparent via-primary to-transparent mx-auto rounded-full origin-center"
-            />
-            <motion.p
-              className="font-serif text-lg text-muted-foreground max-w-2xl mx-auto mt-6"
-              initial={{ opacity: 0, y: 20 }}
-              animate={isAuditHeaderInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-              transition={{ duration: 0.6, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
-            >
+            </h2>
+            <div className="w-24 h-1 bg-gradient-to-r from-transparent via-primary to-transparent mx-auto rounded-full" />
+            <p className="font-serif text-lg text-muted-foreground max-w-2xl mx-auto mt-6">
               Get the clarity you need to move forward. These comprehensive audits deliver actionable insights—no ongoing commitment required.
-            </motion.p>
+            </p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-            {auditServices.map((service, index) => (
+            {auditServices.map((service) => (
               <AuditCard
                 key={service.title}
                 title={service.title}
                 price={service.price}
                 description={service.description}
                 features={service.features}
-                index={index}
                 featured={service.featured}
                 badge={service.badge}
               />
@@ -1003,38 +676,24 @@ export default function Pricing() {
           </div>
         </div>
 
-        {/* Wave divider at bottom */}
         <WaveDivider position="bottom" fillColor="hsl(var(--muted) / 0.3)" />
       </section>
 
       {/* Monthly/Retainer Services section */}
       <section className="relative py-10 md:py-16 bg-gradient-to-b from-muted/40 via-muted/30 to-muted/50 overflow-hidden">
-        {/* Bokeh light spots */}
         <BokehEffect opacity={0.4} />
-
-        {/* Floating orbs */}
         <FloatingOrbs variant="primary" />
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div ref={headerRef} className="text-center mb-8 md:mb-12">
-            <motion.h2
-              className="font-display font-bold text-3xl md:text-4xl lg:text-5xl mb-4 bg-gradient-to-r from-foreground via-primary to-foreground bg-clip-text text-transparent bg-[length:200%_auto] animate-gradient"
-              variants={headerVariants}
-              initial="hidden"
-              animate={isHeaderInView ? "visible" : "hidden"}
-            >
+          <div className="text-center mb-8 md:mb-12">
+            <h2 className="font-display font-bold text-3xl md:text-4xl lg:text-5xl mb-4 text-foreground">
               Our Services
-            </motion.h2>
-            <motion.div
-              variants={lineVariants}
-              initial="hidden"
-              animate={isHeaderInView ? "visible" : "hidden"}
-              className="w-24 h-1 bg-gradient-to-r from-transparent via-primary to-transparent mx-auto rounded-full origin-center"
-            />
+            </h2>
+            <div className="w-24 h-1 bg-gradient-to-r from-transparent via-primary to-transparent mx-auto rounded-full" />
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-            {pricingCategories.map((category, index) => (
+            {pricingCategories.map((category) => (
               <PricingCard
                 key={category.title}
                 image={category.image}
@@ -1042,18 +701,15 @@ export default function Pricing() {
                 description={category.description}
                 items={category.items}
                 note={category.note}
-                index={index}
                 featured={category.featured}
               />
             ))}
           </div>
         </div>
 
-        {/* Curved divider at bottom */}
         <CurvedDivider position="bottom" fillColor="hsl(var(--primary))" />
       </section>
 
-      {/* Enhanced CTA Section */}
       <PricingCTA />
 
       <Footer />
