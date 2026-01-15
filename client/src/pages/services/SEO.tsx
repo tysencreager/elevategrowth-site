@@ -95,6 +95,23 @@ export default function SEO() {
           ],
           note: "3-month minimum commitment required. Blog posts/articles available for an additional fee. Multi-location businesses receive discounted per-location pricing.",
           featured: true
+        },
+        {
+          name: "Organic SEO",
+          price: "$600/mo",
+          description: "Broader keyword targeting and content strategy to rank beyond local searches.",
+          features: [
+            "Comprehensive keyword research",
+            "Content strategy & planning",
+            "On-page SEO optimization",
+            "Technical SEO improvements",
+            "Backlink outreach & building",
+            "Internal linking strategy",
+            "Blog content guidance",
+            "Monthly performance reports",
+            "Ranking & traffic analysis"
+          ],
+          note: "3-month minimum commitment required. Blog posts/articles available for an additional fee. Best for businesses targeting regional or national audiences."
         }
       ]}
 
