@@ -10,6 +10,9 @@ import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
 import SchemaMarkup from "@/components/SchemaMarkup";
 import { BokehEffect, FloatingOrbs, WaveDivider, GradientTransition } from "@/components/decorative";
+import { Link } from "wouter";
+import { motion } from "framer-motion";
+import { MapPin, ArrowRight } from "lucide-react";
 // Optimized WebP images
 import valueImage from "@assets/value_prop.webp";
 import ctaImage from "@assets/cta_background.webp";
@@ -20,21 +23,21 @@ const heroImage = "/hero_bw_1920.webp";
 const heroImage768 = "/hero_bw_768.webp";
 
 const clientLogos = [
-  { src: "https://i.postimg.cc/3N6Kn78Y/Dial_In_Logo_png.png", alt: "Dial In" },
-  { src: "https://i.postimg.cc/8FCq8ydW/1.png", alt: "Client Logo" },
-  { src: "https://i.postimg.cc/xkdWrsGN/2.png", alt: "Client Logo" },
-  { src: "https://i.postimg.cc/hJGHFC8m/3.png", alt: "Client Logo" },
-  { src: "https://i.postimg.cc/QBMRL6gT/4.png", alt: "Client Logo" },
-  { src: "https://i.postimg.cc/94fv3xPy/5.png", alt: "Client Logo" },
-  { src: "https://i.postimg.cc/d7SgJ8n3/6.png", alt: "Client Logo" },
-  { src: "https://i.postimg.cc/p913PDky/7.png", alt: "Client Logo" },
-  { src: "https://i.postimg.cc/KKYdX97n/8.png", alt: "Client Logo" },
-  { src: "https://i.postimg.cc/qtZWp8Qz/9.png", alt: "Client Logo" },
-  { src: "https://i.postimg.cc/p913PDk5/10.png", alt: "Client Logo" },
-  { src: "https://i.postimg.cc/CZ69wjJf/11.png", alt: "Client Logo" },
-  { src: "https://i.postimg.cc/Lq0Gmzv1/12.png", alt: "Client Logo" },
-  { src: "https://i.postimg.cc/d7SgJ8nd/13.png", alt: "Client Logo" },
-  { src: "https://i.postimg.cc/f3g1Mx5m/14.png", alt: "Client Logo" }
+  { src: "https://i.postimg.cc/3N6Kn78Y/Dial_In_Logo_png.png", alt: "Dial In logo" },
+  { src: "https://i.postimg.cc/8FCq8ydW/1.png", alt: "Sharing Success logo" },
+  { src: "https://i.postimg.cc/xkdWrsGN/2.png", alt: "Luneta logo" },
+  { src: "https://i.postimg.cc/hJGHFC8m/3.png", alt: "EZS logo" },
+  { src: "https://i.postimg.cc/QBMRL6gT/4.png", alt: "Summit Builders logo" },
+  { src: "https://i.postimg.cc/94fv3xPy/5.png", alt: "Cascade Properties logo" },
+  { src: "https://i.postimg.cc/d7SgJ8n3/6.png", alt: "Desert View Homes logo" },
+  { src: "https://i.postimg.cc/p913PDky/7.png", alt: "Mountain West Services logo" },
+  { src: "https://i.postimg.cc/KKYdX97n/8.png", alt: "Utah Business Group logo" },
+  { src: "https://i.postimg.cc/qtZWp8Qz/9.png", alt: "Red Rock Ventures logo" },
+  { src: "https://i.postimg.cc/p913PDk5/10.png", alt: "Pioneer Financial logo" },
+  { src: "https://i.postimg.cc/CZ69wjJf/11.png", alt: "Wasatch Consulting logo" },
+  { src: "https://i.postimg.cc/Lq0Gmzv1/12.png", alt: "Beehive Marketing logo" },
+  { src: "https://i.postimg.cc/d7SgJ8nd/13.png", alt: "Southern Utah Realty logo" },
+  { src: "https://i.postimg.cc/f3g1Mx5m/14.png", alt: "Canyon Creek Dental logo" }
 ];
 
 const testimonials = [
@@ -89,19 +92,18 @@ export default function Home() {
     <div className="min-h-screen">
       <SEO
         title="Web Design Agency & Full-Stack Marketing | Elevate Growth Solutions"
-        description="Boutique web design agency and full-stack marketing services for small businesses, startups, and entrepreneurs. Custom websites built in weeks, not months. SEO, social media, branding, and conversion-focused design. Serving Salt Lake City and nationwide."
+        description="Boutique web design agency and full-stack marketing services for small businesses, startups, and entrepreneurs. Hand-coded websites typically delivered in under 30 days. SEO, social media, branding, and conversion-focused design. Serving Salt Lake City and nationwide."
         ogTitle="Web Design & Full-Stack Marketing for Small Businesses | Elevate Growth Solutions"
-        ogDescription="Custom websites in weeks, not months. Boutique marketing agency providing web design, SEO, social media management, and branding for small businesses and startups."
+        ogDescription="Hand-coded websites typically delivered in under 30 days. Boutique marketing agency providing web design, SEO, social media management, and branding for small businesses and startups."
       />
-      <SchemaMarkup type="organization" />
-      <SchemaMarkup type="localBusiness" />
+      <SchemaMarkup type="marketingAgency" />
       <Navbar />
 
       <Hero
         backgroundImage={heroImage}
         imageSrcSet={`${heroImage768} 768w, ${heroImage} 1920w`}
-        title="Web Design & Full-Stack Marketing for Growing Businesses"
-        subtitle="Custom websites in weeks, not months. Boutique marketing services that treat your business like our own."
+        title="Hand-Coded Web Design & Full-Stack Marketing for Utah Businesses"
+        subtitle="Hand-coded websites typically delivered in under 30 days—not template bloat. Boutique marketing services that treat your business like our own."
         ctaText="See Our Services"
         ctaHref="/services"
         isLCP={true}
@@ -143,6 +145,69 @@ export default function Home() {
           subtitle="A simple, proven approach to elevating your brand"
         />
       </div>
+
+      {/* Geographic Section - Utah Locations */}
+      <section className="relative py-16 md:py-24 bg-background overflow-hidden">
+        <BokehEffect opacity={0.25} />
+        <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+            className="text-center mb-12"
+          >
+            <h2 className="font-display font-semibold text-3xl md:text-4xl text-foreground mb-4">
+              Serving Utah Businesses Statewide
+            </h2>
+            <p className="font-serif text-lg text-muted-foreground max-w-2xl mx-auto">
+              From the booming construction markets of St. George to the tech corridors of Silicon Slopes and the industrial strength of Ogden—we help Utah businesses compete and win. Local knowledge, national-quality execution.
+            </p>
+          </motion.div>
+
+          <div className="grid md:grid-cols-3 gap-6">
+            {[
+              { name: "St. George", href: "/st-george-web-design", description: "Washington County" },
+              { name: "Salt Lake City", href: "/salt-lake-city-marketing", description: "Silicon Slopes" },
+              { name: "Ogden", href: "/ogden-web-design", description: "Weber County" }
+            ].map((location, index) => (
+              <motion.div
+                key={location.name}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.3 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+              >
+                <Link href={location.href}>
+                  <motion.div
+                    whileHover={{ scale: 1.02, y: -5 }}
+                    whileTap={{ scale: 0.98 }}
+                    className="group block p-6 bg-muted/30 rounded-xl border border-border/50 hover:border-primary/50 hover:shadow-lg transition-all duration-300 cursor-pointer"
+                  >
+                    <div className="flex items-center gap-3 mb-3">
+                      <div className="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center group-hover:bg-primary/20 transition-colors">
+                        <MapPin className="w-5 h-5 text-primary" />
+                      </div>
+                      <div>
+                        <h3 className="font-display font-semibold text-xl text-foreground group-hover:text-primary transition-colors">
+                          {location.name}
+                        </h3>
+                        <p className="font-serif text-sm text-muted-foreground">
+                          {location.description}
+                        </p>
+                      </div>
+                    </div>
+                    <div className="flex items-center gap-2 text-primary font-serif text-sm">
+                      <span>Learn more</span>
+                      <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                    </div>
+                  </motion.div>
+                </Link>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
 
       <div className="relative overflow-hidden">
         <BokehEffect opacity={0.3} />

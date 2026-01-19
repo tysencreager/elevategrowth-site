@@ -23,7 +23,14 @@ const resultsSubLinks = [
 
 const resourcesSubLinks = [
   { href: "/behind-elevate", label: "Behind Elevate" },
+  { href: "/why-hand-coded", label: "Why Hand-Coded" },
   { href: "/blog", label: "Blog" }
+];
+
+const locationsSubLinks = [
+  { href: "/st-george-web-design", label: "St. George" },
+  { href: "/salt-lake-city-marketing", label: "Salt Lake City" },
+  { href: "/ogden-web-design", label: "Ogden" }
 ];
 
 export default function Navbar() {
