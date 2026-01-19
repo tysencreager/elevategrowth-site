@@ -272,7 +272,7 @@ export default function SaltLakeCityMarketing() {
             </div>
             <div className="flex items-center gap-2">
               <Check className="w-5 h-5 text-white" />
-              <span className="font-serif text-sm">1-2 week delivery</span>
+              <span className="font-serif text-sm">Fast delivery</span>
             </div>
           </motion.div>
         </motion.div>

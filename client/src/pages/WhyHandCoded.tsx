@@ -320,7 +320,7 @@ export default function WhyHandCoded() {
               </h2>
             </div>
             <p className="font-serif text-lg text-muted-foreground leading-relaxed">
-              Most agencies quote 2-3 months for a custom website. We deliver hand-coded sites in 1-2 weeks. Because we're not wrestling with theme limitations or plugin conflicts, we can focus entirely on building exactly what you need.
+              Most agencies quote 2-3 months for a custom website. We typically deliver hand-coded sites in under 30 days. Because we're not wrestling with theme limitations or plugin conflicts, we can focus entirely on building exactly what you need.
             </p>
           </motion.div>
         </div>

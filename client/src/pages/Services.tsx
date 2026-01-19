@@ -26,7 +26,7 @@ const servicesItemListSchema = {
       "@type": "Service",
       "position": 1,
       "name": "Hand-Coded Website Development",
-      "description": "Custom websites built from code, not templates. Fast-loading, secure, and SEO-optimized. Delivered in 1-2 weeks.",
+      "description": "Custom websites built from code, not templates. Fast-loading, secure, and SEO-optimized. Typically delivered in under 30 days.",
       "provider": {"@id": "https://elevategrowth.solutions/#organization"},
       "areaServed": {"@type": "State", "name": "Utah"},
       "serviceType": "Web Development"
@@ -66,7 +66,7 @@ const servicesFAQSchema = {
       "name": "How long does it take to build a website?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "We deliver hand-coded websites in 1-2 weeks, compared to the industry standard of 2-3 months. Our efficient process and code-based approach eliminates the delays caused by theme customization and plugin conflicts."
+        "text": "We typically deliver hand-coded websites in under 30 days, compared to the industry standard of 2-3 months. Our efficient process and code-based approach eliminates the delays caused by theme customization and plugin conflicts."
       }
     },
     {
@@ -74,7 +74,7 @@ const servicesFAQSchema = {
       "name": "What is included in your marketing services?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Our full-stack marketing services include website design and development, SEO optimization, Google Ads and Meta advertising management, social media strategy, content creation, and branding. We offer flexible month-to-month contracts."
+        "text": "Our full-stack marketing services include website design and development, SEO optimization, Google Ads and Meta advertising management, social media strategy, content creation, and branding."
       }
     },
     {
@@ -144,7 +144,7 @@ export default function Services() {
   const faqs = [
     {
       question: "How long does a typical project take?",
-      answer: "Project timelines vary based on scope and complexity. A singular project or audit typically takes 1-2 weeks, website builds range from 2-4 weeks, and ongoing marketing management is structured in monthly or quarterly engagements. During our discovery call, we'll provide a detailed timeline specific to your project needs."
+      answer: "Project timelines vary based on scope and complexity. A singular project or audit typically takes 2-3 weeks, website builds are typically completed in under 30 days, and ongoing marketing management is structured in monthly or quarterly engagements. During our discovery call, we'll provide a detailed timeline specific to your project needs."
     },
     {
       question: "What makes Elevate Growth Solutions different?",

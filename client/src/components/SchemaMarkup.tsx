@@ -49,7 +49,7 @@ const localBusinessSchema = {
   "image": "https://elevategrowth.solutions/assets/EGS-LOGO-E-icon.png",
   "url": "https://elevategrowth.solutions",
   "email": "tysen@elevategrowth.solutions",
-  "description": "Boutique web design agency and full-stack marketing services. Custom websites built in weeks, not months. Serving small businesses, startups, and entrepreneurs nationwide with a focus on Salt Lake City, Utah.",
+  "description": "Boutique web design agency and full-stack marketing services. Hand-coded websites typically delivered in under 30 days. Serving small businesses, startups, and entrepreneurs nationwide with a focus on Salt Lake City, Utah.",
   "address": {
     "@type": "PostalAddress",
     "addressLocality": "Salt Lake City",
@@ -130,7 +130,7 @@ const webDesignServiceSchema = {
   "@type": "Service",
   "serviceType": "Web Design",
   "name": "Custom Web Design Services",
-  "description": "Professional custom website design and development for small businesses, startups, and entrepreneurs. Fast turnaround - websites built in weeks, not months. Conversion-focused design optimized for lead generation.",
+  "description": "Professional custom website design and development for small businesses, startups, and entrepreneurs. Websites typically delivered in under 30 days. Conversion-focused design optimized for lead generation.",
   "provider": {
     "@type": "Organization",
     "name": "Elevate Growth Solutions",
@@ -239,7 +239,7 @@ const marketingAgencySchema = {
   "@type": "MarketingAgency",
   "@id": "https://elevategrowth.solutions/#organization",
   "name": "Elevate Growth Solutions",
-  "description": "Boutique marketing agency specializing in hand-coded website development and full-stack marketing services. Custom websites delivered in 1-2 weeks with zero template bloat.",
+  "description": "Boutique marketing agency specializing in hand-coded website development and full-stack marketing services. Custom websites typically delivered in under 30 days with zero template bloat.",
   "url": "https://elevategrowth.solutions",
   "logo": "https://i.postimg.cc/13kYHV2m/EGS-LOGO-Full.png",
   "image": "https://i.postimg.cc/sDW2ZZpm/EGS-SOCIAL-SHARING-IMAGE.png",
@@ -284,7 +284,7 @@ const marketingAgencySchema = {
     "Brand Strategy",
     "Conversion Rate Optimization"
   ],
-  "slogan": "Custom websites in weeks, not months."
+  "slogan": "Hand-coded websites, faster than traditional agencies."
 };
 
 export default function SchemaMarkup({ type, data }: SchemaMarkupProps) {

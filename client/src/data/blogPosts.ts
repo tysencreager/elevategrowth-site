@@ -55,7 +55,7 @@ Yes, a custom website costs more upfront than a template. But consider this: if 
 
 ## Ready to Upgrade?
 
-If you're a small business owner ready to stop blending in and start standing out, we'd love to help. At Elevate Growth Solutions, we build custom websites in weeks, not months—giving you a professional online presence that generates real results.
+If you're a small business owner ready to stop blending in and start standing out, we'd love to help. At Elevate Growth Solutions, we build custom hand-coded websites faster than traditional agencies—giving you a professional online presence that generates real results.
 
 [Contact us for a free consultation](/contact) and let's discuss how a custom website can transform your business.
     `,
@@ -256,7 +256,7 @@ Full-stack marketing is ideal if you:
 At Elevate Growth Solutions, we're a boutique full-stack marketing agency. That means:
 
 - **You're not just a number** - We give every client personalized attention
-- **Fast turnaround** - Websites in weeks, not months
+- **Fast turnaround** - Websites typically delivered in under 30 days
 - **Everything handled** - From strategy to execution
 - **Results-focused** - We care about growing your business, not just checking boxes
 
