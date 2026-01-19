@@ -1,6 +1,7 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
+import SchemaMarkup from "@/components/SchemaMarkup";
 import Credentials, { Award, GraduationCap, TrendingUp } from "@/components/Credentials";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
@@ -8,6 +9,33 @@ import { BokehEffect, FloatingOrbs, WaveDivider, GradientTransition } from "@/co
 
 // About page photo
 const tysenPhoto = "https://i.postimg.cc/RF5bmrhQ/EGS_about_photo.png";
+
+// Person schema data
+const personSchema = {
+  "name": "Tysen Creager",
+  "jobTitle": "Founder & Director of Marketing Services",
+  "description": "Full-stack marketer with nearly a decade of experience in branding, digital marketing, SEO, and client-centered strategy.",
+  "url": "https://elevategrowth.solutions/behind-elevate",
+  "image": "https://i.postimg.cc/RF5bmrhQ/EGS-about-photo.png",
+  "worksFor": {"@id": "https://elevategrowth.solutions/#organization"},
+  "alumniOf": [
+    {"@type": "EducationalOrganization", "name": "Digital Marketing Certification Program"},
+    {"@type": "EducationalOrganization", "name": "UX Design Certification Program"}
+  ],
+  "knowsAbout": [
+    "Digital Marketing",
+    "SEO Optimization",
+    "Brand Strategy",
+    "Web Design",
+    "Google Ads",
+    "Meta Advertising",
+    "UX Design"
+  ],
+  "sameAs": [
+    "https://www.linkedin.com/in/tysen-creager-a75914207/",
+    "https://www.instagram.com/elevategrowthsolutions"
+  ]
+};
 
 export default function BehindElevate() {
   const sectionRef = useRef(null);
@@ -117,6 +145,7 @@ export default function BehindElevate() {
         ogTitle="Meet the Founder - Tysen Creager, Marketing Strategist"
         ogDescription="Nearly a decade of experience helping businesses grow through strategic marketing, branding, and digital solutions. Certified marketing expert with proven results."
       />
+      <SchemaMarkup type="person" data={personSchema} />
       <Navbar />
 
       <section ref={sectionRef} className="relative pt-24 md:pt-32 lg:pt-40 pb-8 md:pb-12 lg:pb-16 bg-background overflow-hidden">
@@ -159,7 +188,7 @@ export default function BehindElevate() {
               animate={isInView ? "visible" : "hidden"}
             >
               <div>
-                <motion.h2
+                <motion.h1
                   className="font-display font-semibold text-3xl md:text-4xl lg:text-5xl text-primary mb-4"
                   data-testid="text-meet-tysen"
                   variants={titleVariants}
@@ -167,7 +196,7 @@ export default function BehindElevate() {
                   animate={isInView ? "visible" : "hidden"}
                 >
                   Meet Tysen
-                </motion.h2>
+                </motion.h1>
                 <motion.p
                   className="font-serif text-xl md:text-2xl text-foreground"
                   data-testid="text-tysen-tagline"

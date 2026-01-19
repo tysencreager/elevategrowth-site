@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 
 interface SchemaMarkupProps {
-  type: "organization" | "localBusiness" | "service" | "webpage" | "breadcrumb" | "faq";
+  type: "organization" | "localBusiness" | "service" | "webpage" | "breadcrumb" | "faq" | "marketingAgency" | "person" | "itemList" | "custom";
   data?: Record<string, unknown>;
 }
 
@@ -9,8 +9,8 @@ const organizationSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
   "name": "Elevate Growth Solutions",
-  "url": "https://www.elevategrowth.solutions",
-  "logo": "https://www.elevategrowth.solutions/assets/EGS-LOGO-E-icon.png",
+  "url": "https://elevategrowth.solutions",
+  "logo": "https://elevategrowth.solutions/assets/EGS-LOGO-E-icon.png",
   "description": "Boutique web design agency and full-stack marketing services for small businesses, startups, and entrepreneurs.",
   "email": "tysen@elevategrowth.solutions",
   "sameAs": [
@@ -46,8 +46,8 @@ const localBusinessSchema = {
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
   "name": "Elevate Growth Solutions",
-  "image": "https://www.elevategrowth.solutions/assets/EGS-LOGO-E-icon.png",
-  "url": "https://www.elevategrowth.solutions",
+  "image": "https://elevategrowth.solutions/assets/EGS-LOGO-E-icon.png",
+  "url": "https://elevategrowth.solutions",
   "email": "tysen@elevategrowth.solutions",
   "description": "Boutique web design agency and full-stack marketing services. Custom websites built in weeks, not months. Serving small businesses, startups, and entrepreneurs nationwide with a focus on Salt Lake City, Utah.",
   "address": {
@@ -134,7 +134,7 @@ const webDesignServiceSchema = {
   "provider": {
     "@type": "Organization",
     "name": "Elevate Growth Solutions",
-    "url": "https://www.elevategrowth.solutions"
+    "url": "https://elevategrowth.solutions"
   },
   "areaServed": {
     "@type": "Country",
@@ -185,7 +185,7 @@ const marketingServiceSchema = {
   "provider": {
     "@type": "Organization",
     "name": "Elevate Growth Solutions",
-    "url": "https://www.elevategrowth.solutions"
+    "url": "https://elevategrowth.solutions"
   },
   "areaServed": {
     "@type": "Country",
@@ -234,6 +234,59 @@ const marketingServiceSchema = {
   }
 };
 
+const marketingAgencySchema = {
+  "@context": "https://schema.org",
+  "@type": "MarketingAgency",
+  "@id": "https://elevategrowth.solutions/#organization",
+  "name": "Elevate Growth Solutions",
+  "description": "Boutique marketing agency specializing in hand-coded website development and full-stack marketing services. Custom websites delivered in 1-2 weeks with zero template bloat.",
+  "url": "https://elevategrowth.solutions",
+  "logo": "https://i.postimg.cc/13kYHV2m/EGS-LOGO-Full.png",
+  "image": "https://i.postimg.cc/sDW2ZZpm/EGS-SOCIAL-SHARING-IMAGE.png",
+  "telephone": "+1-803-600-4806",
+  "email": "tysen@elevategrowth.solutions",
+  "founder": {
+    "@type": "Person",
+    "name": "Tysen Creager",
+    "jobTitle": "Founder & Director of Marketing Services",
+    "url": "https://elevategrowth.solutions/behind-elevate"
+  },
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "St. George",
+    "addressRegion": "UT",
+    "addressCountry": "US"
+  },
+  "areaServed": [
+    {"@type": "City", "name": "St. George", "containedInPlace": {"@type": "State", "name": "Utah"}},
+    {"@type": "City", "name": "Salt Lake City", "containedInPlace": {"@type": "State", "name": "Utah"}},
+    {"@type": "City", "name": "Ogden", "containedInPlace": {"@type": "State", "name": "Utah"}},
+    {"@type": "City", "name": "Provo", "containedInPlace": {"@type": "State", "name": "Utah"}},
+    {"@type": "City", "name": "Park City", "containedInPlace": {"@type": "State", "name": "Utah"}},
+    {"@type": "State", "name": "Utah"},
+    {"@type": "Country", "name": "United States"}
+  ],
+  "priceRange": "$$",
+  "paymentAccepted": "Credit Card, Invoice",
+  "currenciesAccepted": "USD",
+  "openingHours": "Mo-Fr 09:00-17:00",
+  "sameAs": [
+    "https://www.instagram.com/elevategrowthsolutions",
+    "https://www.linkedin.com/in/tysen-creager-a75914207/"
+  ],
+  "knowsAbout": [
+    "Web Design",
+    "Hand-Coded Websites",
+    "Search Engine Optimization",
+    "Digital Marketing",
+    "Google Ads",
+    "Meta Advertising",
+    "Brand Strategy",
+    "Conversion Rate Optimization"
+  ],
+  "slogan": "Custom websites in weeks, not months."
+};
+
 export default function SchemaMarkup({ type, data }: SchemaMarkupProps) {
   useEffect(() => {
     let schema: Record<string, unknown>;
@@ -269,6 +322,27 @@ export default function SchemaMarkup({ type, data }: SchemaMarkupProps) {
           ...data
         };
         break;
+      case "marketingAgency":
+        schema = { ...marketingAgencySchema, ...data };
+        break;
+      case "person":
+        schema = {
+          "@context": "https://schema.org",
+          "@type": "Person",
+          ...data
+        };
+        break;
+      case "itemList":
+        schema = {
+          "@context": "https://schema.org",
+          "@type": "ItemList",
+          ...data
+        };
+        break;
+      case "custom":
+        if (!data) return;
+        schema = data;
+        break;
       default:
         return;
     }
@@ -296,4 +370,4 @@ export default function SchemaMarkup({ type, data }: SchemaMarkupProps) {
   return null;
 }
 
-export { organizationSchema, localBusinessSchema, webDesignServiceSchema, marketingServiceSchema };
+export { organizationSchema, localBusinessSchema, webDesignServiceSchema, marketingServiceSchema, marketingAgencySchema };

@@ -4,6 +4,7 @@ import ServicesGrid from "@/components/ServicesGrid";
 import FAQ from "@/components/FAQ";
 import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
+import SchemaMarkup from "@/components/SchemaMarkup";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { Button } from "@/components/ui/button";
@@ -13,6 +14,95 @@ import { BokehEffect, FloatingOrbs, WaveDivider, GradientTransition } from "@/co
 
 // Services page header
 const servicesHero = "https://i.postimg.cc/DZkYhV0c/egs_header_4.png";
+
+// Schema data for services page
+const servicesItemListSchema = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "Marketing Services",
+  "description": "Full-stack marketing services from Elevate Growth Solutions",
+  "itemListElement": [
+    {
+      "@type": "Service",
+      "position": 1,
+      "name": "Hand-Coded Website Development",
+      "description": "Custom websites built from code, not templates. Fast-loading, secure, and SEO-optimized. Delivered in 1-2 weeks.",
+      "provider": {"@id": "https://elevategrowth.solutions/#organization"},
+      "areaServed": {"@type": "State", "name": "Utah"},
+      "serviceType": "Web Development"
+    },
+    {
+      "@type": "Service",
+      "position": 2,
+      "name": "Search Engine Optimization",
+      "description": "Comprehensive SEO including keyword research, on-page optimization, technical audits, and local SEO for Utah businesses.",
+      "provider": {"@id": "https://elevategrowth.solutions/#organization"},
+      "areaServed": {"@type": "State", "name": "Utah"},
+      "serviceType": "SEO Services"
+    },
+    {
+      "@type": "Service",
+      "position": 3,
+      "name": "Paid Advertising Management",
+      "description": "Google Ads and Meta advertising campaigns with detailed ROI tracking and optimization.",
+      "provider": {"@id": "https://elevategrowth.solutions/#organization"},
+      "serviceType": "Digital Advertising"
+    },
+    {
+      "@type": "Service",
+      "position": 4,
+      "name": "Branding & Creative Direction",
+      "description": "Complete brand identity development including logo design, visual systems, and brand messaging.",
+      "provider": {"@id": "https://elevategrowth.solutions/#organization"},
+      "serviceType": "Branding"
+    }
+  ]
+};
+
+const servicesFAQSchema = {
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How long does it take to build a website?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We deliver hand-coded websites in 1-2 weeks, compared to the industry standard of 2-3 months. Our efficient process and code-based approach eliminates the delays caused by theme customization and plugin conflicts."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is included in your marketing services?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Our full-stack marketing services include website design and development, SEO optimization, Google Ads and Meta advertising management, social media strategy, content creation, and branding. We offer flexible month-to-month contracts."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you offer ongoing website maintenance?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, our hand-coded websites require minimal maintenance compared to WordPress sites. We include hosting and basic maintenance in our packages, with no hidden plugin fees or security update costs."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What areas do you serve?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We serve businesses throughout Utah including St. George, Salt Lake City, Ogden, Provo, and Park City. We also work with clients nationwide who value high-performance, hand-coded websites."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why choose hand-coded websites over WordPress?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Hand-coded websites load faster, rank better in search engines, and have virtually no security vulnerabilities. They don't require constant plugin updates and won't break when themes are deprecated. This translates to lower long-term costs and better performance."
+      }
+    }
+  ]
+};
 
 export default function Services() {
   const headerRef = useRef(null);
@@ -98,6 +188,8 @@ export default function Services() {
         ogTitle="Professional Marketing Services That Drive Results"
         ogDescription="From strategy to execution - discover our full range of marketing services including branding, SEO, social media, and more. Tailored solutions for growing businesses."
       />
+      <SchemaMarkup type="custom" data={servicesItemListSchema} />
+      <SchemaMarkup type="faq" data={servicesFAQSchema} />
       <Navbar />
 
       <Hero

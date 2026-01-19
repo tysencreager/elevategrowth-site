@@ -9,7 +9,7 @@ export default function Footer() {
       <EmailSubscription />
       <footer className="bg-card border-t border-card-border py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-12">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 md:gap-12">
             <div className="space-y-4">
               <img
                 src={logo}
@@ -99,11 +99,47 @@ export default function Footer() {
             <div>
               <h3
                 className="font-serif font-semibold text-foreground mb-4"
-                data-testid="text-footer-legal-title"
+                data-testid="text-footer-locations-title"
               >
-                Legal
+                Locations
               </h3>
               <nav className="space-y-2">
+                <Link
+                  href="/st-george-web-design"
+                  className="block font-serif text-sm text-muted-foreground hover:text-primary transition-colors"
+                >
+                  St. George
+                </Link>
+                <Link
+                  href="/salt-lake-city-marketing"
+                  className="block font-serif text-sm text-muted-foreground hover:text-primary transition-colors"
+                >
+                  Salt Lake City
+                </Link>
+                <Link
+                  href="/ogden-web-design"
+                  className="block font-serif text-sm text-muted-foreground hover:text-primary transition-colors"
+                >
+                  Ogden
+                </Link>
+              </nav>
+            </div>
+
+            <div>
+              <h3
+                className="font-serif font-semibold text-foreground mb-4"
+                data-testid="text-footer-email-title"
+              >
+                Contact
+              </h3>
+              <a
+                href="mailto:tysen@elevategrowth.solutions"
+                className="block font-serif text-sm text-muted-foreground hover:text-primary transition-colors mb-2"
+                data-testid="link-footer-email"
+              >
+                tysen@elevategrowth.solutions
+              </a>
+              <nav className="space-y-2 mt-4">
                 <Link
                   href="/privacy-policy"
                   data-testid="link-footer-privacy"
@@ -119,22 +155,6 @@ export default function Footer() {
                   Terms & Conditions
                 </Link>
               </nav>
-            </div>
-
-            <div>
-              <h3
-                className="font-serif font-semibold text-foreground mb-4"
-                data-testid="text-footer-email-title"
-              >
-                Email
-              </h3>
-              <a
-                href="mailto:tysen@elevategrowth.solutions"
-                className="block font-serif text-sm text-muted-foreground hover:text-primary transition-colors"
-                data-testid="link-footer-email"
-              >
-                tysen@elevategrowth.solutions
-              </a>
             </div>
           </div>
 
