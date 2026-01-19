@@ -212,9 +212,9 @@ export default function Home() {
       <div className="relative overflow-hidden">
         <BokehEffect opacity={0.3} />
         <LeadMagnet
-          title="Free 90-Day Growth Starter Pack"
-          description="Kickstart your marketing journey with our comprehensive growth checklist. Get actionable strategies, proven tactics, and expert tips to elevate your brand in the first 90 days—completely free."
-          ctaText="Claim Your Free Pack"
+          title="Free Personalized Website Video Audit"
+          description="Get a custom 5-10 minute video walkthrough of your website. I'll show you exactly what's working, what's costing you leads, and specific fixes to improve conversions—completely free, no strings attached."
+          ctaText="Request Your Free Audit"
         />
       </div>
 

@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { Download, Mail } from "lucide-react";
+import { Video, Mail } from "lucide-react";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { AnimatedButton } from "@/components/ui/motion";
@@ -15,9 +15,9 @@ interface LeadMagnetProps {
 export default function LeadMagnet({
   title,
   description,
-  ctaText = "Get It Free",
-  subject = "Interested in Free 90-Day Growth Starter Pack",
-  emailBody = "Hi Tysen,\n\nI'm interested in receiving your free 90-Day Growth Starter Pack. Please send me the details.\n\nThank you!"
+  ctaText = "Request Your Free Audit",
+  subject = "Free Website Video Audit Request",
+  emailBody = "Hi Tysen,\n\nI'd like to request a free personalized video audit of my website.\n\nMy website URL: [Please add your website URL here]\n\nThank you!"
 }: LeadMagnetProps) {
   const mailtoLink = `mailto:tysen@elevategrowth.solutions?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(emailBody)}`;
   const sectionRef = useRef(null);
@@ -85,7 +85,7 @@ export default function LeadMagnet({
             initial="hidden"
             animate={isInView ? "visible" : "hidden"}
           >
-            <Download className="w-8 h-8 text-primary" />
+            <Video className="w-8 h-8 text-primary" />
           </motion.div>
 
           <motion.h2
