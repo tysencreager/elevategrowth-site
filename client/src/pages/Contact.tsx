@@ -255,7 +255,7 @@ export default function Contact() {
                   className="w-full font-serif font-medium gap-2"
                 >
                   <a
-                    href="https://calendly.com/tysencreager/30minutes"
+                    href="https://calendar.app.google/yv9h833QYphwvfmJ7"
                     target="_blank"
                     rel="noopener noreferrer"
                   >

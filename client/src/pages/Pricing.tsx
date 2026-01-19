@@ -332,7 +332,7 @@ function PricingCTA() {
 
         {/* CTA Buttons */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-          <Link href="/contact">
+          <a href="https://calendar.app.google/yv9h833QYphwvfmJ7" target="_blank" rel="noopener noreferrer">
             <Button
               size="lg"
               className="font-sans font-semibold text-lg px-8 py-6 bg-white text-primary hover:bg-white/90 shadow-xl shadow-black/20 group transition-transform hover:scale-105"
@@ -340,7 +340,7 @@ function PricingCTA() {
               Schedule a Call
               <ArrowRight className="w-5 h-5 ml-2 transition-transform group-hover:translate-x-1" />
             </Button>
-          </Link>
+          </a>
 
           <a href="mailto:tysen@elevategrowth.solutions">
             <Button

@@ -141,7 +141,7 @@ export default function SaltLakeCity() {
         title="Salt Lake City Web Design & Digital Marketing"
         subtitle="Boutique marketing agency serving Utah businesses from Silicon Slopes to Park City"
         ctaText="Get a Free Consultation"
-        ctaHref="/contact"
+        ctaHref="https://calendar.app.google/yv9h833QYphwvfmJ7"
         isLCP={true}
       />
 
@@ -308,7 +308,7 @@ export default function SaltLakeCity() {
           <p className="font-serif text-xl text-white/90 mb-8">
             Let's discuss how we can help you generate more leads and build a stronger brand in the Utah market.
           </p>
-          <a href="/contact">
+          <a href="https://calendar.app.google/yv9h833QYphwvfmJ7" target="_blank" rel="noopener noreferrer">
             <Button size="lg" className="font-serif font-medium text-lg px-8 py-6 gap-2">
               Schedule a Free Consultation
               <ArrowRight className="h-5 w-5" />
