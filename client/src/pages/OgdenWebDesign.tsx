@@ -269,7 +269,7 @@ export default function OgdenWebDesign() {
             transition={{ duration: 0.6, delay: 0.3 }}
             className="flex flex-col sm:flex-row items-center justify-center gap-4"
           >
-            <Link href="/contact">
+            <a href="https://calendar.app.google/yv9h833QYphwvfmJ7" target="_blank" rel="noopener noreferrer">
               <motion.div
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.98 }}
@@ -282,7 +282,7 @@ export default function OgdenWebDesign() {
                   <ArrowRight className="w-5 h-5 ml-2 transition-transform group-hover:translate-x-1" />
                 </Button>
               </motion.div>
-            </Link>
+            </a>
           </motion.div>
 
           {/* Trust indicators */}
