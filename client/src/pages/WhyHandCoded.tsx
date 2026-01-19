@@ -83,6 +83,26 @@ export default function WhyHandCoded() {
         <GradientTransition from="transparent" to="hsl(var(--muted) / 0.3)" height="80px" />
       </section>
 
+      {/* Featured Image Section */}
+      <section className="relative py-12 md:py-16 bg-muted/30 overflow-hidden">
+        <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+            className="rounded-2xl overflow-hidden shadow-2xl"
+          >
+            <img
+              src="https://i.postimg.cc/j50kTV2H/website_photo.png"
+              alt="Hand-coded website development showcasing clean, efficient code"
+              className="w-full h-auto"
+              loading="lazy"
+            />
+          </motion.div>
+        </div>
+      </section>
+
       {/* What Does Hand-Coded Mean */}
       <section className="relative py-16 md:py-24 bg-muted/30 overflow-hidden">
         <WaveDivider position="top" fillColor="hsl(var(--background))" />
