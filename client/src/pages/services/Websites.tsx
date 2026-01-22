@@ -343,7 +343,7 @@ export default function Websites() {
       features={[
         {
           title: "Custom Code, No Templates",
-          description: "Every site is hand-coded from scratch. This means faster load times, cleaner design, and a site that truly represents your brand—not a cookie-cutter template."
+          description: "Every site is custom-coded from scratch. This means faster load times, cleaner design, and a site that truly represents your brand—not a cookie-cutter template."
         },
         {
           title: "Mobile-First Design",

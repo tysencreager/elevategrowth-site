@@ -185,7 +185,7 @@ Yes, a custom website costs more upfront than a template. But consider this: if 
 
 ## Ready to Upgrade?
 
-If you're a small business owner ready to stop blending in and start standing out, we'd love to help. At Elevate Growth Solutions, we build custom hand-coded websites faster than traditional agencies—giving you a professional online presence that generates real results.
+If you're a small business owner ready to stop blending in and start standing out, we'd love to help. At Elevate Growth Solutions, we build custom-coded websites faster than traditional agencies—giving you a professional online presence that generates real results.
 
 [Contact us for a free consultation](/contact) and let's discuss how a custom website can transform your business.
     `,

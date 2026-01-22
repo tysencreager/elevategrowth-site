@@ -8,7 +8,7 @@ import { Button } from "@/components/ui/button";
 import { BokehEffect, FloatingOrbs, WaveDivider, GradientTransition } from "@/components/decorative";
 import { Zap, Shield, TrendingUp, Clock, DollarSign, MapPin, ArrowRight } from "lucide-react";
 
-export default function WhyHandCoded() {
+export default function WhyCustomCoded() {
   const heroRef = useRef(null);
   const isHeroInView = useInView(heroRef, { once: true, amount: 0.3 });
 
@@ -34,8 +34,8 @@ export default function WhyHandCoded() {
         "Takes 3-8 seconds to fully load"
       ]
     },
-    handCoded: {
-      title: "Our Hand-Coded Sites",
+    customCoded: {
+      title: "Our Custom-Coded Sites",
       items: [
         "Load under 100KB typically",
         "Make 10-20 HTTP requests",
@@ -47,8 +47,8 @@ export default function WhyHandCoded() {
   return (
     <div className="min-h-screen">
       <SEO
-        title="Why Hand-Coded Websites Outperform Templates | Elevate Growth Solutions"
-        description="Discover why hand-coded websites load faster, rank higher, and convert better than WordPress or template-based sites. Zero bloat, maximum performance for Utah businesses."
+        title="Why Custom-Coded Websites Outperform Templates | Elevate Growth Solutions"
+        description="Discover why custom-coded websites load faster, rank higher, and convert better than WordPress or template-based sites. Zero bloat, maximum performance for Utah businesses."
         ogImage="https://i.postimg.cc/sDW2ZZpm/EGS-SOCIAL-SHARING-IMAGE.png"
       />
       <Navbar />
@@ -66,7 +66,7 @@ export default function WhyHandCoded() {
             initial="hidden"
             animate={isHeroInView ? "visible" : "hidden"}
           >
-            Why Hand-Coded Websites Beat Templates Every Time
+            Why Custom-Coded Websites Beat Templates Every Time
           </motion.h1>
 
           <motion.p
@@ -95,7 +95,7 @@ export default function WhyHandCoded() {
           >
             <img
               src="https://i.postimg.cc/j50kTV2H/website_photo.png"
-              alt="Hand-coded website development showcasing clean, efficient code"
+              alt="Custom-coded website development showcasing clean, efficient code"
               className="w-full h-auto"
               loading="lazy"
             />
@@ -103,7 +103,7 @@ export default function WhyHandCoded() {
         </div>
       </section>
 
-      {/* What Does Hand-Coded Mean */}
+      {/* What Does Custom-Coded Mean */}
       <section className="relative py-16 md:py-24 bg-muted/30 overflow-hidden">
         <WaveDivider position="top" fillColor="hsl(var(--background))" />
         <BokehEffect opacity={0.25} />
@@ -116,14 +116,14 @@ export default function WhyHandCoded() {
             transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
           >
             <h2 className="font-display font-semibold text-3xl md:text-4xl text-foreground mb-6">
-              What Does "Hand-Coded" Actually Mean?
+              What Does "Custom-Coded" Actually Mean?
             </h2>
             <div className="space-y-4 font-serif text-lg text-muted-foreground leading-relaxed">
               <p>
                 Most agencies build websites using WordPress, Wix, or Squarespace—platforms that generate thousands of lines of unnecessary code behind the scenes. Every plugin, every theme feature, every "convenience" adds weight your visitors have to download.
               </p>
               <p>
-                Hand-coded means we write exactly the code your site needs—nothing more. No bloated JavaScript libraries. No redundant CSS files. No database queries slowing down every page load. Just clean, efficient code that does precisely what it's supposed to do.
+                Custom-coded means we write exactly the code your site needs—nothing more. No bloated JavaScript libraries. No redundant CSS files. No database queries slowing down every page load. Just clean, efficient code that does precisely what it's supposed to do.
               </p>
             </div>
           </motion.div>
@@ -183,10 +183,10 @@ export default function WhyHandCoded() {
               className="bg-green-50 border border-green-200 rounded-xl p-8"
             >
               <h3 className="font-display font-semibold text-xl text-green-800 mb-4">
-                {comparisonData.handCoded.title}
+                {comparisonData.customCoded.title}
               </h3>
               <ul className="space-y-3">
-                {comparisonData.handCoded.items.map((item, i) => (
+                {comparisonData.customCoded.items.map((item, i) => (
                   <li key={i} className="flex items-start gap-3 font-serif text-green-700">
                     <span className="text-green-500 mt-1">&#x2713;</span>
                     {item}
@@ -223,7 +223,7 @@ export default function WhyHandCoded() {
                 WordPress powers over 40% of the web—which makes it the #1 target for hackers. Most attacks exploit outdated plugins or weak admin passwords. Small business owners rarely have time to maintain the constant cycle of security updates.
               </p>
               <p>
-                A hand-coded static site has no database to hack, no admin login to brute-force, and no plugins to exploit. It's virtually impervious to the attacks that take down thousands of small business sites every year.
+                A custom-coded static site has no database to hack, no admin login to brute-force, and no plugins to exploit. It's virtually impervious to the attacks that take down thousands of small business sites every year.
               </p>
             </div>
           </motion.div>
@@ -254,7 +254,7 @@ export default function WhyHandCoded() {
                 Google now measures your site's user experience through Core Web Vitals—metrics like Largest Contentful Paint (LCP), Interaction to Next Paint (INP), and Cumulative Layout Shift (CLS). Sites that score poorly get ranked lower.
               </p>
               <p>
-                Hand-coded sites naturally excel at these metrics because we control every element. There's no theme framework adding unpredictable behavior, no third-party scripts causing layout shifts, and no database bottlenecks slowing your server response.
+                Custom-coded sites naturally excel at these metrics because we control every element. There's no theme framework adding unpredictable behavior, no third-party scripts causing layout shifts, and no database bottlenecks slowing your server response.
               </p>
             </div>
           </motion.div>
@@ -286,7 +286,7 @@ export default function WhyHandCoded() {
                 Template sites seem affordable upfront—until you factor in the hidden costs: premium plugins ($50-200/year each), ongoing security monitoring, performance optimization services, and the leads you lose to slow load times.
               </p>
               <p>
-                Our hand-coded sites cost nothing extra to maintain. No plugin subscriptions. No performance band-aids. No security patches. They just work—year after year.
+                Our custom-coded sites cost nothing extra to maintain. No plugin subscriptions. No performance band-aids. No security patches. They just work—year after year.
               </p>
             </div>
           </motion.div>
@@ -340,7 +340,7 @@ export default function WhyHandCoded() {
               </h2>
             </div>
             <p className="font-serif text-lg text-muted-foreground leading-relaxed">
-              Most agencies quote 2-3 months for a custom website. We typically deliver hand-coded sites in under 30 days. Because we're not wrestling with theme limitations or plugin conflicts, we can focus entirely on building exactly what you need.
+              Most agencies quote 2-3 months for a custom website. We typically deliver custom-coded sites in under 30 days. Because we're not wrestling with theme limitations or plugin conflicts, we can focus entirely on building exactly what you need.
             </p>
           </motion.div>
         </div>
@@ -385,7 +385,7 @@ export default function WhyHandCoded() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="font-serif text-xl md:text-2xl text-white/90 mb-10 max-w-2xl mx-auto leading-relaxed"
           >
-            Let's talk about what a hand-coded website can do for your business. No obligation, no pressure—just a conversation about your goals.
+            Let's talk about what a custom-coded website can do for your business. No obligation, no pressure—just a conversation about your goals.
           </motion.p>
 
           <motion.div

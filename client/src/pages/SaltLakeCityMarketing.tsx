@@ -57,7 +57,7 @@ export default function SaltLakeCityMarketing() {
     <div className="min-h-screen">
       <SEO
         title="Salt Lake City Web Design & Marketing | Elevate Growth Solutions"
-        description="Performance-focused web design and marketing for Salt Lake City startups and growing businesses. Hand-coded sites that convert paid traffic and scale with you."
+        description="Performance-focused web design and marketing for Salt Lake City startups and growing businesses. Custom-coded sites that convert paid traffic and scale with you."
         ogImage="https://i.postimg.cc/sDW2ZZpm/EGS-SOCIAL-SHARING-IMAGE.png"
       />
       <SchemaMarkup type="custom" data={slcSchema} />
@@ -118,7 +118,7 @@ export default function SaltLakeCityMarketing() {
                 You understand the difference between a template and custom code. You know what headless CMS means. You've probably tried Webflow or Framer and hit their limits.
               </p>
               <p>
-                We speak your language: Jamstack architecture, API integrations, React-based static generation. Our hand-coded sites are built for performance from the ground up—no page builders, no bloat, just clean code that converts.
+                We speak your language: Jamstack architecture, API integrations, React-based static generation. Our custom-coded sites are built for performance from the ground up—no page builders, no bloat, just clean code that converts.
               </p>
             </div>
           </motion.div>

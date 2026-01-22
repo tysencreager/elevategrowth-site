@@ -92,9 +92,9 @@ export default function Home() {
     <div className="min-h-screen">
       <SEO
         title="Web Design Agency & Full-Stack Marketing | Elevate Growth Solutions"
-        description="Boutique web design agency and full-stack marketing services for small businesses, startups, and entrepreneurs. Hand-coded websites typically delivered in under 30 days. SEO, social media, branding, and conversion-focused design. Serving Salt Lake City and nationwide."
+        description="Boutique web design agency and full-stack marketing services for small businesses, startups, and entrepreneurs. Custom-coded websites typically delivered in under 30 days. SEO, social media, branding, and conversion-focused design. Serving Salt Lake City and nationwide."
         ogTitle="Web Design & Full-Stack Marketing for Small Businesses | Elevate Growth Solutions"
-        ogDescription="Hand-coded websites typically delivered in under 30 days. Boutique marketing agency providing web design, SEO, social media management, and branding for small businesses and startups."
+        ogDescription="Custom-coded websites typically delivered in under 30 days. Boutique marketing agency providing web design, SEO, social media management, and branding for small businesses and startups."
       />
       <SchemaMarkup type="marketingAgency" />
       <Navbar />
@@ -102,8 +102,8 @@ export default function Home() {
       <Hero
         backgroundImage={heroImage}
         imageSrcSet={`${heroImage768} 768w, ${heroImage} 1920w`}
-        title="Hand-Coded Web Design & Full-Stack Marketing for Utah Businesses"
-        subtitle="Hand-coded websites typically delivered in under 30 days—not template bloat. Boutique marketing services that treat your business like our own."
+        title="Custom-Coded Web Design & Full-Stack Marketing for Utah Businesses"
+        subtitle="Custom-coded websites typically delivered in under 30 days—not template bloat. Boutique marketing services that treat your business like our own."
         ctaText="See Our Services"
         ctaHref="/services"
         isLCP={true}

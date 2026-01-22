@@ -56,7 +56,7 @@ export default function OgdenWebDesign() {
     <div className="min-h-screen">
       <SEO
         title="Web Design & Marketing for Ogden Businesses | Elevate Growth Solutions"
-        description="Industrial-strength web design for Ogden's aerospace, manufacturing, and downtown businesses. Secure, fast, hand-coded websites built for Weber County companies."
+        description="Industrial-strength web design for Ogden's aerospace, manufacturing, and downtown businesses. Secure, fast, custom-coded websites built for Weber County companies."
         ogImage="https://i.postimg.cc/sDW2ZZpm/EGS-SOCIAL-SHARING-IMAGE.png"
       />
       <SchemaMarkup type="custom" data={ogdenSchema} />
@@ -117,7 +117,7 @@ export default function OgdenWebDesign() {
                 The aerospace and defense supply chain demands security. If you're a subcontractor, manufacturer, or service provider working with defense clients, your website can't afford to be compromised.
               </p>
               <p>
-                Our hand-coded static sites have no database vulnerabilities, no plugin exploits, and no backend login to brute-force. They meet the security standards your clients expect.
+                Our custom-coded static sites have no database vulnerabilities, no plugin exploits, and no backend login to brute-force. They meet the security standards your clients expect.
               </p>
             </div>
           </motion.div>
@@ -259,7 +259,7 @@ export default function OgdenWebDesign() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="font-serif text-xl md:text-2xl text-white/90 mb-10 max-w-2xl mx-auto leading-relaxed"
           >
-            Let's discuss how a hand-coded website can help your Weber County business compete and grow.
+            Let's discuss how a custom-coded website can help your Weber County business compete and grow.
           </motion.p>
 
           <motion.div
