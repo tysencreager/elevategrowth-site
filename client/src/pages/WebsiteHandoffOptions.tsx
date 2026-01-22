@@ -79,7 +79,7 @@ export default function WebsiteHandoffOptions() {
     {
       icon: TrendingUp,
       title: "Performance Equals Revenue",
-      description: "Website builders are bloated with heavy code to make drag-and-drop features work. This slows down your site, and Google penalizes slow sites in search rankings. According to Google, 53% of mobile visitors leave a page that takes longer than 3 seconds to load. Our hand-coded sites typically load in under 1 second."
+      description: "Website builders are bloated with heavy code to make drag-and-drop features work. This slows down your site, and Google penalizes slow sites in search rankings. According to Google, 53% of mobile visitors leave a page that takes longer than 3 seconds to load. Our custom-coded sites typically load in under 1 second."
     },
     {
       icon: DollarSign,
@@ -361,7 +361,7 @@ export default function WebsiteHandoffOptions() {
                 Small business owners rarely have time to maintain the constant cycle of security updates. That's a ticking time bomb.
               </p>
               <p>
-                A hand-coded static site has <strong>no database to hack</strong>, <strong>no admin login to brute-force</strong>, and <strong>no plugins to exploit</strong>. It's virtually impervious to the attacks that take down thousands of small business sites every year.
+                A custom-coded static site has <strong>no database to hack</strong>, <strong>no admin login to brute-force</strong>, and <strong>no plugins to exploit</strong>. It's virtually impervious to the attacks that take down thousands of small business sites every year.
               </p>
             </div>
           </motion.div>

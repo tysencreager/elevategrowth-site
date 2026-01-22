@@ -103,7 +103,7 @@ Website builders are bloated. They load heavy code to make drag-and-drop feature
 
 **The numbers:**
 - Typical WordPress site: 2-5MB per page, 3-8 seconds to load
-- Our hand-coded sites: Under 100KB, loads in under 1 second
+- Our custom-coded sites: Under 100KB, loads in under 1 second
 
 According to Google, [53% of mobile visitors abandon sites that take longer than 3 seconds to load](https://www.thinkwithgoogle.com/marketing-strategies/app-and-mobile/mobile-page-speed-new-industry-benchmarks/). Every second matters.
 
@@ -117,7 +117,7 @@ Your $80/month with us includes actual hosting, professional maintenance, and su
 
 WordPress powers over 40% of the web—which makes it target #1 for hackers. According to [Sucuri's research](https://sucuri.net/reports/website-threat-research-report/), WordPress accounts for over 90% of hacked CMS platforms.
 
-A hand-coded static site has **no database to hack**, **no admin login to brute-force**, and **no plugins to exploit**. It's virtually impervious to the attacks that take down thousands of small business sites every year.
+A custom-coded static site has **no database to hack**, **no admin login to brute-force**, and **no plugins to exploit**. It's virtually impervious to the attacks that take down thousands of small business sites every year.
 
 ### 5. Pixel-Perfect Customization
 
