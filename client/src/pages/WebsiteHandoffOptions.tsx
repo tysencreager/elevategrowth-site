@@ -275,15 +275,6 @@ export default function WebsiteHandoffOptions() {
 
               <div className="bg-white rounded-xl p-6 border border-primary/10">
                 <h3 className="font-display font-semibold text-xl text-foreground mb-3">
-                  Basic HTML Training
-                </h3>
-                <p>
-                  For simpler sites, 30 minutes of training on editing text in VS Code or another code editor can make you self-sufficient for minor text updates. We're happy to walk you through the basics.
-                </p>
-              </div>
-
-              <div className="bg-white rounded-xl p-6 border border-primary/10">
-                <h3 className="font-display font-semibold text-xl text-foreground mb-3">
                   Git-Based CMS Options
                 </h3>
                 <p>

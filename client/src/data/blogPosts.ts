@@ -85,8 +85,6 @@ Beyond our main three, here are additional paths:
 
 **Hire freelancers for occasional updates** - Platforms like Upwork and Fiverr make small edits affordable ($20-100 for minor changes). Because your code is clean and documented, any competent developer can work with it.
 
-**Basic HTML training** - For simpler sites, 30 minutes of training can make you self-sufficient for text updates. We're happy to show you the basics.
-
 **Git-based CMS** - Free tools like Decap CMS add a simple editing interface to static sites—great for blogs or content-heavy pages.
 
 ## Why Custom Code is Still the Better Investment
