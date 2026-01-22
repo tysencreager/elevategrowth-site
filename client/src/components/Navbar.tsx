@@ -24,6 +24,7 @@ const resultsSubLinks = [
 const resourcesSubLinks = [
   { href: "/behind-elevate", label: "Behind Elevate" },
   { href: "/why-hand-coded", label: "Why Hand-Coded" },
+  { href: "/website-handoff-options", label: "Website Handoff Options" },
   { href: "/blog", label: "Blog" }
 ];
 

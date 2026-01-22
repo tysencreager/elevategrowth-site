@@ -14,6 +14,138 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "website-handoff-options-custom-code",
+    title: "What Happens After Your Custom Website is Built? Your Handoff Options Explained",
+    excerpt: "Worried about managing a custom-coded website? Learn your three handoff options—from hands-off support to full ownership—and why custom code beats website builders every time.",
+    content: `
+## The Question Every Business Owner Asks
+
+"If you build my website from code, how do I edit it later?"
+
+It's one of the most common questions we get—and it's a smart one. You're used to the drag-and-drop simplicity of Wix or Squarespace. The idea of owning a website you can't edit in a browser feels limiting.
+
+Here's the truth: the limitations of custom code aren't flaws. They're intentional trade-offs for dramatically better performance, security, and long-term value. And the good news? You have more options than you might think.
+
+## Builders vs. Code: The Apartment vs. House Analogy
+
+Think of website builders as **rented apartments**. The landlord (Wix, Squarespace, WordPress) handles maintenance, but you're stuck with their rules, their rent increases, and their terms forever. If they decide to change their pricing or shut down a feature, you have no recourse. You can't take your apartment with you if you leave.
+
+Custom code is **a house you own**. Yes, you're responsible for maintenance (or you can hire someone). But you build equity. You have complete freedom. And nobody can take it from you or raise your rent.
+
+## Your Three Handoff Options
+
+When your website is complete, you choose the level of involvement that works for your business.
+
+### Option A: The "Peace of Mind" Retainer (Best Value)
+
+**The pitch:** You run your business; we run your website.
+
+For $80/month, you get hosting plus one hour of monthly edits included. Need to update your phone number? Change a photo? Add a new service? Just email us, and it's done—usually within 24-48 hours.
+
+**Why clients love it:**
+- No risk of accidentally breaking the design
+- No need to learn any technical tools
+- Professional handling of all updates
+- Uptime monitoring and security included
+- Priority support when you need changes
+
+**The reality check:** Most business owners think they'll edit their site constantly. In practice? They update it maybe once or twice a year. And when they try to DIY with a builder, they often spend hours fighting the platform or accidentally break the mobile layout. This option protects your investment and your time.
+
+### Option B: The "Hybrid" Approach (Headless CMS)
+
+**The pitch:** Edit your content without touching code.
+
+If you genuinely need to make frequent changes—you're a blogger, a restaurant updating menus weekly, an events company—we can integrate a headless CMS like Sanity, Contentful, or Decap CMS.
+
+You get a user-friendly admin dashboard where you can:
+- Edit text and blog posts
+- Swap out photos
+- Update pricing or service descriptions
+- Add new content pages
+
+The key: the design stays protected. You can change *content* but not accidentally move buttons, break the layout, or mess up the mobile view. It's the "Wix-like" experience on the backend with code-based performance on the frontend.
+
+**Note:** This requires an additional setup fee for CMS integration.
+
+### Option C: The "Full Key" Handover
+
+**The pitch:** You own this code 100%.
+
+We hand over the complete source code—every file, fully documented. You can:
+- Host it anywhere you want
+- Hire any developer to make future changes
+- Use your own IT team
+- Keep it as a backup while we continue managing it
+
+**The caveat:** You'll need technical knowledge (or to hire someone with it) to make changes. This isn't editable in a browser. But it's *yours* forever, with no lock-in to any platform or agency.
+
+## Other Self-Service Options
+
+Beyond our main three, here are additional paths:
+
+**Hire freelancers for occasional updates** - Platforms like Upwork and Fiverr make small edits affordable ($20-100 for minor changes). Because your code is clean and documented, any competent developer can work with it.
+
+**Basic HTML training** - For simpler sites, 30 minutes of training can make you self-sufficient for text updates. We're happy to show you the basics.
+
+**Git-based CMS** - Free tools like Decap CMS add a simple editing interface to static sites—great for blogs or content-heavy pages.
+
+## Why Custom Code is Still the Better Investment
+
+Yes, builders seem easier. But here's what business owners discover once they understand the full picture:
+
+### 1. You Own the Asset, You Don't Rent It
+
+With a website builder, if you stop paying their subscription, your website disappears. You can't export a Wix site and move it somewhere else—you're locked in forever.
+
+With custom code, you own the actual files. Don't like your hosting company? We can move your entire site to a new host in minutes. You have total freedom.
+
+### 2. Performance Equals Revenue
+
+Website builders are bloated. They load heavy code to make drag-and-drop features work—code your visitors have to download whether you use those features or not.
+
+**The numbers:**
+- Typical WordPress site: 2-5MB per page, 3-8 seconds to load
+- Our hand-coded sites: Under 100KB, loads in under 1 second
+
+According to Google, [53% of mobile visitors abandon sites that take longer than 3 seconds to load](https://www.thinkwithgoogle.com/marketing-strategies/app-and-mobile/mobile-page-speed-new-industry-benchmarks/). Every second matters.
+
+### 3. No Platform Fees Eating Your Budget
+
+Wix, Squarespace, and Shopify charge $15-50/month *just for platform access*—on top of hosting. Over five years, that's $900-3,000 for the privilege of using their builder.
+
+Your $80/month with us includes actual hosting, professional maintenance, and support. Not just access to a tool.
+
+### 4. Security by Design
+
+WordPress powers over 40% of the web—which makes it target #1 for hackers. According to [Sucuri's research](https://sucuri.net/reports/website-threat-research-report/), WordPress accounts for over 90% of hacked CMS platforms.
+
+A hand-coded static site has **no database to hack**, **no admin login to brute-force**, and **no plugins to exploit**. It's virtually impervious to the attacks that take down thousands of small business sites every year.
+
+### 5. Pixel-Perfect Customization
+
+With builders, you've probably heard: "The tool won't let me put that button there." You're constrained to their templates and grids.
+
+With custom code, if you can dream it, we can build it. Your brand looks exactly how it should—not like a generic template that 5,000 other businesses are using.
+
+## The Bottom Line
+
+Choosing between website builders and custom code isn't about "easy vs. hard." It's about short-term convenience vs. long-term value.
+
+Builders give you quick edits today but lock you into their platform forever, slow down your site, and limit what's possible.
+
+Custom code gives you a fast, secure, unique website that you actually own—with multiple options for how to manage it going forward.
+
+**Ready to build a website you actually own?** [Contact us](/contact) to discuss which handoff option makes sense for your business. Or [view our pricing](/pricing) to see what's included.
+    `,
+    author: "Tysen Creager",
+    date: "2026-01-22",
+    category: "Web Design",
+    tags: ["web design", "custom websites", "website builders", "website management", "headless CMS"],
+    metaTitle: "Website Handoff Options: Managing Your Custom Website | Elevate Growth Solutions",
+    metaDescription: "Learn your options after a custom website is built: ongoing support, headless CMS, or full code handover. Discover why custom code beats Wix and Squarespace.",
+    featured: true
+  },
+  {
     slug: "why-small-businesses-need-custom-website",
     title: "Why Your Small Business Needs a Custom Website in 2025",
     excerpt: "Discover why template websites are holding your business back and how a custom website can generate more leads and build trust with your customers.",
@@ -64,8 +196,7 @@ If you're a small business owner ready to stop blending in and start standing ou
     category: "Web Design",
     tags: ["web design", "small business", "custom websites", "lead generation"],
     metaTitle: "Why Small Businesses Need Custom Websites in 2025 | Elevate Growth Solutions",
-    metaDescription: "Learn why template websites are holding your business back. Discover how custom web design generates more leads and builds trust for small businesses.",
-    featured: true
+    metaDescription: "Learn why template websites are holding your business back. Discover how custom web design generates more leads and builds trust for small businesses."
   },
   {
     slug: "local-seo-guide-small-business-utah",
