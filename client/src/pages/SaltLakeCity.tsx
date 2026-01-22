@@ -130,7 +130,7 @@ export default function SaltLakeCity() {
         title="Web Design Agency Salt Lake City | SEO & Marketing Services Utah | Elevate Growth Solutions"
         description="Premier web design agency serving Salt Lake City, Utah. Custom website design, SEO services, and digital marketing for small businesses. Fast turnaround, boutique attention. Call (803) 600-4806."
         ogTitle="Web Design & Digital Marketing in Salt Lake City, Utah"
-        ogDescription="Salt Lake City's boutique web design agency. Hand-coded websites typically delivered in under 30 days. SEO, social media, and full-stack marketing for Utah small businesses."
+        ogDescription="Salt Lake City's boutique web design agency. Custom-coded websites typically delivered in under 30 days. SEO, social media, and full-stack marketing for Utah small businesses."
       />
       <SchemaMarkup type="localBusiness" data={localBusinessSchemaData} />
       <Navbar />

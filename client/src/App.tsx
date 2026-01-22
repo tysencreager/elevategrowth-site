@@ -41,7 +41,8 @@ const ServiceContentCreation = lazy(() => import("@/pages/services/ContentCreati
 const ServiceAdCampaigns = lazy(() => import("@/pages/services/AdCampaigns"));
 
 // New SEO pages
-const WhyHandCoded = lazy(() => import("@/pages/WhyHandCoded"));
+const WhyCustomCoded = lazy(() => import("@/pages/WhyCustomCoded"));
+const WebsiteHandoffOptions = lazy(() => import("@/pages/WebsiteHandoffOptions"));
 const StGeorgeWebDesign = lazy(() => import("@/pages/StGeorgeWebDesign"));
 const OgdenWebDesign = lazy(() => import("@/pages/OgdenWebDesign"));
 const SaltLakeCityMarketing = lazy(() => import("@/pages/SaltLakeCityMarketing"));
@@ -78,7 +79,8 @@ function Router() {
         <Route path="/blog/:slug" component={BlogPost} />
         <Route path="/testimonials" component={Testimonials} />
         <Route path="/pricing" component={Pricing} />
-        <Route path="/why-hand-coded" component={WhyHandCoded} />
+        <Route path="/why-custom-coded" component={WhyCustomCoded} />
+        <Route path="/website-handoff-options" component={WebsiteHandoffOptions} />
         <Route path="/st-george-web-design" component={StGeorgeWebDesign} />
         <Route path="/ogden-web-design" component={OgdenWebDesign} />
         <Route path="/salt-lake-city-marketing" component={SaltLakeCityMarketing} />

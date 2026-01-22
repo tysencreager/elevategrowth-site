@@ -58,7 +58,7 @@ export default function StGeorgeWebDesign() {
     <div className="min-h-screen">
       <SEO
         title="Web Design & Marketing Services in St. George, Utah | Elevate Growth Solutions"
-        description="St. George's fastest-growing businesses need websites that keep up. Hand-coded web design, SEO, and marketing for Washington County contractors, real estate, and service businesses."
+        description="St. George's fastest-growing businesses need websites that keep up. Custom-coded web design, SEO, and marketing for Washington County contractors, real estate, and service businesses."
         ogImage="https://i.postimg.cc/sDW2ZZpm/EGS-SOCIAL-SHARING-IMAGE.png"
       />
       <SchemaMarkup type="custom" data={stGeorgeSchema} />
@@ -107,7 +107,7 @@ export default function StGeorgeWebDesign() {
             transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
           >
             <h2 className="font-display font-semibold text-3xl md:text-4xl text-foreground mb-6">
-              Why St. George Businesses Choose Hand-Coded Websites
+              Why St. George Businesses Choose Custom-Coded Websites
             </h2>
             <div className="space-y-4 font-serif text-lg text-muted-foreground leading-relaxed">
               <p>

@@ -49,7 +49,7 @@ const localBusinessSchema = {
   "image": "https://elevategrowth.solutions/assets/EGS-LOGO-E-icon.png",
   "url": "https://elevategrowth.solutions",
   "email": "tysen@elevategrowth.solutions",
-  "description": "Boutique web design agency and full-stack marketing services. Hand-coded websites typically delivered in under 30 days. Serving small businesses, startups, and entrepreneurs nationwide with a focus on Salt Lake City, Utah.",
+  "description": "Boutique web design agency and full-stack marketing services. Custom-coded websites typically delivered in under 30 days. Serving small businesses, startups, and entrepreneurs nationwide with a focus on Salt Lake City, Utah.",
   "address": {
     "@type": "PostalAddress",
     "addressLocality": "Salt Lake City",
@@ -239,7 +239,7 @@ const marketingAgencySchema = {
   "@type": "MarketingAgency",
   "@id": "https://elevategrowth.solutions/#organization",
   "name": "Elevate Growth Solutions",
-  "description": "Boutique marketing agency specializing in hand-coded website development and full-stack marketing services. Custom websites typically delivered in under 30 days with zero template bloat.",
+  "description": "Boutique marketing agency specializing in custom-coded website development and full-stack marketing services. Custom websites typically delivered in under 30 days with zero template bloat.",
   "url": "https://elevategrowth.solutions",
   "logo": "https://i.postimg.cc/13kYHV2m/EGS-LOGO-Full.png",
   "image": "https://i.postimg.cc/sDW2ZZpm/EGS-SOCIAL-SHARING-IMAGE.png",
@@ -276,7 +276,7 @@ const marketingAgencySchema = {
   ],
   "knowsAbout": [
     "Web Design",
-    "Hand-Coded Websites",
+    "Custom-Coded Websites",
     "Search Engine Optimization",
     "Digital Marketing",
     "Google Ads",
@@ -284,7 +284,7 @@ const marketingAgencySchema = {
     "Brand Strategy",
     "Conversion Rate Optimization"
   ],
-  "slogan": "Hand-coded websites, faster than traditional agencies."
+  "slogan": "Custom-coded websites, faster than traditional agencies."
 };
 
 export default function SchemaMarkup({ type, data }: SchemaMarkupProps) {
