@@ -69,19 +69,19 @@ const localBusinessSchemaData = {
 const services = [
   {
     title: "Custom Web Design",
-    description: "Conversion-focused websites built for Salt Lake City businesses. From downtown startups to Park City resorts, we create sites that capture your unique Utah brand."
+    description: "Conversion-focused websites for Salt Lake City businesses—from 9th & 9th boutiques to downtown professional services near City Creek. Sites that capture Utah's unique blend of outdoor lifestyle and urban sophistication."
   },
   {
     title: "SEO Services",
-    description: "Dominate local search results in Salt Lake City and throughout Utah. We optimize your site to rank for the keywords your customers are searching for."
+    description: "Rank when locals search 'best [your service] Salt Lake City.' We optimize for neighborhood-specific searches too: Sugar House, The Avenues, Millcreek, and beyond."
   },
   {
     title: "Social Media Marketing",
-    description: "Connect with the Salt Lake City community through strategic social media management. Build your local following and engage with Utah customers."
+    description: "Build community with Salt Lake's engaged audience. From ski season content to summer hiking posts, we create social strategies that resonate with Utah's active lifestyle culture."
   },
   {
     title: "Full-Stack Marketing",
-    description: "Complete marketing solutions including branding, content creation, and ad campaigns. Everything you need to grow your business in the competitive Utah market."
+    description: "Complete marketing solutions for Utah's competitive market. Branding that stands out on Main Street, content that speaks to Wasatch Front audiences, and campaigns that drive real foot traffic."
   }
 ];
 
@@ -89,38 +89,38 @@ const benefits = [
   {
     icon: Clock,
     title: "Fast Turnaround",
-    description: "Websites typically delivered in under 30 days. We respect your time and the fast pace of Salt Lake City business."
+    description: "Websites typically delivered in under 30 days. Utah businesses move fast—your marketing partner should too."
   },
   {
     icon: Users,
     title: "Boutique Attention",
-    description: "You're not just a number. As a boutique agency, we give every Salt Lake City client personalized care and attention."
+    description: "You're not a ticket number at a big agency. We treat every client like a neighbor—because in Salt Lake, you probably are."
   },
   {
     icon: MapPin,
-    title: "Local Market Expertise",
-    description: "We understand the Utah market, from the tech boom in Silicon Slopes to the tourism in Park City."
+    title: "Wasatch Front Expertise",
+    description: "From the U of U Research Park to the Granary District, we know what resonates with Salt Lake audiences."
   },
   {
     icon: Award,
     title: "Results-Driven",
-    description: "Our focus is on generating leads and growing your business, not just creating pretty websites."
+    description: "More reservations for your Sugar House restaurant. More leads for your Draper law firm. That's what matters."
   }
 ];
 
 const localAreas = [
-  "Downtown Salt Lake City",
+  "Downtown / City Creek",
   "Sugar House",
-  "Park City",
-  "Sandy",
-  "Provo",
+  "9th & 9th District",
+  "The Avenues",
+  "Liberty Park Area",
+  "Millcreek",
+  "Holladay",
+  "Sandy / Draper",
+  "Murray / Midvale",
   "West Valley City",
-  "Draper",
-  "Silicon Slopes",
-  "Murray",
-  "Ogden",
-  "Lehi",
-  "American Fork"
+  "Granary District",
+  "Research Park / U of U"
 ];
 
 export default function SaltLakeCity() {
@@ -152,15 +152,13 @@ export default function SaltLakeCity() {
             Your Local Salt Lake City Marketing Partner
           </h2>
           <p className="font-serif text-lg text-gray-700 leading-relaxed mb-8">
-            From the bustling streets of downtown Salt Lake City to the innovative tech companies in Silicon Slopes,
-            Utah businesses are thriving. But standing out in this competitive market requires more than just a
-            basic website—it requires a strategic marketing partner who understands the local landscape.
+            Salt Lake City has transformed from a quiet mountain town into one of America's most dynamic metros. The same energy that fills Liberty Park on summer evenings and packs the slopes at Brighton and Snowbird now drives a thriving local business scene—from the boutiques of 9th & 9th to the restaurants revitalizing the Granary District.
+          </p>
+          <p className="font-serif text-lg text-gray-700 leading-relaxed mb-8">
+            But with Salt Lake's growth comes competition. The coffee shop on 300 South competes with a dozen others. The Holladay dentist needs to stand out from every practice along the Wasatch Front. Your business needs more than a basic website—you need a marketing partner who knows this city.
           </p>
           <p className="font-serif text-lg text-gray-700 leading-relaxed">
-            At Elevate Growth Solutions, we combine boutique agency attention with full-stack marketing expertise
-            to help Salt Lake City businesses generate more leads, build stronger brands, and grow with confidence.
-            Whether you're a startup in Lehi, a restaurant in Sugar House, or a professional service in Park City,
-            we're here to elevate your business.
+            We help Salt Lake businesses cut through the noise: the Sugar House bakery that needs weekend foot traffic, the Murray auto shop competing for "mechanic near me" searches, the downtown law firm building its reputation. Custom-coded websites, local SEO that actually works, and marketing that speaks to Utah audiences.
           </p>
         </div>
       </section>
@@ -223,19 +221,18 @@ export default function SaltLakeCity() {
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
               <h2 className="font-display text-3xl md:text-4xl font-semibold text-gray-900 mb-6">
-                Dominate Local Search in Salt Lake City
+                Own Your Neighborhood in Google Search
               </h2>
               <p className="font-serif text-lg text-gray-700 leading-relaxed mb-6">
-                When potential customers in Salt Lake City search for businesses like yours, will they find you?
-                Our local SEO services ensure your business appears at the top of search results when it matters most.
+                When someone in The Avenues searches "coffee shop near me" or a Millcreek family Googles "pediatric dentist," will they find you? Salt Lake's neighborhood-driven culture means local SEO isn't just about ranking for "Salt Lake City"—it's about dominating your specific corner of the Wasatch Front.
               </p>
               <ul className="space-y-3">
                 {[
-                  "Google Business Profile optimization",
-                  "Local keyword targeting for Utah searches",
-                  "Citation building and local directory listings",
-                  "Review management and reputation building",
-                  "Location-specific content strategy"
+                  "Google Business Profile optimization for SLC neighborhoods",
+                  "Neighborhood-specific keyword targeting (Sugar House, 9th & 9th, etc.)",
+                  "Salt Lake Tribune, Deseret News, and local directory citations",
+                  "Review strategies that build trust with Utah customers",
+                  "Content that references local landmarks and culture"
                 ].map((item, index) => (
                   <li key={index} className="flex items-start gap-3">
                     <CheckCircle className="w-5 h-5 text-primary mt-1 flex-shrink-0" />
@@ -246,7 +243,7 @@ export default function SaltLakeCity() {
             </div>
             <div className="bg-white p-8 rounded-lg shadow-sm border border-gray-100">
               <h3 className="font-display text-xl font-semibold text-gray-900 mb-4">
-                Areas We Serve in Utah
+                Salt Lake Neighborhoods We Serve
               </h3>
               <div className="grid grid-cols-2 gap-3">
                 {localAreas.map((area, index) => (
@@ -265,23 +262,17 @@ export default function SaltLakeCity() {
       <section className="py-20 bg-white">
         <div className="max-w-4xl mx-auto px-4">
           <h2 className="font-display text-3xl md:text-4xl font-semibold text-gray-900 mb-6 text-center">
-            Understanding the Utah Business Landscape
+            The Salt Lake City Business Landscape
           </h2>
           <div className="prose prose-lg max-w-none font-serif text-gray-700">
             <p>
-              Utah's economy is booming. With the tech industry flourishing in Silicon Slopes—home to companies
-              like Qualtrics, Pluralsight, and Domo—and a thriving tourism industry anchored by world-class
-              ski resorts and national parks, the opportunities for small businesses are enormous.
+              Salt Lake City's economy runs on diversity. The outdoor industry giants—Black Diamond, Backcountry.com, Cotopaxi—anchor a recreation economy that extends from gear shops on 400 South to ski rental operations in the canyons. Healthcare systems like Intermountain and University of Utah Health employ thousands. The airport expansion has turned SLC into a Delta hub, bringing 26 million passengers annually past your potential storefront.
             </p>
             <p>
-              But with opportunity comes competition. Whether you're competing with other restaurants near
-              Temple Square, vying for attention in the crowded Park City hospitality market, or trying to
-              stand out among the thousands of tech startups in Lehi and Draper, you need a strong digital presence.
+              Meanwhile, neighborhoods are transforming. The Granary District has gone from industrial wasteland to brewery-and-boutique destination. Sugar House keeps adding density. The Marmalade district draws young families. Each neighborhood has its own character—and its own customers searching Google for local businesses.
             </p>
             <p>
-              That's where we come in. We've helped businesses throughout the Wasatch Front build websites
-              that convert visitors into customers, develop SEO strategies that rank in local searches, and
-              create marketing campaigns that resonate with Utah audiences.
+              We understand these micro-markets. A campaign for a Trolley Square retailer looks different than one for a West Valley auto shop. SEO for a downtown hotel targets different keywords than a Millcreek family restaurant. We build marketing strategies that match your specific location, customers, and competitive landscape along the Wasatch Front.
             </p>
           </div>
         </div>
