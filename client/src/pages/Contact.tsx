@@ -246,10 +246,13 @@ export default function Contact() {
                 <h2 className="font-display text-2xl font-semibold text-gray-900 mb-4">
                   Get in Touch
                 </h2>
-                <p className="font-serif text-gray-600 leading-relaxed">
+                <p className="font-serif text-gray-600 leading-relaxed mb-4">
                   Whether you're looking for a new website, need help with SEO, or want a complete
                   marketing overhaul, we're here to help. Fill out the form and we'll respond within
                   24 hours to discuss your project.
+                </p>
+                <p className="font-serif text-gray-500 text-sm">
+                  Based in Las Vegas, Nevada — providing digital marketing services to businesses across the country.
                 </p>
               </div>
 

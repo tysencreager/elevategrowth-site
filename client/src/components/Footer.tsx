@@ -159,6 +159,9 @@ export default function Footer() {
           </div>
 
           <div className="mt-12 pt-8 border-t border-card-border">
+            <p className="font-serif text-sm text-muted-foreground text-center mb-2">
+              Proudly serving businesses in Utah and Nevada
+            </p>
             <p
               className="font-serif text-sm text-muted-foreground text-center"
               data-testid="text-footer-copyright"

@@ -26,11 +26,27 @@ const organizationSchema = {
       "name": "United States"
     },
     {
+      "@type": "State",
+      "name": "Utah"
+    },
+    {
+      "@type": "State",
+      "name": "Nevada"
+    },
+    {
       "@type": "City",
       "name": "Salt Lake City",
       "containedInPlace": {
         "@type": "State",
         "name": "Utah"
+      }
+    },
+    {
+      "@type": "City",
+      "name": "Las Vegas",
+      "containedInPlace": {
+        "@type": "State",
+        "name": "Nevada"
       }
     }
   ],
@@ -49,17 +65,10 @@ const localBusinessSchema = {
   "image": "https://elevategrowth.solutions/assets/EGS-LOGO-E-icon.png",
   "url": "https://elevategrowth.solutions",
   "email": "tysen@elevategrowth.solutions",
-  "description": "Boutique web design agency and full-stack marketing services. Custom-coded websites typically delivered in under 30 days. Serving small businesses, startups, and entrepreneurs nationwide with a focus on Salt Lake City, Utah.",
+  "description": "Boutique web design agency and full-stack marketing services. Custom-coded websites typically delivered in under 30 days. Serving small businesses, startups, and entrepreneurs nationwide with a focus on Utah and Nevada.",
   "address": {
     "@type": "PostalAddress",
-    "addressLocality": "Salt Lake City",
-    "addressRegion": "UT",
     "addressCountry": "US"
-  },
-  "geo": {
-    "@type": "GeoCoordinates",
-    "latitude": 40.7608,
-    "longitude": -111.8910
   },
   "areaServed": [
     {
@@ -71,8 +80,18 @@ const localBusinessSchema = {
       "name": "Utah"
     },
     {
+      "@type": "State",
+      "name": "Nevada"
+    },
+    {
       "@type": "City",
-      "name": "Salt Lake City"
+      "name": "Salt Lake City",
+      "containedInPlace": { "@type": "State", "name": "Utah" }
+    },
+    {
+      "@type": "City",
+      "name": "Las Vegas",
+      "containedInPlace": { "@type": "State", "name": "Nevada" }
     }
   ],
   "priceRange": "$$",
@@ -253,8 +272,6 @@ const marketingAgencySchema = {
   },
   "address": {
     "@type": "PostalAddress",
-    "addressLocality": "St. George",
-    "addressRegion": "UT",
     "addressCountry": "US"
   },
   "areaServed": [
@@ -263,7 +280,9 @@ const marketingAgencySchema = {
     {"@type": "City", "name": "Ogden", "containedInPlace": {"@type": "State", "name": "Utah"}},
     {"@type": "City", "name": "Provo", "containedInPlace": {"@type": "State", "name": "Utah"}},
     {"@type": "City", "name": "Park City", "containedInPlace": {"@type": "State", "name": "Utah"}},
+    {"@type": "City", "name": "Las Vegas", "containedInPlace": {"@type": "State", "name": "Nevada"}},
     {"@type": "State", "name": "Utah"},
+    {"@type": "State", "name": "Nevada"},
     {"@type": "Country", "name": "United States"}
   ],
   "priceRange": "$$",

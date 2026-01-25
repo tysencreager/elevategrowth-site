@@ -4,38 +4,44 @@ import SEO from "@/components/SEO";
 import SchemaMarkup from "@/components/SchemaMarkup";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { BokehEffect, FloatingOrbs, WaveDivider, GradientTransition } from "@/components/decorative";
-import { Shield, Building2, Utensils, Briefcase, Mountain, Factory, ArrowRight, Check } from "lucide-react";
+import { Building2, Utensils, Hotel, ShoppingBag, Briefcase, Sparkles, ArrowRight, Check } from "lucide-react";
 
-// Schema for Ogden location page
-const ogdenSchema = {
+// Schema for Las Vegas location page
+const lasVegasSchema = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
   "@id": "https://elevategrowth.solutions/#organization",
   "name": "Elevate Growth Solutions",
-  "url": "https://elevategrowth.solutions/ogden-web-design",
+  "url": "https://elevategrowth.solutions/las-vegas-digital-marketing",
   "telephone": "+1-803-600-4806",
+  "email": "tysen@elevategrowth.solutions",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Las Vegas",
+    "addressRegion": "NV",
+    "addressCountry": "US"
+  },
   "areaServed": [
-    {"@type": "City", "name": "Ogden", "containedInPlace": {"@type": "State", "name": "Utah"}},
-    {"@type": "City", "name": "Roy", "containedInPlace": {"@type": "State", "name": "Utah"}},
-    {"@type": "City", "name": "Layton", "containedInPlace": {"@type": "State", "name": "Utah"}},
-    {"@type": "City", "name": "Clearfield", "containedInPlace": {"@type": "State", "name": "Utah"}},
-    {"@type": "AdministrativeArea", "name": "Weber County", "containedInPlace": {"@type": "State", "name": "Utah"}},
-    {"@type": "AdministrativeArea", "name": "Davis County", "containedInPlace": {"@type": "State", "name": "Utah"}}
+    {"@type": "City", "name": "Las Vegas", "containedInPlace": {"@type": "State", "name": "Nevada"}},
+    {"@type": "City", "name": "Henderson", "containedInPlace": {"@type": "State", "name": "Nevada"}},
+    {"@type": "City", "name": "North Las Vegas", "containedInPlace": {"@type": "State", "name": "Nevada"}},
+    {"@type": "City", "name": "Summerlin", "containedInPlace": {"@type": "State", "name": "Nevada"}},
+    {"@type": "AdministrativeArea", "name": "Clark County", "containedInPlace": {"@type": "State", "name": "Nevada"}}
   ]
 };
 
 const industries = [
-  { icon: Shield, name: "Hill AFB subcontractors and defense suppliers" },
-  { icon: Factory, name: "Business Depot Ogden manufacturers" },
-  { icon: Utensils, name: "Historic 25th Street restaurants and bars" },
-  { icon: Briefcase, name: "Professional services near Union Station" },
-  { icon: Mountain, name: "Snowbasin and Powder Mountain outfitters" }
+  { icon: Hotel, name: "Strip-adjacent hotels, bars, and entertainment venues" },
+  { icon: Utensils, name: "Restaurants from Fremont to Summerlin" },
+  { icon: Building2, name: "Henderson and North Las Vegas real estate agents" },
+  { icon: ShoppingBag, name: "Local retailers and fashion district boutiques" },
+  { icon: Briefcase, name: "Convention services and B2B vendors" },
+  { icon: Sparkles, name: "Med spas, salons, and wellness centers" }
 ];
 
-export default function OgdenWebDesign() {
+export default function LasVegasDigitalMarketing() {
   const heroRef = useRef(null);
   const isHeroInView = useInView(heroRef, { once: true, amount: 0.3 });
 
@@ -55,11 +61,11 @@ export default function OgdenWebDesign() {
   return (
     <div className="min-h-screen">
       <SEO
-        title="Web Design & Marketing for Ogden Businesses | Elevate Growth Solutions"
-        description="Industrial-strength web design for Ogden's aerospace, manufacturing, and downtown businesses. Secure, fast, custom-coded websites built for Weber County companies."
+        title="Digital Marketing Services in Las Vegas, Nevada | Elevate Growth Solutions"
+        description="Elevate Growth Solutions offers premier digital marketing services in Las Vegas. Custom-coded websites, SEO, and full-stack marketing for Nevada businesses."
         ogImage="https://i.postimg.cc/sDW2ZZpm/EGS-SOCIAL-SHARING-IMAGE.png"
       />
-      <SchemaMarkup type="custom" data={ogdenSchema} />
+      <SchemaMarkup type="custom" data={lasVegasSchema} />
       <Navbar />
 
       {/* Hero Section */}
@@ -75,7 +81,7 @@ export default function OgdenWebDesign() {
             initial="hidden"
             animate={isHeroInView ? "visible" : "hidden"}
           >
-            Web Design & Marketing for Ogden's Industrial Economy
+            Premier Digital Marketing Services in Las Vegas
           </motion.h1>
 
           <motion.p
@@ -85,14 +91,14 @@ export default function OgdenWebDesign() {
             initial="hidden"
             animate={isHeroInView ? "visible" : "hidden"}
           >
-            From Hill Air Force Base to Business Depot Ogden, Weber County runs on precision and reliability. Your digital presence should match that standard. We build websites that perform—no bloat, no vulnerabilities, no excuses.
+            Elevate Growth Solutions offers boutique marketing services to Las Vegas businesses. From custom-coded websites to comprehensive digital marketing strategies, we help local businesses stand out in one of America's most competitive markets.
           </motion.p>
         </div>
 
         <GradientTransition from="transparent" to="hsl(var(--muted) / 0.3)" height="80px" />
       </section>
 
-      {/* Security Section */}
+      {/* Why Las Vegas Section */}
       <section className="relative py-16 md:py-24 bg-muted/30 overflow-hidden">
         <WaveDivider position="top" fillColor="hsl(var(--background))" />
         <BokehEffect opacity={0.25} />
@@ -104,27 +110,25 @@ export default function OgdenWebDesign() {
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
           >
-            <div className="flex items-center gap-4 mb-6">
-              <div className="inline-flex items-center justify-center w-12 h-12 bg-primary/10 rounded-full">
-                <Shield className="w-6 h-6 text-primary" />
-              </div>
-              <h2 className="font-display font-semibold text-3xl md:text-4xl text-foreground">
-                Secure Websites for the Hill AFB Supply Chain
-              </h2>
-            </div>
+            <h2 className="font-display font-semibold text-3xl md:text-4xl text-foreground mb-6">
+              Marketing That Matches Las Vegas Energy
+            </h2>
             <div className="space-y-4 font-serif text-lg text-muted-foreground leading-relaxed">
               <p>
-                Hill Air Force Base isn't just Ogden's largest employer—it's the economic engine of Weber County, supporting thousands of jobs in aerospace maintenance, defense manufacturing, and logistics. If you're a subcontractor machining precision parts, a manufacturer supplying the F-35 program, or a service provider with base access, your digital presence matters to prime contractors evaluating your professionalism.
+                Las Vegas welcomes over 40 million visitors annually—but the local economy extends far beyond The Strip. From the tech companies in the Las Vegas Tech District to the thriving small businesses along Fremont Street's revitalized downtown, Clark County's economy is diversifying rapidly.
               </p>
               <p>
-                Our custom-coded static sites have no database vulnerabilities, no WordPress plugin exploits, and no backend login to brute-force. When your clients include Lockheed Martin, Northrop Grumman, or the Department of Defense, you need a website that reflects the security standards they expect—not a template that screams "small operation."
+                Whether you're a restaurant competing for convention traffic near the Las Vegas Convention Center, a wellness spa in Summerlin serving locals, or a professional service firm in Henderson's growing business district, you need a website that works as hard as you do—24 hours a day, 7 days a week, just like this city.
+              </p>
+              <p>
+                We build custom-coded websites that load fast even on crowded casino WiFi, look stunning on mobile devices, and convert visitors into customers. No templates, no bloat—just clean, efficient code tailored to the unique demands of the Las Vegas market.
               </p>
             </div>
           </motion.div>
         </div>
       </section>
 
-      {/* Downtown Revival Section */}
+      {/* Local Market Section */}
       <section className="relative py-16 md:py-24 bg-background overflow-hidden">
         <FloatingOrbs variant="light" />
 
@@ -135,23 +139,18 @@ export default function OgdenWebDesign() {
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
           >
-            <div className="flex items-center gap-4 mb-6">
-              <div className="inline-flex items-center justify-center w-12 h-12 bg-primary/10 rounded-full">
-                <Building2 className="w-6 h-6 text-primary" />
-              </div>
-              <h2 className="font-display font-semibold text-3xl md:text-4xl text-foreground">
-                From Historic 25th Street to the Future
-              </h2>
-            </div>
+            <h2 className="font-display font-semibold text-3xl md:text-4xl text-foreground mb-6">
+              Understanding the Las Vegas Business Landscape
+            </h2>
             <div className="space-y-4 font-serif text-lg text-muted-foreground leading-relaxed">
               <p>
-                Ogden's transformation from railroad town to outdoor recreation hub has made Historic 25th Street one of Utah's most vibrant destinations. The restored Union Station anchors a downtown where craft breweries like Roosters share the block with outdoor gear shops, farm-to-table restaurants, and creative agencies.
+                Las Vegas isn't just about gaming anymore. The city has transformed into a major hub for conventions (CES, SEMA, and hundreds more at the Convention Center and new MSG Sphere), sports (Raiders, Golden Knights, Formula 1), and increasingly, tech startups attracted by Nevada's business-friendly tax environment.
               </p>
               <p>
-                Meanwhile, young professionals priced out of Salt Lake City are discovering Ogden's affordability and direct FrontRunner access to downtown SLC. Plan Ogden's "Vibrant Downtown" initiative is attracting new restaurants, boutiques, and co-working spaces—all needing digital presence that matches the city's creative energy.
+                For local businesses, this means unprecedented opportunity—and competition. A restaurant near the Arts District competes not just with neighbors, but with every Yelp-listed option tourists discover. A Henderson contractor needs to rank for "home remodel Las Vegas" against hundreds of competitors.
               </p>
               <p>
-                Whether you're a new gastropub on 25th Street competing for weekend crowds, a ski rental shop serving Snowbasin and Powder Mountain visitors, or a professional service firm near the Junction, we combine full-stack marketing—SEO, social media, and branding—to help Ogden businesses capture both locals and the growing tourist traffic.
+                We understand the unique rhythm of Las Vegas business: the seasonal convention surges, the importance of mobile-first design for tourists researching on the go, and the need for local SEO that captures both the "Las Vegas" and neighborhood-specific searches like "Summerlin," "Green Valley," or "Downtown Las Vegas."
               </p>
             </div>
           </motion.div>
@@ -172,8 +171,11 @@ export default function OgdenWebDesign() {
             className="text-center mb-12"
           >
             <h2 className="font-display font-semibold text-3xl md:text-4xl text-foreground mb-4">
-              Industries We Serve in Weber County
+              Las Vegas Industries We Specialize In
             </h2>
+            <p className="font-serif text-lg text-muted-foreground max-w-2xl mx-auto">
+              From the energy of The Strip to the growing suburbs of Henderson and Summerlin
+            </p>
           </motion.div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -196,7 +198,7 @@ export default function OgdenWebDesign() {
         </div>
       </section>
 
-      {/* Map Section */}
+      {/* Services Section */}
       <section className="relative py-16 md:py-24 bg-background overflow-hidden">
         <FloatingOrbs variant="light" />
 
@@ -207,21 +209,67 @@ export default function OgdenWebDesign() {
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
           >
-            <h2 className="font-display font-semibold text-3xl md:text-4xl text-foreground mb-6 text-center">
-              Serving Ogden & Weber County
+            <h2 className="font-display font-semibold text-3xl md:text-4xl text-foreground mb-6">
+              Digital Marketing Services for Clark County
             </h2>
+            <div className="space-y-4 font-serif text-lg text-muted-foreground leading-relaxed">
+              <ul className="space-y-3">
+                <li className="flex items-start gap-3">
+                  <Check className="w-5 h-5 text-primary mt-1 flex-shrink-0" />
+                  <span><strong>Custom Website Design:</strong> Lightning-fast sites optimized for tourists on hotel WiFi and locals on mobile—critical in a city where decisions happen in seconds</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <Check className="w-5 h-5 text-primary mt-1 flex-shrink-0" />
+                  <span><strong>Local SEO:</strong> Rank for "Las Vegas," "Henderson," "Summerlin," and neighborhood-specific searches. We optimize your Google Business Profile for the Las Vegas market</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <Check className="w-5 h-5 text-primary mt-1 flex-shrink-0" />
+                  <span><strong>Social Media Management:</strong> Build your brand on Instagram and Facebook where Vegas locals discover new businesses daily</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <Check className="w-5 h-5 text-primary mt-1 flex-shrink-0" />
+                  <span><strong>Google & Meta Ads:</strong> Geo-targeted campaigns for convention traffic, local residents, or both—with tracking that shows real ROI</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <Check className="w-5 h-5 text-primary mt-1 flex-shrink-0" />
+                  <span><strong>Branding:</strong> Stand-out visual identity that competes in a city known for bold design and memorable experiences</span>
+                </li>
+              </ul>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Map Section */}
+      <section className="relative py-16 md:py-24 bg-muted/30 overflow-hidden">
+        <WaveDivider position="top" fillColor="hsl(var(--background))" />
+        <BokehEffect opacity={0.25} />
+
+        <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+          >
+            <h2 className="font-display font-semibold text-3xl md:text-4xl text-foreground mb-6 text-center">
+              Serving the Greater Las Vegas Area
+            </h2>
+            <p className="font-serif text-lg text-muted-foreground text-center mb-8">
+              From Downtown and The Strip to Henderson, Summerlin, North Las Vegas, and beyond
+            </p>
 
             {/* Map Embed */}
             <div className="rounded-xl overflow-hidden border border-border/50 shadow-lg">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d193503.02374766147!2d-112.11244105!3d41.2229649!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87530e94cb89b8b1%3A0x42ae1e1b1a6d3ff0!2sOgden%2C%20UT!5e0!3m2!1sen!2sus!4v1684000000000!5m2!1sen!2sus"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d413369.7557695321!2d-115.46709889999999!3d36.1249185!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80beb782a4f57dd1%3A0x3accd5e6d5b379a3!2sLas%20Vegas%2C%20NV!5e0!3m2!1sen!2sus!4v1684000000000!5m2!1sen!2sus"
                 width="100%"
                 height="300"
                 style={{ border: 0 }}
                 allowFullScreen
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
-                title="Ogden, Utah service area map"
+                title="Las Vegas, Nevada service area map"
               />
             </div>
           </motion.div>
@@ -257,7 +305,7 @@ export default function OgdenWebDesign() {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="font-display font-bold text-4xl md:text-5xl text-white mb-6 leading-tight"
           >
-            Schedule a Consultation for Your Ogden Business
+            Ready to Elevate Your Las Vegas Business?
           </motion.h2>
 
           <motion.p
@@ -267,7 +315,7 @@ export default function OgdenWebDesign() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="font-serif text-xl md:text-2xl text-white/90 mb-10 max-w-2xl mx-auto leading-relaxed"
           >
-            Let's discuss how a custom-coded website can help your Weber County business compete and grow.
+            Let's discuss how we can help your business stand out in the Las Vegas market.
           </motion.p>
 
           <motion.div
@@ -286,7 +334,7 @@ export default function OgdenWebDesign() {
                   size="lg"
                   className="font-sans font-semibold text-lg px-8 py-6 bg-white text-primary hover:bg-white/90 shadow-xl shadow-black/20 group"
                 >
-                  Schedule a Consultation
+                  Schedule a Free Consultation
                   <ArrowRight className="w-5 h-5 ml-2 transition-transform group-hover:translate-x-1" />
                 </Button>
               </motion.div>
@@ -303,15 +351,15 @@ export default function OgdenWebDesign() {
           >
             <div className="flex items-center gap-2">
               <Check className="w-5 h-5 text-white" />
-              <span className="font-serif text-sm">Secure, static sites</span>
+              <span className="font-serif text-sm">Free consultation</span>
             </div>
             <div className="flex items-center gap-2">
               <Check className="w-5 h-5 text-white" />
-              <span className="font-serif text-sm">Defense-grade security</span>
+              <span className="font-serif text-sm">Custom solutions</span>
             </div>
             <div className="flex items-center gap-2">
               <Check className="w-5 h-5 text-white" />
-              <span className="font-serif text-sm">Local expertise</span>
+              <span className="font-serif text-sm">Fast turnaround</span>
             </div>
           </motion.div>
         </motion.div>
