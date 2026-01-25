@@ -29,12 +29,12 @@ const stGeorgeSchema = {
 };
 
 const industries = [
-  { icon: Home, name: "Custom home builders and general contractors" },
-  { icon: Building2, name: "Real estate agents and property management" },
-  { icon: Wrench, name: "HVAC, plumbing, and electrical services" },
-  { icon: Palmtree, name: "Landscaping and xeriscaping companies" },
-  { icon: Stethoscope, name: "Healthcare and dental practices" },
-  { icon: Sun, name: "Tourism and hospitality businesses" }
+  { icon: Home, name: "Custom home builders in Entrada and Stone Cliff" },
+  { icon: Building2, name: "Real estate agents serving California transplants" },
+  { icon: Wrench, name: "HVAC contractors battling 115° summers" },
+  { icon: Palmtree, name: "Xeriscaping and desert landscaping specialists" },
+  { icon: Stethoscope, name: "Healthcare practices near Dixie Regional" },
+  { icon: Sun, name: "Zion-adjacent tourism and adventure outfitters" }
 ];
 
 export default function StGeorgeWebDesign() {
@@ -111,10 +111,13 @@ export default function StGeorgeWebDesign() {
             </h2>
             <div className="space-y-4 font-serif text-lg text-muted-foreground leading-relaxed">
               <p>
-                The construction boom means dozens of contractors competing for the same homeowners. Real estate agents are fighting for listings. Service businesses are battling for visibility in a market flooded with newcomers from California and Northern Utah.
+                St. George isn't the quiet retirement town it used to be. With Zion National Park drawing 4+ million visitors annually, California remote workers discovering affordable housing, and snowbirds from across the country making Washington County their winter home, the local economy is transforming.
               </p>
               <p>
-                A template website won't cut it. You need a site that loads instantly in the desert heat (where mobile connections can be spotty), showcases your work beautifully, and ranks in the Local Pack for searches like "Custom Home Builder St. George" or "HVAC Repair Washington County."
+                The construction boom in communities like Entrada, Sunriver, and Desert Color means dozens of contractors competing for the same homeowners. Real estate agents are fighting for listings from California transplants with Bay Area budgets. Service businesses are battling for visibility in a market where Google searches for "St. George contractor" have tripled in five years.
+              </p>
+              <p>
+                A template website won't cut it in red rock country. You need a site that loads instantly in the desert heat (where mobile connections at Snow Canyon or Sand Hollow can be spotty), showcases your work against stunning landscape backdrops, and ranks in the Local Pack when tourists search "restaurant near Zion" or locals search "custom home builder Washington County."
               </p>
             </div>
           </motion.div>
@@ -173,11 +176,14 @@ export default function StGeorgeWebDesign() {
             <h2 className="font-display font-semibold text-3xl md:text-4xl text-foreground mb-6">
               Local SEO That Understands Washington County
             </h2>
+            <p className="font-serif text-lg text-muted-foreground leading-relaxed mb-4">
+              We don't just optimize for "St. George"—we target the unique search patterns of this market. Tourists search "best breakfast near Zion" while planning their trip. Snowbirds search "golf course communities St. George" before their seasonal migration. California transplants search "custom home builder Utah" when comparing markets.
+            </p>
             <p className="font-serif text-lg text-muted-foreground leading-relaxed mb-8">
-              We don't just optimize for "St. George"—we target the surrounding communities too: Santa Clara, Ivins, Washington, Hurricane, and La Verkin. Our local SEO strategy ensures you capture customers across the entire region.
+              Our local SEO strategy captures all these audiences: Santa Clara homeowners, Ivins retirees, Washington City families, Hurricane adventurers, and La Verkin locals. We optimize your Google Business Profile to dominate the Local Pack whether someone's searching from the Red Cliffs Mall parking lot or planning their move from San Diego.
             </p>
 
-            {/* Map Embed Placeholder */}
+            {/* Map Embed */}
             <div className="rounded-xl overflow-hidden border border-border/50 shadow-lg">
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d203641.4845457877!2d-113.73881075!3d37.0965278!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80ca44d0984277e9%3A0xb6a8e87e4b2a6bf6!2sSt.%20George%2C%20UT!5e0!3m2!1sen!2sus!4v1684000000000!5m2!1sen!2sus"

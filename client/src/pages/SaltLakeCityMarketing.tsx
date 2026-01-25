@@ -29,11 +29,11 @@ const slcSchema = {
 };
 
 const industries = [
-  { icon: Rocket, name: "SaaS and tech startups" },
-  { icon: Briefcase, name: "Professional services and consultants" },
-  { icon: Code, name: "E-commerce and DTC brands" },
-  { icon: Stethoscope, name: "Healthcare and med-tech" },
-  { icon: DollarSign, name: "Financial services and fintech" }
+  { icon: Rocket, name: "Point of the Mountain SaaS startups" },
+  { icon: Briefcase, name: "Lehi and Draper tech consultancies" },
+  { icon: Code, name: "E-commerce brands scaling beyond Shopify" },
+  { icon: Stethoscope, name: "Health tech and telehealth platforms" },
+  { icon: DollarSign, name: "Fintech disrupting traditional banking" }
 ];
 
 export default function SaltLakeCityMarketing() {
@@ -110,15 +110,18 @@ export default function SaltLakeCityMarketing() {
                 <Code className="w-6 h-6 text-primary" />
               </div>
               <h2 className="font-display font-semibold text-3xl md:text-4xl text-foreground">
-                Built for Tech-Savvy Clients
+                Built for Silicon Slopes Standards
               </h2>
             </div>
             <div className="space-y-4 font-serif text-lg text-muted-foreground leading-relaxed">
               <p>
-                You understand the difference between a template and custom code. You know what headless CMS means. You've probably tried Webflow or Framer and hit their limits.
+                When your neighbors are Qualtrics, Podium, and Pluralsight, you can't show up with a Squarespace template. Silicon Slopes companies—from the Thanksgiving Point tech corridor through Lehi, Draper, and Sandy—have technical founders who know the difference between a page builder and production-grade code.
               </p>
               <p>
-                We speak your language: Jamstack architecture, API integrations, React-based static generation. Our custom-coded sites are built for performance from the ground up—no page builders, no bloat, just clean code that converts.
+                You understand what headless CMS means. You've probably tried Webflow or Framer and hit their limits when integrating with your product. You need sub-second page loads because you're running paid traffic and every millisecond impacts conversion.
+              </p>
+              <p>
+                We speak your language: Jamstack architecture, API integrations, React-based static generation. Our custom-coded sites are built for performance from the ground up—no WordPress database queries, no page builder bloat, just clean code that converts paid traffic into demos and signups.
               </p>
             </div>
           </motion.div>
@@ -141,12 +144,20 @@ export default function SaltLakeCityMarketing() {
                 <TrendingUp className="w-6 h-6 text-primary" />
               </div>
               <h2 className="font-display font-semibold text-3xl md:text-4xl text-foreground">
-                Scale-Up Packages for Growing Startups
+                The Sweet Spot Between MVP and Enterprise
               </h2>
             </div>
-            <p className="font-serif text-lg text-muted-foreground leading-relaxed">
-              You've outgrown your MVP site but you're not ready for a $50,000 enterprise agency. We offer high-performance marketing sites designed specifically to convert paid traffic for SaaS products—at a price that makes sense for Series A budgets.
-            </p>
+            <div className="space-y-4 font-serif text-lg text-muted-foreground leading-relaxed">
+              <p>
+                You've closed your seed round. Your MVP site got you to product-market fit, but now you're scaling paid acquisition and that WordPress theme is killing your conversion rates. The enterprise agencies on 400 South want $75,000 for a rebrand. You're not there yet.
+              </p>
+              <p>
+                We work with Silicon Slopes startups at the inflection point: post-seed, pre-Series B companies that need marketing sites designed specifically to convert paid traffic—landing pages that load in under a second, A/B testing infrastructure, and analytics that prove ROI to your board.
+              </p>
+              <p>
+                Our packages are priced for Series A budgets, not enterprise marketing departments. You get the performance your growth team needs without the overhead of a downtown SLC agency.
+              </p>
+            </div>
           </motion.div>
         </div>
       </section>

@@ -28,11 +28,11 @@ const ogdenSchema = {
 };
 
 const industries = [
-  { icon: Shield, name: "Aerospace and defense contractors" },
-  { icon: Factory, name: "Manufacturing and industrial services" },
-  { icon: Utensils, name: "Downtown restaurants and retail" },
-  { icon: Briefcase, name: "Professional services and B2B" },
-  { icon: Mountain, name: "Outdoor recreation and tourism" }
+  { icon: Shield, name: "Hill AFB subcontractors and defense suppliers" },
+  { icon: Factory, name: "Business Depot Ogden manufacturers" },
+  { icon: Utensils, name: "Historic 25th Street restaurants and bars" },
+  { icon: Briefcase, name: "Professional services near Union Station" },
+  { icon: Mountain, name: "Snowbasin and Powder Mountain outfitters" }
 ];
 
 export default function OgdenWebDesign() {
@@ -109,15 +109,15 @@ export default function OgdenWebDesign() {
                 <Shield className="w-6 h-6 text-primary" />
               </div>
               <h2 className="font-display font-semibold text-3xl md:text-4xl text-foreground">
-                Secure Websites for Defense-Adjacent Businesses
+                Secure Websites for the Hill AFB Supply Chain
               </h2>
             </div>
             <div className="space-y-4 font-serif text-lg text-muted-foreground leading-relaxed">
               <p>
-                The aerospace and defense supply chain demands security. If you're a subcontractor, manufacturer, or service provider working with defense clients, your website can't afford to be compromised.
+                Hill Air Force Base isn't just Ogden's largest employer—it's the economic engine of Weber County, supporting thousands of jobs in aerospace maintenance, defense manufacturing, and logistics. If you're a subcontractor machining precision parts, a manufacturer supplying the F-35 program, or a service provider with base access, your digital presence matters to prime contractors evaluating your professionalism.
               </p>
               <p>
-                Our custom-coded static sites have no database vulnerabilities, no plugin exploits, and no backend login to brute-force. They meet the security standards your clients expect.
+                Our custom-coded static sites have no database vulnerabilities, no WordPress plugin exploits, and no backend login to brute-force. When your clients include Lockheed Martin, Northrop Grumman, or the Department of Defense, you need a website that reflects the security standards they expect—not a template that screams "small operation."
               </p>
             </div>
           </motion.div>
@@ -140,12 +140,20 @@ export default function OgdenWebDesign() {
                 <Building2 className="w-6 h-6 text-primary" />
               </div>
               <h2 className="font-display font-semibold text-3xl md:text-4xl text-foreground">
-                Supporting Ogden's Downtown Revival
+                From Historic 25th Street to the Future
               </h2>
             </div>
-            <p className="font-serif text-lg text-muted-foreground leading-relaxed">
-              Plan Ogden's focus on "Vibrant Downtown" means new restaurants, boutiques, and professional services need to capture the attention of younger urban residents. We combine full-stack marketing—SEO, social media, and branding—to help new businesses launch strong.
-            </p>
+            <div className="space-y-4 font-serif text-lg text-muted-foreground leading-relaxed">
+              <p>
+                Ogden's transformation from railroad town to outdoor recreation hub has made Historic 25th Street one of Utah's most vibrant destinations. The restored Union Station anchors a downtown where craft breweries like Roosters share the block with outdoor gear shops, farm-to-table restaurants, and creative agencies.
+              </p>
+              <p>
+                Meanwhile, young professionals priced out of Salt Lake City are discovering Ogden's affordability and direct FrontRunner access to downtown SLC. Plan Ogden's "Vibrant Downtown" initiative is attracting new restaurants, boutiques, and co-working spaces—all needing digital presence that matches the city's creative energy.
+              </p>
+              <p>
+                Whether you're a new gastropub on 25th Street competing for weekend crowds, a ski rental shop serving Snowbasin and Powder Mountain visitors, or a professional service firm near the Junction, we combine full-stack marketing—SEO, social media, and branding—to help Ogden businesses capture both locals and the growing tourist traffic.
+              </p>
+            </div>
           </motion.div>
         </div>
       </section>
