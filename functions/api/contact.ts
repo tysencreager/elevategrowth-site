@@ -5,6 +5,7 @@ interface Env {
 interface ContactRequest {
   name: string;
   email: string;
+  phone?: string;
   company?: string;
   service?: string;
   message: string;
@@ -19,7 +20,7 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
 
   try {
     const body = (await context.request.json()) as ContactRequest;
-    const { name, email, company, service, message } = body;
+    const { name, email, phone, company, service, message } = body;
 
     if (!email || !name || !message) {
       return new Response(JSON.stringify({ error: "Name, email, and message are required" }), {
@@ -55,6 +56,7 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
         attributes: {
           FIRSTNAME: firstName,
           LASTNAME: name.split(" ").slice(1).join(" ") || "",
+          PHONE: phone || "",
           COMPANY: company || "",
           SERVICE_INTEREST: service || "",
           SOURCE: "contact_form",
@@ -143,6 +145,11 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
       <td style="padding: 8px 0; font-weight: bold;">Email:</td>
       <td style="padding: 8px 0;"><a href="mailto:${email}">${email}</a></td>
     </tr>
+    ${phone ? `
+    <tr>
+      <td style="padding: 8px 0; font-weight: bold;">Phone:</td>
+      <td style="padding: 8px 0;"><a href="tel:${phone}">${phone}</a></td>
+    </tr>` : ""}
     ${company ? `
     <tr>
       <td style="padding: 8px 0; font-weight: bold;">Company:</td>

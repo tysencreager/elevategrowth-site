@@ -13,6 +13,7 @@ export default function Contact() {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
+    phone: "",
     company: "",
     service: "",
     message: ""
@@ -42,6 +43,7 @@ export default function Contact() {
         body: JSON.stringify({
           name: formData.name,
           email: formData.email,
+          phone: formData.phone,
           company: formData.company,
           service: formData.service,
           message: formData.message
@@ -50,7 +52,7 @@ export default function Contact() {
 
       if (response.ok) {
         setIsSubmitted(true);
-        setFormData({ name: "", email: "", company: "", service: "", message: "" });
+        setFormData({ name: "", email: "", phone: "", company: "", service: "", message: "" });
       } else {
         throw new Error("Form submission failed");
       }
@@ -147,6 +149,20 @@ export default function Contact() {
 
                   <div className="grid sm:grid-cols-2 gap-4">
                     <div className="space-y-2">
+                      <Label htmlFor="phone" className="font-serif">
+                        Phone Number
+                      </Label>
+                      <Input
+                        id="phone"
+                        name="phone"
+                        type="tel"
+                        value={formData.phone}
+                        onChange={handleChange}
+                        placeholder="(555) 123-4567"
+                        className="font-serif"
+                      />
+                    </div>
+                    <div className="space-y-2">
                       <Label htmlFor="company" className="font-serif">
                         Company/Business
                       </Label>
@@ -160,26 +176,27 @@ export default function Contact() {
                         className="font-serif"
                       />
                     </div>
-                    <div className="space-y-2">
-                      <Label htmlFor="service" className="font-serif">
-                        Service Interested In
-                      </Label>
-                      <select
-                        id="service"
-                        name="service"
-                        value={formData.service}
-                        onChange={handleChange}
-                        className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 font-serif"
-                      >
-                        <option value="">Select a service...</option>
-                        <option value="web-design">Web Design</option>
-                        <option value="seo">SEO Services</option>
-                        <option value="social-media">Social Media Management</option>
-                        <option value="branding">Branding & Creative Design</option>
-                        <option value="full-stack">Full-Stack Marketing</option>
-                        <option value="other">Other</option>
-                      </select>
-                    </div>
+                  </div>
+
+                  <div className="space-y-2">
+                    <Label htmlFor="service" className="font-serif">
+                      Service Interested In
+                    </Label>
+                    <select
+                      id="service"
+                      name="service"
+                      value={formData.service}
+                      onChange={handleChange}
+                      className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 font-serif"
+                    >
+                      <option value="">Select a service...</option>
+                      <option value="web-design">Web Design</option>
+                      <option value="seo">SEO Services</option>
+                      <option value="social-media">Social Media Management</option>
+                      <option value="branding">Branding & Creative Design</option>
+                      <option value="full-stack">Full-Stack Marketing</option>
+                      <option value="other">Other</option>
+                    </select>
                   </div>
 
                   <div className="space-y-2">
