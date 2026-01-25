@@ -1,1 +1,5 @@
+# 301 Redirects for old/changed URLs
+/meet-us /behind-elevate 301
+
+# SPA fallback - must be last
 /* /index.html 200
