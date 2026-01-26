@@ -8,6 +8,8 @@ import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { BokehEffect, FloatingOrbs, WaveDivider, GradientTransition } from "@/components/decorative";
 import { Rocket, Code, TrendingUp, Briefcase, Stethoscope, DollarSign, ArrowRight, Check } from "lucide-react";
+import heroImage from "@assets/hero_bw_1920.webp";
+import heroImage768 from "@assets/hero_bw_768.webp";
 
 // Schema for Salt Lake City location page
 const slcSchema = {
@@ -64,13 +66,29 @@ export default function SaltLakeCityMarketing() {
       <Navbar />
 
       {/* Hero Section */}
-      <section ref={heroRef} className="relative pt-28 md:pt-36 lg:pt-44 pb-16 md:pb-24 bg-background overflow-hidden">
-        <BokehEffect opacity={0.35} />
+      <section ref={heroRef} className="relative pt-28 md:pt-36 lg:pt-44 pb-16 md:pb-24 overflow-hidden min-h-[60vh] flex items-center">
+        {/* Background Image */}
+        <img
+          src={heroImage}
+          srcSet={`${heroImage768} 768w, ${heroImage} 1920w`}
+          alt=""
+          width={1920}
+          height={1080}
+          sizes="100vw"
+          fetchPriority="high"
+          decoding="sync"
+          loading="eager"
+          className="absolute inset-0 w-full h-full object-cover"
+        />
+        {/* Dark overlay for text readability */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-black/70" />
+        <BokehEffect opacity={0.25} />
         <FloatingOrbs variant="light" />
 
         <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.h1
-            className="font-display font-bold text-4xl md:text-5xl lg:text-6xl text-foreground mb-6 leading-tight"
+            className="font-display font-bold text-4xl md:text-5xl lg:text-6xl text-white mb-6 leading-tight"
+            style={{ textShadow: "0 2px 4px rgba(0,0,0,0.5), 0 4px 12px rgba(0,0,0,0.4)" }}
             variants={fadeInUp}
             custom={0}
             initial="hidden"
@@ -80,7 +98,8 @@ export default function SaltLakeCityMarketing() {
           </motion.h1>
 
           <motion.p
-            className="font-serif text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed"
+            className="font-serif text-xl md:text-2xl text-white/90 max-w-3xl mx-auto leading-relaxed"
+            style={{ textShadow: "0 2px 4px rgba(0,0,0,0.5)" }}
             variants={fadeInUp}
             custom={0.1}
             initial="hidden"

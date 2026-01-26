@@ -122,6 +122,12 @@ export default function Footer() {
                 >
                   Ogden
                 </Link>
+                <Link
+                  href="/las-vegas-digital-marketing"
+                  className="block font-serif text-sm text-muted-foreground hover:text-primary transition-colors"
+                >
+                  Las Vegas
+                </Link>
               </nav>
             </div>
 
