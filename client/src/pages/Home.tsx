@@ -128,7 +128,7 @@ export default function Home() {
         <ValueProp
           image={valueImage}
           imageAlt="Professional working on laptop"
-          title="You're Not Just Another Client. Your Business Deserves Marketing That Actually Works."
+          title="Web Design. SEO. Social Media. Branding. Ad Campaigns."
           description="Tired of being just a number at big agencies? At Elevate Growth Solutions, we're a boutique firm that gives every client the care and attention they deserve. We handle everything—web design, SEO, social media, branding, and ad campaigns—so you can save time, relieve stress, and focus on what you do best: running your business. Whether you're launching your first website or ready to scale with confidence, we're here to help you generate more leads and grow."
         />
       </div>
