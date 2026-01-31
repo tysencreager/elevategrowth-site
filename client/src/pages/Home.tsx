@@ -103,7 +103,7 @@ export default function Home() {
         backgroundImage={heroImage}
         imageSrcSet={`${heroImage768} 768w, ${heroImage} 1920w`}
         title="Custom-Coded Web Design & Full-Stack Marketing for Utah Businesses"
-        subtitle="Custom-coded websites typically delivered in under 30 days—not template bloat. Boutique marketing services that treat your business like our own."
+        subtitle={"Web Design. SEO. Ad Campaigns.\nSocial Media. Branding."}
         ctaText="See Our Services"
         ctaHref="/services"
         isLCP={true}
@@ -128,7 +128,7 @@ export default function Home() {
         <ValueProp
           image={valueImage}
           imageAlt="Professional working on laptop"
-          title="You're Not Just Another Client. Your Business Deserves Marketing That Actually Works."
+          title="Web Design. SEO. Social Media. Branding. Ad Campaigns."
           description="Tired of being just a number at big agencies? At Elevate Growth Solutions, we're a boutique firm that gives every client the care and attention they deserve. We handle everything—web design, SEO, social media, branding, and ad campaigns—so you can save time, relieve stress, and focus on what you do best: running your business. Whether you're launching your first website or ready to scale with confidence, we're here to help you generate more leads and grow."
         />
       </div>

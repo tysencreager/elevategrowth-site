@@ -90,7 +90,7 @@ export default function Hero({
 
         {subtitle && (
           <p
-            className="font-serif italic text-xl sm:text-2xl md:text-3xl text-white/95 mb-8 max-w-3xl mx-auto leading-relaxed"
+            className="font-serif italic text-xl sm:text-2xl md:text-3xl text-white/95 mb-8 max-w-3xl mx-auto leading-relaxed whitespace-pre-line"
             style={{ textShadow: "0 2px 4px rgba(0,0,0,0.5), 0 4px 12px rgba(0,0,0,0.3)" }}
             data-testid="text-hero-subtitle"
           >
