@@ -103,7 +103,7 @@ export default function Home() {
         backgroundImage={heroImage}
         imageSrcSet={`${heroImage768} 768w, ${heroImage} 1920w`}
         title="Custom-Coded Web Design & Full-Stack Marketing for Utah Businesses"
-        subtitle="Custom-coded websites typically delivered in under 30 days—not template bloat. Boutique marketing services that treat your business like our own."
+        subtitle="Web Design. SEO. Social Media. Branding. Ad Campaigns."
         ctaText="See Our Services"
         ctaHref="/services"
         isLCP={true}
