@@ -102,7 +102,7 @@ export default function Home() {
       <Hero
         backgroundImage={heroImage}
         imageSrcSet={`${heroImage768} 768w, ${heroImage} 1920w`}
-        title="Custom-Coded Web Design & Full-Stack Marketing for Utah Businesses"
+        title="Custom-Coded Web Design & Full-Stack Marketing for Growing Businesses"
         subtitle={"Web Design. SEO. Ad Campaigns.\nSocial Media. Branding."}
         ctaText="See Our Services"
         ctaHref="/services"
