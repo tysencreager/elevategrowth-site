@@ -164,10 +164,8 @@ interface PricingCardProps {
 function PricingCard({ image, title, description, items, note, featured }: PricingCardProps) {
   return (
     <div
-      className={`group relative bg-card rounded-xl overflow-hidden border-2 transition-all duration-300 hover:-translate-y-2 ${
-        featured
-          ? 'border-primary shadow-lg shadow-primary/20 ring-1 ring-primary/10'
-          : 'border-border hover:border-primary/50 hover:shadow-xl hover:shadow-primary/10'
+      className={`group relative bg-card rounded-xl overflow-hidden border-2 transition-all duration-300 hover:-translate-y-2 border-border hover:border-primary/50 hover:shadow-xl hover:shadow-primary/10 ${
+        featured ? 'ring-1 ring-primary/10' : ''
       }`}
     >
       {/* Featured badge */}
