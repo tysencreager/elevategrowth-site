@@ -39,6 +39,7 @@ const ServiceSEO = lazy(() => import("@/pages/services/SEO"));
 const ServiceSocialMedia = lazy(() => import("@/pages/services/SocialMedia"));
 const ServiceContentCreation = lazy(() => import("@/pages/services/ContentCreation"));
 const ServiceAdCampaigns = lazy(() => import("@/pages/services/AdCampaigns"));
+const ServiceAudits = lazy(() => import("@/pages/services/Audits"));
 
 // New SEO pages
 const WhyCustomCoded = lazy(() => import("@/pages/WhyCustomCoded"));
@@ -71,6 +72,7 @@ function Router() {
         <Route path="/services/social-media" component={ServiceSocialMedia} />
         <Route path="/services/content-creation" component={ServiceContentCreation} />
         <Route path="/services/ad-campaigns" component={ServiceAdCampaigns} />
+        <Route path="/services/audits" component={ServiceAudits} />
         <Route path="/behind-elevate" component={BehindElevate} />
         <Route path="/contact" component={Contact} />
         <Route path="/privacy-policy" component={PrivacyPolicy} />

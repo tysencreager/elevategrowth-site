@@ -440,7 +440,7 @@ export default function Pricing() {
   const auditServices = [
     {
       title: "Strategic Growth Audit (SEO)",
-      price: "$1,200",
+      price: "$500",
       description: "Stop guessing what works. We build a data-backed roadmap to get your brand found. This isn't just a keyword list; it's a blueprint for revenue.",
       features: [
         "Deep-Dive Keyword Research & Competitor Analysis",
@@ -452,7 +452,7 @@ export default function Pricing() {
     },
     {
       title: "Technical Health Check (Web Audit)",
-      price: "$900",
+      price: "$400",
       description: "A beautiful website is useless if Google can't read it. We look under the hood to fix the invisible breaks slowing you down.",
       features: [
         "Core Web Vitals & Speed Assessment",
@@ -464,7 +464,7 @@ export default function Pricing() {
     },
     {
       title: "The Full Stack Bundle",
-      price: "$2,000",
+      price: "$799",
       description: "The ultimate foundation. Combines technical repairs with forward-looking strategy for maximum impact.",
       features: [
         "Everything in the Strategic SEO Audit",
