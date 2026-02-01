@@ -1,6 +1,6 @@
 import ServicePageLayout from "@/components/ServicePageLayout";
 
-const auditsHero = "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1920&q=80";
+const auditsHero = "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1920&q=80&sat=-100";
 
 export default function Audits() {
   return (
