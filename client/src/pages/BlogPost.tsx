@@ -89,13 +89,63 @@ export default function BlogPost() {
     let currentList: string[] = [];
     let listType: 'ul' | 'ol' | null = null;
 
+    // Process inline formatting (bold, italic, links) within text
+    const processInlineFormatting = (text: string, keyPrefix: string): (string | JSX.Element)[] => {
+      const parts: (string | JSX.Element)[] = [];
+      // Combined regex for links, bold, and italic
+      const inlineRegex = /\[([^\]]+)\]\(([^)]+)\)|\*\*([^*]+)\*\*|\*([^*]+)\*/g;
+      let lastIndex = 0;
+      let match;
+
+      while ((match = inlineRegex.exec(text)) !== null) {
+        // Add text before match
+        if (match.index > lastIndex) {
+          parts.push(text.slice(lastIndex, match.index));
+        }
+
+        if (match[1] !== undefined && match[2] !== undefined) {
+          // Link: [text](url)
+          parts.push(
+            <Link key={`${keyPrefix}-link-${match.index}`} href={match[2]}>
+              <span className="text-primary hover:underline cursor-pointer">{match[1]}</span>
+            </Link>
+          );
+        } else if (match[3] !== undefined) {
+          // Bold: **text**
+          parts.push(
+            <strong key={`${keyPrefix}-bold-${match.index}`} className="font-semibold text-gray-900">
+              {match[3]}
+            </strong>
+          );
+        } else if (match[4] !== undefined) {
+          // Italic: *text*
+          parts.push(
+            <em key={`${keyPrefix}-italic-${match.index}`} className="italic">
+              {match[4]}
+            </em>
+          );
+        }
+
+        lastIndex = match.index + match[0].length;
+      }
+
+      // Add remaining text
+      if (lastIndex < text.length) {
+        parts.push(text.slice(lastIndex));
+      }
+
+      return parts.length > 0 ? parts : [text];
+    };
+
     const flushList = () => {
       if (currentList.length > 0 && listType) {
         const ListTag = listType;
         elements.push(
           <ListTag key={`list-${elements.length}`} className={`${listType === 'ul' ? 'list-disc' : 'list-decimal'} pl-6 mb-6 space-y-2`}>
             {currentList.map((item, i) => (
-              <li key={i} className="font-serif text-gray-700">{item}</li>
+              <li key={i} className="font-serif text-gray-700">
+                {processInlineFormatting(item, `list-${elements.length}-${i}`)}
+              </li>
             ))}
           </ListTag>
         );
@@ -123,15 +173,6 @@ export default function BlogPost() {
           </h3>
         );
       }
-      // Bold text lines
-      else if (trimmedLine.startsWith('**') && trimmedLine.endsWith('**')) {
-        flushList();
-        elements.push(
-          <p key={index} className="font-serif text-gray-900 font-semibold mb-2">
-            {trimmedLine.slice(2, -2)}
-          </p>
-        );
-      }
       // Unordered list items
       else if (trimmedLine.startsWith('- ')) {
         if (listType !== 'ul') {
@@ -140,35 +181,12 @@ export default function BlogPost() {
         }
         currentList.push(trimmedLine.slice(2));
       }
-      // Regular paragraphs
+      // Regular paragraphs (including those with inline formatting)
       else if (trimmedLine.length > 0) {
         flushList();
-        // Handle inline links and formatting
-        let processedText = trimmedLine;
-        // Convert markdown links to JSX
-        const linkRegex = /\[([^\]]+)\]\(([^)]+)\)/g;
-        const parts: (string | JSX.Element)[] = [];
-        let lastIndex = 0;
-        let match;
-
-        while ((match = linkRegex.exec(processedText)) !== null) {
-          if (match.index > lastIndex) {
-            parts.push(processedText.slice(lastIndex, match.index));
-          }
-          parts.push(
-            <Link key={`link-${match.index}`} href={match[2]}>
-              <span className="text-primary hover:underline cursor-pointer">{match[1]}</span>
-            </Link>
-          );
-          lastIndex = match.index + match[0].length;
-        }
-        if (lastIndex < processedText.length) {
-          parts.push(processedText.slice(lastIndex));
-        }
-
         elements.push(
           <p key={index} className="font-serif text-gray-700 leading-relaxed mb-4">
-            {parts.length > 0 ? parts : processedText}
+            {processInlineFormatting(trimmedLine, `p-${index}`)}
           </p>
         );
       }
