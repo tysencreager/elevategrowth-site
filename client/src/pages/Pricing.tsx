@@ -382,7 +382,7 @@ export default function Pricing() {
         { label: "Hosting & maintenance", price: "$70/mo" }
       ],
       note: "Single-page sites start at $1,299. Price increases with additional pages and functionality. Hosting includes 1 hour of monthly content edits and uptime monitoring.",
-      featured: false
+      featured: true
     },
     {
       image: brandingImg,
@@ -402,7 +402,8 @@ export default function Pricing() {
         { label: "Local SEO & Google Business Profile", price: "$400/mo" },
         { label: "Organic SEO (broader keyword targeting)", price: "$600/mo" }
       ],
-      note: "Per location pricing for Local SEO. Includes local citations, backlink outreach, technical SEO, keyword strategy, and monthly reporting. Blog posts/articles available for an additional fee. 3-month minimum commitment."
+      note: "Per location pricing for Local SEO. Includes local citations, backlink outreach, technical SEO, keyword strategy, and monthly reporting. Blog posts/articles available for an additional fee. 3-month minimum commitment.",
+      featured: true
     },
     {
       image: socialImg,
@@ -412,8 +413,7 @@ export default function Pricing() {
         { label: "Standard (2-3 posts/week)", price: "$1,000/mo" },
         { label: "Growth (4-5 posts/week)", price: "$1,800/mo" }
       ],
-      note: "All social media packages require a 3-month minimum commitment.",
-      featured: true
+      note: "All social media packages require a 3-month minimum commitment."
     },
     {
       image: contentImg,
