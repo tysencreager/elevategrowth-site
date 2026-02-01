@@ -170,7 +170,7 @@ function PricingCard({ image, title, description, items, note, featured }: Prici
     >
       {/* Featured badge */}
       {featured && (
-        <div className="absolute top-4 right-4 z-10 bg-primary text-white px-3 py-1 rounded-full text-sm font-sans font-medium flex items-center gap-1 shadow-lg shadow-primary/30">
+        <div className="absolute top-4 right-4 z-20 bg-primary text-white px-3 py-1 rounded-full text-sm font-sans font-medium flex items-center gap-1 shadow-lg shadow-primary/30">
           <Sparkles className="w-3 h-3" />
           Popular
         </div>
