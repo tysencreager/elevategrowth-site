@@ -40,7 +40,7 @@ When your website is complete, you choose the level of involvement that works fo
 
 **The pitch:** You run your business; we run your website.
 
-For $80/month, you get hosting plus one hour of monthly edits included. Need to update your phone number? Change a photo? Add a new service? Just email us, and it's done—usually within 24-48 hours.
+For $70/month, you get hosting plus one hour of monthly edits included. Need to update your phone number? Change a photo? Add a new service? Just email us, and it's done—usually within 24-48 hours.
 
 **Why clients love it:**
 - No risk of accidentally breaking the design
@@ -111,7 +111,7 @@ According to Google, [53% of mobile visitors abandon sites that take longer than
 
 Wix, Squarespace, and Shopify charge $15-50/month *just for platform access*—on top of hosting. Over five years, that's $900-3,000 for the privilege of using their builder.
 
-Your $80/month with us includes actual hosting, professional maintenance, and support. Not just access to a tool.
+Your $70/month with us includes actual hosting, professional maintenance, and support. Not just access to a tool.
 
 ### 4. Security by Design
 

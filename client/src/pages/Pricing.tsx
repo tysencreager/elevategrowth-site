@@ -381,7 +381,7 @@ export default function Pricing() {
       description: "Custom-coded websites built in days, not months. Fast, responsive, and designed to convert.",
       items: [
         { label: "Custom built websites", price: "From $1,299" },
-        { label: "Hosting & maintenance", price: "$80/mo" }
+        { label: "Hosting & maintenance", price: "$70/mo" }
       ],
       note: "Single-page sites start at $1,299. Price increases with additional pages and functionality. Hosting includes 1 hour of monthly content edits and uptime monitoring.",
       featured: false
