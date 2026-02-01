@@ -13,6 +13,7 @@ const serviceSubLinks = [
   { href: "/services/social-media", label: "Social Media" },
   { href: "/services/content-creation", label: "Content Creation" },
   { href: "/services/ad-campaigns", label: "Ad Campaigns" },
+  { href: "/services/audits", label: "Audits" },
   { href: "/pricing", label: "Pricing" }
 ];
 

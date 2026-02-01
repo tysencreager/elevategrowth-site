@@ -411,7 +411,7 @@ export default function Websites() {
         },
         {
           name: "Hosting & Maintenance",
-          price: "$80/mo",
+          price: "$70/mo",
           description: "Keep your site fast, secure, and up-to-date.",
           features: [
             "Managed cloud hosting",

@@ -32,7 +32,7 @@ export default function WebsiteHandoffOptions() {
       icon: Users,
       description: "You run your business; we run your website. No worries about breaking the layout, resizing images, or messing up the mobile view. Just email us the change, and it's done.",
       features: [
-        "$80/month includes hosting + 1 hour of monthly edits",
+        "$70/month includes hosting + 1 hour of monthly edits",
         "Uptime monitoring and security updates",
         "Priority support when you need changes",
         "Professional handling of all updates",
@@ -84,7 +84,7 @@ export default function WebsiteHandoffOptions() {
     {
       icon: DollarSign,
       title: "No Platform Fees Eating Your Budget",
-      description: "Wix, Squarespace, and Shopify charge $15-50/month forever just for the privilege of using their platform—on top of hosting costs. With a custom site, you're not paying a platform tax. Your $80/month hosting includes professional maintenance, not just access to a builder."
+      description: "Wix, Squarespace, and Shopify charge $15-50/month forever just for the privilege of using their platform—on top of hosting costs. With a custom site, you're not paying a platform tax. Your $70/month hosting includes professional maintenance, not just access to a builder."
     },
     {
       icon: Wrench,
@@ -436,7 +436,7 @@ export default function WebsiteHandoffOptions() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="font-serif text-xl md:text-2xl text-white/90 mb-10 max-w-2xl mx-auto leading-relaxed"
           >
-            Let's discuss which handoff option makes sense for your business. Custom websites start at $1,299, and hosting is just $80/month with professional support included.
+            Let's discuss which handoff option makes sense for your business. Custom websites start at $1,299, and hosting is just $70/month with professional support included.
           </motion.p>
 
           <motion.div
