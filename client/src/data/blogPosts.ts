@@ -133,7 +133,7 @@ Builders give you quick edits today but lock you into their platform forever, sl
 
 Custom code gives you a fast, secure, unique website that you actually own—with multiple options for how to manage it going forward.
 
-**Ready to build a website you actually own?** [Contact us](/contact) to discuss which handoff option makes sense for your business. Or [view our pricing](/pricing) to see what's included.
+**Ready to build a website you actually own?** [Contact us](/contact) to discuss which handoff option makes sense for your business.
     `,
     author: "Tysen Creager",
     date: "2026-01-22",
