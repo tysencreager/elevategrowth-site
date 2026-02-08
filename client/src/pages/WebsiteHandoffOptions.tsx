@@ -461,7 +461,7 @@ export default function WebsiteHandoffOptions() {
                 </Button>
               </motion.div>
             </a>
-            <Link href="/pricing">
+            <Link href="/contact">
               <motion.div
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.98 }}
@@ -472,7 +472,7 @@ export default function WebsiteHandoffOptions() {
                   variant="outline"
                   className="font-sans font-semibold text-lg px-8 py-6 bg-transparent text-white border-white/30 hover:bg-white/10 hover:border-white/50"
                 >
-                  View Pricing
+                  Contact Us
                 </Button>
               </motion.div>
             </Link>

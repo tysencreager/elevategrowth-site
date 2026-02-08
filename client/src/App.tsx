@@ -30,7 +30,8 @@ const SaltLakeCity = lazy(() => import("@/pages/SaltLakeCity"));
 const Blog = lazy(() => import("@/pages/Blog"));
 const BlogPost = lazy(() => import("@/pages/BlogPost"));
 const Testimonials = lazy(() => import("@/pages/Testimonials"));
-const Pricing = lazy(() => import("@/pages/Pricing"));
+// Pricing page temporarily hidden
+// const Pricing = lazy(() => import("@/pages/Pricing"));
 
 // Individual service pages
 const ServiceWebsites = lazy(() => import("@/pages/services/Websites"));
@@ -81,7 +82,8 @@ function Router() {
         <Route path="/blog" component={Blog} />
         <Route path="/blog/:slug" component={BlogPost} />
         <Route path="/testimonials" component={Testimonials} />
-        <Route path="/pricing" component={Pricing} />
+        {/* Pricing page temporarily hidden */}
+        {/* <Route path="/pricing" component={Pricing} /> */}
         <Route path="/why-custom-coded" component={WhyCustomCoded} />
         <Route path="/website-handoff-options" component={WebsiteHandoffOptions} />
         <Route path="/st-george-web-design" component={StGeorgeWebDesign} />
