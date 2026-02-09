@@ -29,9 +29,9 @@ export default function StickyCTABar({ hidden = false }: StickyCTABarProps) {
 
   return (
     <div
-      className={`fixed z-50 left-0 right-0 animate-in slide-in-from-bottom duration-500 ${
-        isMobile ? "bottom-0" : "top-0"
-      }`}
+      className={`fixed z-40 left-0 right-0 animate-in ${
+        isMobile ? "bottom-0 slide-in-from-bottom" : "top-20 slide-in-from-top"
+      } duration-500`}
       role="complementary"
       aria-label="Book a free strategy call"
     >

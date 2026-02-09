@@ -6,7 +6,7 @@ import { useIsMobile } from "@/hooks/use-mobile";
 
 const COOKIE_NAME = "egs-lead-popup-dismissed";
 const COOKIE_DAYS = 7;
-const SCROLL_THRESHOLD = 60; // percentage
+const SCROLL_THRESHOLD = 40; // percentage
 
 /** Set a cookie with an expiry in days */
 function setCookie(name: string, value: string, days: number) {

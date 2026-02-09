@@ -128,6 +128,16 @@ export default function MultiStepForm() {
 
   return (
     <div ref={stepContainerRef}>
+      {/* Form header — makes it clear this is a contact form */}
+      <div className="mb-6">
+        <h2 className="font-display text-2xl md:text-3xl font-semibold text-gray-900 mb-2">
+          Get Your Free Custom Plan
+        </h2>
+        <p className="font-serif text-gray-500 text-sm">
+          Answer a couple quick questions so we can tailor our recommendations to your business. We'll follow up within 24 hours.
+        </p>
+      </div>
+
       {/* Progress bar */}
       <div className="mb-8" role="progressbar" aria-valuenow={step} aria-valuemin={1} aria-valuemax={3} aria-label={`Step ${step} of 3`}>
         <div className="flex items-center justify-between mb-2">
@@ -371,7 +381,7 @@ export default function MultiStepForm() {
                 disabled={isSubmitting || !formData.name || !formData.email}
                 className="font-serif font-medium gap-2"
               >
-                {isSubmitting ? "Submitting..." : "Get My Custom Plan"}
+                {isSubmitting ? "Sending..." : "Submit & Get My Custom Plan"}
                 {!isSubmitting && <ArrowRight className="w-4 h-4" />}
               </Button>
             </div>
