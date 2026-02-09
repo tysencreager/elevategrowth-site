@@ -4,12 +4,7 @@ import { useIsMobile } from "@/hooks/use-mobile";
 
 const BOOKING_URL = "https://calendar.app.google/vDHVT1u28utXTzLt5";
 
-interface FloatingBookCallProps {
-  /** When true, add extra bottom spacing on mobile to avoid overlapping sticky bar */
-  stickyBarVisible?: boolean;
-}
-
-export default function FloatingBookCall({ stickyBarVisible = false }: FloatingBookCallProps) {
+export default function FloatingBookCall() {
   const [hasAnimated, setHasAnimated] = useState(false);
   const isMobile = useIsMobile();
 
@@ -19,15 +14,15 @@ export default function FloatingBookCall({ stickyBarVisible = false }: FloatingB
     return () => clearTimeout(timer);
   }, []);
 
-  // On mobile with sticky bar, push button above the bar (~60px)
-  const mobileOffset = isMobile && stickyBarVisible ? "bottom-[72px]" : "bottom-6";
+  // Hide entirely on mobile — the sticky CTA bar already covers booking there
+  if (isMobile) return null;
 
   return (
     <a
       href={BOOKING_URL}
       target="_blank"
       rel="noopener noreferrer"
-      className={`fixed right-5 z-50 flex items-center gap-2 bg-[#266D82] text-white pl-4 pr-5 py-3 rounded-full shadow-lg hover:bg-[#1e5a6b] transition-all duration-300 hover:shadow-xl group ${mobileOffset} ${
+      className={`fixed right-5 bottom-6 z-50 flex items-center gap-2 bg-[#266D82] text-white pl-4 pr-5 py-3 rounded-full shadow-lg hover:bg-[#1e5a6b] transition-all duration-300 hover:shadow-xl group ${
         !hasAnimated ? "animate-pulse-subtle" : ""
       }`}
       aria-label="Book a call"

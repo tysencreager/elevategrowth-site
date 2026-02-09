@@ -6,7 +6,7 @@ import FloatingBookCall from "@/components/FloatingBookCall";
 /**
  * Coordinates the lead funnel components so they don't conflict:
  * - Popup and sticky bar never show simultaneously
- * - Floating button adjusts position based on sticky bar visibility
+ * - Floating button hidden on mobile (sticky bar covers booking there)
  */
 export default function LeadFunnelManager() {
   const [popupOpen, setPopupOpen] = useState(false);
@@ -18,7 +18,7 @@ export default function LeadFunnelManager() {
         onClose={() => setPopupOpen(false)}
       />
       <StickyCTABar hidden={popupOpen} />
-      <FloatingBookCall stickyBarVisible={!popupOpen} />
+      <FloatingBookCall />
     </>
   );
 }
