@@ -1,68 +1,12 @@
-import { useState } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { Label } from "@/components/ui/label";
-import { Mail, Send, CheckCircle, Instagram, Calendar } from "lucide-react";
+import MultiStepForm from "@/components/MultiStepForm";
+import { Mail, CheckCircle, Instagram, Calendar } from "lucide-react";
 import { BokehEffect, FloatingOrbs, WaveDivider, GradientTransition } from "@/components/decorative";
 
 export default function Contact() {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    company: "",
-    service: "",
-    message: ""
-  });
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [isSubmitted, setIsSubmitted] = useState(false);
-  const [error, setError] = useState("");
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-    setFormData(prev => ({
-      ...prev,
-      [e.target.name]: e.target.value
-    }));
-  };
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    setError("");
-
-    try {
-      const response = await fetch("/api/contact", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify({
-          name: formData.name,
-          email: formData.email,
-          phone: formData.phone,
-          company: formData.company,
-          service: formData.service,
-          message: formData.message
-        })
-      });
-
-      if (response.ok) {
-        setIsSubmitted(true);
-        setFormData({ name: "", email: "", phone: "", company: "", service: "", message: "" });
-      } else {
-        throw new Error("Form submission failed");
-      }
-    } catch {
-      setError("Something went wrong. Please try emailing us directly at tysen@elevategrowth.solutions");
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
-
   return (
     <div className="min-h-screen flex flex-col">
       <SEO
@@ -82,7 +26,7 @@ export default function Contact() {
             Let's Connect
           </h1>
           <p className="font-serif text-xl text-gray-600 max-w-2xl mx-auto" data-testid="text-contact-description">
-            Ready to elevate your marketing? Fill out the form below and we'll get back to you within 24 hours.
+            Ready to elevate your marketing? Tell us about your goals and we'll put together a custom plan — free.
           </p>
         </div>
         <GradientTransition from="transparent" to="hsl(var(--background))" height="60px" />
@@ -93,151 +37,9 @@ export default function Contact() {
         <BokehEffect opacity={0.25} />
         <div className="relative z-10 max-w-6xl mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-12">
-            {/* Form */}
+            {/* Multi-Step Form */}
             <div>
-              {isSubmitted ? (
-                <div className="bg-green-50 border border-green-200 rounded-lg p-8 text-center">
-                  <CheckCircle className="w-16 h-16 text-green-500 mx-auto mb-4" />
-                  <h2 className="font-display text-2xl font-semibold text-gray-900 mb-2">
-                    Message Sent!
-                  </h2>
-                  <p className="font-serif text-gray-600">
-                    Thank you for reaching out. We'll get back to you within 24 hours.
-                  </p>
-                  <Button
-                    onClick={() => setIsSubmitted(false)}
-                    variant="outline"
-                    className="mt-6"
-                  >
-                    Send Another Message
-                  </Button>
-                </div>
-              ) : (
-                <form onSubmit={handleSubmit} className="space-y-6">
-                  <div className="grid sm:grid-cols-2 gap-4">
-                    <div className="space-y-2">
-                      <Label htmlFor="name" className="font-serif">
-                        Name <span className="text-red-500">*</span>
-                      </Label>
-                      <Input
-                        id="name"
-                        name="name"
-                        type="text"
-                        required
-                        value={formData.name}
-                        onChange={handleChange}
-                        placeholder="Your name"
-                        className="font-serif"
-                      />
-                    </div>
-                    <div className="space-y-2">
-                      <Label htmlFor="email" className="font-serif">
-                        Email <span className="text-red-500">*</span>
-                      </Label>
-                      <Input
-                        id="email"
-                        name="email"
-                        type="email"
-                        required
-                        value={formData.email}
-                        onChange={handleChange}
-                        placeholder="your@email.com"
-                        className="font-serif"
-                      />
-                    </div>
-                  </div>
-
-                  <div className="grid sm:grid-cols-2 gap-4">
-                    <div className="space-y-2">
-                      <Label htmlFor="phone" className="font-serif">
-                        Phone Number
-                      </Label>
-                      <Input
-                        id="phone"
-                        name="phone"
-                        type="tel"
-                        value={formData.phone}
-                        onChange={handleChange}
-                        placeholder="(555) 123-4567"
-                        className="font-serif"
-                      />
-                    </div>
-                    <div className="space-y-2">
-                      <Label htmlFor="company" className="font-serif">
-                        Company/Business
-                      </Label>
-                      <Input
-                        id="company"
-                        name="company"
-                        type="text"
-                        value={formData.company}
-                        onChange={handleChange}
-                        placeholder="Your business name"
-                        className="font-serif"
-                      />
-                    </div>
-                  </div>
-
-                  <div className="space-y-2">
-                    <Label htmlFor="service" className="font-serif">
-                      Service Interested In
-                    </Label>
-                    <select
-                      id="service"
-                      name="service"
-                      value={formData.service}
-                      onChange={handleChange}
-                      className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 font-serif"
-                    >
-                      <option value="">Select a service...</option>
-                      <option value="web-design">Web Design</option>
-                      <option value="seo">SEO Services</option>
-                      <option value="social-media">Social Media Management</option>
-                      <option value="branding">Branding & Creative Design</option>
-                      <option value="full-stack">Full-Stack Marketing</option>
-                      <option value="other">Other</option>
-                    </select>
-                  </div>
-
-                  <div className="space-y-2">
-                    <Label htmlFor="message" className="font-serif">
-                      Message <span className="text-red-500">*</span>
-                    </Label>
-                    <Textarea
-                      id="message"
-                      name="message"
-                      required
-                      value={formData.message}
-                      onChange={handleChange}
-                      placeholder="Tell us about your project, goals, or questions..."
-                      rows={6}
-                      className="font-serif resize-none"
-                    />
-                  </div>
-
-                  {error && (
-                    <div className="bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded-lg font-serif text-sm">
-                      {error}
-                    </div>
-                  )}
-
-                  <Button
-                    type="submit"
-                    size="lg"
-                    disabled={isSubmitting}
-                    className="w-full font-serif font-medium text-lg py-6 gap-2"
-                  >
-                    {isSubmitting ? (
-                      "Sending..."
-                    ) : (
-                      <>
-                        Send Message
-                        <Send className="h-5 w-5" />
-                      </>
-                    )}
-                  </Button>
-                </form>
-              )}
+              <MultiStepForm />
             </div>
 
             {/* Contact Info */}
@@ -275,7 +77,7 @@ export default function Contact() {
                   className="w-full font-serif font-medium gap-2"
                 >
                   <a
-                    href="https://calendar.app.google/yv9h833QYphwvfmJ7"
+                    href="https://calendar.app.google/vDHVT1u28utXTzLt5"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
