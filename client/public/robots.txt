@@ -1,4 +1,79 @@
 User-agent: *
 Allow: /
 
+# Prevent spider traps from SPA fallback behavior
+# Block recursive/nested path patterns that don't map to real pages
+
+# Prevent directory names repeating under themselves
+Disallow: /services/services/
+Disallow: /blog/blog/
+Disallow: /contact/contact/
+Disallow: /testimonials/testimonials/
+
+# Prevent cross-nesting of top-level sections
+Disallow: /services/blog/
+Disallow: /services/contact/
+Disallow: /services/testimonials/
+Disallow: /services/behind-elevate/
+Disallow: /services/privacy-policy/
+Disallow: /services/terms-and-conditions/
+Disallow: /services/salt-lake-city/
+Disallow: /services/salt-lake-city-marketing/
+Disallow: /services/st-george-web-design/
+Disallow: /services/ogden-web-design/
+Disallow: /services/las-vegas-digital-marketing/
+Disallow: /services/why-custom-coded/
+Disallow: /services/website-handoff-options/
+Disallow: /services/portfolio/
+
+Disallow: /blog/services/
+Disallow: /blog/contact/
+Disallow: /blog/testimonials/
+Disallow: /blog/behind-elevate/
+Disallow: /blog/privacy-policy/
+Disallow: /blog/terms-and-conditions/
+Disallow: /blog/salt-lake-city/
+Disallow: /blog/portfolio/
+
+Disallow: /contact/services/
+Disallow: /contact/blog/
+Disallow: /contact/testimonials/
+
+Disallow: /behind-elevate/services/
+Disallow: /behind-elevate/blog/
+Disallow: /behind-elevate/contact/
+
+Disallow: /testimonials/services/
+Disallow: /testimonials/blog/
+Disallow: /testimonials/contact/
+
+# Prevent location pages from nesting other sections
+Disallow: /salt-lake-city/services/
+Disallow: /salt-lake-city/blog/
+Disallow: /salt-lake-city/contact/
+Disallow: /salt-lake-city-marketing/services/
+Disallow: /salt-lake-city-marketing/blog/
+Disallow: /salt-lake-city-marketing/contact/
+Disallow: /st-george-web-design/services/
+Disallow: /st-george-web-design/blog/
+Disallow: /st-george-web-design/contact/
+Disallow: /ogden-web-design/services/
+Disallow: /ogden-web-design/blog/
+Disallow: /ogden-web-design/contact/
+Disallow: /las-vegas-digital-marketing/services/
+Disallow: /las-vegas-digital-marketing/blog/
+Disallow: /las-vegas-digital-marketing/contact/
+
+# Prevent legal/info pages from nesting
+Disallow: /privacy-policy/services/
+Disallow: /privacy-policy/blog/
+Disallow: /terms-and-conditions/services/
+Disallow: /terms-and-conditions/blog/
+Disallow: /why-custom-coded/services/
+Disallow: /why-custom-coded/blog/
+Disallow: /website-handoff-options/services/
+Disallow: /website-handoff-options/blog/
+Disallow: /portfolio/services/
+Disallow: /portfolio/blog/
+
 Sitemap: https://www.elevategrowth.solutions/sitemap.xml

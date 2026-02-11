@@ -3,5 +3,28 @@
 /home / 301
 /beginners-guide /blog 301
 
-# SPA fallback - must be last
-/* /index.html 200
+# SPA routes - serve index.html for known client-side routes
+# Cloudflare Pages will serve 404.html for any unmatched paths
+/services /index.html 200
+/services/websites /index.html 200
+/services/branding /index.html 200
+/services/seo /index.html 200
+/services/social-media /index.html 200
+/services/content-creation /index.html 200
+/services/ad-campaigns /index.html 200
+/services/audits /index.html 200
+/behind-elevate /index.html 200
+/contact /index.html 200
+/privacy-policy /index.html 200
+/terms-and-conditions /index.html 200
+/salt-lake-city /index.html 200
+/salt-lake-city-marketing /index.html 200
+/blog /index.html 200
+/blog/* /index.html 200
+/testimonials /index.html 200
+/why-custom-coded /index.html 200
+/website-handoff-options /index.html 200
+/st-george-web-design /index.html 200
+/ogden-web-design /index.html 200
+/las-vegas-digital-marketing /index.html 200
+/portfolio /index.html 200
