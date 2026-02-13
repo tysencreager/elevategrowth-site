@@ -59,7 +59,7 @@ export default function LogoBanner({ logos, title, subtitle }: LogoBannerProps) 
             animate={isInView ? "visible" : "hidden"}
           >
             {title && (
-              <h2 className="font-display font-semibold text-2xl md:text-3xl lg:text-4xl text-foreground mb-3">
+              <h2 className="font-display font-semibold text-2xl md:text-3xl lg:text-4xl text-primary mb-3">
                 {title}
               </h2>
             )}
@@ -100,7 +100,7 @@ export default function LogoBanner({ logos, title, subtitle }: LogoBannerProps) 
                     height={112}
                     loading="lazy"
                     decoding="async"
-                    className="h-20 md:h-28 w-auto max-w-[240px] md:max-w-[320px] object-contain transition-all duration-300 opacity-80 hover:opacity-100 hover:scale-110"
+                    className="h-20 md:h-28 w-auto max-w-[240px] md:max-w-[320px] object-contain transition-all duration-300 brightness-0 invert opacity-80 hover:opacity-100 hover:scale-110"
                     style={{
                       aspectRatio: '320 / 112',
                     }}
