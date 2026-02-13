@@ -6,9 +6,9 @@ export default function SEO() {
     <ServicePageLayout
       // SEO
       title="SEO & Local Search Optimization | Elevate Growth Solutions"
-      metaDescription="Get found by customers searching for your services. SEO and Google Business Profile optimization to dominate local search. Starting at $400/month per location."
+      metaDescription="Get found by customers searching for your services. SEO and Google Business Profile optimization to dominate local search. Starting at $500/month per location."
       ogTitle="SEO & Local Search Optimization Services"
-      ogDescription="Improve your search rankings and get found by customers actively looking for your services. Local SEO and Google Business Profile management starting at $400/month."
+      ogDescription="Improve your search rankings and get found by customers actively looking for your services. Local SEO and Google Business Profile management starting at $500/month."
 
       // Hero
       heroTitle="SEO & Local Search"
@@ -80,7 +80,7 @@ export default function SEO() {
       pricing={[
         {
           name: "Local SEO",
-          price: "$400/mo",
+          price: "$500/mo",
           description: "Per location pricing for comprehensive local search optimization.",
           features: [
             "Google Business Profile management",
@@ -98,7 +98,7 @@ export default function SEO() {
         },
         {
           name: "Organic SEO",
-          price: "$600/mo",
+          price: "$500/mo",
           description: "Broader keyword targeting and content strategy to rank beyond local searches.",
           features: [
             "Comprehensive keyword research",
