@@ -78,13 +78,13 @@ export default function LogoBanner({ logos, title, subtitle }: LogoBannerProps) 
         variants={bannerVariants}
         initial="hidden"
         animate={isInView ? "visible" : "hidden"}
-        style={{ backgroundColor: '#374151' }}
+        style={{ backgroundColor: '#000000' }}
       >
         {/* Logo scroll container */}
         <div className="relative">
           {/* Gradient fade on edges */}
-          <div className="absolute left-0 top-0 bottom-0 w-16 md:w-24 z-10 pointer-events-none" style={{ background: 'linear-gradient(to right, #374151, transparent)' }} />
-          <div className="absolute right-0 top-0 bottom-0 w-16 md:w-24 z-10 pointer-events-none" style={{ background: 'linear-gradient(to left, #374151, transparent)' }} />
+          <div className="absolute left-0 top-0 bottom-0 w-16 md:w-24 z-10 pointer-events-none" style={{ background: 'linear-gradient(to right, #000000, transparent)' }} />
+          <div className="absolute right-0 top-0 bottom-0 w-16 md:w-24 z-10 pointer-events-none" style={{ background: 'linear-gradient(to left, #000000, transparent)' }} />
 
           <div className="flex items-center gap-16 md:gap-24 lg:gap-28">
             <div className="flex items-center gap-16 md:gap-24 lg:gap-28 animate-scroll">
@@ -100,7 +100,7 @@ export default function LogoBanner({ logos, title, subtitle }: LogoBannerProps) 
                     height={112}
                     loading="lazy"
                     decoding="async"
-                    className="h-20 md:h-28 w-auto max-w-[240px] md:max-w-[320px] object-contain transition-all duration-300 brightness-0 invert opacity-80 hover:opacity-100 hover:scale-110"
+                    className="h-20 md:h-28 w-auto max-w-[240px] md:max-w-[320px] object-contain transition-all duration-300 opacity-80 hover:opacity-100 hover:scale-110"
                     style={{
                       aspectRatio: '320 / 112',
                     }}
