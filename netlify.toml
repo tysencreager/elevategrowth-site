@@ -2,17 +2,14 @@
   command = "npm ci && npm run build"
   publish = "dist/public"
 
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
-
+# Force HTTPS
 [[redirects]]
   from = "http://*elevategrowth.solutions/*"
   to = "https://www.elevategrowth.solutions/:splat"
   status = 301
   force = true
 
+# Force www
 [[redirects]]
   from = "https://elevategrowth.solutions/*"
   to = "https://www.elevategrowth.solutions/:splat"

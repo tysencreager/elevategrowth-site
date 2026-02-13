@@ -4,7 +4,6 @@
 /beginners-guide /blog 301
 
 # SPA routes - serve index.html for known client-side routes
-# Cloudflare Pages will serve 404.html for any unmatched paths
 /services /index.html 200
 /services/websites /index.html 200
 /services/branding /index.html 200
@@ -27,4 +26,5 @@
 /st-george-web-design /index.html 200
 /ogden-web-design /index.html 200
 /las-vegas-digital-marketing /index.html 200
-/portfolio /index.html 200
+# Catch-all: return 404 for any unmatched paths
+/* /404.html 404
