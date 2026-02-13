@@ -325,9 +325,9 @@ export default function Websites() {
     <ServicePageLayout
       // SEO
       title="Website Design & Development | Custom Websites | Elevate Growth Solutions"
-      metaDescription="Custom-coded websites built in days, not months. Fast, responsive, mobile-first design optimized for conversions. Starting at $1,299. Get a free consultation."
+      metaDescription="Custom-coded websites built in days, not months. Fast, responsive, mobile-first design optimized for conversions. Starting at $1,499. Get a free consultation."
       ogTitle="Custom Website Design & Development Services"
-      ogDescription="Professional websites that convert visitors into customers. Fast-loading, mobile-responsive, and SEO-optimized. Custom-coded solutions starting at $1,299."
+      ogDescription="Professional websites that convert visitors into customers. Fast-loading, mobile-responsive, and SEO-optimized. Custom-coded solutions starting at $1,499."
 
       // Hero
       heroTitle="Website Design & Development"
@@ -398,8 +398,8 @@ export default function Websites() {
       pricing={[
         {
           name: "Custom Built Website",
-          price: "From $1,299",
-          description: "Single-page sites start at $1,299. Price increases with additional pages and functionality.",
+          price: "From $1,499",
+          description: "Single-page sites start at $1,499. Price increases with additional pages and functionality.",
           features: [
             "Custom responsive design",
             "Mobile-optimized",
