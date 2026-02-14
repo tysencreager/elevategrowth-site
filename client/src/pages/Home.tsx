@@ -30,14 +30,16 @@ const clientLogos = [
   { src: "https://i.postimg.cc/QBMRL6gT/4.png", alt: "Summit Builders logo" },
   { src: "https://i.postimg.cc/94fv3xPy/5.png", alt: "Cascade Properties logo" },
   { src: "https://i.postimg.cc/d7SgJ8n3/6.png", alt: "Desert View Homes logo" },
-  { src: "https://i.postimg.cc/p913PDky/7.png", alt: "Mountain West Services logo" },
   { src: "https://i.postimg.cc/KKYdX97n/8.png", alt: "Utah Business Group logo" },
   { src: "https://i.postimg.cc/qtZWp8Qz/9.png", alt: "Red Rock Ventures logo" },
   { src: "https://i.postimg.cc/p913PDk5/10.png", alt: "Pioneer Financial logo" },
   { src: "https://i.postimg.cc/CZ69wjJf/11.png", alt: "Wasatch Consulting logo" },
   { src: "https://i.postimg.cc/Lq0Gmzv1/12.png", alt: "Beehive Marketing logo" },
-  { src: "https://i.postimg.cc/d7SgJ8nd/13.png", alt: "Southern Utah Realty logo" },
-  { src: "https://i.postimg.cc/f3g1Mx5m/14.png", alt: "Canyon Creek Dental logo" }
+  { src: "https://i.postimg.cc/hPSMb8dd/1.png", alt: "Ceron Building Solutions logo" },
+  { src: "https://i.postimg.cc/zXJpSwgH/2.png", alt: "DR Home Services logo" },
+  { src: "https://i.postimg.cc/KvZQr7ML/3.png", alt: "Blaze Collective logo" },
+  { src: "https://i.postimg.cc/GhczJPys/4.png", alt: "Dressler Detours logo" },
+  { src: "https://i.postimg.cc/fTw5j79f/5.png", alt: "Julian Speaks Life logo" }
 ];
 
 const testimonials = [
