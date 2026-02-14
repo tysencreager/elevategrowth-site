@@ -1,3 +1,4 @@
+import { useCallback } from "react";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
@@ -32,6 +33,15 @@ export default function Hero({
   height = "90vh",
   isLCP = false
 }: HeroProps) {
+  // Seek back to start just before the video ends to avoid the native loop gap
+  const handleSeamlessLoop = useCallback((e: React.SyntheticEvent<HTMLVideoElement>) => {
+    const video = e.currentTarget;
+    if (video.duration - video.currentTime < 0.3) {
+      video.currentTime = 0;
+      video.play();
+    }
+  }, []);
+
   // Simple, fast fade-in for all content at once - no stagger/buffering effect
   const contentVariants = {
     hidden: { opacity: 0 },
@@ -79,8 +89,8 @@ export default function Hero({
         <video
           autoPlay
           muted
-          loop
           playsInline
+          onTimeUpdate={handleSeamlessLoop}
           className="absolute inset-0 w-full h-full object-cover"
         >
           <source src={backgroundVideoSrc} type="video/mp4" />
