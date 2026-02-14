@@ -9,6 +9,8 @@ interface HeroProps {
   imageSrcSet?: string;
   /** Vimeo video ID for video background (overrides backgroundImage) */
   backgroundVideo?: string;
+  /** Direct video source URL for local MP4 video background */
+  backgroundVideoSrc?: string;
   title: string;
   subtitle?: string;
   ctaText?: string;
@@ -22,6 +24,7 @@ export default function Hero({
   backgroundImage,
   imageSrcSet,
   backgroundVideo,
+  backgroundVideoSrc,
   title,
   subtitle,
   ctaText,
@@ -71,6 +74,17 @@ export default function Hero({
             title="Background video"
           />
         </div>
+      )}
+      {backgroundVideoSrc && (
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover"
+        >
+          <source src={backgroundVideoSrc} type="video/mp4" />
+        </video>
       )}
       <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/50 to-black/70" />
 

@@ -17,6 +17,8 @@ import { MapPin, ArrowRight } from "lucide-react";
 import valueImage from "@assets/value_prop.webp";
 import ctaImage from "@assets/cta_background.webp";
 import ctaImage768 from "@assets/cta_background_768.webp";
+// Homepage header video
+import heroVideo from "@assets/homepage-headervideo.mp4";
 
 // Hero images from public folder - matches preload hints in index.html
 const heroImage = "/hero_bw_1920.webp";
@@ -104,6 +106,7 @@ export default function Home() {
       <Hero
         backgroundImage={heroImage}
         imageSrcSet={`${heroImage768} 768w, ${heroImage} 1920w`}
+        backgroundVideoSrc={heroVideo}
         title="Custom-Coded Web Design & Full-Stack Marketing for Growing Businesses"
         subtitle={"Web Design. SEO. Ad Campaigns.\nSocial Media. Branding."}
         ctaText="See Our Services"
