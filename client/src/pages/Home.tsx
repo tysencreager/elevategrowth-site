@@ -20,9 +20,6 @@ import ctaImage768 from "@assets/cta_background_768.webp";
 // Homepage header video
 import heroVideo from "@assets/homepage-headervideo.mp4";
 
-// Hero images from public folder - matches preload hints in index.html
-const heroImage = "/hero_bw_1920.webp";
-const heroImage768 = "/hero_bw_768.webp";
 
 const clientLogos = [
   { src: "https://i.postimg.cc/3N6Kn78Y/Dial_In_Logo_png.png", alt: "Dial In logo" },
@@ -104,8 +101,6 @@ export default function Home() {
       <Navbar />
 
       <Hero
-        backgroundImage={heroImage}
-        imageSrcSet={`${heroImage768} 768w, ${heroImage} 1920w`}
         backgroundVideoSrc={heroVideo}
         title="Custom-Coded Web Design & Full-Stack Marketing for Growing Businesses"
         subtitle={"Web Design. SEO. Ad Campaigns.\nSocial Media. Branding."}

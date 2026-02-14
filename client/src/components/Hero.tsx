@@ -46,7 +46,7 @@ export default function Hero({
 
   return (
     <div
-      className="relative flex items-center justify-center text-center px-4 pt-32 overflow-hidden"
+      className="relative flex items-center justify-center text-center px-4 pt-32 overflow-hidden bg-black"
       style={{ minHeight: height }}
     >
       {/* Background: Image shown immediately, video layers on top when loaded */}
