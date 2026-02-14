@@ -29,11 +29,10 @@ export default function LogoBanner({ logos, title, subtitle }: LogoBannerProps) 
   };
 
   const bannerVariants = {
-    hidden: { opacity: 0, y: 20, scale: 0.98 },
+    hidden: { opacity: 0, y: 20 },
     visible: {
       opacity: 1,
       y: 0,
-      scale: 1,
       transition: {
         duration: 0.8,
         ease: [0.22, 1, 0.36, 1],
@@ -51,8 +50,8 @@ export default function LogoBanner({ logos, title, subtitle }: LogoBannerProps) 
       className="py-12 md:py-16 lg:py-20 bg-background overflow-hidden"
       aria-label="Trusted by these companies"
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {(title || subtitle) && (
+      {(title || subtitle) && (
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             className="text-center mb-10 md:mb-12"
             variants={headerVariants}
@@ -60,7 +59,7 @@ export default function LogoBanner({ logos, title, subtitle }: LogoBannerProps) 
             animate={isInView ? "visible" : "hidden"}
           >
             {title && (
-              <h2 className="font-display font-semibold text-2xl md:text-3xl lg:text-4xl text-foreground mb-3">
+              <h2 className="font-display font-semibold text-2xl md:text-3xl lg:text-4xl text-primary mb-3">
                 {title}
               </h2>
             )}
@@ -70,64 +69,48 @@ export default function LogoBanner({ logos, title, subtitle }: LogoBannerProps) 
               </p>
             )}
           </motion.div>
-        )}
+        </div>
+      )}
 
-        {/* 3D Pop-up Banner */}
-        <motion.div
-          className="relative bg-accent rounded-2xl md:rounded-3xl py-8 md:py-10 overflow-hidden"
-          variants={bannerVariants}
-          initial="hidden"
-          animate={isInView ? "visible" : "hidden"}
-          style={{
-            boxShadow: `
-              0 4px 6px -1px rgba(0, 0, 0, 0.1),
-              0 10px 15px -3px rgba(0, 0, 0, 0.15),
-              0 20px 25px -5px rgba(0, 0, 0, 0.1),
-              0 -2px 0 0 rgba(255, 255, 255, 0.1) inset,
-              0 2px 0 0 rgba(0, 0, 0, 0.2) inset
-            `,
-            transform: 'perspective(1000px) rotateX(2deg)',
-            transformOrigin: 'center bottom'
-          }}
-        >
-          {/* Subtle gradient overlay for depth */}
-          <div className="absolute inset-0 bg-gradient-to-b from-white/10 via-transparent to-black/10 pointer-events-none" />
+      {/* Full-width Banner */}
+      <motion.div
+        className="relative w-full py-10 md:py-14 overflow-hidden"
+        variants={bannerVariants}
+        initial="hidden"
+        animate={isInView ? "visible" : "hidden"}
+        style={{ backgroundColor: '#000000' }}
+      >
+        {/* Logo scroll container */}
+        <div className="relative">
+          {/* Gradient fade on edges */}
+          <div className="absolute left-0 top-0 bottom-0 w-16 md:w-24 z-10 pointer-events-none" style={{ background: 'linear-gradient(to right, #000000, transparent)' }} />
+          <div className="absolute right-0 top-0 bottom-0 w-16 md:w-24 z-10 pointer-events-none" style={{ background: 'linear-gradient(to left, #000000, transparent)' }} />
 
-          {/* Shine effect */}
-          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent pointer-events-none" />
-
-          {/* Logo scroll container */}
-          <div className="relative">
-            {/* Gradient fade on edges */}
-            <div className="absolute left-0 top-0 bottom-0 w-16 md:w-24 bg-gradient-to-r from-accent to-transparent z-10 pointer-events-none" />
-            <div className="absolute right-0 top-0 bottom-0 w-16 md:w-24 bg-gradient-to-l from-accent to-transparent z-10 pointer-events-none" />
-
-            <div className="flex items-center gap-12 md:gap-16 lg:gap-20">
-              <div className="flex items-center gap-12 md:gap-16 lg:gap-20 animate-scroll">
-                {duplicatedLogos.map((logo, index) => (
-                  <div
-                    key={`logo-${index}`}
-                    className="flex-shrink-0 flex items-center justify-center h-12 md:h-16 w-auto"
-                  >
-                    <img
-                      src={logo.src}
-                      alt={logo.alt}
-                      width={160}
-                      height={56}
-                      loading="lazy"
-                      decoding="async"
-                      className="h-10 md:h-14 w-auto max-w-[120px] md:max-w-[160px] object-contain transition-all duration-300 opacity-90 hover:opacity-100 hover:scale-110"
-                      style={{
-                        aspectRatio: '160 / 56',
-                      }}
-                    />
-                  </div>
-                ))}
-              </div>
+          <div className="flex items-center gap-16 md:gap-24 lg:gap-28">
+            <div className="flex items-center gap-16 md:gap-24 lg:gap-28 animate-scroll">
+              {duplicatedLogos.map((logo, index) => (
+                <div
+                  key={`logo-${index}`}
+                  className="flex-shrink-0 flex items-center justify-center h-20 md:h-28 w-auto"
+                >
+                  <img
+                    src={logo.src}
+                    alt={logo.alt}
+                    width={320}
+                    height={112}
+                    loading="lazy"
+                    decoding="async"
+                    className="h-20 md:h-28 w-auto max-w-[240px] md:max-w-[320px] object-contain transition-all duration-300 brightness-0 invert opacity-80 hover:opacity-100 hover:scale-110"
+                    style={{
+                      aspectRatio: '320 / 112',
+                    }}
+                  />
+                </div>
+              ))}
             </div>
           </div>
-        </motion.div>
-      </div>
+        </div>
+      </motion.div>
 
       {/* CSS Animation */}
       <style>{`
