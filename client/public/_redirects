@@ -3,28 +3,11 @@
 /home / 301
 /beginners-guide /blog 301
 
-# SPA routes - serve index.html for known client-side routes
-/services /index.html 200
-/services/websites /index.html 200
-/services/branding /index.html 200
-/services/seo /index.html 200
-/services/social-media /index.html 200
-/services/content-creation /index.html 200
-/services/ad-campaigns /index.html 200
-/services/audits /index.html 200
-/behind-elevate /index.html 200
-/contact /index.html 200
-/privacy-policy /index.html 200
-/terms-and-conditions /index.html 200
-/salt-lake-city /index.html 200
-/salt-lake-city-marketing /index.html 200
-/blog /index.html 200
+# SPA fallback for dynamic routes (e.g. /blog/:slug) that don't have
+# pre-generated HTML files.  Static routes like /services, /contact, etc.
+# are served directly from their pre-generated index.html files, so they
+# don't need rewrite rules here.
 /blog/* /index.html 200
-/testimonials /index.html 200
-/why-custom-coded /index.html 200
-/website-handoff-options /index.html 200
-/st-george-web-design /index.html 200
-/ogden-web-design /index.html 200
-/las-vegas-digital-marketing /index.html 200
+
 # Catch-all: return 404 for any unmatched paths
 /* /404.html 404
