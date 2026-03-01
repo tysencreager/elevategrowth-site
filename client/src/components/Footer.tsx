@@ -122,12 +122,6 @@ export default function Footer() {
                 >
                   Ogden
                 </Link>
-                <Link
-                  href="/las-vegas-digital-marketing"
-                  className="block font-serif text-sm text-muted-foreground hover:text-primary transition-colors"
-                >
-                  Las Vegas
-                </Link>
               </nav>
             </div>
 
@@ -166,7 +160,7 @@ export default function Footer() {
 
           <div className="mt-12 pt-8 border-t border-card-border">
             <p className="font-serif text-sm text-muted-foreground text-center mb-2">
-              Proudly serving businesses in Utah and Nevada
+              Proudly serving businesses in Utah and nationwide
             </p>
             <p
               className="font-serif text-sm text-muted-foreground text-center"

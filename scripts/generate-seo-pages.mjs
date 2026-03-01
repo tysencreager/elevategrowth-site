@@ -197,13 +197,6 @@ const routes = [
     description:
       "Industrial-strength web design for Ogden\u2019s aerospace, manufacturing, and downtown businesses. Secure, fast, custom-coded websites built for Weber County companies.",
   },
-  {
-    path: "/las-vegas-digital-marketing",
-    title:
-      "Digital Marketing Services in Las Vegas, Nevada | Elevate Growth Solutions",
-    description:
-      "Elevate Growth Solutions offers premier digital marketing services in Las Vegas. Custom-coded websites, SEO, and full-stack marketing for Nevada businesses.",
-  },
 ];
 
 // ---------------------------------------------------------------------------

@@ -21,7 +21,6 @@ Disallow: /services/salt-lake-city/
 Disallow: /services/salt-lake-city-marketing/
 Disallow: /services/st-george-web-design/
 Disallow: /services/ogden-web-design/
-Disallow: /services/las-vegas-digital-marketing/
 Disallow: /services/why-custom-coded/
 Disallow: /services/website-handoff-options/
 Disallow: /services/portfolio/
@@ -60,10 +59,6 @@ Disallow: /st-george-web-design/contact/
 Disallow: /ogden-web-design/services/
 Disallow: /ogden-web-design/blog/
 Disallow: /ogden-web-design/contact/
-Disallow: /las-vegas-digital-marketing/services/
-Disallow: /las-vegas-digital-marketing/blog/
-Disallow: /las-vegas-digital-marketing/contact/
-
 # Prevent legal/info pages from nesting
 Disallow: /privacy-policy/services/
 Disallow: /privacy-policy/blog/

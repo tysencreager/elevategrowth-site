@@ -252,7 +252,7 @@ export default function Contact() {
                   24 hours to discuss your project.
                 </p>
                 <p className="font-serif text-gray-500 text-sm">
-                  Based in Las Vegas, Nevada — providing digital marketing services to businesses across the country.
+                  Providing digital marketing services to businesses across the country.
                 </p>
               </div>
 
