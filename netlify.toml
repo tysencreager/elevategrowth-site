@@ -15,3 +15,30 @@
   to = "https://www.elevategrowth.solutions/:splat"
   status = 301
   force = true
+
+# Redirect old/removed pages
+[[redirects]]
+  from = "/home"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/meet-us"
+  to = "/behind-elevate"
+  status = 301
+
+[[redirects]]
+  from = "/pricing"
+  to = "/services"
+  status = 301
+
+[[redirects]]
+  from = "/las-vegas-digital-marketing"
+  to = "/"
+  status = 301
+
+# SPA fallback — must be last
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200

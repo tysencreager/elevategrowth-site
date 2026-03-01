@@ -30,23 +30,11 @@ const organizationSchema = {
       "name": "Utah"
     },
     {
-      "@type": "State",
-      "name": "Nevada"
-    },
-    {
       "@type": "City",
       "name": "Salt Lake City",
       "containedInPlace": {
         "@type": "State",
         "name": "Utah"
-      }
-    },
-    {
-      "@type": "City",
-      "name": "Las Vegas",
-      "containedInPlace": {
-        "@type": "State",
-        "name": "Nevada"
       }
     }
   ],
@@ -65,7 +53,7 @@ const localBusinessSchema = {
   "image": "https://elevategrowth.solutions/assets/EGS-LOGO-E-icon.png",
   "url": "https://elevategrowth.solutions",
   "email": "tysen@elevategrowth.solutions",
-  "description": "Boutique web design agency and full-stack marketing services. Custom-coded websites typically delivered in under 30 days. Serving small businesses, startups, and entrepreneurs nationwide with a focus on Utah and Nevada.",
+  "description": "Boutique web design agency and full-stack marketing services. Custom-coded websites typically delivered in under 30 days. Serving small businesses, startups, and entrepreneurs nationwide with a focus on Utah.",
   "address": {
     "@type": "PostalAddress",
     "addressCountry": "US"
@@ -80,18 +68,9 @@ const localBusinessSchema = {
       "name": "Utah"
     },
     {
-      "@type": "State",
-      "name": "Nevada"
-    },
-    {
       "@type": "City",
       "name": "Salt Lake City",
       "containedInPlace": { "@type": "State", "name": "Utah" }
-    },
-    {
-      "@type": "City",
-      "name": "Las Vegas",
-      "containedInPlace": { "@type": "State", "name": "Nevada" }
     }
   ],
   "priceRange": "$$",
@@ -280,9 +259,7 @@ const marketingAgencySchema = {
     {"@type": "City", "name": "Ogden", "containedInPlace": {"@type": "State", "name": "Utah"}},
     {"@type": "City", "name": "Provo", "containedInPlace": {"@type": "State", "name": "Utah"}},
     {"@type": "City", "name": "Park City", "containedInPlace": {"@type": "State", "name": "Utah"}},
-    {"@type": "City", "name": "Las Vegas", "containedInPlace": {"@type": "State", "name": "Nevada"}},
     {"@type": "State", "name": "Utah"},
-    {"@type": "State", "name": "Nevada"},
     {"@type": "Country", "name": "United States"}
   ],
   "priceRange": "$$",

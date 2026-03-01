@@ -48,7 +48,6 @@ const WebsiteHandoffOptions = lazy(() => import("@/pages/WebsiteHandoffOptions")
 const StGeorgeWebDesign = lazy(() => import("@/pages/StGeorgeWebDesign"));
 const OgdenWebDesign = lazy(() => import("@/pages/OgdenWebDesign"));
 const SaltLakeCityMarketing = lazy(() => import("@/pages/SaltLakeCityMarketing"));
-const LasVegasDigitalMarketing = lazy(() => import("@/pages/LasVegasDigitalMarketing"));
 
 const NotFound = lazy(() => import("@/pages/not-found"));
 
@@ -89,7 +88,6 @@ function Router() {
         <Route path="/st-george-web-design" component={StGeorgeWebDesign} />
         <Route path="/ogden-web-design" component={OgdenWebDesign} />
         <Route path="/salt-lake-city-marketing" component={SaltLakeCityMarketing} />
-        <Route path="/las-vegas-digital-marketing" component={LasVegasDigitalMarketing} />
         <Route component={NotFound} />
       </Switch>
     </Suspense>
