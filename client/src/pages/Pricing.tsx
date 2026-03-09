@@ -401,8 +401,8 @@ export default function Pricing() {
       title: "Search & Local Presence",
       description: "Get found where it matters. Dominate local search and own your Google presence.",
       items: [
-        { label: "Local SEO & Google Business Profile", price: "$500/mo" },
-        { label: "Organic SEO (broader keyword targeting)", price: "$500/mo" }
+        { label: "Local SEO & Google Business Profile", price: "$750/mo" },
+        { label: "Organic SEO (broader keyword targeting)", price: "$750/mo" }
       ],
       note: "Per location pricing for Local SEO. Includes local citations, backlink outreach, technical SEO, keyword strategy, and monthly reporting. Blog posts/articles available for an additional fee. 3-month minimum commitment."
     },
@@ -539,11 +539,11 @@ export default function Pricing() {
         "@type": "Offer",
         "name": "Local SEO & Google Business Profile",
         "description": "Local SEO and Google Business Profile optimization including local citations, backlink outreach, technical SEO, keyword strategy, and monthly reporting",
-        "price": "500",
+        "price": "750",
         "priceCurrency": "USD",
         "priceSpecification": {
           "@type": "UnitPriceSpecification",
-          "price": "500",
+          "price": "750",
           "priceCurrency": "USD",
           "unitText": "per month per location"
         }
@@ -552,11 +552,11 @@ export default function Pricing() {
         "@type": "Offer",
         "name": "Organic SEO",
         "description": "Broader keyword targeting and content strategy to rank beyond local searches, including comprehensive keyword research, content planning, and backlink building",
-        "price": "500",
+        "price": "750",
         "priceCurrency": "USD",
         "priceSpecification": {
           "@type": "UnitPriceSpecification",
-          "price": "500",
+          "price": "750",
           "priceCurrency": "USD",
           "unitText": "per month"
         }
@@ -617,9 +617,9 @@ export default function Pricing() {
     <div className="min-h-screen">
       <SEO
         title="Pricing - Affordable Marketing Services | Elevate Growth Solutions"
-        description="Transparent, affordable pricing for quality marketing services. Custom websites from $1,499, SEO from $500/month, social media from $1,000/month. No hidden fees. Get a free consultation today."
+        description="Transparent, affordable pricing for quality marketing services. Custom websites from $1,499, SEO from $750/month, social media from $1,000/month. No hidden fees. Get a free consultation today."
         ogTitle="Marketing Services Pricing | Quality Services, Honest Prices"
-        ogDescription="Custom websites starting at $1,499. SEO from $500/month. Social media management from $1,000/month. Transparent pricing with no surprises. Schedule your free consultation."
+        ogDescription="Custom websites starting at $1,499. SEO from $750/month. Social media management from $1,000/month. Transparent pricing with no surprises. Schedule your free consultation."
       />
       <SchemaMarkup type="service" data={serviceOfferSchema} />
       <Navbar />
