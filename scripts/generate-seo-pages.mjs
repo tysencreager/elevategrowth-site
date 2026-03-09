@@ -53,10 +53,10 @@ const routes = [
     path: "/services/seo",
     title: "SEO & Local Search Optimization | Elevate Growth Solutions",
     description:
-      "Get found by customers searching for your services. SEO and Google Business Profile optimization to dominate local search. Starting at $500/month per location.",
+      "Get found by customers searching for your services. SEO and Google Business Profile optimization to dominate local search. Starting at $750/month per location.",
     ogTitle: "SEO & Local Search Optimization Services",
     ogDescription:
-      "Improve your search rankings and get found by customers actively looking for your services. Local SEO and Google Business Profile management starting at $500/month.",
+      "Improve your search rankings and get found by customers actively looking for your services. Local SEO and Google Business Profile management starting at $750/month.",
   },
   {
     path: "/services/social-media",
