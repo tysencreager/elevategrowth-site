@@ -85,7 +85,7 @@ export default function Footer() {
                   Contact
                 </Link>
                 <a
-                  href="https://tysencreager.com"
+                  href="https://tysencreager.my.canva.site/"
                   target="_blank"
                   rel="noopener noreferrer"
                   data-testid="link-footer-portfolio"
