@@ -2,7 +2,7 @@ import { useEffect } from "react";
 
 export default function Portfolio() {
   useEffect(() => {
-    window.location.href = "https://tysencreager.com";
+    window.location.href = "https://tysencreager.my.canva.site/";
   }, []);
 
   return (
