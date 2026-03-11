@@ -12,6 +12,7 @@ const organizationSchema = {
   "url": "https://elevategrowth.solutions",
   "logo": "https://elevategrowth.solutions/assets/EGS-LOGO-E-icon.png",
   "description": "Boutique web design agency and full-stack marketing services for small businesses, startups, and entrepreneurs.",
+  "telephone": "+1-435-817-9645",
   "email": "tysen@elevategrowth.solutions",
   "sameAs": [
     "https://www.instagram.com/elevategrowthsolutions"
@@ -52,6 +53,7 @@ const localBusinessSchema = {
   "name": "Elevate Growth Solutions",
   "image": "https://elevategrowth.solutions/assets/EGS-LOGO-E-icon.png",
   "url": "https://elevategrowth.solutions",
+  "telephone": "+1-435-817-9645",
   "email": "tysen@elevategrowth.solutions",
   "description": "Boutique web design agency and full-stack marketing services. Custom-coded websites typically delivered in under 30 days. Serving small businesses, startups, and entrepreneurs nationwide with a focus on Utah.",
   "address": {
@@ -241,7 +243,7 @@ const marketingAgencySchema = {
   "url": "https://elevategrowth.solutions",
   "logo": "https://i.postimg.cc/13kYHV2m/EGS-LOGO-Full.png",
   "image": "https://i.postimg.cc/sDW2ZZpm/EGS-SOCIAL-SHARING-IMAGE.png",
-  "telephone": "+1-803-600-4806",
+  "telephone": "+1-435-817-9645",
   "email": "tysen@elevategrowth.solutions",
   "founder": {
     "@type": "Person",

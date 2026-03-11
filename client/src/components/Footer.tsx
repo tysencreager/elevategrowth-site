@@ -1,6 +1,6 @@
 import logo from "@assets/EGS LOGO Full_1760211529668.png";
 import { Link } from "wouter";
-import { Instagram, Linkedin } from "lucide-react";
+import { Instagram, Linkedin, Phone } from "lucide-react";
 import EmailSubscription from "./EmailSubscription";
 
 export default function Footer() {
@@ -132,6 +132,14 @@ export default function Footer() {
               >
                 Contact
               </h3>
+              <a
+                href="tel:+14358179645"
+                className="flex items-center gap-2 font-serif text-sm text-muted-foreground hover:text-primary transition-colors mb-2"
+                data-testid="link-footer-phone"
+              >
+                <Phone className="h-4 w-4" />
+                (435) 817-9645
+              </a>
               <a
                 href="mailto:tysen@elevategrowth.solutions"
                 className="block font-serif text-sm text-muted-foreground hover:text-primary transition-colors mb-2"

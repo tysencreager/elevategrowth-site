@@ -18,7 +18,7 @@ const ogdenSchema = {
   "@id": "https://elevategrowth.solutions/#organization",
   "name": "Elevate Growth Solutions",
   "url": "https://elevategrowth.solutions/ogden-web-design",
-  "telephone": "+1-803-600-4806",
+  "telephone": "+1-435-817-9645",
   "areaServed": [
     {"@type": "City", "name": "Ogden", "containedInPlace": {"@type": "State", "name": "Utah"}},
     {"@type": "City", "name": "Roy", "containedInPlace": {"@type": "State", "name": "Utah"}},
