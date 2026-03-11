@@ -121,6 +121,55 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
       // Still return success - contact was added, email will retry
     }
 
+    // Step 3: Send notification to you about the new subscriber
+    const notificationResponse = await fetch("https://api.brevo.com/v3/smtp/email", {
+      method: "POST",
+      headers: {
+        "Accept": "application/json",
+        "Content-Type": "application/json",
+        "api-key": apiKey,
+      },
+      body: JSON.stringify({
+        sender: {
+          name: "Elevate Growth Website",
+          email: "tysen@elevategrowth.solutions",
+        },
+        to: [{ email: "tysen@elevategrowth.solutions" }],
+        subject: `New Email Subscriber: ${email}`,
+        htmlContent: `
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+</head>
+<body style="font-family: Arial, sans-serif; line-height: 1.6; color: #333; max-width: 600px; margin: 0 auto; padding: 20px;">
+  <h2 style="color: #333; border-bottom: 2px solid #0066cc; padding-bottom: 10px;">New Newsletter Subscriber</h2>
+
+  <table style="width: 100%; border-collapse: collapse;">
+    <tr>
+      <td style="padding: 8px 0; font-weight: bold; width: 120px;">Email:</td>
+      <td style="padding: 8px 0;"><a href="mailto:${email}">${email}</a></td>
+    </tr>
+    <tr>
+      <td style="padding: 8px 0; font-weight: bold;">Source:</td>
+      <td style="padding: 8px 0;">${source || "website"}</td>
+    </tr>
+  </table>
+
+  <p style="margin-top: 20px; color: #666; font-size: 14px;">
+    This subscriber has been added to your Newsletter Subscribers list in Brevo and received the welcome email.
+  </p>
+</body>
+</html>
+        `,
+      }),
+    });
+
+    if (!notificationResponse.ok) {
+      const errorData = await notificationResponse.text();
+      console.error("Brevo notification error:", errorData);
+    }
+
     return new Response(JSON.stringify({ success: true }), {
       status: 200,
       headers: { "Content-Type": "application/json", ...corsHeaders },
