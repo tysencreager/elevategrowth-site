@@ -84,6 +84,7 @@ export default function Footer() {
                 >
                   Contact
                 </Link>
+                {/* TODO: Re-enable portfolio link once tysencreager.com is back up
                 <a
                   href="https://tysencreager.my.canva.site/"
                   target="_blank"
@@ -93,6 +94,7 @@ export default function Footer() {
                 >
                   Portfolio
                 </a>
+                */}
               </nav>
             </div>
 
