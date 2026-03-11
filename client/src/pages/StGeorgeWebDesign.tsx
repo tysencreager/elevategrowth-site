@@ -18,7 +18,7 @@ const stGeorgeSchema = {
   "@id": "https://elevategrowth.solutions/#organization",
   "name": "Elevate Growth Solutions",
   "url": "https://elevategrowth.solutions/st-george-web-design",
-  "telephone": "+1-803-600-4806",
+  "telephone": "+1-435-817-9645",
   "areaServed": [
     {"@type": "City", "name": "St. George", "containedInPlace": {"@type": "State", "name": "Utah"}},
     {"@type": "City", "name": "Santa Clara", "containedInPlace": {"@type": "State", "name": "Utah"}},

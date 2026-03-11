@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
-import { Mail, Send, CheckCircle, Instagram, Calendar } from "lucide-react";
+import { Mail, Send, CheckCircle, Instagram, Calendar, Phone } from "lucide-react";
 import { BokehEffect, FloatingOrbs, WaveDivider, GradientTransition } from "@/components/decorative";
 
 export default function Contact() {
@@ -286,6 +286,21 @@ export default function Contact() {
               </div>
 
               <div className="space-y-4">
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0">
+                    <Phone className="w-5 h-5 text-primary" />
+                  </div>
+                  <div>
+                    <h3 className="font-display font-semibold text-gray-900">Call Us</h3>
+                    <a
+                      href="tel:+14358179645"
+                      className="font-serif text-primary hover:underline"
+                    >
+                      (435) 817-9645
+                    </a>
+                  </div>
+                </div>
+
                 <div className="flex items-start gap-4">
                   <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0">
                     <Mail className="w-5 h-5 text-primary" />
