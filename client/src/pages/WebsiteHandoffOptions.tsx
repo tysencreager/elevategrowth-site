@@ -98,7 +98,7 @@ export default function WebsiteHandoffOptions() {
       <SEO
         title="Website Handoff Options: What Happens After Your Site is Built | Elevate Growth Solutions"
         description="Wondering how to manage your custom website after it's built? Explore your options: ongoing support, headless CMS integration, or full code handover. Learn why custom code beats website builders."
-        ogImage="https://i.postimg.cc/sDW2ZZpm/EGS-SOCIAL-SHARING-IMAGE.png"
+        ogImage="https://www.elevategrowth.solutions/egs-social-sharing.png"
       />
       <Navbar />
 

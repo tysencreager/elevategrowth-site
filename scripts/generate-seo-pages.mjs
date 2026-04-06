@@ -14,7 +14,7 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const distDir = path.resolve(__dirname, "..", "dist", "public");
 const baseUrl = "https://www.elevategrowth.solutions";
 const defaultOgImage =
-  "https://www.elevategrowth.solutions/social-sharing.png";
+  "https://www.elevategrowth.solutions/egs-social-sharing.png";
 
 // ---------------------------------------------------------------------------
 // Route → meta-tag map  (mirrors the <SEO /> props used in each page component)

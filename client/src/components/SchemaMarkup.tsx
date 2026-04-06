@@ -242,7 +242,7 @@ const marketingAgencySchema = {
   "description": "Boutique marketing agency specializing in custom-coded website development and full-stack marketing services. Custom websites typically delivered in under 30 days with zero template bloat.",
   "url": "https://elevategrowth.solutions",
   "logo": "https://i.postimg.cc/13kYHV2m/EGS-LOGO-Full.png",
-  "image": "https://i.postimg.cc/sDW2ZZpm/EGS-SOCIAL-SHARING-IMAGE.png",
+  "image": "https://www.elevategrowth.solutions/egs-social-sharing.png",
   "telephone": "+1-435-817-9645",
   "email": "tysen@elevategrowth.solutions",
   "founder": {

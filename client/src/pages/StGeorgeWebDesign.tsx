@@ -61,7 +61,7 @@ export default function StGeorgeWebDesign() {
       <SEO
         title="Web Design & Marketing Services in St. George, Utah | Elevate Growth Solutions"
         description="St. George's fastest-growing businesses need websites that keep up. Custom-coded web design, SEO, and marketing for Washington County contractors, real estate, and service businesses."
-        ogImage="https://i.postimg.cc/sDW2ZZpm/EGS-SOCIAL-SHARING-IMAGE.png"
+        ogImage="https://www.elevategrowth.solutions/egs-social-sharing.png"
       />
       <SchemaMarkup type="custom" data={stGeorgeSchema} />
       <Navbar />
