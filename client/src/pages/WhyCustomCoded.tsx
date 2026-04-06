@@ -49,7 +49,7 @@ export default function WhyCustomCoded() {
       <SEO
         title="Why Custom-Coded Websites Outperform Templates | Elevate Growth Solutions"
         description="Discover why custom-coded websites load faster, rank higher, and convert better than WordPress or template-based sites. Zero bloat, maximum performance for Utah businesses."
-        ogImage="https://i.postimg.cc/sDW2ZZpm/EGS-SOCIAL-SHARING-IMAGE.png"
+        ogImage="https://www.elevategrowth.solutions/egs-social-sharing.png"
       />
       <Navbar />
 

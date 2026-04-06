@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 
-const ogImageDefault = "https://www.elevategrowth.solutions/social-sharing.png";
+const ogImageDefault = "https://www.elevategrowth.solutions/egs-social-sharing.png";
 const baseUrl = "https://www.elevategrowth.solutions";
 
 interface SEOProps {

@@ -59,7 +59,7 @@ export default function OgdenWebDesign() {
       <SEO
         title="Web Design & Marketing for Ogden Businesses | Elevate Growth Solutions"
         description="Industrial-strength web design for Ogden's aerospace, manufacturing, and downtown businesses. Secure, fast, custom-coded websites built for Weber County companies."
-        ogImage="https://i.postimg.cc/sDW2ZZpm/EGS-SOCIAL-SHARING-IMAGE.png"
+        ogImage="https://www.elevategrowth.solutions/egs-social-sharing.png"
       />
       <SchemaMarkup type="custom" data={ogdenSchema} />
       <Navbar />

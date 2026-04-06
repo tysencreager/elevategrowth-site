@@ -60,7 +60,7 @@ export default function SaltLakeCityMarketing() {
       <SEO
         title="Salt Lake City Web Design & Marketing | Elevate Growth Solutions"
         description="Performance-focused web design and marketing for Salt Lake City startups and growing businesses. Custom-coded sites that convert paid traffic and scale with you."
-        ogImage="https://i.postimg.cc/sDW2ZZpm/EGS-SOCIAL-SHARING-IMAGE.png"
+        ogImage="https://www.elevategrowth.solutions/egs-social-sharing.png"
       />
       <SchemaMarkup type="custom" data={slcSchema} />
       <Navbar />
