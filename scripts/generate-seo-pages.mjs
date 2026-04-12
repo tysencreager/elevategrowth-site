@@ -160,6 +160,16 @@ const routes = [
       "Expert marketing tips, web design insights, and SEO strategies to help small businesses grow online.",
   },
   {
+    path: "/portfolio",
+    title:
+      "Website Design Portfolio | Custom Websites for Small Businesses | Elevate Growth Solutions",
+    description:
+      "Browse our portfolio of custom-coded websites built for law firms, contractors, home services, e-commerce, beauty, and more. Full-Stack Marketing Strategist & Certified UX Designer serving businesses in Utah and nationwide.",
+    ogTitle: "Website Portfolio - Elevate Growth Solutions",
+    ogDescription:
+      "Custom-coded, mobile-responsive, SEO-optimized websites for small businesses. See our work across 8+ industries including legal, construction, beauty, and e-commerce.",
+  },
+  {
     path: "/testimonials",
     title:
       "Client Testimonials & Reviews | Elevate Growth Solutions",

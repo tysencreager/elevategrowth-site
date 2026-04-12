@@ -166,6 +166,9 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
             className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
             loading="lazy"
             decoding="async"
+            width={800}
+            height={450}
+            sizes="(max-width: 768px) 100vw, 50vw"
           />
           {project.isPast && (
             <div className="absolute top-4 right-4 z-20">
@@ -240,11 +243,11 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
 
 export default function Portfolio() {
   const headerRef = useRef(null);
-  const isHeaderInView = useInView(headerRef, { once: true, amount: 0.5 });
+  const isHeaderInView = useInView(headerRef, { once: true, amount: 0.2 });
   const aboutRef = useRef(null);
-  const isAboutInView = useInView(aboutRef, { once: true, amount: 0.3 });
+  const isAboutInView = useInView(aboutRef, { once: true, amount: 0.1 });
   const reviewsRef = useRef(null);
-  const isReviewsInView = useInView(reviewsRef, { once: true, amount: 0.2 });
+  const isReviewsInView = useInView(reviewsRef, { once: true, amount: 0.1 });
 
   const industries = [
     "Legal & Law Firms",
@@ -262,15 +265,21 @@ export default function Portfolio() {
 
   // Add structured data for SEO
   useEffect(() => {
-    const script = document.createElement("script");
-    script.type = "application/ld+json";
-    script.id = "portfolio-schema";
-    script.textContent = JSON.stringify({
+    // Portfolio page schema
+    const portfolioScript = document.createElement("script");
+    portfolioScript.type = "application/ld+json";
+    portfolioScript.id = "portfolio-schema";
+    portfolioScript.textContent = JSON.stringify({
       "@context": "https://schema.org",
       "@type": "CollectionPage",
-      "name": "Website Portfolio - Elevate Growth Solutions",
+      "name": "Website Design Portfolio - Elevate Growth Solutions",
       "description": "Custom-coded websites built by Elevate Growth Solutions for businesses across legal, construction, home services, e-commerce, beauty, and more.",
       "url": "https://www.elevategrowth.solutions/portfolio",
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "Elevate Growth Solutions",
+        "url": "https://www.elevategrowth.solutions",
+      },
       "mainEntity": {
         "@type": "ItemList",
         "itemListElement": projects.map((p, i) => ({
@@ -282,10 +291,50 @@ export default function Portfolio() {
         })),
       },
     });
-    document.head.appendChild(script);
+    document.head.appendChild(portfolioScript);
+
+    // Breadcrumb schema
+    const breadcrumbScript = document.createElement("script");
+    breadcrumbScript.type = "application/ld+json";
+    breadcrumbScript.id = "portfolio-breadcrumb";
+    breadcrumbScript.textContent = JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.elevategrowth.solutions/" },
+        { "@type": "ListItem", "position": 2, "name": "Website Portfolio", "item": "https://www.elevategrowth.solutions/portfolio" },
+      ],
+    });
+    document.head.appendChild(breadcrumbScript);
+
+    // Aggregate review rating schema
+    const reviewScript = document.createElement("script");
+    reviewScript.type = "application/ld+json";
+    reviewScript.id = "portfolio-reviews";
+    reviewScript.textContent = JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Elevate Growth Solutions",
+      "url": "https://www.elevategrowth.solutions",
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "5.0",
+        "bestRating": "5",
+        "ratingCount": reviews.length.toString(),
+      },
+      "review": reviews.map((r) => ({
+        "@type": "Review",
+        "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+        "author": { "@type": "Person", "name": r.author },
+        "reviewBody": r.quote,
+      })),
+    });
+    document.head.appendChild(reviewScript);
+
     return () => {
-      const existing = document.getElementById("portfolio-schema");
-      if (existing) existing.remove();
+      document.getElementById("portfolio-schema")?.remove();
+      document.getElementById("portfolio-breadcrumb")?.remove();
+      document.getElementById("portfolio-reviews")?.remove();
     };
   }, []);
 
@@ -296,6 +345,7 @@ export default function Portfolio() {
         description="Browse our portfolio of custom-coded websites built for law firms, contractors, home services, e-commerce, beauty, and more. Full-Stack Marketing Strategist & Certified UX Designer serving businesses in Utah and nationwide."
         ogTitle="Website Portfolio - Elevate Growth Solutions"
         ogDescription="Custom-coded, mobile-responsive, SEO-optimized websites for small businesses. See our work across 8+ industries including legal, construction, beauty, and e-commerce."
+        canonicalPath="/portfolio"
       />
 
       <Navbar />
@@ -398,8 +448,8 @@ export default function Portfolio() {
           <div className="grid md:grid-cols-2 gap-12 lg:gap-16">
             {/* Left: About & Certifications */}
             <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              animate={isAboutInView ? { opacity: 1, x: 0 } : {}}
+              initial={{ opacity: 0, y: 30 }}
+              animate={isAboutInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
             >
               <h2 className="font-display font-bold text-3xl md:text-4xl text-foreground mb-6">
@@ -447,8 +497,8 @@ export default function Portfolio() {
 
             {/* Right: Industries */}
             <motion.div
-              initial={{ opacity: 0, x: 30 }}
-              animate={isAboutInView ? { opacity: 1, x: 0 } : {}}
+              initial={{ opacity: 0, y: 30 }}
+              animate={isAboutInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1], delay: 0.2 }}
             >
               <h3 className="font-display font-bold text-3xl md:text-4xl text-foreground mb-6">
