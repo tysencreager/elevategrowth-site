@@ -131,25 +131,35 @@ const clientLogos = [
 
 const reviews = [
   {
+    quote: "I cannot say enough good things about Tysen. She created my website for Mac and Meadow Tallow, and it turned out more beautiful than I ever imagined it could be. Her vision is truly something special — she put so much thought, detail, and care into every part of the site, and it shows. Working with Tysen was beyond amazing from start to finish, and I'm so grateful for her. Honestly, she played a huge role in getting my business off the ground. If you're looking for someone with incredible vision, professionalism, and heart to help you with your website, SEO, marketing, socials etc., Tysen is IT.",
+    author: "McKenzie",
+    source: "Google Review",
+  },
+  {
+    quote: "Tysen is simply the best! Her work and professionalism is unmatched. I was completely overwhelmed with the website building process and she made it entirely seamless for me. Her communication was precise, and she truly listened to my needs and created a beautiful website that wholly encapsulates my business. I can't recommend her enough!",
+    author: "Ali Valencia",
+    source: "Google Review",
+  },
+  {
+    quote: "Tysen with Elevate Growth Solutions has been great to work with. She built me a website that I like and it was very affordable. She has been very helpful and knowledgeable. I'd recommend Elevate Growth Solutions.",
+    author: "Dilyn Walker",
+    source: "Google Review",
+  },
+  {
     quote: "Working with Tysen was seamless from start to finish. She quickly understood the vision for my brand and delivered thoughtful, strategic designs that aligned perfectly with my marketing goals. Her creativity and professionalism made the entire process easy and efficient. I'm so impressed with the final product!",
     author: "Cassidy",
     role: "Loan Officer",
+    source: "Google Review",
   },
   {
     quote: "My business has skyrocketed since Tysen (Elevate Growth Solutions) created my website. It's seriously SO stunning and seamless. Hire her! You will not regret it.",
     author: "McKenzie M.",
+    source: "Google Review",
   },
   {
     quote: "From the most basic detail to the biggest detail in marketing a business and it being a success, Tysen doesn't shy away from any of it. Her confidence in you and your business gives a new growth within you and lights a fire under you that helps you succeed. She's very patient and is so kind to answer questions and teach you anything about the work she's done.",
     author: "Abagail D.",
-  },
-  {
-    quote: "So grateful Tysen built my site. I have no regrets hiring her, she has done an incredible job!",
-    author: "Jessica P.",
-  },
-  {
-    quote: "I have loved working with Tysen, she's incredible! If you need help with marketing, she's your gal!",
-    author: "Cassidy G.",
+    source: "Google Review",
   },
 ];
 
@@ -553,11 +563,25 @@ export default function Portfolio() {
                   <div>
                     <cite className="not-italic font-sans font-semibold text-foreground text-sm">{review.author}</cite>
                     {review.role && <p className="text-xs text-primary font-medium">{review.role}</p>}
+                    {review.source && <p className="text-xs text-muted-foreground">{review.source}</p>}
                   </div>
                 </div>
               </motion.div>
             ))}
           </div>
+
+          <motion.div
+            className="text-center mt-10"
+            initial={{ opacity: 0, y: 20 }}
+            animate={isReviewsInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ delay: 0.6, duration: 0.5 }}
+          >
+            <Button variant="outline" className="gap-2 border-primary/20 hover:bg-primary/5 text-primary" asChild>
+              <a href="https://share.google/rxaaY7ZQVM2KJOR2l" target="_blank" rel="noopener noreferrer">
+                See All Reviews on Google <ExternalLink size={14} />
+              </a>
+            </Button>
+          </motion.div>
         </div>
       </section>
 
