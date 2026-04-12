@@ -84,17 +84,13 @@ export default function Footer() {
                 >
                   Contact
                 </Link>
-                {/* TODO: Re-enable portfolio link once tysencreager.com is back up
-                <a
-                  href="https://tysencreager.my.canva.site/"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <Link
+                  href="/portfolio"
                   data-testid="link-footer-portfolio"
                   className="block font-serif text-sm text-muted-foreground hover:text-primary transition-colors"
                 >
-                  Portfolio
-                </a>
-                */}
+                  Website Portfolio
+                </Link>
               </nav>
             </div>
 

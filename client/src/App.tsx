@@ -30,6 +30,7 @@ const SaltLakeCity = lazy(() => import("@/pages/SaltLakeCity"));
 const Blog = lazy(() => import("@/pages/Blog"));
 const BlogPost = lazy(() => import("@/pages/BlogPost"));
 const Testimonials = lazy(() => import("@/pages/Testimonials"));
+const Portfolio = lazy(() => import("@/pages/Portfolio"));
 // Pricing page temporarily hidden
 // const Pricing = lazy(() => import("@/pages/Pricing"));
 
@@ -81,6 +82,7 @@ function Router() {
         <Route path="/blog" component={Blog} />
         <Route path="/blog/:slug" component={BlogPost} />
         <Route path="/testimonials" component={Testimonials} />
+        <Route path="/portfolio" component={Portfolio} />
         {/* Pricing page temporarily hidden */}
         {/* <Route path="/pricing" component={Pricing} /> */}
         <Route path="/why-custom-coded" component={WhyCustomCoded} />

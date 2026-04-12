@@ -18,8 +18,8 @@ const serviceSubLinks = [
 
 const resultsSubLinks = [
   { href: "/testimonials", label: "Testimonials" },
-  // TODO: Re-enable portfolio link once tysencreager.com is back up
-  // { href: "https://tysencreager.my.canva.site/", label: "Portfolio", external: true }
+  { href: "/portfolio", label: "Website Portfolio" },
+  { href: "https://tysencreager.my.canva.site/", label: "Marketing Portfolio", external: true },
 ];
 
 const resourcesSubLinks = [

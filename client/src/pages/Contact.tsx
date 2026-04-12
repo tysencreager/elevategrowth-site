@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
-import { Mail, Send, CheckCircle, Instagram, Calendar, Phone } from "lucide-react";
+import { Mail, Send, CheckCircle, Instagram, Calendar, Phone, Star, ExternalLink } from "lucide-react";
 import { BokehEffect, FloatingOrbs, WaveDivider, GradientTransition } from "@/components/decorative";
 
 export default function Contact() {
@@ -332,6 +332,41 @@ export default function Contact() {
                     </a>
                   </div>
                 </div>
+              </div>
+
+              {/* Google Reviews CTA */}
+              <div className="bg-primary/5 border border-primary/20 rounded-xl p-6">
+                <div className="flex items-center gap-3 mb-3">
+                  <div className="w-10 h-10 bg-primary rounded-full flex items-center justify-center">
+                    <Star className="w-5 h-5 text-primary-foreground fill-primary-foreground" />
+                  </div>
+                  <div>
+                    <h3 className="font-display font-semibold text-gray-900">
+                      5-Star Rated on Google
+                    </h3>
+                    <div className="flex gap-0.5 mt-0.5">
+                      {[...Array(5)].map((_, i) => (
+                        <Star key={i} className="w-3.5 h-3.5 fill-primary text-primary" />
+                      ))}
+                    </div>
+                  </div>
+                </div>
+                <p className="font-serif text-gray-600 text-sm mb-4">
+                  See what our clients are saying about working with Elevate Growth Solutions.
+                </p>
+                <Button
+                  asChild
+                  variant="outline"
+                  className="w-full font-serif font-medium gap-2 border-primary/20 hover:bg-primary/5 text-primary"
+                >
+                  <a
+                    href="https://share.google/rxaaY7ZQVM2KJOR2l"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Read Our Google Reviews <ExternalLink className="w-4 h-4" />
+                  </a>
+                </Button>
               </div>
 
               <div className="bg-gray-50 rounded-lg p-6">
