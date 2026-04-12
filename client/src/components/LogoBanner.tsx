@@ -10,9 +10,10 @@ interface LogoBannerProps {
   logos: Logo[];
   title?: string;
   subtitle?: string;
+  bgColor?: string;
 }
 
-export default function LogoBanner({ logos, title, subtitle }: LogoBannerProps) {
+export default function LogoBanner({ logos, title, subtitle, bgColor = '#000000' }: LogoBannerProps) {
   const sectionRef = useRef(null);
   const isInView = useInView(sectionRef, { once: true, amount: 0.3 });
 
@@ -78,13 +79,13 @@ export default function LogoBanner({ logos, title, subtitle }: LogoBannerProps) 
         variants={bannerVariants}
         initial="hidden"
         animate={isInView ? "visible" : "hidden"}
-        style={{ backgroundColor: '#000000' }}
+        style={{ backgroundColor: bgColor }}
       >
         {/* Logo scroll container */}
         <div className="relative">
           {/* Gradient fade on edges */}
-          <div className="absolute left-0 top-0 bottom-0 w-16 md:w-24 z-10 pointer-events-none" style={{ background: 'linear-gradient(to right, #000000, transparent)' }} />
-          <div className="absolute right-0 top-0 bottom-0 w-16 md:w-24 z-10 pointer-events-none" style={{ background: 'linear-gradient(to left, #000000, transparent)' }} />
+          <div className="absolute left-0 top-0 bottom-0 w-16 md:w-24 z-10 pointer-events-none" style={{ background: `linear-gradient(to right, ${bgColor}, transparent)` }} />
+          <div className="absolute right-0 top-0 bottom-0 w-16 md:w-24 z-10 pointer-events-none" style={{ background: `linear-gradient(to left, ${bgColor}, transparent)` }} />
 
           <div className="flex items-center gap-16 md:gap-24 lg:gap-28">
             <div className="flex items-center gap-16 md:gap-24 lg:gap-28 animate-scroll">

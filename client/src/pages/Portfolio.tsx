@@ -133,33 +133,17 @@ const reviews = [
   {
     quote: "I cannot say enough good things about Tysen. She created my website for Mac and Meadow Tallow, and it turned out more beautiful than I ever imagined it could be. Her vision is truly something special — she put so much thought, detail, and care into every part of the site, and it shows. Working with Tysen was beyond amazing from start to finish, and I'm so grateful for her. Honestly, she played a huge role in getting my business off the ground. If you're looking for someone with incredible vision, professionalism, and heart to help you with your website, SEO, marketing, socials etc., Tysen is IT.",
     author: "McKenzie",
-    source: "Google Review",
+    timeAgo: "4 weeks ago",
   },
   {
     quote: "Tysen is simply the best! Her work and professionalism is unmatched. I was completely overwhelmed with the website building process and she made it entirely seamless for me. Her communication was precise, and she truly listened to my needs and created a beautiful website that wholly encapsulates my business. I can't recommend her enough!",
     author: "Ali Valencia",
-    source: "Google Review",
+    timeAgo: "2 weeks ago",
   },
   {
     quote: "Tysen with Elevate Growth Solutions has been great to work with. She built me a website that I like and it was very affordable. She has been very helpful and knowledgeable. I'd recommend Elevate Growth Solutions.",
     author: "Dilyn Walker",
-    source: "Google Review",
-  },
-  {
-    quote: "Working with Tysen was seamless from start to finish. She quickly understood the vision for my brand and delivered thoughtful, strategic designs that aligned perfectly with my marketing goals. Her creativity and professionalism made the entire process easy and efficient. I'm so impressed with the final product!",
-    author: "Cassidy",
-    role: "Loan Officer",
-    source: "Google Review",
-  },
-  {
-    quote: "My business has skyrocketed since Tysen (Elevate Growth Solutions) created my website. It's seriously SO stunning and seamless. Hire her! You will not regret it.",
-    author: "McKenzie M.",
-    source: "Google Review",
-  },
-  {
-    quote: "From the most basic detail to the biggest detail in marketing a business and it being a success, Tysen doesn't shy away from any of it. Her confidence in you and your business gives a new growth within you and lights a fire under you that helps you succeed. She's very patient and is so kind to answer questions and teach you anything about the work she's done.",
-    author: "Abagail D.",
-    source: "Google Review",
+    timeAgo: "4 weeks ago",
   },
 ];
 
@@ -257,19 +241,10 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
 export default function Portfolio() {
   const headerRef = useRef(null);
   const isHeaderInView = useInView(headerRef, { once: true, amount: 0.5 });
-  const statsRef = useRef(null);
-  const isStatsInView = useInView(statsRef, { once: true, amount: 0.5 });
   const aboutRef = useRef(null);
   const isAboutInView = useInView(aboutRef, { once: true, amount: 0.3 });
   const reviewsRef = useRef(null);
   const isReviewsInView = useInView(reviewsRef, { once: true, amount: 0.2 });
-
-  const stats = [
-    { value: `${projects.length}+`, label: "Websites Built" },
-    { value: "100%", label: "Custom Coded" },
-    { value: "8+", label: "Industries Served" },
-    { value: "5.0", label: "Google Rating", isStar: true },
-  ];
 
   const industries = [
     "Legal & Law Firms",
@@ -282,6 +257,7 @@ export default function Portfolio() {
     "Beauty & PMU",
     "Marketing Agencies",
     "Health & Skincare",
+    "And many more...",
   ];
 
   // Add structured data for SEO
@@ -360,40 +336,12 @@ export default function Portfolio() {
         </div>
       </section>
 
-      {/* Stats Section */}
-      <section ref={statsRef} className="py-12 bg-primary text-primary-foreground">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-            {stats.map((stat, index) => (
-              <motion.div
-                key={stat.label}
-                initial={{ opacity: 0, y: 20 }}
-                animate={isStatsInView ? { opacity: 1, y: 0 } : {}}
-                transition={{ delay: index * 0.15, duration: 0.5 }}
-              >
-                <motion.div
-                  className="font-display font-bold text-3xl md:text-4xl lg:text-5xl mb-2 flex items-center justify-center gap-1"
-                  initial={{ scale: 0.5 }}
-                  animate={isStatsInView ? { scale: 1 } : {}}
-                  transition={{ delay: index * 0.15 + 0.2, type: "spring", stiffness: 200 }}
-                >
-                  {stat.value}
-                  {stat.isStar && <Star className="w-7 h-7 md:w-9 md:h-9 fill-primary-foreground" />}
-                </motion.div>
-                <div className="font-sans text-sm md:text-base text-primary-foreground/80">
-                  {stat.label}
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Logo Banner */}
       <LogoBanner
         logos={clientLogos}
         title="Trusted By Growing Businesses"
         subtitle="We've partnered with businesses across industries to build websites and marketing strategies that drive real results"
+        bgColor="#266D82"
       />
 
       {/* Portfolio Grid */}
@@ -410,7 +358,7 @@ export default function Portfolio() {
               Selected Website Work
             </h2>
             <p className="font-serif text-muted-foreground text-lg max-w-2xl mx-auto">
-              From full websites to high-converting ad landing pages, each project is custom-built to meet the unique needs of the business.
+              Here are a few of the custom websites we've built. From full business sites to high-converting ad landing pages, each project is built from the ground up to meet the unique needs of the business.
             </p>
           </motion.div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -418,6 +366,14 @@ export default function Portfolio() {
               <ProjectCard key={project.title} project={project} index={index} />
             ))}
           </div>
+          <motion.p
+            className="text-center mt-10 font-serif text-muted-foreground italic"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+          >
+            These are just a few of the websites we've built. We've completed many more projects across a variety of industries.
+          </motion.p>
         </div>
       </section>
 
@@ -484,7 +440,7 @@ export default function Portfolio() {
                 Industries We <span className="text-primary">Serve</span>
               </h3>
               <p className="font-serif text-muted-foreground mb-8 leading-relaxed">
-                We've worked with businesses across a wide range of industries, creating tailored web solutions that speak to each audience. No templates — every site is built from the ground up.
+                We serve all industries — not just the ones listed here. No matter your niche, we create tailored web solutions that speak to your audience. No templates — every site is built from the ground up.
               </p>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 {industries.map((industry, index) => (
@@ -516,55 +472,81 @@ export default function Portfolio() {
         </div>
       </section>
 
-      {/* Reviews Section */}
+      {/* Google Reviews Section */}
       <section ref={reviewsRef} className="py-16 md:py-24 bg-gradient-to-b from-background to-accent/5 overflow-hidden">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             className="text-center mb-12"
             initial={{ opacity: 0, y: 20 }}
             animate={isReviewsInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6 }}
           >
-            <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full mb-4">
-              <Star className="w-4 h-4 fill-primary" />
-              <span className="font-medium text-sm">5-Star Google Reviews</span>
+            {/* Google branding header */}
+            <div className="inline-flex items-center gap-2 mb-4">
+              <svg viewBox="0 0 24 24" className="w-6 h-6" aria-hidden="true">
+                <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 01-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z" fill="#4285F4"/>
+                <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
+                <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/>
+                <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
+              </svg>
+              <span className="font-sans font-semibold text-lg text-foreground">Google Reviews</span>
             </div>
-            <h2 className="font-display font-bold text-3xl md:text-4xl text-foreground mb-4">
+            <h2 className="font-display font-bold text-3xl md:text-4xl text-foreground mb-3">
               What Our <span className="text-primary">Clients</span> Say
             </h2>
+            <div className="flex items-center justify-center gap-2 mb-2">
+              <span className="font-sans font-bold text-2xl text-foreground">5.0</span>
+              <div className="flex gap-0.5">
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} className="w-5 h-5 fill-[#FBBC05] text-[#FBBC05]" />
+                ))}
+              </div>
+            </div>
+            <p className="font-sans text-sm text-muted-foreground">Based on Google Reviews</p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {reviews.map((review, index) => (
               <motion.div
                 key={review.author}
-                className="relative rounded-2xl p-6 bg-card border-2 border-primary/10 hover:border-primary/25 transition-all"
+                className="bg-white rounded-lg border border-gray-200 shadow-sm p-6 flex flex-col"
                 initial={{ opacity: 0, y: 30 }}
                 animate={isReviewsInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ delay: index * 0.1, duration: 0.5 }}
               >
-                <div className="absolute -top-2 -right-2 text-7xl font-serif text-primary/10 pointer-events-none select-none leading-none">
-                  "
-                </div>
-                <div className="flex gap-0.5 mb-3">
-                  {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="w-4 h-4 fill-primary text-primary" />
-                  ))}
-                </div>
-                <p className="font-serif italic text-foreground leading-relaxed mb-4 text-sm md:text-base">
-                  "{review.quote}"
-                </p>
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-full bg-gradient-to-br from-primary to-primary/70 flex items-center justify-center shadow-md">
-                    <span className="font-display font-bold text-primary-foreground text-sm">
+                {/* Google-style header */}
+                <div className="flex items-center gap-3 mb-3">
+                  <div className="w-10 h-10 rounded-full bg-[#E8710A] flex items-center justify-center">
+                    <span className="font-sans font-medium text-white text-base">
                       {review.author.charAt(0)}
                     </span>
                   </div>
                   <div>
-                    <cite className="not-italic font-sans font-semibold text-foreground text-sm">{review.author}</cite>
-                    {review.role && <p className="text-xs text-primary font-medium">{review.role}</p>}
-                    {review.source && <p className="text-xs text-muted-foreground">{review.source}</p>}
+                    <p className="font-sans font-medium text-foreground text-sm leading-tight">{review.author}</p>
                   </div>
+                </div>
+                {/* Stars + time */}
+                <div className="flex items-center gap-2 mb-3">
+                  <div className="flex gap-0.5">
+                    {[...Array(5)].map((_, i) => (
+                      <Star key={i} className="w-4 h-4 fill-[#FBBC05] text-[#FBBC05]" />
+                    ))}
+                  </div>
+                  <span className="font-sans text-xs text-muted-foreground">{review.timeAgo}</span>
+                </div>
+                {/* Review text */}
+                <p className="font-sans text-foreground leading-relaxed text-sm flex-1">
+                  {review.quote}
+                </p>
+                {/* Google attribution */}
+                <div className="flex items-center gap-1.5 mt-4 pt-3 border-t border-gray-100">
+                  <svg viewBox="0 0 24 24" className="w-4 h-4" aria-hidden="true">
+                    <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 01-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z" fill="#4285F4"/>
+                    <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
+                    <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/>
+                    <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
+                  </svg>
+                  <span className="font-sans text-xs text-muted-foreground">Posted on Google</span>
                 </div>
               </motion.div>
             ))}
@@ -576,11 +558,44 @@ export default function Portfolio() {
             animate={isReviewsInView ? { opacity: 1, y: 0 } : {}}
             transition={{ delay: 0.6, duration: 0.5 }}
           >
-            <Button variant="outline" className="gap-2 border-primary/20 hover:bg-primary/5 text-primary" asChild>
+            <Button size="lg" className="gap-2 font-serif font-medium text-base px-8 py-6" asChild>
               <a href="https://share.google/rxaaY7ZQVM2KJOR2l" target="_blank" rel="noopener noreferrer">
                 See All Reviews on Google <ExternalLink size={14} />
               </a>
             </Button>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Marketing & Design Portfolio Section */}
+      <section className="py-16 md:py-24 bg-primary/5 border-y border-primary/10">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <h2 className="font-display font-bold text-3xl md:text-4xl text-foreground mb-4">
+              Looking for Our Marketing &amp; Design Work?
+            </h2>
+            <p className="font-serif text-muted-foreground text-lg max-w-2xl mx-auto mb-10 leading-relaxed">
+              This page showcases our website portfolio. To see our full range of marketing, branding, and design work — including social media content, ad creatives, brand kits, and more — check out our marketing portfolio.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button size="lg" className="font-serif font-medium text-base md:text-lg px-10 py-6 gap-2 group" asChild>
+                <a href="https://tysencreager.my.canva.site/" target="_blank" rel="noopener noreferrer">
+                  View Marketing Portfolio
+                  <ExternalLink className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                </a>
+              </Button>
+              <Button size="lg" variant="outline" className="font-serif font-medium text-base md:text-lg px-10 py-6 gap-2 group border-primary/30 text-primary hover:bg-primary/5" asChild>
+                <a href="https://tysencreager.my.canva.site/" target="_blank" rel="noopener noreferrer">
+                  View Design Portfolio
+                  <ExternalLink className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                </a>
+              </Button>
+            </div>
           </motion.div>
         </div>
       </section>
