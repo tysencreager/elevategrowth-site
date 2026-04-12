@@ -99,9 +99,9 @@ const projects: Project[] = [
     features: ["Mobile Responsive", "SEO Optimized"],
   },
   {
-    title: "Beauty Markd",
-    description: "High-converting ad landing page for a certified PMU artist in American Fork, Utah. Designed to drive bookings for nano brows, lip blushing, and permanent eyeliner services.",
-    tags: ["Ad Landing Page", "Beauty", "PMU", "Conversion Optimized"],
+    title: "Ad Landing Page",
+    description: "High-converting landing page designed for paid ad campaigns. Built to drive bookings and conversions with clear calls-to-action, fast load times, and mobile-first design.",
+    tags: ["Ad Landing Page", "Conversion Optimized", "Paid Ads", "Lead Generation"],
     image: beautymarkdImg,
     link: "https://beautymarkd-landingpage.pages.dev/",
     isLandingPage: true,
@@ -333,6 +333,21 @@ export default function Portfolio() {
           >
             Full-Stack Marketing Strategist & Certified UX Designer. Every website is custom-coded, mobile responsive, and SEO optimized to help your business grow.
           </motion.p>
+          <motion.div
+            className="mt-8"
+            initial={{ opacity: 0, y: 20 }}
+            animate={isHeaderInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.6, delay: 0.4 }}
+          >
+            <p className="font-serif text-sm text-muted-foreground mb-3">
+              Looking for our marketing &amp; design work?
+            </p>
+            <Button variant="outline" className="gap-2 font-serif font-medium border-primary/30 text-primary hover:bg-primary/5" asChild>
+              <a href="https://tysencreager.my.canva.site/" target="_blank" rel="noopener noreferrer">
+                View Marketing &amp; Design Portfolio <ExternalLink size={14} />
+              </a>
+            </Button>
+          </motion.div>
         </div>
       </section>
 
@@ -582,20 +597,12 @@ export default function Portfolio() {
             <p className="font-serif text-muted-foreground text-lg max-w-2xl mx-auto mb-10 leading-relaxed">
               This page showcases our website portfolio. To see our full range of marketing, branding, and design work — including social media content, ad creatives, brand kits, and more — check out our marketing portfolio.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="font-serif font-medium text-base md:text-lg px-10 py-6 gap-2 group" asChild>
-                <a href="https://tysencreager.my.canva.site/" target="_blank" rel="noopener noreferrer">
-                  View Marketing Portfolio
-                  <ExternalLink className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                </a>
-              </Button>
-              <Button size="lg" variant="outline" className="font-serif font-medium text-base md:text-lg px-10 py-6 gap-2 group border-primary/30 text-primary hover:bg-primary/5" asChild>
-                <a href="https://tysencreager.my.canva.site/" target="_blank" rel="noopener noreferrer">
-                  View Design Portfolio
-                  <ExternalLink className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                </a>
-              </Button>
-            </div>
+            <Button size="lg" className="font-serif font-medium text-base md:text-lg px-10 py-6 gap-2 group" asChild>
+              <a href="https://tysencreager.my.canva.site/" target="_blank" rel="noopener noreferrer">
+                View Marketing &amp; Design Portfolio
+                <ExternalLink className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              </a>
+            </Button>
           </motion.div>
         </div>
       </section>

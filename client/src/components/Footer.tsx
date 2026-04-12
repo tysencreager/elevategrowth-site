@@ -89,7 +89,7 @@ export default function Footer() {
                   data-testid="link-footer-portfolio"
                   className="block font-serif text-sm text-muted-foreground hover:text-primary transition-colors"
                 >
-                  Portfolio
+                  Website Portfolio
                 </Link>
               </nav>
             </div>

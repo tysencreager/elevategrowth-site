@@ -18,7 +18,8 @@ const serviceSubLinks = [
 
 const resultsSubLinks = [
   { href: "/testimonials", label: "Testimonials" },
-  { href: "/portfolio", label: "Portfolio" },
+  { href: "/portfolio", label: "Website Portfolio" },
+  { href: "https://tysencreager.my.canva.site/", label: "Marketing Portfolio", external: true },
 ];
 
 const resourcesSubLinks = [
