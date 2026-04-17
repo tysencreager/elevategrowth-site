@@ -1,4 +1,4 @@
-import { useRef, useEffect } from "react";
+import { useRef, useEffect, useState } from "react";
 import { motion, useInView } from "framer-motion";
 import { ExternalLink, Archive, Smartphone, Search, Layout, Star, Award, Megaphone, CheckCircle } from "lucide-react";
 import Navbar from "@/components/Navbar";
@@ -10,6 +10,13 @@ import { BokehEffect, FloatingOrbs } from "@/components/decorative";
 import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogDescription,
+} from "@/components/ui/dialog";
 
 // Portfolio project screenshots
 import macmeadowImg from "@assets/M&M_header_1765335795744.png";
@@ -150,53 +157,139 @@ const reviews = [
 function ProjectCard({ project, index }: { project: Project; index: number }) {
   const cardRef = useRef(null);
   const isInView = useInView(cardRef, { once: true, amount: 0.2 });
+  const [open, setOpen] = useState(false);
+
+  const visibleTags = project.tags.slice(0, 2);
+  const extraTagCount = project.tags.length - visibleTags.length;
 
   return (
-    <motion.div
-      ref={cardRef}
-      initial={{ opacity: 0, y: 40 }}
-      animate={isInView ? { opacity: 1, y: 0 } : {}}
-      transition={{ delay: index * 0.1, duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-    >
-      <Card className="h-full border-primary/10 hover:border-primary/30 transition-all duration-300 group overflow-hidden flex flex-col shadow-sm hover:shadow-lg">
-        <div className="aspect-video relative overflow-hidden bg-muted">
-          <img
-            src={project.image}
-            alt={`${project.title} website screenshot`}
-            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-            loading="lazy"
-            decoding="async"
-            width={800}
-            height={450}
-            sizes="(max-width: 768px) 100vw, 50vw"
-          />
-          {project.isPast && (
-            <div className="absolute top-4 right-4 z-20">
-              <Badge variant="secondary" className="bg-black/80 backdrop-blur-md border-white/10 text-white">
-                Past Project
-              </Badge>
-            </div>
-          )}
-          {project.isLandingPage && (
-            <div className="absolute top-4 right-4 z-20">
-              <Badge className="bg-primary/90 backdrop-blur-md border-primary/20 text-white">
-                Ad Landing Page
-              </Badge>
-            </div>
-          )}
-        </div>
-        <CardHeader>
-          <h3 className="font-display text-2xl font-bold group-hover:text-primary transition-colors">
-            {project.title}
-          </h3>
-        </CardHeader>
-        <CardContent className="flex-1">
-          <p className="font-serif text-muted-foreground mb-6 line-clamp-3">
-            {project.description}
-          </p>
+    <>
+      <motion.div
+        ref={cardRef}
+        initial={{ opacity: 0, y: 40 }}
+        animate={isInView ? { opacity: 1, y: 0 } : {}}
+        transition={{ delay: index * 0.08, duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+      >
+        <Card
+          className="h-full border-primary/10 hover:border-primary/30 transition-all duration-300 group overflow-hidden flex flex-col shadow-sm hover:shadow-lg cursor-pointer"
+          onClick={() => setOpen(true)}
+          role="button"
+          tabIndex={0}
+          onKeyDown={(e) => {
+            if (e.key === "Enter" || e.key === " ") {
+              e.preventDefault();
+              setOpen(true);
+            }
+          }}
+        >
+          <div className="aspect-video relative overflow-hidden bg-muted">
+            <img
+              src={project.image}
+              alt={`${project.title} website screenshot`}
+              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+              loading="lazy"
+              decoding="async"
+              width={800}
+              height={450}
+              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+            />
+            {project.isPast && (
+              <div className="absolute top-3 right-3 z-20">
+                <Badge variant="secondary" className="bg-black/80 backdrop-blur-md border-white/10 text-white text-[10px]">
+                  Past Project
+                </Badge>
+              </div>
+            )}
+            {project.isLandingPage && (
+              <div className="absolute top-3 right-3 z-20">
+                <Badge className="bg-primary/90 backdrop-blur-md border-primary/20 text-white text-[10px]">
+                  Landing Page
+                </Badge>
+              </div>
+            )}
+          </div>
+          <CardHeader className="p-4 pb-2">
+            <h3 className="font-display text-lg md:text-xl font-bold group-hover:text-primary transition-colors line-clamp-1">
+              {project.title}
+            </h3>
+          </CardHeader>
+          <CardContent className="flex-1 p-4 pt-0">
+            <p className="font-serif text-sm text-muted-foreground mb-3 line-clamp-2">
+              {project.description}
+            </p>
 
-          {/* Features */}
-          <div className="flex gap-4 mb-4 text-xs font-medium text-muted-foreground">
+            <div className="flex flex-wrap gap-1.5">
+              {visibleTags.map((tag) => (
+                <Badge
+                  key={tag}
+                  variant="outline"
+                  className="bg-primary/5 border-primary/10 text-primary text-[10px] py-0 px-1.5"
+                >
+                  {tag}
+                </Badge>
+              ))}
+              {extraTagCount > 0 && (
+                <Badge
+                  variant="outline"
+                  className="bg-primary/5 border-primary/10 text-primary text-[10px] py-0 px-1.5"
+                >
+                  +{extraTagCount}
+                </Badge>
+              )}
+            </div>
+          </CardContent>
+          <CardFooter className="flex items-center gap-2 p-4 pt-0 mt-auto">
+            <button
+              type="button"
+              onClick={(e) => {
+                e.stopPropagation();
+                setOpen(true);
+              }}
+              className="text-xs font-medium text-primary hover:underline"
+            >
+              View details
+            </button>
+            {project.link ? (
+              <Button
+                size="sm"
+                className="ml-auto gap-1.5 h-8 text-xs group/btn"
+                asChild
+                onClick={(e) => e.stopPropagation()}
+              >
+                <a href={project.link} target="_blank" rel="noopener noreferrer">
+                  Visit <ExternalLink size={12} className="group-hover/btn:translate-x-1 transition-transform" />
+                </a>
+              </Button>
+            ) : (
+              <Button variant="outline" size="sm" className="ml-auto gap-1.5 h-8 text-xs cursor-not-allowed opacity-50" disabled>
+                Archived <Archive size={12} />
+              </Button>
+            )}
+          </CardFooter>
+        </Card>
+      </motion.div>
+
+      <Dialog open={open} onOpenChange={setOpen}>
+        <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto">
+          <div className="aspect-video relative overflow-hidden rounded-md bg-muted -mt-2">
+            <img
+              src={project.image}
+              alt={`${project.title} website screenshot`}
+              className="w-full h-full object-cover"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+          <DialogHeader>
+            <DialogTitle className="font-display text-2xl md:text-3xl font-bold">
+              {project.title}
+            </DialogTitle>
+            <DialogDescription className="font-serif text-base text-muted-foreground leading-relaxed pt-2">
+              {project.description}
+            </DialogDescription>
+          </DialogHeader>
+
+          <div className="flex flex-wrap gap-4 text-xs font-medium text-muted-foreground">
             {project.features?.includes("Mobile Responsive") && (
               <div className="flex items-center gap-1.5">
                 <Smartphone size={14} className="text-primary" />
@@ -222,22 +315,23 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
               </Badge>
             ))}
           </div>
-        </CardContent>
-        <CardFooter className="flex gap-4 pt-0 mt-auto">
-          {project.link ? (
-            <Button size="sm" className="ml-auto gap-2 group/btn" asChild>
-              <a href={project.link} target="_blank" rel="noopener noreferrer">
-                Visit Site <ExternalLink size={14} className="group-hover/btn:translate-x-1 transition-transform" />
-              </a>
-            </Button>
-          ) : (
-            <Button variant="outline" size="sm" className="ml-auto gap-2 cursor-not-allowed opacity-50" disabled>
-              Archived Project <Archive size={14} />
-            </Button>
-          )}
-        </CardFooter>
-      </Card>
-    </motion.div>
+
+          <div className="flex justify-end pt-2">
+            {project.link ? (
+              <Button size="sm" className="gap-2 group/btn" asChild>
+                <a href={project.link} target="_blank" rel="noopener noreferrer">
+                  Visit Site <ExternalLink size={14} className="group-hover/btn:translate-x-1 transition-transform" />
+                </a>
+              </Button>
+            ) : (
+              <Button variant="outline" size="sm" className="gap-2 cursor-not-allowed opacity-50" disabled>
+                Archived Project <Archive size={14} />
+              </Button>
+            )}
+          </div>
+        </DialogContent>
+      </Dialog>
+    </>
   );
 }
 
@@ -426,11 +520,14 @@ export default function Portfolio() {
               Here are a few of the custom websites we've built. From full business sites to high-converting ad landing pages, each project is built from the ground up to meet the unique needs of the business.
             </p>
           </motion.div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6">
             {projects.map((project, index) => (
               <ProjectCard key={project.title} project={project} index={index} />
             ))}
           </div>
+          <p className="text-center mt-6 font-serif text-xs text-muted-foreground">
+            Tap any card to see full project details.
+          </p>
           <motion.p
             className="text-center mt-10 font-serif text-muted-foreground italic"
             initial={{ opacity: 0 }}
