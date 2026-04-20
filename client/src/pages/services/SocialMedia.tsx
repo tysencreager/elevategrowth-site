@@ -7,9 +7,9 @@ export default function SocialMedia() {
     <ServicePageLayout
       // SEO
       title="Social Media Management | Strategy & Content | Elevate Growth Solutions"
-      metaDescription="Strategic social media management that builds your brand and engages your audience. Consistent, quality content for Instagram, Facebook, LinkedIn, and more. From $1,000/month."
+      metaDescription="Strategic social media management that builds your brand and engages your audience. Consistent, quality content for Instagram, Facebook, LinkedIn, and more. Inquire for pricing."
       ogTitle="Social Media Management & Strategy Services"
-      ogDescription="Build your brand with strategic social media content. Professional management for Instagram, Facebook, LinkedIn. Packages starting at $1,000/month."
+      ogDescription="Build your brand with strategic social media content. Professional management for Instagram, Facebook, LinkedIn. Inquire for pricing."
 
       // Hero
       heroTitle="Social Media Management"
@@ -77,7 +77,7 @@ export default function SocialMedia() {
       pricing={[
         {
           name: "Standard",
-          price: "$1,000/mo",
+          price: "Inquire",
           description: "Consistent presence for businesses getting started with professional social media.",
           features: [
             "2-3 posts per week",
@@ -92,7 +92,7 @@ export default function SocialMedia() {
         },
         {
           name: "Growth",
-          price: "$1,800/mo",
+          price: "Inquire",
           description: "Expanded presence for businesses ready to grow their social impact.",
           features: [
             "4-5 posts per week",
