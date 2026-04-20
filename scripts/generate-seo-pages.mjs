@@ -63,10 +63,10 @@ const routes = [
     title:
       "Social Media Management | Strategy & Content | Elevate Growth Solutions",
     description:
-      "Strategic social media management that builds your brand and engages your audience. Consistent, quality content for Instagram, Facebook, LinkedIn, and more. From $1,000/month.",
+      "Strategic social media management that builds your brand and engages your audience. Consistent, quality content for Instagram, Facebook, LinkedIn, and more. Inquire for pricing.",
     ogTitle: "Social Media Management & Strategy Services",
     ogDescription:
-      "Build your brand with strategic social media content. Professional management for Instagram, Facebook, LinkedIn. Packages starting at $1,000/month.",
+      "Build your brand with strategic social media content. Professional management for Instagram, Facebook, LinkedIn. Inquire for pricing.",
   },
   {
     path: "/services/content-creation",

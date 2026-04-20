@@ -411,10 +411,10 @@ export default function Pricing() {
       title: "Social Media Management",
       description: "Consistent, strategic content that builds your brand and engages your audience.",
       items: [
-        { label: "Standard (2-3 posts/week)", price: "$1,000/mo" },
-        { label: "Growth (4-5 posts/week)", price: "$1,800/mo" }
+        { label: "Standard (2-3 posts/week)", price: "Inquire" },
+        { label: "Growth (4-5 posts/week)", price: "Inquire" }
       ],
-      note: "All social media packages require a 3-month minimum commitment.",
+      note: "All social media packages require a 3-month minimum commitment. Let's discuss your goals to create a custom quote.",
       featured: true
     },
     {
@@ -564,27 +564,21 @@ export default function Pricing() {
       {
         "@type": "Offer",
         "name": "Social Media Management - Standard",
-        "description": "2-3 posts per week, strategic content planning",
-        "price": "1000",
-        "priceCurrency": "USD",
+        "description": "2-3 posts per week, strategic content planning. Custom pricing based on platforms and scope.",
         "priceSpecification": {
-          "@type": "UnitPriceSpecification",
-          "price": "1000",
+          "@type": "PriceSpecification",
           "priceCurrency": "USD",
-          "unitText": "per month"
+          "description": "Custom pricing based on platforms, posting frequency, and scope"
         }
       },
       {
         "@type": "Offer",
         "name": "Social Media Management - Growth",
-        "description": "4-5 posts per week, enhanced engagement strategy",
-        "price": "1800",
-        "priceCurrency": "USD",
+        "description": "4-5 posts per week, enhanced engagement strategy. Custom pricing based on platforms and scope.",
         "priceSpecification": {
-          "@type": "UnitPriceSpecification",
-          "price": "1800",
+          "@type": "PriceSpecification",
           "priceCurrency": "USD",
-          "unitText": "per month"
+          "description": "Custom pricing based on platforms, posting frequency, and scope"
         }
       },
       {
@@ -617,9 +611,9 @@ export default function Pricing() {
     <div className="min-h-screen">
       <SEO
         title="Pricing - Affordable Marketing Services | Elevate Growth Solutions"
-        description="Transparent, affordable pricing for quality marketing services. Custom websites from $1,499, SEO from $750/month, social media from $1,000/month. No hidden fees. Get a free consultation today."
+        description="Transparent, affordable pricing for quality marketing services. Custom websites from $1,499, SEO from $750/month, and social media management tailored to your needs. No hidden fees. Get a free consultation today."
         ogTitle="Marketing Services Pricing | Quality Services, Honest Prices"
-        ogDescription="Custom websites starting at $1,499. SEO from $750/month. Social media management from $1,000/month. Transparent pricing with no surprises. Schedule your free consultation."
+        ogDescription="Custom websites starting at $1,499. SEO from $750/month. Social media management with custom pricing based on your goals. Transparent pricing with no surprises. Schedule your free consultation."
       />
       <SchemaMarkup type="service" data={serviceOfferSchema} />
       <Navbar />
