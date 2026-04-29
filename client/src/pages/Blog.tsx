@@ -79,40 +79,55 @@ export default function Blog() {
         <section className="py-12 bg-white">
           <div className="max-w-6xl mx-auto px-4">
             <div className="bg-gray-50 rounded-lg overflow-hidden shadow-sm border border-gray-100">
-              <div className="p-8 md:p-12">
-                <div className="flex items-center gap-4 mb-4">
-                  <span className="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm font-medium">
-                    Featured
-                  </span>
-                  <span className="text-gray-600 text-sm font-serif flex items-center gap-1">
-                    <Tag className="w-4 h-4" />
-                    {featuredPost.category}
-                  </span>
-                </div>
-                <Link href={`/blog/${featuredPost.slug}`}>
-                  <h2 className="font-display text-2xl md:text-3xl font-semibold text-gray-900 mb-4 hover:text-primary transition-colors cursor-pointer">
-                    {featuredPost.title}
-                  </h2>
-                </Link>
-                <p className="font-serif text-gray-600 text-lg leading-relaxed mb-6">
-                  {featuredPost.excerpt}
-                </p>
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center gap-4 text-sm text-gray-600 font-serif">
-                    <span className="flex items-center gap-1">
-                      <User className="w-4 h-4" />
-                      {featuredPost.author}
+              <div className={featuredPost.image ? "grid md:grid-cols-2 gap-0" : ""}>
+                {featuredPost.image && (
+                  <Link href={`/blog/${featuredPost.slug}`}>
+                    <div className="aspect-video md:aspect-auto md:h-full overflow-hidden cursor-pointer">
+                      <img
+                        src={featuredPost.image}
+                        alt={featuredPost.imageAlt || featuredPost.title}
+                        className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                        loading="eager"
+                        decoding="async"
+                      />
+                    </div>
+                  </Link>
+                )}
+                <div className="p-8 md:p-12">
+                  <div className="flex items-center gap-4 mb-4">
+                    <span className="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm font-medium">
+                      Featured
                     </span>
-                    <span className="flex items-center gap-1">
-                      <Calendar className="w-4 h-4" />
-                      {formatDate(featuredPost.date)}
+                    <span className="text-gray-600 text-sm font-serif flex items-center gap-1">
+                      <Tag className="w-4 h-4" />
+                      {featuredPost.category}
                     </span>
                   </div>
                   <Link href={`/blog/${featuredPost.slug}`}>
-                    <span className="text-primary font-medium flex items-center gap-1 hover:gap-2 transition-all cursor-pointer py-2 min-h-[44px]">
-                      Read more <ArrowRight className="w-4 h-4" />
-                    </span>
+                    <h2 className="font-display text-2xl md:text-3xl font-semibold text-gray-900 mb-4 hover:text-primary transition-colors cursor-pointer">
+                      {featuredPost.title}
+                    </h2>
                   </Link>
+                  <p className="font-serif text-gray-600 text-lg leading-relaxed mb-6">
+                    {featuredPost.excerpt}
+                  </p>
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center gap-4 text-sm text-gray-600 font-serif">
+                      <span className="flex items-center gap-1">
+                        <User className="w-4 h-4" />
+                        {featuredPost.author}
+                      </span>
+                      <span className="flex items-center gap-1">
+                        <Calendar className="w-4 h-4" />
+                        {formatDate(featuredPost.date)}
+                      </span>
+                    </div>
+                    <Link href={`/blog/${featuredPost.slug}`}>
+                      <span className="text-primary font-medium flex items-center gap-1 hover:gap-2 transition-all cursor-pointer py-2 min-h-[44px]">
+                        Read more <ArrowRight className="w-4 h-4" />
+                      </span>
+                    </Link>
+                  </div>
                 </div>
               </div>
             </div>
@@ -128,8 +143,21 @@ export default function Blog() {
           </h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {otherPosts.map((post) => (
-              <article key={post.slug} className="bg-white rounded-lg overflow-hidden shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
-                <div className="p-6">
+              <article key={post.slug} className="bg-white rounded-lg overflow-hidden shadow-sm border border-gray-100 hover:shadow-md transition-shadow flex flex-col">
+                {post.image && (
+                  <Link href={`/blog/${post.slug}`}>
+                    <div className="aspect-video overflow-hidden cursor-pointer">
+                      <img
+                        src={post.image}
+                        alt={post.imageAlt || post.title}
+                        className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                        loading="lazy"
+                        decoding="async"
+                      />
+                    </div>
+                  </Link>
+                )}
+                <div className="p-6 flex flex-col flex-1">
                   <div className="flex items-center gap-2 mb-3">
                     <span className="text-primary text-sm font-medium">
                       {post.category}
@@ -143,7 +171,7 @@ export default function Blog() {
                   <p className="font-serif text-gray-600 text-sm leading-relaxed mb-4 line-clamp-3">
                     {post.excerpt}
                   </p>
-                  <div className="flex items-center justify-between text-sm text-gray-600 font-serif">
+                  <div className="flex items-center justify-between text-sm text-gray-600 font-serif mt-auto">
                     <span className="flex items-center gap-1">
                       <Calendar className="w-4 h-4" />
                       {formatDate(post.date)}
