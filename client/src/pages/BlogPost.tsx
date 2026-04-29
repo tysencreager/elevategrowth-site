@@ -88,6 +88,7 @@ export default function BlogPost() {
     const elements: JSX.Element[] = [];
     let currentList: string[] = [];
     let listType: 'ul' | 'ol' | null = null;
+    let tableLines: string[] = [];
 
     // Process inline formatting (bold, italic, links) within text
     const processInlineFormatting = (text: string, keyPrefix: string): (string | JSX.Element)[] => {
@@ -137,6 +138,11 @@ export default function BlogPost() {
       return parts.length > 0 ? parts : [text];
     };
 
+    const splitTableRow = (row: string): string[] => {
+      const trimmed = row.trim().replace(/^\|/, '').replace(/\|$/, '');
+      return trimmed.split('|').map(cell => cell.trim());
+    };
+
     const flushList = () => {
       if (currentList.length > 0 && listType) {
         const ListTag = listType;
@@ -154,8 +160,51 @@ export default function BlogPost() {
       }
     };
 
+    const flushTable = () => {
+      if (tableLines.length === 0) return;
+      const headerCells = splitTableRow(tableLines[0]);
+      const bodyRows = tableLines.slice(2).map(splitTableRow);
+      const tableKey = `table-${elements.length}`;
+      elements.push(
+        <div key={tableKey} className="overflow-x-auto mb-6">
+          <table className="w-full border-collapse text-left font-serif text-gray-700">
+            <thead>
+              <tr className="border-b border-gray-300 bg-gray-50">
+                {headerCells.map((cell, i) => (
+                  <th key={i} className="px-4 py-3 font-display font-semibold text-gray-900 align-top">
+                    {processInlineFormatting(cell, `${tableKey}-h-${i}`)}
+                  </th>
+                ))}
+              </tr>
+            </thead>
+            <tbody>
+              {bodyRows.map((row, r) => (
+                <tr key={r} className="border-b border-gray-200">
+                  {row.map((cell, c) => (
+                    <td key={c} className="px-4 py-3 align-top">
+                      {processInlineFormatting(cell, `${tableKey}-r${r}-c${c}`)}
+                    </td>
+                  ))}
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      );
+      tableLines = [];
+    };
+
     lines.forEach((line, index) => {
       const trimmedLine = line.trim();
+
+      const isTableLine = trimmedLine.startsWith('|') && trimmedLine.endsWith('|');
+      if (isTableLine) {
+        flushList();
+        tableLines.push(trimmedLine);
+        return;
+      } else if (tableLines.length > 0) {
+        flushTable();
+      }
 
       // Headers
       if (trimmedLine.startsWith('## ')) {
@@ -173,6 +222,13 @@ export default function BlogPost() {
           </h3>
         );
       }
+      // Horizontal rule
+      else if (trimmedLine === '---') {
+        flushList();
+        elements.push(
+          <hr key={index} className="my-8 border-gray-200" />
+        );
+      }
       // Unordered list items
       else if (trimmedLine.startsWith('- ')) {
         if (listType !== 'ul') {
@@ -180,6 +236,14 @@ export default function BlogPost() {
           listType = 'ul';
         }
         currentList.push(trimmedLine.slice(2));
+      }
+      // Ordered list items
+      else if (/^\d+\.\s/.test(trimmedLine)) {
+        if (listType !== 'ol') {
+          flushList();
+          listType = 'ol';
+        }
+        currentList.push(trimmedLine.replace(/^\d+\.\s/, ''));
       }
       // Regular paragraphs (including those with inline formatting)
       else if (trimmedLine.length > 0) {
@@ -193,6 +257,7 @@ export default function BlogPost() {
     });
 
     flushList();
+    flushTable();
     return elements;
   };
 
@@ -203,6 +268,7 @@ export default function BlogPost() {
         description={post.metaDescription}
         ogTitle={post.title}
         ogDescription={post.excerpt}
+        ogImage={post.image ? `https://www.elevategrowth.solutions${post.image}` : undefined}
       />
       <SchemaMarkup type="webpage" data={articleSchemaData} />
       <SchemaMarkup type="breadcrumb" data={breadcrumbSchemaData} />
@@ -253,6 +319,21 @@ export default function BlogPost() {
             </div>
           </div>
         </header>
+
+        {/* Featured Image */}
+        {post.image && (
+          <div className="bg-gray-50">
+            <div className="max-w-3xl mx-auto px-4 pt-4 pb-8">
+              <img
+                src={post.image}
+                alt={post.imageAlt || post.title}
+                className="w-full h-auto rounded-lg shadow-lg"
+                loading="eager"
+                decoding="async"
+              />
+            </div>
+          </div>
+        )}
 
         {/* Article Content */}
         <div className="py-12">
