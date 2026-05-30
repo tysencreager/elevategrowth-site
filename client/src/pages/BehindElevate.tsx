@@ -8,7 +8,7 @@ import { useRef } from "react";
 import { BokehEffect, FloatingOrbs, WaveDivider, GradientTransition } from "@/components/decorative";
 
 // About page photo
-const tysenPhoto = "https://i.postimg.cc/RF5bmrhQ/EGS_about_photo.png";
+const tysenPhoto = "https://i.postimg.cc/LsPcdM3R/tysen-photo.jpg";
 
 // Person schema data
 const personSchema = {
@@ -16,7 +16,7 @@ const personSchema = {
   "jobTitle": "Founder & Director of Marketing Services",
   "description": "Full-stack marketer with nearly a decade of experience in branding, digital marketing, SEO, and client-centered strategy.",
   "url": "https://elevategrowth.solutions/behind-elevate",
-  "image": "https://i.postimg.cc/RF5bmrhQ/EGS-about-photo.png",
+  "image": "https://i.postimg.cc/LsPcdM3R/tysen-photo.jpg",
   "worksFor": {"@id": "https://elevategrowth.solutions/#organization"},
   "alumniOf": [
     {"@type": "EducationalOrganization", "name": "Digital Marketing Certification Program"},
