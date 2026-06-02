@@ -293,10 +293,10 @@ export default function Contact() {
                   <div>
                     <h3 className="font-display font-semibold text-gray-900">Call Us</h3>
                     <a
-                      href="tel:+14358179645"
+                      href="tel:+14355534668"
                       className="font-serif text-primary hover:underline"
                     >
-                      (435) 817-9645
+                      (435) 553-4668
                     </a>
                   </div>
                 </div>

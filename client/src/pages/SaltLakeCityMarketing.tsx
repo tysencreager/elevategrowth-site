@@ -18,7 +18,7 @@ const slcSchema = {
   "@id": "https://elevategrowth.solutions/#organization",
   "name": "Elevate Growth Solutions",
   "url": "https://elevategrowth.solutions/salt-lake-city-marketing",
-  "telephone": "+1-435-817-9645",
+  "telephone": "+1-435-553-4668",
   "areaServed": [
     {"@type": "City", "name": "Salt Lake City", "containedInPlace": {"@type": "State", "name": "Utah"}},
     {"@type": "City", "name": "Draper", "containedInPlace": {"@type": "State", "name": "Utah"}},

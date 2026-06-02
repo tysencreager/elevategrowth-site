@@ -131,12 +131,12 @@ export default function Footer() {
                 Contact
               </h3>
               <a
-                href="tel:+14358179645"
+                href="tel:+14355534668"
                 className="flex items-center gap-2 font-serif text-sm text-muted-foreground hover:text-primary transition-colors mb-2"
                 data-testid="link-footer-phone"
               >
                 <Phone className="h-4 w-4" />
-                (435) 817-9645
+                (435) 553-4668
               </a>
               <a
                 href="mailto:tysen@elevategrowth.solutions"
