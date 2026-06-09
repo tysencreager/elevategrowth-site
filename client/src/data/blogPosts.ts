@@ -143,7 +143,7 @@ Beyond accuracy:
 
 ### Use semantic clusters, not keyword stuffing
 
-Modern algorithms reward natural variation. Instead of "St George web design St George website services," write naturally about "website design in Southern Utah," "local SEO for small business," and "digital marketing in Washington County." Same topical relevance, far better readability for both humans and AI.
+Modern algorithms reward natural variation. Instead of "St George web design St George website services," write naturally about "website design in Southern Utah," "local SEO for service businesses," and "digital marketing in Washington County." Same topical relevance, far better readability for both humans and AI.
 
 ### Co-occurrence beats backlinks alone
 
@@ -358,7 +358,7 @@ Your $100/month with us includes actual hosting, professional maintenance, and s
 
 ### 4. Security by Design
 
-Most small-business sites get hacked through outdated software, vulnerable plugins, or weak passwords—and the platforms that power much of the web are the biggest targets simply because they're everywhere.
+Most sites that get hacked are running outdated software, vulnerable plugins, or weak passwords—and the platforms that power much of the web are the biggest targets simply because they're everywhere.
 
 When security is critical, a custom-coded static site has **no database to hack**, **no admin login to brute-force**, and **no plugins to exploit**. And if you're on WordPress or another platform, we harden it, keep it patched, and monitor it—so your site stays protected either way.
 
@@ -388,12 +388,12 @@ Custom code gives you a fast, secure, unique website that you actually own—wit
   },
   {
     slug: "why-small-businesses-need-custom-website",
-    title: "Why Your Small Business Needs a Custom Website in 2025",
+    title: "Why Your Business Needs a Custom Website in 2025",
     excerpt: "Discover what separates a high-performing custom website from a generic one—and how the right build generates more leads and builds trust with your customers, on any platform.",
     content: `
 ## Where Generic Websites Fall Short
 
-Many small business owners turn to off-the-shelf templates on Wix, Squarespace, or WordPress because they seem like the easy, affordable option. Those platforms can absolutely work—we build and maintain on them every day—but a generic, unoptimized template can quietly cost you in lost opportunities. The difference is in how it's built.
+Many business owners turn to off-the-shelf templates on Wix, Squarespace, or WordPress because they seem like the easy, affordable option. Those platforms can absolutely work—we build and maintain on them every day—but a generic, unoptimized template can quietly cost you in lost opportunities. The difference is in how it's built.
 
 ### What Holds a Generic Build Back
 
@@ -428,21 +428,21 @@ Yes, a custom website can cost more upfront than a drop-in template. But conside
 
 ## Ready to Upgrade?
 
-If you're a small business owner ready to stop blending in and start standing out, we'd love to help. At Elevate Growth Solutions, we build and maintain custom websites—on any platform, from custom code to WordPress and other builders—faster than traditional agencies, giving you a professional online presence that generates real results.
+If you're ready to stop blending in and start standing out, we'd love to help. At Elevate Growth Solutions, we build and maintain custom websites—on any platform, from custom code to WordPress and other builders—faster than traditional agencies, giving you a professional online presence that generates real results.
 
 [Contact us for a free consultation](/contact) and let's discuss how a custom website can transform your business.
     `,
     author: "Tysen Creager",
     date: "2025-12-15",
     category: "Web Design",
-    tags: ["web design", "small business", "custom websites", "lead generation"],
-    metaTitle: "Why Small Businesses Need Custom Websites in 2025 | Elevate Growth Solutions",
-    metaDescription: "Learn why template websites are holding your business back. Discover how custom web design generates more leads and builds trust for small businesses."
+    tags: ["web design", "growing businesses", "custom websites", "lead generation"],
+    metaTitle: "Why Your Business Needs a Custom Website in 2025 | Elevate Growth Solutions",
+    metaDescription: "Learn what separates a high-performing custom website from a generic one. Discover how custom web design generates more leads and builds trust for businesses of all sizes."
   },
   {
     slug: "local-seo-guide-small-business-utah",
-    title: "Local SEO Guide: How to Rank Your Utah Small Business",
-    excerpt: "A comprehensive guide to local SEO for Utah small businesses. Learn how to dominate local search results and attract more customers in Salt Lake City and beyond.",
+    title: "Local SEO Guide: How to Rank Your Utah Business",
+    excerpt: "A comprehensive guide to local SEO for Utah businesses. Learn how to dominate local search results and attract more customers in Salt Lake City and beyond.",
     content: `
 ## What is Local SEO?
 
@@ -524,23 +524,23 @@ If you're targeting the Salt Lake City market specifically:
 
 ## Need Help With Local SEO?
 
-Local SEO can be complex, but you don't have to do it alone. At Elevate Growth Solutions, we help Utah small businesses dominate local search results. [Contact us](/contact) to learn how we can help you attract more local customers.
+Local SEO can be complex, but you don't have to do it alone. At Elevate Growth Solutions, we help Utah businesses dominate local search results. [Contact us](/contact) to learn how we can help you attract more local customers.
     `,
     author: "Tysen Creager",
     date: "2025-12-10",
     category: "SEO",
-    tags: ["SEO", "local SEO", "Utah", "Salt Lake City", "small business"],
-    metaTitle: "Local SEO Guide for Utah Small Businesses | Rank in Salt Lake City",
-    metaDescription: "Complete guide to local SEO for Utah small businesses. Learn how to rank in Salt Lake City search results and attract more local customers."
+    tags: ["SEO", "local SEO", "Utah", "Salt Lake City", "local business"],
+    metaTitle: "Local SEO Guide for Utah Businesses | Rank in Salt Lake City",
+    metaDescription: "Complete guide to local SEO for Utah businesses. Learn how to rank in Salt Lake City search results and attract more local customers."
   },
   {
     slug: "full-stack-marketing-explained",
-    title: "What is Full-Stack Marketing? A Complete Guide for Small Businesses",
-    excerpt: "Learn what full-stack marketing means and why it's the most effective approach for small businesses looking to grow without juggling multiple agencies.",
+    title: "What is Full-Stack Marketing? A Complete Guide for Growing Businesses",
+    excerpt: "Learn what full-stack marketing means and why it's the most effective approach for growing businesses looking to scale without juggling multiple agencies.",
     content: `
 ## The Problem: Marketing Fragmentation
 
-As a small business owner, you've probably experienced this: you hire one person for social media, another for your website, a third for ads, and maybe a fourth for content. Each works in their own silo, and nothing quite connects.
+As a busy business owner, you've probably experienced this: you hire one person for social media, another for your website, a third for ads, and maybe a fourth for content. Each works in their own silo, and nothing quite connects.
 
 This fragmentation leads to:
 - Inconsistent messaging
@@ -617,7 +617,7 @@ When one team sees all your data, they can identify opportunities and optimize a
 ## Is Full-Stack Marketing Right for You?
 
 Full-stack marketing is ideal if you:
-- Are a small business owner wearing too many hats
+- Are a business owner wearing too many hats
 - Want marketing off your plate entirely
 - Need consistent, professional marketing
 - Are tired of managing multiple vendors
@@ -637,9 +637,9 @@ Ready to simplify your marketing and start seeing real results? [Contact us](/co
     author: "Tysen Creager",
     date: "2025-12-05",
     category: "Marketing",
-    tags: ["full-stack marketing", "small business marketing", "digital marketing", "marketing strategy"],
-    metaTitle: "What is Full-Stack Marketing? Guide for Small Businesses | Elevate Growth",
-    metaDescription: "Discover what full-stack marketing means for small businesses. Learn how comprehensive marketing services can simplify growth and generate more leads."
+    tags: ["full-stack marketing", "business growth", "digital marketing", "marketing strategy"],
+    metaTitle: "What is Full-Stack Marketing? A Guide for Growing Businesses | Elevate Growth",
+    metaDescription: "Discover what full-stack marketing means for growing businesses. Learn how comprehensive marketing services can simplify growth and generate more leads."
   }
 ];
 

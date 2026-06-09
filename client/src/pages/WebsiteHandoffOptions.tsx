@@ -355,10 +355,10 @@ export default function WebsiteHandoffOptions() {
             </div>
             <div className="space-y-4 font-serif text-lg text-muted-foreground leading-relaxed">
               <p>
-                Most small-business sites get hacked through outdated software, vulnerable plugins, or weak admin passwords—and the platforms that power much of the web are the biggest targets simply because they're everywhere.
+                Most sites that get hacked are running outdated software, vulnerable plugins, or weak admin passwords—and the platforms that power much of the web are the biggest targets simply because they're everywhere.
               </p>
               <p>
-                Small business owners rarely have time to maintain the constant cycle of security updates. That's a ticking time bomb.
+                Most business owners rarely have time to maintain the constant cycle of security updates. That's a ticking time bomb.
               </p>
               <p>
                 When security is critical, a custom-coded static site has <strong>no database to hack</strong>, <strong>no admin login to brute-force</strong>, and <strong>no plugins to exploit</strong>. And if you're on WordPress or another platform, we harden it, keep it patched, and monitor it—so your site stays protected either way.

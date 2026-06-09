@@ -435,10 +435,10 @@ export default function Portfolio() {
   return (
     <div className="min-h-screen">
       <SEO
-        title="Website Design Portfolio | Custom Websites for Small Businesses | Elevate Growth Solutions"
+        title="Website Design Portfolio | Custom Websites for Growing Businesses | Elevate Growth Solutions"
         description="Browse our portfolio of custom websites built for law firms, contractors, home services, e-commerce, beauty, and more—on any platform. Full-Stack Marketing Strategist & Certified UX Designer serving businesses in Utah and nationwide."
         ogTitle="Website Portfolio - Elevate Growth Solutions"
-        ogDescription="Custom, mobile-responsive, SEO-optimized websites for small businesses, built on any platform. See our work across 8+ industries including legal, construction, beauty, and e-commerce."
+        ogDescription="Custom, mobile-responsive, SEO-optimized websites for businesses of all sizes, built on any platform. See our work across 8+ industries including legal, construction, beauty, and e-commerce."
         canonicalPath="/portfolio"
       />
 

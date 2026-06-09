@@ -220,7 +220,7 @@ export default function WhyCustomCoded() {
             </div>
             <div className="space-y-4 font-serif text-lg text-muted-foreground leading-relaxed">
               <p>
-                Most small-business sites get hacked through outdated software or weak passwords—and most owners don't have time to keep up with the constant cycle of security updates.
+                Most sites that get hacked are running outdated software or weak passwords—and most owners don't have time to keep up with the constant cycle of security updates.
               </p>
               <p>
                 When security is a top priority, we can build a hardened, custom-coded static site with no database, admin login, or plugins to exploit. And if you're on WordPress or another platform, we harden it, keep it updated, and monitor it—so your site stays protected either way.

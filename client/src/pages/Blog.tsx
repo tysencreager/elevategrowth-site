@@ -12,7 +12,7 @@ const blogSchemaData = {
   "@context": "https://schema.org",
   "@type": "Blog",
   "name": "Elevate Growth Solutions Blog",
-  "description": "Marketing tips, web design insights, and business growth strategies for small businesses, startups, and entrepreneurs.",
+  "description": "Marketing tips, web design insights, and business growth strategies for businesses of all sizes—from startups to established companies.",
   "url": "https://www.elevategrowth.solutions/blog",
   "publisher": {
     "@type": "Organization",
@@ -40,10 +40,10 @@ export default function Blog() {
   return (
     <div className="min-h-screen">
       <SEO
-        title="Marketing Blog | Web Design & SEO Tips for Small Business | Elevate Growth Solutions"
-        description="Expert marketing insights, web design tips, and SEO strategies for small businesses. Learn how to grow your business online with actionable advice from Elevate Growth Solutions."
-        ogTitle="Marketing Blog for Small Businesses | Elevate Growth Solutions"
-        ogDescription="Expert marketing tips, web design insights, and SEO strategies to help small businesses grow online."
+        title="Marketing Blog | Web Design & SEO Tips for Growing Businesses | Elevate Growth Solutions"
+        description="Expert marketing insights, web design tips, and SEO strategies for growing businesses. Learn how to grow your business online with actionable advice from Elevate Growth Solutions."
+        ogTitle="Marketing Blog for Growing Businesses | Elevate Growth Solutions"
+        ogDescription="Expert marketing tips, web design insights, and SEO strategies to help businesses of all sizes grow online."
       />
       <SchemaMarkup type="webpage" data={blogSchemaData} />
       <Navbar />
@@ -57,7 +57,7 @@ export default function Blog() {
                 Marketing Insights for Growing Businesses
               </h1>
               <p className="font-serif text-xl text-gray-600">
-                Tips, strategies, and insights to help small businesses thrive online.
+                Tips, strategies, and insights to help businesses of all sizes thrive online.
                 From web design to SEO to full-stack marketing.
               </p>
             </div>
