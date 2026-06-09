@@ -89,7 +89,7 @@ export default function WebsiteHandoffOptions() {
     {
       icon: Wrench,
       title: "Customization Without Limits",
-      description: "If you can dream it, we can build it. With custom code there are no template limits at all; on a builder, we push the platform far beyond its defaults so your brand looks exactly how it should—never like a generic template that 5,000 other businesses are using."
+      description: "If you can dream it, we can build it. With custom code there are no template limits at all; on a builder, we push the platform far beyond its defaults so your brand looks exactly how it should—distinct and tailored to you, not interchangeable with everyone else's."
     }
   ];
 
@@ -384,7 +384,7 @@ export default function WebsiteHandoffOptions() {
             </h2>
             <div className="space-y-4 font-serif text-lg text-muted-foreground leading-relaxed">
               <p>
-                Here's something we've noticed over years of building websites: most business owners think they'll edit their site constantly. In reality? They update it maybe once or twice a year—and when they do try to DIY with a builder, they often break the design or spend hours fighting the platform.
+                Here's something we've noticed over years of building websites: most business owners think they'll edit their site constantly. In reality? They update it maybe once or twice a year—and when they DIY those edits themselves, they often break the design or spend hours on a small change.
               </p>
               <p>
                 The "Peace of Mind" retainer exists because most clients discover they'd rather just email us the change and have it done professionally in 24-48 hours. Your time is better spent running your business.

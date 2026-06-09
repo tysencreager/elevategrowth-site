@@ -16,6 +16,86 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "custom-coded-vs-website-builders-honest-comparison",
+    title: "Custom-Coded vs. Website Builders: An Honest Comparison",
+    excerpt: "Custom code or a website builder like WordPress, Squarespace, or Shopify? An honest, no-spin comparison of the benefits of each—and how to choose the right fit for your business.",
+    content: `
+Should you build your website with custom code or a website builder like WordPress, Squarespace, Wix, or Shopify? It's one of the most common questions we hear—and the honest answer is: it depends. Both can produce a fast, beautiful, high-converting website. The right choice comes down to your goals, your budget, and how hands-on you want to be.
+
+At Elevate Growth Solutions, we build and maintain sites on every platform, so we don't have a horse in this race. Here's a straight comparison to help you decide.
+
+## The quick comparison
+
+| | Website Builders | Custom Code |
+|---|---|---|
+| **Best for** | Fast launches, self-editing, tighter budgets | Performance-critical sites, unique functionality, full control |
+| **Upfront cost** | Lower | Higher |
+| **Ongoing cost** | Monthly platform + plan fees | Hosting + optional maintenance |
+| **Editing it yourself** | Easy, drag-and-drop | Needs a developer or a CMS setup |
+| **Speed & performance** | Good when optimized | Excellent—nothing you don't need |
+| **Design flexibility** | Within the platform's limits | Essentially unlimited |
+| **Maintenance** | Platform handles core updates | You (or your agency) manage it |
+| **Ownership & portability** | Tied to the platform | You own the files outright |
+
+## Where website builders shine
+
+Website builders have come a long way, and for many businesses they're the smart, practical choice.
+
+- **You can launch quickly.** A solid builder site can be live in days with minimal setup.
+- **You can edit it yourself.** Want to swap a photo or update your hours at 10pm? Drag, drop, done—no developer required.
+- **Lower upfront cost.** If budget is tight, builders get you a professional presence for less.
+- **Built-in features.** E-commerce, booking, blogging, and forms often work right out of the box.
+- **The platform handles the plumbing.** Core security patches, uptime, and infrastructure are managed for you.
+
+Platforms like **WordPress, Squarespace, Wix, and Shopify** each have real strengths—WordPress for flexibility and content, Squarespace for polished design, Shopify for serious e-commerce. Built well and kept optimized, any of them can perform beautifully.
+
+## Where custom code shines
+
+Custom code is about control and performance. When those matter most, nothing beats a site built from the ground up.
+
+- **Maximum speed.** No bloat, no unused scripts—just the code your site needs, often loading in under a second.
+- **Unlimited design and functionality.** If you can imagine it, it can be built. You're never told "the platform won't let you do that."
+- **Rock-solid security.** A static, custom-coded site has no database, admin login, or plugins to exploit.
+- **You own it outright.** The files are yours. Move hosts, hire any developer, and never get locked in.
+- **Scales cleanly.** Custom architecture grows with you instead of forcing a rebuild down the road.
+
+The trade-off: it costs more upfront, and you'll typically rely on a developer (or a lightweight CMS) to make changes.
+
+## How to choose
+
+Ask yourself a few honest questions:
+
+1. **How often will you actually edit the site?** If it's weekly, the easy self-editing of a builder is worth a lot. If it's a few times a year, that advantage shrinks.
+2. **How important is raw speed?** Running paid ads or competing in a crowded market? Every fraction of a second affects conversions, and custom code has the edge.
+3. **Do you need something unusual?** Custom integrations, unique interactions, or specific performance targets often point toward custom code.
+4. **What's your budget—now and over five years?** Factor in platform fees, plan costs, and maintenance, not just the launch price.
+5. **How much do you care about ownership?** If being able to pick up your site and move it matters, custom code (or a carefully set-up platform) gives you that freedom.
+
+There's no universally "right" answer. A neighborhood café and a venture-backed startup should probably make different choices—and that's exactly the point.
+
+## Why it doesn't have to be either/or
+
+Here's the part most agencies won't tell you: you don't have to pick a side based on what your designer happens to prefer.
+
+We build and maintain websites on **all of them**—custom-coded builds, WordPress, Squarespace, Wix, Shopify, and more. That means our recommendation is based on what's genuinely best for *you*, not on what we're limited to. We can also take over and improve a site you already have, whatever it's built on.
+
+## The bottom line
+
+- **Choose a website builder** if you want a fast, affordable launch and the freedom to make edits yourself.
+- **Choose custom code** if you want maximum performance, total design freedom, and full ownership.
+- **Either way,** the quality lives in how the site is built and maintained—not just the platform name on the box.
+
+Not sure which path fits your business? [Book a free consultation](/contact) and we'll give you an honest recommendation—even if that means pointing you toward a platform you can manage yourself.
+    \`,
+    author: "Tysen Creager",
+    date: "2026-06-09",
+    category: "Web Design",
+    tags: ["web design", "website builders", "custom websites", "wordpress", "comparison"],
+    metaTitle: "Custom-Coded vs. Website Builders: An Honest Comparison | Elevate Growth Solutions",
+    metaDescription: "Custom code or a website builder like WordPress, Squarespace, Wix, or Shopify? An honest, balanced comparison of cost, speed, flexibility, and ownership—plus how to choose.",
+    featured: true
+  },
+  {
     slug: "local-seo-vs-aeo-2026-st-george",
     title: "Local SEO vs AEO: A 2026 Guide for St. George Businesses",
     excerpt: "How to combine Local SEO and Answer Engine Optimization (AEO) to win in AI-driven search. A practical guide for businesses in St. George and Southern Utah.",
@@ -212,7 +292,7 @@ For $100/month, you get hosting plus one hour of monthly edits included. Need to
 - Uptime monitoring and security included
 - Priority support when you need changes
 
-**The reality check:** Most business owners think they'll edit their site constantly. In practice? They update it maybe once or twice a year. And when they try to DIY with a builder, they often spend hours fighting the platform or accidentally break the mobile layout. This option protects your investment and your time.
+**The reality check:** Most business owners think they'll edit their site constantly. In practice? They update it maybe once or twice a year. And when they DIY those edits themselves, they often spend hours on a small change or accidentally break the mobile layout. This option protects your investment and your time.
 
 ### Option B: The "Hybrid" Approach (Headless CMS)
 
@@ -226,7 +306,7 @@ You get a user-friendly admin dashboard where you can:
 - Update pricing or service descriptions
 - Add new content pages
 
-The key: the design stays protected. You can change *content* but not accidentally move buttons, break the layout, or mess up the mobile view. It's the "Wix-like" experience on the backend with code-based performance on the frontend.
+The key: the design stays protected. You can change *content* but not accidentally move buttons, break the layout, or mess up the mobile view. It's a simple, builder-style editing experience on the backend with optimized performance on the frontend.
 
 **Note:** This requires an additional setup fee for CMS integration.
 
@@ -284,13 +364,13 @@ When security is critical, a custom-coded static site has **no database to hack*
 
 ### 5. Pixel-Perfect Customization
 
-With builders, you've probably heard: "The tool won't let me put that button there." You're constrained to their templates and grids.
+Out of the box, some themes box you in—preset templates, fixed grids, limited layout control. The fix is customization, whether that's reworking a platform or writing code from scratch.
 
-With custom code, if you can dream it, we can build it. Your brand looks exactly how it should—not like a generic template that 5,000 other businesses are using.
+If you can dream it, we can build it. Your brand looks exactly how it should—distinct and tailored to you, not interchangeable with everyone else's.
 
 ## The Bottom Line
 
-Choosing between website builders and custom code isn't about "easy vs. hard." It's about short-term convenience vs. long-term value.
+Choosing between a website builder and custom code isn't about good vs. bad. It's about matching the right tool to your goals, your budget, and how hands-on you want to be.
 
 Builders give you quick edits and convenience; a custom build gives you maximum speed, security, and freedom. Neither is "wrong"—it depends on your goals, and we build and maintain both.
 
@@ -309,29 +389,29 @@ Custom code gives you a fast, secure, unique website that you actually own—wit
   {
     slug: "why-small-businesses-need-custom-website",
     title: "Why Your Small Business Needs a Custom Website in 2025",
-    excerpt: "Discover why template websites are holding your business back and how a custom website can generate more leads and build trust with your customers.",
+    excerpt: "Discover what separates a high-performing custom website from a generic one—and how the right build generates more leads and builds trust with your customers, on any platform.",
     content: `
-## The Problem with Template Websites
+## Where Generic Websites Fall Short
 
 Many small business owners turn to off-the-shelf templates on Wix, Squarespace, or WordPress because they seem like the easy, affordable option. Those platforms can absolutely work—we build and maintain on them every day—but a generic, unoptimized template can quietly cost you in lost opportunities. The difference is in how it's built.
 
-### Why Templates Fall Short
+### What Holds a Generic Build Back
 
 **1. You Look Like Everyone Else**
 
-When potential customers visit your website, they're making snap judgments about your business. If your site looks generic—because it's using the same template as thousands of other businesses—you're missing your chance to stand out.
+When potential customers visit your website, they're making snap judgments about your business. If your site looks generic—because a theme was dropped in without customization—you're missing your chance to stand out.
 
 **2. Limited Functionality**
 
-Templates are designed to be one-size-fits-all, which means they're optimized for nothing. You're stuck with features you don't need and lacking the features you do need.
+An off-the-shelf setup is one-size-fits-all, which can leave you with features you don't need and missing the ones you do. The fix is tailoring the build to your business—on whatever platform you choose.
 
 **3. Poor SEO Performance**
 
-Many template builders produce bloated code that slows down your site and hurts your search engine rankings. When you're competing for local searches like "web design agency Salt Lake City," every millisecond counts.
+A site that's left unoptimized can ship bloated code that slows things down and hurts your search engine rankings. When you're competing for local searches like "web design agency Salt Lake City," every millisecond counts.
 
 **4. No Conversion Optimization**
 
-Templates aren't designed with your specific customer in mind. A custom website can be strategically designed to guide visitors toward becoming leads and customers.
+A generic build isn't designed with your specific customer in mind. A custom website—on any platform—can be strategically designed to guide visitors toward becoming leads and customers.
 
 ## The Custom Website Advantage
 
@@ -344,7 +424,7 @@ A custom website built by a professional agency like Elevate Growth Solutions is
 
 ## The Investment That Pays for Itself
 
-Yes, a custom website costs more upfront than a template. But consider this: if your website generates just one or two additional customers per month, it's already paying for itself. And unlike a template, a custom website continues to work harder for your business year after year.
+Yes, a custom website can cost more upfront than a drop-in template. But consider this: if your website generates just one or two additional customers per month, it's already paying for itself. A custom website keeps working harder for your business year after year.
 
 ## Ready to Upgrade?
 

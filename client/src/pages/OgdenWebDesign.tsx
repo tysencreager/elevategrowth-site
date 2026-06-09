@@ -136,7 +136,7 @@ export default function OgdenWebDesign() {
                 Hill Air Force Base isn't just Ogden's largest employer—it's the economic engine of Weber County, supporting thousands of jobs in aerospace maintenance, defense manufacturing, and logistics. If you're a subcontractor machining precision parts, a manufacturer supplying the F-35 program, or a service provider with base access, your digital presence matters to prime contractors evaluating your professionalism.
               </p>
               <p>
-                When security is non-negotiable, we can build a hardened, custom-coded static site with no database, plugins, or backend login to exploit—and if you'd rather work on WordPress or another builder, we'll lock it down and maintain it properly. When your clients include Lockheed Martin, Northrop Grumman, or the Department of Defense, you need a website that reflects the security standards they expect—not a template that screams "small operation."
+                When security is non-negotiable, we can build a hardened, custom-coded static site with no database, plugins, or backend login to exploit—and if you'd rather work on WordPress or another builder, we'll lock it down and maintain it properly. When your clients include Lockheed Martin, Northrop Grumman, or the Department of Defense, you need a website that reflects the security standards they expect.
               </p>
             </div>
           </motion.div>

@@ -152,7 +152,7 @@ export default function Services() {
     },
     {
       question: "Do you work with businesses in my industry?",
-      answer: "We've successfully partnered with businesses across various industries including professional services, real estate, finance, wellness, and B2B services. Our strategic approach adapts to any industry, focusing on your unique value proposition and target audience rather than one-size-fits-all templates."
+      answer: "We've successfully partnered with businesses across various industries including professional services, real estate, finance, wellness, and B2B services. Our strategic approach adapts to any industry, focusing on your unique value proposition and target audience rather than a one-size-fits-all approach."
     },
     {
       question: "What's included in your marketing packages?",

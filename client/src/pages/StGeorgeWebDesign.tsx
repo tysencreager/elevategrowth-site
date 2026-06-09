@@ -136,7 +136,7 @@ export default function StGeorgeWebDesign() {
                 The construction boom in communities like Entrada, Sunriver, and Desert Color means dozens of contractors competing for the same homeowners. Real estate agents are fighting for listings from California transplants with Bay Area budgets. Service businesses are battling for visibility in a market where Google searches for "St. George contractor" have tripled in five years.
               </p>
               <p>
-                A template website won't cut it in red rock country. You need a site that loads instantly in the desert heat (where mobile connections at Snow Canyon or Sand Hollow can be spotty), showcases your work against stunning landscape backdrops, and ranks in the Local Pack when tourists search "restaurant near Zion" or locals search "custom home builder Washington County."
+                In red rock country, your website has to keep up. You need a site that loads instantly in the desert heat (where mobile connections at Snow Canyon or Sand Hollow can be spotty), showcases your work against stunning landscape backdrops, and ranks in the Local Pack when tourists search "restaurant near Zion" or locals search "custom home builder Washington County."
               </p>
             </div>
           </motion.div>
