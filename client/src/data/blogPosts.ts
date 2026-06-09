@@ -86,7 +86,7 @@ We build and maintain websites on **all of them**—custom-coded builds, WordPre
 - **Either way,** the quality lives in how the site is built and maintained—not just the platform name on the box.
 
 Not sure which path fits your business? [Book a free consultation](/contact) and we'll give you an honest recommendation—even if that means pointing you toward a platform you can manage yourself.
-    \`,
+    `,
     author: "Tysen Creager",
     date: "2026-06-09",
     category: "Web Design",
