@@ -55,7 +55,7 @@ export default function BehindElevate() {
     {
       icon: TrendingUp,
       title: "5+ Years Marketing Experience",
-      description: "Proven track record helping small businesses scale into booming brands through strategic marketing."
+      description: "Proven track record helping businesses of all sizes scale into booming brands through strategic marketing."
     }
   ];
 

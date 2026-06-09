@@ -11,7 +11,7 @@ const organizationSchema = {
   "name": "Elevate Growth Solutions",
   "url": "https://elevategrowth.solutions",
   "logo": "https://elevategrowth.solutions/assets/EGS-LOGO-E-icon.png",
-  "description": "Boutique web design agency and full-stack marketing services for small businesses, startups, and entrepreneurs.",
+  "description": "Boutique web design agency and full-stack marketing services for businesses of all sizes—from startups to established companies.",
   "telephone": "+1-435-553-4668",
   "email": "tysen@elevategrowth.solutions",
   "sameAs": [
@@ -55,7 +55,7 @@ const localBusinessSchema = {
   "url": "https://elevategrowth.solutions",
   "telephone": "+1-435-553-4668",
   "email": "tysen@elevategrowth.solutions",
-  "description": "Boutique web design agency and full-stack marketing services. Custom websites built and maintained on any platform—custom code, WordPress, or any builder—typically delivered in under 30 days. Serving small businesses, startups, and entrepreneurs nationwide with a focus on Utah.",
+  "description": "Boutique web design agency and full-stack marketing services. Custom websites built and maintained on any platform—custom code, WordPress, or any builder—typically delivered in under 30 days. Serving businesses of all sizes nationwide, with a focus on Utah.",
   "address": {
     "@type": "PostalAddress",
     "addressCountry": "US"
@@ -94,7 +94,7 @@ const localBusinessSchema = {
         "itemOffered": {
           "@type": "Service",
           "name": "Web Design",
-          "description": "Custom website design and development for small businesses"
+          "description": "Custom website design and development for businesses of all sizes"
         }
       },
       {
@@ -130,7 +130,7 @@ const webDesignServiceSchema = {
   "@type": "Service",
   "serviceType": "Web Design",
   "name": "Custom Web Design Services",
-  "description": "Professional custom website design and development for small businesses, startups, and entrepreneurs. Websites typically delivered in under 30 days. Conversion-focused design optimized for lead generation.",
+  "description": "Professional custom website design and development for businesses of all sizes, from startups to established companies. Websites typically delivered in under 30 days. Conversion-focused design optimized for lead generation.",
   "provider": {
     "@type": "Organization",
     "name": "Elevate Growth Solutions",
@@ -181,7 +181,7 @@ const marketingServiceSchema = {
   "@type": "Service",
   "serviceType": "Digital Marketing",
   "name": "Full-Stack Marketing Services",
-  "description": "Comprehensive digital marketing services for small businesses including SEO, social media management, branding, ad campaign management, and content creation. Boutique agency approach with personalized attention.",
+  "description": "Comprehensive digital marketing services for businesses of all sizes including SEO, social media management, branding, ad campaign management, and content creation. Boutique agency approach with personalized attention.",
   "provider": {
     "@type": "Organization",
     "name": "Elevate Growth Solutions",

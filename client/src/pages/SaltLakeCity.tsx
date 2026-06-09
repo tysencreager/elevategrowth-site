@@ -18,7 +18,7 @@ const localBusinessSchemaData = {
   "image": "https://www.elevategrowth.solutions/assets/EGS-LOGO-E-icon.png",
   "url": "https://www.elevategrowth.solutions/salt-lake-city",
   "email": "tysen@elevategrowth.solutions",
-  "description": "Premier web design agency and digital marketing consultant serving Salt Lake City, Utah. Custom websites, SEO services, and full-stack marketing for local small businesses and startups.",
+  "description": "Premier web design agency and digital marketing consultant serving Salt Lake City, Utah. Custom websites, SEO services, and full-stack marketing for local businesses of all sizes.",
   "address": {
     "@type": "PostalAddress",
     "addressLocality": "Salt Lake City",
@@ -128,9 +128,9 @@ export default function SaltLakeCity() {
     <div className="min-h-screen">
       <SEO
         title="Web Design Agency Salt Lake City | SEO & Marketing Services Utah | Elevate Growth Solutions"
-        description="Premier web design agency serving Salt Lake City, Utah. Custom website design, SEO services, and digital marketing for small businesses. Fast turnaround, boutique attention. Call (435) 553-4668."
+        description="Premier web design agency serving Salt Lake City, Utah. Custom website design, SEO services, and digital marketing for businesses of all sizes. Fast turnaround, boutique attention. Call (435) 553-4668."
         ogTitle="Web Design & Digital Marketing in Salt Lake City, Utah"
-        ogDescription="Salt Lake City's boutique web design agency. Custom websites, built on any platform, typically delivered in under 30 days. SEO, social media, and full-stack marketing for Utah small businesses."
+        ogDescription="Salt Lake City's boutique web design agency. Custom websites, built on any platform, typically delivered in under 30 days. SEO, social media, and full-stack marketing for Utah businesses of all sizes."
       />
       <SchemaMarkup type="localBusiness" data={localBusinessSchemaData} />
       <Navbar />

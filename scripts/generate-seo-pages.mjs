@@ -136,10 +136,10 @@ const routes = [
     title:
       "Web Design Agency Salt Lake City | SEO & Marketing Services Utah | Elevate Growth Solutions",
     description:
-      "Premier web design agency serving Salt Lake City, Utah. Custom website design, SEO services, and digital marketing for small businesses. Fast turnaround, boutique attention. Call (803) 600-4806.",
+      "Premier web design agency serving Salt Lake City, Utah. Custom website design, SEO services, and digital marketing for businesses of all sizes. Fast turnaround, boutique attention. Call (803) 600-4806.",
     ogTitle: "Web Design & Digital Marketing in Salt Lake City, Utah",
     ogDescription:
-      "Salt Lake City\u2019s boutique web design agency. Custom websites, built on any platform, typically delivered in under 30 days. SEO, social media, and full-stack marketing for Utah small businesses.",
+      "Salt Lake City\u2019s boutique web design agency. Custom websites, built on any platform, typically delivered in under 30 days. SEO, social media, and full-stack marketing for Utah businesses of all sizes.",
   },
   {
     path: "/salt-lake-city-marketing",
@@ -151,23 +151,23 @@ const routes = [
   {
     path: "/blog",
     title:
-      "Marketing Blog | Web Design & SEO Tips for Small Business | Elevate Growth Solutions",
+      "Marketing Blog | Web Design & SEO Tips for Growing Businesses | Elevate Growth Solutions",
     description:
-      "Expert marketing insights, web design tips, and SEO strategies for small businesses. Learn how to grow your business online with actionable advice from Elevate Growth Solutions.",
+      "Expert marketing insights, web design tips, and SEO strategies for growing businesses. Learn how to grow your business online with actionable advice from Elevate Growth Solutions.",
     ogTitle:
-      "Marketing Blog for Small Businesses | Elevate Growth Solutions",
+      "Marketing Blog for Growing Businesses | Elevate Growth Solutions",
     ogDescription:
-      "Expert marketing tips, web design insights, and SEO strategies to help small businesses grow online.",
+      "Expert marketing tips, web design insights, and SEO strategies to help businesses of all sizes grow online.",
   },
   {
     path: "/portfolio",
     title:
-      "Website Design Portfolio | Custom Websites for Small Businesses | Elevate Growth Solutions",
+      "Website Design Portfolio | Custom Websites for Growing Businesses | Elevate Growth Solutions",
     description:
       "Browse our portfolio of custom websites built for law firms, contractors, home services, e-commerce, beauty, and more—on any platform. Full-Stack Marketing Strategist & Certified UX Designer serving businesses in Utah and nationwide.",
     ogTitle: "Website Portfolio - Elevate Growth Solutions",
     ogDescription:
-      "Custom, mobile-responsive, SEO-optimized websites for small businesses, built on any platform. See our work across 8+ industries including legal, construction, beauty, and e-commerce.",
+      "Custom, mobile-responsive, SEO-optimized websites for businesses of all sizes, built on any platform. See our work across 8+ industries including legal, construction, beauty, and e-commerce.",
   },
   {
     path: "/testimonials",
@@ -318,11 +318,11 @@ const homeHtml = injectMeta(template, {
   title:
     "Web Design Agency & Full-Stack Marketing | Elevate Growth Solutions",
   description:
-    "Boutique web design agency and full-stack marketing services for small businesses, startups, and entrepreneurs. Custom websites built and maintained on any platform—custom code, WordPress, or any builder—typically delivered in under 30 days. SEO, social media, branding, and conversion-focused design. Serving Salt Lake City and nationwide.",
+    "Boutique web design agency and full-stack marketing services for businesses of all sizes—from startups to established companies. Custom websites built and maintained on any platform—custom code, WordPress, or any builder—typically delivered in under 30 days. SEO, social media, branding, and conversion-focused design. Serving Salt Lake City and nationwide.",
   ogTitle:
-    "Web Design & Full-Stack Marketing for Small Businesses | Elevate Growth Solutions",
+    "Web Design & Full-Stack Marketing for Growing Businesses | Elevate Growth Solutions",
   ogDescription:
-    "Custom websites built and maintained on any platform, typically delivered in under 30 days. Boutique marketing agency providing web design, SEO, social media management, and branding for small businesses and startups.",
+    "Custom websites built and maintained on any platform, typically delivered in under 30 days. Boutique marketing agency providing web design, SEO, social media management, and branding for businesses of all sizes, nationwide.",
 });
 fs.writeFileSync(indexPath, homeHtml);
 console.log("  \u2713 / (updated root index.html with canonical)");
