@@ -325,25 +325,25 @@ export default function Websites() {
     <ServicePageLayout
       // SEO
       title="Website Design & Development | Custom Websites | Elevate Growth Solutions"
-      metaDescription="Custom-coded websites built in days, not months. Fast, responsive, mobile-first design optimized for conversions. Starting at $1,499. Get a free consultation."
+      metaDescription="Custom websites built in days, not months—on any platform you choose. Fast, responsive, mobile-first design optimized for conversions. Starting at $1,599. Get a free consultation."
       ogTitle="Custom Website Design & Development Services"
-      ogDescription="Professional websites that convert visitors into customers. Fast-loading, mobile-responsive, and SEO-optimized. Custom-coded solutions starting at $1,499."
+      ogDescription="Professional websites that convert visitors into customers. Fast-loading, mobile-responsive, and SEO-optimized—built or maintained on any platform. Starting at $1,599."
 
       // Hero
       heroTitle="Website Design & Development"
-      heroSubtitle="Custom-coded websites built to convert, not just look pretty."
+      heroSubtitle="Custom websites built to convert, not just look pretty—on any platform you choose."
       heroImage={websiteHero}
 
       // Main content
       serviceName="Web Development"
       serviceTagline="Websites That Work as Hard as You Do"
-      serviceDescription="Your website is often the first impression potential customers have of your business. I build custom-coded websites that load fast, look great on every device, and are designed with one goal in mind: turning visitors into customers. No templates, no page builders—just clean, efficient code tailored to your needs."
+      serviceDescription="Your website is often the first impression potential customers have of your business. I build and maintain custom websites that load fast, look great on every device, and are designed with one goal in mind: turning visitors into customers. Whether you want a fully custom-coded build, a WordPress site, or work on another builder like Squarespace or Shopify, I'll create—or take over—a site tailored to your needs."
 
       // Features
       features={[
         {
-          title: "Custom Code, No Templates",
-          description: "Every site is custom-coded from scratch. This means faster load times, cleaner design, and a site that truly represents your brand—not a cookie-cutter template."
+          title: "Built Your Way, On Any Platform",
+          description: "Want a fully custom-coded build for maximum performance, or prefer WordPress or another builder you can edit yourself? I build on whatever platform fits you best—and I can take over and maintain a site you already have."
         },
         {
           title: "Mobile-First Design",
@@ -398,8 +398,8 @@ export default function Websites() {
       pricing={[
         {
           name: "Custom Built Website",
-          price: "From $1,499",
-          description: "Single-page sites start at $1,499. Price increases with additional pages and functionality.",
+          price: "From $1,599",
+          description: "Single-page sites start at $1,599. Price increases with additional pages and functionality.",
           features: [
             "Custom responsive design",
             "Mobile-optimized",
@@ -411,8 +411,8 @@ export default function Websites() {
         },
         {
           name: "Hosting & Maintenance",
-          price: "$70/mo",
-          description: "Keep your site fast, secure, and up-to-date.",
+          price: "$100/mo",
+          description: "Keep your site fast, secure, and up-to-date—on any platform.",
           features: [
             "Managed cloud hosting",
             "SSL certificate included",
@@ -432,8 +432,8 @@ export default function Websites() {
           answer: "Most one-page sites are completed in 2-3 weeks. Larger multi-page sites typically take 3-5 weeks depending on complexity. I'll give you a specific timeline during our discovery call."
         },
         {
-          question: "Do you use WordPress or website builders?",
-          answer: "No. I custom-code every site, which means faster load times, better security, and a design that's truly unique to your brand. No bloated plugins or template limitations."
+          question: "Do you build on WordPress and website builders?",
+          answer: "Yes. I build on whatever platform fits your goals—fully custom-coded sites for maximum speed and security, or WordPress, Squarespace, Shopify, and other builders if you'd rather manage things yourself. I can also take over and maintain a site you already have, no matter how it was built."
         },
         {
           question: "Can I update the website myself?",

@@ -25,8 +25,8 @@ const servicesItemListSchema = {
     {
       "@type": "Service",
       "position": 1,
-      "name": "Custom-Coded Website Development",
-      "description": "Custom websites built from code, not templates. Fast-loading, secure, and SEO-optimized. Typically delivered in under 30 days.",
+      "name": "Custom Website Development",
+      "description": "Custom websites built and maintained on any platform—custom code, WordPress, or any builder. Fast-loading, secure, and SEO-optimized. Typically delivered in under 30 days.",
       "provider": {"@id": "https://elevategrowth.solutions/#organization"},
       "areaServed": {"@type": "State", "name": "Utah"},
       "serviceType": "Web Development"
@@ -66,7 +66,7 @@ const servicesFAQSchema = {
       "name": "How long does it take to build a website?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "We typically deliver custom-coded websites in under 30 days, compared to the industry standard of 2-3 months. Our efficient process and code-based approach eliminates the delays caused by theme customization and plugin conflicts."
+        "text": "We typically deliver custom websites in under 30 days, compared to the industry standard of 2-3 months. We build on whatever platform fits you best—custom code, WordPress, or another builder—and our efficient process keeps timelines short."
       }
     },
     {
@@ -82,7 +82,7 @@ const servicesFAQSchema = {
       "name": "Do you offer ongoing website maintenance?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes, our custom-coded websites require minimal maintenance compared to WordPress sites. We include hosting and basic maintenance in our packages, with no hidden plugin fees or security update costs."
+        "text": "Yes. We build and maintain websites on any platform—custom code, WordPress, or any builder—and include hosting and ongoing maintenance in our packages. We can also take over maintenance of a site you already have."
       }
     },
     {
@@ -90,15 +90,15 @@ const servicesFAQSchema = {
       "name": "What areas do you serve?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "We serve businesses throughout Utah including St. George, Salt Lake City, Ogden, Provo, and Park City. We also work with clients nationwide who value high-performance, custom-coded websites."
+        "text": "We serve businesses throughout Utah including St. George, Salt Lake City, Ogden, Provo, and Park City. We also work with clients nationwide who value high-performance custom websites."
       }
     },
     {
       "@type": "Question",
-      "name": "Why choose custom-coded websites over WordPress?",
+      "name": "Which platform will you build my website on?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Custom-coded websites load faster, rank better in search engines, and have virtually no security vulnerabilities. They don't require constant plugin updates and won't break when themes are deprecated. This translates to lower long-term costs and better performance."
+        "text": "Whichever one fits your goals. We build fully custom-coded sites when you want maximum speed, security, and flexibility, and we also build and maintain WordPress, Squarespace, Shopify, and other builder-based sites when you'd rather manage content yourself. We'll recommend the best fit during your consultation—and we can take over a site you already have."
       }
     }
   ]

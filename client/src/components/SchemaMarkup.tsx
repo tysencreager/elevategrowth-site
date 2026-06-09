@@ -55,7 +55,7 @@ const localBusinessSchema = {
   "url": "https://elevategrowth.solutions",
   "telephone": "+1-435-553-4668",
   "email": "tysen@elevategrowth.solutions",
-  "description": "Boutique web design agency and full-stack marketing services. Custom-coded websites typically delivered in under 30 days. Serving small businesses, startups, and entrepreneurs nationwide with a focus on Utah.",
+  "description": "Boutique web design agency and full-stack marketing services. Custom websites built and maintained on any platform—custom code, WordPress, or any builder—typically delivered in under 30 days. Serving small businesses, startups, and entrepreneurs nationwide with a focus on Utah.",
   "address": {
     "@type": "PostalAddress",
     "addressCountry": "US"
@@ -239,7 +239,7 @@ const marketingAgencySchema = {
   "@type": "MarketingAgency",
   "@id": "https://elevategrowth.solutions/#organization",
   "name": "Elevate Growth Solutions",
-  "description": "Boutique marketing agency specializing in custom-coded website development and full-stack marketing services. Custom websites typically delivered in under 30 days with zero template bloat.",
+  "description": "Boutique marketing agency specializing in custom website design and development—on any platform, including custom code, WordPress, and other builders—plus full-stack marketing services. Custom websites typically delivered in under 30 days.",
   "url": "https://elevategrowth.solutions",
   "logo": "https://i.postimg.cc/13kYHV2m/EGS-LOGO-Full.png",
   "image": "https://www.elevategrowth.solutions/egs-social-sharing.png",
@@ -274,7 +274,10 @@ const marketingAgencySchema = {
   ],
   "knowsAbout": [
     "Web Design",
-    "Custom-Coded Websites",
+    "Custom Websites",
+    "WordPress Development",
+    "Website Builders",
+    "Website Maintenance",
     "Search Engine Optimization",
     "Digital Marketing",
     "Google Ads",
@@ -282,7 +285,7 @@ const marketingAgencySchema = {
     "Brand Strategy",
     "Conversion Rate Optimization"
   ],
-  "slogan": "Custom-coded websites, faster than traditional agencies."
+  "slogan": "Custom websites on any platform, faster than traditional agencies."
 };
 
 export default function SchemaMarkup({ type, data }: SchemaMarkupProps) {

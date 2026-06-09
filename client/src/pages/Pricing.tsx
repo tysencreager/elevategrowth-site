@@ -378,12 +378,12 @@ export default function Pricing() {
     {
       image: websiteImg,
       title: "Websites",
-      description: "Custom-coded websites built in days, not months. Fast, responsive, and designed to convert.",
+      description: "Custom websites built in days, not months—on any platform you choose. Fast, responsive, and designed to convert.",
       items: [
-        { label: "Custom built websites", price: "From $1,499" },
-        { label: "Hosting & maintenance", price: "$70/mo" }
+        { label: "Custom built websites", price: "From $1,599" },
+        { label: "Hosting & maintenance", price: "$100/mo" }
       ],
-      note: "Single-page sites start at $1,499. Price increases with additional pages and functionality. Hosting includes 1 hour of monthly content edits and uptime monitoring.",
+      note: "Single-page sites start at $1,599. Price increases with additional pages and functionality. Whether you want a custom-coded build, WordPress, or another builder, I can build and maintain it. Hosting includes 1 hour of monthly content edits and uptime monitoring.",
       featured: false
     },
     {
@@ -486,12 +486,12 @@ export default function Pricing() {
       {
         "@type": "Offer",
         "name": "Custom Built Website",
-        "description": "Custom-coded websites starting at $1,499 for single-page sites, with pricing increasing for additional pages and functionality",
-        "price": "1499",
+        "description": "Custom websites starting at $1,599 for single-page sites, built on any platform, with pricing increasing for additional pages and functionality",
+        "price": "1599",
         "priceCurrency": "USD",
         "priceSpecification": {
           "@type": "UnitPriceSpecification",
-          "price": "1499",
+          "price": "1599",
           "priceCurrency": "USD",
           "unitText": "starting price"
         }
@@ -500,11 +500,11 @@ export default function Pricing() {
         "@type": "Offer",
         "name": "Website Hosting & Maintenance",
         "description": "Managed hosting with content edits and uptime monitoring",
-        "price": "80",
+        "price": "100",
         "priceCurrency": "USD",
         "priceSpecification": {
           "@type": "UnitPriceSpecification",
-          "price": "80",
+          "price": "100",
           "priceCurrency": "USD",
           "unitText": "per month"
         }
@@ -611,9 +611,9 @@ export default function Pricing() {
     <div className="min-h-screen">
       <SEO
         title="Pricing - Affordable Marketing Services | Elevate Growth Solutions"
-        description="Transparent, affordable pricing for quality marketing services. Custom websites from $1,499, SEO from $750/month, and social media management tailored to your needs. No hidden fees. Get a free consultation today."
+        description="Transparent, affordable pricing for quality marketing services. Custom websites on any platform from $1,599, SEO from $750/month, and social media management tailored to your needs. No hidden fees. Get a free consultation today."
         ogTitle="Marketing Services Pricing | Quality Services, Honest Prices"
-        ogDescription="Custom websites starting at $1,499. SEO from $750/month. Social media management with custom pricing based on your goals. Transparent pricing with no surprises. Schedule your free consultation."
+        ogDescription="Custom websites starting at $1,599, built on any platform. SEO from $750/month. Social media management with custom pricing based on your goals. Transparent pricing with no surprises. Schedule your free consultation."
       />
       <SchemaMarkup type="service" data={serviceOfferSchema} />
       <Navbar />

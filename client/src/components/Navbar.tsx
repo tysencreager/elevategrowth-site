@@ -24,7 +24,7 @@ const resultsSubLinks = [
 
 const resourcesSubLinks = [
   { href: "/behind-elevate", label: "Behind Elevate" },
-  { href: "/why-custom-coded", label: "Why Custom-Coded" },
+  { href: "/why-custom-coded", label: "Why Work With Us" },
   { href: "/website-handoff-options", label: "Website Handoff Options" },
   { href: "/blog", label: "Blog" }
 ];

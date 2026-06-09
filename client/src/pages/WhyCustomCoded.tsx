@@ -27,7 +27,7 @@ export default function WhyCustomCoded() {
 
   const comparisonData = {
     wordpress: {
-      title: "Typical WordPress Site",
+      title: "A Bloated, Unoptimized Site",
       items: [
         "Loads 2-5MB of data per page",
         "Makes 50-100+ HTTP requests",
@@ -35,7 +35,7 @@ export default function WhyCustomCoded() {
       ]
     },
     customCoded: {
-      title: "Our Custom-Coded Sites",
+      title: "A Site We Build & Optimize",
       items: [
         "Load under 100KB typically",
         "Make 10-20 HTTP requests",
@@ -47,8 +47,8 @@ export default function WhyCustomCoded() {
   return (
     <div className="min-h-screen">
       <SEO
-        title="Why Custom-Coded Websites Outperform Templates | Elevate Growth Solutions"
-        description="Discover why custom-coded websites load faster, rank higher, and convert better than WordPress or template-based sites. Zero bloat, maximum performance for Utah businesses."
+        title="Why Work With Elevate Growth Solutions | Custom Websites on Any Platform"
+        description="Discover why businesses choose Elevate Growth Solutions for fast, high-performing custom websites—built and maintained on any platform, from custom code to WordPress and other builders."
         ogImage="https://www.elevategrowth.solutions/egs-social-sharing.png"
       />
       <Navbar />
@@ -66,7 +66,7 @@ export default function WhyCustomCoded() {
             initial="hidden"
             animate={isHeroInView ? "visible" : "hidden"}
           >
-            Why Custom-Coded Websites Beat Templates Every Time
+            Websites Built to Perform—on Any Platform
           </motion.h1>
 
           <motion.p
@@ -76,7 +76,7 @@ export default function WhyCustomCoded() {
             initial="hidden"
             animate={isHeroInView ? "visible" : "hidden"}
           >
-            Your website isn't just a brochure—it's infrastructure. At Elevate Growth Solutions, we build websites from code, not drag-and-drop builders. The result? Sites that load instantly, rank higher, and never break.
+            Your website isn't just a brochure—it's infrastructure. At Elevate Growth Solutions, we build and maintain high-performing websites on any platform—from fully custom code to WordPress and other builders. The result? Sites that load fast, rank higher, and are built to last.
           </motion.p>
         </div>
 
@@ -95,7 +95,7 @@ export default function WhyCustomCoded() {
           >
             <img
               src="https://i.postimg.cc/j50kTV2H/website_photo.png"
-              alt="Custom-coded website development showcasing clean, efficient code"
+              alt="Custom website development showcasing clean, conversion-focused design"
               className="w-full h-auto"
               loading="lazy"
             />
@@ -103,7 +103,7 @@ export default function WhyCustomCoded() {
         </div>
       </section>
 
-      {/* What Does Custom-Coded Mean */}
+      {/* What Makes Our Websites Different */}
       <section className="relative py-16 md:py-24 bg-muted/30 overflow-hidden">
         <WaveDivider position="top" fillColor="hsl(var(--background))" />
         <BokehEffect opacity={0.25} />
@@ -116,14 +116,14 @@ export default function WhyCustomCoded() {
             transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
           >
             <h2 className="font-display font-semibold text-3xl md:text-4xl text-foreground mb-6">
-              What Does "Custom-Coded" Actually Mean?
+              What Makes Our Websites Different?
             </h2>
             <div className="space-y-4 font-serif text-lg text-muted-foreground leading-relaxed">
               <p>
-                Most agencies build websites using WordPress, Wix, or Squarespace—platforms that generate thousands of lines of unnecessary code behind the scenes. Every plugin, every theme feature, every "convenience" adds weight your visitors have to download.
+                We meet you where you are. Want a fully custom-coded site for maximum speed and security? We build it. Prefer the flexibility of WordPress, Squarespace, Shopify, or another builder you can manage yourself? We build and maintain that too—and we can take over a site you already have.
               </p>
               <p>
-                Custom-coded means we write exactly the code your site needs—nothing more. No bloated JavaScript libraries. No redundant CSS files. No database queries slowing down every page load. Just clean, efficient code that does precisely what it's supposed to do.
+                Whatever platform we use, the goal is the same: a fast, clean, conversion-focused website with no unnecessary bloat. We optimize every build—stripping out what slows it down and keeping only what helps your visitors take action.
               </p>
             </div>
           </motion.div>
@@ -215,15 +215,15 @@ export default function WhyCustomCoded() {
                 <Shield className="w-6 h-6 text-primary" />
               </div>
               <h2 className="font-display font-semibold text-3xl md:text-4xl text-foreground">
-                Security: No Plugins, No Vulnerabilities
+                Security You Can Count On
               </h2>
             </div>
             <div className="space-y-4 font-serif text-lg text-muted-foreground leading-relaxed">
               <p>
-                WordPress powers over 40% of the web—which makes it the #1 target for hackers. Most attacks exploit outdated plugins or weak admin passwords. Small business owners rarely have time to maintain the constant cycle of security updates.
+                Most small-business sites get hacked through outdated software or weak passwords—and most owners don't have time to keep up with the constant cycle of security updates.
               </p>
               <p>
-                A custom-coded static site has no database to hack, no admin login to brute-force, and no plugins to exploit. It's virtually impervious to the attacks that take down thousands of small business sites every year.
+                When security is a top priority, we can build a hardened, custom-coded static site with no database, admin login, or plugins to exploit. And if you're on WordPress or another platform, we harden it, keep it updated, and monitor it—so your site stays protected either way.
               </p>
             </div>
           </motion.div>
@@ -254,7 +254,7 @@ export default function WhyCustomCoded() {
                 Google now measures your site's user experience through Core Web Vitals—metrics like Largest Contentful Paint (LCP), Interaction to Next Paint (INP), and Cumulative Layout Shift (CLS). Sites that score poorly get ranked lower.
               </p>
               <p>
-                Custom-coded sites naturally excel at these metrics because we control every element. There's no theme framework adding unpredictable behavior, no third-party scripts causing layout shifts, and no database bottlenecks slowing your server response.
+                The sites we build excel at these metrics because we control every element—trimming bloat, eliminating layout shifts, and keeping response times fast, no matter which platform we build on.
               </p>
             </div>
           </motion.div>
@@ -283,10 +283,10 @@ export default function WhyCustomCoded() {
             </div>
             <div className="space-y-4 font-serif text-lg text-muted-foreground leading-relaxed">
               <p>
-                Template sites seem affordable upfront—until you factor in the hidden costs: premium plugins ($50-200/year each), ongoing security monitoring, performance optimization services, and the leads you lose to slow load times.
+                A cheap, do-it-yourself site can seem affordable upfront—until you factor in the hidden costs: premium plugins and add-ons, ongoing security monitoring, performance fixes, and the leads you lose to slow load times.
               </p>
               <p>
-                Our custom-coded sites cost nothing extra to maintain. No plugin subscriptions. No performance band-aids. No security patches. They just work—year after year.
+                We build and maintain your site so it just works—year after year. One predictable monthly plan covers hosting, updates, and edits, with no surprise fees and no platform headaches landing on your desk.
               </p>
             </div>
           </motion.div>
@@ -340,7 +340,7 @@ export default function WhyCustomCoded() {
               </h2>
             </div>
             <p className="font-serif text-lg text-muted-foreground leading-relaxed">
-              Most agencies quote 2-3 months for a custom website. We typically deliver custom-coded sites in under 30 days. Because we're not wrestling with theme limitations or plugin conflicts, we can focus entirely on building exactly what you need.
+              Most agencies quote 2-3 months for a custom website. We typically deliver in under 30 days. Because we focus on exactly what you need—on whatever platform fits you best—we move fast without cutting corners.
             </p>
           </motion.div>
         </div>
@@ -385,7 +385,7 @@ export default function WhyCustomCoded() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="font-serif text-xl md:text-2xl text-white/90 mb-10 max-w-2xl mx-auto leading-relaxed"
           >
-            Let's talk about what a custom-coded website can do for your business. No obligation, no pressure—just a conversation about your goals.
+            Let's talk about what a custom website can do for your business. No obligation, no pressure—just a conversation about your goals.
           </motion.p>
 
           <motion.div

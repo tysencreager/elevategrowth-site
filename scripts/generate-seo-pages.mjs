@@ -35,10 +35,10 @@ const routes = [
     title:
       "Website Design & Development | Custom Websites | Elevate Growth Solutions",
     description:
-      "Custom-coded websites built in days, not months. Fast, responsive, mobile-first design optimized for conversions. Starting at $1,499. Get a free consultation.",
+      "Custom websites built in days, not months—on any platform you choose. Fast, responsive, mobile-first design optimized for conversions. Starting at $1,599. Get a free consultation.",
     ogTitle: "Custom Website Design & Development Services",
     ogDescription:
-      "Professional websites that convert visitors into customers. Fast-loading, mobile-responsive, and SEO-optimized. Custom-coded solutions starting at $1,499.",
+      "Professional websites that convert visitors into customers. Fast-loading, mobile-responsive, and SEO-optimized—built or maintained on any platform. Starting at $1,599.",
   },
   {
     path: "/services/branding",
@@ -139,14 +139,14 @@ const routes = [
       "Premier web design agency serving Salt Lake City, Utah. Custom website design, SEO services, and digital marketing for small businesses. Fast turnaround, boutique attention. Call (803) 600-4806.",
     ogTitle: "Web Design & Digital Marketing in Salt Lake City, Utah",
     ogDescription:
-      "Salt Lake City\u2019s boutique web design agency. Custom-coded websites typically delivered in under 30 days. SEO, social media, and full-stack marketing for Utah small businesses.",
+      "Salt Lake City\u2019s boutique web design agency. Custom websites, built on any platform, typically delivered in under 30 days. SEO, social media, and full-stack marketing for Utah small businesses.",
   },
   {
     path: "/salt-lake-city-marketing",
     title:
       "Salt Lake City Web Design & Marketing | Elevate Growth Solutions",
     description:
-      "Performance-focused web design and marketing for Salt Lake City startups and growing businesses. Custom-coded sites that convert paid traffic and scale with you.",
+      "Performance-focused web design and marketing for Salt Lake City startups and growing businesses. Custom websites, built on any platform, that convert paid traffic and scale with you.",
   },
   {
     path: "/blog",
@@ -164,10 +164,10 @@ const routes = [
     title:
       "Website Design Portfolio | Custom Websites for Small Businesses | Elevate Growth Solutions",
     description:
-      "Browse our portfolio of custom-coded websites built for law firms, contractors, home services, e-commerce, beauty, and more. Full-Stack Marketing Strategist & Certified UX Designer serving businesses in Utah and nationwide.",
+      "Browse our portfolio of custom websites built for law firms, contractors, home services, e-commerce, beauty, and more—on any platform. Full-Stack Marketing Strategist & Certified UX Designer serving businesses in Utah and nationwide.",
     ogTitle: "Website Portfolio - Elevate Growth Solutions",
     ogDescription:
-      "Custom-coded, mobile-responsive, SEO-optimized websites for small businesses. See our work across 8+ industries including legal, construction, beauty, and e-commerce.",
+      "Custom, mobile-responsive, SEO-optimized websites for small businesses, built on any platform. See our work across 8+ industries including legal, construction, beauty, and e-commerce.",
   },
   {
     path: "/testimonials",
@@ -182,30 +182,30 @@ const routes = [
   {
     path: "/why-custom-coded",
     title:
-      "Why Custom-Coded Websites Outperform Templates | Elevate Growth Solutions",
+      "Why Work With Elevate Growth Solutions | Custom Websites on Any Platform",
     description:
-      "Discover why custom-coded websites load faster, rank higher, and convert better than WordPress or template-based sites. Zero bloat, maximum performance for Utah businesses.",
+      "Discover why businesses choose Elevate Growth Solutions for fast, high-performing custom websites—built and maintained on any platform, from custom code to WordPress and other builders.",
   },
   {
     path: "/website-handoff-options",
     title:
       "Website Handoff Options: What Happens After Your Site is Built | Elevate Growth Solutions",
     description:
-      "Wondering how to manage your custom website after it\u2019s built? Explore your options: ongoing support, headless CMS integration, or full code handover. Learn why custom code beats website builders.",
+      "Wondering how to manage your custom website after it\u2019s built? Explore your options: ongoing support, CMS integration, or full handover. We build and maintain on any platform\u2014custom code, WordPress, or your builder of choice.",
   },
   {
     path: "/st-george-web-design",
     title:
       "Web Design & Marketing Services in St. George, Utah | Elevate Growth Solutions",
     description:
-      "St. George\u2019s fastest-growing businesses need websites that keep up. Custom-coded web design, SEO, and marketing for Washington County contractors, real estate, and service businesses.",
+      "St. George\u2019s fastest-growing businesses need websites that keep up. Custom web design on any platform, SEO, and marketing for Washington County contractors, real estate, and service businesses.",
   },
   {
     path: "/ogden-web-design",
     title:
       "Web Design & Marketing for Ogden Businesses | Elevate Growth Solutions",
     description:
-      "Industrial-strength web design for Ogden\u2019s aerospace, manufacturing, and downtown businesses. Secure, fast, custom-coded websites built for Weber County companies.",
+      "Industrial-strength web design for Ogden\u2019s aerospace, manufacturing, and downtown businesses. Secure, fast custom websites built and maintained on any platform for Weber County companies.",
   },
 ];
 
@@ -318,11 +318,11 @@ const homeHtml = injectMeta(template, {
   title:
     "Web Design Agency & Full-Stack Marketing | Elevate Growth Solutions",
   description:
-    "Boutique web design agency and full-stack marketing services for small businesses, startups, and entrepreneurs. Hand-coded websites typically delivered in under 30 days. SEO, social media, branding, and conversion-focused design. Serving Salt Lake City and nationwide.",
+    "Boutique web design agency and full-stack marketing services for small businesses, startups, and entrepreneurs. Custom websites built and maintained on any platform—custom code, WordPress, or any builder—typically delivered in under 30 days. SEO, social media, branding, and conversion-focused design. Serving Salt Lake City and nationwide.",
   ogTitle:
     "Web Design & Full-Stack Marketing for Small Businesses | Elevate Growth Solutions",
   ogDescription:
-    "Custom-coded websites typically delivered in under 30 days. Boutique marketing agency providing web design, SEO, social media management, and branding for small businesses and startups.",
+    "Custom websites built and maintained on any platform, typically delivered in under 30 days. Boutique marketing agency providing web design, SEO, social media management, and branding for small businesses and startups.",
 });
 fs.writeFileSync(indexPath, homeHtml);
 console.log("  \u2713 / (updated root index.html with canonical)");

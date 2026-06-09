@@ -59,7 +59,7 @@ export default function SaltLakeCityMarketing() {
     <div className="min-h-screen">
       <SEO
         title="Salt Lake City Web Design & Marketing | Elevate Growth Solutions"
-        description="Performance-focused web design and marketing for Salt Lake City startups and growing businesses. Custom-coded sites that convert paid traffic and scale with you."
+        description="Performance-focused web design and marketing for Salt Lake City startups and growing businesses. Custom websites, built on any platform, that convert paid traffic and scale with you."
         ogImage="https://www.elevategrowth.solutions/egs-social-sharing.png"
       />
       <SchemaMarkup type="custom" data={slcSchema} />
@@ -140,7 +140,7 @@ export default function SaltLakeCityMarketing() {
                 You understand what headless CMS means. You've probably tried Webflow or Framer and hit their limits when integrating with your product. You need sub-second page loads because you're running paid traffic and every millisecond impacts conversion.
               </p>
               <p>
-                We speak your language: Jamstack architecture, API integrations, React-based static generation. Our custom-coded sites are built for performance from the ground up—no WordPress database queries, no page builder bloat, just clean code that converts paid traffic into demos and signups.
+                We speak your language: Jamstack architecture, API integrations, React-based static generation. We build for performance from the ground up—whether that's a finely tuned custom-coded build or a streamlined WordPress or builder setup—so your site converts paid traffic into demos and signups.
               </p>
             </div>
           </motion.div>
