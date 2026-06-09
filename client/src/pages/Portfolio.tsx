@@ -367,7 +367,7 @@ export default function Portfolio() {
       "@context": "https://schema.org",
       "@type": "CollectionPage",
       "name": "Website Design Portfolio - Elevate Growth Solutions",
-      "description": "Custom-coded websites built by Elevate Growth Solutions for businesses across legal, construction, home services, e-commerce, beauty, and more.",
+      "description": "Custom websites built by Elevate Growth Solutions for businesses across legal, construction, home services, e-commerce, beauty, and more—on any platform.",
       "url": "https://www.elevategrowth.solutions/portfolio",
       "isPartOf": {
         "@type": "WebSite",
@@ -436,9 +436,9 @@ export default function Portfolio() {
     <div className="min-h-screen">
       <SEO
         title="Website Design Portfolio | Custom Websites for Small Businesses | Elevate Growth Solutions"
-        description="Browse our portfolio of custom-coded websites built for law firms, contractors, home services, e-commerce, beauty, and more. Full-Stack Marketing Strategist & Certified UX Designer serving businesses in Utah and nationwide."
+        description="Browse our portfolio of custom websites built for law firms, contractors, home services, e-commerce, beauty, and more—on any platform. Full-Stack Marketing Strategist & Certified UX Designer serving businesses in Utah and nationwide."
         ogTitle="Website Portfolio - Elevate Growth Solutions"
-        ogDescription="Custom-coded, mobile-responsive, SEO-optimized websites for small businesses. See our work across 8+ industries including legal, construction, beauty, and e-commerce."
+        ogDescription="Custom, mobile-responsive, SEO-optimized websites for small businesses, built on any platform. See our work across 8+ industries including legal, construction, beauty, and e-commerce."
         canonicalPath="/portfolio"
       />
 
@@ -475,7 +475,7 @@ export default function Portfolio() {
             animate={isHeaderInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1], delay: 0.2 }}
           >
-            Full-Stack Marketing Strategist & Certified UX Designer. Every website is custom-coded, mobile responsive, and SEO optimized to help your business grow.
+            Full-Stack Marketing Strategist & Certified UX Designer. Every website is custom-built, mobile responsive, and SEO optimized to help your business grow—on whatever platform fits you best.
           </motion.p>
           <motion.div
             className="mt-8"
@@ -554,7 +554,7 @@ export default function Portfolio() {
               </h2>
               <div className="space-y-4 font-serif text-muted-foreground leading-relaxed">
                 <p>
-                  At Elevate Growth Solutions, we don't just build websites — we build growth engines. Every project starts with understanding your business, your audience, and your goals. From there, we craft custom-coded websites designed to convert visitors into customers.
+                  At Elevate Growth Solutions, we don't just build websites — we build growth engines. Every project starts with understanding your business, your audience, and your goals. From there, we craft custom websites—on any platform, from custom code to WordPress and other builders—designed to convert visitors into customers.
                 </p>
                 <p>
                   Whether you need a full business website, an e-commerce platform, a professional services site, or a high-converting ad landing page, we handle it all — from strategy and design to development and SEO.

@@ -32,7 +32,7 @@ export default function WebsiteHandoffOptions() {
       icon: Users,
       description: "You run your business; we run your website. No worries about breaking the layout, resizing images, or messing up the mobile view. Just email us the change, and it's done.",
       features: [
-        "$70/month includes hosting + 1 hour of monthly edits",
+        "$100/month includes hosting + 1 hour of monthly edits",
         "Uptime monitoring and security updates",
         "Priority support when you need changes",
         "Professional handling of all updates",
@@ -52,7 +52,7 @@ export default function WebsiteHandoffOptions() {
         "Design stays protected from accidental changes",
         "Options include Sanity, Contentful, or Decap CMS"
       ],
-      highlight: "Additional setup fee applies. This gives you the \"Wix-like\" editing experience on the backend while maintaining code-based performance on the frontend."
+      highlight: "Additional setup fee applies. This gives you a simple, builder-style editing experience on the backend while keeping fast, optimized performance on the frontend."
     },
     {
       title: "The \"Full Key\" Handover",
@@ -74,22 +74,22 @@ export default function WebsiteHandoffOptions() {
     {
       icon: Shield,
       title: "You Own the Asset, You Don't Rent It",
-      description: "With website builders, if you stop paying their subscription, your website disappears. You can't move a Wix site to a different host—you're locked in forever. With custom code, you own the actual files. If you don't like your hosting company, we can move the entire site to a new host in minutes."
+      description: "Whatever platform we use, we make sure your website is an asset you control—not something you're locked into. With a custom-coded site you own the files outright; on WordPress or another platform we set you up so you can move hosts or take your content with you whenever you want. No getting trapped."
     },
     {
       icon: TrendingUp,
       title: "Performance Equals Revenue",
-      description: "Website builders are bloated with heavy code to make drag-and-drop features work. This slows down your site, and Google penalizes slow sites in search rankings. According to Google, 53% of mobile visitors leave a page that takes longer than 3 seconds to load. Our custom-coded sites typically load in under 1 second."
+      description: "Speed is money. Google penalizes slow sites in search rankings, and according to Google, 53% of mobile visitors leave a page that takes longer than 3 seconds to load. We optimize every site we build—often loading in under 1 second—no matter the platform."
     },
     {
       icon: DollarSign,
-      title: "No Platform Fees Eating Your Budget",
-      description: "Wix, Squarespace, and Shopify charge $15-50/month forever just for the privilege of using their platform—on top of hosting costs. With a custom site, you're not paying a platform tax. Your $70/month hosting includes professional maintenance, not just access to a builder."
+      title: "Predictable Costs, No Surprises",
+      description: "We help you keep ongoing costs predictable. Whether you're on a fully custom build or a platform like WordPress or Squarespace, your $100/month plan covers hosting and professional maintenance—not just access to a tool—so there are no surprise fees eating your budget."
     },
     {
       icon: Wrench,
-      title: "Pixel-Perfect Customization Without Limits",
-      description: "Builders constrain you to their templates and grids. You've probably heard \"the tool won't let me put that button there.\" With custom code, if you can dream it, we can build it. Your brand looks exactly how it should—not like a generic template that 5,000 other businesses are using."
+      title: "Customization Without Limits",
+      description: "If you can dream it, we can build it. With custom code there are no template limits at all; on a builder, we push the platform far beyond its defaults so your brand looks exactly how it should—distinct and tailored to you, not interchangeable with everyone else's."
     }
   ];
 
@@ -97,7 +97,7 @@ export default function WebsiteHandoffOptions() {
     <div className="min-h-screen">
       <SEO
         title="Website Handoff Options: What Happens After Your Site is Built | Elevate Growth Solutions"
-        description="Wondering how to manage your custom website after it's built? Explore your options: ongoing support, headless CMS integration, or full code handover. Learn why custom code beats website builders."
+        description="Wondering how to manage your custom website after it's built? Explore your options: ongoing support, CMS integration, or full handover. We build and maintain on any platform—custom code, WordPress, or your builder of choice."
         ogImage="https://www.elevategrowth.solutions/egs-social-sharing.png"
       />
       <Navbar />
@@ -135,7 +135,7 @@ export default function WebsiteHandoffOptions() {
             initial="hidden"
             animate={isHeroInView ? "visible" : "hidden"}
           >
-            One of the most common questions we get: "If you build my website from code, how do I edit it later?" Great question—and you have options.
+            One of the most common questions we get: "If you build my website from code, how do I keep it updated?" Great question—and you have options, whatever platform we build on.
           </motion.p>
         </div>
 
@@ -159,13 +159,13 @@ export default function WebsiteHandoffOptions() {
             </h2>
             <div className="space-y-4 font-serif text-lg text-muted-foreground leading-relaxed">
               <p>
-                Many business owners hesitate to choose a custom-coded website because they're used to the drag-and-drop simplicity of Wix or Squarespace. It's a valid concern—you want to be able to update your site without calling a developer for every little change.
+                Some business owners worry about choosing a custom-coded website because they're used to the drag-and-drop simplicity of Wix or Squarespace. It's a valid concern—you want to update your site without calling a developer for every little change. And if that flexibility matters most to you, we're happy to build on a platform you can edit yourself.
               </p>
               <p>
-                Here's the thing: the limitations of custom code aren't flaws—they're trade-offs for dramatically better performance, security, and long-term value. And the good news? We've built solutions that give you the best of both worlds.
+                Here's the thing: the trade-offs of custom code come with dramatically better performance, security, and long-term value. And the good news? Whichever route you choose, we've built solutions that give you the best of both worlds.
               </p>
               <p>
-                Think of it this way: <strong>website builders are rented apartments, while custom code is a house you own.</strong> With an apartment, the landlord handles maintenance but you're stuck with their rules and rent forever. With a house, you have complete freedom and build equity over time.
+                Think of it this way: <strong>a custom-coded site is like a house you own outright, while a builder subscription is more like renting.</strong> Both can be a great fit—it comes down to how much control versus convenience you want. Whatever you choose, we'll build and maintain it for you.
               </p>
             </div>
           </motion.div>
@@ -286,7 +286,7 @@ export default function WebsiteHandoffOptions() {
         </div>
       </section>
 
-      {/* Why Code Beats Builders Section */}
+      {/* Why Work With Us Section */}
       <section className="relative py-16 md:py-24 bg-background overflow-hidden">
         <FloatingOrbs variant="light" />
 
@@ -299,10 +299,10 @@ export default function WebsiteHandoffOptions() {
             className="text-center mb-12"
           >
             <h2 className="font-display font-semibold text-3xl md:text-4xl text-foreground mb-4">
-              Why Custom Code is Still the Better Investment
+              What You Get When We Build & Maintain Your Site
             </h2>
             <p className="font-serif text-lg text-muted-foreground max-w-3xl mx-auto">
-              Yes, builders seem easier upfront. But here's why business owners who understand the full picture choose custom code.
+              Whether we build on custom code or a platform you can manage yourself, here's what you can count on when you work with us.
             </p>
           </motion.div>
 
@@ -355,13 +355,13 @@ export default function WebsiteHandoffOptions() {
             </div>
             <div className="space-y-4 font-serif text-lg text-muted-foreground leading-relaxed">
               <p>
-                Platforms like WordPress power over 40% of the web—which makes them the #1 target for hackers. According to Sucuri's Website Threat Research Report, WordPress accounts for over 90% of hacked CMS platforms. Most attacks exploit outdated plugins or weak admin passwords.
+                Most small-business sites get hacked through outdated software, vulnerable plugins, or weak admin passwords—and the platforms that power much of the web are the biggest targets simply because they're everywhere.
               </p>
               <p>
                 Small business owners rarely have time to maintain the constant cycle of security updates. That's a ticking time bomb.
               </p>
               <p>
-                A custom-coded static site has <strong>no database to hack</strong>, <strong>no admin login to brute-force</strong>, and <strong>no plugins to exploit</strong>. It's virtually impervious to the attacks that take down thousands of small business sites every year.
+                When security is critical, a custom-coded static site has <strong>no database to hack</strong>, <strong>no admin login to brute-force</strong>, and <strong>no plugins to exploit</strong>. And if you're on WordPress or another platform, we harden it, keep it patched, and monitor it—so your site stays protected either way.
               </p>
             </div>
           </motion.div>
@@ -384,7 +384,7 @@ export default function WebsiteHandoffOptions() {
             </h2>
             <div className="space-y-4 font-serif text-lg text-muted-foreground leading-relaxed">
               <p>
-                Here's something we've noticed over years of building websites: most business owners think they'll edit their site constantly. In reality? They update it maybe once or twice a year—and when they do try to DIY with a builder, they often break the design or spend hours fighting the platform.
+                Here's something we've noticed over years of building websites: most business owners think they'll edit their site constantly. In reality? They update it maybe once or twice a year—and when they DIY those edits themselves, they often break the design or spend hours on a small change.
               </p>
               <p>
                 The "Peace of Mind" retainer exists because most clients discover they'd rather just email us the change and have it done professionally in 24-48 hours. Your time is better spent running your business.
@@ -436,7 +436,7 @@ export default function WebsiteHandoffOptions() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="font-serif text-xl md:text-2xl text-white/90 mb-10 max-w-2xl mx-auto leading-relaxed"
           >
-            Let's discuss which handoff option makes sense for your business. Custom websites start at $1,299, and hosting is just $70/month with professional support included.
+            Let's discuss which handoff option makes sense for your business. Custom websites start at $1,599, and hosting is just $100/month with professional support included.
           </motion.p>
 
           <motion.div

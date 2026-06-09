@@ -94,9 +94,9 @@ export default function Home() {
     <div className="min-h-screen">
       <SEO
         title="Web Design Agency & Full-Stack Marketing | Elevate Growth Solutions"
-        description="Boutique web design agency and full-stack marketing services for small businesses, startups, and entrepreneurs. Custom-coded websites typically delivered in under 30 days. SEO, social media, branding, and conversion-focused design. Serving Salt Lake City and nationwide."
+        description="Boutique web design agency and full-stack marketing services for small businesses, startups, and entrepreneurs. We build and maintain custom websites on any platform—custom code, WordPress, or any builder—typically delivered in under 30 days. SEO, social media, branding, and conversion-focused design. Serving Salt Lake City and nationwide."
         ogTitle="Web Design & Full-Stack Marketing for Small Businesses | Elevate Growth Solutions"
-        ogDescription="Custom-coded websites typically delivered in under 30 days. Boutique marketing agency providing web design, SEO, social media management, and branding for small businesses and startups."
+        ogDescription="Custom websites built and maintained on any platform, typically delivered in under 30 days. Boutique marketing agency providing web design, SEO, social media management, and branding for small businesses and startups."
       />
       <SchemaMarkup type="marketingAgency" />
       <Navbar />
@@ -104,7 +104,7 @@ export default function Home() {
       <Hero
         backgroundImage={heroImage}
         imageSrcSet={`${heroImage768} 768w, ${heroImage} 1920w`}
-        title="Custom-Coded Web Design & Full-Stack Marketing for Growing Businesses"
+        title="Custom Web Design & Full-Stack Marketing for Growing Businesses"
         subtitle={"Web Design. SEO. Ad Campaigns.\nSocial Media. Branding."}
         ctaText="See Our Services"
         ctaHref="/services"
@@ -131,7 +131,7 @@ export default function Home() {
           image={valueImage}
           imageAlt="Professional working on laptop"
           title="Web Design. SEO. Social Media. Branding. Ad Campaigns."
-          description="Tired of being just a number at big agencies? At Elevate Growth Solutions, we're a boutique firm that gives every client the care and attention they deserve. We handle everything—web design, SEO, social media, branding, and ad campaigns—so you can save time, relieve stress, and focus on what you do best: running your business. Whether you're launching your first website or ready to scale with confidence, we're here to help you generate more leads and grow."
+          description="Tired of being just a number at big agencies? At Elevate Growth Solutions, we're a boutique firm that gives every client the care and attention they deserve. We handle everything—web design, SEO, social media, branding, and ad campaigns—so you can save time, relieve stress, and focus on what you do best: running your business. We build and maintain custom websites on any platform—whether that's a custom-coded build, WordPress, Squarespace, Shopify, or any other builder. Whether you're launching your first website or ready to scale with confidence, we're here to help you generate more leads and grow."
         />
       </div>
 

@@ -59,7 +59,7 @@ export default function SaltLakeCityMarketing() {
     <div className="min-h-screen">
       <SEO
         title="Salt Lake City Web Design & Marketing | Elevate Growth Solutions"
-        description="Performance-focused web design and marketing for Salt Lake City startups and growing businesses. Custom-coded sites that convert paid traffic and scale with you."
+        description="Performance-focused web design and marketing for Salt Lake City startups and growing businesses. Custom websites, built on any platform, that convert paid traffic and scale with you."
         ogImage="https://www.elevategrowth.solutions/egs-social-sharing.png"
       />
       <SchemaMarkup type="custom" data={slcSchema} />
@@ -134,13 +134,13 @@ export default function SaltLakeCityMarketing() {
             </div>
             <div className="space-y-4 font-serif text-lg text-muted-foreground leading-relaxed">
               <p>
-                When your neighbors are Qualtrics, Podium, and Pluralsight, you can't show up with a Squarespace template. Silicon Slopes companies—from the Thanksgiving Point tech corridor through Lehi, Draper, and Sandy—have technical founders who know the difference between a page builder and production-grade code.
+                When your neighbors are Qualtrics, Podium, and Pluralsight, your site has to look the part. Silicon Slopes companies—from the Thanksgiving Point tech corridor through Lehi, Draper, and Sandy—have technical founders who care about performance, whether that means a finely tuned build on a platform or production-grade custom code.
               </p>
               <p>
                 You understand what headless CMS means. You've probably tried Webflow or Framer and hit their limits when integrating with your product. You need sub-second page loads because you're running paid traffic and every millisecond impacts conversion.
               </p>
               <p>
-                We speak your language: Jamstack architecture, API integrations, React-based static generation. Our custom-coded sites are built for performance from the ground up—no WordPress database queries, no page builder bloat, just clean code that converts paid traffic into demos and signups.
+                We speak your language: Jamstack architecture, API integrations, React-based static generation. We build for performance from the ground up—whether that's a finely tuned custom-coded build or a streamlined WordPress or builder setup—so your site converts paid traffic into demos and signups.
               </p>
             </div>
           </motion.div>
@@ -168,7 +168,7 @@ export default function SaltLakeCityMarketing() {
             </div>
             <div className="space-y-4 font-serif text-lg text-muted-foreground leading-relaxed">
               <p>
-                You've closed your seed round. Your MVP site got you to product-market fit, but now you're scaling paid acquisition and that WordPress theme is killing your conversion rates. The enterprise agencies on 400 South want $75,000 for a rebrand. You're not there yet.
+                You've closed your seed round. Your MVP site got you to product-market fit, but now you're scaling paid acquisition and that off-the-shelf theme is killing your conversion rates. The enterprise agencies on 400 South want $75,000 for a rebrand. You're not there yet.
               </p>
               <p>
                 We work with Silicon Slopes startups at the inflection point: post-seed, pre-Series B companies that need marketing sites designed specifically to convert paid traffic—landing pages that load in under a second, A/B testing infrastructure, and analytics that prove ROI to your board.

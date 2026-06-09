@@ -58,7 +58,7 @@ export default function OgdenWebDesign() {
     <div className="min-h-screen">
       <SEO
         title="Web Design & Marketing for Ogden Businesses | Elevate Growth Solutions"
-        description="Industrial-strength web design for Ogden's aerospace, manufacturing, and downtown businesses. Secure, fast, custom-coded websites built for Weber County companies."
+        description="Industrial-strength web design for Ogden's aerospace, manufacturing, and downtown businesses. Secure, fast custom websites built and maintained on any platform for Weber County companies."
         ogImage="https://www.elevategrowth.solutions/egs-social-sharing.png"
       />
       <SchemaMarkup type="custom" data={ogdenSchema} />
@@ -136,7 +136,7 @@ export default function OgdenWebDesign() {
                 Hill Air Force Base isn't just Ogden's largest employer—it's the economic engine of Weber County, supporting thousands of jobs in aerospace maintenance, defense manufacturing, and logistics. If you're a subcontractor machining precision parts, a manufacturer supplying the F-35 program, or a service provider with base access, your digital presence matters to prime contractors evaluating your professionalism.
               </p>
               <p>
-                Our custom-coded static sites have no database vulnerabilities, no WordPress plugin exploits, and no backend login to brute-force. When your clients include Lockheed Martin, Northrop Grumman, or the Department of Defense, you need a website that reflects the security standards they expect—not a template that screams "small operation."
+                When security is non-negotiable, we can build a hardened, custom-coded static site with no database, plugins, or backend login to exploit—and if you'd rather work on WordPress or another builder, we'll lock it down and maintain it properly. When your clients include Lockheed Martin, Northrop Grumman, or the Department of Defense, you need a website that reflects the security standards they expect.
               </p>
             </div>
           </motion.div>
@@ -286,7 +286,7 @@ export default function OgdenWebDesign() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="font-serif text-xl md:text-2xl text-white/90 mb-10 max-w-2xl mx-auto leading-relaxed"
           >
-            Let's discuss how a custom-coded website can help your Weber County business compete and grow.
+            Let's discuss how a custom website can help your Weber County business compete and grow.
           </motion.p>
 
           <motion.div

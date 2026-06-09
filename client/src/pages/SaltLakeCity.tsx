@@ -130,7 +130,7 @@ export default function SaltLakeCity() {
         title="Web Design Agency Salt Lake City | SEO & Marketing Services Utah | Elevate Growth Solutions"
         description="Premier web design agency serving Salt Lake City, Utah. Custom website design, SEO services, and digital marketing for small businesses. Fast turnaround, boutique attention. Call (435) 553-4668."
         ogTitle="Web Design & Digital Marketing in Salt Lake City, Utah"
-        ogDescription="Salt Lake City's boutique web design agency. Custom-coded websites typically delivered in under 30 days. SEO, social media, and full-stack marketing for Utah small businesses."
+        ogDescription="Salt Lake City's boutique web design agency. Custom websites, built on any platform, typically delivered in under 30 days. SEO, social media, and full-stack marketing for Utah small businesses."
       />
       <SchemaMarkup type="localBusiness" data={localBusinessSchemaData} />
       <Navbar />
@@ -158,7 +158,7 @@ export default function SaltLakeCity() {
             But with Salt Lake's growth comes competition. The coffee shop on 300 South competes with a dozen others. The Holladay dentist needs to stand out from every practice along the Wasatch Front. Your business needs more than a basic website—you need a marketing partner who knows this city.
           </p>
           <p className="font-serif text-lg text-gray-700 leading-relaxed">
-            We help Salt Lake businesses cut through the noise: the Sugar House bakery that needs weekend foot traffic, the Murray auto shop competing for "mechanic near me" searches, the downtown law firm building its reputation. Custom-coded websites, local SEO that actually works, and marketing that speaks to Utah audiences.
+            We help Salt Lake businesses cut through the noise: the Sugar House bakery that needs weekend foot traffic, the Murray auto shop competing for "mechanic near me" searches, the downtown law firm building its reputation. Custom websites, local SEO that actually works, and marketing that speaks to Utah audiences.
           </p>
         </div>
       </section>
