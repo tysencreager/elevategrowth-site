@@ -91,8 +91,8 @@ Not sure which path fits your business? [Book a free consultation](/contact) and
     date: "2026-06-09",
     category: "Web Design",
     tags: ["web design", "website builders", "custom websites", "wordpress", "comparison"],
-    metaTitle: "Custom-Coded vs. Website Builders: An Honest Comparison | Elevate Growth Solutions",
-    metaDescription: "Custom code or a website builder like WordPress, Squarespace, Wix, or Shopify? An honest, balanced comparison of cost, speed, flexibility, and ownership—plus how to choose.",
+    metaTitle: "Custom-Coded vs. Website Builders: An Honest Comparison",
+    metaDescription: "Custom code or a builder like WordPress, Squarespace, or Shopify? An honest comparison of cost, speed, flexibility, and ownership—and how to choose.",
     featured: true
   },
   {
@@ -250,7 +250,7 @@ At Elevate Growth Solutions, we build and maintain custom websites on any platfo
     date: "2026-04-29",
     category: "SEO",
     tags: ["SEO", "AEO", "local SEO", "St. George", "AI search"],
-    metaTitle: "Local SEO vs AEO: 2026 Guide for St. George Businesses | Elevate Growth Solutions",
+    metaTitle: "Local SEO vs AEO: 2026 Guide for St. George Businesses",
     metaDescription: "How to combine Local SEO and Answer Engine Optimization (AEO) to win in AI-driven search. A practical 2026 guide for businesses in St. George and Southern Utah.",
     image: "/blog/local-seo-vs-aeo.png",
     imageAlt: "Local SEO vs AEO 2026 guide for St. George businesses",
@@ -382,8 +382,8 @@ Custom code gives you a fast, secure, unique website that you actually own—wit
     date: "2026-01-22",
     category: "Web Design",
     tags: ["web design", "custom websites", "website builders", "website management", "headless CMS"],
-    metaTitle: "Website Handoff Options: Managing Your Custom Website | Elevate Growth Solutions",
-    metaDescription: "Learn your options after a custom website is built: ongoing support, CMS integration, or full handover. We build and maintain on any platform—custom code, WordPress, or your builder of choice.",
+    metaTitle: "Website Handoff Options: Managing Your Custom Website",
+    metaDescription: "Learn your options after a custom website is built: ongoing support, CMS integration, or full handover—on custom code, WordPress, or your builder of choice.",
     featured: true
   },
   {
@@ -436,8 +436,8 @@ If you're ready to stop blending in and start standing out, we'd love to help. A
     date: "2025-12-15",
     category: "Web Design",
     tags: ["web design", "growing businesses", "custom websites", "lead generation"],
-    metaTitle: "Why Your Business Needs a Custom Website in 2025 | Elevate Growth Solutions",
-    metaDescription: "Learn what separates a high-performing custom website from a generic one. Discover how custom web design generates more leads and builds trust for businesses of all sizes."
+    metaTitle: "Why Your Business Needs a Custom Website | Elevate Growth",
+    metaDescription: "What separates a high-performing custom website from a generic one—and how custom web design generates more leads and trust for businesses of all sizes."
   },
   {
     slug: "local-seo-guide-small-business-utah",
@@ -638,7 +638,7 @@ Ready to simplify your marketing and start seeing real results? [Contact us](/co
     date: "2025-12-05",
     category: "Marketing",
     tags: ["full-stack marketing", "business growth", "digital marketing", "marketing strategy"],
-    metaTitle: "What is Full-Stack Marketing? A Guide for Growing Businesses | Elevate Growth",
+    metaTitle: "What is Full-Stack Marketing? A Guide for Growing Businesses",
     metaDescription: "Discover what full-stack marketing means for growing businesses. Learn how comprehensive marketing services can simplify growth and generate more leads."
   }
 ];

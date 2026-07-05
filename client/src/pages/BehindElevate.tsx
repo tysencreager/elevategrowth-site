@@ -141,7 +141,7 @@ export default function BehindElevate() {
     <div className="min-h-screen">
       <SEO
         title="Behind Elevate - Meet Tysen Creager | Elevate Growth Solutions"
-        description="Meet Tysen Creager, founder of Elevate Growth Solutions. Full-stack marketer with nearly a decade of experience in branding, digital marketing, SEO, and strategy. Certified in Digital Marketing and UX Design."
+        description="Meet Tysen Creager, founder of Elevate Growth Solutions—a full-stack marketer with nearly a decade of experience in branding, SEO, and strategy."
         ogTitle="Meet the Founder - Tysen Creager, Marketing Strategist"
         ogDescription="Nearly a decade of experience helping businesses grow through strategic marketing, branding, and digital solutions. Certified marketing expert with proven results."
       />

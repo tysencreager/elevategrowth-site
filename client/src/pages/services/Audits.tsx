@@ -7,7 +7,7 @@ export default function Audits() {
     <ServicePageLayout
       // SEO
       title="Website & SEO Audits | Technical Analysis | Elevate Growth Solutions"
-      metaDescription="Get clarity on what's holding your website back. Comprehensive SEO audits from $500, technical audits from $400, or the full stack bundle for $799. Actionable insights, no ongoing commitment."
+      metaDescription="Find out what's holding your website back. SEO audits from $500, technical audits from $400, or the full bundle for $799. Actionable insights, no lock-in."
       ogTitle="Website & SEO Audit Services"
       ogDescription="Stop guessing what's wrong with your website. Get a comprehensive audit with actionable recommendations. SEO audits $500, technical audits $400, bundle for $799."
 

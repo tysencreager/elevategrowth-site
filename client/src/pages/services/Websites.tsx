@@ -324,8 +324,8 @@ export default function Websites() {
   return (
     <ServicePageLayout
       // SEO
-      title="Website Design & Development | Custom Websites | Elevate Growth Solutions"
-      metaDescription="Custom websites built in days, not months—on any platform you choose. Fast, responsive, mobile-first design optimized for conversions. Starting at $1,599. Get a free consultation."
+      title="Website Design & Development | Elevate Growth Solutions"
+      metaDescription="Custom websites built in days, not months—on any platform you choose. Fast, mobile-first design optimized for conversions. Starting at $1,599."
       ogTitle="Custom Website Design & Development Services"
       ogDescription="Professional websites that convert visitors into customers. Fast-loading, mobile-responsive, and SEO-optimized—built or maintained on any platform. Starting at $1,599."
 

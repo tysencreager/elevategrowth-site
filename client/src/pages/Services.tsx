@@ -183,8 +183,8 @@ export default function Services() {
   return (
     <div className="min-h-screen">
       <SEO
-        title="Marketing Services - Full-Stack Digital Marketing | Elevate Growth Solutions"
-        description="Comprehensive marketing services including full-stack marketing management, branding, web design, SEO, social media strategy, ad campaigns, and content creation. Expert solutions designed to help your business grow."
+        title="Marketing Services | Elevate Growth Solutions"
+        description="Full-stack marketing services: strategy, branding, web design, SEO, social media, ad campaigns, and content creation—built to help your business grow."
         ogTitle="Professional Marketing Services That Drive Results"
         ogDescription="From strategy to execution - discover our full range of marketing services including branding, SEO, social media, and more. Tailored solutions for growing businesses."
       />

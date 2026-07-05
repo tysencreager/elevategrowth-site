@@ -50,7 +50,7 @@ export default function Branding() {
       beforeProcess={<BrandingShowcase />}
       // SEO
       title="Branding & Brand Identity Design | Elevate Growth Solutions"
-      metaDescription="Build a memorable brand identity that connects with your audience. Logo design, visual identity systems, brand strategy, and complete brand guidelines. Packages from $999."
+      metaDescription="Build a memorable brand identity: logo design, visual identity systems, strategy, and complete brand guidelines. Packages from $999."
       ogTitle="Professional Branding & Identity Design Services"
       ogDescription="Create a brand that stands out. From logo suites to complete brand systems with strategy, visual identity, and collateral. Packages starting at $999."
 

@@ -1,41 +1,57 @@
 /**
  * Post-build script: generates route-specific HTML files with correct
- * <title>, <meta>, <link rel="canonical">, and Open Graph tags baked in.
+ * <title>, <meta>, <link rel="canonical">, and Open Graph tags baked in,
+ * plus the fully server-rendered page body (H1s, copy, internal links)
+ * from the SSG bundle built by `vite build --ssr`.
  *
- * This fixes the core SPA indexing problem — Google no longer needs to
- * execute JavaScript to see per-page meta data.
+ * Output layout is tuned for Cloudflare Pages:
+ *   - Each route is written as a flat `<path>.html` file (e.g.
+ *     `services.html`, `services/websites.html`). Cloudflare Pages serves
+ *     `foo.html` at `/foo` with a 200 and redirects `/foo/` -> `/foo`,
+ *     which keeps the served URL identical to the canonical URL. Writing
+ *     `foo/index.html` instead would make Pages serve `/foo/` and redirect
+ *     `/foo` -> `/foo/`, i.e. every canonical/sitemap/internal-link URL
+ *     would point at a redirect (the exact errors Ahrefs flagged).
+ *   - Blog posts get real static files too. The `_redirects` SPA rewrite
+ *     `/blog/* /index.html 200` silently fails on Cloudflare Pages
+ *     (`/index.html` itself redirects to `/`), which made every blog post
+ *     404 in production.
+ *
+ * Also writes sitemap.xml from the same route list, so the sitemap can
+ * never reference a URL that doesn't resolve to a real 200 page.
  */
 
 import fs from "fs";
 import path from "path";
-import { fileURLToPath } from "url";
+import { pathToFileURL, fileURLToPath } from "url";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const distDir = path.resolve(__dirname, "..", "dist", "public");
+const ssgEntry = path.resolve(__dirname, "..", "dist", "ssg", "entry-ssg.js");
 const baseUrl = "https://www.elevategrowth.solutions";
 const defaultOgImage =
   "https://www.elevategrowth.solutions/egs-social-sharing.png";
 
 // ---------------------------------------------------------------------------
 // Route → meta-tag map  (mirrors the <SEO /> props used in each page component)
+// Titles are kept under ~60 characters and descriptions under ~160 so search
+// engines don't truncate them (Ahrefs flags >70 / >160).
 // ---------------------------------------------------------------------------
 const routes = [
   {
     path: "/services",
-    title:
-      "Marketing Services - Full-Stack Digital Marketing | Elevate Growth Solutions",
+    title: "Marketing Services | Elevate Growth Solutions",
     description:
-      "Comprehensive marketing services including full-stack marketing management, branding, web design, SEO, social media strategy, ad campaigns, and content creation. Expert solutions designed to help your business grow.",
+      "Full-stack marketing services: strategy, branding, web design, SEO, social media, ad campaigns, and content creation—built to help your business grow.",
     ogTitle: "Professional Marketing Services That Drive Results",
     ogDescription:
       "From strategy to execution - discover our full range of marketing services including branding, SEO, social media, and more. Tailored solutions for growing businesses.",
   },
   {
     path: "/services/websites",
-    title:
-      "Website Design & Development | Custom Websites | Elevate Growth Solutions",
+    title: "Website Design & Development | Elevate Growth Solutions",
     description:
-      "Custom websites built in days, not months—on any platform you choose. Fast, responsive, mobile-first design optimized for conversions. Starting at $1,599. Get a free consultation.",
+      "Custom websites built in days, not months—on any platform you choose. Fast, mobile-first design optimized for conversions. Starting at $1,599.",
     ogTitle: "Custom Website Design & Development Services",
     ogDescription:
       "Professional websites that convert visitors into customers. Fast-loading, mobile-responsive, and SEO-optimized—built or maintained on any platform. Starting at $1,599.",
@@ -44,7 +60,7 @@ const routes = [
     path: "/services/branding",
     title: "Branding & Brand Identity Design | Elevate Growth Solutions",
     description:
-      "Build a memorable brand identity that connects with your audience. Logo design, visual identity systems, brand strategy, and complete brand guidelines. Packages from $999.",
+      "Build a memorable brand identity: logo design, visual identity systems, strategy, and complete brand guidelines. Packages from $999.",
     ogTitle: "Professional Branding & Identity Design Services",
     ogDescription:
       "Create a brand that stands out. From logo suites to complete brand systems with strategy, visual identity, and collateral. Packages starting at $999.",
@@ -60,20 +76,18 @@ const routes = [
   },
   {
     path: "/services/social-media",
-    title:
-      "Social Media Management | Strategy & Content | Elevate Growth Solutions",
+    title: "Social Media Management & Strategy | Elevate Growth Solutions",
     description:
-      "Strategic social media management that builds your brand and engages your audience. Consistent, quality content for Instagram, Facebook, LinkedIn, and more. Inquire for pricing.",
+      "Strategic social media management that builds your brand. Consistent, quality content for Instagram, Facebook, LinkedIn, and more.",
     ogTitle: "Social Media Management & Strategy Services",
     ogDescription:
       "Build your brand with strategic social media content. Professional management for Instagram, Facebook, LinkedIn. Inquire for pricing.",
   },
   {
     path: "/services/content-creation",
-    title:
-      "Content Creation | Photo & Video for Business | Elevate Growth Solutions",
+    title: "Content Creation: Photo & Video | Elevate Growth Solutions",
     description:
-      "Professional content creation for your business. One content day per quarter delivers a library of curated photos and videos for social media, website, and marketing. $1,700/quarter.",
+      "One content day per quarter delivers a library of professional photos and videos for your social media, website, and marketing. $1,700/quarter.",
     ogTitle: "Professional Content Creation Services",
     ogDescription:
       "Build a library of professional photos and videos for your business. Quarterly content days deliver authentic, on-brand content you can use everywhere.",
@@ -86,24 +100,23 @@ const routes = [
       "Strategic ad campaign management across Google, Meta, and other platforms. Data-driven campaigns tailored to your goals. Custom pricing based on your needs.",
     ogTitle: "Ad Campaign Management | Google & Meta Advertising",
     ogDescription:
-      "Get more from your ad spend with strategic campaign management. Google Ads, Facebook Ads, Instagram Ads\u2014custom strategies that drive real results.",
+      "Get more from your ad spend with strategic campaign management. Google Ads, Facebook Ads, Instagram Ads—custom strategies that drive real results.",
   },
   {
     path: "/services/audits",
     title:
       "Website & SEO Audits | Technical Analysis | Elevate Growth Solutions",
     description:
-      "Get clarity on what\u2019s holding your website back. Comprehensive SEO audits from $500, technical audits from $400, or the full stack bundle for $799. Actionable insights, no ongoing commitment.",
+      "Find out what’s holding your website back. SEO audits from $500, technical audits from $400, or the full bundle for $799. Actionable insights, no lock-in.",
     ogTitle: "Website & SEO Audit Services",
     ogDescription:
-      "Stop guessing what\u2019s wrong with your website. Get a comprehensive audit with actionable recommendations. SEO audits $500, technical audits $400, bundle for $799.",
+      "Stop guessing what’s wrong with your website. Get a comprehensive audit with actionable recommendations. SEO audits $500, technical audits $400, bundle for $799.",
   },
   {
     path: "/behind-elevate",
-    title:
-      "Behind Elevate - Meet Tysen Creager | Elevate Growth Solutions",
+    title: "Behind Elevate - Meet Tysen Creager | Elevate Growth Solutions",
     description:
-      "Meet Tysen Creager, founder of Elevate Growth Solutions. Full-stack marketer with nearly a decade of experience in branding, digital marketing, SEO, and strategy. Certified in Digital Marketing and UX Design.",
+      "Meet Tysen Creager, founder of Elevate Growth Solutions—a full-stack marketer with nearly a decade of experience in branding, SEO, and strategy.",
     ogTitle: "Meet the Founder - Tysen Creager, Marketing Strategist",
     ogDescription:
       "Nearly a decade of experience helping businesses grow through strategic marketing, branding, and digital solutions. Certified marketing expert with proven results.",
@@ -117,7 +130,7 @@ const routes = [
     ogTitle:
       "Contact Elevate Growth Solutions - Start Your Marketing Journey",
     ogDescription:
-      "Let\u2019s connect and discuss how we can help your business grow. Expert marketing strategy and execution tailored to your goals.",
+      "Let’s connect and discuss how we can help your business grow. Expert marketing strategy and execution tailored to your goals.",
   },
   {
     path: "/privacy-policy",
@@ -133,27 +146,25 @@ const routes = [
   },
   {
     path: "/salt-lake-city",
-    title:
-      "Web Design Agency Salt Lake City | SEO & Marketing Services Utah | Elevate Growth Solutions",
+    title: "Web Design Agency Salt Lake City | Elevate Growth Solutions",
     description:
-      "Premier web design agency serving Salt Lake City, Utah. Custom website design, SEO services, and digital marketing for businesses of all sizes. Fast turnaround, boutique attention. Call (803) 600-4806.",
+      "Salt Lake City web design agency for businesses of all sizes. Custom websites, SEO, and digital marketing with fast turnaround and boutique attention.",
     ogTitle: "Web Design & Digital Marketing in Salt Lake City, Utah",
     ogDescription:
-      "Salt Lake City\u2019s boutique web design agency. Custom websites, built on any platform, typically delivered in under 30 days. SEO, social media, and full-stack marketing for Utah businesses of all sizes.",
+      "Salt Lake City’s boutique web design agency. Custom websites, built on any platform, typically delivered in under 30 days. SEO, social media, and full-stack marketing for Utah businesses of all sizes.",
   },
   {
     path: "/salt-lake-city-marketing",
     title:
       "Salt Lake City Web Design & Marketing | Elevate Growth Solutions",
     description:
-      "Performance-focused web design and marketing for Salt Lake City startups and growing businesses. Custom websites, built on any platform, that convert paid traffic and scale with you.",
+      "Performance-focused web design and marketing for Salt Lake City startups and growing businesses—custom websites that convert paid traffic and scale with you.",
   },
   {
     path: "/blog",
-    title:
-      "Marketing Blog | Web Design & SEO Tips for Growing Businesses | Elevate Growth Solutions",
+    title: "Marketing Blog & SEO Tips | Elevate Growth Solutions",
     description:
-      "Expert marketing insights, web design tips, and SEO strategies for growing businesses. Learn how to grow your business online with actionable advice from Elevate Growth Solutions.",
+      "Expert marketing insights, web design tips, and SEO strategies for growing businesses—actionable advice from Elevate Growth Solutions.",
     ogTitle:
       "Marketing Blog for Growing Businesses | Elevate Growth Solutions",
     ogDescription:
@@ -161,20 +172,18 @@ const routes = [
   },
   {
     path: "/portfolio",
-    title:
-      "Website Design Portfolio | Custom Websites for Growing Businesses | Elevate Growth Solutions",
+    title: "Website Design Portfolio | Elevate Growth Solutions",
     description:
-      "Browse our portfolio of custom websites built for law firms, contractors, home services, e-commerce, beauty, and more—on any platform. Full-Stack Marketing Strategist & Certified UX Designer serving businesses in Utah and nationwide.",
+      "Browse custom websites we’ve built for law firms, contractors, home services, e-commerce, beauty, and more—on any platform, in Utah and nationwide.",
     ogTitle: "Website Portfolio - Elevate Growth Solutions",
     ogDescription:
       "Custom, mobile-responsive, SEO-optimized websites for businesses of all sizes, built on any platform. See our work across 8+ industries including legal, construction, beauty, and e-commerce.",
   },
   {
     path: "/testimonials",
-    title:
-      "Client Testimonials & Reviews | Elevate Growth Solutions",
+    title: "Client Testimonials & Reviews | Elevate Growth Solutions",
     description:
-      "Read what our clients say about working with Elevate Growth Solutions. Real testimonials from businesses we\u2019ve helped with web design, marketing, SEO, and branding.",
+      "Read what clients say about working with Elevate Growth Solutions—real reviews from businesses we’ve helped with web design, marketing, SEO, and branding.",
     ogTitle: "Client Testimonials - Elevate Growth Solutions",
     ogDescription:
       "Discover why businesses trust Elevate Growth Solutions for their marketing needs. Read authentic reviews and success stories from our satisfied clients.",
@@ -182,32 +191,43 @@ const routes = [
   {
     path: "/why-custom-coded",
     title:
-      "Why Work With Elevate Growth Solutions | Custom Websites on Any Platform",
+      "Why Elevate Growth Solutions | Custom Websites on Any Platform",
     description:
-      "Discover why businesses choose Elevate Growth Solutions for fast, high-performing custom websites—built and maintained on any platform, from custom code to WordPress and other builders.",
+      "Why businesses choose Elevate Growth Solutions for fast, high-performing websites—built and maintained on any platform, from custom code to WordPress.",
   },
   {
     path: "/website-handoff-options",
-    title:
-      "Website Handoff Options: What Happens After Your Site is Built | Elevate Growth Solutions",
+    title: "Website Handoff Options | Elevate Growth Solutions",
     description:
-      "Wondering how to manage your custom website after it\u2019s built? Explore your options: ongoing support, CMS integration, or full handover. We build and maintain on any platform\u2014custom code, WordPress, or your builder of choice.",
+      "What happens after your site is built? Explore your options: ongoing support, CMS integration, or full handover—on custom code, WordPress, or any builder.",
   },
   {
     path: "/st-george-web-design",
     title:
-      "Web Design & Marketing Services in St. George, Utah | Elevate Growth Solutions",
+      "St. George Web Design & Marketing | Elevate Growth Solutions",
     description:
-      "St. George\u2019s fastest-growing businesses need websites that keep up. Custom web design on any platform, SEO, and marketing for Washington County contractors, real estate, and service businesses.",
+      "Custom web design, SEO, and marketing for St. George and Washington County businesses—contractors, real estate, and service companies that need to keep up.",
   },
   {
     path: "/ogden-web-design",
     title:
       "Web Design & Marketing for Ogden Businesses | Elevate Growth Solutions",
     description:
-      "Industrial-strength web design for Ogden\u2019s aerospace, manufacturing, and downtown businesses. Secure, fast custom websites built and maintained on any platform for Weber County companies.",
+      "Industrial-strength web design for Ogden’s aerospace, manufacturing, and downtown businesses. Fast, secure websites for Weber County companies.",
   },
 ];
+
+const homeRoute = {
+  path: "/",
+  title:
+    "Web Design Agency & Full-Stack Marketing | Elevate Growth Solutions",
+  description:
+    "Boutique web design and full-stack marketing agency. Custom websites on any platform, plus SEO, social media, and branding—in Salt Lake City and nationwide.",
+  ogTitle:
+    "Web Design & Full-Stack Marketing for Growing Businesses | Elevate Growth Solutions",
+  ogDescription:
+    "Custom websites built and maintained on any platform, typically delivered in under 30 days. Boutique marketing agency providing web design, SEO, social media management, and branding for businesses of all sizes, nationwide.",
+};
 
 // ---------------------------------------------------------------------------
 // Helpers
@@ -261,6 +281,14 @@ function injectMeta(template, route) {
     );
   }
 
+  // Blog posts are articles
+  if (route.ogType) {
+    html = html.replace(
+      /<meta\s+property="og:type"\s+content="[^"]*"\s*\/?>/,
+      `<meta property="og:type" content="${route.ogType}" />`
+    );
+  }
+
   // Replace OG tags
   html = html.replace(
     /<meta\s+property="og:url"\s+content="[^"]*"\s*\/?>/,
@@ -300,6 +328,26 @@ function injectMeta(template, route) {
   return html;
 }
 
+function injectBody(html, appHtml) {
+  const marker = '<div id="root"></div>';
+  if (!html.includes(marker)) {
+    throw new Error(
+      'Template is missing the empty <div id="root"></div> mount point.'
+    );
+  }
+  return html.replace(marker, `<div id="root">${appHtml}</div>`);
+}
+
+function buildSitemap(urls) {
+  const entries = urls
+    .map(({ loc, lastmod }) => {
+      const lastmodTag = lastmod ? `\n    <lastmod>${lastmod}</lastmod>` : "";
+      return `  <url>\n    <loc>${loc}</loc>${lastmodTag}\n  </url>`;
+    })
+    .join("\n");
+  return `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${entries}\n</urlset>\n`;
+}
+
 // ---------------------------------------------------------------------------
 // Main
 // ---------------------------------------------------------------------------
@@ -309,35 +357,61 @@ if (!fs.existsSync(indexPath)) {
   console.error("ERROR: dist/public/index.html not found. Run vite build first.");
   process.exit(1);
 }
+if (!fs.existsSync(ssgEntry)) {
+  console.error(
+    "ERROR: dist/ssg/entry-ssg.js not found. Run the SSR build first (see the build script in package.json)."
+  );
+  process.exit(1);
+}
+
+const { render, blogPosts } = await import(pathToFileURL(ssgEntry).href);
 
 const template = fs.readFileSync(indexPath, "utf-8");
 
-// Also inject canonical for the root index.html (homepage)
-const homeHtml = injectMeta(template, {
-  path: "/",
-  title:
-    "Web Design Agency & Full-Stack Marketing | Elevate Growth Solutions",
-  description:
-    "Boutique web design agency and full-stack marketing services for businesses of all sizes—from startups to established companies. Custom websites built and maintained on any platform—custom code, WordPress, or any builder—typically delivered in under 30 days. SEO, social media, branding, and conversion-focused design. Serving Salt Lake City and nationwide.",
-  ogTitle:
-    "Web Design & Full-Stack Marketing for Growing Businesses | Elevate Growth Solutions",
-  ogDescription:
-    "Custom websites built and maintained on any platform, typically delivered in under 30 days. Boutique marketing agency providing web design, SEO, social media management, and branding for businesses of all sizes, nationwide.",
-});
+// Blog post routes come straight from the blog data, so a new post is
+// automatically prerendered and added to the sitemap.
+const blogRoutes = blogPosts.map((post) => ({
+  path: `/blog/${post.slug}`,
+  title: post.metaTitle || post.title,
+  description: post.metaDescription || post.excerpt,
+  ogTitle: post.title,
+  ogDescription: post.excerpt,
+  ogImage: post.image ? baseUrl + post.image : undefined,
+  ogType: "article",
+  lastmod: post.date,
+}));
+
+const allRoutes = [...routes, ...blogRoutes];
+
+// Homepage: render into the root index.html
+const homeHtml = injectBody(injectMeta(template, homeRoute), render("/"));
 fs.writeFileSync(indexPath, homeHtml);
-console.log("  \u2713 / (updated root index.html with canonical)");
+console.log("  ✓ / (root index.html)");
 
+// Every other route: flat `<path>.html` file so Cloudflare Pages serves it
+// at the extensionless, slashless URL (matching canonical + sitemap).
 let generated = 0;
-for (const route of routes) {
-  const dir = path.join(distDir, route.path);
-  fs.mkdirSync(dir, { recursive: true });
+for (const route of allRoutes) {
+  const filePath = path.join(distDir, `${route.path.slice(1)}.html`);
+  fs.mkdirSync(path.dirname(filePath), { recursive: true });
 
-  const html = injectMeta(template, route);
-  fs.writeFileSync(path.join(dir, "index.html"), html);
+  const html = injectBody(injectMeta(template, route), render(route.path));
+  fs.writeFileSync(filePath, html);
   generated++;
-  console.log(`  \u2713 ${route.path}`);
+  console.log(`  ✓ ${route.path}`);
 }
 
+// Sitemap: derived from the exact set of prerendered routes.
+const sitemapUrls = [
+  { loc: baseUrl + "/" },
+  ...allRoutes.map((route) => ({
+    loc: baseUrl + route.path,
+    lastmod: route.lastmod,
+  })),
+];
+fs.writeFileSync(path.join(distDir, "sitemap.xml"), buildSitemap(sitemapUrls));
+console.log(`  ✓ sitemap.xml (${sitemapUrls.length} URLs)`);
+
 console.log(
-  `\nSEO prerender complete: ${generated} route-specific HTML files generated.`
+  `\nSEO prerender complete: ${generated + 1} routes rendered with full page HTML.`
 );

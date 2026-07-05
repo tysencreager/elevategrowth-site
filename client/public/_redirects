@@ -1,13 +1,21 @@
+# Host canonicalization: apex -> www (requires both domains to be attached
+# to the Cloudflare Pages project). Without this, the full site is served
+# as duplicate content on https://elevategrowth.solutions.
+https://elevategrowth.solutions/* https://www.elevategrowth.solutions/:splat 301
+
 # 301 Redirects for old/changed URLs
 /meet-us /behind-elevate 301
 /home / 301
 /beginners-guide /blog 301
+/pricing /services 301
+/las-vegas-digital-marketing / 301
 
-# SPA fallback for dynamic routes (e.g. /blog/:slug) that don't have
-# pre-generated HTML files.  Static routes like /services, /contact, etc.
-# are served directly from their pre-generated index.html files, so they
-# don't need rewrite rules here.
-/blog/* /index.html 200
-
-# Catch-all: return 404 for any unmatched paths
-/* /404.html 404
+# NOTE (Cloudflare Pages behavior):
+# - Every route, including each blog post, is prerendered to a flat
+#   `<path>.html` file at build time (scripts/generate-seo-pages.mjs), so no
+#   SPA fallback rewrite is needed. A `/blog/* /index.html 200` rewrite does
+#   NOT work on Pages (/index.html itself redirects to /), which used to make
+#   blog posts return 404.
+# - Unmatched paths automatically serve 404.html with a real 404 status
+#   because a top-level 404.html exists; a `/* /404.html 404` rule is
+#   unsupported syntax on Pages and is not needed.
