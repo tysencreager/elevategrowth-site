@@ -40,8 +40,8 @@ export default function Blog() {
   return (
     <div className="min-h-screen">
       <SEO
-        title="Marketing Blog | Web Design & SEO Tips for Growing Businesses | Elevate Growth Solutions"
-        description="Expert marketing insights, web design tips, and SEO strategies for growing businesses. Learn how to grow your business online with actionable advice from Elevate Growth Solutions."
+        title="Marketing Blog & SEO Tips | Elevate Growth Solutions"
+        description="Expert marketing insights, web design tips, and SEO strategies for growing businesses—actionable advice from Elevate Growth Solutions."
         ogTitle="Marketing Blog for Growing Businesses | Elevate Growth Solutions"
         ogDescription="Expert marketing tips, web design insights, and SEO strategies to help businesses of all sizes grow online."
       />

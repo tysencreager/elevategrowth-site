@@ -276,7 +276,7 @@ export default function Testimonials() {
     <div className="min-h-screen">
       <SEO
         title="Client Testimonials & Reviews | Elevate Growth Solutions"
-        description="Read what our clients say about working with Elevate Growth Solutions. Real testimonials from businesses we've helped with web design, marketing, SEO, and branding."
+        description="Read what clients say about working with Elevate Growth Solutions—real reviews from businesses we've helped with web design, marketing, SEO, and branding."
         ogTitle="Client Testimonials - Elevate Growth Solutions"
         ogDescription="Discover why businesses trust Elevate Growth Solutions for their marketing needs. Read authentic reviews and success stories from our satisfied clients."
       />

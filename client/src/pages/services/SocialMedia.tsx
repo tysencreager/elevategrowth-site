@@ -6,8 +6,8 @@ export default function SocialMedia() {
   return (
     <ServicePageLayout
       // SEO
-      title="Social Media Management | Strategy & Content | Elevate Growth Solutions"
-      metaDescription="Strategic social media management that builds your brand and engages your audience. Consistent, quality content for Instagram, Facebook, LinkedIn, and more. Inquire for pricing."
+      title="Social Media Management & Strategy | Elevate Growth Solutions"
+      metaDescription="Strategic social media management that builds your brand. Consistent, quality content for Instagram, Facebook, LinkedIn, and more."
       ogTitle="Social Media Management & Strategy Services"
       ogDescription="Build your brand with strategic social media content. Professional management for Instagram, Facebook, LinkedIn. Inquire for pricing."
 

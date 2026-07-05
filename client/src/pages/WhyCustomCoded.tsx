@@ -47,8 +47,8 @@ export default function WhyCustomCoded() {
   return (
     <div className="min-h-screen">
       <SEO
-        title="Why Work With Elevate Growth Solutions | Custom Websites on Any Platform"
-        description="Discover why businesses choose Elevate Growth Solutions for fast, high-performing custom websites—built and maintained on any platform, from custom code to WordPress and other builders."
+        title="Why Elevate Growth Solutions | Custom Websites on Any Platform"
+        description="Why businesses choose Elevate Growth Solutions for fast, high-performing websites—built and maintained on any platform, from custom code to WordPress."
         ogImage="https://www.elevategrowth.solutions/egs-social-sharing.png"
       />
       <Navbar />

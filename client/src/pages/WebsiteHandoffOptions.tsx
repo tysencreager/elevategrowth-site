@@ -96,8 +96,8 @@ export default function WebsiteHandoffOptions() {
   return (
     <div className="min-h-screen">
       <SEO
-        title="Website Handoff Options: What Happens After Your Site is Built | Elevate Growth Solutions"
-        description="Wondering how to manage your custom website after it's built? Explore your options: ongoing support, CMS integration, or full handover. We build and maintain on any platform—custom code, WordPress, or your builder of choice."
+        title="Website Handoff Options | Elevate Growth Solutions"
+        description="What happens after your site is built? Explore your options: ongoing support, CMS integration, or full handover—on custom code, WordPress, or any builder."
         ogImage="https://www.elevategrowth.solutions/egs-social-sharing.png"
       />
       <Navbar />

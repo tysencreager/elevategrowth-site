@@ -3,7 +3,7 @@ import react from "@vitejs/plugin-react";
 import path from "path";
 import runtimeErrorOverlay from "@replit/vite-plugin-runtime-error-modal";
 
-export default defineConfig({
+export default defineConfig(async ({ isSsrBuild }) => ({
   plugins: [
     react(),
     ...(process.env.NODE_ENV !== "production"
@@ -33,15 +33,19 @@ export default defineConfig({
     outDir: path.resolve(import.meta.dirname, "dist/public"),
     emptyOutDir: true,
     rollupOptions: {
-      output: {
-        manualChunks: {
-          // Split vendor chunks to improve caching and reduce initial bundle
-          'vendor-react': ['react', 'react-dom'],
-          'vendor-motion': ['framer-motion'],
-          'vendor-ui': ['@radix-ui/react-dialog', '@radix-ui/react-dropdown-menu', '@radix-ui/react-tooltip', '@radix-ui/react-accordion'],
-          'vendor-query': ['@tanstack/react-query'],
-        },
-      },
+      // manualChunks only applies to the browser build; the SSG build
+      // (vite build --ssr) externalizes these packages.
+      output: isSsrBuild
+        ? {}
+        : {
+            manualChunks: {
+              // Split vendor chunks to improve caching and reduce initial bundle
+              'vendor-react': ['react', 'react-dom'],
+              'vendor-motion': ['framer-motion'],
+              'vendor-ui': ['@radix-ui/react-dialog', '@radix-ui/react-dropdown-menu', '@radix-ui/react-tooltip', '@radix-ui/react-accordion'],
+              'vendor-query': ['@tanstack/react-query'],
+            },
+          },
     },
     // Improve chunk size warnings threshold
     chunkSizeWarningLimit: 500,
@@ -52,4 +56,4 @@ export default defineConfig({
       deny: ["**/.*"],
     },
   },
-});
+}));

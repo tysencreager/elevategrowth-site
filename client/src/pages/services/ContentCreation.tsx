@@ -6,8 +6,8 @@ export default function ContentCreation() {
   return (
     <ServicePageLayout
       // SEO
-      title="Content Creation | Photo & Video for Business | Elevate Growth Solutions"
-      metaDescription="Professional content creation for your business. One content day per quarter delivers a library of curated photos and videos for social media, website, and marketing. $1,700/quarter."
+      title="Content Creation: Photo & Video | Elevate Growth Solutions"
+      metaDescription="One content day per quarter delivers a library of professional photos and videos for your social media, website, and marketing. $1,700/quarter."
       ogTitle="Professional Content Creation Services"
       ogDescription="Build a library of professional photos and videos for your business. Quarterly content days deliver authentic, on-brand content you can use everywhere."
 
