@@ -1,6 +1,12 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import ServicesGrid from "@/components/ServicesGrid";
+import bandWebsites from "@assets/band-websites.webp";
+import bandBranding from "@assets/band-branding.webp";
+import bandSeo from "@assets/band-seo.webp";
+import bandSocial from "@assets/band-socialmedia.webp";
+import bandContent from "@assets/band-contentcreation.webp";
+import bandAds from "@assets/band-adcampaigns.webp";
 import FAQ from "@/components/FAQ";
 import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
@@ -111,32 +117,38 @@ export default function Services() {
     {
       title: "Website Building, Design & Optimization",
       description: "Custom website development from concept to launch. User experience (UX) focused design with mobile-responsive layouts, fast loading speeds, and SEO optimization built in from the ground up. We create websites that convert visitors into customers and grow with your business.",
-      href: "/services/websites"
+      href: "/services/websites",
+      image: bandWebsites
     },
     {
       title: "Branding & Creative Direction",
       description: "Comprehensive brand identity development including logo design, visual identity systems, brand messaging, and storytelling that connects with your target audience. We create memorable brands that stand out in competitive markets and resonate with your ideal customers.",
-      href: "/services/branding"
+      href: "/services/branding",
+      image: bandBranding
     },
     {
       title: "SEO Services",
       description: "Comprehensive search engine optimization including keyword research, on-page SEO, technical SEO audits, local SEO, and content optimization. We improve your search rankings, increase organic traffic, and help you get found by customers actively searching for your services.",
-      href: "/services/seo"
+      href: "/services/seo",
+      image: bandSeo
     },
     {
       title: "Social Media Strategy",
       description: "Platform-specific social media marketing strategies for Instagram, Facebook, LinkedIn, and more. We create engaging content calendars, manage community engagement, track key performance metrics, and build authentic connections that drive brand awareness and conversions.",
-      href: "/services/social-media"
+      href: "/services/social-media",
+      image: bandSocial
     },
     {
       title: "Content Creation",
       description: "Strategic content marketing including blog posts, email newsletters, lead magnets, social media content, and website copy. All content is crafted with your target audience in mind, optimized for SEO, and designed to establish your authority while driving engagement and conversions.",
-      href: "/services/content-creation"
+      href: "/services/content-creation",
+      image: bandContent
     },
     {
       title: "Ad Campaign Management",
       description: "Paid advertising management across Google Ads, Facebook Ads, Instagram Ads, and LinkedIn Ads. We create targeted campaigns with optimized ad copy, audience targeting, budget management, and detailed ROI tracking to maximize your advertising spend and generate qualified leads.",
-      href: "/services/ad-campaigns"
+      href: "/services/ad-campaigns",
+      image: bandAds
     }
   ];
 

@@ -10,8 +10,6 @@ const needOptions = [
   "Not sure yet"
 ];
 
-const budgetOptions = ["Not sure yet", "Under $3,000", "$3,000 – $8,000", "$8,000+"];
-
 const labelClass =
   "font-sans text-[9px] tracking-[0.25em] uppercase text-muted-foreground";
 
@@ -24,7 +22,6 @@ export default function InquirySection() {
     email: "",
     company: "",
     need: needOptions[0],
-    budget: budgetOptions[0],
     message: ""
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -51,7 +48,7 @@ export default function InquirySection() {
           email: formData.email,
           company: formData.company,
           service: formData.need,
-          message: `Project budget: ${formData.budget}\n\n${formData.message || "(no message provided)"}`
+          message: formData.message || "(no message provided)"
         })
       });
 
@@ -179,23 +176,6 @@ export default function InquirySection() {
                   data-testid="select-inquiry-need"
                 >
                   {needOptions.map((option) => (
-                    <option key={option}>{option}</option>
-                  ))}
-                </select>
-              </div>
-              <div className="flex flex-col gap-1.5 sm:col-span-2">
-                <label htmlFor="inq-budget" className={labelClass}>
-                  Project budget
-                </label>
-                <select
-                  id="inq-budget"
-                  name="budget"
-                  value={formData.budget}
-                  onChange={handleChange}
-                  className={fieldClass}
-                  data-testid="select-inquiry-budget"
-                >
-                  {budgetOptions.map((option) => (
                     <option key={option}>{option}</option>
                   ))}
                 </select>

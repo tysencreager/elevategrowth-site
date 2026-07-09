@@ -7,6 +7,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Mail, Send, CheckCircle, Instagram, Calendar, Phone, Star, ExternalLink } from "lucide-react";
+import contactSideImage from "@assets/contact-side.webp";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -15,7 +16,6 @@ export default function Contact() {
     phone: "",
     company: "",
     service: "",
-    budget: "",
     message: ""
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -46,15 +46,13 @@ export default function Contact() {
           phone: formData.phone,
           company: formData.company,
           service: formData.service,
-          message: formData.budget
-            ? `Project budget: ${formData.budget}\n\n${formData.message}`
-            : formData.message
+          message: formData.message
         })
       });
 
       if (response.ok) {
         setIsSubmitted(true);
-        setFormData({ name: "", email: "", phone: "", company: "", service: "", budget: "", message: "" });
+        setFormData({ name: "", email: "", phone: "", company: "", service: "", message: "" });
       } else {
         throw new Error("Form submission failed");
       }
@@ -197,23 +195,6 @@ export default function Contact() {
                     </select>
                   </div>
 
-                  <div className="space-y-2">
-                    <Label htmlFor="budget" className="font-serif">
-                      Project Budget
-                    </Label>
-                    <select
-                      id="budget"
-                      name="budget"
-                      value={formData.budget}
-                      onChange={handleChange}
-                      className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 font-serif"
-                    >
-                      <option value="">Not sure yet</option>
-                      <option value="Under $3,000">Under $3,000</option>
-                      <option value="$3,000 – $8,000">$3,000 – $8,000</option>
-                      <option value="$8,000+">$8,000+</option>
-                    </select>
-                  </div>
 
                   <div className="space-y-2">
                     <Label htmlFor="message" className="font-serif">
@@ -258,6 +239,37 @@ export default function Contact() {
 
             {/* Contact Info */}
             <div className="space-y-8">
+              {/* Editorial image */}
+              <figure className="group relative max-w-[420px]">
+                <div className="relative border border-primary/30 p-3">
+                  <div
+                    className="absolute -inset-px border border-primary pointer-events-none transition-transform duration-500 translate-x-2.5 translate-y-2.5 group-hover:translate-x-1 group-hover:translate-y-1"
+                    aria-hidden="true"
+                  />
+                  <div className="relative overflow-hidden aspect-[4/3]">
+                    <img
+                      src={contactSideImage}
+                      alt="Fountain pen writing on paper—let's start the conversation"
+                      loading="lazy"
+                      decoding="async"
+                      className="absolute inset-0 w-full h-full object-cover grayscale contrast-[1.04]"
+                    />
+                    <div
+                      className="absolute inset-0 mix-blend-multiply"
+                      style={{
+                        background:
+                          "linear-gradient(165deg, rgba(38,109,130,.35), rgba(74,192,216,.08) 60%)"
+                      }}
+                      aria-hidden="true"
+                    />
+                  </div>
+                </div>
+                <figcaption className="flex justify-between gap-4 font-sans text-[8.5px] tracking-[0.2em] uppercase text-muted-foreground mt-3">
+                  <span>Salt Lake City, Utah</span>
+                  <b className="text-primary font-normal">Replies within one business day</b>
+                </figcaption>
+              </figure>
+
               <div>
                 <h2 className="font-display text-2xl font-semibold text-gray-900 mb-4">
                   Get in Touch
