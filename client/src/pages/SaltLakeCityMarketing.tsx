@@ -6,7 +6,6 @@ import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
-import { BokehEffect, FloatingOrbs, WaveDivider, GradientTransition } from "@/components/decorative";
 import { Rocket, Code, TrendingUp, Briefcase, Stethoscope, DollarSign, ArrowRight, Check } from "lucide-react";
 import heroImage from "@assets/hero_bw_1920.webp";
 import heroImage768 from "@assets/hero_bw_768.webp";
@@ -58,7 +57,7 @@ export default function SaltLakeCityMarketing() {
   return (
     <div className="min-h-screen">
       <SEO
-        title="Salt Lake City Web Design & Marketing | Elevate Growth Solutions"
+        title="Salt Lake City Marketing Agency | Elevate Growth Solutions"
         description="Performance-focused web design and marketing for Salt Lake City startups and growing businesses—custom websites that convert paid traffic and scale with you."
         ogImage="https://www.elevategrowth.solutions/egs-social-sharing.png"
       />
@@ -82,9 +81,6 @@ export default function SaltLakeCityMarketing() {
         />
         {/* Dark overlay for text readability */}
         <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-black/70" />
-        <BokehEffect opacity={0.25} />
-        <FloatingOrbs variant="light" />
-
         <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.h1
             className="font-display font-bold text-4xl md:text-5xl lg:text-6xl text-white mb-6 leading-tight"
@@ -108,15 +104,10 @@ export default function SaltLakeCityMarketing() {
             In Utah's most competitive market, your website isn't just a presence—it's a conversion engine. Startups live and die by Customer Acquisition Cost. If your landing pages load slow, you're burning ad spend.
           </motion.p>
         </div>
-
-        <GradientTransition from="transparent" to="hsl(var(--muted) / 0.3)" height="80px" />
       </section>
 
       {/* Tech-Savvy Section */}
       <section className="relative py-16 md:py-24 bg-muted/30 overflow-hidden">
-        <WaveDivider position="top" fillColor="hsl(var(--background))" />
-        <BokehEffect opacity={0.25} />
-
         <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -149,8 +140,6 @@ export default function SaltLakeCityMarketing() {
 
       {/* Scale-Up Section */}
       <section className="relative py-16 md:py-24 bg-background overflow-hidden">
-        <FloatingOrbs variant="light" />
-
         <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -183,9 +172,6 @@ export default function SaltLakeCityMarketing() {
 
       {/* Industries Section */}
       <section className="relative py-16 md:py-24 bg-muted/30 overflow-hidden">
-        <WaveDivider position="top" fillColor="hsl(var(--background))" />
-        <BokehEffect opacity={0.25} />
-
         <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -220,20 +206,7 @@ export default function SaltLakeCityMarketing() {
       </section>
 
       {/* CTA Section */}
-      <section className="relative py-20 md:py-28 lg:py-32 overflow-hidden bg-gradient-to-br from-primary via-primary to-[hsl(191,60%,25%)]">
-        <div className="absolute inset-0 overflow-hidden">
-          <motion.div
-            animate={{ y: [-10, 10, -10], rotate: [-5, 5, -5] }}
-            transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-            className="absolute top-20 left-[10%] w-32 h-32 bg-white/5 rounded-full blur-2xl"
-          />
-          <motion.div
-            animate={{ y: [10, -10, 10], rotate: [5, -5, 5] }}
-            transition={{ duration: 8, repeat: Infinity, ease: "easeInOut", delay: 2 }}
-            className="absolute bottom-20 right-[15%] w-48 h-48 bg-white/5 rounded-full blur-3xl"
-          />
-        </div>
-
+      <section className="relative py-20 md:py-28 lg:py-32 overflow-hidden bg-primary">
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}

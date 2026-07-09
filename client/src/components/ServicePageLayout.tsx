@@ -41,9 +41,13 @@ interface ServicePageLayoutProps {
     description: string;
   }[];
 
-  // Pricing
-  pricing: PricingTier[];
+  // Pricing (optional — omit to hide the pricing section entirely)
+  pricing?: PricingTier[];
   pricingSubtitle?: string;
+
+  // Optional full-width editorial image band (rendered after the overview)
+  sectionImage?: string;
+  sectionImageAlt?: string;
 
   // Optional process steps
   process?: {
@@ -157,6 +161,8 @@ export default function ServicePageLayout({
   features,
   pricing,
   pricingSubtitle = "Transparent pricing with no hidden fees. Choose the option that fits your needs.",
+  sectionImage,
+  sectionImageAlt = "",
   process,
   faqs,
   children,
@@ -184,21 +190,25 @@ export default function ServicePageLayout({
       "@type": "Country",
       "name": "United States"
     },
-    "hasOfferCatalog": {
-      "@type": "OfferCatalog",
-      "name": `${heroTitle} Pricing`,
-      "itemListElement": pricing.map((tier, index) => ({
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": tier.name,
-          "description": tier.description
-        },
-        "price": tier.price.replace(/[^0-9.]/g, '') || "0",
-        "priceCurrency": "USD",
-        "position": index + 1
-      }))
-    }
+    ...(pricing && pricing.length > 0
+      ? {
+          "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": `${heroTitle} Pricing`,
+            "itemListElement": pricing.map((tier, index) => ({
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": tier.name,
+                "description": tier.description
+              },
+              "price": tier.price.replace(/[^0-9.]/g, '') || "0",
+              "priceCurrency": "USD",
+              "position": index + 1
+            }))
+          }
+        }
+      : {})
   };
 
   // FAQ Schema
@@ -248,7 +258,7 @@ export default function ServicePageLayout({
 
       {/* Service Overview */}
       <section
-        className="py-10 sm:py-12 md:py-16 bg-gradient-to-b from-primary/5 to-background"
+        className="py-10 sm:py-12 md:py-16 bg-background"
         aria-labelledby="service-overview-heading"
       >
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -273,6 +283,26 @@ export default function ServicePageLayout({
           </motion.div>
         </div>
       </section>
+
+      {/* Editorial image band */}
+      {sectionImage && (
+        <section className="relative h-[280px] md:h-[380px] overflow-hidden" aria-hidden={sectionImageAlt === ""}>
+          <img
+            src={sectionImage}
+            alt={sectionImageAlt}
+            loading="lazy"
+            decoding="async"
+            className="absolute inset-0 w-full h-full object-cover grayscale contrast-[1.04]"
+          />
+          <div
+            className="absolute inset-0 mix-blend-multiply"
+            style={{
+              background: "linear-gradient(150deg, rgba(38,109,130,.4), rgba(19,34,38,.25))"
+            }}
+          />
+          <div className="absolute inset-0 opacity-[0.06] mix-blend-overlay grain" />
+        </section>
+      )}
 
       {/* What's Included */}
       <section
@@ -397,40 +427,42 @@ export default function ServicePageLayout({
         </section>
       )}
 
-      {/* Pricing */}
-      <section
-        className="py-10 sm:py-12 md:py-16 bg-background"
-        aria-labelledby="pricing-heading"
-      >
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="text-center mb-8 sm:mb-12"
-          >
-            <h2
-              id="pricing-heading"
-              className="font-display font-bold text-2xl sm:text-3xl md:text-4xl text-foreground mb-3 sm:mb-4"
+      {/* Pricing (only when provided) */}
+      {pricing && pricing.length > 0 && (
+        <section
+          className="py-10 sm:py-12 md:py-16 bg-background"
+          aria-labelledby="pricing-heading"
+        >
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="text-center mb-8 sm:mb-12"
             >
-              Pricing
-            </h2>
-            <div className="w-20 sm:w-24 h-1 bg-primary mx-auto rounded-full mb-4 sm:mb-6" />
-            {pricingSubtitle && (
-              <p className="font-serif text-sm sm:text-base text-muted-foreground max-w-2xl mx-auto">
-                {pricingSubtitle}
-              </p>
-            )}
-          </motion.div>
+              <h2
+                id="pricing-heading"
+                className="font-display font-medium text-2xl sm:text-3xl md:text-4xl text-foreground mb-3 sm:mb-4"
+              >
+                Pricing
+              </h2>
+              <div className="w-16 h-px bg-primary/50 mx-auto mb-4 sm:mb-6" />
+              {pricingSubtitle && (
+                <p className="font-serif text-sm sm:text-base text-muted-foreground max-w-2xl mx-auto">
+                  {pricingSubtitle}
+                </p>
+              )}
+            </motion.div>
 
-          <div className={`grid gap-4 sm:gap-6 md:gap-8 ${pricing.length === 1 ? 'max-w-md mx-auto' : pricing.length === 2 ? 'sm:grid-cols-2 max-w-3xl mx-auto' : 'sm:grid-cols-2 lg:grid-cols-3'}`}>
-            {pricing.map((tier, index) => (
-              <PricingCard key={index} tier={tier} index={index} />
-            ))}
+            <div className={`grid gap-4 sm:gap-6 md:gap-8 ${pricing.length === 1 ? 'max-w-md mx-auto' : pricing.length === 2 ? 'sm:grid-cols-2 max-w-3xl mx-auto' : 'sm:grid-cols-2 lg:grid-cols-3'}`}>
+              {pricing.map((tier, index) => (
+                <PricingCard key={index} tier={tier} index={index} />
+              ))}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      )}
 
       {/* FAQs (if provided) */}
       {faqs && faqs.length > 0 && (
@@ -480,30 +512,17 @@ export default function ServicePageLayout({
       {/* Custom content (portfolio, etc.) */}
       {children}
 
-      {/* Enhanced CTA Section */}
+      {/* CTA Section */}
       <section
-        className="relative py-16 sm:py-20 md:py-28 lg:py-32 overflow-hidden bg-gradient-to-br from-primary via-primary to-[hsl(191,60%,25%)]"
+        className="relative py-16 sm:py-20 md:py-28 overflow-hidden bg-[#0E1D22]"
         aria-labelledby="cta-heading"
       >
-        {/* Static background elements - no infinite animations for better performance */}
-        <div className="absolute inset-0 overflow-hidden" aria-hidden="true">
-          {/* Static decorative shapes */}
-          <div className="absolute top-20 left-[10%] w-24 sm:w-32 h-24 sm:h-32 bg-white/5 rounded-full blur-2xl" />
-          <div className="absolute bottom-20 right-[15%] w-32 sm:w-48 h-32 sm:h-48 bg-white/5 rounded-full blur-3xl" />
-          <div className="absolute top-1/2 right-[5%] w-20 sm:w-24 h-20 sm:h-24 bg-white/10 rounded-full blur-xl" />
-
-          {/* Grid pattern overlay */}
-          <div
-            className="absolute inset-0 opacity-[0.03]"
-            style={{
-              backgroundImage: `linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)`,
-              backgroundSize: '50px 50px'
-            }}
-          />
-
-          {/* Radial gradient spotlight */}
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] sm:w-[800px] h-[600px] sm:h-[800px] bg-white/5 rounded-full blur-3xl" />
-        </div>
+        <div className="absolute inset-0 opacity-[0.05] mix-blend-overlay grain" aria-hidden="true" />
+        <div
+          className="pointer-events-none absolute rounded-full left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px]"
+          style={{ background: "radial-gradient(circle, rgba(74,192,216,.1), transparent 70%)" }}
+          aria-hidden="true"
+        />
 
         <motion.div
           initial={{ opacity: 0 }}
@@ -512,17 +531,16 @@ export default function ServicePageLayout({
           transition={{ duration: 0.6, staggerChildren: 0.1 }}
           className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center"
         >
-          {/* Badge */}
-          <motion.div
+          {/* Kicker */}
+          <motion.p
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-3 py-1.5 sm:px-4 sm:py-2 mb-6 sm:mb-8"
+            className="font-sans text-[10.5px] tracking-[0.35em] uppercase text-[#4AC0D8] mb-6 sm:mb-8"
           >
-            <Sparkles className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-white" aria-hidden="true" />
-            <span className="font-sans text-xs sm:text-sm font-medium text-white">Let's create something great</span>
-          </motion.div>
+            Begin the Conversation
+          </motion.p>
 
           {/* Main headline */}
           <motion.h2
@@ -531,7 +549,7 @@ export default function ServicePageLayout({
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="font-display font-bold text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white mb-4 sm:mb-6 leading-tight"
+            className="font-display font-normal italic text-3xl sm:text-4xl md:text-5xl text-white mb-4 sm:mb-6 leading-tight"
           >
             Ready to get started?
           </motion.h2>
@@ -606,7 +624,7 @@ export default function ServicePageLayout({
             </div>
             <div className="flex items-center gap-2">
               <Check className="w-4 h-4 sm:w-5 sm:h-5 text-white" aria-hidden="true" />
-              <span className="font-serif text-xs sm:text-sm">Transparent pricing</span>
+              <span className="font-serif text-xs sm:text-sm">Honest, tailored proposals</span>
             </div>
             <div className="flex items-center gap-2">
               <Check className="w-4 h-4 sm:w-5 sm:h-5 text-white" aria-hidden="true" />

@@ -2,19 +2,22 @@ import ServicePageLayout from "@/components/ServicePageLayout";
 
 const auditsHero = "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1920&q=80&sat=-100";
 
+import sectionBand from "@assets/band-audits.webp";
 export default function Audits() {
   return (
     <ServicePageLayout
       // SEO
-      title="Website & SEO Audits | Technical Analysis | Elevate Growth Solutions"
-      metaDescription="Find out what's holding your website back. SEO audits from $500, technical audits from $400, or the full bundle for $799. Actionable insights, no lock-in."
+      title="Website & SEO Audits | Elevate Growth Solutions"
+      metaDescription="Find out what's holding your website back. SEO audits, technical audits, or the full bundle. Actionable insights, no lock-in."
       ogTitle="Website & SEO Audit Services"
-      ogDescription="Stop guessing what's wrong with your website. Get a comprehensive audit with actionable recommendations. SEO audits $500, technical audits $400, bundle for $799."
+      ogDescription="Stop guessing what's wrong with your website. Get a comprehensive audit with clear, actionable recommendations tailored to your business."
 
       // Hero
       heroTitle="Website & SEO Audits"
       heroSubtitle="Get the clarity you need to move forward with confidence."
       heroImage={auditsHero}
+      sectionImage={sectionBand}
+      sectionImageAlt="Notebook and laptop ready for a website review"
 
       // Main content
       serviceName="Audits & Analysis"
@@ -73,56 +76,6 @@ export default function Audits() {
         }
       ]}
 
-      // Pricing
-      pricing={[
-        {
-          name: "SEO Audit",
-          price: "$500",
-          description: "A data-backed roadmap to get your brand found. This isn't just a keyword list—it's a blueprint for revenue.",
-          features: [
-            "Deep-dive keyword research",
-            "Competitor analysis (3 competitors)",
-            "Content gap identification",
-            "Google Business Profile review",
-            "Backlink profile analysis",
-            "Local SEO assessment",
-            "Prioritized SEO roadmap",
-            "Video walkthrough of findings"
-          ],
-          note: "Ideal for businesses wanting to improve their search visibility and understand their competitive landscape."
-        },
-        {
-          name: "Technical Audit",
-          price: "$400",
-          description: "A beautiful website is useless if Google can't read it. We look under the hood to fix the invisible breaks slowing you down.",
-          features: [
-            "Core Web Vitals assessment",
-            "Page speed analysis",
-            "Mobile usability review",
-            "Indexability check",
-            "Robots.txt & sitemap review",
-            "Schema markup audit",
-            "Broken link detection",
-            "Prioritized fix-it action list"
-          ],
-          note: "Perfect for websites experiencing ranking drops, slow load times, or technical issues affecting user experience."
-        },
-        {
-          name: "Full Stack Bundle",
-          price: "$799",
-          description: "The ultimate foundation. Combines technical repairs with forward-looking strategy for maximum impact.",
-          features: [
-            "Everything in the SEO Audit",
-            "Everything in the Technical Audit",
-            "Executive summary report",
-            "6-month priority roadmap",
-            "Implementation guidance",
-            "30-minute strategy call"
-          ],
-          note: "Best value for businesses serious about improving their online presence. Save $101 compared to purchasing separately.",
-          featured: true
-        }
-      ]}
 
       // FAQs
       faqs={[

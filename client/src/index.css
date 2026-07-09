@@ -14,17 +14,17 @@
   --elevate-1: rgba(0,0,0, .03);
   --elevate-2: rgba(0,0,0, .08);
 
-  --background: 0 0% 99%;
+  --background: 180 25% 99%;
 
-  --foreground: 0 0% 0%;
+  --foreground: 197 33% 11%;
 
-  --border: 0 0% 88%;
+  --border: 195 14% 87%;
 
-  --card: 0 0% 97%;
+  --card: 192 24% 96%;
 
-  --card-foreground: 0 0% 0%;
+  --card-foreground: 197 33% 11%;
 
-  --card-border: 0 0% 92%;
+  --card-border: 192 16% 91%;
 
   --sidebar: 0 0% 95%;
 
@@ -48,21 +48,21 @@
 
   --popover-border: 0 0% 88%;
 
-  --primary: 191 50% 33%;
+  --primary: 193 55% 33%;
 
   --primary-foreground: 0 0% 99%;
 
-  --secondary: 0 0% 90%;
+  --secondary: 192 20% 92%;
 
-  --secondary-foreground: 0 0% 0%;
+  --secondary-foreground: 197 33% 11%;
 
-  --muted: 191 8% 94%;
+  --muted: 192 24% 96%;
 
-  --muted-foreground: 191 10% 32%;
+  --muted-foreground: 194 13% 42%;
 
-  --accent: 191 12% 92%;
+  --accent: 192 22% 93%;
 
-  --accent-foreground: 191 12% 15%;
+  --accent-foreground: 197 30% 15%;
 
   --destructive: 0 72% 35%;
 
@@ -76,11 +76,11 @@
   --chart-4: 0 0% 20%;
   --chart-5: 0 0% 45%;
 
-  --font-sans: 'Montserrat', sans-serif;
-  --font-serif: 'Lora', serif;
+  --font-sans: 'Montserrat', 'Segoe UI', sans-serif;
+  --font-serif: 'Hanken Grotesk', 'Avenir Next', sans-serif;
   --font-mono: Menlo, monospace;
-  --font-display: 'Noto Serif', serif;
-  --radius: .5rem; /* 8px */
+  --font-display: 'Playfair Display', Didot, 'Bodoni MT', Georgia, serif;
+  --radius: 0rem; /* square corners — luxury editorial */
   --shadow-2xs: 0px 2px 0px 0px hsl(0 0% 0% / 0.00);
   --shadow-xs: 0px 2px 0px 0px hsl(0 0% 0% / 0.00);
   --shadow-sm: 0px 2px 0px 0px hsl(0 0% 0% / 0.00), 0px 1px 2px -1px hsl(0 0% 0% / 0.00);
@@ -274,6 +274,12 @@
  * need to be distinguished from eachother visually.
  */
 @layer utilities {
+
+  /* Subtle film grain texture for photo/video sections */
+  .grain {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    background-size: 160px 160px;
+  }
 
   /* Hide ugly search cancel button in Chrome until we can style it properly */
   input[type="search"]::-webkit-search-cancel-button {

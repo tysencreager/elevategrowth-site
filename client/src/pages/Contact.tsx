@@ -7,7 +7,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Mail, Send, CheckCircle, Instagram, Calendar, Phone, Star, ExternalLink } from "lucide-react";
-import { BokehEffect, FloatingOrbs, WaveDivider, GradientTransition } from "@/components/decorative";
+import contactSideImage from "@assets/contact-side.webp";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -66,7 +66,7 @@ export default function Contact() {
   return (
     <div className="min-h-screen flex flex-col">
       <SEO
-        title="Contact Us - Let's Elevate Your Marketing | Elevate Growth Solutions"
+        title="Contact | Web Design & Marketing | Elevate Growth Solutions"
         description="Ready to elevate your marketing? Get in touch with Elevate Growth Solutions today. Fill out our contact form to discuss your web design and marketing needs."
         ogTitle="Contact Elevate Growth Solutions - Start Your Marketing Journey"
         ogDescription="Let's connect and discuss how we can help your business grow. Expert marketing strategy and execution tailored to your goals."
@@ -74,10 +74,8 @@ export default function Contact() {
       <Navbar />
 
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-b from-gray-50 to-primary/5 pt-32 pb-16 overflow-hidden">
-        <BokehEffect opacity={0.4} />
-        <FloatingOrbs variant="light" />
-        <div className="relative z-10 max-w-4xl mx-auto px-4 text-center">
+      <section className="bg-muted border-b border-border pt-32 pb-16">
+        <div className="max-w-4xl mx-auto px-4 text-center">
           <h1 className="font-display text-4xl md:text-5xl font-semibold text-gray-900 mb-4" data-testid="text-contact-title">
             Let's Connect
           </h1>
@@ -85,13 +83,11 @@ export default function Contact() {
             Ready to elevate your marketing? Fill out the form below and we'll get back to you within 24 hours.
           </p>
         </div>
-        <GradientTransition from="transparent" to="hsl(var(--background))" height="60px" />
       </section>
 
       {/* Contact Form Section */}
-      <section className="relative py-16 bg-white flex-1 overflow-hidden">
-        <BokehEffect opacity={0.25} />
-        <div className="relative z-10 max-w-6xl mx-auto px-4">
+      <section className="py-16 bg-background flex-1">
+        <div className="max-w-6xl mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-12">
             {/* Form */}
             <div>
@@ -199,6 +195,7 @@ export default function Contact() {
                     </select>
                   </div>
 
+
                   <div className="space-y-2">
                     <Label htmlFor="message" className="font-serif">
                       Message <span className="text-red-500">*</span>
@@ -242,6 +239,37 @@ export default function Contact() {
 
             {/* Contact Info */}
             <div className="space-y-8">
+              {/* Editorial image */}
+              <figure className="group relative max-w-[420px]">
+                <div className="relative border border-primary/30 p-3">
+                  <div
+                    className="absolute -inset-px border border-primary pointer-events-none transition-transform duration-500 translate-x-2.5 translate-y-2.5 group-hover:translate-x-1 group-hover:translate-y-1"
+                    aria-hidden="true"
+                  />
+                  <div className="relative overflow-hidden aspect-[4/3]">
+                    <img
+                      src={contactSideImage}
+                      alt="Fountain pen writing on paper—let's start the conversation"
+                      loading="lazy"
+                      decoding="async"
+                      className="absolute inset-0 w-full h-full object-cover grayscale contrast-[1.04]"
+                    />
+                    <div
+                      className="absolute inset-0 mix-blend-multiply"
+                      style={{
+                        background:
+                          "linear-gradient(165deg, rgba(38,109,130,.35), rgba(74,192,216,.08) 60%)"
+                      }}
+                      aria-hidden="true"
+                    />
+                  </div>
+                </div>
+                <figcaption className="flex justify-between gap-4 font-sans text-[8.5px] tracking-[0.2em] uppercase text-muted-foreground mt-3">
+                  <span>Salt Lake City, Utah</span>
+                  <b className="text-primary font-normal">Replies within one business day</b>
+                </figcaption>
+              </figure>
+
               <div>
                 <h2 className="font-display text-2xl font-semibold text-gray-900 mb-4">
                   Get in Touch
@@ -395,9 +423,6 @@ export default function Contact() {
             </div>
           </div>
         </div>
-
-        {/* Wave divider before footer */}
-        <WaveDivider position="bottom" fillColor="hsl(var(--muted) / 0.5)" />
       </section>
 
       <Footer />

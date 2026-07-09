@@ -1,19 +1,22 @@
 import ServicePageLayout from "@/components/ServicePageLayout";
 import seoHero from "@assets/stock_images/black_and_white_mode_319eff6f.jpg";
 
+import sectionBand from "@assets/band-seo.webp";
 export default function SEO() {
   return (
     <ServicePageLayout
       // SEO
       title="SEO & Local Search Optimization | Elevate Growth Solutions"
-      metaDescription="Get found by customers searching for your services. SEO and Google Business Profile optimization to dominate local search. Starting at $750/month per location."
+      metaDescription="Get found by customers searching for your services. SEO and Google Business Profile optimization to dominate local search."
       ogTitle="SEO & Local Search Optimization Services"
-      ogDescription="Improve your search rankings and get found by customers actively looking for your services. Local SEO and Google Business Profile management starting at $750/month."
+      ogDescription="Improve your search rankings and get found by customers actively looking for your services. Local SEO and Google Business Profile management."
 
       // Hero
       heroTitle="SEO & Local Search"
       heroSubtitle="Get found by customers who are already looking for what you offer."
       heroImage={seoHero}
+      sectionImage={sectionBand}
+      sectionImageAlt="Team reviewing a search strategy around a planning table"
 
       // Main content
       serviceName="Search Optimization"
@@ -76,44 +79,6 @@ export default function SEO() {
         }
       ]}
 
-      // Pricing
-      pricing={[
-        {
-          name: "Local SEO",
-          price: "$750/mo",
-          description: "Per location pricing for comprehensive local search optimization.",
-          features: [
-            "Google Business Profile management",
-            "Local keyword optimization",
-            "On-page SEO improvements",
-            "Citation building & cleanup",
-            "Backlink outreach",
-            "Technical SEO",
-            "Review management strategy",
-            "Monthly performance reports",
-            "Competitor monitoring"
-          ],
-          note: "3-month minimum commitment required. Blog posts/articles available for an additional fee. Multi-location businesses receive discounted per-location pricing.",
-          featured: true
-        },
-        {
-          name: "Organic SEO",
-          price: "$750/mo",
-          description: "Broader keyword targeting and content strategy to rank beyond local searches.",
-          features: [
-            "Comprehensive keyword research",
-            "Content strategy & planning",
-            "On-page SEO optimization",
-            "Technical SEO improvements",
-            "Backlink outreach & building",
-            "Internal linking strategy",
-            "Blog content guidance",
-            "Monthly performance reports",
-            "Ranking & traffic analysis"
-          ],
-          note: "3-month minimum commitment required. Blog posts/articles available for an additional fee. Best for businesses targeting regional or national audiences."
-        }
-      ]}
 
       // FAQs
       faqs={[

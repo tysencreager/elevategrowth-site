@@ -89,7 +89,7 @@ const benefits = [
   {
     icon: Clock,
     title: "Fast Turnaround",
-    description: "Websites typically delivered in under 30 days. Utah businesses move fast—your marketing partner should too."
+    description: "Utah businesses move fast—your marketing partner should too. An efficient process without cutting corners."
   },
   {
     icon: Users,
@@ -130,7 +130,7 @@ export default function SaltLakeCity() {
         title="Web Design Agency Salt Lake City | Elevate Growth Solutions"
         description="Salt Lake City web design agency for businesses of all sizes. Custom websites, SEO, and digital marketing with fast turnaround and boutique attention."
         ogTitle="Web Design & Digital Marketing in Salt Lake City, Utah"
-        ogDescription="Salt Lake City's boutique web design agency. Custom websites, built on any platform, typically delivered in under 30 days. SEO, social media, and full-stack marketing for Utah businesses of all sizes."
+        ogDescription="Salt Lake City's boutique web design agency. Custom websites, built on any platform. SEO, social media, and full-stack marketing for Utah businesses of all sizes."
       />
       <SchemaMarkup type="localBusiness" data={localBusinessSchemaData} />
       <Navbar />

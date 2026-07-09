@@ -1,6 +1,12 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import ServicesGrid from "@/components/ServicesGrid";
+import bandWebsites from "@assets/band-websites.webp";
+import bandBranding from "@assets/band-branding.webp";
+import bandSeo from "@assets/band-seo.webp";
+import bandSocial from "@assets/band-socialmedia.webp";
+import bandContent from "@assets/band-contentcreation.webp";
+import bandAds from "@assets/band-adcampaigns.webp";
 import FAQ from "@/components/FAQ";
 import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
@@ -10,7 +16,6 @@ import { useRef } from "react";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
 import { MessageCircle, Sparkles, ArrowRight, Check } from "lucide-react";
-import { BokehEffect, FloatingOrbs, WaveDivider, GradientTransition } from "@/components/decorative";
 
 // Services page header
 const servicesHero = "https://i.postimg.cc/DZkYhV0c/egs_header_4.png";
@@ -26,7 +31,7 @@ const servicesItemListSchema = {
       "@type": "Service",
       "position": 1,
       "name": "Custom Website Development",
-      "description": "Custom websites built and maintained on any platform—custom code, WordPress, or any builder. Fast-loading, secure, and SEO-optimized. Typically delivered in under 30 days.",
+      "description": "Custom websites built and maintained on any platform—custom code, WordPress, or any builder. Fast-loading, secure, and SEO-optimized.",
       "provider": {"@id": "https://elevategrowth.solutions/#organization"},
       "areaServed": {"@type": "State", "name": "Utah"},
       "serviceType": "Web Development"
@@ -66,7 +71,7 @@ const servicesFAQSchema = {
       "name": "How long does it take to build a website?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "We typically deliver custom websites in under 30 days, compared to the industry standard of 2-3 months. We build on whatever platform fits you best—custom code, WordPress, or another builder—and our efficient process keeps timelines short."
+        "text": "Our focused, efficient process keeps timelines short. We build on whatever platform fits you best—custom code, WordPress, or another builder—and give you a specific timeline during your discovery call."
       }
     },
     {
@@ -112,39 +117,45 @@ export default function Services() {
     {
       title: "Website Building, Design & Optimization",
       description: "Custom website development from concept to launch. User experience (UX) focused design with mobile-responsive layouts, fast loading speeds, and SEO optimization built in from the ground up. We create websites that convert visitors into customers and grow with your business.",
-      href: "/services/websites"
+      href: "/services/websites",
+      image: bandWebsites
     },
     {
       title: "Branding & Creative Direction",
       description: "Comprehensive brand identity development including logo design, visual identity systems, brand messaging, and storytelling that connects with your target audience. We create memorable brands that stand out in competitive markets and resonate with your ideal customers.",
-      href: "/services/branding"
+      href: "/services/branding",
+      image: bandBranding
     },
     {
       title: "SEO Services",
       description: "Comprehensive search engine optimization including keyword research, on-page SEO, technical SEO audits, local SEO, and content optimization. We improve your search rankings, increase organic traffic, and help you get found by customers actively searching for your services.",
-      href: "/services/seo"
+      href: "/services/seo",
+      image: bandSeo
     },
     {
       title: "Social Media Strategy",
       description: "Platform-specific social media marketing strategies for Instagram, Facebook, LinkedIn, and more. We create engaging content calendars, manage community engagement, track key performance metrics, and build authentic connections that drive brand awareness and conversions.",
-      href: "/services/social-media"
+      href: "/services/social-media",
+      image: bandSocial
     },
     {
       title: "Content Creation",
       description: "Strategic content marketing including blog posts, email newsletters, lead magnets, social media content, and website copy. All content is crafted with your target audience in mind, optimized for SEO, and designed to establish your authority while driving engagement and conversions.",
-      href: "/services/content-creation"
+      href: "/services/content-creation",
+      image: bandContent
     },
     {
       title: "Ad Campaign Management",
       description: "Paid advertising management across Google Ads, Facebook Ads, Instagram Ads, and LinkedIn Ads. We create targeted campaigns with optimized ad copy, audience targeting, budget management, and detailed ROI tracking to maximize your advertising spend and generate qualified leads.",
-      href: "/services/ad-campaigns"
+      href: "/services/ad-campaigns",
+      image: bandAds
     }
   ];
 
   const faqs = [
     {
       question: "How long does a typical project take?",
-      answer: "Project timelines vary based on scope and complexity. A singular project or audit typically takes 2-3 weeks, website builds are typically completed in under 30 days, and ongoing marketing management is structured in monthly or quarterly engagements. During our discovery call, we'll provide a detailed timeline specific to your project needs."
+      answer: "Project timelines vary based on scope and complexity, and ongoing marketing management is structured in monthly or quarterly engagements. During our discovery call, we'll provide a detailed timeline specific to your project needs."
     },
     {
       question: "What makes Elevate Growth Solutions different?",
@@ -200,9 +211,8 @@ export default function Services() {
         isLCP={true}
       />
 
-      <div ref={headerRef} className="relative pt-12 md:pt-16 bg-background overflow-hidden">
-        <BokehEffect opacity={0.3} />
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div ref={headerRef} className="pt-12 md:pt-16 bg-background">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.h2
             className="font-display font-semibold text-3xl md:text-4xl lg:text-5xl text-center text-foreground mb-12"
             data-testid="text-services-header"
@@ -215,20 +225,11 @@ export default function Services() {
         </div>
       </div>
 
-      <div className="relative overflow-hidden">
-        <FloatingOrbs variant="light" />
-        <ServicesGrid services={services} />
-      </div>
-
-      {/* Wave divider before "don't see your service" section */}
-      <div className="relative bg-gradient-to-b from-background to-primary/5 h-16">
-        <WaveDivider position="top" fillColor="hsl(var(--background))" />
-      </div>
+      <ServicesGrid services={services} />
 
       {/* Don't see your service section */}
-      <section className="relative py-16 md:py-20 bg-gradient-to-b from-primary/5 to-primary/10 overflow-hidden">
-        <BokehEffect opacity={0.35} />
-        <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <section className="py-16 md:py-20 bg-muted border-t border-border">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -260,74 +261,15 @@ export default function Services() {
             </Link>
           </motion.div>
         </div>
-        <GradientTransition from="transparent" to="hsl(var(--background))" height="80px" />
       </section>
 
-      <div className="relative overflow-hidden">
-        <FloatingOrbs variant="light" />
-        <FAQ
-          items={faqs}
-          subtitle="Everything you need to know about working with Elevate Growth Solutions"
-        />
-      </div>
+      <FAQ
+        items={faqs}
+        subtitle="Everything you need to know about working with Elevate Growth Solutions"
+      />
 
       {/* Enhanced CTA Section */}
-      <section className="relative py-20 md:py-28 lg:py-32 overflow-hidden bg-gradient-to-br from-primary via-primary to-[hsl(191,60%,25%)]">
-        {/* Animated background elements */}
-        <div className="absolute inset-0 overflow-hidden">
-          {/* Floating shapes */}
-          <motion.div
-            animate={{
-              y: [-10, 10, -10],
-              rotate: [-5, 5, -5],
-            }}
-            transition={{
-              duration: 6,
-              repeat: Infinity,
-              ease: "easeInOut"
-            }}
-            className="absolute top-20 left-[10%] w-32 h-32 bg-white/5 rounded-full blur-2xl"
-          />
-          <motion.div
-            animate={{
-              y: [10, -10, 10],
-              rotate: [5, -5, 5],
-            }}
-            transition={{
-              duration: 8,
-              repeat: Infinity,
-              ease: "easeInOut",
-              delay: 2
-            }}
-            className="absolute bottom-20 right-[15%] w-48 h-48 bg-white/5 rounded-full blur-3xl"
-          />
-          <motion.div
-            animate={{
-              y: [-15, 15, -15],
-              scale: [1, 1.1, 1],
-            }}
-            transition={{
-              duration: 7,
-              repeat: Infinity,
-              ease: "easeInOut",
-              delay: 4
-            }}
-            className="absolute top-1/2 right-[5%] w-24 h-24 bg-white/10 rounded-full blur-xl"
-          />
-
-          {/* Grid pattern overlay */}
-          <div
-            className="absolute inset-0 opacity-[0.03]"
-            style={{
-              backgroundImage: `linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)`,
-              backgroundSize: '50px 50px'
-            }}
-          />
-
-          {/* Radial gradient spotlight */}
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-white/5 rounded-full blur-3xl" />
-        </div>
-
+      <section className="relative py-20 md:py-28 lg:py-32 overflow-hidden bg-primary">
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}

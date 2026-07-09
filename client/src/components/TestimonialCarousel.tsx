@@ -84,14 +84,10 @@ export default function TestimonialCarousel({
   return (
     <section
       ref={sectionRef}
-      className="py-10 md:py-14 lg:py-16 bg-gradient-to-b from-accent/20 via-primary/5 to-accent/20 overflow-hidden relative"
+      className="py-10 md:py-14 lg:py-16 bg-muted border-y border-border overflow-hidden relative"
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
     >
-      {/* Static decorative background elements - no infinite animations for better performance */}
-      <div className="absolute top-10 left-1/4 w-64 h-64 rounded-full bg-primary/5 blur-3xl opacity-40" />
-      <div className="absolute bottom-10 right-1/4 w-80 h-80 rounded-full bg-accent/10 blur-3xl opacity-40" />
-
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section header */}
         <motion.div
@@ -161,7 +157,7 @@ export default function TestimonialCarousel({
 
                     <footer className="flex items-center gap-4">
                       <motion.div
-                        className="w-12 h-12 rounded-full bg-gradient-to-br from-primary to-primary/70 flex items-center justify-center shadow-lg"
+                        className="w-12 h-12 rounded-full bg-primary flex items-center justify-center shadow-lg"
                         whileHover={{ scale: 1.1 }}
                         transition={{ type: "spring", stiffness: 400 }}
                       >

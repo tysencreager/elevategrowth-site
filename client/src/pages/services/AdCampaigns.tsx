@@ -2,11 +2,12 @@ import ServicePageLayout from "@/components/ServicePageLayout";
 
 const adCampaignsHero = "https://i.postimg.cc/kMyKNC3b/ads-header-photo.png";
 
+import sectionBand from "@assets/band-adcampaigns.webp";
 export default function AdCampaigns() {
   return (
     <ServicePageLayout
       // SEO
-      title="Ad Campaign Management | Google & Meta Ads | Elevate Growth Solutions"
+      title="Google & Meta Ads Management | Elevate Growth Solutions"
       metaDescription="Strategic ad campaign management across Google, Meta, and other platforms. Data-driven campaigns tailored to your goals. Custom pricing based on your needs."
       ogTitle="Ad Campaign Management | Google & Meta Advertising"
       ogDescription="Get more from your ad spend with strategic campaign management. Google Ads, Facebook Ads, Instagram Ads—custom strategies that drive real results."
@@ -15,6 +16,8 @@ export default function AdCampaigns() {
       heroTitle="Ad Campaign Management"
       heroSubtitle="Data-driven advertising that delivers real, measurable results."
       heroImage={adCampaignsHero}
+      sectionImage={sectionBand}
+      sectionImageAlt="Analytics dashboards and campaign reports on a tablet"
 
       // Main content
       serviceName="Paid Advertising"
@@ -74,32 +77,11 @@ export default function AdCampaigns() {
       ]}
 
       // Pricing
-      pricingSubtitle=""
-      pricing={[
-        {
-          name: "Ad Campaign Management",
-          price: "Inquire",
-          description: "Custom pricing based on platforms, campaign complexity, and ad spend.",
-          features: [
-            "Custom campaign strategy",
-            "Account setup & structure",
-            "Audience research & targeting",
-            "Ad creative & copywriting",
-            "A/B testing",
-            "Bid & budget optimization",
-            "Conversion tracking setup",
-            "Monthly performance reports",
-            "Regular strategy calls"
-          ],
-          note: "3-month minimum commitment required. Pricing varies based on: number of platforms, campaign complexity, monthly ad spend, and your specific goals. Let's talk about what you need.",
-          featured: true
-        }
-      ]}
 
       // FAQs
       faqs={[
         {
-          question: "Why is pricing 'Inquire' instead of a fixed rate?",
+          question: "How is pricing determined?",
           answer: "Ad management complexity varies significantly. A single-platform campaign with $1,000/month ad spend requires different effort than a multi-platform strategy with $10,000/month spend. I provide custom quotes after understanding your specific needs."
         },
         {

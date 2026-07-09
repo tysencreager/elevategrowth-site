@@ -4,6 +4,7 @@ import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { ExternalLink, Smartphone, Search, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import sectionBand from "@assets/band-websites.webp";
 
 // Portfolio project data with SEO-friendly descriptions
 const portfolioProjects = [
@@ -333,6 +334,8 @@ export default function Websites() {
       heroTitle="Website Design & Development"
       heroSubtitle="Custom websites built to convert, not just look pretty—on any platform you choose."
       heroImage={websiteHero}
+      sectionImage={sectionBand}
+      sectionImageAlt="Studio desk with laptop and design notes"
 
       // Main content
       serviceName="Web Development"
@@ -406,12 +409,12 @@ export default function Websites() {
             "Contact form integration",
             "Basic SEO setup",
             "Fast hosting included (first month)",
-            "2-3 week turnaround"
+            "Efficient, on-schedule delivery"
           ]
         },
         {
           name: "Hosting & Maintenance",
-          price: "$100/mo",
+          price: "$200/mo",
           description: "Keep your site fast, secure, and up-to-date—on any platform.",
           features: [
             "Managed cloud hosting",
@@ -429,7 +432,7 @@ export default function Websites() {
       faqs={[
         {
           question: "How long does it take to build a website?",
-          answer: "Most one-page sites are completed in 2-3 weeks. Larger multi-page sites typically take 3-5 weeks depending on complexity. I'll give you a specific timeline during our discovery call."
+          answer: "Every project is different depending on scope and complexity. I'll give you a specific timeline during our discovery call and keep you updated at every milestone."
         },
         {
           question: "Do you build on WordPress and website builders?",
