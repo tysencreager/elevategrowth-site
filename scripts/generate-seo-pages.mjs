@@ -151,7 +151,7 @@ const routes = [
       "Salt Lake City web design agency for businesses of all sizes. Custom websites, SEO, and digital marketing with fast turnaround and boutique attention.",
     ogTitle: "Web Design & Digital Marketing in Salt Lake City, Utah",
     ogDescription:
-      "Salt Lake City’s boutique web design agency. Custom websites, built on any platform, typically delivered in under 30 days. SEO, social media, and full-stack marketing for Utah businesses of all sizes.",
+      "Salt Lake City’s boutique web design agency. Custom websites, built on any platform. SEO, social media, and full-stack marketing for Utah businesses of all sizes.",
   },
   {
     path: "/salt-lake-city-marketing",
@@ -226,7 +226,7 @@ const homeRoute = {
   ogTitle:
     "Web Design & Full-Stack Marketing for Growing Businesses | Elevate Growth Solutions",
   ogDescription:
-    "Custom websites built and maintained on any platform, typically delivered in under 30 days. Boutique marketing agency providing web design, SEO, social media management, and branding for businesses of all sizes, nationwide.",
+    "Custom websites built and maintained on any platform. Boutique marketing agency providing web design, SEO, social media management, and branding for businesses of all sizes, nationwide.",
 };
 
 // ---------------------------------------------------------------------------

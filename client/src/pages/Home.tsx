@@ -43,7 +43,7 @@ export default function Home() {
         title="Web Design Agency & Full-Stack Marketing | Elevate Growth Solutions"
         description="Boutique web design and full-stack marketing agency. Custom websites on any platform, plus SEO, social media, and branding—in Salt Lake City and nationwide."
         ogTitle="Web Design & Full-Stack Marketing for Growing Businesses | Elevate Growth Solutions"
-        ogDescription="Custom websites built and maintained on any platform, typically delivered in under 30 days. Boutique marketing agency providing web design, SEO, social media management, and branding for businesses of all sizes, nationwide."
+        ogDescription="Custom websites built and maintained on any platform. Boutique marketing agency providing web design, SEO, social media management, and branding for businesses of all sizes, nationwide."
       />
       <SchemaMarkup type="marketingAgency" />
       <Navbar />

@@ -316,7 +316,7 @@ export default function WhyCustomCoded() {
               </h2>
             </div>
             <p className="font-serif text-lg text-muted-foreground leading-relaxed">
-              Most agencies quote 2-3 months for a custom website. We typically deliver in under 30 days. Because we focus on exactly what you need—on whatever platform fits you best—we move fast without cutting corners.
+              Because we focus on exactly what you need—on whatever platform fits you best—we move fast without cutting corners, and you'll always know your timeline before we start.
             </p>
           </motion.div>
         </div>

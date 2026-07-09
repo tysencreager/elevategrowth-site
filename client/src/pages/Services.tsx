@@ -31,7 +31,7 @@ const servicesItemListSchema = {
       "@type": "Service",
       "position": 1,
       "name": "Custom Website Development",
-      "description": "Custom websites built and maintained on any platform—custom code, WordPress, or any builder. Fast-loading, secure, and SEO-optimized. Typically delivered in under 30 days.",
+      "description": "Custom websites built and maintained on any platform—custom code, WordPress, or any builder. Fast-loading, secure, and SEO-optimized.",
       "provider": {"@id": "https://elevategrowth.solutions/#organization"},
       "areaServed": {"@type": "State", "name": "Utah"},
       "serviceType": "Web Development"
@@ -71,7 +71,7 @@ const servicesFAQSchema = {
       "name": "How long does it take to build a website?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "We typically deliver custom websites in under 30 days, compared to the industry standard of 2-3 months. We build on whatever platform fits you best—custom code, WordPress, or another builder—and our efficient process keeps timelines short."
+        "text": "Our focused, efficient process keeps timelines short. We build on whatever platform fits you best—custom code, WordPress, or another builder—and give you a specific timeline during your discovery call."
       }
     },
     {
@@ -155,7 +155,7 @@ export default function Services() {
   const faqs = [
     {
       question: "How long does a typical project take?",
-      answer: "Project timelines vary based on scope and complexity. A singular project or audit typically takes 2-3 weeks, website builds are typically completed in under 30 days, and ongoing marketing management is structured in monthly or quarterly engagements. During our discovery call, we'll provide a detailed timeline specific to your project needs."
+      answer: "Project timelines vary based on scope and complexity, and ongoing marketing management is structured in monthly or quarterly engagements. During our discovery call, we'll provide a detailed timeline specific to your project needs."
     },
     {
       question: "What makes Elevate Growth Solutions different?",

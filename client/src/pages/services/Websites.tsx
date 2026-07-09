@@ -409,7 +409,7 @@ export default function Websites() {
             "Contact form integration",
             "Basic SEO setup",
             "Fast hosting included (first month)",
-            "2-3 week turnaround"
+            "Efficient, on-schedule delivery"
           ]
         },
         {
@@ -432,7 +432,7 @@ export default function Websites() {
       faqs={[
         {
           question: "How long does it take to build a website?",
-          answer: "Most one-page sites are completed in 2-3 weeks. Larger multi-page sites typically take 3-5 weeks depending on complexity. I'll give you a specific timeline during our discovery call."
+          answer: "Every project is different depending on scope and complexity. I'll give you a specific timeline during our discovery call and keep you updated at every milestone."
         },
         {
           question: "Do you build on WordPress and website builders?",

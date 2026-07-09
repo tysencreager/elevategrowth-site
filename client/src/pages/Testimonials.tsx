@@ -25,9 +25,9 @@ const whyChooseReasons = [
   },
   {
     icon: Clock,
-    title: "Custom Websites in Under 30 Days",
+    title: "Efficient, On-Schedule Delivery",
     description:
-      "Most custom website builds are delivered in under 30 days without cutting corners—mobile-responsive, fast-loading, and SEO-optimized from day one, on whatever platform fits your business best."
+      "Custom website builds move quickly without cutting corners—mobile-responsive, fast-loading, and SEO-optimized from day one, on whatever platform fits your business best."
   },
   {
     icon: Building2,

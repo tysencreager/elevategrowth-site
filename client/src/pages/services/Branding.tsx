@@ -128,7 +128,7 @@ export default function Branding() {
         },
         {
           question: "How long does the branding process take?",
-          answer: "Brand Launch typically takes 2-3 weeks. Brand Authority is a more comprehensive process, usually 4-6 weeks. Timelines depend on feedback turnaround and the complexity of your needs."
+          answer: "Timelines depend on the scope of your brand package, feedback turnaround, and the complexity of your needs. You'll receive a specific timeline in your proposal."
         },
         {
           question: "What if I only need a logo?",

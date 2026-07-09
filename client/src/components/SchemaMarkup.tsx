@@ -55,7 +55,7 @@ const localBusinessSchema = {
   "url": "https://elevategrowth.solutions",
   "telephone": "+1-435-553-4668",
   "email": "tysen@elevategrowth.solutions",
-  "description": "Boutique web design agency and full-stack marketing services. Custom websites built and maintained on any platform—custom code, WordPress, or any builder—typically delivered in under 30 days. Serving businesses of all sizes nationwide, with a focus on Utah.",
+  "description": "Boutique web design agency and full-stack marketing services. Custom websites built and maintained on any platform—custom code, WordPress, or any builder. Serving businesses of all sizes nationwide, with a focus on Utah.",
   "address": {
     "@type": "PostalAddress",
     "addressCountry": "US"
@@ -130,7 +130,7 @@ const webDesignServiceSchema = {
   "@type": "Service",
   "serviceType": "Web Design",
   "name": "Custom Web Design Services",
-  "description": "Professional custom website design and development for businesses of all sizes, from startups to established companies. Websites typically delivered in under 30 days. Conversion-focused design optimized for lead generation.",
+  "description": "Professional custom website design and development for businesses of all sizes, from startups to established companies. Conversion-focused design optimized for lead generation.",
   "provider": {
     "@type": "Organization",
     "name": "Elevate Growth Solutions",
@@ -239,7 +239,7 @@ const marketingAgencySchema = {
   "@type": "MarketingAgency",
   "@id": "https://elevategrowth.solutions/#organization",
   "name": "Elevate Growth Solutions",
-  "description": "Boutique marketing agency specializing in custom website design and development—on any platform, including custom code, WordPress, and other builders—plus full-stack marketing services. Custom websites typically delivered in under 30 days.",
+  "description": "Boutique marketing agency specializing in custom website design and development—on any platform, including custom code, WordPress, and other builders—plus full-stack marketing services.",
   "url": "https://elevategrowth.solutions",
   "logo": "https://i.postimg.cc/13kYHV2m/EGS-LOGO-Full.png",
   "image": "https://www.elevategrowth.solutions/egs-social-sharing.png",

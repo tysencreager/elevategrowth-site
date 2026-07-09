@@ -628,7 +628,7 @@ Full-stack marketing is ideal if you:
 At Elevate Growth Solutions, we're a boutique full-stack marketing agency. That means:
 
 - **You're not just a number** - We give every client personalized attention
-- **Fast turnaround** - Websites typically delivered in under 30 days
+- **Fast turnaround** - An efficient process that keeps your launch on schedule
 - **Everything handled** - From strategy to execution
 - **Results-focused** - We care about growing your business, not just checking boxes
 

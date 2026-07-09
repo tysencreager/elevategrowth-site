@@ -110,7 +110,7 @@ export default function HomeHero() {
       <div className="absolute bottom-0 left-0 right-0 z-10 border-t border-white/15">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between gap-4 font-sans text-[8.5px] tracking-[0.2em] uppercase text-white/50">
           <span>Est. Salt Lake City — Serving Nationwide</span>
-          <span className="text-[#4AC0D8]">Custom builds in under 30 days</span>
+          <span className="text-[#4AC0D8]">Web design · SEO · Full-stack marketing</span>
         </div>
       </div>
     </header>
