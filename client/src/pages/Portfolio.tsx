@@ -19,15 +19,22 @@ import {
 } from "@/components/ui/dialog";
 
 // Portfolio project screenshots
-import macmeadowImg from "@assets/M&M_header_1765335795744.png";
+import julianImg from "@assets/portfolio-juliandismute.webp";
+import bodyshopImg from "@assets/portfolio-bodyshopgym.webp";
+import energizeImg from "@assets/portfolio-energizeyourvibe.webp";
+import dialinImg from "@assets/portfolio-dialinconstruction.webp";
+import junkremovalImg from "@assets/portfolio-junkremovalutah.webp";
+import garagecoatingsImg from "@assets/portfolio-slgaragecoatings.webp";
+import gardnerImg from "@assets/portfolio-gardnerlanding.webp";
+import macmeadowImg from "@assets/portfolio-macmeadow.webp";
 import flooringImg from "@assets/PIFF_header3_1764783463822.png";
 import crystalImg from "@assets/socrystaldesigns_screenshot_1764780915973.png";
-import jpennImg from "@assets/jpennplanning_screenshot_1764780915972.png";
-import ceronImg from "@assets/ceronbuildingsolutions.com-portfolio.png";
+import jpennImg from "@assets/portfolio-jpennplanning.webp";
+import ceronImg from "@assets/portfolio-ceron.webp";
 import drhomeImg from "@assets/drhomesvcs.com-portfolio.png";
-import lexlegalImg from "@assets/lexlegallaw.com-portfolio.png";
-import solenneImg from "@assets/solenneservices.com-portfolio.png";
-import beautymarkdImg from "@assets/landingpage-portfolio.png";
+import lexlegalImg from "@assets/portfolio-lexlegal.webp";
+import solenneImg from "@assets/portfolio-solenne.webp";
+import beautymarkdImg from "@assets/portfolio-beautymarkd.webp";
 
 interface Project {
   title: string;
@@ -41,6 +48,38 @@ interface Project {
 }
 
 const projects: Project[] = [
+  {
+    title: "Julian Dismute",
+    description: "Personal brand website for a revivalist, speaker, and minister. Dramatic dark-and-gold design with speaking engagement booking, ministry pages, and media galleries built to grow a national platform.",
+    tags: ["Personal Brand", "Speaker", "Booking", "Web Design"],
+    image: julianImg,
+    link: "https://juliandismute.com/",
+    features: ["Mobile Responsive", "SEO Optimized"],
+  },
+  {
+    title: "The Body Shop Gym",
+    description: "Bold, street-inspired website for a family-owned gym in Willard, Utah. Membership signup, personal training, and nutrition services with a design that matches the gym's authentic character.",
+    tags: ["Fitness", "Gym", "Membership", "Web Design"],
+    image: bodyshopImg,
+    link: "https://thebodyshopgym.com/",
+    features: ["Mobile Responsive", "SEO Optimized"],
+  },
+  {
+    title: "Energize Your Vibe",
+    description: "Vibrant community platform for a women's connection and lifestyle brand. Membership signup, events, and a design as high-energy as the community it serves.",
+    tags: ["Community", "Membership", "Lifestyle", "Web Design"],
+    image: energizeImg,
+    link: "https://www.energizeyourvibe.com/",
+    features: ["Mobile Responsive", "SEO Optimized"],
+  },
+  {
+    title: "Dial-In Construction",
+    description: "General contractor website for a locally owned construction company building dreams in Weber County. Project galleries, service pages, and estimate requests.",
+    tags: ["Construction", "Contractor", "Web Design"],
+    image: dialinImg,
+    link: "https://dial-inconstruction.com/",
+    features: ["Mobile Responsive", "SEO Optimized"],
+  },
   {
     title: "Lex Legal Law",
     description: "Professional law firm website for a practice licensed in Utah and California. Featuring practice area pages, attorney profiles, FAQ section, and consultation scheduling. Clear guidance, strong advocacy, real results.",
@@ -98,20 +137,45 @@ const projects: Project[] = [
     features: ["Mobile Responsive", "SEO Optimized"],
   },
   {
+    title: "Junk Removal Services Utah",
+    description: "Lead-generation website for same-day junk hauling across Utah. Built around a 60-second quote form, click-to-call, and service pages covering the Wasatch Front to St. George.",
+    tags: ["Home Services", "Lead Generation", "Web Design"],
+    image: junkremovalImg,
+    link: "https://junkremovalservicesutah.com/",
+    features: ["Mobile Responsive", "SEO Optimized"],
+  },
+  {
+    title: "Salt Lake Garage Coatings",
+    description: "Conversion-focused website for a premium epoxy garage floor coating company in Salt Lake City. Instant quote form, service education, and local SEO structure.",
+    tags: ["Home Services", "Lead Generation", "Web Design"],
+    image: garagecoatingsImg,
+    link: "https://saltlakegaragecoatings.com/",
+    features: ["Mobile Responsive", "SEO Optimized"],
+  },
+  {
+    title: "Beautymark'd",
+    description: "High-converting landing page designed for paid ad campaigns. Built to drive permanent-makeup bookings with clear calls-to-action, fast load times, and mobile-first design.",
+    tags: ["Ad Landing Page", "Conversion Optimized", "Paid Ads", "Lead Generation"],
+    image: beautymarkdImg,
+    link: "https://beautymarkd-landingpage.pages.dev/",
+    isLandingPage: true,
+    features: ["Mobile Responsive", "SEO Optimized"],
+  },
+  {
+    title: "Gardner Energy",
+    description: "Advertising landing page for a solar performance consultation campaign. A focused, single-purpose page that turns system-monitoring alerts into booked consultations.",
+    tags: ["Ad Landing Page", "Solar", "Paid Ads", "Lead Generation"],
+    image: gardnerImg,
+    link: "https://gardner-landing-page.pages.dev/pages/production-issue",
+    isLandingPage: true,
+    features: ["Mobile Responsive", "SEO Optimized"],
+  },
+  {
     title: "Pay It Forward Flooring",
     description: "A comprehensive retail platform featuring a multi-page product catalog, financing integration, and a community foundation blog.",
     tags: ["Retail", "Multi-page App", "Community Foundation", "Archived"],
     image: flooringImg,
     isPast: true,
-    features: ["Mobile Responsive", "SEO Optimized"],
-  },
-  {
-    title: "Ad Landing Page",
-    description: "High-converting landing page designed for paid ad campaigns. Built to drive bookings and conversions with clear calls-to-action, fast load times, and mobile-first design.",
-    tags: ["Ad Landing Page", "Conversion Optimized", "Paid Ads", "Lead Generation"],
-    image: beautymarkdImg,
-    link: "https://beautymarkd-landingpage.pages.dev/",
-    isLandingPage: true,
     features: ["Mobile Responsive", "SEO Optimized"],
   },
 ];

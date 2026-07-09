@@ -6,9 +6,9 @@ export default {
   theme: {
     extend: {
       borderRadius: {
-        lg: ".5625rem", /* 9px */
-        md: ".375rem", /* 6px */
-        sm: ".1875rem", /* 3px */
+        lg: "0rem",
+        md: "0rem",
+        sm: "0rem",
       },
       colors: {
         // Flat / base colors (regular buttons)
@@ -101,11 +101,21 @@ export default {
           "0%, 100%": { backgroundPosition: "0% 50%" },
           "50%": { backgroundPosition: "100% 50%" },
         },
+        "marquee": {
+          from: { transform: "translateX(0)" },
+          to: { transform: "translateX(-50%)" },
+        },
+        "kenburns": {
+          from: { transform: "scale(1)" },
+          to: { transform: "scale(1.08)" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
         "gradient": "gradient 6s ease infinite",
+        "marquee": "marquee 42s linear infinite",
+        "kenburns": "kenburns 16s ease-in-out infinite alternate",
       },
     },
   },
