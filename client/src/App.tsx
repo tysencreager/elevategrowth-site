@@ -4,6 +4,7 @@ import { queryClient } from "./lib/queryClient";
 import { QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
+import CookieConsent from "@/components/CookieConsent";
 
 // Scroll to top on route change
 function ScrollToTop() {
@@ -101,6 +102,7 @@ function App() {
       <TooltipProvider>
         <ScrollToTop />
         <Toaster />
+        <CookieConsent />
         <Router />
       </TooltipProvider>
     </QueryClientProvider>

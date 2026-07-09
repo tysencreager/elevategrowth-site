@@ -6,7 +6,6 @@ import Footer from "@/components/Footer";
 import CTASection from "@/components/CTASection";
 import SEO from "@/components/SEO";
 import LogoBanner from "@/components/LogoBanner";
-import { BokehEffect, FloatingOrbs, WaveDivider, GradientTransition } from "@/components/decorative";
 
 const testimonialsImage = "https://i.postimg.cc/j50kTV2H/website_photo.png";
 
@@ -79,15 +78,7 @@ function TestimonialCard({ testimonial, index }: { testimonial: Testimonial; ind
   const cardRef = useRef(null);
   const isInView = useInView(cardRef, { once: true, amount: 0.2 });
 
-  // Alternate card styles for visual variety
   const isFeature = index === 0;
-  const cardColors = [
-    "from-primary/10 to-accent/20 border-primary/20",
-    "from-accent/15 to-primary/10 border-accent/30",
-    "from-primary/5 to-accent/15 border-primary/15",
-    "from-accent/10 to-primary/15 border-accent/25",
-    "from-primary/15 to-accent/10 border-primary/25"
-  ];
 
   const cardVariants = {
     hidden: { opacity: 0, y: 50, scale: 0.95 },
@@ -115,7 +106,7 @@ function TestimonialCard({ testimonial, index }: { testimonial: Testimonial; ind
   return (
     <motion.article
       ref={cardRef}
-      className={`relative rounded-2xl p-6 md:p-8 overflow-hidden border-2 bg-gradient-to-br ${cardColors[index % cardColors.length]} ${isFeature ? 'md:col-span-2' : ''}`}
+      className={`relative rounded-2xl p-6 md:p-8 overflow-hidden border border-border bg-background ${isFeature ? 'md:col-span-2' : ''}`}
       variants={cardVariants}
       initial="hidden"
       animate={isInView ? "visible" : "hidden"}
@@ -123,15 +114,6 @@ function TestimonialCard({ testimonial, index }: { testimonial: Testimonial; ind
       itemScope
       itemType="https://schema.org/Review"
     >
-      {/* Animated background glow */}
-      <motion.div
-        className="absolute inset-0 bg-gradient-to-r from-primary/5 via-transparent to-primary/5 opacity-0"
-        variants={{
-          rest: { opacity: 0 },
-          hover: { opacity: 1 }
-        }}
-      />
-
       {/* Decorative quote mark with animation */}
       <motion.div
         className="absolute -top-2 -right-2 text-8xl md:text-9xl font-serif text-primary/15 pointer-events-none select-none leading-none"
@@ -143,16 +125,6 @@ function TestimonialCard({ testimonial, index }: { testimonial: Testimonial; ind
       >
         "
       </motion.div>
-
-      {/* Floating decorative circles */}
-      <motion.div
-        className="absolute -bottom-10 -left-10 w-32 h-32 rounded-full bg-primary/5"
-        variants={{
-          rest: { scale: 1 },
-          hover: { scale: 1.2 }
-        }}
-        transition={{ duration: 0.5 }}
-      />
 
       <motion.div variants={hoverVariants} className="relative z-10">
         <StarRating />
@@ -167,7 +139,7 @@ function TestimonialCard({ testimonial, index }: { testimonial: Testimonial; ind
 
           <footer className="flex items-center gap-4">
             <motion.div
-              className="w-12 h-12 rounded-full bg-gradient-to-br from-primary to-primary/70 flex items-center justify-center shadow-lg"
+              className="w-12 h-12 rounded-full bg-primary flex items-center justify-center shadow-lg"
               whileHover={{ scale: 1.1, rotate: 5 }}
               transition={{ type: "spring", stiffness: 400 }}
             >
@@ -283,13 +255,9 @@ export default function Testimonials() {
 
       <Navbar />
 
-      {/* Hero Section with gradient background */}
-      <section className="pt-32 pb-16 md:pt-40 md:pb-20 bg-gradient-to-b from-primary/5 via-accent/10 to-background relative overflow-hidden">
-        {/* Decorative elements */}
-        <BokehEffect opacity={0.4} />
-        <FloatingOrbs variant="light" />
-
-        <div ref={headerRef} className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+      {/* Hero Section */}
+      <section className="pt-32 pb-16 md:pt-40 md:pb-20 bg-muted border-b border-border">
+        <div ref={headerRef} className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
             className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full mb-6"
             initial={{ opacity: 0, scale: 0.8 }}
@@ -358,9 +326,8 @@ export default function Testimonials() {
       />
 
       {/* Testimonials Grid */}
-      <section className="relative py-10 md:py-14 lg:py-16 bg-gradient-to-b from-background via-accent/5 to-background overflow-hidden">
-        <BokehEffect opacity={0.3} />
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-10 md:py-14 lg:py-16 bg-background">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
             {testimonials.map((testimonial, index) => (
               <TestimonialCard

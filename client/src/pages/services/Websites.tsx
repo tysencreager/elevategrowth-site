@@ -4,6 +4,7 @@ import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { ExternalLink, Smartphone, Search, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import sectionBand from "@assets/band-websites.webp";
 
 // Portfolio project data with SEO-friendly descriptions
 const portfolioProjects = [
@@ -333,6 +334,8 @@ export default function Websites() {
       heroTitle="Website Design & Development"
       heroSubtitle="Custom websites built to convert, not just look pretty—on any platform you choose."
       heroImage={websiteHero}
+      sectionImage={sectionBand}
+      sectionImageAlt="Studio desk with laptop and design notes"
 
       // Main content
       serviceName="Web Development"
@@ -411,7 +414,7 @@ export default function Websites() {
         },
         {
           name: "Hosting & Maintenance",
-          price: "$100/mo",
+          price: "$200/mo",
           description: "Keep your site fast, secure, and up-to-date—on any platform.",
           features: [
             "Managed cloud hosting",

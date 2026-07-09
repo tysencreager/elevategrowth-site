@@ -13,21 +13,6 @@ import ParallaxCTA from "@/components/home/ParallaxCTA";
 import valueImage from "@assets/value_prop.webp";
 import ctaImage from "@assets/cta_background.webp";
 
-const clientNames = [
-  "Dial In",
-  "Sharing Success",
-  "Luneta",
-  "Summit Builders",
-  "Cascade Properties",
-  "Desert View Homes",
-  "Red Rock Ventures",
-  "Pioneer Financial",
-  "Wasatch Consulting",
-  "Beehive Marketing",
-  "Blaze Collective",
-  "Julian Speaks Life"
-];
-
 const processSteps = [
   {
     title: "Discovery Call",
@@ -65,7 +50,7 @@ export default function Home() {
 
       <HomeHero />
 
-      <ClientMarquee names={clientNames} />
+      <ClientMarquee />
 
       <ServicesIconGrid />
 

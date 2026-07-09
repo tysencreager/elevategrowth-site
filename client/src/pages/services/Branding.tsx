@@ -5,6 +5,7 @@ import { useRef } from "react";
 const brandingHero = "https://i.postimg.cc/yx26HW3z/branding-photo.png";
 const brandingShowcase = "https://i.postimg.cc/50dkJcyp/EGS_logobranding_for_website.png";
 
+import sectionBand from "@assets/band-branding.webp";
 function BrandingShowcase() {
   const sectionRef = useRef(null);
   const isInView = useInView(sectionRef, { once: true, amount: 0.2 });
@@ -50,14 +51,16 @@ export default function Branding() {
       beforeProcess={<BrandingShowcase />}
       // SEO
       title="Branding & Brand Identity Design | Elevate Growth Solutions"
-      metaDescription="Build a memorable brand identity: logo design, visual identity systems, strategy, and complete brand guidelines. Packages from $999."
+      metaDescription="Build a memorable brand identity: logo design, visual identity systems, strategy, and complete brand guidelines. Tailored to your business."
       ogTitle="Professional Branding & Identity Design Services"
-      ogDescription="Create a brand that stands out. From logo suites to complete brand systems with strategy, visual identity, and collateral. Packages starting at $999."
+      ogDescription="Create a brand that stands out. From logo suites to complete brand systems with strategy, visual identity, and collateral."
 
       // Hero
       heroTitle="Branding & Identity"
       heroSubtitle="Build a brand that connects, converts, and stands the test of time."
       heroImage={brandingHero}
+      sectionImage={sectionBand}
+      sectionImageAlt="Editorial black and white photo of brand work in progress"
 
       // Main content
       serviceName="Brand Identity"
@@ -116,44 +119,6 @@ export default function Branding() {
         }
       ]}
 
-      // Pricing
-      pricing={[
-        {
-          name: "Brand Launch",
-          price: "$999",
-          description: "Everything you need to launch with a professional brand presence.",
-          features: [
-            "60-minute discovery call",
-            "Target audience profile",
-            "Primary & secondary logo",
-            "Color palette",
-            "Brand board (fonts/colors cheat sheet)",
-            "3 custom social media templates",
-            "Business card design",
-            "All source files & font guide"
-          ],
-          note: "Perfect for startups, new businesses, or those ready for a professional refresh."
-        },
-        {
-          name: "Brand Authority",
-          price: "$3,995",
-          description: "A comprehensive brand system for established businesses ready to level up.",
-          features: [
-            "Competitor audit (3 competitors)",
-            "Detailed customer persona",
-            "Brand voice & tone guide",
-            "Messaging framework & taglines",
-            "Full logo suite with submarks & favicon",
-            "Typography hierarchy",
-            "Custom pattern/texture library",
-            "5-10 custom service icons",
-            "Complete brand bible (PDF)",
-            "Choice of 3 collateral pieces"
-          ],
-          note: "Collateral options: pitch deck, email templates, social media suite, flyer design, or LinkedIn banners.",
-          featured: true
-        }
-      ]}
 
       // FAQs
       faqs={[

@@ -2,6 +2,7 @@ import ServicePageLayout from "@/components/ServicePageLayout";
 
 const socialHero = "https://i.postimg.cc/J4yvDPvS/EGS-social-media-service-header.png";
 
+import sectionBand from "@assets/band-socialmedia.webp";
 export default function SocialMedia() {
   return (
     <ServicePageLayout
@@ -15,6 +16,8 @@ export default function SocialMedia() {
       heroTitle="Social Media Management"
       heroSubtitle="Build your brand with consistent, strategic content that actually connects."
       heroImage={socialHero}
+      sectionImage={sectionBand}
+      sectionImageAlt="Hands managing social channels on a laptop"
 
       // Main content
       serviceName="Social Media"
@@ -73,42 +76,6 @@ export default function SocialMedia() {
         }
       ]}
 
-      // Pricing
-      pricing={[
-        {
-          name: "Standard",
-          price: "Inquire",
-          description: "Consistent presence for businesses getting started with professional social media.",
-          features: [
-            "2-3 posts per week",
-            "Content strategy & planning",
-            "Custom graphics",
-            "Caption writing",
-            "Hashtag research",
-            "Comment engagement",
-            "Monthly analytics report"
-          ],
-          note: "Covers 1-2 platforms (Instagram, Facebook, or LinkedIn)."
-        },
-        {
-          name: "Growth",
-          price: "Inquire",
-          description: "Expanded presence for businesses ready to grow their social impact.",
-          features: [
-            "4-5 posts per week",
-            "Advanced content strategy",
-            "Custom graphics & Reels/video",
-            "Caption writing & storytelling",
-            "Hashtag & trend research",
-            "Active comment engagement",
-            "Story/post scheduling",
-            "Bi-weekly strategy calls",
-            "Detailed monthly analytics"
-          ],
-          note: "Covers 2-3 platforms with more frequent posting.",
-          featured: true
-        }
-      ]}
 
       // FAQs
       faqs={[

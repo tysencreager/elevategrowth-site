@@ -63,9 +63,6 @@ export default function Footer() {
                 <Link href="/portfolio" data-testid="link-footer-portfolio" className={footerLinkClass}>
                   Website Portfolio
                 </Link>
-                <Link href="/pricing" className={footerLinkClass}>
-                  Pricing
-                </Link>
                 <Link href="/testimonials" className={footerLinkClass}>
                   Testimonials
                 </Link>

@@ -5,7 +5,6 @@ import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
-import { BokehEffect, FloatingOrbs, WaveDivider, GradientTransition } from "@/components/decorative";
 import { HandshakeIcon, Settings, Code2, Shield, TrendingUp, DollarSign, ArrowRight, CheckCircle, Users, Wrench } from "lucide-react";
 
 export default function WebsiteHandoffOptions() {
@@ -32,7 +31,7 @@ export default function WebsiteHandoffOptions() {
       icon: Users,
       description: "You run your business; we run your website. No worries about breaking the layout, resizing images, or messing up the mobile view. Just email us the change, and it's done.",
       features: [
-        "$100/month includes hosting + 1 hour of monthly edits",
+        "$200/month includes hosting + 1 hour of monthly edits",
         "Uptime monitoring and security updates",
         "Priority support when you need changes",
         "Professional handling of all updates",
@@ -84,7 +83,7 @@ export default function WebsiteHandoffOptions() {
     {
       icon: DollarSign,
       title: "Predictable Costs, No Surprises",
-      description: "We help you keep ongoing costs predictable. Whether you're on a fully custom build or a platform like WordPress or Squarespace, your $100/month plan covers hosting and professional maintenance—not just access to a tool—so there are no surprise fees eating your budget."
+      description: "We help you keep ongoing costs predictable. Whether you're on a fully custom build or a platform like WordPress or Squarespace, your $200/month plan covers hosting and professional maintenance—not just access to a tool—so there are no surprise fees eating your budget."
     },
     {
       icon: Wrench,
@@ -103,11 +102,8 @@ export default function WebsiteHandoffOptions() {
       <Navbar />
 
       {/* Hero Section */}
-      <section ref={heroRef} className="relative pt-28 md:pt-36 lg:pt-44 pb-16 md:pb-24 bg-background overflow-hidden">
-        <BokehEffect opacity={0.35} />
-        <FloatingOrbs variant="light" />
-
-        <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <section ref={heroRef} className="pt-28 md:pt-36 lg:pt-44 pb-16 md:pb-24 bg-muted border-b border-border">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
             className="inline-flex items-center justify-center w-20 h-20 bg-primary/10 rounded-full mb-8"
             variants={fadeInUp}
@@ -138,15 +134,10 @@ export default function WebsiteHandoffOptions() {
             One of the most common questions we get: "If you build my website from code, how do I keep it updated?" Great question—and you have options, whatever platform we build on.
           </motion.p>
         </div>
-
-        <GradientTransition from="transparent" to="hsl(var(--muted) / 0.3)" height="80px" />
       </section>
 
       {/* The Common Concern Section */}
       <section className="relative py-16 md:py-24 bg-muted/30 overflow-hidden">
-        <WaveDivider position="top" fillColor="hsl(var(--background))" />
-        <BokehEffect opacity={0.25} />
-
         <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -174,8 +165,6 @@ export default function WebsiteHandoffOptions() {
 
       {/* Handoff Options Section */}
       <section className="relative py-16 md:py-24 bg-background overflow-hidden">
-        <FloatingOrbs variant="light" />
-
         <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -246,9 +235,6 @@ export default function WebsiteHandoffOptions() {
 
       {/* Additional Self-Service Options */}
       <section className="relative py-16 md:py-24 bg-muted/30 overflow-hidden">
-        <WaveDivider position="top" fillColor="hsl(var(--background))" />
-        <BokehEffect opacity={0.25} />
-
         <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -288,8 +274,6 @@ export default function WebsiteHandoffOptions() {
 
       {/* Why Work With Us Section */}
       <section className="relative py-16 md:py-24 bg-background overflow-hidden">
-        <FloatingOrbs variant="light" />
-
         <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -335,9 +319,6 @@ export default function WebsiteHandoffOptions() {
 
       {/* Security Advantage Section */}
       <section className="relative py-16 md:py-24 bg-muted/30 overflow-hidden">
-        <WaveDivider position="top" fillColor="hsl(var(--background))" />
-        <BokehEffect opacity={0.25} />
-
         <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -370,8 +351,6 @@ export default function WebsiteHandoffOptions() {
 
       {/* The Real Question Section */}
       <section className="relative py-16 md:py-24 bg-background overflow-hidden">
-        <FloatingOrbs variant="light" />
-
         <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -398,20 +377,7 @@ export default function WebsiteHandoffOptions() {
       </section>
 
       {/* CTA Section */}
-      <section className="relative py-20 md:py-28 lg:py-32 overflow-hidden bg-gradient-to-br from-primary via-primary to-[hsl(191,60%,25%)]">
-        <div className="absolute inset-0 overflow-hidden">
-          <motion.div
-            animate={{ y: [-10, 10, -10], rotate: [-5, 5, -5] }}
-            transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-            className="absolute top-20 left-[10%] w-32 h-32 bg-white/5 rounded-full blur-2xl"
-          />
-          <motion.div
-            animate={{ y: [10, -10, 10], rotate: [5, -5, 5] }}
-            transition={{ duration: 8, repeat: Infinity, ease: "easeInOut", delay: 2 }}
-            className="absolute bottom-20 right-[15%] w-48 h-48 bg-white/5 rounded-full blur-3xl"
-          />
-        </div>
-
+      <section className="relative py-20 md:py-28 lg:py-32 overflow-hidden bg-primary">
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -436,7 +402,7 @@ export default function WebsiteHandoffOptions() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="font-serif text-xl md:text-2xl text-white/90 mb-10 max-w-2xl mx-auto leading-relaxed"
           >
-            Let's discuss which handoff option makes sense for your business. Custom websites start at $1,599, and hosting is just $100/month with professional support included.
+            Let's discuss which handoff option makes sense for your business. Custom websites start at $1,599, and hosting is just $200/month with professional support included.
           </motion.p>
 
           <motion.div

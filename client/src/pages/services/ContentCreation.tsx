@@ -2,12 +2,13 @@ import ServicePageLayout from "@/components/ServicePageLayout";
 
 const contentHero = "https://i.postimg.cc/pryWnKMY/content-creation-header-phoot.png";
 
+import sectionBand from "@assets/band-contentcreation.webp";
 export default function ContentCreation() {
   return (
     <ServicePageLayout
       // SEO
       title="Content Creation: Photo & Video | Elevate Growth Solutions"
-      metaDescription="One content day per quarter delivers a library of professional photos and videos for your social media, website, and marketing. $1,700/quarter."
+      metaDescription="One content day per quarter delivers a library of professional photos and videos for your social media, website, and marketing."
       ogTitle="Professional Content Creation Services"
       ogDescription="Build a library of professional photos and videos for your business. Quarterly content days deliver authentic, on-brand content you can use everywhere."
 
@@ -15,6 +16,8 @@ export default function ContentCreation() {
       heroTitle="Content Creation"
       heroSubtitle="A library of professional content, ready to use however you need."
       heroImage={contentHero}
+      sectionImage={sectionBand}
+      sectionImageAlt="Creator working on content at a laptop"
 
       // Main content
       serviceName="Content Creation"
@@ -73,25 +76,6 @@ export default function ContentCreation() {
         }
       ]}
 
-      // Pricing
-      pricing={[
-        {
-          name: "Quarterly Content Package",
-          price: "$1,700/qtr",
-          description: "One content day per quarter with a full library of photos and videos.",
-          features: [
-            "Full-day content session",
-            "Pre-session planning & shot list",
-            "Professional photo library (30-50 edited images)",
-            "Short-form video clips (5-10 clips)",
-            "Color correction & editing",
-            "Organized delivery in multiple formats",
-            "Full commercial usage rights"
-          ],
-          note: "3-month commitment required. Travel outside of local area may incur additional fees.",
-          featured: true
-        }
-      ]}
 
       // FAQs
       faqs={[

@@ -16,8 +16,8 @@ const serviceSubLinks = [
 
 const navLinks = [
   { href: "/portfolio", label: "Work" },
-  { href: "/pricing", label: "Pricing" },
-  { href: "/behind-elevate", label: "About" }
+  { href: "/behind-elevate", label: "About" },
+  { href: "/blog", label: "Blog" }
 ];
 
 export default function Navbar() {

@@ -5,8 +5,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import CTASection from "@/components/CTASection";
 import SEO from "@/components/SEO";
-import LogoBanner from "@/components/LogoBanner";
-import { BokehEffect, FloatingOrbs } from "@/components/decorative";
+import ClientMarquee from "@/components/home/ClientMarquee";
 import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -508,68 +507,86 @@ export default function Portfolio() {
 
       <Navbar />
 
-      {/* Hero Section */}
-      <section className="pt-32 pb-16 md:pt-40 md:pb-20 bg-gradient-to-b from-primary/5 via-accent/10 to-background relative overflow-hidden">
-        <BokehEffect opacity={0.4} />
-        <FloatingOrbs variant="light" />
+      {/* Hero Section — full-bleed video */}
+      <section className="relative overflow-hidden min-h-[70vh] flex items-center pt-20">
+        <video
+          className="absolute inset-0 w-full h-full object-cover grayscale contrast-[1.05] motion-reduce:hidden"
+          src="/headervideo.mp4"
+          poster="/hero_bw_1920.webp"
+          autoPlay
+          muted
+          loop
+          playsInline
+          aria-hidden="true"
+        />
+        <img
+          src="/hero_bw_1920.webp"
+          alt=""
+          className="absolute inset-0 w-full h-full object-cover grayscale hidden motion-reduce:block"
+          aria-hidden="true"
+        />
+        <div
+          className="absolute inset-0"
+          style={{
+            background:
+              "linear-gradient(100deg, rgba(11,25,30,.88) 0%, rgba(17,43,52,.72) 45%, rgba(38,109,130,.45) 100%)"
+          }}
+          aria-hidden="true"
+        />
+        <div className="absolute inset-0 opacity-[0.07] mix-blend-overlay grain" aria-hidden="true" />
 
-        <div ref={headerRef} className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-          <motion.div
-            className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full mb-6"
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={isHeaderInView ? { opacity: 1, scale: 1 } : {}}
-            transition={{ duration: 0.5 }}
-          >
-            <Layout className="w-4 h-4" />
-            <span className="font-medium text-sm">Our Work</span>
-          </motion.div>
-
-          <motion.h1
-            className="font-display font-bold text-4xl md:text-5xl lg:text-6xl text-foreground mb-6"
-            initial={{ opacity: 0, y: 40 }}
-            animate={isHeaderInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-          >
-            Website Design{" "}
-            <span className="text-primary">Portfolio</span>
-          </motion.h1>
-          <motion.p
-            className="font-serif text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed"
-            initial={{ opacity: 0, y: 30 }}
-            animate={isHeaderInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1], delay: 0.2 }}
-          >
-            Full-Stack Marketing Strategist & Certified UX Designer. Every website is custom-built, mobile responsive, and SEO optimized to help your business grow—on whatever platform fits you best.
-          </motion.p>
-          <motion.div
-            className="mt-8"
-            initial={{ opacity: 0, y: 20 }}
-            animate={isHeaderInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6, delay: 0.4 }}
-          >
-            <p className="font-serif text-sm text-muted-foreground mb-3">
-              Looking for our marketing &amp; design work?
-            </p>
-            <Button variant="outline" className="gap-2 font-serif font-medium border-primary/30 text-primary hover:bg-primary/5" asChild>
-              <a href="https://tysencreager.my.canva.site/" target="_blank" rel="noopener noreferrer">
-                View Marketing &amp; Design Portfolio <ExternalLink size={14} />
+        <div ref={headerRef} className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full py-16">
+          <div className="max-w-3xl">
+            <motion.p
+              className="flex items-center gap-3.5 font-sans text-[11px] tracking-[0.3em] uppercase text-[#4AC0D8]"
+              initial={{ opacity: 0, y: 22 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.9, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
+            >
+              <span className="inline-block w-11 h-px bg-[#4AC0D8]/70" aria-hidden="true" />
+              Selected Works &amp; Case Studies
+            </motion.p>
+            <motion.h1
+              className="font-display font-normal text-[clamp(38px,5vw,64px)] leading-[1.1] text-white mt-6 mb-6"
+              initial={{ opacity: 0, y: 22 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.9, delay: 0.28, ease: [0.22, 1, 0.36, 1] }}
+            >
+              Website design <em className="italic text-[#4AC0D8]">portfolio.</em>
+            </motion.h1>
+            <motion.p
+              className="font-serif font-light text-lg text-white/70 max-w-2xl leading-relaxed"
+              initial={{ opacity: 0, y: 22 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.9, delay: 0.46, ease: [0.22, 1, 0.36, 1] }}
+            >
+              Every website is custom-built, mobile responsive, and SEO optimized to help your
+              business grow—on whatever platform fits you best.
+            </motion.p>
+            <motion.div
+              className="mt-9"
+              initial={{ opacity: 0, y: 22 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.9, delay: 0.62, ease: [0.22, 1, 0.36, 1] }}
+            >
+              <a
+                href="https://tysencreager.my.canva.site/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 font-sans text-[11px] font-medium tracking-[0.2em] uppercase border border-white/40 text-white px-8 py-4 hover:border-[#4AC0D8] hover:text-[#4AC0D8] transition-colors"
+              >
+                Marketing &amp; Design Portfolio <ExternalLink size={13} />
               </a>
-            </Button>
-          </motion.div>
+            </motion.div>
+          </div>
         </div>
       </section>
 
-      {/* Logo Banner */}
-      <LogoBanner
-        logos={clientLogos}
-        title="Trusted By Growing Businesses"
-        subtitle="We've partnered with businesses across industries to build websites and marketing strategies that drive real results"
-        bgColor="#266D82"
-      />
+      {/* Client marquee */}
+      <ClientMarquee />
 
       {/* Portfolio Grid */}
-      <section className="relative py-16 md:py-24 bg-gradient-to-b from-background via-accent/5 to-background overflow-hidden">
-        <BokehEffect opacity={0.3} />
+      <section className="relative py-16 md:py-24 bg-background overflow-hidden">
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             className="text-center mb-12"
@@ -699,7 +716,7 @@ export default function Portfolio() {
       </section>
 
       {/* Google Reviews Section */}
-      <section ref={reviewsRef} className="py-16 md:py-24 bg-gradient-to-b from-background to-accent/5 overflow-hidden">
+      <section ref={reviewsRef} className="py-16 md:py-24 bg-muted overflow-hidden">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             className="text-center mb-12"

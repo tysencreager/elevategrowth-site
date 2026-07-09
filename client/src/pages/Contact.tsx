@@ -7,7 +7,6 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Mail, Send, CheckCircle, Instagram, Calendar, Phone, Star, ExternalLink } from "lucide-react";
-import { BokehEffect, FloatingOrbs, WaveDivider, GradientTransition } from "@/components/decorative";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -16,6 +15,7 @@ export default function Contact() {
     phone: "",
     company: "",
     service: "",
+    budget: "",
     message: ""
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -46,13 +46,15 @@ export default function Contact() {
           phone: formData.phone,
           company: formData.company,
           service: formData.service,
-          message: formData.message
+          message: formData.budget
+            ? `Project budget: ${formData.budget}\n\n${formData.message}`
+            : formData.message
         })
       });
 
       if (response.ok) {
         setIsSubmitted(true);
-        setFormData({ name: "", email: "", phone: "", company: "", service: "", message: "" });
+        setFormData({ name: "", email: "", phone: "", company: "", service: "", budget: "", message: "" });
       } else {
         throw new Error("Form submission failed");
       }
@@ -74,10 +76,8 @@ export default function Contact() {
       <Navbar />
 
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-b from-gray-50 to-primary/5 pt-32 pb-16 overflow-hidden">
-        <BokehEffect opacity={0.4} />
-        <FloatingOrbs variant="light" />
-        <div className="relative z-10 max-w-4xl mx-auto px-4 text-center">
+      <section className="bg-muted border-b border-border pt-32 pb-16">
+        <div className="max-w-4xl mx-auto px-4 text-center">
           <h1 className="font-display text-4xl md:text-5xl font-semibold text-gray-900 mb-4" data-testid="text-contact-title">
             Let's Connect
           </h1>
@@ -85,13 +85,11 @@ export default function Contact() {
             Ready to elevate your marketing? Fill out the form below and we'll get back to you within 24 hours.
           </p>
         </div>
-        <GradientTransition from="transparent" to="hsl(var(--background))" height="60px" />
       </section>
 
       {/* Contact Form Section */}
-      <section className="relative py-16 bg-white flex-1 overflow-hidden">
-        <BokehEffect opacity={0.25} />
-        <div className="relative z-10 max-w-6xl mx-auto px-4">
+      <section className="py-16 bg-background flex-1">
+        <div className="max-w-6xl mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-12">
             {/* Form */}
             <div>
@@ -196,6 +194,24 @@ export default function Contact() {
                       <option value="branding">Branding & Creative Design</option>
                       <option value="full-stack">Full-Stack Marketing</option>
                       <option value="other">Other</option>
+                    </select>
+                  </div>
+
+                  <div className="space-y-2">
+                    <Label htmlFor="budget" className="font-serif">
+                      Project Budget
+                    </Label>
+                    <select
+                      id="budget"
+                      name="budget"
+                      value={formData.budget}
+                      onChange={handleChange}
+                      className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 font-serif"
+                    >
+                      <option value="">Not sure yet</option>
+                      <option value="Under $3,000">Under $3,000</option>
+                      <option value="$3,000 – $8,000">$3,000 – $8,000</option>
+                      <option value="$8,000+">$8,000+</option>
                     </select>
                   </div>
 
@@ -395,9 +411,6 @@ export default function Contact() {
             </div>
           </div>
         </div>
-
-        {/* Wave divider before footer */}
-        <WaveDivider position="bottom" fillColor="hsl(var(--muted) / 0.5)" />
       </section>
 
       <Footer />
