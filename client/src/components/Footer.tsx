@@ -1,6 +1,7 @@
 import { Link } from "wouter";
 import { Instagram, Linkedin, Phone } from "lucide-react";
 import EmailSubscription from "./EmailSubscription";
+import logoMark from "@assets/egs-logo-mark.png";
 
 const footerLinkClass =
   "block font-serif text-sm font-light text-white/60 hover:text-[#4AC0D8] transition-colors";
@@ -16,10 +17,22 @@ export default function Footer() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10 md:gap-12">
             <div className="space-y-4">
-              <Link href="/" className="inline-flex flex-col leading-none" data-testid="img-footer-logo">
-                <span className="font-display italic text-[28px] text-white tracking-wide">Elevate</span>
-                <span className="font-sans text-[8px] tracking-[0.45em] uppercase text-[#4AC0D8] mt-1.5">
-                  Growth Solutions
+              <Link href="/" className="inline-flex items-center gap-3.5" data-testid="img-footer-logo">
+                <img
+                  src={logoMark}
+                  alt=""
+                  width={48}
+                  height={48}
+                  loading="lazy"
+                  decoding="async"
+                  className="h-12 w-12"
+                  aria-hidden="true"
+                />
+                <span className="flex flex-col leading-none">
+                  <span className="font-display italic text-[28px] text-white tracking-wide">Elevate</span>
+                  <span className="font-sans text-[8px] tracking-[0.45em] uppercase text-[#4AC0D8] mt-1.5">
+                    Growth Solutions
+                  </span>
                 </span>
               </Link>
               <p className="font-display italic text-sm text-white/60 max-w-xs">
