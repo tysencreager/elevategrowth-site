@@ -95,7 +95,7 @@ const routes = [
   {
     path: "/services/ad-campaigns",
     title:
-      "Ad Campaign Management | Google & Meta Ads | Elevate Growth Solutions",
+      "Google & Meta Ads Management | Elevate Growth Solutions",
     description:
       "Strategic ad campaign management across Google, Meta, and other platforms. Data-driven campaigns tailored to your goals. Custom pricing based on your needs.",
     ogTitle: "Ad Campaign Management | Google & Meta Advertising",
@@ -105,7 +105,7 @@ const routes = [
   {
     path: "/services/audits",
     title:
-      "Website & SEO Audits | Technical Analysis | Elevate Growth Solutions",
+      "Website & SEO Audits | Elevate Growth Solutions",
     description:
       "Find out what’s holding your website back. SEO audits from $500, technical audits from $400, or the full bundle for $799. Actionable insights, no lock-in.",
     ogTitle: "Website & SEO Audit Services",
@@ -124,7 +124,7 @@ const routes = [
   {
     path: "/contact",
     title:
-      "Contact Us - Let's Elevate Your Marketing | Elevate Growth Solutions",
+      "Contact | Web Design & Marketing | Elevate Growth Solutions",
     description:
       "Ready to elevate your marketing? Get in touch with Elevate Growth Solutions today. Fill out our contact form to discuss your web design and marketing needs.",
     ogTitle:
@@ -156,7 +156,7 @@ const routes = [
   {
     path: "/salt-lake-city-marketing",
     title:
-      "Salt Lake City Web Design & Marketing | Elevate Growth Solutions",
+      "Salt Lake City Marketing Agency | Elevate Growth Solutions",
     description:
       "Performance-focused web design and marketing for Salt Lake City startups and growing businesses—custom websites that convert paid traffic and scale with you.",
   },
@@ -211,7 +211,7 @@ const routes = [
   {
     path: "/ogden-web-design",
     title:
-      "Web Design & Marketing for Ogden Businesses | Elevate Growth Solutions",
+      "Ogden Web Design & Marketing | Elevate Growth Solutions",
     description:
       "Industrial-strength web design for Ogden’s aerospace, manufacturing, and downtown businesses. Fast, secure websites for Weber County companies.",
   },
@@ -220,7 +220,7 @@ const routes = [
 const homeRoute = {
   path: "/",
   title:
-    "Web Design Agency & Full-Stack Marketing | Elevate Growth Solutions",
+    "Web Design & Full-Stack Marketing | Elevate Growth Solutions",
   description:
     "Boutique web design and full-stack marketing agency. Custom websites on any platform, plus SEO, social media, and branding—in Salt Lake City and nationwide.",
   ogTitle:

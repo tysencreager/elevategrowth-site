@@ -7,7 +7,7 @@ export default function Audits() {
   return (
     <ServicePageLayout
       // SEO
-      title="Website & SEO Audits | Technical Analysis | Elevate Growth Solutions"
+      title="Website & SEO Audits | Elevate Growth Solutions"
       metaDescription="Find out what's holding your website back. SEO audits, technical audits, or the full bundle. Actionable insights, no lock-in."
       ogTitle="Website & SEO Audit Services"
       ogDescription="Stop guessing what's wrong with your website. Get a comprehensive audit with clear, actionable recommendations tailored to your business."

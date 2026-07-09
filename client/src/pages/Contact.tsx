@@ -66,7 +66,7 @@ export default function Contact() {
   return (
     <div className="min-h-screen flex flex-col">
       <SEO
-        title="Contact Us - Let's Elevate Your Marketing | Elevate Growth Solutions"
+        title="Contact | Web Design & Marketing | Elevate Growth Solutions"
         description="Ready to elevate your marketing? Get in touch with Elevate Growth Solutions today. Fill out our contact form to discuss your web design and marketing needs."
         ogTitle="Contact Elevate Growth Solutions - Start Your Marketing Journey"
         ogDescription="Let's connect and discuss how we can help your business grow. Expert marketing strategy and execution tailored to your goals."

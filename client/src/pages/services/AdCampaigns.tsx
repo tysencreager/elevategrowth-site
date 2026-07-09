@@ -7,7 +7,7 @@ export default function AdCampaigns() {
   return (
     <ServicePageLayout
       // SEO
-      title="Ad Campaign Management | Google & Meta Ads | Elevate Growth Solutions"
+      title="Google & Meta Ads Management | Elevate Growth Solutions"
       metaDescription="Strategic ad campaign management across Google, Meta, and other platforms. Data-driven campaigns tailored to your goals. Custom pricing based on your needs."
       ogTitle="Ad Campaign Management | Google & Meta Advertising"
       ogDescription="Get more from your ad spend with strategic campaign management. Google Ads, Facebook Ads, Instagram Ads—custom strategies that drive real results."

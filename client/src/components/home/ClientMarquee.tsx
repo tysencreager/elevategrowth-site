@@ -35,7 +35,7 @@ function MarqueeRow({ names, reverse }: { names: string[]; reverse?: boolean }) 
           className={`flex items-center gap-10 whitespace-nowrap px-5 transition-colors hover:text-primary ${
             i % 2 === 0
               ? "font-display italic text-[21px] text-foreground/70"
-              : "font-sans text-[12px] tracking-[0.3em] uppercase text-muted-foreground/70"
+              : "font-sans text-[12px] tracking-[0.3em] uppercase text-muted-foreground"
           }`}
         >
           {name}

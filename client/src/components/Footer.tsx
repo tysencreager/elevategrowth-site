@@ -3,7 +3,7 @@ import { Instagram, Linkedin, Phone } from "lucide-react";
 import EmailSubscription from "./EmailSubscription";
 
 const footerLinkClass =
-  "block font-serif text-sm font-light text-white/50 hover:text-[#4AC0D8] transition-colors";
+  "block font-serif text-sm font-light text-white/60 hover:text-[#4AC0D8] transition-colors";
 
 const footerHeadingClass =
   "font-sans text-[10px] font-medium tracking-[0.25em] uppercase text-[#C9D7DB]/80 mb-5";
@@ -22,7 +22,7 @@ export default function Footer() {
                   Growth Solutions
                 </span>
               </Link>
-              <p className="font-display italic text-sm text-white/40 max-w-xs">
+              <p className="font-display italic text-sm text-white/60 max-w-xs">
                 Marketing that moves people and brands forward.
               </p>
               <div className="flex gap-2 pt-2">
@@ -135,11 +135,11 @@ export default function Footer() {
           </div>
 
           <div className="mt-14 pt-7 border-t border-white/10">
-            <p className="font-sans text-[10px] tracking-[0.2em] uppercase text-white/30 text-center mb-2">
+            <p className="font-sans text-[10px] tracking-[0.2em] uppercase text-white/60 text-center mb-2">
               Proudly serving businesses in Utah and nationwide
             </p>
             <p
-              className="font-sans text-[10px] tracking-[0.15em] uppercase text-white/30 text-center"
+              className="font-sans text-[10px] tracking-[0.15em] uppercase text-white/60 text-center"
               data-testid="text-footer-copyright"
             >
               © {new Date().getFullYear()} Elevate Growth Solutions. All rights reserved.
