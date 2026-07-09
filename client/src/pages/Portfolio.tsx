@@ -511,8 +511,8 @@ export default function Portfolio() {
       <section className="relative overflow-hidden min-h-[70vh] flex items-center pt-20">
         <video
           className="absolute inset-0 w-full h-full object-cover grayscale contrast-[1.05] motion-reduce:hidden"
-          src="/headervideo.mp4"
-          poster="/hero_bw_1920.webp"
+          src="/work-header.mp4"
+          poster="/work-header-poster.webp"
           autoPlay
           muted
           loop
@@ -520,7 +520,7 @@ export default function Portfolio() {
           aria-hidden="true"
         />
         <img
-          src="/hero_bw_1920.webp"
+          src="/work-header-poster.webp"
           alt=""
           className="absolute inset-0 w-full h-full object-cover grayscale hidden motion-reduce:block"
           aria-hidden="true"
