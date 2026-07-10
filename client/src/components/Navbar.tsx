@@ -2,6 +2,7 @@ import { Link } from "wouter";
 import { useState, useEffect, useRef } from "react";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import logoMark from "@assets/egs-logo-mark.png";
 
 const serviceSubLinks = [
   { href: "/services", label: "All Services" },
@@ -57,10 +58,20 @@ export default function Navbar() {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
-          <Link href="/" data-testid="link-home" className="flex flex-col leading-none p-2 -ml-2">
-            <span className="font-display italic text-[26px] text-foreground tracking-wide">Elevate</span>
-            <span className="font-sans text-[8px] tracking-[0.45em] uppercase text-primary mt-1">
-              Growth Solutions
+          <Link href="/" data-testid="link-home" className="flex items-center gap-3 p-2 -ml-2">
+            <img
+              src={logoMark}
+              alt=""
+              width={40}
+              height={40}
+              className="h-10 w-10"
+              aria-hidden="true"
+            />
+            <span className="flex flex-col leading-none">
+              <span className="font-display italic text-[26px] text-foreground tracking-wide">Elevate</span>
+              <span className="font-sans text-[8px] tracking-[0.45em] uppercase text-primary mt-1">
+                Growth Solutions
+              </span>
             </span>
           </Link>
 
