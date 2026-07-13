@@ -26,7 +26,7 @@ They all are—for different situations. Here's the honest breakdown of what a w
 
 ## The quick answer
 
-A professional small-business website in 2026 typically costs **$1,500–$10,000 upfront** when built by a freelancer or boutique agency, plus **$50–$150/month** for hosting and maintenance. DIY website builders run **$15–$50/month** with no upfront cost. Large agency builds with custom functionality range from **$10,000 to $50,000+**.
+A professional small-business website in 2026 typically costs **$1,500–$10,000 upfront** when built by a freelancer or boutique agency, plus **$50–$200/month** for hosting and maintenance. DIY website builders run **$15–$50/month** with no upfront cost. Large agency builds with custom functionality range from **$10,000 to $50,000+**.
 
 ## Website cost breakdown by approach
 
@@ -34,11 +34,11 @@ A professional small-business website in 2026 typically costs **$1,500–$10,000
 |---|---|---|---|
 | **DIY builder** (Wix, Squarespace) | $0 | $15–$50/mo | Tight budgets, simple needs |
 | **Freelancer** | $500–$5,000 | Varies | Simple sites, fast timelines |
-| **Boutique agency** | $1,500–$10,000 | $50–$150/mo | Small businesses that want it done right |
+| **Boutique agency** | $1,500–$10,000 | $50–$200/mo | Small businesses that want it done right |
 | **Full-size agency** | $10,000–$50,000+ | $500+/mo | Complex builds, enterprise needs |
 | **E-commerce build** | $2,500–$25,000+ | $30–$300/mo | Online stores |
 
-For reference, our own pricing at Elevate Growth Solutions: custom-built websites start at **$1,599** for a single-page site (the price grows with pages and functionality), and hosting with maintenance—including an hour of content edits every month—runs **$100/month**. That lands squarely in the boutique-agency bracket, and it's what we'd call the sweet spot for most small businesses.
+For reference, our own pricing at Elevate Growth Solutions: custom-built websites start at **$1,599** for a single-page site (the price grows with pages and functionality), and hosting with maintenance—including an hour of content edits every month—runs **$200/month**. That lands squarely in the boutique-agency bracket, and it's what we'd call the sweet spot for most small businesses.
 
 ## What actually drives the price?
 
@@ -101,11 +101,11 @@ But for an established business, the math usually flips. A cheap site that loads
 
 ### How much does a website cost per month?
 
-If you skip upfront costs entirely, DIY builders run $15–$50/month. A professionally built site typically costs $50–$150/month after launch for hosting, maintenance, and small edits. Our plan is $100/month and includes hosting, uptime monitoring, security, and an hour of content edits.
+If you skip upfront costs entirely, DIY builders run $15–$50/month. A professionally built site typically costs $50–$200/month after launch for hosting, maintenance, and small edits. Our plan is $200/month and includes hosting, uptime monitoring, security, and an hour of content edits.
 
 ### How much should a small business pay for a website?
 
-Most established small businesses should budget $1,500–$7,500 upfront for a professionally designed site of 1–10 pages, plus roughly $100/month for hosting and maintenance. Below that range you're usually getting a template; far above it, you're paying for overhead you don't need.
+Most established small businesses should budget $1,500–$7,500 upfront for a professionally designed site of 1–10 pages, plus roughly $200/month for hosting and maintenance. Below that range you're usually getting a template; far above it, you're paying for overhead you don't need.
 
 ### How long does a website take to build?
 
@@ -401,7 +401,7 @@ When your website is complete, you choose the level of involvement that works fo
 
 **The pitch:** You run your business; we run your website.
 
-For $100/month, you get hosting plus one hour of monthly edits included. Need to update your phone number? Change a photo? Add a new service? Just email us, and it's done—usually within 24-48 hours.
+For $200/month, you get hosting plus one hour of monthly edits included. Need to update your phone number? Change a photo? Add a new service? Just email us, and it's done—usually within 24-48 hours.
 
 **Why clients love it:**
 - No risk of accidentally breaking the design
@@ -472,7 +472,7 @@ According to Google, [53% of mobile visitors abandon sites that take longer than
 
 Wix, Squarespace, and Shopify charge $15-50/month *just for platform access*—on top of hosting. Over five years, that's $900-3,000 in platform fees alone.
 
-Your $100/month with us includes actual hosting, professional maintenance, and support. Not just access to a tool.
+Your $200/month with us includes actual hosting, professional maintenance, and support. Not just access to a tool.
 
 ### 4. Security by Design
 
