@@ -381,7 +381,7 @@ export default function Pricing() {
       description: "Custom websites built in days, not months—on any platform you choose. Fast, responsive, and designed to convert.",
       items: [
         { label: "Custom built websites", price: "From $1,599" },
-        { label: "Hosting & maintenance", price: "$100/mo" }
+        { label: "Hosting & maintenance", price: "$200/mo" }
       ],
       note: "Single-page sites start at $1,599. Price increases with additional pages and functionality. Whether you want a custom-coded build, WordPress, or another builder, I can build and maintain it. Hosting includes 1 hour of monthly content edits and uptime monitoring.",
       featured: false
@@ -500,11 +500,11 @@ export default function Pricing() {
         "@type": "Offer",
         "name": "Website Hosting & Maintenance",
         "description": "Managed hosting with content edits and uptime monitoring",
-        "price": "100",
+        "price": "200",
         "priceCurrency": "USD",
         "priceSpecification": {
           "@type": "UnitPriceSpecification",
-          "price": "100",
+          "price": "200",
           "priceCurrency": "USD",
           "unitText": "per month"
         }
