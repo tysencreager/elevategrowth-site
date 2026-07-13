@@ -16,6 +16,122 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "how-much-does-a-website-cost-2026",
+    title: "How Much Does a Website Cost in 2026? A No-Nonsense Pricing Guide",
+    excerpt: "Website costs in 2026 range from $15/month DIY builders to $50,000+ agency builds. Here's what actually drives the price, real numbers for every option, and how to avoid overpaying.",
+    content: `
+If you've started shopping for a website, you've probably noticed the quotes make no sense. One freelancer says $800. An agency says $25,000. A website builder ad says you can do it yourself for $15 a month. Who's right?
+
+They all are—for different situations. Here's the honest breakdown of what a website costs in 2026, what actually drives the price, and how to figure out which bracket your business belongs in.
+
+## The quick answer
+
+A professional small-business website in 2026 typically costs **$1,500–$10,000 upfront** when built by a freelancer or boutique agency, plus **$50–$150/month** for hosting and maintenance. DIY website builders run **$15–$50/month** with no upfront cost. Large agency builds with custom functionality range from **$10,000 to $50,000+**.
+
+## Website cost breakdown by approach
+
+| Approach | Upfront cost | Ongoing cost | Best for |
+|---|---|---|---|
+| **DIY builder** (Wix, Squarespace) | $0 | $15–$50/mo | Tight budgets, simple needs |
+| **Freelancer** | $500–$5,000 | Varies | Simple sites, fast timelines |
+| **Boutique agency** | $1,500–$10,000 | $50–$150/mo | Small businesses that want it done right |
+| **Full-size agency** | $10,000–$50,000+ | $500+/mo | Complex builds, enterprise needs |
+| **E-commerce build** | $2,500–$25,000+ | $30–$300/mo | Online stores |
+
+For reference, our own pricing at Elevate Growth Solutions: custom-built websites start at **$1,599** for a single-page site (the price grows with pages and functionality), and hosting with maintenance—including an hour of content edits every month—runs **$100/month**. That lands squarely in the boutique-agency bracket, and it's what we'd call the sweet spot for most small businesses.
+
+## What actually drives the price?
+
+Two websites can look nearly identical and differ in price by 10x. The difference is almost never the visual design. It's these five factors:
+
+### 1. Number of pages and content
+
+A single-page site with your services, story, and contact info is dramatically cheaper than a 20-page site with location pages, service pages, and a blog. Every page needs layout, copy, and optimization. This is usually the single biggest price lever.
+
+### 2. Custom functionality
+
+Contact forms are standard. Online booking, customer portals, calculators, membership areas, and integrations with your CRM or scheduling software are not. Each custom feature adds development time—and cost.
+
+### 3. E-commerce
+
+Selling online adds product setup, payment processing, shipping logic, tax handling, and security requirements. A simple store with a dozen products might add $1,000–$3,000; a large catalog with custom checkout flows can add tens of thousands.
+
+### 4. Content creation
+
+Who's writing the copy? Taking the photos? If the answer is "the agency," expect to pay for it—good copywriting and photography are worth every penny, but they're real line items. Sites where the client supplies finished content cost noticeably less.
+
+### 5. SEO and marketing setup
+
+A website that *exists* and a website that *gets found* are different products. Proper keyword research, on-page SEO, schema markup, and fast Core Web Vitals take expertise and time. Some quotes include this; many don't—which is one reason a $800 site often ends up costing more in lost business than a $3,000 one.
+
+## How much does a WordPress website cost?
+
+A WordPress site built by a professional typically runs **$1,500–$10,000** depending on whether it uses a customized theme or a fully custom design, plus hosting ($10–$50/month) and occasional plugin licenses. WordPress itself is free—what you're paying for is the design, build, content, and ongoing updates that keep it secure.
+
+## How much does an e-commerce website cost?
+
+A professionally built e-commerce site typically costs **$2,500–$25,000+** in 2026. A Shopify store with a customized theme and a modest product catalog sits at the lower end; custom checkout experiences, ERP integrations, and large catalogs push builds into five figures. Platform fees (Shopify from $39/month) and payment processing come on top.
+
+## The costs nobody puts in the quote
+
+Wherever you land, budget for these often-forgotten items:
+
+- **Domain name:** $10–$20/year
+- **Hosting:** $5–$50/month (often bundled in maintenance plans)
+- **SSL certificate:** free with good hosting—walk away from anyone charging extra
+- **Email at your domain:** $6–$14/user/month (Google Workspace or Microsoft 365)
+- **Maintenance:** updates, backups, security patches, small edits—either your time or $50–$150/month
+- **Platform fees:** $15–$50/month if you're on a website builder
+
+## Is a cheap website actually cheaper?
+
+Sometimes! If you're pre-revenue or testing an idea, a $20/month builder site is the rational choice, and we'll happily tell you so.
+
+But for an established business, the math usually flips. A cheap site that loads slowly, ranks nowhere, and converts poorly doesn't cost $800—it costs $800 plus every customer it quietly turns away. If a well-built site brings in even one or two additional customers a month, the price difference pays for itself within the first year. That's the lens to use: not "what does it cost," but "what does it return."
+
+## How to avoid overpaying
+
+1. **Get the itemized scope.** A quote should list pages, features, content responsibilities, SEO work, and revisions. "Website: $5,000" is not a scope.
+2. **Ask what's included after launch.** Hosting? Edits? Security updates? The cheapest build can carry the most expensive maintenance.
+3. **Ask who owns the site.** If you stop paying, do you keep the files, the domain, the content? You should. ([We wrote a whole guide on your handoff options](/blog/website-handoff-options-custom-code).)
+4. **Match the platform to your needs, not the builder's.** An agency that only does WordPress will recommend WordPress every time. Work with someone who builds on multiple platforms and can give you an honest recommendation. ([Here's our honest comparison of custom code vs. builders](/blog/custom-coded-vs-website-builders-honest-comparison).)
+5. **Be suspicious of both extremes.** Under $500 usually means a template with your logo dropped in. Over $20,000 for a standard small-business site usually means you're paying for the agency's office, not your website.
+
+## FAQ
+
+### How much does a website cost per month?
+
+If you skip upfront costs entirely, DIY builders run $15–$50/month. A professionally built site typically costs $50–$150/month after launch for hosting, maintenance, and small edits. Our plan is $100/month and includes hosting, uptime monitoring, security, and an hour of content edits.
+
+### How much should a small business pay for a website?
+
+Most established small businesses should budget $1,500–$7,500 upfront for a professionally designed site of 1–10 pages, plus roughly $100/month for hosting and maintenance. Below that range you're usually getting a template; far above it, you're paying for overhead you don't need.
+
+### How long does a website take to build?
+
+A single-page professional site typically takes 1–3 weeks. A multi-page small-business site takes 3–8 weeks, driven mostly by content: sites where the copy and photos are ready go dramatically faster than sites where they're created along the way.
+
+### Do I have to pay for my website every month?
+
+Some ongoing cost is unavoidable—hosting and a domain at minimum ($15–$70/month on builders, or bundled into a maintenance plan with an agency). What you should never have to do is re-buy your own website. Make sure you own the site and can take it with you.
+
+---
+
+**Want a real number instead of a range?**
+
+Tell us what your business needs and we'll give you a straight quote—custom-coded, WordPress, Squarespace, or whatever platform genuinely fits. See our [transparent pricing](/pricing) or [book a free consultation](/contact). No pressure, no upsell—if a $20/month builder is the right call for you, we'll say so.
+    `,
+    author: "Tysen Creager",
+    date: "2026-07-13",
+    category: "Web Design",
+    tags: ["website cost", "web design", "pricing", "small business", "website builders"],
+    metaTitle: "How Much Does a Website Cost in 2026? Real Pricing Guide",
+    metaDescription: "Website costs in 2026: real numbers for DIY builders, freelancers, and agencies—what drives the price, hidden fees, and how to avoid overpaying.",
+    image: "/blog/website-design-cost-2026.jpg",
+    imageAlt: "How much does a website cost in 2026 pricing guide cover",
+    featured: true
+  },
+  {
     slug: "custom-coded-vs-website-builders-honest-comparison",
     title: "Custom-Coded vs. Website Builders: An Honest Comparison",
     excerpt: "Custom code or a website builder like WordPress, Squarespace, or Shopify? An honest, no-spin comparison of the benefits of each—and how to choose the right fit for your business.",
@@ -93,6 +209,8 @@ Not sure which path fits your business? [Book a free consultation](/contact) and
     tags: ["web design", "website builders", "custom websites", "wordpress", "comparison"],
     metaTitle: "Custom-Coded vs. Website Builders: An Honest Comparison",
     metaDescription: "Custom code or a builder like WordPress, Squarespace, or Shopify? An honest comparison of cost, speed, flexibility, and ownership—and how to choose.",
+    image: "/blog/custom-coded-vs-website-builders.jpg",
+    imageAlt: "Custom-coded websites versus website builders honest comparison",
     featured: true
   },
   {
@@ -384,6 +502,8 @@ Custom code gives you a fast, secure, unique website that you actually own—wit
     tags: ["web design", "custom websites", "website builders", "website management", "headless CMS"],
     metaTitle: "Website Handoff Options: Managing Your Custom Website",
     metaDescription: "Learn your options after a custom website is built: ongoing support, CMS integration, or full handover—on custom code, WordPress, or your builder of choice.",
+    image: "/blog/website-handoff-options.jpg",
+    imageAlt: "Website handoff options after your custom website is built",
     featured: true
   },
   {
@@ -437,7 +557,9 @@ If you're ready to stop blending in and start standing out, we'd love to help. A
     category: "Web Design",
     tags: ["web design", "growing businesses", "custom websites", "lead generation"],
     metaTitle: "Why Your Business Needs a Custom Website | Elevate Growth",
-    metaDescription: "What separates a high-performing custom website from a generic one—and how custom web design generates more leads and trust for businesses of all sizes."
+    metaDescription: "What separates a high-performing custom website from a generic one—and how custom web design generates more leads and trust for businesses of all sizes.",
+    image: "/blog/why-custom-website.jpg",
+    imageAlt: "Why your business needs a custom website"
   },
   {
     slug: "local-seo-guide-small-business-utah",
@@ -531,7 +653,9 @@ Local SEO can be complex, but you don't have to do it alone. At Elevate Growth S
     category: "SEO",
     tags: ["SEO", "local SEO", "Utah", "Salt Lake City", "local business"],
     metaTitle: "Local SEO Guide for Utah Businesses | Rank in Salt Lake City",
-    metaDescription: "Complete guide to local SEO for Utah businesses. Learn how to rank in Salt Lake City search results and attract more local customers."
+    metaDescription: "Complete guide to local SEO for Utah businesses. Learn how to rank in Salt Lake City search results and attract more local customers.",
+    image: "/blog/local-seo-guide-utah.jpg",
+    imageAlt: "Local SEO guide for ranking your Utah business"
   },
   {
     slug: "full-stack-marketing-explained",
@@ -639,7 +763,9 @@ Ready to simplify your marketing and start seeing real results? [Contact us](/co
     category: "Marketing",
     tags: ["full-stack marketing", "business growth", "digital marketing", "marketing strategy"],
     metaTitle: "What is Full-Stack Marketing? A Guide for Growing Businesses",
-    metaDescription: "Discover what full-stack marketing means for growing businesses. Learn how comprehensive marketing services can simplify growth and generate more leads."
+    metaDescription: "Discover what full-stack marketing means for growing businesses. Learn how comprehensive marketing services can simplify growth and generate more leads.",
+    image: "/blog/full-stack-marketing.jpg",
+    imageAlt: "What is full-stack marketing, a complete guide for growing businesses"
   }
 ];
 
