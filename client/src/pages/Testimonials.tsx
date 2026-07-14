@@ -15,13 +15,13 @@ const whyChooseReasons = [
     icon: Gem,
     title: "Boutique Attention, Not a Ticket Number",
     description:
-      "As a boutique web design and marketing agency, we take on a limited number of clients so every project gets senior-level attention. You work directly with the strategist designing your website and running your campaigns—never a rotating account team."
+      "As a boutique web design and marketing agency, we take on a limited number of clients so every project gets senior-level attention. You work directly with the strategist designing your website and running your marketing—never a rotating account team."
   },
   {
     icon: Layers,
     title: "Full-Stack Marketing Under One Roof",
     description:
-      "Web design, SEO, ad campaigns, social media, branding, and content creation—handled together, so your website and marketing pull in the same direction. One partner, one strategy, one consistent brand."
+      "Web design, SEO, social media, and content creation—handled together, so your website and marketing pull in the same direction. One partner, one strategy, one consistent brand."
   },
   {
     icon: Clock,
@@ -271,7 +271,7 @@ export default function Testimonials() {
     <div className="min-h-screen">
       <SEO
         title="Client Testimonials & Reviews | Elevate Growth Solutions"
-        description="Read what clients say about working with Elevate Growth Solutions—real reviews from businesses we've helped with web design, marketing, SEO, and branding."
+        description="Read what clients say about working with Elevate Growth Solutions—real reviews from businesses we've helped with web design, marketing, and SEO."
         ogTitle="Client Testimonials - Elevate Growth Solutions"
         ogDescription="Discover why businesses trust Elevate Growth Solutions for their marketing needs. Read authentic reviews and success stories from our satisfied clients."
       />

@@ -118,7 +118,7 @@ const localBusinessSchema = {
         "itemOffered": {
           "@type": "Service",
           "name": "Full-Stack Marketing",
-          "description": "Comprehensive marketing services including branding, ads, and content"
+          "description": "Comprehensive marketing services including SEO, social media, and content"
         }
       }
     ]
@@ -181,7 +181,7 @@ const marketingServiceSchema = {
   "@type": "Service",
   "serviceType": "Digital Marketing",
   "name": "Full-Stack Marketing Services",
-  "description": "Comprehensive digital marketing services for businesses of all sizes including SEO, social media management, branding, ad campaign management, and content creation. Boutique agency approach with personalized attention.",
+  "description": "Comprehensive digital marketing services for businesses of all sizes including SEO, social media management, and content creation. Boutique agency approach with personalized attention.",
   "provider": {
     "@type": "Organization",
     "name": "Elevate Growth Solutions",
@@ -207,20 +207,6 @@ const marketingServiceSchema = {
         "itemOffered": {
           "@type": "Service",
           "name": "Social Media Management"
-        }
-      },
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Branding & Creative Design"
-        }
-      },
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Ad Campaign Management"
         }
       },
       {
@@ -280,9 +266,6 @@ const marketingAgencySchema = {
     "Website Maintenance",
     "Search Engine Optimization",
     "Digital Marketing",
-    "Google Ads",
-    "Meta Advertising",
-    "Brand Strategy",
     "Conversion Rate Optimization"
   ],
   "slogan": "Custom websites on any platform, faster than traditional agencies."

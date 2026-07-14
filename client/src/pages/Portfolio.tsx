@@ -644,11 +644,7 @@ export default function Portfolio() {
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle className="w-4 h-4 text-primary mt-1 flex-shrink-0" />
-                    Paid Ads & Funnel Strategy
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <CheckCircle className="w-4 h-4 text-primary mt-1 flex-shrink-0" />
-                    Brand Identity & Visual Storytelling
+                    Content Creation & Visual Storytelling
                   </li>
                 </ul>
               </div>
@@ -688,7 +684,7 @@ export default function Portfolio() {
                   Beyond Websites
                 </h4>
                 <p className="font-serif text-sm text-muted-foreground leading-relaxed">
-                  In addition to website design and development, we offer branding, social media management, content creation, paid ad campaigns, SEO strategy, and marketing audits. We're your full-stack marketing partner.
+                  In addition to website design and development, we offer social media management, content creation, SEO strategy, and marketing audits. We're your full-stack marketing partner.
                 </p>
               </div>
             </motion.div>
@@ -712,7 +708,7 @@ export default function Portfolio() {
               Looking for Our Marketing &amp; Design Work?
             </h2>
             <p className="font-serif text-muted-foreground text-lg max-w-2xl mx-auto mb-10 leading-relaxed">
-              This page showcases our website portfolio. To see our full range of marketing, branding, and design work — including social media content, ad creatives, brand kits, and more — check out our marketing portfolio.
+              This page showcases our website portfolio. To see our full range of marketing and design work — including social media content and more — check out our marketing portfolio.
             </p>
             <Button size="lg" className="font-serif font-medium text-base md:text-lg px-10 py-6 gap-2 group" asChild>
               <a href="https://tysencreager.my.canva.site/" target="_blank" rel="noopener noreferrer">

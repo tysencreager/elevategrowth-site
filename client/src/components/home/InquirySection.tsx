@@ -6,7 +6,6 @@ const needOptions = [
   "New website",
   "Website redesign",
   "SEO & marketing",
-  "Branding",
   "Not sure yet"
 ];
 

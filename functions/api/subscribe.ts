@@ -93,8 +93,6 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
     <li>Full-stack marketing management across all your channels</li>
     <li>SEO services to help you get found by customers actively searching for you</li>
     <li>Social media strategy that builds authentic connections</li>
-    <li>Paid advertising campaigns with proven ROI</li>
-    <li>Branding & creative direction that makes you stand out</li>
     <li>Strategic content creation that drives engagement</li>
   </ul>
 

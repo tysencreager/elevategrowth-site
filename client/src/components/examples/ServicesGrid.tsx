@@ -8,11 +8,11 @@ export default function ServicesGridExample() {
     },
     {
       title: "E-Commerce Optimization & Management",
-      description: "Amazon, Walmart, and Target storefront optimization for independent sellers. We offer branding, listing audits, product photography, and full storefront management to elevate your online sales"
+      description: "Amazon, Walmart, and Target storefront optimization for independent sellers. We offer listing audits, product photography, and full storefront management to elevate your online sales"
     },
     {
-      title: "Branding & Creative Direction",
-      description: "Visual identity, brand messaging, and storytelling that resonates"
+      title: "Content Creation",
+      description: "Photography, video, and copy that tells your story and resonates"
     },
     {
       title: "Website Design & Optimization",

@@ -77,9 +77,8 @@ export default function HomeHero() {
             data-testid="text-hero-subtitle"
           >
             Web Design <b className="text-[#4AC0D8] font-normal px-1.5">·</b> SEO{" "}
-            <b className="text-[#4AC0D8] font-normal px-1.5">·</b> Ad Campaigns{" "}
             <b className="text-[#4AC0D8] font-normal px-1.5">·</b> Social Media{" "}
-            <b className="text-[#4AC0D8] font-normal px-1.5">·</b> Branding
+            <b className="text-[#4AC0D8] font-normal px-1.5">·</b> Content Creation
           </motion.p>
 
           <motion.div
