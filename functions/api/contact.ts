@@ -8,8 +8,28 @@ interface ContactRequest {
   phone?: string;
   company?: string;
   service?: string;
+  referral?: string;
   message: string;
 }
+
+const REFERRAL_LABELS: Record<string, string> = {
+  "google-search": "Google Search",
+  "social-media": "Social Media",
+  "referral": "Referral / Word of Mouth",
+  "saw-your-work": "Saw a Website You Built",
+  "event": "Event or Networking",
+  "other": "Other",
+};
+
+// User-submitted values go into HTML emails; unescaped markup (or injected
+// links) both breaks the layout and raises the spam score.
+const escapeHtml = (value: string) =>
+  value
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#39;");
 
 export const onRequestPost: PagesFunction<Env> = async (context) => {
   const corsHeaders = {
@@ -20,7 +40,8 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
 
   try {
     const body = (await context.request.json()) as ContactRequest;
-    const { name, email, phone, company, service, message } = body;
+    const { name, email, phone, company, service, referral, message } = body;
+    const referralLabel = referral ? REFERRAL_LABELS[referral] || referral : "";
 
     if (!email || !name || !message) {
       return new Response(JSON.stringify({ error: "Name, email, and message are required" }), {
@@ -40,29 +61,56 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
 
     // Extract first name for personalization
     const firstName = name.split(" ")[0];
+    const safe = {
+      name: escapeHtml(name),
+      firstName: escapeHtml(firstName),
+      email: escapeHtml(email),
+      phone: phone ? escapeHtml(phone) : "",
+      company: company ? escapeHtml(company) : "",
+      service: service ? escapeHtml(service) : "",
+      referral: referralLabel ? escapeHtml(referralLabel) : "",
+      message: escapeHtml(message),
+    };
 
     // Step 1: Add contact to Brevo list
-    const contactResponse = await fetch("https://api.brevo.com/v3/contacts", {
-      method: "POST",
-      headers: {
-        "Accept": "application/json",
-        "Content-Type": "application/json",
-        "api-key": apiKey,
-      },
-      body: JSON.stringify({
-        email: email,
-        listIds: [4], // Contact Form Leads list
-        updateEnabled: true,
-        attributes: {
-          FIRSTNAME: firstName,
-          LASTNAME: name.split(" ").slice(1).join(" ") || "",
-          PHONE: phone || "",
-          COMPANY: company || "",
-          SERVICE_INTEREST: service || "",
-          SOURCE: "contact_form",
+    const attributes: Record<string, string> = {
+      FIRSTNAME: firstName,
+      LASTNAME: name.split(" ").slice(1).join(" ") || "",
+      PHONE: phone || "",
+      COMPANY: company || "",
+      SERVICE_INTEREST: service || "",
+      SOURCE: "contact_form",
+    };
+    if (referralLabel) {
+      attributes.HOW_HEARD = referralLabel;
+    }
+
+    const createContact = (attrs: Record<string, string>) =>
+      fetch("https://api.brevo.com/v3/contacts", {
+        method: "POST",
+        headers: {
+          "Accept": "application/json",
+          "Content-Type": "application/json",
+          "api-key": apiKey,
         },
-      }),
-    });
+        body: JSON.stringify({
+          email: email,
+          listIds: [4], // Contact Form Leads list
+          updateEnabled: true,
+          attributes: attrs,
+        }),
+      });
+
+    let contactResponse = await createContact(attributes);
+
+    // Brevo rejects the whole request if an attribute (e.g. HOW_HEARD) hasn't
+    // been created in the account yet — retry without it so the lead is never lost.
+    if (!contactResponse.ok && contactResponse.status !== 409 && attributes.HOW_HEARD) {
+      const errorData = await contactResponse.text();
+      console.error("Brevo contact error (retrying without HOW_HEARD):", errorData);
+      const { HOW_HEARD, ...baseAttributes } = attributes;
+      contactResponse = await createContact(baseAttributes);
+    }
 
     if (!contactResponse.ok && contactResponse.status !== 409) {
       const errorData = await contactResponse.text();
@@ -82,8 +130,21 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
           name: "Tysen Creager",
           email: "tysen@elevategrowth.solutions",
         },
+        replyTo: {
+          name: "Tysen Creager",
+          email: "tysen@elevategrowth.solutions",
+        },
         to: [{ email: email, name: name }],
         subject: "Thanks for reaching out!",
+        textContent: `Hi ${firstName},
+
+Thanks for getting in touch with Elevate Growth Solutions — we're excited to hear from you.
+
+I'll personally review your message and get back to you within two business days. In the meantime, if you'd like to schedule a quick call to discuss your marketing goals, feel free to grab a time here: https://calendly.com/tysencreager/30minutes
+
+Warmly,
+Tysen Creager
+Elevate Growth Solutions`,
         htmlContent: `
 <!DOCTYPE html>
 <html>
@@ -92,7 +153,7 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body style="font-family: Georgia, 'Times New Roman', serif; line-height: 1.6; color: #333; max-width: 600px; margin: 0 auto; padding: 20px;">
-  <p>Hi ${firstName},</p>
+  <p>Hi ${safe.firstName},</p>
 
   <p>Thanks for getting in touch with Elevate Growth Solutions— we're excited to hear from you.</p>
 
@@ -125,8 +186,18 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
           name: "Elevate Growth Website",
           email: "tysen@elevategrowth.solutions",
         },
+        // Hitting "Reply" on the notification should go to the lead, not back
+        // to the site's own address.
+        replyTo: { email: email, name: name },
         to: [{ email: "tysen@elevategrowth.solutions" }],
         subject: `New Contact Form Submission from ${name}`,
+        textContent: `New contact form submission
+
+Name: ${name}
+Email: ${email}
+${phone ? `Phone: ${phone}\n` : ""}${company ? `Company: ${company}\n` : ""}${service ? `Service: ${service}\n` : ""}${referralLabel ? `How they heard about us: ${referralLabel}\n` : ""}
+Message:
+${message}`,
         htmlContent: `
 <!DOCTYPE html>
 <html>
@@ -139,34 +210,39 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
   <table style="width: 100%; border-collapse: collapse;">
     <tr>
       <td style="padding: 8px 0; font-weight: bold; width: 120px;">Name:</td>
-      <td style="padding: 8px 0;">${name}</td>
+      <td style="padding: 8px 0;">${safe.name}</td>
     </tr>
     <tr>
       <td style="padding: 8px 0; font-weight: bold;">Email:</td>
-      <td style="padding: 8px 0;"><a href="mailto:${email}">${email}</a></td>
+      <td style="padding: 8px 0;"><a href="mailto:${safe.email}">${safe.email}</a></td>
     </tr>
     ${phone ? `
     <tr>
       <td style="padding: 8px 0; font-weight: bold;">Phone:</td>
-      <td style="padding: 8px 0;"><a href="tel:${phone}">${phone}</a></td>
+      <td style="padding: 8px 0;"><a href="tel:${safe.phone}">${safe.phone}</a></td>
     </tr>` : ""}
     ${company ? `
     <tr>
       <td style="padding: 8px 0; font-weight: bold;">Company:</td>
-      <td style="padding: 8px 0;">${company}</td>
+      <td style="padding: 8px 0;">${safe.company}</td>
     </tr>` : ""}
     ${service ? `
     <tr>
       <td style="padding: 8px 0; font-weight: bold;">Service:</td>
-      <td style="padding: 8px 0;">${service}</td>
+      <td style="padding: 8px 0;">${safe.service}</td>
+    </tr>` : ""}
+    ${referralLabel ? `
+    <tr>
+      <td style="padding: 8px 0; font-weight: bold;">Heard About Us:</td>
+      <td style="padding: 8px 0;">${safe.referral}</td>
     </tr>` : ""}
   </table>
 
   <h3 style="margin-top: 20px; color: #333;">Message:</h3>
-  <div style="background: #f5f5f5; padding: 15px; border-radius: 5px; white-space: pre-wrap;">${message}</div>
+  <div style="background: #f5f5f5; padding: 15px; border-radius: 5px; white-space: pre-wrap;">${safe.message}</div>
 
   <p style="margin-top: 20px; color: #666; font-size: 14px;">
-    <a href="mailto:${email}?subject=Re: Your inquiry to Elevate Growth Solutions" style="color: #0066cc;">Reply to ${firstName}</a>
+    <a href="mailto:${safe.email}?subject=Re: Your inquiry to Elevate Growth Solutions" style="color: #0066cc;">Reply to ${safe.firstName}</a>
   </p>
 </body>
 </html>
