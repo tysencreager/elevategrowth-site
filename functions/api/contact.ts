@@ -9,6 +9,7 @@ interface ContactRequest {
   company?: string;
   service?: string;
   referral?: string;
+  referralDetail?: string;
   message: string;
 }
 
@@ -40,8 +41,12 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
 
   try {
     const body = (await context.request.json()) as ContactRequest;
-    const { name, email, phone, company, service, referral, message } = body;
-    const referralLabel = referral ? REFERRAL_LABELS[referral] || referral : "";
+    const { name, email, phone, company, service, referral, referralDetail, message } = body;
+    const baseReferralLabel = referral ? REFERRAL_LABELS[referral] || referral : "";
+    const referralLabel =
+      baseReferralLabel && referralDetail?.trim()
+        ? `${baseReferralLabel} — ${referralDetail.trim()}`
+        : baseReferralLabel;
 
     if (!email || !name || !message) {
       return new Response(JSON.stringify({ error: "Name, email, and message are required" }), {
