@@ -8,8 +8,18 @@ interface ContactRequest {
   phone?: string;
   company?: string;
   service?: string;
+  referral?: string;
   message: string;
 }
+
+const REFERRAL_LABELS: Record<string, string> = {
+  "google-search": "Google Search",
+  "social-media": "Social Media",
+  "referral": "Referral / Word of Mouth",
+  "saw-your-work": "Saw a Website You Built",
+  "event": "Event or Networking",
+  "other": "Other",
+};
 
 // User-submitted values go into HTML emails; unescaped markup (or injected
 // links) both breaks the layout and raises the spam score.
@@ -30,7 +40,8 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
 
   try {
     const body = (await context.request.json()) as ContactRequest;
-    const { name, email, phone, company, service, message } = body;
+    const { name, email, phone, company, service, referral, message } = body;
+    const referralLabel = referral ? REFERRAL_LABELS[referral] || referral : "";
 
     if (!email || !name || !message) {
       return new Response(JSON.stringify({ error: "Name, email, and message are required" }), {
@@ -57,31 +68,49 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
       phone: phone ? escapeHtml(phone) : "",
       company: company ? escapeHtml(company) : "",
       service: service ? escapeHtml(service) : "",
+      referral: referralLabel ? escapeHtml(referralLabel) : "",
       message: escapeHtml(message),
     };
 
     // Step 1: Add contact to Brevo list
-    const contactResponse = await fetch("https://api.brevo.com/v3/contacts", {
-      method: "POST",
-      headers: {
-        "Accept": "application/json",
-        "Content-Type": "application/json",
-        "api-key": apiKey,
-      },
-      body: JSON.stringify({
-        email: email,
-        listIds: [4], // Contact Form Leads list
-        updateEnabled: true,
-        attributes: {
-          FIRSTNAME: firstName,
-          LASTNAME: name.split(" ").slice(1).join(" ") || "",
-          PHONE: phone || "",
-          COMPANY: company || "",
-          SERVICE_INTEREST: service || "",
-          SOURCE: "contact_form",
+    const attributes: Record<string, string> = {
+      FIRSTNAME: firstName,
+      LASTNAME: name.split(" ").slice(1).join(" ") || "",
+      PHONE: phone || "",
+      COMPANY: company || "",
+      SERVICE_INTEREST: service || "",
+      SOURCE: "contact_form",
+    };
+    if (referralLabel) {
+      attributes.HOW_HEARD = referralLabel;
+    }
+
+    const createContact = (attrs: Record<string, string>) =>
+      fetch("https://api.brevo.com/v3/contacts", {
+        method: "POST",
+        headers: {
+          "Accept": "application/json",
+          "Content-Type": "application/json",
+          "api-key": apiKey,
         },
-      }),
-    });
+        body: JSON.stringify({
+          email: email,
+          listIds: [4], // Contact Form Leads list
+          updateEnabled: true,
+          attributes: attrs,
+        }),
+      });
+
+    let contactResponse = await createContact(attributes);
+
+    // Brevo rejects the whole request if an attribute (e.g. HOW_HEARD) hasn't
+    // been created in the account yet — retry without it so the lead is never lost.
+    if (!contactResponse.ok && contactResponse.status !== 409 && attributes.HOW_HEARD) {
+      const errorData = await contactResponse.text();
+      console.error("Brevo contact error (retrying without HOW_HEARD):", errorData);
+      const { HOW_HEARD, ...baseAttributes } = attributes;
+      contactResponse = await createContact(baseAttributes);
+    }
 
     if (!contactResponse.ok && contactResponse.status !== 409) {
       const errorData = await contactResponse.text();
@@ -166,7 +195,7 @@ Elevate Growth Solutions`,
 
 Name: ${name}
 Email: ${email}
-${phone ? `Phone: ${phone}\n` : ""}${company ? `Company: ${company}\n` : ""}${service ? `Service: ${service}\n` : ""}
+${phone ? `Phone: ${phone}\n` : ""}${company ? `Company: ${company}\n` : ""}${service ? `Service: ${service}\n` : ""}${referralLabel ? `How they heard about us: ${referralLabel}\n` : ""}
 Message:
 ${message}`,
         htmlContent: `
@@ -201,6 +230,11 @@ ${message}`,
     <tr>
       <td style="padding: 8px 0; font-weight: bold;">Service:</td>
       <td style="padding: 8px 0;">${safe.service}</td>
+    </tr>` : ""}
+    ${referralLabel ? `
+    <tr>
+      <td style="padding: 8px 0; font-weight: bold;">Heard About Us:</td>
+      <td style="padding: 8px 0;">${safe.referral}</td>
     </tr>` : ""}
   </table>
 
