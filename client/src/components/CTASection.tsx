@@ -7,6 +7,8 @@ interface CTASectionProps {
   backgroundImage?: string;
   /** Responsive image sources for different viewport sizes */
   imageSrcSet?: string;
+  /** Alt text for the background image (falls back to the section title) */
+  imageAlt?: string;
   title: string;
   ctaText: string;
   ctaHref: string;
@@ -16,6 +18,7 @@ interface CTASectionProps {
 export default function CTASection({
   backgroundImage,
   imageSrcSet,
+  imageAlt,
   title,
   ctaText,
   ctaHref,
@@ -44,7 +47,7 @@ export default function CTASection({
           <img
             src={backgroundImage}
             srcSet={imageSrcSet}
-            alt=""
+            alt={imageAlt || title}
             width={1920}
             height={1080}
             sizes="100vw"

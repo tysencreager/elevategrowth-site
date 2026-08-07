@@ -184,7 +184,7 @@ export default function ServicePageLayout({
     "provider": {
       "@type": "Organization",
       "name": "Elevate Growth Solutions",
-      "url": "https://elevategrowth.solutions"
+      "url": "https://www.elevategrowth.solutions"
     },
     "areaServed": {
       "@type": "Country",

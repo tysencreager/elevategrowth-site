@@ -20,13 +20,12 @@ export default function Footer() {
               <Link href="/" className="inline-flex items-center gap-3.5" data-testid="img-footer-logo">
                 <img
                   src={logoMark}
-                  alt=""
+                  alt="Elevate Growth Solutions"
                   width={48}
                   height={48}
                   loading="lazy"
                   decoding="async"
                   className="h-12 w-12"
-                  aria-hidden="true"
                 />
                 <span className="flex flex-col leading-none">
                   <span className="font-display italic text-[28px] text-white tracking-wide">Elevate</span>

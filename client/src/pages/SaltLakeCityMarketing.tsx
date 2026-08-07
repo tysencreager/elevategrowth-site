@@ -14,9 +14,9 @@ import heroImage768 from "@assets/hero_bw_768.webp";
 const slcSchema = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
-  "@id": "https://elevategrowth.solutions/#organization",
+  "@id": "https://www.elevategrowth.solutions/#organization",
   "name": "Elevate Growth Solutions",
-  "url": "https://elevategrowth.solutions/salt-lake-city-marketing",
+  "url": "https://www.elevategrowth.solutions/salt-lake-city-marketing",
   "telephone": "+1-435-553-4668",
   "areaServed": [
     {"@type": "City", "name": "Salt Lake City", "containedInPlace": {"@type": "State", "name": "Utah"}},
@@ -70,7 +70,7 @@ export default function SaltLakeCityMarketing() {
         <img
           src={heroImage}
           srcSet={`${heroImage768} 768w, ${heroImage} 1920w`}
-          alt=""
+          alt="Salt Lake City marketing agency and web design"
           width={1920}
           height={1080}
           sizes="100vw"
@@ -164,6 +164,13 @@ export default function SaltLakeCityMarketing() {
               </p>
               <p>
                 Our packages are priced for Series A budgets, not enterprise marketing departments. You get the performance your growth team needs without the overhead of a downtown SLC agency.
+              </p>
+              <p>
+                Not a venture-backed startup? If you're a local business owner, our{" "}
+                <Link href="/salt-lake-city" className="text-primary underline underline-offset-4 hover:no-underline">
+                  Salt Lake City web design and marketing
+                </Link>{" "}
+                services are built for you.
               </p>
             </div>
           </motion.div>

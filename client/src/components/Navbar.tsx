@@ -61,11 +61,10 @@ export default function Navbar() {
           <Link href="/" data-testid="link-home" className="flex items-center gap-3 p-2 -ml-2">
             <img
               src={logoMark}
-              alt=""
+              alt="Elevate Growth Solutions"
               width={40}
               height={40}
               className="h-10 w-10"
-              aria-hidden="true"
             />
             <span className="flex flex-col leading-none">
               <span className="font-display italic text-[26px] text-foreground tracking-wide">Elevate</span>
