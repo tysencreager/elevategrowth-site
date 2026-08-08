@@ -95,6 +95,17 @@ Preferred communication style: Simple, everyday language.
 - Path aliases: `@/` for client, `@shared/` for shared code, `@assets/` for images
 - Zod schemas provide runtime validation matching TypeScript types
 
+**Hosting & SEO notes (Cloudflare Pages)**
+- The production site is served through Cloudflare (`_headers`, `_redirects`, and
+  `functions/` in `client/public`).
+- **Email Address Obfuscation must be turned OFF** in the Cloudflare dashboard
+  (Scrape Shield → Email Address Obfuscation). When it is on, Cloudflare rewrites
+  every `mailto:` link (e.g. the footer email, present on all pages) into a
+  `/cdn-cgi/l/email-protection` URL. Crawlers such as Ahrefs follow that URL and
+  get a 404, which surfaces as "Page has links to broken page" and "4XX/404 page"
+  errors across the whole site. This is a dashboard toggle only — it cannot be
+  configured from the repo.
+
 ### File Organization
 
 ```

@@ -7,6 +7,8 @@ interface HeroProps {
   backgroundImage?: string;
   /** Responsive image sources for different viewport sizes */
   imageSrcSet?: string;
+  /** Alt text for the background image (falls back to the hero title) */
+  imageAlt?: string;
   /** Vimeo video ID for video background (overrides backgroundImage) */
   backgroundVideo?: string;
   title: string;
@@ -21,6 +23,7 @@ interface HeroProps {
 export default function Hero({
   backgroundImage,
   imageSrcSet,
+  imageAlt,
   backgroundVideo,
   title,
   subtitle,
@@ -51,7 +54,7 @@ export default function Hero({
         <img
           src={backgroundImage}
           srcSet={imageSrcSet}
-          alt=""
+          alt={imageAlt || title}
           width={1920}
           height={1080}
           sizes="100vw"

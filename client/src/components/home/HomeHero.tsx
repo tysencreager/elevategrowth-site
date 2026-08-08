@@ -27,9 +27,8 @@ export default function HomeHero() {
       {/* Poster fallback for reduced motion */}
       <img
         src="/home-header-poster.webp"
-        alt=""
+        alt="Elevate Growth Solutions web design and full-stack marketing"
         className="absolute inset-0 w-full h-full object-cover grayscale hidden motion-reduce:block"
-        aria-hidden="true"
       />
       {/* Teal-ink duotone + readability overlay */}
       <div

@@ -621,6 +621,7 @@ export default function Pricing() {
       <Hero
         backgroundImage={servicesHero}
         imageSrcSet={`${servicesHero768} 768w, ${servicesHero1280} 1280w, ${servicesHero} 1920w`}
+        imageAlt="The Elevate Growth Solutions marketing team"
         title="Pricing"
         subtitle="Every business is different, so consider these starting points. Let's talk about what you actually need."
         height="60vh"

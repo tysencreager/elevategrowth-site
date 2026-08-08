@@ -9,8 +9,8 @@ const organizationSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
   "name": "Elevate Growth Solutions",
-  "url": "https://elevategrowth.solutions",
-  "logo": "https://elevategrowth.solutions/assets/EGS-LOGO-E-icon.png",
+  "url": "https://www.elevategrowth.solutions",
+  "logo": "https://www.elevategrowth.solutions/assets/EGS-LOGO-E-icon.png",
   "description": "Boutique web design agency and full-stack marketing services for businesses of all sizes—from startups to established companies.",
   "telephone": "+1-435-553-4668",
   "email": "tysen@elevategrowth.solutions",
@@ -51,8 +51,8 @@ const localBusinessSchema = {
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
   "name": "Elevate Growth Solutions",
-  "image": "https://elevategrowth.solutions/assets/EGS-LOGO-E-icon.png",
-  "url": "https://elevategrowth.solutions",
+  "image": "https://www.elevategrowth.solutions/assets/EGS-LOGO-E-icon.png",
+  "url": "https://www.elevategrowth.solutions",
   "telephone": "+1-435-553-4668",
   "email": "tysen@elevategrowth.solutions",
   "description": "Boutique web design agency and full-stack marketing services. Custom websites built and maintained on any platform—custom code, WordPress, or any builder. Serving businesses of all sizes nationwide, with a focus on Utah.",
@@ -134,7 +134,7 @@ const webDesignServiceSchema = {
   "provider": {
     "@type": "Organization",
     "name": "Elevate Growth Solutions",
-    "url": "https://elevategrowth.solutions"
+    "url": "https://www.elevategrowth.solutions"
   },
   "areaServed": {
     "@type": "Country",
@@ -185,7 +185,7 @@ const marketingServiceSchema = {
   "provider": {
     "@type": "Organization",
     "name": "Elevate Growth Solutions",
-    "url": "https://elevategrowth.solutions"
+    "url": "https://www.elevategrowth.solutions"
   },
   "areaServed": {
     "@type": "Country",
@@ -237,10 +237,10 @@ const marketingServiceSchema = {
 const marketingAgencySchema = {
   "@context": "https://schema.org",
   "@type": "MarketingAgency",
-  "@id": "https://elevategrowth.solutions/#organization",
+  "@id": "https://www.elevategrowth.solutions/#organization",
   "name": "Elevate Growth Solutions",
   "description": "Boutique marketing agency specializing in custom website design and development—on any platform, including custom code, WordPress, and other builders—plus full-stack marketing services.",
-  "url": "https://elevategrowth.solutions",
+  "url": "https://www.elevategrowth.solutions",
   "logo": "https://i.postimg.cc/13kYHV2m/EGS-LOGO-Full.png",
   "image": "https://www.elevategrowth.solutions/egs-social-sharing.png",
   "telephone": "+1-435-553-4668",
@@ -249,7 +249,7 @@ const marketingAgencySchema = {
     "@type": "Person",
     "name": "Tysen Creager",
     "jobTitle": "Founder & Director of Marketing Services",
-    "url": "https://elevategrowth.solutions/behind-elevate"
+    "url": "https://www.elevategrowth.solutions/behind-elevate"
   },
   "address": {
     "@type": "PostalAddress",

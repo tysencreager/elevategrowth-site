@@ -32,7 +32,7 @@ const servicesItemListSchema = {
       "position": 1,
       "name": "Custom Website Development",
       "description": "Custom websites built and maintained on any platform—custom code, WordPress, or any builder. Fast-loading, secure, and SEO-optimized.",
-      "provider": {"@id": "https://elevategrowth.solutions/#organization"},
+      "provider": {"@id": "https://www.elevategrowth.solutions/#organization"},
       "areaServed": {"@type": "State", "name": "Utah"},
       "serviceType": "Web Development"
     },
@@ -41,7 +41,7 @@ const servicesItemListSchema = {
       "position": 2,
       "name": "Search Engine Optimization",
       "description": "Comprehensive SEO including keyword research, on-page optimization, technical audits, and local SEO for Utah businesses.",
-      "provider": {"@id": "https://elevategrowth.solutions/#organization"},
+      "provider": {"@id": "https://www.elevategrowth.solutions/#organization"},
       "areaServed": {"@type": "State", "name": "Utah"},
       "serviceType": "SEO Services"
     },
@@ -50,7 +50,7 @@ const servicesItemListSchema = {
       "position": 3,
       "name": "Paid Advertising Management",
       "description": "Google Ads and Meta advertising campaigns with detailed ROI tracking and optimization.",
-      "provider": {"@id": "https://elevategrowth.solutions/#organization"},
+      "provider": {"@id": "https://www.elevategrowth.solutions/#organization"},
       "serviceType": "Digital Advertising"
     },
     {
@@ -58,7 +58,7 @@ const servicesItemListSchema = {
       "position": 4,
       "name": "Branding & Creative Direction",
       "description": "Complete brand identity development including logo design, visual systems, and brand messaging.",
-      "provider": {"@id": "https://elevategrowth.solutions/#organization"},
+      "provider": {"@id": "https://www.elevategrowth.solutions/#organization"},
       "serviceType": "Branding"
     }
   ]
@@ -205,6 +205,7 @@ export default function Services() {
 
       <Hero
         backgroundImage={servicesHero}
+        imageAlt="Elevate Growth Solutions full-stack marketing services"
         title="Marketing Solutions Designed to Help Your Business Grow"
         subtitle="Strategy. Branding. Execution. Optimization."
         height="70vh"

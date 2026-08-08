@@ -14,9 +14,9 @@ import heroImage768 from "@assets/hero_bw_768.webp";
 const stGeorgeSchema = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
-  "@id": "https://elevategrowth.solutions/#organization",
+  "@id": "https://www.elevategrowth.solutions/#organization",
   "name": "Elevate Growth Solutions",
-  "url": "https://elevategrowth.solutions/st-george-web-design",
+  "url": "https://www.elevategrowth.solutions/st-george-web-design",
   "telephone": "+1-435-553-4668",
   "areaServed": [
     {"@type": "City", "name": "St. George", "containedInPlace": {"@type": "State", "name": "Utah"}},
@@ -71,7 +71,7 @@ export default function StGeorgeWebDesign() {
         <img
           src={heroImage}
           srcSet={`${heroImage768} 768w, ${heroImage} 1920w`}
-          alt=""
+          alt="St. George web design and marketing"
           width={1920}
           height={1080}
           sizes="100vw"
