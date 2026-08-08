@@ -283,7 +283,7 @@ export default function SaltLakeCity() {
         <img
           src={ctaImage}
           srcSet={`${ctaImage768} 768w, ${ctaImage} 1920w`}
-          alt=""
+          alt="Start a web design and marketing project with Elevate Growth Solutions"
           width={1920}
           height={1080}
           sizes="100vw"

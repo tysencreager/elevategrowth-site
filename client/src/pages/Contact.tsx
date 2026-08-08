@@ -84,6 +84,7 @@ export default function Contact() {
     phone: "",
     company: "",
     service: "",
+    referral: "",
     message: ""
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -114,13 +115,14 @@ export default function Contact() {
           phone: formData.phone,
           company: formData.company,
           service: formData.service,
+          referral: formData.referral,
           message: formData.message
         })
       });
 
       if (response.ok) {
         setIsSubmitted(true);
-        setFormData({ name: "", email: "", phone: "", company: "", service: "", message: "" });
+        setFormData({ name: "", email: "", phone: "", company: "", service: "", referral: "", message: "" });
       } else {
         throw new Error("Form submission failed");
       }
@@ -268,6 +270,27 @@ export default function Contact() {
                         <option value="seo">SEO Services</option>
                         <option value="social-media">Social Media Management</option>
                         <option value="full-stack">Full-Stack Marketing</option>
+                        <option value="other">Other</option>
+                      </select>
+                    </div>
+
+                    <div className="space-y-2">
+                      <Label htmlFor="referral" className="font-serif">
+                        How Did You Hear About Us?
+                      </Label>
+                      <select
+                        id="referral"
+                        name="referral"
+                        value={formData.referral}
+                        onChange={handleChange}
+                        className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 font-serif"
+                      >
+                        <option value="">Select an option...</option>
+                        <option value="google-search">Google Search</option>
+                        <option value="social-media">Social Media</option>
+                        <option value="referral">Referral / Word of Mouth</option>
+                        <option value="saw-your-work">Saw a Website You Built</option>
+                        <option value="event">Event or Networking</option>
                         <option value="other">Other</option>
                       </select>
                     </div>

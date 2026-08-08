@@ -27,11 +27,10 @@ export default function ServicesGrid({ services }: ServicesGridProps) {
                   <>
                     <img
                       src={service.image}
-                      alt=""
+                      alt={service.title}
                       loading="lazy"
                       decoding="async"
                       className="absolute inset-0 w-full h-full object-cover grayscale contrast-[1.04] transition-transform duration-700 ease-out group-hover:scale-[1.05]"
-                      aria-hidden="true"
                     />
                     <div
                       className="absolute inset-0 transition-opacity duration-500"

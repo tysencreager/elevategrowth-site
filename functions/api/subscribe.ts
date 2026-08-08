@@ -7,6 +7,16 @@ interface SubscribeRequest {
   source?: string;
 }
 
+// User-submitted values go into HTML emails; unescaped markup (or injected
+// links) both breaks the layout and raises the spam score.
+const escapeHtml = (value: string) =>
+  value
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#39;");
+
 export const onRequestPost: PagesFunction<Env> = async (context) => {
   const corsHeaders = {
     "Access-Control-Allow-Origin": "*",
@@ -71,8 +81,27 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
           name: "Tysen Creager",
           email: "tysen@elevategrowth.solutions",
         },
+        replyTo: {
+          name: "Tysen Creager",
+          email: "tysen@elevategrowth.solutions",
+        },
         to: [{ email: email }],
         subject: "Welcome to Elevate Growth Solutions!",
+        textContent: `Hello and welcome to the Elevate Growth Solutions Family!
+
+Thank you so much for subscribing to Elevate Growth Solutions — we're thrilled to have you join our community of growing businesses.
+
+At Elevate Growth Solutions, we're a boutique full-stack marketing agency dedicated to helping growing businesses like yours succeed. We specialize in custom web design, full-stack marketing management, SEO, social media strategy, paid advertising, branding, and content creation.
+
+Your Exclusive Welcome Offer: As a thank you for subscribing, enjoy 10% off any of our services when you book your free discovery call.
+
+Ready to get started? Book your discovery call: https://calendly.com/tysencreager/30minutes
+
+Looking forward to connecting with you!
+
+Warmly,
+Tysen Creager
+Elevate Growth Solutions`,
         htmlContent: `
 <!DOCTYPE html>
 <html>
@@ -132,8 +161,17 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
           name: "Elevate Growth Website",
           email: "tysen@elevategrowth.solutions",
         },
+        // Hitting "Reply" on the notification should go to the subscriber,
+        // not back to the site's own address.
+        replyTo: { email: email },
         to: [{ email: "tysen@elevategrowth.solutions" }],
         subject: `New Email Subscriber: ${email}`,
+        textContent: `New newsletter subscriber
+
+Email: ${email}
+Source: ${source || "website"}
+
+This subscriber has been added to your Newsletter Subscribers list in Brevo and received the welcome email.`,
         htmlContent: `
 <!DOCTYPE html>
 <html>
@@ -146,11 +184,11 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
   <table style="width: 100%; border-collapse: collapse;">
     <tr>
       <td style="padding: 8px 0; font-weight: bold; width: 120px;">Email:</td>
-      <td style="padding: 8px 0;"><a href="mailto:${email}">${email}</a></td>
+      <td style="padding: 8px 0;"><a href="mailto:${escapeHtml(email)}">${escapeHtml(email)}</a></td>
     </tr>
     <tr>
       <td style="padding: 8px 0; font-weight: bold;">Source:</td>
-      <td style="padding: 8px 0;">${source || "website"}</td>
+      <td style="padding: 8px 0;">${escapeHtml(source || "website")}</td>
     </tr>
   </table>
 

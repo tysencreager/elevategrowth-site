@@ -30,7 +30,7 @@ const servicesItemListSchema = {
       "position": 1,
       "name": "Custom Website Development",
       "description": "Custom websites built and maintained on any platform—custom code, WordPress, or any builder. Fast-loading, secure, and SEO-optimized.",
-      "provider": {"@id": "https://elevategrowth.solutions/#organization"},
+      "provider": {"@id": "https://www.elevategrowth.solutions/#organization"},
       "areaServed": {"@type": "State", "name": "Utah"},
       "serviceType": "Web Development"
     },
@@ -39,7 +39,7 @@ const servicesItemListSchema = {
       "position": 2,
       "name": "Search Engine Optimization",
       "description": "Comprehensive SEO including keyword research, on-page optimization, technical audits, and local SEO for Utah businesses.",
-      "provider": {"@id": "https://elevategrowth.solutions/#organization"},
+      "provider": {"@id": "https://www.elevategrowth.solutions/#organization"},
       "areaServed": {"@type": "State", "name": "Utah"},
       "serviceType": "SEO Services"
     },
@@ -48,7 +48,7 @@ const servicesItemListSchema = {
       "position": 3,
       "name": "Social Media Management",
       "description": "Platform-specific social media strategy, content calendars, and community management.",
-      "provider": {"@id": "https://elevategrowth.solutions/#organization"},
+      "provider": {"@id": "https://www.elevategrowth.solutions/#organization"},
       "serviceType": "Social Media Marketing"
     },
     {
@@ -56,7 +56,7 @@ const servicesItemListSchema = {
       "position": 4,
       "name": "Content Creation",
       "description": "Strategic content including blog posts, email newsletters, photography, and website copy.",
-      "provider": {"@id": "https://elevategrowth.solutions/#organization"},
+      "provider": {"@id": "https://www.elevategrowth.solutions/#organization"},
       "serviceType": "Content Marketing"
     }
   ]
@@ -191,6 +191,7 @@ export default function Services() {
 
       <Hero
         backgroundImage={servicesHero}
+        imageAlt="Elevate Growth Solutions full-stack marketing services"
         title="Marketing Solutions Designed to Help Your Business Grow"
         subtitle="Strategy. Design. Execution. Optimization."
         height="70vh"

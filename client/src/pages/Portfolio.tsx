@@ -27,11 +27,11 @@ import junkremovalImg from "@assets/portfolio-junkremovalutah.webp";
 import garagecoatingsImg from "@assets/portfolio-slgaragecoatings.webp";
 import gardnerImg from "@assets/portfolio-gardnerlanding.webp";
 import macmeadowImg from "@assets/portfolio-macmeadow.webp";
-import flooringImg from "@assets/PIFF_header3_1764783463822.png";
-import crystalImg from "@assets/socrystaldesigns_screenshot_1764780915973.png";
+import flooringImg from "@assets/portfolio-piff.webp";
+import crystalImg from "@assets/portfolio-socrystal.webp";
 import jpennImg from "@assets/portfolio-jpennplanning.webp";
 import ceronImg from "@assets/portfolio-ceron.webp";
-import drhomeImg from "@assets/drhomesvcs.com-portfolio.png";
+import drhomeImg from "@assets/portfolio-drhome.webp";
 import lexlegalImg from "@assets/portfolio-lexlegal.webp";
 import solenneImg from "@assets/portfolio-solenne.webp";
 import beautymarkdImg from "@assets/portfolio-beautymarkd.webp";
@@ -502,9 +502,8 @@ export default function Portfolio() {
         />
         <img
           src="/work-header-poster.webp"
-          alt=""
+          alt="Elevate Growth Solutions website design portfolio"
           className="absolute inset-0 w-full h-full object-cover grayscale hidden motion-reduce:block"
-          aria-hidden="true"
         />
         <div
           className="absolute inset-0"

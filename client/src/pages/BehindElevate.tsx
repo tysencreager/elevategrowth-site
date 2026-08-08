@@ -14,9 +14,9 @@ const personSchema = {
   "name": "Tysen Creager",
   "jobTitle": "Founder & Director of Marketing Services",
   "description": "Full-stack marketer with nearly a decade of experience in web design, digital marketing, SEO, and client-centered strategy.",
-  "url": "https://elevategrowth.solutions/behind-elevate",
+  "url": "https://www.elevategrowth.solutions/behind-elevate",
   "image": "https://i.postimg.cc/LsPcdM3R/tysen-photo.jpg",
-  "worksFor": {"@id": "https://elevategrowth.solutions/#organization"},
+  "worksFor": {"@id": "https://www.elevategrowth.solutions/#organization"},
   "alumniOf": [
     {"@type": "EducationalOrganization", "name": "Digital Marketing Certification Program"},
     {"@type": "EducationalOrganization", "name": "UX Design Certification Program"}

@@ -370,7 +370,7 @@ At Elevate Growth Solutions, we build and maintain custom websites on any platfo
     tags: ["SEO", "AEO", "local SEO", "St. George", "AI search"],
     metaTitle: "Local SEO vs AEO: 2026 Guide for St. George Businesses",
     metaDescription: "How to combine Local SEO and Answer Engine Optimization (AEO) to win in AI-driven search. A practical 2026 guide for businesses in St. George and Southern Utah.",
-    image: "/blog/local-seo-vs-aeo.png",
+    image: "/blog/local-seo-vs-aeo.jpg",
     imageAlt: "Local SEO vs AEO 2026 guide for St. George businesses",
     featured: true
   },
