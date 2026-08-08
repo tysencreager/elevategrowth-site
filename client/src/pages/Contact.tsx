@@ -85,6 +85,7 @@ export default function Contact() {
     company: "",
     service: "",
     referral: "",
+    referralDetail: "",
     message: ""
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -92,9 +93,12 @@ export default function Contact() {
   const [error, setError] = useState("");
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+    const { name, value } = e.target;
     setFormData(prev => ({
       ...prev,
-      [e.target.name]: e.target.value
+      [name]: value,
+      // Don't carry a stale follow-up answer over when the referral source changes
+      ...(name === "referral" ? { referralDetail: "" } : {})
     }));
   };
 
@@ -116,13 +120,14 @@ export default function Contact() {
           company: formData.company,
           service: formData.service,
           referral: formData.referral,
+          referralDetail: formData.referralDetail,
           message: formData.message
         })
       });
 
       if (response.ok) {
         setIsSubmitted(true);
-        setFormData({ name: "", email: "", phone: "", company: "", service: "", referral: "", message: "" });
+        setFormData({ name: "", email: "", phone: "", company: "", service: "", referral: "", referralDetail: "", message: "" });
       } else {
         throw new Error("Form submission failed");
       }
@@ -295,6 +300,29 @@ export default function Contact() {
                         <option value="other">Other</option>
                       </select>
                     </div>
+
+                    {(formData.referral === "referral" || formData.referral === "other") && (
+                      <div className="space-y-2">
+                        <Label htmlFor="referralDetail" className="font-serif">
+                          {formData.referral === "referral"
+                            ? "Who referred you?"
+                            : "Tell us a little more"}
+                        </Label>
+                        <Input
+                          id="referralDetail"
+                          name="referralDetail"
+                          type="text"
+                          value={formData.referralDetail}
+                          onChange={handleChange}
+                          placeholder={
+                            formData.referral === "referral"
+                              ? "Their name — we'd love to thank them!"
+                              : "How did you find us?"
+                          }
+                          className="font-serif"
+                        />
+                      </div>
+                    )}
 
                     <div className="space-y-2 flex-1 flex flex-col">
                       <Label htmlFor="message" className="font-serif">
