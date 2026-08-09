@@ -97,7 +97,7 @@ export default function SocialMedia() {
         },
         {
           question: "Do you run ads?",
-          answer: "Social media management and paid advertising are separate services. If you're interested in social ads, check out our Ad Campaign Management service—they work great together."
+          answer: "No—social media management focuses on organic content and community building. We don't offer paid ad management, but we're happy to point you toward a trusted partner if paid ads are part of your plan."
         },
         {
           question: "How involved do I need to be?",

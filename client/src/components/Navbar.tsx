@@ -7,11 +7,9 @@ import logoMark from "@assets/egs-logo-mark.png";
 const serviceSubLinks = [
   { href: "/services", label: "All Services" },
   { href: "/services/websites", label: "Websites" },
-  { href: "/services/branding", label: "Branding" },
   { href: "/services/seo", label: "SEO & Local Search" },
   { href: "/services/social-media", label: "Social Media" },
   { href: "/services/content-creation", label: "Content Creation" },
-  { href: "/services/ad-campaigns", label: "Ad Campaigns" },
   { href: "/services/audits", label: "Audits" }
 ];
 

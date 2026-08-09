@@ -674,7 +674,7 @@ This fragmentation leads to:
 
 ## Enter Full-Stack Marketing
 
-Full-stack marketing is a comprehensive approach where one team handles all aspects of your marketing strategy. Just like a full-stack developer can handle both frontend and backend, a full-stack marketing agency manages everything from your website to your social media to your ad campaigns.
+Full-stack marketing is a comprehensive approach where one team handles all aspects of your marketing strategy. Just like a full-stack developer can handle both frontend and backend, a full-stack marketing agency manages everything from your website to your SEO to your social media.
 
 ## What Full-Stack Marketing Includes
 
@@ -697,7 +697,6 @@ Getting found online is crucial. SEO services include:
 Building your brand presence across platforms:
 - Content creation
 - Community engagement
-- Paid social advertising
 - Analytics and reporting
 
 ### Content Creation
@@ -706,20 +705,6 @@ Valuable content that attracts and converts:
 - Email newsletters
 - Video content
 - Infographics
-
-### Ad Campaign Management
-Paid advertising that drives results:
-- Google Ads
-- Facebook/Instagram Ads
-- Retargeting campaigns
-- Conversion tracking
-
-### Branding & Creative Design
-Consistent visual identity:
-- Logo design
-- Brand guidelines
-- Marketing collateral
-- Visual content
 
 ## Why Full-Stack Marketing Works
 

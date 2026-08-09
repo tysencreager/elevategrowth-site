@@ -13,7 +13,7 @@ import tysenPhoto from "@assets/tysen-photo.webp";
 const personSchema = {
   "name": "Tysen Creager",
   "jobTitle": "Founder & Director of Marketing Services",
-  "description": "Full-stack marketer with nearly a decade of experience in branding, digital marketing, SEO, and client-centered strategy.",
+  "description": "Full-stack marketer with nearly a decade of experience in web design, digital marketing, SEO, and client-centered strategy.",
   "url": "https://www.elevategrowth.solutions/behind-elevate",
   "image": "https://i.postimg.cc/LsPcdM3R/tysen-photo.jpg",
   "worksFor": {"@id": "https://www.elevategrowth.solutions/#organization"},
@@ -24,10 +24,7 @@ const personSchema = {
   "knowsAbout": [
     "Digital Marketing",
     "SEO Optimization",
-    "Brand Strategy",
     "Web Design",
-    "Google Ads",
-    "Meta Advertising",
     "UX Design"
   ],
   "sameAs": [
@@ -67,9 +64,9 @@ export default function BehindElevate() {
     <div className="min-h-screen">
       <SEO
         title="Behind Elevate - Meet Tysen Creager | Elevate Growth Solutions"
-        description="Meet Tysen Creager, founder of Elevate Growth Solutions—a full-stack marketer with nearly a decade of experience in branding, SEO, and strategy."
+        description="Meet Tysen Creager, founder of Elevate Growth Solutions—a full-stack marketer with nearly a decade of experience in web design, SEO, and strategy."
         ogTitle="Meet the Founder - Tysen Creager, Marketing Strategist"
-        ogDescription="Nearly a decade of experience helping businesses grow through strategic marketing, branding, and digital solutions. Certified marketing expert with proven results."
+        ogDescription="Nearly a decade of experience helping businesses grow through strategic marketing and digital solutions. Certified marketing expert with proven results."
       />
       <SchemaMarkup type="person" data={personSchema} />
       <Navbar />
@@ -151,21 +148,21 @@ export default function BehindElevate() {
                   className="font-serif font-light text-lg text-foreground leading-relaxed"
                   data-testid="text-bio-paragraph-1"
                 >
-                  Tysen Creager is the founder and driving force behind Elevate Growth Solutions. She has nearly a decade of experience in branding, digital marketing, SEO optimization, and client-centered strategy. Her diverse skillset helps businesses to grow with clarity, confidence, and purpose.
+                  Tysen Creager is the founder and driving force behind Elevate Growth Solutions. She has nearly a decade of experience in web design, digital marketing, SEO optimization, and client-centered strategy. Her diverse skillset helps businesses to grow with clarity, confidence, and purpose.
                 </p>
 
                 <p
                   className="font-serif font-light text-lg text-foreground leading-relaxed"
                   data-testid="text-bio-paragraph-2"
                 >
-                  Her experience spans the full spectrum: Tysen has designed websites and delivered marketing for large commercial companies as well as boutique brands—rebranding companies, implementing successful lead generation flows, and leading full-scale campaigns that deliver real results. Whether you're an established organization or a growing local brand, the standard is the same: enterprise-level quality with boutique attention.
+                  Her experience spans the full spectrum: Tysen has designed websites and delivered marketing for large commercial companies as well as boutique brands—implementing successful lead generation flows and leading full-scale campaigns that deliver real results. Whether you're an established organization or a growing local brand, the standard is the same: enterprise-level quality with boutique attention.
                 </p>
 
                 <p
                   className="font-serif font-light text-lg text-foreground leading-relaxed"
                   data-testid="text-bio-paragraph-3"
                 >
-                  With certifications in Digital Marketing and UX design, she understands all facets of attaining marketing success—everything from design and content creation to website building and ad strategy, guided by a deep understanding of how to move customers from first impression to loyal customer. Her approach is down-to-earth, results-driven, and focused on making marketing feel less overwhelming and more aligned with your goals.
+                  With certifications in Digital Marketing and UX design, she understands all facets of attaining marketing success—everything from design and content creation to website building and SEO strategy, guided by a deep understanding of how to move customers from first impression to loyal customer. Her approach is down-to-earth, results-driven, and focused on making marketing feel less overwhelming and more aligned with your goals.
                 </p>
               </div>
             </motion.div>

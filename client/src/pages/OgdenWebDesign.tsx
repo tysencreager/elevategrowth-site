@@ -159,7 +159,7 @@ export default function OgdenWebDesign() {
                 Meanwhile, young professionals priced out of Salt Lake City are discovering Ogden's affordability and direct FrontRunner access to downtown SLC. Plan Ogden's "Vibrant Downtown" initiative is attracting new restaurants, boutiques, and co-working spaces—all needing digital presence that matches the city's creative energy.
               </p>
               <p>
-                Whether you're a new gastropub on 25th Street competing for weekend crowds, a ski rental shop serving Snowbasin and Powder Mountain visitors, or a professional service firm near the Junction, we combine full-stack marketing—SEO, social media, and branding—to help Ogden businesses capture both locals and the growing tourist traffic.
+                Whether you're a new gastropub on 25th Street competing for weekend crowds, a ski rental shop serving Snowbasin and Powder Mountain visitors, or a professional service firm near the Junction, we combine full-stack marketing—SEO, social media, and content creation—to help Ogden businesses capture both locals and the growing tourist traffic.
               </p>
             </div>
           </motion.div>

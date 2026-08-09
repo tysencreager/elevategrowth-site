@@ -3,9 +3,7 @@ import { motion } from "framer-motion";
 import {
   Monitor,
   Search,
-  Target,
   Share2,
-  Gem,
   PenTool,
   ClipboardCheck,
   SlidersHorizontal,
@@ -34,22 +32,10 @@ const services: Service[] = [
     href: "/services/seo"
   },
   {
-    icon: Target,
-    title: "Ad Campaigns",
-    description: "Paid campaigns planned, launched, and refined to maximize ROI.",
-    href: "/services/ad-campaigns"
-  },
-  {
     icon: Share2,
     title: "Social Media",
     description: "Your channels managed end to end, consistent and present.",
     href: "/services/social-media"
-  },
-  {
-    icon: Gem,
-    title: "Branding",
-    description: "An identity worth investing in—logo, palette, and voice.",
-    href: "/services/branding"
   },
   {
     icon: PenTool,
@@ -85,14 +71,14 @@ export default function ServicesIconGrid() {
           }
           lede="We're a boutique firm that gives every client the care and attention they deserve—so you can save time, relieve stress, and focus on what you do best: running your business."
         />
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-9 gap-y-11">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-9 gap-y-11">
           {services.map((service, index) => (
             <motion.div
               key={service.title}
               initial={{ opacity: 0, y: 28 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.2 }}
-              transition={{ duration: 0.7, delay: (index % 4) * 0.09, ease: [0.22, 1, 0.36, 1] }}
+              transition={{ duration: 0.7, delay: (index % 3) * 0.09, ease: [0.22, 1, 0.36, 1] }}
             >
               <Link
                 href={service.href}

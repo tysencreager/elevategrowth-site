@@ -81,7 +81,7 @@ const services = [
   },
   {
     title: "Full-Stack Marketing",
-    description: "Complete marketing solutions for Utah's competitive market. Branding that stands out on Main Street, content that speaks to Wasatch Front audiences, and campaigns that drive real foot traffic."
+    description: "Complete marketing solutions for Utah's competitive market. Content that speaks to Wasatch Front audiences and strategies that drive real foot traffic."
   }
 ];
 

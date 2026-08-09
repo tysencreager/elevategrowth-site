@@ -42,10 +42,10 @@ const routes = [
     path: "/services",
     title: "Marketing Services | Elevate Growth Solutions",
     description:
-      "Full-stack marketing services: strategy, branding, web design, SEO, social media, ad campaigns, and content creation—built to help your business grow.",
+      "Full-stack marketing services: strategy, web design, SEO, social media, and content creation—built to help your business grow.",
     ogTitle: "Professional Marketing Services That Drive Results",
     ogDescription:
-      "From strategy to execution - discover our full range of marketing services including branding, SEO, social media, and more. Tailored solutions for growing businesses.",
+      "From strategy to execution - discover our full range of marketing services including web design, SEO, social media, and more. Tailored solutions for growing businesses.",
   },
   {
     path: "/services/websites",
@@ -55,15 +55,6 @@ const routes = [
     ogTitle: "Custom Website Design & Development Services",
     ogDescription:
       "Professional websites that convert visitors into customers. Fast-loading, mobile-responsive, and SEO-optimized—built or maintained on any platform. Starting at $1,599.",
-  },
-  {
-    path: "/services/branding",
-    title: "Branding & Brand Identity Design | Elevate Growth Solutions",
-    description:
-      "Build a memorable brand identity: logo design, visual identity systems, strategy, and complete brand guidelines. Packages from $999.",
-    ogTitle: "Professional Branding & Identity Design Services",
-    ogDescription:
-      "Create a brand that stands out. From logo suites to complete brand systems with strategy, visual identity, and collateral. Packages starting at $999.",
   },
   {
     path: "/services/seo",
@@ -93,16 +84,6 @@ const routes = [
       "Build a library of professional photos and videos for your business. Quarterly content days deliver authentic, on-brand content you can use everywhere.",
   },
   {
-    path: "/services/ad-campaigns",
-    title:
-      "Google & Meta Ads Management | Elevate Growth Solutions",
-    description:
-      "Strategic ad campaign management across Google, Meta, and other platforms. Data-driven campaigns tailored to your goals. Custom pricing based on your needs.",
-    ogTitle: "Ad Campaign Management | Google & Meta Advertising",
-    ogDescription:
-      "Get more from your ad spend with strategic campaign management. Google Ads, Facebook Ads, Instagram Ads—custom strategies that drive real results.",
-  },
-  {
     path: "/services/audits",
     title:
       "Website & SEO Audits | Elevate Growth Solutions",
@@ -116,10 +97,10 @@ const routes = [
     path: "/behind-elevate",
     title: "Behind Elevate - Meet Tysen Creager | Elevate Growth Solutions",
     description:
-      "Meet Tysen Creager, founder of Elevate Growth Solutions—a full-stack marketer with nearly a decade of experience in branding, SEO, and strategy.",
+      "Meet Tysen Creager, founder of Elevate Growth Solutions—a full-stack marketer with nearly a decade of experience in web design, SEO, and strategy.",
     ogTitle: "Meet the Founder - Tysen Creager, Marketing Strategist",
     ogDescription:
-      "Nearly a decade of experience helping businesses grow through strategic marketing, branding, and digital solutions. Certified marketing expert with proven results.",
+      "Nearly a decade of experience helping businesses grow through strategic marketing and digital solutions. Certified marketing expert with proven results.",
   },
   {
     path: "/contact",
@@ -183,7 +164,7 @@ const routes = [
     path: "/testimonials",
     title: "Client Testimonials & Reviews | Elevate Growth Solutions",
     description:
-      "Read what clients say about working with Elevate Growth Solutions—real reviews from businesses we’ve helped with web design, marketing, SEO, and branding.",
+      "Read what clients say about working with Elevate Growth Solutions—real reviews from businesses we’ve helped with web design, marketing, and SEO.",
     ogTitle: "Client Testimonials - Elevate Growth Solutions",
     ogDescription:
       "Discover why businesses trust Elevate Growth Solutions for their marketing needs. Read authentic reviews and success stories from our satisfied clients.",
@@ -222,11 +203,11 @@ const homeRoute = {
   title:
     "Web Design & Full-Stack Marketing | Elevate Growth Solutions",
   description:
-    "Boutique web design and full-stack marketing agency. Custom websites on any platform, plus SEO, social media, and branding—in Salt Lake City and nationwide.",
+    "Boutique web design and full-stack marketing agency. Custom websites on any platform, plus SEO, social media, and content creation—in Salt Lake City and nationwide.",
   ogTitle:
     "Web Design & Full-Stack Marketing for Growing Businesses | Elevate Growth Solutions",
   ogDescription:
-    "Custom websites built and maintained on any platform. Boutique marketing agency providing web design, SEO, social media management, and branding for businesses of all sizes, nationwide.",
+    "Custom websites built and maintained on any platform. Boutique marketing agency providing web design, SEO, social media management, and content creation for businesses of all sizes, nationwide.",
 };
 
 // ---------------------------------------------------------------------------

@@ -4,6 +4,8 @@
 https://elevategrowth.solutions/* https://www.elevategrowth.solutions/:splat 301
 
 # 301 Redirects for old/changed URLs
+/services/branding /services 301
+/services/ad-campaigns /services 301
 /meet-us /behind-elevate 301
 /home / 301
 /beginners-guide /blog 301

@@ -26,11 +26,9 @@ import BlogPost from "@/pages/BlogPost";
 import Testimonials from "@/pages/Testimonials";
 import Portfolio from "@/pages/Portfolio";
 import ServiceWebsites from "@/pages/services/Websites";
-import ServiceBranding from "@/pages/services/Branding";
 import ServiceSEO from "@/pages/services/SEO";
 import ServiceSocialMedia from "@/pages/services/SocialMedia";
 import ServiceContentCreation from "@/pages/services/ContentCreation";
-import ServiceAdCampaigns from "@/pages/services/AdCampaigns";
 import ServiceAudits from "@/pages/services/Audits";
 import WhyCustomCoded from "@/pages/WhyCustomCoded";
 import WebsiteHandoffOptions from "@/pages/WebsiteHandoffOptions";
@@ -47,11 +45,9 @@ function SSGRouter() {
       <Route path="/" component={Home} />
       <Route path="/services" component={Services} />
       <Route path="/services/websites" component={ServiceWebsites} />
-      <Route path="/services/branding" component={ServiceBranding} />
       <Route path="/services/seo" component={ServiceSEO} />
       <Route path="/services/social-media" component={ServiceSocialMedia} />
       <Route path="/services/content-creation" component={ServiceContentCreation} />
-      <Route path="/services/ad-campaigns" component={ServiceAdCampaigns} />
       <Route path="/services/audits" component={ServiceAudits} />
       <Route path="/behind-elevate" component={BehindElevate} />
       <Route path="/contact" component={Contact} />

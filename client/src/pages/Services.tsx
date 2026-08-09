@@ -2,11 +2,9 @@ import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import ServicesGrid from "@/components/ServicesGrid";
 import bandWebsites from "@assets/band-websites.webp";
-import bandBranding from "@assets/band-branding.webp";
 import bandSeo from "@assets/band-seo.webp";
 import bandSocial from "@assets/band-socialmedia.webp";
 import bandContent from "@assets/band-contentcreation.webp";
-import bandAds from "@assets/band-adcampaigns.webp";
 import FAQ from "@/components/FAQ";
 import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
@@ -48,18 +46,18 @@ const servicesItemListSchema = {
     {
       "@type": "Service",
       "position": 3,
-      "name": "Paid Advertising Management",
-      "description": "Google Ads and Meta advertising campaigns with detailed ROI tracking and optimization.",
+      "name": "Social Media Management",
+      "description": "Platform-specific social media strategy, content calendars, and community management.",
       "provider": {"@id": "https://www.elevategrowth.solutions/#organization"},
-      "serviceType": "Digital Advertising"
+      "serviceType": "Social Media Marketing"
     },
     {
       "@type": "Service",
       "position": 4,
-      "name": "Branding & Creative Direction",
-      "description": "Complete brand identity development including logo design, visual systems, and brand messaging.",
+      "name": "Content Creation",
+      "description": "Strategic content including blog posts, email newsletters, photography, and website copy.",
       "provider": {"@id": "https://www.elevategrowth.solutions/#organization"},
-      "serviceType": "Branding"
+      "serviceType": "Content Marketing"
     }
   ]
 };
@@ -79,7 +77,7 @@ const servicesFAQSchema = {
       "name": "What is included in your marketing services?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Our full-stack marketing services include website design and development, SEO optimization, Google Ads and Meta advertising management, social media strategy, content creation, and branding."
+        "text": "Our full-stack marketing services include website design and development, SEO optimization, social media strategy, and content creation."
       }
     },
     {
@@ -121,12 +119,6 @@ export default function Services() {
       image: bandWebsites
     },
     {
-      title: "Branding & Creative Direction",
-      description: "Comprehensive brand identity development including logo design, visual identity systems, brand messaging, and storytelling that connects with your target audience. We create memorable brands that stand out in competitive markets and resonate with your ideal customers.",
-      href: "/services/branding",
-      image: bandBranding
-    },
-    {
       title: "SEO Services",
       description: "Comprehensive search engine optimization including keyword research, on-page SEO, technical SEO audits, local SEO, and content optimization. We improve your search rankings, increase organic traffic, and help you get found by customers actively searching for your services.",
       href: "/services/seo",
@@ -143,12 +135,6 @@ export default function Services() {
       description: "Strategic content marketing including blog posts, email newsletters, lead magnets, social media content, and website copy. All content is crafted with your target audience in mind, optimized for SEO, and designed to establish your authority while driving engagement and conversions.",
       href: "/services/content-creation",
       image: bandContent
-    },
-    {
-      title: "Ad Campaign Management",
-      description: "Paid advertising management across Google Ads, Facebook Ads, Instagram Ads, and LinkedIn Ads. We create targeted campaigns with optimized ad copy, audience targeting, budget management, and detailed ROI tracking to maximize your advertising spend and generate qualified leads.",
-      href: "/services/ad-campaigns",
-      image: bandAds
     }
   ];
 
@@ -167,7 +153,7 @@ export default function Services() {
     },
     {
       question: "What's included in your marketing packages?",
-      answer: "We create custom packages based on your specific goals and budget. Services can include strategy development, brand identity, website design and development, SEO optimization, content creation, social media management, and paid advertising. We'll recommend the right mix of services to achieve your growth objectives."
+      answer: "We create custom packages based on your specific goals and budget. Services can include strategy development, website design and development, SEO optimization, content creation, and social media management. We'll recommend the right mix of services to achieve your growth objectives."
     },
     {
       question: "Can I start with one service and add more later?",
@@ -195,9 +181,9 @@ export default function Services() {
     <div className="min-h-screen">
       <SEO
         title="Marketing Services | Elevate Growth Solutions"
-        description="Full-stack marketing services: strategy, branding, web design, SEO, social media, ad campaigns, and content creation—built to help your business grow."
+        description="Full-stack marketing services: strategy, web design, SEO, social media, and content creation—built to help your business grow."
         ogTitle="Professional Marketing Services That Drive Results"
-        ogDescription="From strategy to execution - discover our full range of marketing services including branding, SEO, social media, and more. Tailored solutions for growing businesses."
+        ogDescription="From strategy to execution - discover our full range of marketing services including web design, SEO, social media, and more. Tailored solutions for growing businesses."
       />
       <SchemaMarkup type="custom" data={servicesItemListSchema} />
       <SchemaMarkup type="faq" data={servicesFAQSchema} />
@@ -207,7 +193,7 @@ export default function Services() {
         backgroundImage={servicesHero}
         imageAlt="Elevate Growth Solutions full-stack marketing services"
         title="Marketing Solutions Designed to Help Your Business Grow"
-        subtitle="Strategy. Branding. Execution. Optimization."
+        subtitle="Strategy. Design. Execution. Optimization."
         height="70vh"
         isLCP={true}
       />

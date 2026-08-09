@@ -274,7 +274,6 @@ export default function Contact() {
                         <option value="web-design">Web Design</option>
                         <option value="seo">SEO Services</option>
                         <option value="social-media">Social Media Management</option>
-                        <option value="branding">Branding & Creative Design</option>
                         <option value="full-stack">Full-Stack Marketing</option>
                         <option value="other">Other</option>
                       </select>
