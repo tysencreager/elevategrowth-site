@@ -75,7 +75,7 @@ export default function TermsAndConditions() {
             <div>
               <h2 className="font-display font-semibold text-2xl md:text-3xl text-primary mb-4">5. Limitation of Liability</h2>
               <p className="text-lg leading-relaxed mb-3">
-                To the maximum extent permitted by law, the Company and its suppliers shall not be liable for any indirect, incidental, special, or consequential damages—including loss of profits, data, or goodwill—arising from or related to the use of the Service.
+                To the maximum extent permitted by law, the Company and its suppliers shall not be liable for any indirect, incidental, special, or consequential damages (including loss of profits, data, or goodwill) arising from or related to the use of the Service.
               </p>
               <p className="text-lg leading-relaxed">
                 In no event shall our total liability exceed $100 or the amount paid by You through the Service, whichever is greater.
@@ -92,7 +92,7 @@ export default function TermsAndConditions() {
             <div>
               <h2 className="font-display font-semibold text-2xl md:text-3xl text-primary mb-4">7. Intellectual Property</h2>
               <p className="text-lg leading-relaxed">
-                All content, designs, branding, and materials created by or for Elevate Growth Solutions—including logos, templates, blog posts, graphics, and marketing deliverables—are the intellectual property of the Company or its licensors. You may not reproduce, copy, modify, or distribute any of our materials without prior written consent.
+                All content, designs, branding, and materials created by or for Elevate Growth Solutions (including logos, templates, blog posts, graphics, and marketing deliverables) are the intellectual property of the Company or its licensors. You may not reproduce, copy, modify, or distribute any of our materials without prior written consent.
               </p>
             </div>
 

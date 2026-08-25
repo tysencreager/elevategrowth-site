@@ -29,7 +29,7 @@ const servicesItemListSchema = {
       "@type": "Service",
       "position": 1,
       "name": "Custom Website Development",
-      "description": "Custom websites built and maintained on any platform—custom code, WordPress, or any builder. Fast-loading, secure, and SEO-optimized.",
+      "description": "Custom websites built and maintained on any platform: custom code, WordPress, or any builder. Fast-loading, secure, and SEO-optimized.",
       "provider": {"@id": "https://www.elevategrowth.solutions/#organization"},
       "areaServed": {"@type": "State", "name": "Utah"},
       "serviceType": "Web Development"
@@ -69,7 +69,7 @@ const servicesFAQSchema = {
       "name": "How long does it take to build a website?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Our focused, efficient process keeps timelines short. We build on whatever platform fits you best—custom code, WordPress, or another builder—and give you a specific timeline during your discovery call."
+        "text": "Our focused, efficient process keeps timelines short. We build on whatever platform fits you best (custom code, WordPress, or another builder) and give you a specific timeline during your discovery call."
       }
     },
     {
@@ -85,7 +85,7 @@ const servicesFAQSchema = {
       "name": "Do you offer ongoing website maintenance?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes. We build and maintain websites on any platform—custom code, WordPress, or any builder—and include hosting and ongoing maintenance in our packages. We can also take over maintenance of a site you already have."
+        "text": "Yes. We build and maintain websites on any platform (custom code, WordPress, or any builder) and include hosting and ongoing maintenance in our packages. We can also take over maintenance of a site you already have."
       }
     },
     {
@@ -101,7 +101,7 @@ const servicesFAQSchema = {
       "name": "Which platform will you build my website on?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Whichever one fits your goals. We build fully custom-coded sites when you want maximum speed, security, and flexibility, and we also build and maintain WordPress, Squarespace, Shopify, and other builder-based sites when you'd rather manage content yourself. We'll recommend the best fit during your consultation—and we can take over a site you already have."
+        "text": "Whichever one fits your goals. We build fully custom-coded sites when you want maximum speed, security, and flexibility, and we also build and maintain WordPress, Squarespace, Shopify, and other builder-based sites when you'd rather manage content yourself. We'll recommend the best fit during your consultation, and we can take over a site you already have."
       }
     }
   ]
@@ -181,7 +181,7 @@ export default function Services() {
     <div className="min-h-screen">
       <SEO
         title="Marketing Services | Elevate Growth Solutions"
-        description="Full-stack marketing services: strategy, web design, SEO, social media, and content creation—built to help your business grow."
+        description="Full-stack marketing services: strategy, web design, SEO, social media, and content creation, built to help your business grow."
         ogTitle="Professional Marketing Services That Drive Results"
         ogDescription="From strategy to execution - discover our full range of marketing services including web design, SEO, social media, and more. Tailored solutions for growing businesses."
       />
@@ -295,7 +295,7 @@ export default function Services() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="font-serif text-xl md:text-2xl text-white/90 mb-10 max-w-2xl mx-auto leading-relaxed"
           >
-            Let's have a real conversation about your goals. No pressure, no jargon—just honest advice on what will actually move the needle.
+            Let's have a real conversation about your goals. No pressure, no jargon, just honest advice on what will actually move the needle.
           </motion.p>
 
           {/* CTA Buttons */}

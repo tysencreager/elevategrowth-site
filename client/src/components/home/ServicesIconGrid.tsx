@@ -22,7 +22,7 @@ const services: Service[] = [
   {
     icon: Monitor,
     title: "Web Design",
-    description: "Custom websites built and maintained on any platform—custom-coded to Shopify.",
+    description: "Custom websites built and maintained on any platform, from custom-coded to Shopify.",
     href: "/services/websites"
   },
   {
@@ -69,7 +69,7 @@ export default function ServicesIconGrid() {
               <em className="italic text-primary">So were our clients.</em>
             </>
           }
-          lede="We're a boutique firm that gives every client the care and attention they deserve—so you can save time, relieve stress, and focus on what you do best: running your business."
+          lede="We're a boutique firm that gives every client the care and attention they deserve, so you can save time, relieve stress, and focus on what you do best: running your business."
         />
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-9 gap-y-11">
           {services.map((service, index) => (

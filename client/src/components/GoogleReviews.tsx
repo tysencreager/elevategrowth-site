@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 
 export const googleReviews = [
   {
-    quote: "I cannot say enough good things about Tysen. She created my website for Mac and Meadow Tallow, and it turned out more beautiful than I ever imagined it could be. Her vision is truly something special — she put so much thought, detail, and care into every part of the site, and it shows. Working with Tysen was beyond amazing from start to finish, and I'm so grateful for her. Honestly, she played a huge role in getting my business off the ground. If you're looking for someone with incredible vision, professionalism, and heart to help you with your website, SEO, marketing, socials etc., Tysen is IT.",
+    quote: "I cannot say enough good things about Tysen. She created my website for Mac and Meadow Tallow, and it turned out more beautiful than I ever imagined it could be. Her vision is truly something special. She put so much thought, detail, and care into every part of the site, and it shows. Working with Tysen was beyond amazing from start to finish, and I'm so grateful for her. Honestly, she played a huge role in getting my business off the ground. If you're looking for someone with incredible vision, professionalism, and heart to help you with your website, SEO, marketing, socials etc., Tysen is IT.",
     author: "McKenzie",
     timeAgo: "4 weeks ago",
   },

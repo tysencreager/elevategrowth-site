@@ -45,7 +45,7 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
     const baseReferralLabel = referral ? REFERRAL_LABELS[referral] || referral : "";
     const referralLabel =
       baseReferralLabel && referralDetail?.trim()
-        ? `${baseReferralLabel} — ${referralDetail.trim()}`
+        ? `${baseReferralLabel} (${referralDetail.trim()})`
         : baseReferralLabel;
 
     if (!email || !name || !message) {
@@ -109,7 +109,7 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
     let contactResponse = await createContact(attributes);
 
     // Brevo rejects the whole request if an attribute (e.g. HOW_HEARD) hasn't
-    // been created in the account yet — retry without it so the lead is never lost.
+    // been created in the account yet; retry without it so the lead is never lost.
     if (!contactResponse.ok && contactResponse.status !== 409 && attributes.HOW_HEARD) {
       const errorData = await contactResponse.text();
       console.error("Brevo contact error (retrying without HOW_HEARD):", errorData);
@@ -143,7 +143,7 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
         subject: "Thanks for reaching out!",
         textContent: `Hi ${firstName},
 
-Thanks for getting in touch with Elevate Growth Solutions — we're excited to hear from you.
+Thanks for getting in touch with Elevate Growth Solutions. We're excited to hear from you.
 
 I'll personally review your message and get back to you within two business days. In the meantime, if you'd like to schedule a quick call to discuss your marketing goals, feel free to grab a time here: https://calendly.com/tysencreager/30minutes
 
@@ -160,7 +160,7 @@ Elevate Growth Solutions`,
 <body style="font-family: Georgia, 'Times New Roman', serif; line-height: 1.6; color: #333; max-width: 600px; margin: 0 auto; padding: 20px;">
   <p>Hi ${safe.firstName},</p>
 
-  <p>Thanks for getting in touch with Elevate Growth Solutions— we're excited to hear from you.</p>
+  <p>Thanks for getting in touch with Elevate Growth Solutions. We're excited to hear from you.</p>
 
   <p>I'll personally review your message and get back to you within two business days. In the meantime, if you'd like to schedule a quick call to discuss your marketing goals, feel free to grab a time here: <a href="https://calendly.com/tysencreager/30minutes" style="color: #0066cc;">Book a Call</a></p>
 

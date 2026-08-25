@@ -69,7 +69,7 @@ const localBusinessSchemaData = {
 const services = [
   {
     title: "Custom Web Design",
-    description: "Conversion-focused websites for Salt Lake City businesses—from 9th & 9th boutiques to downtown professional services near City Creek. Sites that capture Utah's unique blend of outdoor lifestyle and urban sophistication."
+    description: "Conversion-focused websites for Salt Lake City businesses, from 9th & 9th boutiques to downtown professional services near City Creek. Sites that capture Utah's unique blend of outdoor lifestyle and urban sophistication."
   },
   {
     title: "SEO Services",
@@ -89,12 +89,12 @@ const benefits = [
   {
     icon: Clock,
     title: "Fast Turnaround",
-    description: "Utah businesses move fast—your marketing partner should too. An efficient process without cutting corners."
+    description: "Utah businesses move fast. Your marketing partner should too. An efficient process without cutting corners."
   },
   {
     icon: Users,
     title: "Boutique Attention",
-    description: "You're not a ticket number at a big agency. We treat every client like a neighbor—because in Salt Lake, you probably are."
+    description: "You're not a ticket number at a big agency. We treat every client like a neighbor, because in Salt Lake, you probably are."
   },
   {
     icon: MapPin,
@@ -152,10 +152,10 @@ export default function SaltLakeCity() {
             Your Local Salt Lake City Marketing Partner
           </h2>
           <p className="font-serif text-lg text-gray-700 leading-relaxed mb-8">
-            Salt Lake City has transformed from a quiet mountain town into one of America's most dynamic metros. The same energy that fills Liberty Park on summer evenings and packs the slopes at Brighton and Snowbird now drives a thriving local business scene—from the boutiques of 9th & 9th to the restaurants revitalizing the Granary District.
+            Salt Lake City has transformed from a quiet mountain town into one of America's most dynamic metros. The same energy that fills Liberty Park on summer evenings and packs the slopes at Brighton and Snowbird now drives a thriving local business scene, from the boutiques of 9th & 9th to the restaurants revitalizing the Granary District.
           </p>
           <p className="font-serif text-lg text-gray-700 leading-relaxed mb-8">
-            But with Salt Lake's growth comes competition. The coffee shop on 300 South competes with a dozen others. The Holladay dentist needs to stand out from every practice along the Wasatch Front. Your business needs more than a basic website—you need a marketing partner who knows this city.
+            But with Salt Lake's growth comes competition. The coffee shop on 300 South competes with a dozen others. The Holladay dentist needs to stand out from every practice along the Wasatch Front. Your business needs more than a basic website. You need a marketing partner who knows this city.
           </p>
           <p className="font-serif text-lg text-gray-700 leading-relaxed">
             We help Salt Lake businesses cut through the noise: the Sugar House bakery that needs weekend foot traffic, the Murray auto shop competing for "mechanic near me" searches, the downtown law firm building its reputation. Custom websites, local SEO that actually works, and marketing that speaks to Utah audiences.
@@ -224,7 +224,7 @@ export default function SaltLakeCity() {
                 Own Your Neighborhood in Google Search
               </h2>
               <p className="font-serif text-lg text-gray-700 leading-relaxed mb-6">
-                When someone in The Avenues searches "coffee shop near me" or a Millcreek family Googles "pediatric dentist," will they find you? Salt Lake's neighborhood-driven culture means local SEO isn't just about ranking for "Salt Lake City"—it's about dominating your specific corner of the Wasatch Front.
+                When someone in The Avenues searches "coffee shop near me" or a Millcreek family Googles "pediatric dentist," will they find you? Salt Lake's neighborhood-driven culture means local SEO isn't just about ranking for "Salt Lake City." It's about dominating your specific corner of the Wasatch Front.
               </p>
               <ul className="space-y-3">
                 {[
@@ -266,10 +266,10 @@ export default function SaltLakeCity() {
           </h2>
           <div className="prose prose-lg max-w-none font-serif text-gray-700">
             <p>
-              Salt Lake City's economy runs on diversity. The outdoor industry giants—Black Diamond, Backcountry.com, Cotopaxi—anchor a recreation economy that extends from gear shops on 400 South to ski rental operations in the canyons. Healthcare systems like Intermountain and University of Utah Health employ thousands. The airport expansion has turned SLC into a Delta hub, bringing 26 million passengers annually past your potential storefront.
+              Salt Lake City's economy runs on diversity. The outdoor industry giants (Black Diamond, Backcountry.com, Cotopaxi) anchor a recreation economy that extends from gear shops on 400 South to ski rental operations in the canyons. Healthcare systems like Intermountain and University of Utah Health employ thousands. The airport expansion has turned SLC into a Delta hub, bringing 26 million passengers annually past your potential storefront.
             </p>
             <p>
-              Meanwhile, neighborhoods are transforming. The Granary District has gone from industrial wasteland to brewery-and-boutique destination. Sugar House keeps adding density. The Marmalade district draws young families. Each neighborhood has its own character—and its own customers searching Google for local businesses.
+              Meanwhile, neighborhoods are transforming. The Granary District has gone from industrial wasteland to brewery-and-boutique destination. Sugar House keeps adding density. The Marmalade district draws young families. Each neighborhood has its own character, and its own customers searching Google for local businesses.
             </p>
             <p>
               We understand these micro-markets. A campaign for a Trolley Square retailer looks different than one for a West Valley auto shop. SEO for a downtown hotel targets different keywords than a Millcreek family restaurant. We build marketing strategies that match your specific location, customers, and competitive landscape along the Wasatch Front.

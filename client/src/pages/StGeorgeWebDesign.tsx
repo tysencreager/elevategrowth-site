@@ -59,7 +59,7 @@ export default function StGeorgeWebDesign() {
     <div className="min-h-screen">
       <SEO
         title="St. George Web Design & Marketing | Elevate Growth Solutions"
-        description="Custom web design, SEO, and marketing for St. George and Washington County businesses—contractors, real estate, and service companies that need to keep up."
+        description="Custom web design, SEO, and marketing for St. George and Washington County businesses: contractors, real estate, and service companies that need to keep up."
         ogImage="https://www.elevategrowth.solutions/egs-social-sharing.png"
       />
       <SchemaMarkup type="custom" data={stGeorgeSchema} />
@@ -182,7 +182,7 @@ export default function StGeorgeWebDesign() {
               Local SEO That Understands Washington County
             </h2>
             <p className="font-serif text-lg text-muted-foreground leading-relaxed mb-4">
-              We don't just optimize for "St. George"—we target the unique search patterns of this market. Tourists search "best breakfast near Zion" while planning their trip. Snowbirds search "golf course communities St. George" before their seasonal migration. California transplants search "custom home builder Utah" when comparing markets.
+              We don't just optimize for "St. George." We target the unique search patterns of this market. Tourists search "best breakfast near Zion" while planning their trip. Snowbirds search "golf course communities St. George" before their seasonal migration. California transplants search "custom home builder Utah" when comparing markets.
             </p>
             <p className="font-serif text-lg text-muted-foreground leading-relaxed mb-8">
               Our local SEO strategy captures all these audiences: Santa Clara homeowners, Ivins retirees, Washington City families, Hurricane adventurers, and La Verkin locals. We optimize your Google Business Profile to dominate the Local Pack whether someone's searching from the Red Cliffs Mall parking lot or planning their move from San Diego.

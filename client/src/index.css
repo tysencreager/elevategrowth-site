@@ -80,7 +80,7 @@
   --font-serif: 'Hanken Grotesk', 'Avenir Next', sans-serif;
   --font-mono: Menlo, monospace;
   --font-display: 'Playfair Display', Didot, 'Bodoni MT', Georgia, serif;
-  --radius: 0rem; /* square corners — luxury editorial */
+  --radius: 0rem; /* square corners: luxury editorial */
   --shadow-2xs: 0px 2px 0px 0px hsl(0 0% 0% / 0.00);
   --shadow-xs: 0px 2px 0px 0px hsl(0 0% 0% / 0.00);
   --shadow-sm: 0px 2px 0px 0px hsl(0 0% 0% / 0.00), 0px 1px 2px -1px hsl(0 0% 0% / 0.00);

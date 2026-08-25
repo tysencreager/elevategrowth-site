@@ -22,7 +22,7 @@ export default function Audits() {
       // Main content
       serviceName="Audits & Analysis"
       serviceTagline="Stop Guessing, Start Growing"
-      serviceDescription="Before investing in marketing or a website overhaul, you need to understand what's actually working and what's holding you back. Our comprehensive audits give you a data-backed roadmap—not just a list of problems, but prioritized solutions with clear next steps. No ongoing commitment required."
+      serviceDescription="Before investing in marketing or a website overhaul, you need to understand what's actually working and what's holding you back. Our comprehensive audits give you a data-backed roadmap: not just a list of problems, but prioritized solutions with clear next steps. No ongoing commitment required."
 
       // Features
       features={[
@@ -48,7 +48,7 @@ export default function Audits() {
         },
         {
           title: "No Strings Attached",
-          description: "Audits are one-time projects. Use the insights however you want—implement yourself, hire us, or take them to another provider."
+          description: "Audits are one-time projects. Use the insights however you want: implement yourself, hire us, or take them to another provider."
         }
       ]}
 
@@ -97,7 +97,7 @@ export default function Audits() {
         },
         {
           question: "How is this different from free SEO tools?",
-          answer: "Free tools provide surface-level data without context. Our audits include expert analysis, competitive insights, and prioritized recommendations specific to your business goals—not generic suggestions."
+          answer: "Free tools provide surface-level data without context. Our audits include expert analysis, competitive insights, and prioritized recommendations specific to your business goals, not generic suggestions."
         },
         {
           question: "Do you offer ongoing SEO services?",

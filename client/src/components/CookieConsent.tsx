@@ -61,7 +61,7 @@ export default function CookieConsent() {
           </p>
           <p className="font-serif font-light text-sm leading-relaxed text-white/70 mb-5">
             We use cookies to understand how visitors use our site and to improve your experience.
-            You can accept or decline analytics cookies—declining won't change how the site works.{" "}
+            You can accept or decline analytics cookies. Declining won't change how the site works.{" "}
             <Link href="/privacy-policy" className="text-[#4AC0D8] hover:underline">
               Privacy Policy
             </Link>
