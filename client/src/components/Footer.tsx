@@ -35,7 +35,7 @@ export default function Footer() {
                 </span>
               </Link>
               <p className="font-display italic text-sm text-white/60 max-w-xs">
-                Marketing that moves people and brands forward.
+                We help businesses grow.
               </p>
               <div className="flex gap-2 pt-2">
                 <a

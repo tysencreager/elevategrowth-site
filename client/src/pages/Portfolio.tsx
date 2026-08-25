@@ -35,6 +35,7 @@ import drhomeImg from "@assets/portfolio-drhome.webp";
 import lexlegalImg from "@assets/portfolio-lexlegal.webp";
 import solenneImg from "@assets/portfolio-solenne.webp";
 import beautymarkdImg from "@assets/portfolio-beautymarkd.webp";
+import kleenslateImg from "@assets/portfolio-kleenslate.webp";
 
 interface Project {
   title: string;
@@ -48,6 +49,14 @@ interface Project {
 }
 
 const projects: Project[] = [
+  {
+    title: "Kleen Slate",
+    description: "Luxury house cleaning website for a Utah County cleaning company. Elegant, editorial design with service and pricing pages, trust-building social proof, and free in-home bid requests.",
+    tags: ["Cleaning Services", "Local Business", "Lead Generation", "Web Design"],
+    image: kleenslateImg,
+    link: "https://www.kleenslate.info/",
+    features: ["Mobile Responsive", "SEO Optimized"],
+  },
   {
     title: "Julian Dismute",
     description: "Personal brand website for a revivalist, speaker, and minister. Dramatic dark-and-gold design with speaking engagement booking, ministry pages, and media galleries built to grow a national platform.",
@@ -411,7 +420,7 @@ export default function Portfolio() {
       "@context": "https://schema.org",
       "@type": "CollectionPage",
       "name": "Website Design Portfolio - Elevate Growth Solutions",
-      "description": "Custom websites built by Elevate Growth Solutions for businesses across legal, construction, home services, e-commerce, beauty, and more—on any platform.",
+      "description": "Custom websites built by Elevate Growth Solutions for businesses across legal, construction, home services, e-commerce, beauty, and more, on any platform.",
       "url": "https://www.elevategrowth.solutions/portfolio",
       "isPartOf": {
         "@type": "WebSite",
@@ -480,7 +489,7 @@ export default function Portfolio() {
     <div className="min-h-screen">
       <SEO
         title="Website Design Portfolio | Elevate Growth Solutions"
-        description="Browse custom websites we’ve built for law firms, contractors, home services, e-commerce, beauty, and more—on any platform, in Utah and nationwide."
+        description="Browse custom websites we’ve built for law firms, contractors, home services, e-commerce, beauty, and more, on any platform, in Utah and nationwide."
         ogTitle="Website Portfolio - Elevate Growth Solutions"
         ogDescription="Custom, mobile-responsive, SEO-optimized websites for businesses of all sizes, built on any platform. See our work across 8+ industries including legal, construction, beauty, and e-commerce."
         canonicalPath="/portfolio"
@@ -488,7 +497,7 @@ export default function Portfolio() {
 
       <Navbar />
 
-      {/* Hero Section — full-bleed video */}
+      {/* Hero Section: full-bleed video */}
       <section className="relative overflow-hidden min-h-[70vh] flex items-center pt-20">
         <video
           className="absolute inset-0 w-full h-full object-cover grayscale contrast-[1.05] motion-reduce:hidden"
@@ -541,7 +550,7 @@ export default function Portfolio() {
               transition={{ duration: 0.9, delay: 0.46, ease: [0.22, 1, 0.36, 1] }}
             >
               Every website is custom-built, mobile responsive, and SEO optimized to help your
-              business grow—on whatever platform fits you best.
+              business grow, on whatever platform fits you best.
             </motion.p>
             <motion.div
               className="mt-9"
@@ -615,10 +624,10 @@ export default function Portfolio() {
               </h2>
               <div className="space-y-4 font-serif text-muted-foreground leading-relaxed">
                 <p>
-                  At Elevate Growth Solutions, we don't just build websites — we build growth engines. Every project starts with understanding your business, your audience, and your goals. From there, we craft custom websites—on any platform, from custom code to WordPress and other builders—designed to convert visitors into customers.
+                  At Elevate Growth Solutions, we don't just build websites. We build growth engines. Every project starts with understanding your business, your audience, and your goals. From there, we craft custom websites (on any platform, from custom code to WordPress and other builders) designed to convert visitors into customers.
                 </p>
                 <p>
-                  Whether you need a full business website, an e-commerce platform, a professional services site, or a high-converting ad landing page, we handle it all — from strategy and design to development and SEO.
+                  Whether you need a full business website, an e-commerce platform, a professional services site, or a high-converting ad landing page, we handle it all, from strategy and design to development and SEO.
                 </p>
               </div>
 
@@ -659,7 +668,7 @@ export default function Portfolio() {
                 Industries We <span className="text-primary">Serve</span>
               </h3>
               <p className="font-serif text-muted-foreground mb-8 leading-relaxed">
-                We serve all industries — not just the ones listed here. No matter your niche, we create tailored web solutions that speak to your audience. No templates — every site is built from the ground up.
+                We serve all industries, not just the ones listed here. No matter your niche, we create tailored web solutions that speak to your audience. No templates. Every site is built from the ground up.
               </p>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 {industries.map((industry, index) => (
@@ -707,7 +716,7 @@ export default function Portfolio() {
               Looking for Our Marketing &amp; Design Work?
             </h2>
             <p className="font-serif text-muted-foreground text-lg max-w-2xl mx-auto mb-10 leading-relaxed">
-              This page showcases our website portfolio. To see our full range of marketing and design work — including social media content and more — check out our marketing portfolio.
+              This page showcases our website portfolio. To see our full range of marketing and design work, including social media content and more, check out our marketing portfolio.
             </p>
             <Button size="lg" className="font-serif font-medium text-base md:text-lg px-10 py-6 gap-2 group" asChild>
               <a href="https://tysencreager.my.canva.site/" target="_blank" rel="noopener noreferrer">
