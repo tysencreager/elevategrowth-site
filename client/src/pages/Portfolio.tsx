@@ -1,6 +1,6 @@
 import { useRef, useEffect, useState } from "react";
 import { motion, useInView } from "framer-motion";
-import { ExternalLink, Archive, Smartphone, Search, Layout, Award, Megaphone, CheckCircle } from "lucide-react";
+import { ExternalLink, Archive, Smartphone, Search, Layout, Award, Megaphone, CheckCircle, ArrowRight } from "lucide-react";
 import GoogleReviews, { googleReviews } from "@/components/GoogleReviews";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -606,6 +606,82 @@ export default function Portfolio() {
           >
             These are just a few of the websites we've built. We've completed many more projects across a variety of industries.
           </motion.p>
+        </div>
+      </section>
+
+      {/* Real Estate Preview Panel */}
+      <section className="py-14 md:py-20 bg-muted/20 border-y border-border">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <div className="text-center mb-6 sm:mb-8">
+              <span className="inline-block font-sans text-xs sm:text-sm font-medium text-primary bg-primary/10 px-3 py-1.5 sm:px-4 sm:py-2 rounded-full mb-3 sm:mb-4">
+                Real Estate Agents
+              </span>
+              <h2 className="font-display font-bold text-xl sm:text-2xl md:text-3xl text-foreground mb-2 sm:mb-3">
+                Websites Built for Realtors
+              </h2>
+              <p className="font-serif text-muted-foreground max-w-xl mx-auto text-sm sm:text-base">
+                I can customize any site to fit your brand. This is just a taste of what I can do for real estate professionals.
+              </p>
+            </div>
+
+            <motion.a
+              href="https://realestate.elevategrowth.solutions/"
+              target="_blank"
+              rel="noopener noreferrer"
+              whileHover={{ y: -8, transition: { duration: 0.3 } }}
+              className="block group max-w-4xl mx-auto focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded-2xl"
+              aria-label="Explore real estate website templates (opens in new tab)"
+              title="Browse real estate website design templates"
+            >
+              <div className="relative bg-card rounded-xl sm:rounded-2xl overflow-hidden border-2 border-border hover:border-primary/50 hover:shadow-xl hover:shadow-primary/10 transition-all duration-300">
+                {/* Preview Image */}
+                <div className="relative aspect-[16/9] overflow-hidden">
+                  <img
+                    src="https://i.postimg.cc/nhwBmfMv/real-estate-preview-panel-screenshot.png"
+                    alt="Real estate website template preview panel showing multiple design options for realtors"
+                    loading="lazy"
+                    decoding="async"
+                    className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
+                  />
+                  {/* Overlay - visible on mobile */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-100 sm:opacity-0 sm:group-hover:opacity-100 transition-opacity duration-300" />
+
+                  {/* CTA overlay */}
+                  <div className="absolute inset-0 flex items-end sm:items-center justify-center pb-4 sm:pb-0 opacity-100 sm:opacity-0 sm:group-hover:opacity-100 transition-opacity duration-300">
+                    <div className="bg-primary text-white px-4 py-2 sm:px-6 sm:py-3 rounded-lg font-sans font-semibold text-sm sm:text-base flex items-center gap-2 shadow-xl">
+                      Explore Real Estate Templates
+                      <ExternalLink className="w-4 h-4 sm:w-5 sm:h-5" aria-hidden="true" />
+                    </div>
+                  </div>
+                </div>
+
+                {/* Widget Footer */}
+                <div className="p-4 sm:p-6 bg-gradient-to-r from-primary/5 to-transparent">
+                  <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 sm:gap-4">
+                    <div>
+                      <h3 className="font-display font-semibold text-base sm:text-lg text-foreground mb-0.5 sm:mb-1">
+                        Real Estate Website Preview Panel
+                      </h3>
+                      <p className="font-serif text-xs sm:text-sm text-muted-foreground">
+                        Browse different styles and find the perfect fit for your real estate business
+                      </p>
+                    </div>
+                    <div className="flex items-center text-primary font-sans font-medium text-sm sm:text-base">
+                      <span className="sm:hidden">Tap to view</span>
+                      <span className="hidden sm:inline">View Templates</span>
+                      <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </motion.a>
+          </motion.div>
         </div>
       </section>
 
