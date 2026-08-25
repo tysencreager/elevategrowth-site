@@ -326,13 +326,13 @@ export default function Websites() {
     <ServicePageLayout
       // SEO
       title="Website Design & Development | Elevate Growth Solutions"
-      metaDescription="Custom websites built in days, not months—on any platform you choose. Fast, mobile-first design optimized for conversions. Starting at $1,599."
+      metaDescription="Custom websites built in days, not months, on any platform you choose. Fast, mobile-first design optimized for conversions. Starting at $2,500."
       ogTitle="Custom Website Design & Development Services"
-      ogDescription="Professional websites that convert visitors into customers. Fast-loading, mobile-responsive, and SEO-optimized—built or maintained on any platform. Starting at $1,599."
+      ogDescription="Professional websites that convert visitors into customers. Fast-loading, mobile-responsive, and SEO-optimized, built or maintained on any platform. Starting at $2,500."
 
       // Hero
       heroTitle="Website Design & Development"
-      heroSubtitle="Custom websites built to convert, not just look pretty—on any platform you choose."
+      heroSubtitle="Custom websites built to convert, not just look pretty, on any platform you choose."
       heroImage={websiteHero}
       sectionImage={sectionBand}
       sectionImageAlt="Studio desk with laptop and design notes"
@@ -340,13 +340,13 @@ export default function Websites() {
       // Main content
       serviceName="Web Development"
       serviceTagline="Websites That Work as Hard as You Do"
-      serviceDescription="Your website is often the first impression potential customers have of your business. I build and maintain custom websites that load fast, look great on every device, and are designed with one goal in mind: turning visitors into customers. Whether you want a fully custom-coded build, a WordPress site, or work on another builder like Squarespace or Shopify, I'll create—or take over—a site tailored to your needs."
+      serviceDescription="Your website is often the first impression potential customers have of your business. I build and maintain custom websites that load fast, look great on every device, and are designed with one goal in mind: turning visitors into customers. Whether you want a fully custom-coded build, a WordPress site, or work on another builder like Squarespace or Shopify, I'll create (or take over) a site tailored to your needs."
 
       // Features
       features={[
         {
           title: "Built Your Way, On Any Platform",
-          description: "Want a fully custom-coded build for maximum performance, or prefer WordPress or another builder you can edit yourself? I build on whatever platform fits you best—and I can take over and maintain a site you already have."
+          description: "Want a fully custom-coded build for maximum performance, or prefer WordPress or another builder you can edit yourself? I build on whatever platform fits you best, and I can take over and maintain a site you already have."
         },
         {
           title: "Mobile-First Design",
@@ -362,7 +362,7 @@ export default function Websites() {
         },
         {
           title: "Fast Loading Speeds",
-          description: "Optimized images, clean code, and modern hosting ensure your site loads in under 3 seconds—critical for both user experience and SEO."
+          description: "Optimized images, clean code, and modern hosting ensure your site loads in under 3 seconds, which is critical for both user experience and SEO."
         },
         {
           title: "Easy to Update",
@@ -398,11 +398,12 @@ export default function Websites() {
       ]}
 
       // Pricing
+      pricingSubtitle="Base rates assume you provide final copy and brand assets. Need copywriting, photography, or branding? We'll scope content production alongside your build. Hosting & maintenance is $200/mo on any platform and includes SSL, backups, uptime monitoring, and 1 hour of content edits every month."
       pricing={[
         {
-          name: "Custom Built Website",
-          price: "From $1,599",
-          description: "Single-page sites start at $1,599. Price increases with additional pages and functionality.",
+          name: "Launch",
+          price: "From $2,500",
+          description: "A conversion-focused single-page or starter site. Ideal for new businesses and campaigns that need a sharp, fast web presence.",
           features: [
             "Custom responsive design",
             "Mobile-optimized",
@@ -413,18 +414,31 @@ export default function Websites() {
           ]
         },
         {
-          name: "Hosting & Maintenance",
-          price: "$200/mo",
-          description: "Keep your site fast, secure, and up-to-date—on any platform.",
+          name: "Business",
+          price: "From $4,500",
+          description: "A full multi-page website built around your services, your customers, and search. Includes up to 8 pages; additional pages are $300 each.",
           features: [
-            "Managed cloud hosting",
-            "SSL certificate included",
-            "1 hour of content edits/month",
-            "Uptime monitoring",
-            "Regular backups",
-            "Security updates"
+            "Everything in Launch",
+            "Up to 8 custom-designed pages",
+            "On-page SEO for every page",
+            "Analytics & conversion tracking",
+            "Blog or resource section",
+            "Staging site access during the build"
           ],
           featured: true
+        },
+        {
+          name: "E-Commerce & Custom",
+          price: "From $7,500",
+          description: "Online stores and larger commercial builds. Pricing scales with catalog size, integrations, and functionality; complex projects are quoted per project.",
+          features: [
+            "Product catalog & secure checkout",
+            "Payment, shipping & tax setup",
+            "CRM, booking & software integrations",
+            "Customer accounts & portals",
+            "Training & handoff documentation",
+            "Dedicated launch support"
+          ]
         }
       ]}
 
@@ -436,7 +450,7 @@ export default function Websites() {
         },
         {
           question: "Do you build on WordPress and website builders?",
-          answer: "Yes. I build on whatever platform fits your goals—fully custom-coded sites for maximum speed and security, or WordPress, Squarespace, Shopify, and other builders if you'd rather manage things yourself. I can also take over and maintain a site you already have, no matter how it was built."
+          answer: "Yes. I build on whatever platform fits your goals: fully custom-coded sites for maximum speed and security, or WordPress, Squarespace, Shopify, and other builders if you'd rather manage things yourself. I can also take over and maintain a site you already have, no matter how it was built."
         },
         {
           question: "Can I update the website myself?",

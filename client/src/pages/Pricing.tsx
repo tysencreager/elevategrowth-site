@@ -325,7 +325,7 @@ function PricingCTA() {
 
         {/* Subheadline */}
         <p className="font-serif text-xl md:text-2xl text-white/90 mb-10 max-w-2xl mx-auto leading-relaxed">
-          Let's have a real conversation about your goals. No pressure, no jargon—just honest advice on what will actually move the needle.
+          Let's have a real conversation about your goals. No pressure, no jargon, just honest advice on what will actually move the needle.
         </p>
 
         {/* CTA Buttons */}
@@ -376,12 +376,14 @@ export default function Pricing() {
     {
       image: websiteImg,
       title: "Websites",
-      description: "Custom websites built in days, not months—on any platform you choose. Fast, responsive, and designed to convert.",
+      description: "Custom websites built in days, not months, on any platform you choose. Fast, responsive, and designed to convert.",
       items: [
-        { label: "Custom built websites", price: "From $1,599" },
+        { label: "Launch (single-page site)", price: "From $2,500" },
+        { label: "Business (up to 8 pages)", price: "From $4,500" },
+        { label: "E-commerce & custom builds", price: "From $7,500" },
         { label: "Hosting & maintenance", price: "$200/mo" }
       ],
-      note: "Single-page sites start at $1,599. Price increases with additional pages and functionality. Whether you want a custom-coded build, WordPress, or another builder, I can build and maintain it. Hosting includes 1 hour of monthly content edits and uptime monitoring.",
+      note: "Base rates assume you provide final copy and brand assets; copywriting and asset creation are scoped separately. Additional pages are $300 each, and larger commercial builds and integrations are quoted per project. Whether you want a custom-coded build, WordPress, or another builder, I can build and maintain it. Hosting includes 1 hour of monthly content edits and uptime monitoring.",
       featured: false
     },
     {
@@ -408,7 +410,7 @@ export default function Pricing() {
     {
       image: contentImg,
       title: "Content Creation",
-      description: "One content day per quarter. Get a library of curated photos and videos tailored to your goals—ready to use however you need.",
+      description: "One content day per quarter. Get a library of curated photos and videos tailored to your goals, ready to use however you need.",
       items: [
         { label: "Quarterly content package", price: "$1,700/qtr" }
       ],
@@ -464,13 +466,39 @@ export default function Pricing() {
     "itemListElement": [
       {
         "@type": "Offer",
-        "name": "Custom Built Website",
-        "description": "Custom websites starting at $1,599 for single-page sites, built on any platform, with pricing increasing for additional pages and functionality",
-        "price": "1599",
+        "name": "Launch Website (Single Page)",
+        "description": "Conversion-focused single-page websites starting at $2,500, built on any platform. Base rate assumes client-provided copy and brand assets.",
+        "price": "2500",
         "priceCurrency": "USD",
         "priceSpecification": {
           "@type": "UnitPriceSpecification",
-          "price": "1599",
+          "price": "2500",
+          "priceCurrency": "USD",
+          "unitText": "starting price"
+        }
+      },
+      {
+        "@type": "Offer",
+        "name": "Business Website (Up to 8 Pages)",
+        "description": "Full multi-page business websites starting at $4,500 with up to 8 pages included and additional pages at $300 each. Base rate assumes client-provided copy and brand assets.",
+        "price": "4500",
+        "priceCurrency": "USD",
+        "priceSpecification": {
+          "@type": "UnitPriceSpecification",
+          "price": "4500",
+          "priceCurrency": "USD",
+          "unitText": "starting price"
+        }
+      },
+      {
+        "@type": "Offer",
+        "name": "E-Commerce & Custom Website",
+        "description": "E-commerce stores and larger commercial builds starting at $7,500, with pricing scaling by catalog size, integrations, and functionality",
+        "price": "7500",
+        "priceCurrency": "USD",
+        "priceSpecification": {
+          "@type": "UnitPriceSpecification",
+          "price": "7500",
           "priceCurrency": "USD",
           "unitText": "starting price"
         }
@@ -554,9 +582,9 @@ export default function Pricing() {
     <div className="min-h-screen">
       <SEO
         title="Pricing - Affordable Marketing Services | Elevate Growth Solutions"
-        description="Transparent, affordable pricing for quality marketing services. Custom websites on any platform from $1,599, SEO from $750/month, and social media management tailored to your needs. No hidden fees. Get a free consultation today."
+        description="Transparent pricing for quality marketing services. Custom websites on any platform from $2,500, SEO from $750/month, and social media management tailored to your needs. No hidden fees. Get a free consultation today."
         ogTitle="Marketing Services Pricing | Quality Services, Honest Prices"
-        ogDescription="Custom websites starting at $1,599, built on any platform. SEO from $750/month. Social media management with custom pricing based on your goals. Transparent pricing with no surprises. Schedule your free consultation."
+        ogDescription="Custom websites starting at $2,500, built on any platform. SEO from $750/month. Social media management with custom pricing based on your goals. Transparent pricing with no surprises. Schedule your free consultation."
       />
       <SchemaMarkup type="service" data={serviceOfferSchema} />
       <Navbar />
@@ -582,7 +610,7 @@ export default function Pricing() {
             </div>
 
             <p className="font-serif text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-              Quality marketing shouldn't break the bank. All prices shown are starting points—your actual investment depends on your unique goals and scope.
+              Quality marketing shouldn't break the bank. All prices shown are starting points. Your actual investment depends on your unique goals and scope.
             </p>
           </div>
         </div>
@@ -609,7 +637,7 @@ export default function Pricing() {
             </h2>
             <div className="w-24 h-1 bg-gradient-to-r from-transparent via-primary to-transparent mx-auto rounded-full" />
             <p className="font-serif text-lg text-muted-foreground max-w-2xl mx-auto mt-6">
-              Get the clarity you need to move forward. These comprehensive audits deliver actionable insights—no ongoing commitment required.
+              Get the clarity you need to move forward. These comprehensive audits deliver actionable insights, with no ongoing commitment required.
             </p>
           </div>
 

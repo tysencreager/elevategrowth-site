@@ -22,7 +22,7 @@ export default function ContentCreation() {
       // Main content
       serviceName="Content Creation"
       serviceTagline="Professional Content Without the Hassle"
-      serviceDescription="Great marketing needs great content—but most business owners don't have time to plan photoshoots or create videos. Our quarterly content days give you a full library of professional, on-brand photos and videos you can use across social media, your website, email marketing, and anywhere else your brand shows up."
+      serviceDescription="Great marketing needs great content, but most business owners don't have time to plan photoshoots or create videos. Our quarterly content days give you a full library of professional, on-brand photos and videos you can use across social media, your website, email marketing, and anywhere else your brand shows up."
 
       // Features
       features={[
@@ -44,7 +44,7 @@ export default function ContentCreation() {
         },
         {
           title: "Full Usage Rights",
-          description: "Everything we create is yours to use however you want—website, social media, ads, print materials, you name it."
+          description: "Everything we create is yours to use however you want: website, social media, ads, print materials, you name it."
         },
         {
           title: "Strategic Shot List",
@@ -62,7 +62,7 @@ export default function ContentCreation() {
         {
           step: 2,
           title: "Content Day",
-          description: "The main event! I capture everything on the shot list—photos, videos, b-roll—in a single focused session at your location."
+          description: "The main event! I capture everything on the shot list (photos, videos, b-roll) in a single focused session at your location."
         },
         {
           step: 3,
@@ -85,7 +85,7 @@ export default function ContentCreation() {
         },
         {
           question: "Where does the content day take place?",
-          answer: "Usually at your business location—office, storefront, or wherever best represents your brand. We can also use studio space or outdoor locations if that better fits your needs."
+          answer: "Usually at your business location: office, storefront, or wherever best represents your brand. We can also use studio space or outdoor locations if that better fits your needs."
         },
         {
           question: "Can I request specific types of content?",
@@ -93,7 +93,7 @@ export default function ContentCreation() {
         },
         {
           question: "How is this different from hiring a photographer?",
-          answer: "I approach content creation from a marketing perspective, not just a photography one. Every shot is planned with your content strategy in mind—how you'll use it, where it will appear, and what message it communicates."
+          answer: "I approach content creation from a marketing perspective, not just a photography one. Every shot is planned with your content strategy in mind: how you'll use it, where it will appear, and what message it communicates."
         },
         {
           question: "What if I need content more often than quarterly?",

@@ -47,7 +47,7 @@ const highlights = [
   {
     icon: Award,
     title: "UX Design Certified",
-    description: "Certified in user experience design—interfaces that drive engagement and conversions."
+    description: "Certified in user experience design: interfaces that drive engagement and conversions."
   },
   {
     icon: TrendingUp,
@@ -64,7 +64,7 @@ export default function BehindElevate() {
     <div className="min-h-screen">
       <SEO
         title="Behind Elevate - Meet Tysen Creager | Elevate Growth Solutions"
-        description="Meet Tysen Creager, founder of Elevate Growth Solutions—a full-stack marketer with nearly a decade of experience in web design, SEO, and strategy."
+        description="Meet Tysen Creager, founder of Elevate Growth Solutions, a full-stack marketer with nearly a decade of experience in web design, SEO, and strategy."
         ogTitle="Meet the Founder - Tysen Creager, Marketing Strategist"
         ogDescription="Nearly a decade of experience helping businesses grow through strategic marketing and digital solutions. Certified marketing expert with proven results."
       />
@@ -155,14 +155,14 @@ export default function BehindElevate() {
                   className="font-serif font-light text-lg text-foreground leading-relaxed"
                   data-testid="text-bio-paragraph-2"
                 >
-                  Her experience spans the full spectrum: Tysen has designed websites and delivered marketing for large commercial companies as well as boutique brands—implementing successful lead generation flows and leading full-scale campaigns that deliver real results. Whether you're an established organization or a growing local brand, the standard is the same: enterprise-level quality with boutique attention.
+                  Her experience spans the full spectrum: Tysen has designed websites and delivered marketing for large commercial companies as well as boutique brands, implementing successful lead generation flows and leading full-scale campaigns that deliver real results. Whether you're an established organization or a growing local brand, the standard is the same: enterprise-level quality with boutique attention.
                 </p>
 
                 <p
                   className="font-serif font-light text-lg text-foreground leading-relaxed"
                   data-testid="text-bio-paragraph-3"
                 >
-                  With certifications in Digital Marketing and UX design, she understands all facets of attaining marketing success—everything from design and content creation to website building and SEO strategy, guided by a deep understanding of how to move customers from first impression to loyal customer. Her approach is down-to-earth, results-driven, and focused on making marketing feel less overwhelming and more aligned with your goals.
+                  With certifications in Digital Marketing and UX design, she understands all facets of attaining marketing success: everything from design and content creation to website building and SEO strategy, guided by a deep understanding of how to move customers from first impression to loyal customer. Her approach is down-to-earth, results-driven, and focused on making marketing feel less overwhelming and more aligned with your goals.
                 </p>
               </div>
             </motion.div>
@@ -170,7 +170,7 @@ export default function BehindElevate() {
         </div>
       </section>
 
-      {/* Experience highlights — slim editorial band */}
+      {/* Experience highlights: slim editorial band */}
       <section className="bg-muted border-y border-border py-14 md:py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-9">

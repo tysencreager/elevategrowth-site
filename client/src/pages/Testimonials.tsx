@@ -15,19 +15,19 @@ const whyChooseReasons = [
     icon: Gem,
     title: "Boutique Attention, Not a Ticket Number",
     description:
-      "As a boutique web design and marketing agency, we take on a limited number of clients so every project gets senior-level attention. You work directly with the strategist designing your website and running your marketing—never a rotating account team."
+      "As a boutique web design and marketing agency, we take on a limited number of clients so every project gets senior-level attention. You work directly with the strategist designing your website and running your marketing, never a rotating account team."
   },
   {
     icon: Layers,
     title: "Full-Stack Marketing Under One Roof",
     description:
-      "Web design, SEO, social media, and content creation—handled together, so your website and marketing pull in the same direction. One partner, one strategy, one consistent brand."
+      "Web design, SEO, social media, and content creation, handled together, so your website and marketing pull in the same direction. One partner, one strategy, one consistent brand."
   },
   {
     icon: Clock,
     title: "Efficient, On-Schedule Delivery",
     description:
-      "Custom website builds move quickly without cutting corners—mobile-responsive, fast-loading, and SEO-optimized from day one, on whatever platform fits your business best."
+      "Custom website builds move quickly without cutting corners: mobile-responsive, fast-loading, and SEO-optimized from day one, on whatever platform fits your business best."
   },
   {
     icon: Building2,
@@ -39,7 +39,7 @@ const whyChooseReasons = [
     icon: LineChart,
     title: "Built to Generate Leads",
     description:
-      "Beautiful is not enough. Every website we build is engineered for conversions—clear calls to action, strategic page structure, and search engine optimization that brings qualified traffic to your door."
+      "Beautiful is not enough. Every website we build is engineered for conversions: clear calls to action, strategic page structure, and search engine optimization that brings qualified traffic to your door."
   },
   {
     icon: HeartHandshake,
@@ -271,14 +271,14 @@ export default function Testimonials() {
     <div className="min-h-screen">
       <SEO
         title="Client Testimonials & Reviews | Elevate Growth Solutions"
-        description="Read what clients say about working with Elevate Growth Solutions—real reviews from businesses we've helped with web design, marketing, and SEO."
+        description="Read what clients say about working with Elevate Growth Solutions, real reviews from businesses we've helped with web design, marketing, and SEO."
         ogTitle="Client Testimonials - Elevate Growth Solutions"
         ogDescription="Discover why businesses trust Elevate Growth Solutions for their marketing needs. Read authentic reviews and success stories from our satisfied clients."
       />
 
       <Navbar />
 
-      {/* Hero Section — full-bleed image */}
+      {/* Hero Section: full-bleed image */}
       <section className="relative overflow-hidden min-h-[60vh] flex items-center pt-20">
         <img
           src={headerImage}
@@ -394,7 +394,7 @@ export default function Testimonials() {
             </h2>
             <div className="w-[72px] h-px bg-primary/45 mx-auto" aria-hidden="true" />
             <p className="font-serif italic font-light text-[17px] text-muted-foreground max-w-[640px] mx-auto mt-5">
-              The reviews above aren't luck—they're the result of how we work. Here's what businesses
+              The reviews above aren't luck. They're the result of how we work. Here's what businesses
               get when they partner with a boutique web design and full-stack marketing agency.
             </p>
           </motion.div>

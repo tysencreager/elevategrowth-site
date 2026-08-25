@@ -47,7 +47,7 @@ export default function WhyCustomCoded() {
     <div className="min-h-screen">
       <SEO
         title="Why Elevate Growth Solutions | Custom Websites on Any Platform"
-        description="Why businesses choose Elevate Growth Solutions for fast, high-performing websites—built and maintained on any platform, from custom code to WordPress."
+        description="Why businesses choose Elevate Growth Solutions for fast, high-performing websites, built and maintained on any platform, from custom code to WordPress."
         ogImage="https://www.elevategrowth.solutions/egs-social-sharing.png"
       />
       <Navbar />
@@ -62,7 +62,7 @@ export default function WhyCustomCoded() {
             initial="hidden"
             animate={isHeroInView ? "visible" : "hidden"}
           >
-            Websites Built to Perform—on Any Platform
+            Websites Built to Perform on Any Platform
           </motion.h1>
 
           <motion.p
@@ -72,7 +72,7 @@ export default function WhyCustomCoded() {
             initial="hidden"
             animate={isHeroInView ? "visible" : "hidden"}
           >
-            Your website isn't just a brochure—it's infrastructure. At Elevate Growth Solutions, we build and maintain high-performing websites on any platform—from fully custom code to WordPress and other builders. The result? Sites that load fast, rank higher, and are built to last.
+            Your website isn't just a brochure. It's infrastructure. At Elevate Growth Solutions, we build and maintain high-performing websites on any platform, from fully custom code to WordPress and other builders. The result? Sites that load fast, rank higher, and are built to last.
           </motion.p>
         </div>
       </section>
@@ -111,10 +111,10 @@ export default function WhyCustomCoded() {
             </h2>
             <div className="space-y-4 font-serif text-lg text-muted-foreground leading-relaxed">
               <p>
-                We meet you where you are. Want a fully custom-coded site for maximum speed and security? We build it. Prefer the flexibility of WordPress, Squarespace, Shopify, or another builder you can manage yourself? We build and maintain that too—and we can take over a site you already have.
+                We meet you where you are. Want a fully custom-coded site for maximum speed and security? We build it. Prefer the flexibility of WordPress, Squarespace, Shopify, or another builder you can manage yourself? We build and maintain that too, and we can take over a site you already have.
               </p>
               <p>
-                Whatever platform we use, the goal is the same: a fast, clean, conversion-focused website with no unnecessary bloat. We optimize every build—stripping out what slows it down and keeping only what helps your visitors take action.
+                Whatever platform we use, the goal is the same: a fast, clean, conversion-focused website with no unnecessary bloat. We optimize every build, stripping out what slows it down and keeping only what helps your visitors take action.
               </p>
             </div>
           </motion.div>
@@ -206,10 +206,10 @@ export default function WhyCustomCoded() {
             </div>
             <div className="space-y-4 font-serif text-lg text-muted-foreground leading-relaxed">
               <p>
-                Most sites that get hacked are running outdated software or weak passwords—and most owners don't have time to keep up with the constant cycle of security updates.
+                Most sites that get hacked are running outdated software or weak passwords, and most owners don't have time to keep up with the constant cycle of security updates.
               </p>
               <p>
-                When security is a top priority, we can build a hardened, custom-coded static site with no database, admin login, or plugins to exploit. And if you're on WordPress or another platform, we harden it, keep it updated, and monitor it—so your site stays protected either way.
+                When security is a top priority, we can build a hardened, custom-coded static site with no database, admin login, or plugins to exploit. And if you're on WordPress or another platform, we harden it, keep it updated, and monitor it so your site stays protected either way.
               </p>
             </div>
           </motion.div>
@@ -235,10 +235,10 @@ export default function WhyCustomCoded() {
             </div>
             <div className="space-y-4 font-serif text-lg text-muted-foreground leading-relaxed">
               <p>
-                Google now measures your site's user experience through Core Web Vitals—metrics like Largest Contentful Paint (LCP), Interaction to Next Paint (INP), and Cumulative Layout Shift (CLS). Sites that score poorly get ranked lower.
+                Google now measures your site's user experience through Core Web Vitals: metrics like Largest Contentful Paint (LCP), Interaction to Next Paint (INP), and Cumulative Layout Shift (CLS). Sites that score poorly get ranked lower.
               </p>
               <p>
-                The sites we build excel at these metrics because we control every element—trimming bloat, eliminating layout shifts, and keeping response times fast, no matter which platform we build on.
+                The sites we build excel at these metrics because we control every element, trimming bloat, eliminating layout shifts, and keeping response times fast, no matter which platform we build on.
               </p>
             </div>
           </motion.div>
@@ -264,10 +264,10 @@ export default function WhyCustomCoded() {
             </div>
             <div className="space-y-4 font-serif text-lg text-muted-foreground leading-relaxed">
               <p>
-                A cheap, do-it-yourself site can seem affordable upfront—until you factor in the hidden costs: premium plugins and add-ons, ongoing security monitoring, performance fixes, and the leads you lose to slow load times.
+                A cheap, do-it-yourself site can seem affordable upfront, until you factor in the hidden costs: premium plugins and add-ons, ongoing security monitoring, performance fixes, and the leads you lose to slow load times.
               </p>
               <p>
-                We build and maintain your site so it just works—year after year. One predictable monthly plan covers hosting, updates, and edits, with no surprise fees and no platform headaches landing on your desk.
+                We build and maintain your site so it just works, year after year. One predictable monthly plan covers hosting, updates, and edits, with no surprise fees and no platform headaches landing on your desk.
               </p>
             </div>
           </motion.div>
@@ -292,7 +292,7 @@ export default function WhyCustomCoded() {
               </h2>
             </div>
             <p className="font-serif text-lg text-muted-foreground leading-relaxed">
-              Whether you're a contractor in St. George, a tech startup in Silicon Slopes, or a professional service firm in Ogden, your website needs to compete locally and load fast on Utah's mobile networks. We build sites optimized for your specific market—with local SEO baked in from the start.
+              Whether you're a contractor in St. George, a tech startup in Silicon Slopes, or a professional service firm in Ogden, your website needs to compete locally and load fast on Utah's mobile networks. We build sites optimized for your specific market, with local SEO baked in from the start.
             </p>
           </motion.div>
         </div>
@@ -316,7 +316,7 @@ export default function WhyCustomCoded() {
               </h2>
             </div>
             <p className="font-serif text-lg text-muted-foreground leading-relaxed">
-              Because we focus on exactly what you need—on whatever platform fits you best—we move fast without cutting corners, and you'll always know your timeline before we start.
+              Because we focus on exactly what you need, on whatever platform fits you best, we move fast without cutting corners, and you'll always know your timeline before we start.
             </p>
           </motion.div>
         </div>
@@ -348,7 +348,7 @@ export default function WhyCustomCoded() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="font-serif text-xl md:text-2xl text-white/90 mb-10 max-w-2xl mx-auto leading-relaxed"
           >
-            Let's talk about what a custom website can do for your business. No obligation, no pressure—just a conversation about your goals.
+            Let's talk about what a custom website can do for your business. No obligation, no pressure, just a conversation about your goals.
           </motion.p>
 
           <motion.div

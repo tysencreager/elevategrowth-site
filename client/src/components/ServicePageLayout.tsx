@@ -41,7 +41,7 @@ interface ServicePageLayoutProps {
     description: string;
   }[];
 
-  // Pricing (optional — omit to hide the pricing section entirely)
+  // Pricing (optional: omit to hide the pricing section entirely)
   pricing?: PricingTier[];
   pricingSubtitle?: string;
 

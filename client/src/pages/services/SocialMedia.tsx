@@ -57,7 +57,7 @@ export default function SocialMedia() {
         {
           step: 1,
           title: "Brand Deep-Dive",
-          description: "I learn your brand inside and out—your voice, values, audience, and goals. This ensures every piece of content feels authentically you."
+          description: "I learn your brand inside and out: your voice, values, audience, and goals. This ensures every piece of content feels authentically you."
         },
         {
           step: 2,
@@ -81,7 +81,7 @@ export default function SocialMedia() {
       faqs={[
         {
           question: "Which platforms do you manage?",
-          answer: "I primarily work with Instagram, Facebook, and LinkedIn—the platforms where most businesses see the best ROI. If you need other platforms, we can discuss what makes sense for your audience."
+          answer: "I primarily work with Instagram, Facebook, and LinkedIn, the platforms where most businesses see the best ROI. If you need other platforms, we can discuss what makes sense for your audience."
         },
         {
           question: "Will the content sound like me?",
@@ -97,7 +97,7 @@ export default function SocialMedia() {
         },
         {
           question: "Do you run ads?",
-          answer: "No—social media management focuses on organic content and community building. We don't offer paid ad management, but we're happy to point you toward a trusted partner if paid ads are part of your plan."
+          answer: "No. Social media management focuses on organic content and community building. We don't offer paid ad management, but we're happy to point you toward a trusted partner if paid ads are part of your plan."
         },
         {
           question: "How involved do I need to be?",

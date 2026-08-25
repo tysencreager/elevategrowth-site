@@ -12,7 +12,7 @@ const blogSchemaData = {
   "@context": "https://schema.org",
   "@type": "Blog",
   "name": "Elevate Growth Solutions Blog",
-  "description": "Marketing tips, web design insights, and business growth strategies for businesses of all sizes—from startups to established companies.",
+  "description": "Marketing tips, web design insights, and business growth strategies for businesses of all sizes, from startups to established companies.",
   "url": "https://www.elevategrowth.solutions/blog",
   "publisher": {
     "@type": "Organization",
@@ -41,7 +41,7 @@ export default function Blog() {
     <div className="min-h-screen">
       <SEO
         title="Marketing Blog & SEO Tips | Elevate Growth Solutions"
-        description="Expert marketing insights, web design tips, and SEO strategies for growing businesses—actionable advice from Elevate Growth Solutions."
+        description="Expert marketing insights, web design tips, and SEO strategies for growing businesses: actionable advice from Elevate Growth Solutions."
         ogTitle="Marketing Blog for Growing Businesses | Elevate Growth Solutions"
         ogDescription="Expert marketing tips, web design insights, and SEO strategies to help businesses of all sizes grow online."
       />

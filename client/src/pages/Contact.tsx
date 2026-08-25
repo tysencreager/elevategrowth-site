@@ -34,7 +34,7 @@ const expectations = [
   {
     icon: Clock,
     title: "Response Within 24 Hours",
-    description: "Your message never sits in a queue—expect a personal reply within one business day."
+    description: "Your message never sits in a queue. Expect a personal reply within one business day."
   },
   {
     icon: PhoneCall,
@@ -44,12 +44,12 @@ const expectations = [
   {
     icon: FileText,
     title: "Custom Proposal",
-    description: "You'll get a tailored plan built around your business—not a one-size-fits-all package."
+    description: "You'll get a tailored plan built around your business, not a one-size-fits-all package."
   },
   {
     icon: ShieldCheck,
     title: "No Pressure, No Obligations",
-    description: "Take your time. There's never a hard sell—just honest recommendations."
+    description: "Take your time. There's never a hard sell, just honest recommendations."
   }
 ];
 
@@ -315,7 +315,7 @@ export default function Contact() {
                           onChange={handleChange}
                           placeholder={
                             formData.referral === "referral"
-                              ? "Their name — we'd love to thank them!"
+                              ? "Their name (we'd love to thank them!)"
                               : "How did you find us?"
                           }
                           className="font-serif"
@@ -381,7 +381,7 @@ export default function Contact() {
                   <div className="relative overflow-hidden w-full min-h-[300px] sm:min-h-[380px]">
                     <img
                       src={contactSideImage}
-                      alt="Reaching out on a phone—let's start the conversation"
+                      alt="Reaching out on a phone to start the conversation"
                       loading="lazy"
                       decoding="async"
                       className="absolute inset-0 w-full h-full object-cover grayscale contrast-[1.04]"

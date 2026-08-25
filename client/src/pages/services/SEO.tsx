@@ -21,7 +21,7 @@ export default function SEO() {
       // Main content
       serviceName="Search Optimization"
       serviceTagline="Dominate Local Search Results"
-      serviceDescription="When potential customers search for services like yours, you need to show up. SEO isn't about gaming the system—it's about making sure Google understands what you do, who you serve, and why you're the best choice. I focus on sustainable, white-hat strategies that build long-term visibility."
+      serviceDescription="When potential customers search for services like yours, you need to show up. SEO isn't about gaming the system. It's about making sure Google understands what you do, who you serve, and why you're the best choice. I focus on sustainable, white-hat strategies that build long-term visibility."
 
       // Features
       features={[
@@ -70,7 +70,7 @@ export default function SEO() {
         {
           step: 3,
           title: "Implementation",
-          description: "Execute the strategy—optimizing your GBP, improving on-page elements, building citations, and addressing technical issues."
+          description: "Execute the strategy: optimizing your GBP, improving on-page elements, building citations, and addressing technical issues."
         },
         {
           step: 4,
@@ -88,7 +88,7 @@ export default function SEO() {
         },
         {
           question: "Do you guarantee first page rankings?",
-          answer: "No reputable SEO professional can guarantee specific rankings—anyone who promises that is likely using risky tactics. I focus on sustainable growth and improving your overall visibility."
+          answer: "No reputable SEO professional can guarantee specific rankings. Anyone who promises that is likely using risky tactics. I focus on sustainable growth and improving your overall visibility."
         },
         {
           question: "What's the difference between local SEO and regular SEO?",

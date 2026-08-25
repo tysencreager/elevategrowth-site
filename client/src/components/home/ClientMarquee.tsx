@@ -16,7 +16,8 @@ const clientNames = [
   "J Penn Planning",
   "Gardner Energy",
   "The Cheministry Network",
-  "Divine Money Mastery"
+  "Divine Money Mastery",
+  "Kleen Slate"
 ];
 
 const rowA = clientNames.filter((_, i) => i % 2 === 0);

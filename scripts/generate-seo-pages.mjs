@@ -42,7 +42,7 @@ const routes = [
     path: "/services",
     title: "Marketing Services | Elevate Growth Solutions",
     description:
-      "Full-stack marketing services: strategy, web design, SEO, social media, and content creation—built to help your business grow.",
+      "Full-stack marketing services: strategy, web design, SEO, social media, and content creation, all built to help your business grow.",
     ogTitle: "Professional Marketing Services That Drive Results",
     ogDescription:
       "From strategy to execution - discover our full range of marketing services including web design, SEO, social media, and more. Tailored solutions for growing businesses.",
@@ -51,10 +51,10 @@ const routes = [
     path: "/services/websites",
     title: "Website Design & Development | Elevate Growth Solutions",
     description:
-      "Custom websites built in days, not months—on any platform you choose. Fast, mobile-first design optimized for conversions. Starting at $1,599.",
+      "Custom websites built in days, not months, on any platform you choose. Fast, mobile-first design optimized for conversions. Starting at $2,500.",
     ogTitle: "Custom Website Design & Development Services",
     ogDescription:
-      "Professional websites that convert visitors into customers. Fast-loading, mobile-responsive, and SEO-optimized—built or maintained on any platform. Starting at $1,599.",
+      "Professional websites that convert visitors into customers. Fast-loading, mobile-responsive, and SEO-optimized, built or maintained on any platform. Starting at $2,500.",
   },
   {
     path: "/services/seo",
@@ -97,7 +97,7 @@ const routes = [
     path: "/behind-elevate",
     title: "Behind Elevate - Meet Tysen Creager | Elevate Growth Solutions",
     description:
-      "Meet Tysen Creager, founder of Elevate Growth Solutions—a full-stack marketer with nearly a decade of experience in web design, SEO, and strategy.",
+      "Meet Tysen Creager, founder of Elevate Growth Solutions, a full-stack marketer with nearly a decade of experience in web design, SEO, and strategy.",
     ogTitle: "Meet the Founder - Tysen Creager, Marketing Strategist",
     ogDescription:
       "Nearly a decade of experience helping businesses grow through strategic marketing and digital solutions. Certified marketing expert with proven results.",
@@ -139,13 +139,13 @@ const routes = [
     title:
       "Salt Lake City Marketing Agency | Elevate Growth Solutions",
     description:
-      "Performance-focused web design and marketing for Salt Lake City startups and growing businesses—custom websites that convert paid traffic and scale with you.",
+      "Performance-focused web design and marketing for Salt Lake City startups and growing businesses: custom websites that convert paid traffic and scale with you.",
   },
   {
     path: "/blog",
     title: "Marketing Blog & SEO Tips | Elevate Growth Solutions",
     description:
-      "Expert marketing insights, web design tips, and SEO strategies for growing businesses—actionable advice from Elevate Growth Solutions.",
+      "Expert marketing insights, web design tips, and SEO strategies for growing businesses, with actionable advice from Elevate Growth Solutions.",
     ogTitle:
       "Marketing Blog for Growing Businesses | Elevate Growth Solutions",
     ogDescription:
@@ -155,7 +155,7 @@ const routes = [
     path: "/portfolio",
     title: "Website Design Portfolio | Elevate Growth Solutions",
     description:
-      "Browse custom websites we’ve built for law firms, contractors, home services, e-commerce, beauty, and more—on any platform, in Utah and nationwide.",
+      "Browse custom websites we’ve built for law firms, contractors, home services, e-commerce, beauty, and more, on any platform, in Utah and nationwide.",
     ogTitle: "Website Portfolio - Elevate Growth Solutions",
     ogDescription:
       "Custom, mobile-responsive, SEO-optimized websites for businesses of all sizes, built on any platform. See our work across 8+ industries including legal, construction, beauty, and e-commerce.",
@@ -164,7 +164,7 @@ const routes = [
     path: "/testimonials",
     title: "Client Testimonials & Reviews | Elevate Growth Solutions",
     description:
-      "Read what clients say about working with Elevate Growth Solutions—real reviews from businesses we’ve helped with web design, marketing, and SEO.",
+      "Read what clients say about working with Elevate Growth Solutions: real reviews from businesses we’ve helped with web design, marketing, and SEO.",
     ogTitle: "Client Testimonials - Elevate Growth Solutions",
     ogDescription:
       "Discover why businesses trust Elevate Growth Solutions for their marketing needs. Read authentic reviews and success stories from our satisfied clients.",
@@ -174,20 +174,20 @@ const routes = [
     title:
       "Why Elevate Growth Solutions | Custom Websites on Any Platform",
     description:
-      "Why businesses choose Elevate Growth Solutions for fast, high-performing websites—built and maintained on any platform, from custom code to WordPress.",
+      "Why businesses choose Elevate Growth Solutions for fast, high-performing websites, built and maintained on any platform, from custom code to WordPress.",
   },
   {
     path: "/website-handoff-options",
     title: "Website Handoff Options | Elevate Growth Solutions",
     description:
-      "What happens after your site is built? Explore your options: ongoing support, CMS integration, or full handover—on custom code, WordPress, or any builder.",
+      "What happens after your site is built? Explore your options: ongoing support, CMS integration, or full handover, on custom code, WordPress, or any builder.",
   },
   {
     path: "/st-george-web-design",
     title:
       "St. George Web Design & Marketing | Elevate Growth Solutions",
     description:
-      "Custom web design, SEO, and marketing for St. George and Washington County businesses—contractors, real estate, and service companies that need to keep up.",
+      "Custom web design, SEO, and marketing for St. George and Washington County businesses: contractors, real estate, and service companies that need to keep up.",
   },
   {
     path: "/ogden-web-design",
@@ -203,7 +203,7 @@ const homeRoute = {
   title:
     "Web Design & Full-Stack Marketing | Elevate Growth Solutions",
   description:
-    "Boutique web design and full-stack marketing agency. Custom websites on any platform, plus SEO, social media, and content creation—in Salt Lake City and nationwide.",
+    "Boutique web design and full-stack marketing agency. Custom websites on any platform, plus SEO, social media, and content creation, serving Salt Lake City and nationwide.",
   ogTitle:
     "Web Design & Full-Stack Marketing for Growing Businesses | Elevate Growth Solutions",
   ogDescription:

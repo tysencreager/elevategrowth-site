@@ -6,7 +6,7 @@ import julianImg from "@assets/portfolio-juliandismute.webp";
 import bodyshopImg from "@assets/portfolio-bodyshopgym.webp";
 import energizeImg from "@assets/portfolio-energizeyourvibe.webp";
 import dialinImg from "@assets/portfolio-dialinconstruction.webp";
-import beautymarkdImg from "@assets/portfolio-beautymarkd.webp";
+import kleenslateImg from "@assets/portfolio-kleenslate.webp";
 import lexlegalImg from "@assets/portfolio-lexlegal.webp";
 
 interface Work {
@@ -22,13 +22,7 @@ const works: Work[] = [
   { title: "The Body Shop Gym", image: bodyshopImg, href: "https://thebodyshopgym.com/" },
   { title: "Energize Your Vibe", image: energizeImg, href: "https://www.energizeyourvibe.com/" },
   { title: "Dial-In Construction", image: dialinImg, href: "https://dial-inconstruction.com/" },
-  {
-    title: "Beautymark'd",
-    image: beautymarkdImg,
-    href: "https://beautymarkd-landingpage.pages.dev/",
-    badge: "Ad · Landing Page",
-    cta: "Ad · Landing Page"
-  },
+  { title: "Kleen Slate", image: kleenslateImg, href: "https://www.kleenslate.info/" },
   { title: "Lex Legal", image: lexlegalImg, href: "https://lexlegallaw.com/" }
 ];
 
@@ -43,7 +37,7 @@ export default function SelectedWorks() {
               Websites that <em className="italic text-primary">earn their keep.</em>
             </>
           }
-          lede="A few favorites from a much longer list—each one designed, built, and still growing."
+          lede="A few favorites from a much longer list. Each one designed, built, and still growing."
         />
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
           {works.map((work, index) => (

@@ -87,12 +87,12 @@ export default function InquirySection() {
             </h2>
             <p className="font-serif font-light text-[15px] text-muted-foreground max-w-[52ch]">
               Share a few details and we'll reply within one business day to schedule a 20-minute
-              discovery call—no pressure, no obligation.
+              discovery call. No pressure, no obligation.
             </p>
             <ul className="mt-6 flex flex-col gap-3.5">
               {[
                 "We review your goals and current site before we ever get on a call.",
-                "On the call, you get honest direction—whether or not we work together.",
+                "On the call, you get honest direction, whether or not we work together.",
                 "You receive a tailored proposal with a clear scope, timeline, and investment."
               ].map((step, i) => (
                 <li key={i} className="flex gap-3.5 items-baseline font-serif font-light text-[14.5px] text-muted-foreground">

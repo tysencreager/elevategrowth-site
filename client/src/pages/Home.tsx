@@ -41,7 +41,7 @@ export default function Home() {
     <div className="min-h-screen">
       <SEO
         title="Web Design & Full-Stack Marketing | Elevate Growth Solutions"
-        description="Boutique web design and full-stack marketing agency. Custom websites on any platform, plus SEO, social media, and content creation—in Salt Lake City and nationwide."
+        description="Boutique web design and full-stack marketing agency. Custom websites on any platform, plus SEO, social media, and content creation. Serving Salt Lake City and nationwide."
         ogTitle="Web Design & Full-Stack Marketing for Growing Businesses | Elevate Growth Solutions"
         ogDescription="Custom websites built and maintained on any platform. Boutique marketing agency providing web design, SEO, social media management, and content creation for businesses of all sizes, nationwide."
       />
@@ -69,7 +69,7 @@ export default function Home() {
           {
             quote:
               "Working with Tysen was seamless from start to finish. She quickly understood the vision for my brand and delivered thoughtful, strategic designs that aligned perfectly with my marketing goals.",
-            author: "Cassidy — Loan Officer"
+            author: "Cassidy – Loan Officer"
           },
           {
             quote:

@@ -89,7 +89,7 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
         subject: "Welcome to Elevate Growth Solutions!",
         textContent: `Hello and welcome to the Elevate Growth Solutions Family!
 
-Thank you so much for subscribing to Elevate Growth Solutions — we're thrilled to have you join our community of growing businesses.
+Thank you so much for subscribing to Elevate Growth Solutions. We're thrilled to have you join our community of growing businesses.
 
 At Elevate Growth Solutions, we're a boutique full-stack marketing agency dedicated to helping growing businesses like yours succeed. We specialize in custom web design, full-stack marketing management, SEO, social media strategy, paid advertising, branding, and content creation.
 
@@ -112,7 +112,7 @@ Elevate Growth Solutions`,
 <body style="font-family: Georgia, 'Times New Roman', serif; line-height: 1.6; color: #333; max-width: 600px; margin: 0 auto; padding: 20px;">
   <p>Hello and welcome to the Elevate Growth Solutions Family!</p>
 
-  <p>Thank you so much for subscribing to Elevate Growth Solutions— we're thrilled to have you join our community of growing businesses.</p>
+  <p>Thank you so much for subscribing to Elevate Growth Solutions. We're thrilled to have you join our community of growing businesses.</p>
 
   <p>I wanted to personally welcome you and share what we're all about. At Elevate Growth Solutions, we're a boutique full-stack marketing agency dedicated to helping growing businesses like yours succeed. Unlike big agencies where you're just a number, we treat every client like our own; giving you the personalized attention and strategic expertise your business deserves.</p>
 
@@ -129,7 +129,7 @@ Elevate Growth Solutions`,
 
   <p><strong>Ready to get started?</strong> <a href="https://calendly.com/tysencreager/30minutes" style="color: #0066cc;">Book Your Discovery Call Today</a></p>
 
-  <p>During our free consultation, we'll discuss your goals, challenges, and vision for your brand— no pressure, no obligations. Just a genuine conversation about how we can help you succeed.</p>
+  <p>During our free consultation, we'll discuss your goals, challenges, and vision for your brand. No pressure, no obligations. Just a genuine conversation about how we can help you succeed.</p>
 
   <p>Looking forward to connecting with you!</p>
 
