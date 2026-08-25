@@ -5,16 +5,48 @@ import { useRef } from "react";
 import { ExternalLink, Smartphone, Search, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import sectionBand from "@assets/band-websites.webp";
+import kleenslateImg from "@assets/portfolio-kleenslate.webp";
+import lexlegalImg from "@assets/portfolio-lexlegal.webp";
+import bodyshopImg from "@assets/portfolio-bodyshopgym.webp";
+import energizeImg from "@assets/portfolio-energizeyourvibe.webp";
+import macmeadowImg from "@assets/portfolio-macmeadow.webp";
 
 // Portfolio project data with SEO-friendly descriptions
 const portfolioProjects = [
   {
-    name: "J Penn Planning",
-    description: "Event planning and connection coaching website. Empowering connection through experience, story, and soul.",
-    fullDescription: "Custom website design for J Penn Planning, an event planning and connection coaching business based in Utah",
-    tags: ["Event Planning", "Coaching", "Design"],
-    url: "https://jpennplanning.com",
-    image: "https://i.postimg.cc/R0ssqYxY/jpennplanning_screenshot.png",
+    name: "Kleen Slate",
+    description: "Luxury house cleaning website for a Utah County cleaning company. Elegant, editorial design with service and pricing pages and free in-home bid requests.",
+    fullDescription: "Custom website design for Kleen Slate, a luxury house cleaning company serving Utah County",
+    tags: ["Cleaning Services", "Local Business", "Web Design"],
+    url: "https://www.kleenslate.info",
+    image: kleenslateImg,
+    active: true
+  },
+  {
+    name: "Lex Legal",
+    description: "Professional law firm website for a practice licensed in Utah and California. Practice area pages, attorney profiles, and consultation scheduling.",
+    fullDescription: "Law firm website design for Lex Legal, a practice licensed in Utah and California",
+    tags: ["Legal", "Professional Services", "Web Design"],
+    url: "https://lexlegallaw.com",
+    image: lexlegalImg,
+    active: true
+  },
+  {
+    name: "The Body Shop Gym",
+    description: "Bold, street-inspired website for a family-owned gym in Willard, Utah. Membership signup, personal training, and nutrition services.",
+    fullDescription: "Gym website design for The Body Shop Gym, a family-owned gym in Willard, Utah",
+    tags: ["Fitness", "Membership", "Web Design"],
+    url: "https://thebodyshopgym.com",
+    image: bodyshopImg,
+    active: true
+  },
+  {
+    name: "Energize Your Vibe",
+    description: "Vibrant community platform for a women's connection and lifestyle brand. Membership signup, events, and a design as high-energy as the community it serves.",
+    fullDescription: "Community platform website design for Energize Your Vibe, a women's connection and lifestyle brand",
+    tags: ["Community", "Membership", "Web Design"],
+    url: "https://www.energizeyourvibe.com",
+    image: energizeImg,
     active: true
   },
   {
@@ -22,27 +54,9 @@ const portfolioProjects = [
     description: "Natural skincare e-commerce website featuring Wagyu tallow cream products. Holistic, nourishing, and healing skincare with a warm, organic aesthetic.",
     fullDescription: "E-commerce website design for Mac & Meadow Co., a natural Wagyu tallow skincare brand",
     tags: ["E-commerce", "Skincare", "Web Design"],
-    url: "https://macandmeadow.co",
-    image: "https://i.postimg.cc/66Gj5zjg/M_M_header.png",
+    url: "https://www.macandmeadowco.com",
+    image: macmeadowImg,
     active: true
-  },
-  {
-    name: "So Crystal Designs",
-    description: "Fashion designer portfolio & booking platform. Showcasing universal style, personal styling services, and custom creations.",
-    fullDescription: "Portfolio and booking website for So Crystal Designs, a fashion designer and personal stylist",
-    tags: ["Fashion", "Booking System", "Portfolio"],
-    url: "https://socrystaldesigns.com",
-    image: "https://i.postimg.cc/5tNK4VDW/socrystaldesigns_screenshot.png",
-    active: true
-  },
-  {
-    name: "Pay It Forward Flooring",
-    description: "A comprehensive retail platform featuring a multi-page product catalog, financing integration, and a community foundation blog.",
-    fullDescription: "Retail website with product catalog for Pay It Forward Flooring company",
-    tags: ["Retail Platform", "Multi-page App", "Archived"],
-    url: null,
-    image: "https://i.postimg.cc/prDJQG3L/PIFF_header3.png",
-    active: false
   }
 ];
 
@@ -216,79 +230,6 @@ function PortfolioSection() {
           ))}
         </div>
 
-        {/* Real Estate Preview Panel */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="mb-10 sm:mb-12"
-        >
-          <div className="text-center mb-6 sm:mb-8">
-            <span className="inline-block font-sans text-xs sm:text-sm font-medium text-primary bg-primary/10 px-3 py-1.5 sm:px-4 sm:py-2 rounded-full mb-3 sm:mb-4">
-              Real Estate Agents
-            </span>
-            <h3 className="font-display font-bold text-xl sm:text-2xl md:text-3xl text-foreground mb-2 sm:mb-3">
-              Websites Built for Realtors
-            </h3>
-            <p className="font-serif text-muted-foreground max-w-xl mx-auto text-sm sm:text-base">
-              I can customize any site to fit your brand. This is just a taste of what I can do for real estate professionals.
-            </p>
-          </div>
-
-          <motion.a
-            href="https://realestate.elevategrowth.solutions/"
-            target="_blank"
-            rel="noopener noreferrer"
-            whileHover={{ y: -8, transition: { duration: 0.3 } }}
-            className="block group max-w-4xl mx-auto focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded-2xl"
-            aria-label="Explore real estate website templates (opens in new tab)"
-            title="Browse real estate website design templates"
-          >
-            <div className="relative bg-card rounded-xl sm:rounded-2xl overflow-hidden border-2 border-border hover:border-primary/50 hover:shadow-xl hover:shadow-primary/10 transition-all duration-300">
-              {/* Preview Image */}
-              <div className="relative aspect-[16/9] overflow-hidden">
-                <img
-                  src="https://i.postimg.cc/nhwBmfMv/real-estate-preview-panel-screenshot.png"
-                  alt="Real estate website template preview panel showing multiple design options for realtors"
-                  loading="lazy"
-                  decoding="async"
-                  className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
-                />
-                {/* Overlay - visible on mobile */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-100 sm:opacity-0 sm:group-hover:opacity-100 transition-opacity duration-300" />
-
-                {/* CTA overlay */}
-                <div className="absolute inset-0 flex items-end sm:items-center justify-center pb-4 sm:pb-0 opacity-100 sm:opacity-0 sm:group-hover:opacity-100 transition-opacity duration-300">
-                  <div className="bg-primary text-white px-4 py-2 sm:px-6 sm:py-3 rounded-lg font-sans font-semibold text-sm sm:text-base flex items-center gap-2 shadow-xl">
-                    Explore Real Estate Templates
-                    <ExternalLink className="w-4 h-4 sm:w-5 sm:h-5" aria-hidden="true" />
-                  </div>
-                </div>
-              </div>
-
-              {/* Widget Footer */}
-              <div className="p-4 sm:p-6 bg-gradient-to-r from-primary/5 to-transparent">
-                <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 sm:gap-4">
-                  <div>
-                    <h4 className="font-display font-semibold text-base sm:text-lg text-foreground mb-0.5 sm:mb-1">
-                      Real Estate Website Preview Panel
-                    </h4>
-                    <p className="font-serif text-xs sm:text-sm text-muted-foreground">
-                      Browse different styles and find the perfect fit for your real estate business
-                    </p>
-                  </div>
-                  <div className="flex items-center text-primary font-sans font-medium text-sm sm:text-base">
-                    <span className="sm:hidden">Tap to view</span>
-                    <span className="hidden sm:inline">View Templates</span>
-                    <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </motion.a>
-        </motion.div>
-
         {/* Marketing Portfolio Link */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -372,6 +313,9 @@ export default function Websites() {
 
       // Portfolio section before process
       beforeProcess={<PortfolioSection />}
+
+      // Show pricing right after the portfolio section instead of after the process steps
+      pricingEarly
 
       // Process
       process={[

@@ -44,6 +44,8 @@ interface ServicePageLayoutProps {
   // Pricing (optional: omit to hide the pricing section entirely)
   pricing?: PricingTier[];
   pricingSubtitle?: string;
+  // Render the pricing section right after beforeProcess instead of after the process steps
+  pricingEarly?: boolean;
 
   // Optional full-width editorial image band (rendered after the overview)
   sectionImage?: string;
@@ -161,6 +163,7 @@ export default function ServicePageLayout({
   features,
   pricing,
   pricingSubtitle = "Transparent pricing with no hidden fees. Choose the option that fits your needs.",
+  pricingEarly = false,
   sectionImage,
   sectionImageAlt = "",
   process,
@@ -224,6 +227,43 @@ export default function ServicePageLayout({
       }
     }))
   } : null;
+
+  const pricingSection =
+    pricing && pricing.length > 0 ? (
+      <section
+        className="py-10 sm:py-12 md:py-16 bg-background"
+        aria-labelledby="pricing-heading"
+      >
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-8 sm:mb-12"
+          >
+            <h2
+              id="pricing-heading"
+              className="font-display font-medium text-2xl sm:text-3xl md:text-4xl text-foreground mb-3 sm:mb-4"
+            >
+              Pricing
+            </h2>
+            <div className="w-16 h-px bg-primary/50 mx-auto mb-4 sm:mb-6" />
+            {pricingSubtitle && (
+              <p className="font-serif text-sm sm:text-base text-muted-foreground max-w-2xl mx-auto">
+                {pricingSubtitle}
+              </p>
+            )}
+          </motion.div>
+
+          <div className={`grid gap-4 sm:gap-6 md:gap-8 ${pricing.length === 1 ? 'max-w-md mx-auto' : pricing.length === 2 ? 'sm:grid-cols-2 max-w-3xl mx-auto' : 'sm:grid-cols-2 lg:grid-cols-3'}`}>
+            {pricing.map((tier, index) => (
+              <PricingCard key={index} tier={tier} index={index} />
+            ))}
+          </div>
+        </div>
+      </section>
+    ) : null;
 
   return (
     <div className="min-h-screen">
@@ -359,6 +399,9 @@ export default function ServicePageLayout({
       {/* Custom content before process (portfolio, etc.) */}
       {beforeProcess}
 
+      {/* Pricing shown early (right after the custom content) when requested */}
+      {pricingEarly && pricingSection}
+
       {/* Process Steps (if provided) */}
       {process && process.length > 0 && (
         <section
@@ -427,42 +470,8 @@ export default function ServicePageLayout({
         </section>
       )}
 
-      {/* Pricing (only when provided) */}
-      {pricing && pricing.length > 0 && (
-        <section
-          className="py-10 sm:py-12 md:py-16 bg-background"
-          aria-labelledby="pricing-heading"
-        >
-          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="text-center mb-8 sm:mb-12"
-            >
-              <h2
-                id="pricing-heading"
-                className="font-display font-medium text-2xl sm:text-3xl md:text-4xl text-foreground mb-3 sm:mb-4"
-              >
-                Pricing
-              </h2>
-              <div className="w-16 h-px bg-primary/50 mx-auto mb-4 sm:mb-6" />
-              {pricingSubtitle && (
-                <p className="font-serif text-sm sm:text-base text-muted-foreground max-w-2xl mx-auto">
-                  {pricingSubtitle}
-                </p>
-              )}
-            </motion.div>
-
-            <div className={`grid gap-4 sm:gap-6 md:gap-8 ${pricing.length === 1 ? 'max-w-md mx-auto' : pricing.length === 2 ? 'sm:grid-cols-2 max-w-3xl mx-auto' : 'sm:grid-cols-2 lg:grid-cols-3'}`}>
-              {pricing.map((tier, index) => (
-                <PricingCard key={index} tier={tier} index={index} />
-              ))}
-            </div>
-          </div>
-        </section>
-      )}
+      {/* Pricing in its default position (after the process steps) */}
+      {!pricingEarly && pricingSection}
 
       {/* FAQs (if provided) */}
       {faqs && faqs.length > 0 && (
