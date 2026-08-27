@@ -16,6 +16,108 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "how-much-does-local-seo-cost",
+    title: "How Much Does Local SEO Cost in 2026? Real Prices, No Guesswork",
+    excerpt: "Local SEO costs anywhere from $300 to $5,000+ per month in 2026. Here's what actually drives the price, what you should get at each level, and how to avoid paying for smoke and mirrors.",
+    content: `
+If you've asked around for local SEO quotes, you've probably heard everything from "$99 a month, guaranteed rankings" to "$4,000 a month, six-month contract, trust us." Both of those should make you nervous. Here's an honest breakdown of what local SEO really costs in 2026, what the money actually buys, and how to tell a fair quote from a bad one.
+
+## The quick answer
+
+Most small businesses pay **$300–$1,500 per month** for local SEO in 2026. Freelancers sit at the lower end, boutique agencies in the middle, and large agencies charge $1,500–$5,000+. One-time audits and cleanup projects typically run $400–$1,500. Expect 3-6 months before rankings and calls move meaningfully.
+
+## What does local SEO actually include?
+
+Local SEO is everything that helps you show up when nearby customers search for what you do: Google Business Profile optimization, local citations (consistent listings across directories), reviews strategy, location-focused pages on your website, technical fixes, and content that answers what your customers actually search for. If a quote can't name these deliverables, you're not buying local SEO. You're buying a monthly invoice.
+
+## How much does local SEO cost per month?
+
+| Option | Typical monthly cost | Best for |
+|---|---|---|
+| **DIY** (your time + tools) | $0–$100 | Very early stage, tight budgets |
+| **Freelancer** | $300–$800 | Single location, simple market |
+| **Boutique agency** | $500–$1,500 | Businesses that want it done right |
+| **Large agency** | $1,500–$5,000+ | Multi-location, competitive industries |
+
+For reference, our own pricing at Elevate Growth Solutions is **$750/month per location** for [local SEO](/pricing), and that includes Google Business Profile optimization, local citations, backlink outreach, technical SEO, keyword strategy, and monthly reporting. We ask for a 3-month minimum commitment because that's honestly how long the work takes to show up in rankings. We also offer a one-time [Strategic Growth Audit](/pricing) for $500 if you want a roadmap before committing to monthly work.
+
+## Why is there such a big price range?
+
+Because "local SEO" describes wildly different amounts of work depending on your situation. Four things drive the price more than anything else:
+
+### 1. How competitive your market is
+
+Ranking a plumber in a town of 8,000 people is a different job than ranking a personal injury attorney in Salt Lake City. More competition means more content, more link building, and more months of sustained effort. Pricing follows.
+
+### 2. How many locations you have
+
+Nearly every credible provider prices per location, because each one needs its own Google Business Profile management, its own citations, its own location page, and its own review strategy. Two locations is roughly twice the work.
+
+### 3. The state of your website
+
+If your site is slow, thin, or was never built with search in mind, some cleanup has to happen before local SEO can pay off. That's why many agencies (us included) start with an audit: it tells you exactly what needs fixing and what it will cost, before you sign up for anything recurring.
+
+### 4. What's actually included
+
+Some $300/month packages are software subscriptions with a human glancing at them once a month. Some $1,500/month retainers include weekly content, outreach, and real strategy calls. The monthly number means nothing without the deliverables list next to it.
+
+## What should you get for your money?
+
+At a minimum, a legitimate local SEO engagement should include a fully optimized and actively managed Google Business Profile, consistent citations across the major directories, on-page optimization for your service and location pages, a plan for generating reviews, and a monthly report that shows rankings, traffic, and calls (not just "impressions are up").
+
+If you're paying $750 or more per month, you should also expect keyword strategy tied to revenue (not vanity terms), backlink outreach, technical monitoring, and a human who answers when you ask "what did we do this month?"
+
+## Is local SEO worth the cost?
+
+For most local service businesses, yes, and the math is simple. If your average customer is worth $500 and local SEO brings you four extra customers a month, a $750/month investment returns nearly 3x. For businesses with higher customer values (contractors, attorneys, medical), a single new client often covers a year of SEO. The catch: that math only works if the work is actually being done. Which brings us to red flags.
+
+## Red flags when comparing local SEO quotes
+
+- **Guaranteed #1 rankings.** Nobody can promise this. Google says so themselves.
+- **No mention of your Google Business Profile.** It's the single highest-leverage asset in local search. If the proposal skips it, walk away.
+- **Long contracts with no reporting.** A 12-month lock-in with vague monthly summaries is how bad providers hide inactivity. (We use a 3-month minimum because the work needs time, but you should always see exactly what was done.)
+- **Prices that seem too good.** $99/month local SEO is either automated spam or nothing at all. Both can hurt your rankings.
+- **They won't explain the work in plain English.** Good SEO isn't magic. If they can't explain it, they may not be doing it.
+
+## How long until you see results?
+
+Most businesses see early movement (map pack impressions, more profile actions) in 6-10 weeks, and meaningful results (rankings, calls, form fills) in 3-6 months. Competitive markets take longer. Anyone promising page one in two weeks is describing either an ultra-low-competition keyword or a fairy tale.
+
+If you want the full playbook of what the work actually involves, we broke it down step by step in our [local SEO guide for small businesses](/blog/local-seo-guide-small-business-utah).
+
+## Frequently asked questions
+
+### Can I do local SEO myself?
+
+Partly, yes. Claiming and filling out your Google Business Profile, asking happy customers for reviews, and keeping your name, address, and phone consistent online are all free and worth doing today. The technical work, content strategy, and link building are where most owners run out of time and hire help.
+
+### Why do agencies charge per location?
+
+Because each location competes in its own local market with its own profile, citations, reviews, and landing page. The work genuinely duplicates, so the pricing does too.
+
+### Is a one-time SEO project enough?
+
+A one-time audit or cleanup fixes foundations, and for some businesses in easy markets that's enough to rank. But local SEO is competitive by nature: competitors keep publishing, earning reviews, and building links. Ongoing work is what keeps you on top once you get there.
+
+### What's the difference between local SEO and regular SEO?
+
+Local SEO targets searches with local intent ("plumber near me", "salt lake city bakery") and leans heavily on your Google Business Profile and map pack rankings. Traditional organic SEO targets broader keywords through your website's content and authority. Most local businesses need the first, and benefit from the second as they grow.
+
+## The bottom line
+
+Expect to invest $500–$1,500/month with a credible provider, give it at least three months, and demand transparent reporting. If you'd like a straight answer about what your business actually needs (sometimes the honest answer is "not much yet"), [get in touch](/contact) and we'll tell you what we'd do in your situation and exactly what it would cost.
+`,
+    author: "Tysen Creager",
+    date: "2026-08-27",
+    category: "SEO",
+    tags: ["Local SEO", "SEO Pricing", "Small Business", "Marketing Costs"],
+    metaTitle: "How Much Does Local SEO Cost in 2026? Real Prices",
+    metaDescription: "Local SEO costs $300 to $5,000+ per month in 2026. See what drives the price, what you should get at each level, and how to avoid overpaying.",
+    featured: true,
+    image: "/blog/local-seo-cost.jpg",
+    imageAlt: "How much does local SEO cost in 2026, blog cover with teal background"
+  },
+  {
     slug: "how-much-does-a-website-cost-2026",
     title: "How Much Does a Website Cost in 2026? A No-Nonsense Pricing Guide",
     excerpt: "Website costs in 2026 range from $15/month DIY builders to $50,000+ agency builds. Here's what actually drives the price, real numbers for every option, and how to avoid overpaying.",
