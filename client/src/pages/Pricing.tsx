@@ -392,7 +392,7 @@ export default function Pricing() {
       description: "Get found where it matters. Dominate local search and own your Google presence.",
       items: [
         { label: "Local SEO & Google Business Profile", price: "$850/mo" },
-        { label: "Organic SEO (broader keyword targeting)", price: "$750/mo" }
+        { label: "Organic SEO (broader keyword targeting)", price: "$850/mo" }
       ],
       note: "Per location pricing for Local SEO. The monthly package includes keyword research, one keyword-optimized blog post published to your site, one optimized location page, two Google Business Profile posts plus ongoing profile optimization, backlink acquisition outreach, technical SEO (metadata, alt text, schema markup), ongoing content evaluation, and monthly reporting with a strategy plan. 3-month minimum commitment, then month-to-month."
     },
@@ -533,11 +533,11 @@ export default function Pricing() {
         "@type": "Offer",
         "name": "Organic SEO",
         "description": "Broader keyword targeting and content strategy to rank beyond local searches, including comprehensive keyword research, content planning, and backlink building",
-        "price": "750",
+        "price": "850",
         "priceCurrency": "USD",
         "priceSpecification": {
           "@type": "UnitPriceSpecification",
-          "price": "750",
+          "price": "850",
           "priceCurrency": "USD",
           "unitText": "per month"
         }
@@ -582,9 +582,9 @@ export default function Pricing() {
     <div className="min-h-screen">
       <SEO
         title="Pricing - Affordable Marketing Services | Elevate Growth Solutions"
-        description="Transparent pricing for quality marketing services. Custom websites on any platform from $2,500, SEO from $750/month, and social media management tailored to your needs. No hidden fees. Get a free consultation today."
+        description="Transparent pricing for quality marketing services. Custom websites on any platform from $2,500, SEO from $850/month, and social media management tailored to your needs. No hidden fees. Get a free consultation today."
         ogTitle="Marketing Services Pricing | Quality Services, Honest Prices"
-        ogDescription="Custom websites starting at $2,500, built on any platform. SEO from $750/month. Social media management with custom pricing based on your goals. Transparent pricing with no surprises. Schedule your free consultation."
+        ogDescription="Custom websites starting at $2,500, built on any platform. SEO from $850/month. Social media management with custom pricing based on your goals. Transparent pricing with no surprises. Schedule your free consultation."
       />
       <SchemaMarkup type="service" data={serviceOfferSchema} />
       <Navbar />
