@@ -39,7 +39,7 @@ Local SEO is everything that helps you show up when nearby customers search for 
 | **Boutique agency** | $500–$1,500 | Businesses that want it done right |
 | **Large agency** | $1,500–$5,000+ | Multi-location, competitive industries |
 
-For reference, our own pricing at Elevate Growth Solutions is **$750/month per location** for [local SEO](/pricing), and that includes Google Business Profile optimization, local citations, backlink outreach, technical SEO, keyword strategy, and monthly reporting. We ask for a 3-month minimum commitment because that's honestly how long the work takes to show up in rankings. We also offer a one-time [Strategic Growth Audit](/pricing) for $500 if you want a roadmap before committing to monthly work.
+For reference, our own pricing at Elevate Growth Solutions is **$850/month per location** for [local SEO](/pricing). Every month that includes keyword research, a keyword-optimized blog post published to your site, an optimized location page, two Google Business Profile posts plus ongoing profile optimization, backlink outreach, technical SEO, and a report with a strategy plan. We ask for a 3-month minimum commitment because that's honestly how long the work takes to show up in rankings (month-to-month after that). We also offer a one-time [Strategic Growth Audit](/pricing) for $500 if you want a roadmap before committing to monthly work.
 
 ## Why is there such a big price range?
 
@@ -65,11 +65,11 @@ Some $300/month packages are software subscriptions with a human glancing at the
 
 At a minimum, a legitimate local SEO engagement should include a fully optimized and actively managed Google Business Profile, consistent citations across the major directories, on-page optimization for your service and location pages, a plan for generating reviews, and a monthly report that shows rankings, traffic, and calls (not just "impressions are up").
 
-If you're paying $750 or more per month, you should also expect keyword strategy tied to revenue (not vanity terms), backlink outreach, technical monitoring, and a human who answers when you ask "what did we do this month?"
+If you're paying $850 or more per month, you should also expect keyword strategy tied to revenue (not vanity terms), fresh content like blog posts and location pages, backlink outreach, technical monitoring, and a human who answers when you ask "what did we do this month?"
 
 ## Is local SEO worth the cost?
 
-For most local service businesses, yes, and the math is simple. If your average customer is worth $500 and local SEO brings you four extra customers a month, a $750/month investment returns nearly 3x. For businesses with higher customer values (contractors, attorneys, medical), a single new client often covers a year of SEO. The catch: that math only works if the work is actually being done. Which brings us to red flags.
+For most local service businesses, yes, and the math is simple. If your average customer is worth $500 and local SEO brings you four extra customers a month, an $850/month investment pays for itself more than twice over. For businesses with higher customer values (contractors, attorneys, medical), a single new client often covers a year of SEO. The catch: that math only works if the work is actually being done. Which brings us to red flags.
 
 ## Red flags when comparing local SEO quotes
 

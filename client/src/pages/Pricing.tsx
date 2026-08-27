@@ -391,10 +391,10 @@ export default function Pricing() {
       title: "Search & Local Presence",
       description: "Get found where it matters. Dominate local search and own your Google presence.",
       items: [
-        { label: "Local SEO & Google Business Profile", price: "$750/mo" },
+        { label: "Local SEO & Google Business Profile", price: "$850/mo" },
         { label: "Organic SEO (broader keyword targeting)", price: "$750/mo" }
       ],
-      note: "Per location pricing for Local SEO. Includes local citations, backlink outreach, technical SEO, keyword strategy, and monthly reporting. Blog posts/articles available for an additional fee. 3-month minimum commitment."
+      note: "Per location pricing for Local SEO. The monthly package includes keyword research, one keyword-optimized blog post published to your site, one optimized location page, two Google Business Profile posts plus ongoing profile optimization, backlink acquisition outreach, technical SEO (metadata, alt text, schema markup), ongoing content evaluation, and monthly reporting with a strategy plan. 3-month minimum commitment, then month-to-month."
     },
     {
       image: socialImg,
@@ -519,12 +519,12 @@ export default function Pricing() {
       {
         "@type": "Offer",
         "name": "Local SEO & Google Business Profile",
-        "description": "Local SEO and Google Business Profile optimization including local citations, backlink outreach, technical SEO, keyword strategy, and monthly reporting",
-        "price": "750",
+        "description": "Monthly local SEO package including keyword research, a keyword-optimized blog post, an optimized location page, two Google Business Profile posts plus ongoing profile optimization, backlink acquisition outreach, technical SEO, and monthly reporting with a strategy plan",
+        "price": "850",
         "priceCurrency": "USD",
         "priceSpecification": {
           "@type": "UnitPriceSpecification",
-          "price": "750",
+          "price": "850",
           "priceCurrency": "USD",
           "unitText": "per month per location"
         }
