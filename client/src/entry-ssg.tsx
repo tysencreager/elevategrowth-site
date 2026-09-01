@@ -35,6 +35,8 @@ import WebsiteHandoffOptions from "@/pages/WebsiteHandoffOptions";
 import StGeorgeWebDesign from "@/pages/StGeorgeWebDesign";
 import OgdenWebDesign from "@/pages/OgdenWebDesign";
 import SaltLakeCityMarketing from "@/pages/SaltLakeCityMarketing";
+import WiseWomen from "@/pages/WiseWomen";
+import FiveSecondTest from "@/pages/FiveSecondTest";
 import NotFound from "@/pages/not-found";
 
 export { blogPosts } from "@/data/blogPosts";
@@ -63,6 +65,9 @@ function SSGRouter() {
       <Route path="/st-george-web-design" component={StGeorgeWebDesign} />
       <Route path="/ogden-web-design" component={OgdenWebDesign} />
       <Route path="/salt-lake-city-marketing" component={SaltLakeCityMarketing} />
+      {/* Hidden conference pages (direct URL only, noindexed) */}
+      <Route path="/wisewomen" component={WiseWomen} />
+      <Route path="/5secondtest" component={FiveSecondTest} />
       <Route component={NotFound} />
     </Switch>
   );
