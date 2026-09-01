@@ -15,9 +15,77 @@ interface WiseWomenLeadRequest {
   fax?: string;
 }
 
-// Conference-funnel group in MailerLite ("Wise Women Houston 2026") so the
-// follow-up automation can trigger off group membership.
-const MAILERLITE_GROUP_ID = "197364897181337149";
+// Conference-funnel group in MailerLite so the follow-up automation can
+// trigger off group membership. Resolved by NAME at runtime (created if
+// missing) rather than hardcoded by ID, so the function works with
+// whichever MailerLite account MAILERLITE_API_KEY belongs to.
+const MAILERLITE_GROUP_NAME = "Wise Women Houston 2026";
+// Custom subscriber fields the form writes; ensured to exist before the
+// first subscribe (MailerLite rejects unknown field keys).
+const MAILERLITE_CUSTOM_FIELDS = ["current_website", "interest", "notes", "subscriber_source"];
+
+const ML_BASE = "https://connect.mailerlite.com/api";
+
+const mlHeaders = (apiKey: string) => ({
+  "Content-Type": "application/json",
+  Accept: "application/json",
+  Authorization: `Bearer ${apiKey}`,
+});
+
+// Group + field setup runs once per isolate; concurrent requests share the
+// same in-flight promise.
+let mlSetup: Promise<string | null> | null = null;
+
+async function ensureMailerLiteSetup(apiKey: string): Promise<string | null> {
+  // Find (or create) the conference group.
+  let groupId: string | null = null;
+  const groupSearch = await fetch(
+    `${ML_BASE}/groups?filter[name]=${encodeURIComponent(MAILERLITE_GROUP_NAME)}`,
+    { headers: mlHeaders(apiKey) },
+  );
+  if (groupSearch.ok) {
+    const { data } = (await groupSearch.json()) as { data: Array<{ id: string; name: string }> };
+    groupId = data.find((g) => g.name === MAILERLITE_GROUP_NAME)?.id ?? null;
+  }
+  if (!groupId) {
+    const created = await fetch(`${ML_BASE}/groups`, {
+      method: "POST",
+      headers: mlHeaders(apiKey),
+      body: JSON.stringify({ name: MAILERLITE_GROUP_NAME }),
+    });
+    if (created.ok) {
+      groupId = ((await created.json()) as { data: { id: string } }).data.id;
+    } else {
+      console.error("MailerLite group create error:", await created.text());
+    }
+  }
+
+  // Ensure the custom fields exist ("Current Website" -> key current_website
+  // etc.). Field keys are derived from the name by MailerLite.
+  const fieldsResponse = await fetch(`${ML_BASE}/fields?limit=200`, { headers: mlHeaders(apiKey) });
+  if (fieldsResponse.ok) {
+    const { data } = (await fieldsResponse.json()) as { data: Array<{ key: string }> };
+    const existing = new Set(data.map((f) => f.key));
+    for (const key of MAILERLITE_CUSTOM_FIELDS) {
+      if (!existing.has(key)) {
+        const name = key
+          .split("_")
+          .map((w) => w[0].toUpperCase() + w.slice(1))
+          .join(" ");
+        const created = await fetch(`${ML_BASE}/fields`, {
+          method: "POST",
+          headers: mlHeaders(apiKey),
+          body: JSON.stringify({ name, type: "text" }),
+        });
+        if (!created.ok) {
+          console.error(`MailerLite field create error (${key}):`, await created.text());
+        }
+      }
+    }
+  }
+
+  return groupId;
+}
 
 // User-submitted values go into HTML emails; unescaped markup (or injected
 // links) both breaks the layout and raises the spam score.
@@ -61,27 +129,48 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
     const mailerliteKey = context.env.MAILERLITE_API_KEY;
     if (mailerliteKey) {
       try {
-        const mlResponse = await fetch("https://connect.mailerlite.com/api/subscribers", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            Accept: "application/json",
-            Authorization: `Bearer ${mailerliteKey}`,
-          },
-          body: JSON.stringify({
-            email,
-            fields: {
-              name: firstName,
-              last_name: lastName,
-              company: businessName,
-              current_website: currentWebsite || "",
-              interest: interest || "",
-              notes: notes || "",
-              subscriber_source: "wisewomen-landing-page",
-            },
-            groups: [MAILERLITE_GROUP_ID],
-          }),
+        mlSetup ??= ensureMailerLiteSetup(mailerliteKey);
+        let groupId: string | null = null;
+        try {
+          groupId = await mlSetup;
+        } catch (setupError) {
+          mlSetup = null; // let the next request retry setup
+          console.error("MailerLite setup failed:", setupError);
+        }
+
+        const subscribe = (fields: Record<string, string>) =>
+          fetch(`${ML_BASE}/subscribers`, {
+            method: "POST",
+            headers: mlHeaders(mailerliteKey),
+            body: JSON.stringify({
+              email,
+              fields,
+              ...(groupId ? { groups: [groupId] } : {}),
+            }),
+          });
+
+        let mlResponse = await subscribe({
+          name: firstName,
+          last_name: lastName,
+          company: businessName,
+          current_website: currentWebsite || "",
+          interest: interest || "",
+          notes: notes || "",
+          subscriber_source: "wisewomen-landing-page",
         });
+
+        // If the account rejects a custom field key, retry with only the
+        // default fields so the lead is never lost; the Brevo notification
+        // below carries the full submission either way.
+        if (!mlResponse.ok && mlResponse.status === 422) {
+          console.error("MailerLite subscriber 422 (retrying with default fields):", await mlResponse.text());
+          mlResponse = await subscribe({
+            name: firstName,
+            last_name: lastName,
+            company: businessName,
+          });
+        }
+
         mailerliteOk = mlResponse.ok;
         if (!mlResponse.ok) {
           console.error("MailerLite subscriber error:", await mlResponse.text());
