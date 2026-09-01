@@ -16,6 +16,98 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "best-website-builder-small-business",
+    title: "Best Website Builder for Small Business in 2026: An Honest Guide",
+    excerpt: "Squarespace, Wix, Shopify, WordPress, or custom code? Here's an honest comparison of the best website builders for small businesses in 2026, including when you shouldn't use a builder at all.",
+    content: `
+We build websites for a living, on every platform in this article, so we don't have a horse in this race. Some of our clients are on Squarespace. Some are on Shopify or WordPress. Some have fully custom-coded sites. The right answer depends on your business, not on whichever platform pays the biggest affiliate commissions. (For the record: there are no affiliate links in this post.)
+
+Here's our honest take on the best website builders for small businesses in 2026.
+
+## The quick answer
+
+For most small businesses, **Squarespace** is the best all-around website builder in 2026: polished templates, predictable pricing, and little to maintain. **Shopify** is the default for stores, **WordPress** wins on flexibility and content, **Wix** on cheap flexibility, and a **custom-built site** wins when speed, SEO, and conversion actually drive your revenue.
+
+## How the top builders compare
+
+| Platform | Monthly cost | Best for | Biggest drawback |
+|---|---|---|---|
+| **Squarespace** | $17–$52 | Service businesses, portfolios | Limited customization ceiling |
+| **Wix** | $17–$45 | Budget builds, simple sites | Messier code, slower pages |
+| **Shopify** | $39–$399 | E-commerce | Costs stack up with apps |
+| **WordPress** | $10–$50+ (hosting) | Content-heavy sites, blogs | Needs updates and maintenance |
+| **Custom build** | Project-based | Speed, SEO, conversion focus | Higher upfront investment |
+
+## Which website builder should you choose?
+
+### Choose Squarespace if you want "set it and forget it"
+
+Squarespace is the least likely to frustrate you. Templates look professional out of the box, hosting and security are handled, and the editor is hard to break. For service businesses (therapists, consultants, restaurants, salons) that need a clean site with a contact form and a booking link, it's the safest pick.
+
+### Choose Wix if budget is the deciding factor
+
+Wix gives you more design freedom than Squarespace at a similar or lower price, and its free tier lets you experiment before spending anything. The trade-offs: sites tend to load slower, the underlying code is heavier, and moving your site off Wix later is genuinely painful. Fine for a first site; limiting for a growing one.
+
+### Choose Shopify if you're selling products
+
+For real e-commerce (inventory, shipping, taxes, abandoned-cart emails), Shopify is the standard for a reason. It handles payments and PCI compliance so you don't have to. Watch the app store, though: it's easy for a $39/month plan to become $150/month once you add reviews, subscriptions, and email apps.
+
+### Choose WordPress if content is your strategy
+
+WordPress powers roughly 40% of the web because it can do almost anything. If your growth plan is publishing (a blog, resources, location pages), WordPress gives you the most control over SEO and structure. The cost is upkeep: plugins, updates, security, and hosting are your responsibility, or your web partner's.
+
+### Choose a custom build when your website is your salesperson
+
+Builders are built for everyone, which means they're optimized for no one. When every lead comes through your website, the difference between a 2-second page and a 0.5-second page, or a generic template and a conversion-focused layout, shows up directly in revenue. That's when custom code earns its price. We wrote a full [custom code vs. website builder comparison](/blog/custom-coded-vs-website-builders-honest-comparison) if you're weighing that decision.
+
+## What does a small business website actually cost?
+
+DIY on a builder, expect **$17–$50/month** plus your time (the real cost most owners underestimate). Hiring it out, a professionally built site runs **$1,500–$10,000** at a boutique agency. For reference, our own [pricing](/pricing) at Elevate Growth Solutions: conversion-focused single-page sites from **$2,500**, full business websites from **$4,500**, e-commerce from **$7,500**, and we build on whatever platform fits you, builder or custom. Hosting and maintenance is $200/month including an hour of content edits.
+
+## Can you switch builders later?
+
+Partly. Your content (text, images, products) can move; your design and structure usually can't. Wix and Squarespace sites can't be exported to another platform in any usable way, so plan to rebuild if you outgrow them. WordPress and custom sites are the most portable. This is worth thinking about before you pick, not after: getting trapped on the wrong platform is the most expensive "cheap" decision in web design.
+
+## The mistakes we see small businesses make
+
+- **Choosing a platform before defining the job.** "Look professional and capture leads" points to a different tool than "sell 400 products."
+- **Underestimating DIY time.** 40 hours of a business owner's time is not free.
+- **Buying the platform, skipping the strategy.** A builder gives you a site; it doesn't give you copy that converts, SEO structure, or a reason for visitors to call you.
+- **Ignoring page speed.** Google measures it. Customers feel it. Builders vary wildly on it.
+
+## Frequently asked questions
+
+### What's the cheapest way to get a small business website?
+
+Wix's free plan or a $17/month Squarespace plan is the cheapest legitimate route. Just budget your own time honestly, and expect to upgrade or rebuild as you grow.
+
+### Do website builders hurt SEO?
+
+Not inherently. Builders handle SEO basics fine, and a well-structured Squarespace site beats a badly built custom one. But builders limit technical control (speed, schema markup, site structure), which is where competitive rankings are often won.
+
+### Should I hire someone or DIY?
+
+If your website is a digital business card and money is tight, DIY on a builder. If your website needs to produce leads or sales, professional help usually pays for itself. We happily build and maintain sites on the builders in this article, so [ask us](/contact) which one actually fits your situation, and we'll tell you straight, even if the answer is "just use Squarespace."
+
+### Which builder is best for e-commerce?
+
+Shopify for dedicated stores. Squarespace commerce works for a handful of products. Beyond a certain catalog size or if you need custom checkout logic, a custom build on top of a commerce platform becomes worth it.
+
+## The bottom line
+
+Squarespace for simplicity, Shopify for stores, WordPress for content, Wix for budgets, custom for performance. Pick based on the job your website has to do, and if you'd rather not make the call alone, [get in touch](/contact): we work across all of these platforms, so our advice isn't tied to selling you one.
+`,
+    author: "Tysen Creager",
+    date: "2026-09-01",
+    category: "Web Design",
+    tags: ["Website Builders", "Small Business", "Squarespace", "Shopify", "WordPress"],
+    metaTitle: "Best Website Builder for Small Business in 2026",
+    metaDescription: "Squarespace, Wix, Shopify, WordPress, or custom? An honest, no-affiliate comparison of the best website builders for small businesses in 2026.",
+    featured: true,
+    image: "/blog/best-website-builder.jpg",
+    imageAlt: "Best website builder for small business in 2026, blog cover with teal background"
+  },
+  {
     slug: "how-much-does-local-seo-cost",
     title: "How Much Does Local SEO Cost in 2026? Real Prices, No Guesswork",
     excerpt: "Local SEO costs anywhere from $300 to $5,000+ per month in 2026. Here's what actually drives the price, what you should get at each level, and how to avoid paying for smoke and mirrors.",
