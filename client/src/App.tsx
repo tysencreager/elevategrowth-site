@@ -48,6 +48,11 @@ const StGeorgeWebDesign = lazy(() => import("@/pages/StGeorgeWebDesign"));
 const OgdenWebDesign = lazy(() => import("@/pages/OgdenWebDesign"));
 const SaltLakeCityMarketing = lazy(() => import("@/pages/SaltLakeCityMarketing"));
 
+// Hidden conference pages — reachable only by direct URL (QR codes / slide).
+// Intentionally not linked from any nav, footer, or page on the public site.
+const WiseWomen = lazy(() => import("@/pages/WiseWomen"));
+const FiveSecondTest = lazy(() => import("@/pages/FiveSecondTest"));
+
 const NotFound = lazy(() => import("@/pages/not-found"));
 
 // Loading fallback component
@@ -86,6 +91,9 @@ function Router() {
         <Route path="/st-george-web-design" component={StGeorgeWebDesign} />
         <Route path="/ogden-web-design" component={OgdenWebDesign} />
         <Route path="/salt-lake-city-marketing" component={SaltLakeCityMarketing} />
+        {/* Hidden conference pages (direct URL only, noindexed) */}
+        <Route path="/wisewomen" component={WiseWomen} />
+        <Route path="/5secondtest" component={FiveSecondTest} />
         <Route component={NotFound} />
       </Switch>
     </Suspense>

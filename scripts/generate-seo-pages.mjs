@@ -198,6 +198,36 @@ const routes = [
   },
 ];
 
+// Hidden conference-funnel pages: prerendered like every other route (so the
+// exact URLs resolve to real 200 pages), but noindexed and NEVER added to
+// sitemap.xml. Do not add them to robots.txt either — a disallow line would
+// publicly broadcast the paths. `_headers` also sends X-Robots-Tag for them.
+const hiddenRoutes = [
+  {
+    path: "/wisewomen",
+    title: "Booked & Busy | Elevate Growth Solutions",
+    description:
+      "Your WISE WOMEN conference perk: $300 toward a custom website build or growth retainer with Elevate Growth Solutions. Claim by October 17, 2026.",
+    ogTitle: "Here's to being booked & busy",
+    ogDescription:
+      "As a WISE WOMEN attendee, you've got $300 toward a custom website build or growth retainer with Elevate Growth Solutions.",
+  },
+  {
+    path: "/5secondtest",
+    title: "The 5-Second Test | Elevate Growth Solutions",
+    description:
+      "The 5-second website checklist from Tysen's WISE WOMEN talk: what you do, who it's for, what to do next — plus the load test and the thumb test.",
+    ogTitle: "The 5-Second Test",
+    ogDescription:
+      "A stranger just landed on your website. Will she stay? Run the 5-second checklist from Houston — and send it to a friend whose website needs the truth.",
+  },
+];
+
+// Montserrat (700/800 hero, 600 subheads) + Lora body: the hidden pages'
+// brand fonts, replacing the main site's Playfair/Hanken font request.
+const hiddenFontsUrl =
+  "https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Lora:ital,wght@0,400;0,500;1,400&display=swap";
+
 const homeRoute = {
   path: "/",
   title:
@@ -309,6 +339,26 @@ function injectMeta(template, route) {
   return html;
 }
 
+// Hidden pages: flip the robots meta to noindex, swap the font request to
+// the pages' own families, and drop the homepage LCP-image preload (it
+// would fetch a large webp these pages never render — they must load in
+// under 3s on conference-floor mobile connections).
+function applyHiddenPageHead(html) {
+  html = html.replace(
+    /<meta\s+name="robots"\s+content="[^"]*"\s*\/?>/,
+    `<meta name="robots" content="noindex, nofollow" />`
+  );
+  html = html.replace(
+    /https:\/\/fonts\.googleapis\.com\/css2\?[^"]*/g,
+    hiddenFontsUrl
+  );
+  html = html.replace(
+    /\s*<link\s+rel="preload"\s+as="image"\s+href="\/home-header-poster\.webp"[^>]*>/,
+    ""
+  );
+  return html;
+}
+
 function injectBody(html, appHtml) {
   const marker = '<div id="root"></div>';
   if (!html.includes(marker)) {
@@ -380,6 +430,21 @@ for (const route of allRoutes) {
   fs.writeFileSync(filePath, html);
   generated++;
   console.log(`  ✓ ${route.path}`);
+}
+
+// Hidden pages: prerendered so the exact URLs serve real 200 pages, but
+// noindexed and excluded from the sitemap below.
+for (const route of hiddenRoutes) {
+  const filePath = path.join(distDir, `${route.path.slice(1)}.html`);
+  fs.mkdirSync(path.dirname(filePath), { recursive: true });
+
+  const html = injectBody(
+    applyHiddenPageHead(injectMeta(template, route)),
+    render(route.path)
+  );
+  fs.writeFileSync(filePath, html);
+  generated++;
+  console.log(`  ✓ ${route.path} (noindex, not in sitemap)`);
 }
 
 // Sitemap: derived from the exact set of prerendered routes.

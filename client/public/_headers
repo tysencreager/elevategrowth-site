@@ -3,6 +3,18 @@
   X-Frame-Options: DENY
   Referrer-Policy: strict-origin-when-cross-origin
 
+# Hidden conference pages: belt-and-suspenders noindex at the HTTP level
+# (the pages also carry <meta name="robots" content="noindex, nofollow">).
+# Deliberately NOT listed in robots.txt — that would broadcast the paths.
+/wisewomen
+  X-Robots-Tag: noindex, nofollow
+/wisewomen.html
+  X-Robots-Tag: noindex, nofollow
+/5secondtest
+  X-Robots-Tag: noindex, nofollow
+/5secondtest.html
+  X-Robots-Tag: noindex, nofollow
+
 /*.html
   Cache-Control: public, max-age=0, must-revalidate
 
