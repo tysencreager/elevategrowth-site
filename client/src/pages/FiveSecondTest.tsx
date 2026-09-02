@@ -15,6 +15,75 @@ const eyebrow = "font-sans text-[11px] font-semibold tracking-[0.3em] uppercase"
 const buttonClass =
   "inline-block font-sans font-semibold text-base text-[#1B1E20] bg-[#4AC0D8] rounded-full px-8 py-4 text-center hover:bg-[#3D95B4] hover:text-white transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[#1B1E20] focus-visible:ring-offset-2";
 
+// Live 5-second countdown ring in the hero: the ring drains once while the
+// number ticks 5 -> 0, making the page's premise tangible the moment it
+// opens. Static at "5" for prefers-reduced-motion users.
+function CountdownRing() {
+  const [count, setCount] = useState(5);
+
+  useEffect(() => {
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    const interval = setInterval(() => {
+      setCount((c) => {
+        if (c <= 0) {
+          clearInterval(interval);
+          return 0;
+        }
+        return c - 1;
+      });
+    }, 1000);
+    return () => clearInterval(interval);
+  }, []);
+
+  const r = 44;
+  const circumference = 2 * Math.PI * r;
+  return (
+    <div className="relative w-28 h-28 mx-auto mb-6" aria-hidden="true">
+      <svg viewBox="0 0 100 100" className="w-full h-full -rotate-90">
+        <circle cx="50" cy="50" r={r} fill="none" stroke="rgba(255,255,255,0.15)" strokeWidth="5" />
+        <circle
+          cx="50"
+          cy="50"
+          r={r}
+          fill="none"
+          stroke="#4AC0D8"
+          strokeWidth="5"
+          strokeLinecap="round"
+          strokeDasharray={circumference}
+          strokeDashoffset={circumference * (1 - count / 5)}
+          style={{ transition: "stroke-dashoffset 1s linear" }}
+        />
+      </svg>
+      <span className="absolute inset-0 flex items-center justify-center font-display font-medium text-4xl text-white">
+        {count}
+      </span>
+    </div>
+  );
+}
+
+const tickerItems = ["what you do", "who it's for", "what to do next", "the load test", "the thumb test"];
+
+function Ticker() {
+  const row = (
+    <div className="flex items-center gap-6 pr-6 flex-none" aria-hidden="true">
+      {tickerItems.map((item) => (
+        <span key={item} className="flex items-center gap-6 whitespace-nowrap">
+          <span className="font-display italic text-lg text-[#1B1E20]">{item}</span>
+          <span className="text-[#266D82]">✦</span>
+        </span>
+      ))}
+    </div>
+  );
+  return (
+    <div className="print-hide bg-[#4AC0D8] py-3 overflow-hidden" role="presentation">
+      <div className="flex w-max animate-marquee motion-reduce:animate-none">
+        {row}
+        {row}
+      </div>
+    </div>
+  );
+}
+
 interface QuizQuestion {
   title: string;
   detail: string;
@@ -330,29 +399,40 @@ export default function FiveSecondTest() {
         body { background: white !important; }
       }`}</style>
 
-      {/* HERO */}
-      <header className="print-hide relative bg-[#266D82] px-5 pt-16 pb-14 sm:pt-24 sm:pb-20 text-center overflow-hidden">
-        <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
-          <div className="absolute -top-16 -right-16 w-64 h-64 bg-[#4AC0D8]/25 rounded-full blur-3xl" />
-          <div className="absolute -bottom-20 -left-16 w-72 h-72 bg-[#1B1E20]/30 rounded-full blur-3xl" />
-        </div>
+      {/* HERO: photography with teal scrim and a live countdown ring */}
+      <header className="print-hide relative min-h-[88svh] flex items-center justify-center px-5 py-16 text-center overflow-hidden bg-[#266D82]">
+        <img
+          src="/work-header-poster.webp"
+          alt=""
+          {...({ fetchpriority: "high" } as React.ImgHTMLAttributes<HTMLImageElement>)}
+          className="absolute inset-0 w-full h-full object-cover animate-kenburns motion-reduce:animate-none"
+          aria-hidden="true"
+        />
+        <div
+          className="absolute inset-0 bg-gradient-to-b from-[#1B1E20]/85 via-[#266D82]/75 to-[#266D82]/90"
+          aria-hidden="true"
+        />
         <motion.div
           className="relative max-w-xl mx-auto"
           initial={{ opacity: 0, y: 18 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
         >
+          <CountdownRing />
           <span className={`${eyebrow} text-[#4AC0D8] block mb-5`}>From Tysen's talk</span>
           <h1 className="font-display font-medium text-[2.6rem] sm:text-6xl leading-[1.1] text-white">
             The <em className="italic text-[#4AC0D8]">5-Second</em> Test
           </h1>
-          <p className="font-['Lora',_Georgia,_serif] text-lg leading-relaxed text-[#F4F7F8]/90 mt-6">
+          <p className="font-['Lora',_Georgia,_serif] text-lg leading-relaxed text-[#F4F7F8]/95 mt-6">
             A stranger just landed on your website. They'll decide whether to stay or leave before
             you finish reading this sentence. Here's the ultimate website checklist: keep it,
             re-run it every quarter, and send it to a friend who might need it too!
           </p>
         </motion.div>
       </header>
+
+      {/* TICKER */}
+      <Ticker />
 
       {/* QUIZ */}
       <section className="print-hide px-5 py-12 sm:py-16" aria-labelledby="quiz-heading">

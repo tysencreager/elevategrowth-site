@@ -1,13 +1,20 @@
 import { useEffect, useState } from "react";
 import { AnimateOnScroll, StaggerContainer, StaggerItem, fadeInUp, motion } from "@/components/ui/motion";
-import tysenPhoto from "@assets/tysen_photo_400.webp";
+import tysenPhoto from "@assets/tysen_photo_800.webp";
+import workSolenne from "@assets/portfolio-solenne.webp";
+import workBeautymarkd from "@assets/portfolio-beautymarkd.webp";
+import workMacmeadow from "@assets/portfolio-macmeadow.webp";
+import workSocrystal from "@assets/portfolio-socrystal.webp";
+import workJpenn from "@assets/portfolio-jpennplanning.webp";
+import workLexlegal from "@assets/portfolio-lexlegal.webp";
 
 /**
  * Hidden conference landing page for WISE WOMEN Houston 2026 attendees.
  * Reached only by direct URL (QR codes on printed swag tags). It is
  * noindexed, excluded from the sitemap, and nothing on the public site
- * links to it. Nearly 100% of traffic is mobile, so it is a single-goal,
- * single-scroll page with no site navigation.
+ * links to it. Nearly 100% of traffic is mobile: single goal, no site
+ * navigation, and the portfolio strip deliberately has no outbound links
+ * so the only exit is the form (plus the main-site CTA at the very end).
  */
 
 const interestOptions = [
@@ -23,9 +30,12 @@ const eyebrow = "font-sans text-[11px] font-semibold tracking-[0.3em] uppercase"
 const buttonClass =
   "inline-block font-sans font-semibold text-base text-[#1B1E20] bg-[#4AC0D8] rounded-full px-8 py-4 text-center hover:bg-[#3D95B4] hover:text-white transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[#1B1E20] focus-visible:ring-offset-2";
 
-function Stars() {
+function Stars({ light = false }: { light?: boolean }) {
   return (
-    <span className="text-[#E8B923] tracking-[0.15em] text-sm" aria-label="5 star Google review">
+    <span
+      className={`tracking-[0.15em] text-sm ${light ? "text-[#FFD666]" : "text-[#E8B923]"}`}
+      aria-label="5 star Google review"
+    >
       ★★★★★
     </span>
   );
@@ -36,21 +46,69 @@ const testimonials = [
     quote:
       "Tysen and Elevate Growth Solutions were a God send! They did a complete new website for me and created everything I could have asked for, and more! … I'm in love with the design, colors, member portal and app to go with it all! 5 Stars and then some!!",
     author: "Jenn Davis",
+    initials: "JD",
+    avatarBg: "#266D82",
     google: true,
+    tilt: "-rotate-1",
   },
   {
     quote:
       "Tysen is simply the best! Her work and professionalism is unmatched. … she truly listened to my needs and created a beautiful website that wholly encapsulates my business. I can't recommend her enough!",
     author: "Ali Valencia",
+    initials: "AV",
+    avatarBg: "#3D95B4",
     google: true,
+    tilt: "rotate-1",
   },
   {
     quote:
       "My business has skyrocketed since Tysen (Elevate Growth Solutions) created my website. It's seriously SO stunning and seamless. Hire her! You will not regret it.",
     author: "McKenzie M.",
+    initials: "MM",
+    avatarBg: "#1B1E20",
     google: false,
+    tilt: "-rotate-1",
   },
 ];
+
+const works = [
+  { name: "Solenne", image: workSolenne },
+  { name: "Beauty Mark'd", image: workBeautymarkd },
+  { name: "Mac Meadow", image: workMacmeadow },
+  { name: "So Crystal", image: workSocrystal },
+  { name: "J Penn Planning", image: workJpenn },
+  { name: "Lex Legal", image: workLexlegal },
+];
+
+const tickerItems = [
+  "booked & busy",
+  "$300 attendee credit",
+  "claim by Oct 17",
+  "custom websites",
+  "SEO that compounds",
+  "WISE WOMEN Houston",
+];
+
+function Ticker() {
+  const row = (
+    <div className="flex items-center gap-6 pr-6 flex-none" aria-hidden="true">
+      {tickerItems.map((item) => (
+        <span key={item} className="flex items-center gap-6 whitespace-nowrap">
+          <span className="font-display italic text-lg text-[#1B1E20]">{item}</span>
+          <span className="text-[#266D82]">✦</span>
+        </span>
+      ))}
+    </div>
+  );
+  return (
+    <div className="bg-[#4AC0D8] py-3 overflow-hidden" role="presentation">
+      <div className="flex w-max animate-marquee motion-reduce:animate-none">
+        {row}
+        {row}
+      </div>
+    </div>
+  );
+}
 
 const faqs = [
   {
@@ -310,28 +368,35 @@ export default function WiseWomen() {
 
   return (
     <main className="min-h-screen bg-[#F4F7F8] overflow-x-hidden">
-      {/* HERO */}
-      <header className="relative bg-[#1B1E20] px-5 pt-16 pb-14 sm:pt-24 sm:pb-20 text-center overflow-hidden">
-        {/* Soft teal glow accents, echoing the main site's bokeh texture */}
-        <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
-          <div className="absolute -top-16 -left-16 w-64 h-64 bg-[#266D82]/40 rounded-full blur-3xl" />
-          <div className="absolute top-1/3 -right-20 w-72 h-72 bg-[#3D95B4]/25 rounded-full blur-3xl" />
-          <div className="absolute -bottom-20 left-1/4 w-56 h-56 bg-[#4AC0D8]/15 rounded-full blur-3xl" />
-        </div>
+      {/* HERO: full-bleed photography with a slow zoom and teal-charcoal scrim */}
+      <header className="relative min-h-[88svh] flex items-center justify-center px-5 py-20 text-center overflow-hidden bg-[#1B1E20]">
+        <img
+          src="/hero_bw_768.webp"
+          srcSet="/hero_bw_768.webp 768w, /hero_bw_1920.webp 1920w"
+          sizes="100vw"
+          alt=""
+          {...({ fetchpriority: "high" } as React.ImgHTMLAttributes<HTMLImageElement>)}
+          className="absolute inset-0 w-full h-full object-cover animate-kenburns motion-reduce:animate-none"
+          aria-hidden="true"
+        />
+        <div
+          className="absolute inset-0 bg-gradient-to-b from-[#1B1E20]/80 via-[#1B1E20]/60 to-[#266D82]/80"
+          aria-hidden="true"
+        />
         <motion.div
           className="relative max-w-xl mx-auto"
           initial={{ opacity: 0, y: 18 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
         >
-          <span className={`${eyebrow} text-[#4AC0D8] block mb-5`}>
+          <span className="inline-block font-sans text-[11px] font-semibold tracking-[0.25em] uppercase text-[#1B1E20] bg-[#4AC0D8] rounded-full px-4 py-2 mb-6">
             WISE WOMEN · Houston 2026
           </span>
-          <h1 className="font-display font-medium text-[2.6rem] sm:text-6xl leading-[1.1] text-white [text-wrap:balance]">
+          <h1 className="font-display font-medium text-[2.8rem] sm:text-6xl leading-[1.08] text-white [text-wrap:balance]">
             Here's to being{" "}
             <em className="italic text-[#4AC0D8]">booked &amp; busy.</em>
           </h1>
-          <p className="font-['Lora',_Georgia,_serif] text-lg leading-relaxed text-[#F4F7F8]/90 mt-6">
+          <p className="font-['Lora',_Georgia,_serif] text-lg leading-relaxed text-[#F4F7F8]/95 mt-6 max-w-md mx-auto">
             You grabbed the cup. Now let's make sure your website is doing its part. As a WISE
             WOMEN attendee, you've got{" "}
             <strong className="font-semibold text-[#4AC0D8]">
@@ -345,43 +410,100 @@ export default function WiseWomen() {
         </motion.div>
       </header>
 
-      {/* THE WHY */}
-      <section className="px-5 py-12 sm:py-16" aria-labelledby="why-heading">
-        <AnimateOnScroll className="max-w-xl mx-auto" amount={0.2}>
-          <span className={`${eyebrow} text-[#3D95B4] block mb-3`}>The why</span>
-          <h2
-            id="why-heading"
-            className="font-display font-medium text-3xl sm:text-4xl leading-snug text-[#1B1E20] [text-wrap:balance]"
-          >
-            Your website should be your{" "}
-            <em className="italic text-[#266D82]">hardest-working employee.</em>
-          </h2>
-          <p className={`${body} text-base leading-relaxed mt-5`}>
-            It should answer questions while you're in meetings, book consults while you're at
-            dinner, and show up on Google while you sleep. If your site isn't pulling its weight,
-            if it's pretty but invisible, or found but forgettable, that's fixable. It's literally
-            what I do.
-          </p>
-          <div className="flex items-center gap-5 mt-7">
-            <img
-              src={tysenPhoto}
-              alt="Tysen Creager, founder of Elevate Growth Solutions"
-              width={96}
-              height={96}
-              loading="lazy"
-              className="w-24 h-24 rounded-full object-cover border-2 border-[#4AC0D8] flex-none"
-            />
-            <p className={`${body} text-base leading-relaxed`}>
+      {/* TICKER */}
+      <Ticker />
+
+      {/* THE WHY: editorial split with photo card */}
+      <section className="px-5 py-14 sm:py-20" aria-labelledby="why-heading">
+        <div className="max-w-3xl mx-auto grid grid-cols-1 sm:grid-cols-[240px_1fr] gap-10 items-start">
+          <AnimateOnScroll amount={0.2} className="mx-auto w-full max-w-[240px]">
+            <div className="relative">
+              <div
+                className="absolute -inset-px border-2 border-[#4AC0D8] rounded-2xl translate-x-3 translate-y-3"
+                aria-hidden="true"
+              />
+              <img
+                src={tysenPhoto}
+                alt="Tysen Creager, founder of Elevate Growth Solutions"
+                width={400}
+                height={500}
+                loading="lazy"
+                className="relative w-full aspect-[4/5] object-cover rounded-2xl"
+              />
+              <span className="absolute -bottom-4 -left-3 bg-white rounded-full shadow-md px-4 py-2 font-sans text-xs font-semibold text-[#1B1E20]">
+                <span className="text-[#E8B923]">★★★★★</span> rated
+              </span>
+            </div>
+          </AnimateOnScroll>
+          <AnimateOnScroll amount={0.2}>
+            <span className={`${eyebrow} text-[#3D95B4] block mb-3`}>The why</span>
+            <h2
+              id="why-heading"
+              className="font-display font-medium text-3xl sm:text-4xl leading-snug text-[#1B1E20] [text-wrap:balance]"
+            >
+              Your website should be your{" "}
+              <em className="italic text-[#266D82]">hardest-working employee.</em>
+            </h2>
+            <p className={`${body} text-base leading-relaxed mt-5`}>
+              It should answer questions while you're in meetings, book consults while you're at
+              dinner, and show up on Google while you sleep. If your site isn't pulling its
+              weight, if it's pretty but invisible, or found but forgettable, that's fixable. It's
+              literally what I do.
+            </p>
+            <p className={`${body} text-base leading-relaxed mt-4`}>
               I'm Tysen Creager, founder of Elevate Growth Solutions. I build custom websites and
               run the SEO behind them for service-based businesses across the country, so the
               right people find you, trust you, and book you.
             </p>
-          </div>
+          </AnimateOnScroll>
+        </div>
+      </section>
+
+      {/* RECENT WORK: proof strip (deliberately unlinked, no exits before the form) */}
+      <section className="py-12 sm:py-16 bg-white overflow-hidden" aria-labelledby="work-heading">
+        <AnimateOnScroll amount={0.2} className="max-w-xl mx-auto px-5 mb-7">
+          <span className={`${eyebrow} text-[#3D95B4] block mb-3`}>Recent builds</span>
+          <h2
+            id="work-heading"
+            className="font-display font-medium text-2xl sm:text-3xl text-[#1B1E20]"
+          >
+            Real websites, <em className="italic text-[#266D82]">really working.</em>
+          </h2>
         </AnimateOnScroll>
+        <div
+          className="flex gap-4 overflow-x-auto snap-x snap-mandatory px-5 pb-4 [-webkit-overflow-scrolling:touch]"
+          role="list"
+          aria-label="Recent website builds"
+        >
+          {works.map((work, i) => (
+            <figure
+              key={work.name}
+              role="listitem"
+              className={`flex-none w-60 snap-start ${i % 2 ? "sm:translate-y-3" : ""}`}
+            >
+              <div className="rounded-xl overflow-hidden border border-[#3D95B4]/25 shadow-sm">
+                <img
+                  src={work.image}
+                  alt={`Website built for ${work.name}`}
+                  width={480}
+                  height={360}
+                  loading="lazy"
+                  className="w-full aspect-[4/3] object-cover object-top hover:scale-[1.03] transition-transform duration-500"
+                />
+              </div>
+              <figcaption className="font-sans text-xs font-semibold tracking-[0.1em] uppercase text-[#1B1E20]/60 mt-2">
+                {work.name}
+              </figcaption>
+            </figure>
+          ))}
+        </div>
+        <p className={`${body} text-sm text-[#1B1E20]/60 px-5 max-w-xl mx-auto`}>
+          Swipe for a few favorites. Yours could be next.
+        </p>
       </section>
 
       {/* THE PERK */}
-      <section className="px-5 pb-12 sm:pb-16" aria-labelledby="perk-heading">
+      <section className="px-5 py-12 sm:py-16" aria-labelledby="perk-heading">
         <AnimateOnScroll className="max-w-xl mx-auto" amount={0.15}>
           <div className="relative">
             <div
@@ -487,8 +609,8 @@ export default function WiseWomen() {
         </AnimateOnScroll>
       </section>
 
-      {/* PROOF */}
-      <section className="bg-white px-5 py-12 sm:py-16" aria-labelledby="proof-heading">
+      {/* PROOF: testimonial cards */}
+      <section className="bg-white px-5 py-14 sm:py-20 overflow-hidden" aria-labelledby="proof-heading">
         <div className="max-w-xl mx-auto">
           <AnimateOnScroll amount={0.2}>
             <span className={`${eyebrow} text-[#3D95B4] block mb-3`}>Kind words</span>
@@ -500,24 +622,39 @@ export default function WiseWomen() {
               <em className="italic text-[#266D82]">work as hard as they do.</em>
             </h2>
           </AnimateOnScroll>
-          <StaggerContainer className="mt-6 flex flex-col gap-6">
+          <StaggerContainer className="mt-8 flex flex-col gap-6">
             {testimonials.map((t) => (
               <StaggerItem key={t.author} variants={fadeInUp}>
-                <figure className="border-l-4 border-[#4AC0D8] pl-5 py-1">
-                  {t.google && (
-                    <div className="mb-1.5">
-                      <Stars />
-                      <span className="font-sans text-[11px] uppercase tracking-[0.15em] text-[#1B1E20]/50 ml-2">
-                        Google review
-                      </span>
+                <figure
+                  className={`bg-[#F4F7F8] border border-[#3D95B4]/20 rounded-2xl p-6 shadow-[0_10px_30px_-12px_rgba(38,109,130,0.35)] ${t.tilt} hover:rotate-0 hover:-translate-y-1 transition-transform duration-300`}
+                >
+                  <div className="flex items-center gap-3 mb-4">
+                    <span
+                      className="w-11 h-11 rounded-full flex items-center justify-center font-sans font-bold text-sm text-white flex-none"
+                      style={{ backgroundColor: t.avatarBg }}
+                      aria-hidden="true"
+                    >
+                      {t.initials}
+                    </span>
+                    <div>
+                      <figcaption className="font-sans text-sm font-bold text-[#1B1E20]">
+                        {t.author}
+                      </figcaption>
+                      {t.google ? (
+                        <div className="flex items-center gap-1.5">
+                          <Stars />
+                          <span className="font-sans text-[10px] uppercase tracking-[0.12em] text-[#1B1E20]/50">
+                            Google review
+                          </span>
+                        </div>
+                      ) : (
+                        <Stars />
+                      )}
                     </div>
-                  )}
-                  <blockquote className={`${body} italic text-base leading-relaxed`}>
+                  </div>
+                  <blockquote className={`${body} text-base leading-relaxed`}>
                     "{t.quote}"
                   </blockquote>
-                  <figcaption className="font-sans text-sm font-semibold text-[#266D82] mt-2">
-                    {t.author}
-                  </figcaption>
                 </figure>
               </StaggerItem>
             ))}
