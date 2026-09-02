@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react";
 import { AnimateOnScroll, StaggerContainer, StaggerItem, fadeInUp, motion } from "@/components/ui/motion";
 import tysenPhoto from "@assets/tysen_photo_800.webp";
-import workSolenne from "@assets/portfolio-solenne.webp";
-import workBeautymarkd from "@assets/portfolio-beautymarkd.webp";
-import workMacmeadow from "@assets/portfolio-macmeadow.webp";
-import workSocrystal from "@assets/portfolio-socrystal.webp";
-import workJpenn from "@assets/portfolio-jpennplanning.webp";
+// Same six sites as the homepage's Selected Works section.
+import workJulian from "@assets/portfolio-juliandismute.webp";
+import workBodyshop from "@assets/portfolio-bodyshopgym.webp";
+import workEnergize from "@assets/portfolio-energizeyourvibe.webp";
+import workDialin from "@assets/portfolio-dialinconstruction.webp";
+import workKleenslate from "@assets/portfolio-kleenslate.webp";
 import workLexlegal from "@assets/portfolio-lexlegal.webp";
 
 /**
@@ -72,11 +73,11 @@ const testimonials = [
 ];
 
 const works = [
-  { name: "Solenne", image: workSolenne },
-  { name: "Beauty Mark'd", image: workBeautymarkd },
-  { name: "Mac Meadow", image: workMacmeadow },
-  { name: "So Crystal", image: workSocrystal },
-  { name: "J Penn Planning", image: workJpenn },
+  { name: "Julian Dismute", image: workJulian },
+  { name: "The Body Shop Gym", image: workBodyshop },
+  { name: "Energize Your Vibe", image: workEnergize },
+  { name: "Dial-In Construction", image: workDialin },
+  { name: "Kleen Slate", image: workKleenslate },
   { name: "Lex Legal", image: workLexlegal },
 ];
 
