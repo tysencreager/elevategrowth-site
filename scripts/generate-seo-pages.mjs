@@ -216,17 +216,18 @@ const hiddenRoutes = [
     path: "/5secondtest",
     title: "The 5-Second Test | Elevate Growth Solutions",
     description:
-      "The 5-second website checklist from Tysen's WISE WOMEN talk: what you do, who it's for, what to do next — plus the load test and the thumb test.",
+      "The 5-second website checklist from Tysen's WISE WOMEN talk: what you do, who it's for, what to do next, plus the load test and the thumb test.",
     ogTitle: "The 5-Second Test",
     ogDescription:
-      "A stranger just landed on your website. Will she stay? Run the 5-second checklist from Houston — and send it to a friend whose website needs the truth.",
+      "A stranger just landed on your website. Will they stay? Take the 5-second test, then keep the ultimate website checklist and send it to a friend.",
   },
 ];
 
-// Montserrat (700/800 hero, 600 subheads) + Lora body: the hidden pages'
-// brand fonts, replacing the main site's Playfair/Hanken font request.
+// Playfair Display headings (matching the main site's display serif) +
+// Montserrat UI/labels + Lora body: the hidden pages' fonts, replacing the
+// main site's Playfair/Hanken font request with exactly what they use.
 const hiddenFontsUrl =
-  "https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Lora:ital,wght@0,400;0,500;1,400&display=swap";
+  "https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Montserrat:wght@400;600;700;800&family=Lora:ital,wght@0,400;0,500;1,400&display=swap";
 
 const homeRoute = {
   path: "/",
