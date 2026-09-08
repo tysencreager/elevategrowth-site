@@ -16,6 +16,113 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "how-to-choose-digital-marketing-agency",
+    title: "How to Choose a Digital Marketing Agency (Without Getting Burned)",
+    excerpt: "Most bad agency experiences were predictable from the first sales call. Here's how to choose a digital marketing agency in 2026: what to look for, what to run from, and the exact questions to ask.",
+    content: `
+Almost every business owner we talk to has an agency horror story. Six-month contracts with nothing to show. Reports full of impressions and nothing about revenue. An account manager who changed three times in a year. Here's the uncomfortable truth: most of those outcomes were predictable from the first sales call. You just have to know what to look for.
+
+We run a marketing agency, so yes, we have a perspective. But most of this advice applies whether you hire us, someone else, or nobody at all.
+
+## The quick answer
+
+Choose a digital marketing agency by matching their actual specialty to your actual goal, verifying real results (live client sites, rankings, reviews), demanding transparent pricing and deliverables in writing, and asking pointed questions about who does the work and how success is measured. Run from guarantees, vague reports, and long contracts with no exit.
+
+## What should you figure out before contacting agencies?
+
+Define the job first: more leads, more online sales, better local visibility, a website that converts, or all of the above. Set a realistic monthly budget and decide what a new customer is worth to you. An agency can sharpen your goal, but if you arrive with no goal at all, you'll be sold whatever that agency happens to sell.
+
+## What types of agencies are there?
+
+| Type | Typical cost | Best for | Watch out for |
+|---|---|---|---|
+| **Freelancer / solo** | $50–$150/hr | One channel, small scope | Capacity limits, bus factor |
+| **Boutique agency** | $500–$3,000/mo | Small businesses wanting senior attention | Narrower service menu |
+| **Full-service agency** | $3,000–$20,000+/mo | Larger budgets, many channels | Junior staff on small accounts |
+| **Niche specialist** | Varies | One industry or channel done deeply | Cookie-cutter playbooks |
+
+For context on what individual services cost, see our breakdowns of [local SEO pricing](/blog/how-much-does-local-seo-cost) and [website costs](/blog/how-much-does-a-website-cost-2026).
+
+## What separates a good agency from a bad one?
+
+### They show you real work, not just logos
+
+A wall of client logos means nothing. Ask for live websites they built, rankings they currently hold, and clients you can actually call. At our size, we'd rather show you [the sites themselves](/portfolio) and let you click around than hand you a slide deck.
+
+### They talk about revenue, not vanity metrics
+
+Impressions, reach, and "brand awareness" are how weak agencies hide. Good ones tie work to calls, form fills, booked jobs, and sales, and they set up tracking so you can see it yourself.
+
+### The people selling are the people doing
+
+At big agencies, the polished strategist from the sales call often hands you to a junior account manager after signing. Ask directly: "Who exactly will work on my account, and how senior are they?"
+
+### Their own marketing holds up
+
+An SEO agency you can't find on Google, a web agency with a slow dated site, a social agency with a dead Instagram: believe what you see. Agencies market themselves the way they'll market you.
+
+### They'll tell you what you don't need
+
+The clearest integrity test. If every answer is "yes, you need that too," you're talking to a sales quota. A good agency will say "skip ads until your website converts" or "you don't need $3,000/month, start smaller," even when it costs them revenue.
+
+## What questions should you ask a marketing agency?
+
+Take this list into your first call:
+
+1. **Who exactly will work on my account day to day?**
+2. **What results have you gotten for a business like mine?** Ask for specifics, not "we increased engagement."
+3. **How will you measure success, and what reporting will I see monthly?**
+4. **What happens if I want to leave?** Contract length, cancellation terms, and whether you keep your website, ad accounts, and data.
+5. **Do I own everything you build?** The correct answer is yes: domain, site, content, accounts.
+6. **What do you need from me to succeed?** Honest agencies name real requirements (photos, review requests, fast feedback). "Nothing, we handle everything" is a red flag.
+7. **Why might we NOT be a good fit?** Watch how they handle a question with no sales-friendly answer.
+
+## What are the red flags?
+
+- **Guaranteed rankings or "#1 on Google."** Nobody can promise that.
+- **Cold outreach claiming your site is broken.** Legitimate agencies rarely need to cold-call with scare tactics.
+- **Proprietary dashboards instead of real data access.** You should have your own Google Analytics and Search Console access.
+- **12-month lock-ins with no performance outs.** Commitment should be earned monthly. (SEO legitimately needs about 3 months to show, but that's a minimum, not a year of handcuffs.)
+- **They own "their" work.** If leaving means losing your website or ad account, you're a hostage, not a client.
+- **Prices that require a discovery call just to see a starting point.** Transparency starts with pricing. Ours is [public](/pricing).
+
+## How much should you expect to pay?
+
+For a small business in 2026: quality SEO runs $500–$1,500/month, professionally built websites $1,500–$10,000, and managed ad campaigns typically $500–$2,000/month in management fees plus ad spend. For reference, our own pricing at Elevate Growth Solutions: local SEO at **$850/month** per location (including a monthly blog post, location page, and Google Business Profile management), custom websites from **$2,500**, and one-time strategy audits from **$400–$799**. Meaningfully cheaper than those ranges usually means automated, offshored, or imaginary work.
+
+## Frequently asked questions
+
+### Should I hire a local agency or work remotely?
+
+Competence beats geography. A great remote agency beats a mediocre local one every time. That said, local agencies understand your market's customers and competitors, and you can meet them face to face, which makes accountability easier.
+
+### How long should I give an agency to show results?
+
+Paid ads: 1-2 months to optimize. SEO: 3-6 months for meaningful movement. Web projects: judge by milestones, not months. Whatever the channel, you should see activity and communication from week one, even before results arrive.
+
+### Is a niche agency better than a generalist?
+
+If a specialist knows your industry deeply, their playbook advantage is real. The risk is cookie-cutter work and even competing clients in your own market. Ask how they handle competitor conflicts before signing.
+
+### Can I do my marketing myself instead?
+
+Some of it, absolutely: claim your Google Business Profile, ask for reviews, post consistently. The honest limit is time and expertise. When DIY starts costing you more in lost hours than an agency would charge, it's time to hire.
+
+## The bottom line
+
+Match the agency to the job, verify real results, get everything in writing, and trust the integrity signals from the first call. If you're evaluating agencies right now (including us), [get in touch](/contact) and put the questions above to the test. We'll give you straight answers, and if we're not the right fit, we'll tell you that too.
+`,
+    author: "Tysen Creager",
+    date: "2026-09-08",
+    category: "Marketing",
+    tags: ["Marketing Agency", "Small Business", "Hiring Guide", "Digital Marketing"],
+    metaTitle: "How to Choose a Digital Marketing Agency in 2026",
+    metaDescription: "How to choose a digital marketing agency without getting burned: what to verify, red flags to run from, and the exact questions to ask before signing.",
+    featured: true,
+    image: "/blog/choose-marketing-agency.jpg",
+    imageAlt: "How to choose a digital marketing agency, blog cover with teal background"
+  },
+  {
     slug: "best-website-builder-small-business",
     title: "Best Website Builder for Small Business in 2026: An Honest Guide",
     excerpt: "Squarespace, Wix, Shopify, WordPress, or custom code? Here's an honest comparison of the best website builders for small businesses in 2026, including when you shouldn't use a builder at all.",
