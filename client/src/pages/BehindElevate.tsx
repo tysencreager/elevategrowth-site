@@ -93,16 +93,8 @@ export default function BehindElevate() {
                     height={500}
                     loading="eager"
                     decoding="async"
-                    className="w-full h-auto grayscale contrast-[1.04]"
+                    className="w-full h-auto"
                     data-testid="img-tysen-photo"
-                  />
-                  <div
-                    className="absolute inset-0 mix-blend-multiply"
-                    style={{
-                      background:
-                        "linear-gradient(165deg, rgba(38,109,130,.32), rgba(74,192,216,.08) 60%)"
-                    }}
-                    aria-hidden="true"
                   />
                 </div>
               </div>

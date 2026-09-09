@@ -7,6 +7,7 @@ import ClientMarquee from "@/components/home/ClientMarquee";
 import ServicesIconGrid from "@/components/home/ServicesIconGrid";
 import ProcessSplit from "@/components/home/ProcessSplit";
 import SelectedWorks from "@/components/home/SelectedWorks";
+import FounderBand from "@/components/home/FounderBand";
 import PullQuoteTestimonials from "@/components/home/PullQuoteTestimonials";
 import InquirySection from "@/components/home/InquirySection";
 import ParallaxCTA from "@/components/home/ParallaxCTA";
@@ -61,6 +62,8 @@ export default function Home() {
       />
 
       <SelectedWorks />
+
+      <FounderBand />
 
       <PullQuoteTestimonials
         featuredQuote="My business has skyrocketed since Tysen created my website. It's seriously so stunning and seamless. Hire her! You will not regret it."

@@ -70,7 +70,7 @@ export default function StGeorgeWebDesign() {
         {/* Background Image */}
         <img
           src={heroImage}
-          srcSet={`${heroImage768} 768w, ${heroImage} 1920w`}
+          srcSet={`${heroImage768} 768w, ${heroImage} 736w`}
           alt="St. George web design and marketing"
           width={1920}
           height={1080}

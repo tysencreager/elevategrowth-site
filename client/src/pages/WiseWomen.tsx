@@ -373,7 +373,7 @@ export default function WiseWomen() {
       <header className="relative min-h-[88svh] flex items-center justify-center px-5 py-20 text-center overflow-hidden bg-[#1B1E20]">
         <img
           src="/hero_bw_768.webp"
-          srcSet="/hero_bw_768.webp 768w, /hero_bw_1920.webp 1920w"
+          srcSet="/hero_bw_768.webp 768w, /hero_bw_1920.webp 736w"
           sizes="100vw"
           alt=""
           {...({ fetchpriority: "high" } as React.ImgHTMLAttributes<HTMLImageElement>)}

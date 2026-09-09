@@ -15,7 +15,7 @@ const localBusinessSchemaData = {
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
   "name": "Elevate Growth Solutions - Salt Lake City Web Design & Marketing",
-  "image": "https://www.elevategrowth.solutions/assets/EGS-LOGO-E-icon.png",
+  "image": "https://www.elevategrowth.solutions/egs-logo-mark.png",
   "url": "https://www.elevategrowth.solutions/salt-lake-city",
   "email": "tysen@elevategrowth.solutions",
   "description": "Premier web design agency and digital marketing consultant serving Salt Lake City, Utah. Custom websites, SEO services, and full-stack marketing for local businesses of all sizes.",
@@ -137,7 +137,7 @@ export default function SaltLakeCity() {
 
       <Hero
         backgroundImage={heroImage}
-        imageSrcSet={`${heroImage768} 768w, ${heroImage} 1920w`}
+        imageSrcSet={`${heroImage768} 768w, ${heroImage} 736w`}
         title="Salt Lake City Web Design & Digital Marketing"
         subtitle="Boutique marketing agency serving Utah businesses from Silicon Slopes to Park City"
         ctaText="Get a Free Consultation"
@@ -282,7 +282,7 @@ export default function SaltLakeCity() {
       <section className="relative py-24 px-4 overflow-hidden">
         <img
           src={ctaImage}
-          srcSet={`${ctaImage768} 768w, ${ctaImage} 1920w`}
+          srcSet={`${ctaImage768} 768w, ${ctaImage} 735w`}
           alt="Start a web design and marketing project with Elevate Growth Solutions"
           width={1920}
           height={1080}

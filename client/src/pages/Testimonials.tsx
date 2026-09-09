@@ -325,6 +325,29 @@ export default function Testimonials() {
         </div>
       </section>
 
+      {/* Visual Break Section */}
+      <section className="py-12 md:py-16 bg-background">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="rounded-xl overflow-hidden shadow-lg"
+          >
+            <img
+              src={testimonialsImage}
+              alt="Tysen Creager, founder of Elevate Growth Solutions, working at her laptop"
+              width={1600}
+              height={1067}
+              className="w-full h-auto"
+              loading="eager"
+              decoding="async"
+            />
+          </motion.div>
+        </div>
+      </section>
+
       {/* Stats Section */}
       <section ref={statsRef} className="py-12 bg-primary text-primary-foreground">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -420,29 +443,6 @@ export default function Testimonials() {
               </motion.div>
             ))}
           </div>
-        </div>
-      </section>
-
-      {/* Visual Break Section */}
-      <section className="py-12 md:py-16 bg-background">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="rounded-xl overflow-hidden shadow-lg"
-          >
-            <img
-              src={testimonialsImage}
-              alt="Tysen Creager, founder of Elevate Growth Solutions, working at her laptop"
-              width={1600}
-              height={1067}
-              className="w-full h-auto"
-              loading="lazy"
-              decoding="async"
-            />
-          </motion.div>
         </div>
       </section>
 
