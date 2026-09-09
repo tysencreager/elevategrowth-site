@@ -55,18 +55,19 @@ export default function FounderBand() {
               Behind Elevate
             </span>
             <h2 className="font-display font-normal text-[clamp(28px,3.6vw,42px)] leading-[1.18] text-foreground mb-5">
-              Behind every project, the{" "}
-              <em className="italic text-primary">same person.</em>
+              Founder-led, from{" "}
+              <em className="italic text-primary">first call to launch.</em>
             </h2>
             <p className="font-serif font-light text-[16px] leading-relaxed text-muted-foreground max-w-[56ch]">
-              Tysen Creager founded Elevate Growth Solutions in Salt Lake City, and she still does
-              the work herself — the strategy, the design, the build, and the SEO behind it. Nearly
-              a decade in, with certifications in digital marketing and UX design, she has delivered
-              for large commercial companies and boutique brands alike.
+              Tysen Creager founded Elevate Growth Solutions in Salt Lake City, and she still sets
+              the standard for every project that carries the name — the strategy, the design, the
+              build, and the SEO behind it. Nearly a decade in, with certifications in digital
+              marketing and UX design, she has delivered for large commercial companies and boutique
+              brands alike.
             </p>
             <p className="font-serif font-light text-[16px] leading-relaxed text-muted-foreground max-w-[56ch] mt-4">
-              The standard doesn&rsquo;t change with the size of the project, and neither does the
-              person answering your email.
+              The standard doesn&rsquo;t change with the size of the project — enterprise-level
+              quality, close attention, and her name on the result.
             </p>
             <Link
               href="/behind-elevate"
