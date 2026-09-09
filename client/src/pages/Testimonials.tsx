@@ -7,8 +7,7 @@ import CTASection from "@/components/CTASection";
 import SEO from "@/components/SEO";
 import ClientMarquee from "@/components/home/ClientMarquee";
 import headerImage from "@assets/testimonials-header.webp";
-
-const testimonialsImage = "https://i.postimg.cc/j50kTV2H/website_photo.png";
+import testimonialsImage from "@assets/testimonials-break.webp";
 
 const whyChooseReasons = [
   {
@@ -436,7 +435,9 @@ export default function Testimonials() {
           >
             <img
               src={testimonialsImage}
-              alt="Elevate Growth Solutions team at work"
+              alt="Tysen Creager, founder of Elevate Growth Solutions, working at her laptop"
+              width={1600}
+              height={1067}
               className="w-full h-auto"
               loading="lazy"
               decoding="async"

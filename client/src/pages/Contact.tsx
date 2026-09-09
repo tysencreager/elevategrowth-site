@@ -381,7 +381,7 @@ export default function Contact() {
                   <div className="relative overflow-hidden w-full min-h-[300px] sm:min-h-[380px]">
                     <img
                       src={contactSideImage}
-                      alt="Reaching out on a phone to start the conversation"
+                      alt="Tysen Creager, founder of Elevate Growth Solutions"
                       loading="lazy"
                       decoding="async"
                       className="absolute inset-0 w-full h-full object-cover grayscale contrast-[1.04]"

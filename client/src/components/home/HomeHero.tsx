@@ -20,7 +20,6 @@ export default function HomeHero() {
         sizes="100vw"
         alt="Tysen Creager of Elevate Growth Solutions working at a laptop"
         className="absolute inset-0 w-full h-full object-cover object-center grayscale contrast-[1.05]"
-        fetchpriority="high"
         decoding="async"
       />
       {/* Teal-ink duotone + readability overlay */}

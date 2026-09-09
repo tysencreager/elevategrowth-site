@@ -15,7 +15,7 @@ const personSchema = {
   "jobTitle": "Founder & Director of Marketing Services",
   "description": "Full-stack marketer with nearly a decade of experience in web design, digital marketing, SEO, and client-centered strategy.",
   "url": "https://www.elevategrowth.solutions/behind-elevate",
-  "image": "https://i.postimg.cc/LsPcdM3R/tysen-photo.jpg",
+  "image": "https://www.elevategrowth.solutions/tysen-headshot-800.webp",
   "worksFor": {"@id": "https://www.elevategrowth.solutions/#organization"},
   "alumniOf": [
     {"@type": "EducationalOrganization", "name": "Digital Marketing Certification Program"},

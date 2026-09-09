@@ -354,7 +354,7 @@ function applyHiddenPageHead(html) {
     hiddenFontsUrl
   );
   html = html.replace(
-    /\s*<link\s+rel="preload"\s+as="image"\s+href="\/home-header-poster\.webp"[^>]*>/,
+    /\s*<link\s+rel="preload"\s+as="image"\s+href="\/home-header-[^"]*"[^>]*>/,
     ""
   );
   return html;
