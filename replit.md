@@ -161,17 +161,24 @@ Preferred communication style: Simple, everyday language.
 
 ### Third-Party Services & Social Media
 - **Google Fonts**: Typography (Noto Serif, Lora, Montserrat)
-- **Brevo** (transactional + lists): powers `functions/api/subscribe.ts`,
-  `functions/api/contact.ts`, and the Wise Women confirmation and notification
-  emails. Requires the `BREVO_API_KEY` secret in Cloudflare Pages (set it for
-  Production AND Preview). Hardcoded list ids: **3** = Newsletter Subscribers,
-  **4** = Contact Form Leads. Optional `BREVO_WISEWOMEN_LIST_ID` mirrors
-  conference leads into Brevo; unset simply skips that step.
-- **MailerLite** (conference funnel, being retired): `wisewomen-lead.ts` adds
-  leads to the group "Wise Women Houston 2026", resolved BY NAME at runtime and
-  created if missing. That means the group lands in whichever MailerLite account
-  `MAILERLITE_API_KEY` belongs to, so verify the key came from the Elevate
-  Growth Solutions profile and not another client profile on the same login.
+- **Brevo** is the only ESP. It powers `functions/api/subscribe.ts`,
+  `functions/api/contact.ts`, and both Wise Women emails (the attendee's credit
+  confirmation and the notification to Tysen). Requires the `BREVO_API_KEY`
+  secret in Cloudflare Pages, set for Production AND Preview. Hardcoded list
+  ids: **3** = Newsletter Subscribers, **4** = Contact Form Leads.
+  `BREVO_WISEWOMEN_LIST_ID` holds the conference list id; if it is unset or
+  wrong, the list write is skipped and logged, and the notification email
+  becomes the only record of that lead.
+- **MailerLite was removed.** The conference funnel previously wrote to a
+  MailerLite group resolved by name at runtime. Everything now goes to Brevo,
+  so there is one suppression list and one authenticated sending domain. The
+  `MAILERLITE_API_KEY` secret is no longer read by any code and can be deleted
+  from Cloudflare Pages.
+- **A Wise Women lead succeeds if EITHER destination accepts it**: the Brevo
+  list write, or the notification email to Tysen. Both failing returns 502 so
+  the form surfaces an error rather than losing the lead silently. The
+  attendee's confirmation email is deliberately excluded from that check: a
+  failed confirmation must never turn a captured lead into an error.
 - **Email sequences are dashboard-only.** This repo can send the FIRST email at
   form-submit time, because that is a response to an HTTP request. Anything with
   a delay (waits, multi-step drips, branching) has to be built in the ESP's

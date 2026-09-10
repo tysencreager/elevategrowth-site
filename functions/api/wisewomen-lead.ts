@@ -1,9 +1,9 @@
 interface Env {
   BREVO_API_KEY: string;
-  MAILERLITE_API_KEY?: string;
-  // Numeric id of the Brevo list that mirrors the conference funnel. Set this
-  // in Cloudflare Pages once the list exists in Brevo. Absent is safe: the
-  // lead is still captured by MailerLite and by the notification email.
+  // Numeric id of the Brevo list holding the conference funnel, set in
+  // Cloudflare Pages. If it is absent or wrong the lead is still captured by
+  // the notification email, which is why that email is part of the success
+  // check below rather than best effort.
   BREVO_WISEWOMEN_LIST_ID?: string;
 }
 
@@ -19,77 +19,6 @@ interface WiseWomenLeadRequest {
   fax?: string;
 }
 
-// Conference-funnel group in MailerLite so the follow-up automation can
-// trigger off group membership. Resolved by NAME at runtime (created if
-// missing) rather than hardcoded by ID, so the function works with
-// whichever MailerLite account MAILERLITE_API_KEY belongs to.
-const MAILERLITE_GROUP_NAME = "Wise Women Houston 2026";
-// Custom subscriber fields the form writes; ensured to exist before the
-// first subscribe (MailerLite rejects unknown field keys).
-const MAILERLITE_CUSTOM_FIELDS = ["current_website", "interest", "notes", "subscriber_source"];
-
-const ML_BASE = "https://connect.mailerlite.com/api";
-
-const mlHeaders = (apiKey: string) => ({
-  "Content-Type": "application/json",
-  Accept: "application/json",
-  Authorization: `Bearer ${apiKey}`,
-});
-
-// Group + field setup runs once per isolate; concurrent requests share the
-// same in-flight promise.
-let mlSetup: Promise<string | null> | null = null;
-
-async function ensureMailerLiteSetup(apiKey: string): Promise<string | null> {
-  // Find (or create) the conference group.
-  let groupId: string | null = null;
-  const groupSearch = await fetch(
-    `${ML_BASE}/groups?filter[name]=${encodeURIComponent(MAILERLITE_GROUP_NAME)}`,
-    { headers: mlHeaders(apiKey) },
-  );
-  if (groupSearch.ok) {
-    const { data } = (await groupSearch.json()) as { data: Array<{ id: string; name: string }> };
-    groupId = data.find((g) => g.name === MAILERLITE_GROUP_NAME)?.id ?? null;
-  }
-  if (!groupId) {
-    const created = await fetch(`${ML_BASE}/groups`, {
-      method: "POST",
-      headers: mlHeaders(apiKey),
-      body: JSON.stringify({ name: MAILERLITE_GROUP_NAME }),
-    });
-    if (created.ok) {
-      groupId = ((await created.json()) as { data: { id: string } }).data.id;
-    } else {
-      console.error("MailerLite group create error:", await created.text());
-    }
-  }
-
-  // Ensure the custom fields exist ("Current Website" -> key current_website
-  // etc.). Field keys are derived from the name by MailerLite.
-  const fieldsResponse = await fetch(`${ML_BASE}/fields?limit=200`, { headers: mlHeaders(apiKey) });
-  if (fieldsResponse.ok) {
-    const { data } = (await fieldsResponse.json()) as { data: Array<{ key: string }> };
-    const existing = new Set(data.map((f) => f.key));
-    for (const key of MAILERLITE_CUSTOM_FIELDS) {
-      if (!existing.has(key)) {
-        const name = key
-          .split("_")
-          .map((w) => w[0].toUpperCase() + w.slice(1))
-          .join(" ");
-        const created = await fetch(`${ML_BASE}/fields`, {
-          method: "POST",
-          headers: mlHeaders(apiKey),
-          body: JSON.stringify({ name, type: "text" }),
-        });
-        if (!created.ok) {
-          console.error(`MailerLite field create error (${key}):`, await created.text());
-        }
-      }
-    }
-  }
-
-  return groupId;
-}
 
 // User-submitted values go into HTML emails; unescaped markup (or injected
 // links) both breaks the layout and raises the spam score.
@@ -126,72 +55,12 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
       );
     }
 
-    // Step 1: Add the lead to the MailerLite group so follow-up automation
-    // fires. Upsert semantics: an existing subscriber is updated and added
-    // to the group rather than rejected.
-    let mailerliteOk = false;
-    const mailerliteKey = context.env.MAILERLITE_API_KEY;
-    if (mailerliteKey) {
-      try {
-        mlSetup ??= ensureMailerLiteSetup(mailerliteKey);
-        let groupId: string | null = null;
-        try {
-          groupId = await mlSetup;
-        } catch (setupError) {
-          mlSetup = null; // let the next request retry setup
-          console.error("MailerLite setup failed:", setupError);
-        }
-
-        const subscribe = (fields: Record<string, string>) =>
-          fetch(`${ML_BASE}/subscribers`, {
-            method: "POST",
-            headers: mlHeaders(mailerliteKey),
-            body: JSON.stringify({
-              email,
-              fields,
-              ...(groupId ? { groups: [groupId] } : {}),
-            }),
-          });
-
-        let mlResponse = await subscribe({
-          name: firstName,
-          last_name: lastName,
-          company: businessName,
-          current_website: currentWebsite || "",
-          interest: interest || "",
-          notes: notes || "",
-          subscriber_source: "wisewomen-landing-page",
-        });
-
-        // If the account rejects a custom field key, retry with only the
-        // default fields so the lead is never lost; the Brevo notification
-        // below carries the full submission either way.
-        if (!mlResponse.ok && mlResponse.status === 422) {
-          console.error("MailerLite subscriber 422 (retrying with default fields):", await mlResponse.text());
-          mlResponse = await subscribe({
-            name: firstName,
-            last_name: lastName,
-            company: businessName,
-          });
-        }
-
-        mailerliteOk = mlResponse.ok;
-        if (!mlResponse.ok) {
-          console.error("MailerLite subscriber error:", await mlResponse.text());
-        }
-      } catch (mlError) {
-        console.error("MailerLite request failed:", mlError);
-      }
-    } else {
-      console.error("MAILERLITE_API_KEY not configured; lead only sent by email");
-    }
-
     const brevoKey = context.env.BREVO_API_KEY;
 
-    // Step 2: Mirror the lead into Brevo so the conference funnel can live in
-    // the same ESP as the rest of the site (one suppression list, one
-    // authenticated sending domain). Skipped until the list id is configured,
-    // rather than guessing an id and silently writing to the wrong list.
+    // Step 1: Add the lead to the Brevo conference list. Skipped if the list
+    // id is not configured, rather than guessing an id and silently writing to
+    // the wrong list.
+    let listOk = false;
     const wiseWomenListId = Number(context.env.BREVO_WISEWOMEN_LIST_ID);
     if (brevoKey && Number.isInteger(wiseWomenListId) && wiseWomenListId > 0) {
       try {
@@ -213,8 +82,10 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
             },
           }),
         });
-        // 400/409 here is usually "already exists", which is fine.
-        if (!mirror.ok && mirror.status !== 409 && mirror.status !== 400) {
+        // 400/409 here is usually "already exists", which still means the
+        // contact is on the list, so both count as success.
+        listOk = mirror.ok || mirror.status === 409 || mirror.status === 400;
+        if (!listOk) {
           console.error("Brevo Wise Women list error:", await mirror.text());
         }
       } catch (mirrorError) {
@@ -224,7 +95,7 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
       console.warn("BREVO_WISEWOMEN_LIST_ID not set; lead not mirrored into Brevo");
     }
 
-    // Step 3: Confirm the credit to the attendee straight away. The page
+    // Step 2: Confirm the credit to the attendee straight away. The page
     // promises she will hear back, and until now she received nothing at all.
     // Deliberately excluded from the success check below: a failed
     // confirmation must never turn a captured lead into an error response.
@@ -318,9 +189,8 @@ tysen@elevategrowth.solutions`,
       }
     }
 
-    // Step 4: Email the full submission to Tysen via Brevo (already
-    // configured for the site's other forms), so the lead is never lost
-    // even if MailerLite is unreachable.
+    // Step 3: Email the full submission to Tysen, so a lead is never lost
+    // even if the list write fails. This is the durable record.
     let emailOk = false;
     if (brevoKey) {
       const fullName = `${firstName} ${lastName}`;
@@ -358,7 +228,7 @@ Name: ${fullName}
 Email: ${email}
 Business: ${businessName}
 ${currentWebsite ? `Current website: ${currentWebsite}\n` : ""}${interest ? `Interested in: ${interest}\n` : ""}${notes ? `\nNotes:\n${notes}\n` : ""}
-${mailerliteOk ? "Added to the MailerLite group \"Wise Women Houston 2026\"." : "NOT added to MailerLite (check MAILERLITE_API_KEY in Cloudflare Pages) - this email is the only record."}`,
+${listOk ? "Added to the Brevo Wise Women list." : "NOT added to the Brevo list (check BREVO_WISEWOMEN_LIST_ID in Cloudflare Pages) - this email is the only record."}`,
             htmlContent: `
 <!DOCTYPE html>
 <html>
@@ -398,9 +268,9 @@ ${mailerliteOk ? "Added to the MailerLite group \"Wise Women Houston 2026\"." : 
   <div style="background: #f5f5f5; padding: 15px; border-radius: 5px; white-space: pre-wrap;">${safe.notes}</div>` : ""}
 
   <p style="margin-top: 20px; color: #666; font-size: 14px;">
-    ${mailerliteOk
-      ? 'Added to the MailerLite group "Wise Women Houston 2026".'
-      : "<strong>NOT added to MailerLite</strong> (check MAILERLITE_API_KEY in Cloudflare Pages). This email is the only record of this lead."}
+    ${listOk
+      ? "Added to the Brevo Wise Women list."
+      : "<strong>NOT added to the Brevo list</strong> (check BREVO_WISEWOMEN_LIST_ID in Cloudflare Pages). This email is the only record of this lead."}
   </p>
 
   <p style="margin-top: 20px; color: #666; font-size: 14px;">
@@ -422,8 +292,9 @@ ${mailerliteOk ? "Added to the MailerLite group \"Wise Women Houston 2026\"." : 
       console.error("BREVO_API_KEY not configured");
     }
 
-    // The lead is safe as long as at least one destination accepted it.
-    if (mailerliteOk || emailOk) {
+    // The lead is safe as long as at least one destination accepted it: the
+    // Brevo list, or the notification email that reaches Tysen directly.
+    if (listOk || emailOk) {
       return new Response(JSON.stringify({ success: true }), { status: 200, headers: jsonHeaders });
     }
 
