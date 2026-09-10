@@ -4,6 +4,7 @@ import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
 import SchemaMarkup from "@/components/SchemaMarkup";
 import { Button } from "@/components/ui/button";
+import { BOOKING_URL } from "@/lib/booking";
 import { ArrowRight, Check, Sparkles } from "lucide-react";
 import { Link } from "wouter";
 import servicesHero from "@assets/services_hero_team_1920.webp";
@@ -330,7 +331,7 @@ function PricingCTA() {
 
         {/* CTA Buttons */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-          <a href="https://calendar.app.google/yv9h833QYphwvfmJ7" target="_blank" rel="noopener noreferrer">
+          <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer">
             <Button
               size="lg"
               className="font-sans font-semibold text-lg px-8 py-6 bg-white text-primary hover:bg-white/90 shadow-xl shadow-black/20 group transition-transform hover:scale-105"

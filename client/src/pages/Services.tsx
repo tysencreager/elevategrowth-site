@@ -12,6 +12,7 @@ import SchemaMarkup from "@/components/SchemaMarkup";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { Button } from "@/components/ui/button";
+import { BOOKING_URL } from "@/lib/booking";
 import { Link } from "wouter";
 import { MessageCircle, Sparkles, ArrowRight, Check } from "lucide-react";
 
@@ -306,7 +307,7 @@ export default function Services() {
             transition={{ duration: 0.6, delay: 0.3 }}
             className="flex flex-col sm:flex-row items-center justify-center gap-4"
           >
-            <a href="https://calendar.app.google/yv9h833QYphwvfmJ7" target="_blank" rel="noopener noreferrer">
+            <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer">
               <motion.div
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.98 }}

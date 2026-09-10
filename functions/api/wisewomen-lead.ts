@@ -130,7 +130,7 @@ What happens next:
 3. You get a quote with the $300 already applied, and you decide from there.
 
 Would rather skip the back and forth? Pick a time that works for you:
-https://calendly.com/tysencreager/30minutes
+https://calendar.app.google/ELbmUSC49AdBuBQe7
 
 It was so good to meet you in Houston.
 
@@ -168,7 +168,7 @@ tysen@elevategrowth.solutions`,
     </ol>
 
     <p style="text-align: center; margin: 28px 0;">
-      <a href="https://calendly.com/tysencreager/30minutes" style="display: inline-block; background: #4AC0D8; color: #1B1E20; font-family: Arial, sans-serif; font-weight: bold; text-decoration: none; padding: 15px 28px; border-radius: 999px;">Book a time that suits you</a>
+      <a href="https://calendar.app.google/ELbmUSC49AdBuBQe7" style="display: inline-block; background: #4AC0D8; color: #1B1E20; font-family: Arial, sans-serif; font-weight: bold; text-decoration: none; padding: 15px 28px; border-radius: 999px;">Book a time that suits you</a>
     </p>
 
     <p>It was so good to meet you in Houston.</p>

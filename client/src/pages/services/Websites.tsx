@@ -4,6 +4,7 @@ import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { ExternalLink, Smartphone, Search, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import ScrollRow from "@/components/ScrollRow";
 import sectionBand from "@assets/band-websites.webp";
 import kleenslateImg from "@assets/portfolio-kleenslate.webp";
 import lexlegalImg from "@assets/portfolio-lexlegal.webp";
@@ -69,14 +70,14 @@ function PortfolioCard({ project, index }: { project: typeof portfolioProjects[0
       ref={cardRef}
       initial={{ opacity: 0, y: 40 }}
       animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
-      transition={{ duration: 0.6, delay: index * 0.1 }}
+      transition={{ duration: 0.6, delay: (index % 3) * 0.1 }}
       whileHover={{ y: -8, transition: { duration: 0.3 } }}
-      className="group bg-card rounded-xl overflow-hidden border border-border hover:border-primary/50 hover:shadow-xl hover:shadow-primary/10 transition-all duration-300"
+      className="group h-full flex flex-col bg-card rounded-xl overflow-hidden border border-border hover:border-primary/50 hover:shadow-xl hover:shadow-primary/10 transition-all duration-300"
       itemScope
       itemType="https://schema.org/WebSite"
     >
       {/* Project Image */}
-      <div className="relative aspect-[16/10] overflow-hidden">
+      <div className="relative flex-none aspect-[16/10] overflow-hidden">
         <img
           src={project.image}
           alt={project.fullDescription}
@@ -107,7 +108,7 @@ function PortfolioCard({ project, index }: { project: typeof portfolioProjects[0
       </div>
 
       {/* Card content */}
-      <div className="p-4 sm:p-6">
+      <div className="flex-1 p-4 sm:p-6">
         <h3
           className="font-display font-bold text-lg sm:text-xl text-primary mb-2 group-hover:text-primary/80 transition-colors"
           itemProp="name"
@@ -207,8 +208,14 @@ function PortfolioSection() {
           </p>
         </motion.div>
 
-        {/* Portfolio Grid */}
-        <div className="grid sm:grid-cols-2 gap-4 sm:gap-6 md:gap-8 mb-10 sm:mb-12">
+        {/* Portfolio row: one swipeable line rather than a grid that eats the page */}
+        <ScrollRow
+          label="Selected website work"
+          className="-mx-4 sm:-mx-6 lg:-mx-8 mb-10 sm:mb-12"
+          itemClassName="w-[280px] sm:w-[340px] lg:w-[380px]"
+          trackClassName="gap-4 sm:gap-6 px-4 sm:px-6 lg:px-8 py-3 scroll-pl-4 sm:scroll-pl-6 lg:scroll-pl-8"
+          fadeFrom="from-background"
+        >
           {portfolioProjects.map((project, index) => (
             project.active && project.url ? (
               <a
@@ -216,19 +223,19 @@ function PortfolioSection() {
                 href={project.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="block focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded-xl"
+                className="block h-full focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded-xl"
                 aria-label={`Visit ${project.name} website (opens in new tab)`}
                 title={`View ${project.name} - ${project.description}`}
               >
                 <PortfolioCard project={project} index={index} />
               </a>
             ) : (
-              <div key={project.name}>
+              <div key={project.name} className="h-full">
                 <PortfolioCard project={project} index={index} />
               </div>
             )
           ))}
-        </div>
+        </ScrollRow>
 
         {/* Marketing Portfolio Link */}
         <motion.div

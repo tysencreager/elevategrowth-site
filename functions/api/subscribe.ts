@@ -98,7 +98,7 @@ At Elevate Growth Solutions, we're a boutique full-stack marketing agency dedica
 
 Your Exclusive Welcome Offer: As a thank you for subscribing, enjoy 10% off any of our services when you book your free discovery call.
 
-Ready to get started? Book your discovery call: https://calendly.com/tysencreager/30minutes
+Ready to get started? Book your discovery call: https://calendar.app.google/ELbmUSC49AdBuBQe7
 
 Looking forward to connecting with you!
 
@@ -130,7 +130,7 @@ Elevate Growth Solutions`,
 
   <p><strong>Your Exclusive Welcome Offer:</strong> As a thank you for subscribing, enjoy 10% off any of our services when you book your free discovery call. Whether you're launching your first website or ready to scale your marketing, we're here to help you elevate your growth.</p>
 
-  <p><strong>Ready to get started?</strong> <a href="https://calendly.com/tysencreager/30minutes" style="color: #0066cc;">Book Your Discovery Call Today</a></p>
+  <p><strong>Ready to get started?</strong> <a href="https://calendar.app.google/ELbmUSC49AdBuBQe7" style="color: #0066cc;">Book Your Discovery Call Today</a></p>
 
   <p>During our free consultation, we'll discuss your goals, challenges, and vision for your brand. No pressure, no obligations. Just a genuine conversation about how we can help you succeed.</p>
 

@@ -5,6 +5,7 @@ import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
+import { BOOKING_URL } from "@/lib/booking";
 import { HandshakeIcon, Settings, Code2, Shield, TrendingUp, DollarSign, ArrowRight, CheckCircle, Users, Wrench } from "lucide-react";
 
 export default function WebsiteHandoffOptions() {
@@ -412,7 +413,7 @@ export default function WebsiteHandoffOptions() {
             transition={{ duration: 0.6, delay: 0.3 }}
             className="flex flex-col sm:flex-row gap-4 justify-center"
           >
-            <a href="https://calendar.app.google/yv9h833QYphwvfmJ7" target="_blank" rel="noopener noreferrer">
+            <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer">
               <motion.div
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.98 }}

@@ -145,7 +145,7 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
 
 Thanks for getting in touch with Elevate Growth Solutions. We're excited to hear from you.
 
-I'll personally review your message and get back to you within two business days. In the meantime, if you'd like to schedule a quick call to discuss your marketing goals, feel free to grab a time here: https://calendly.com/tysencreager/30minutes
+I'll personally review your message and get back to you within two business days. In the meantime, if you'd like to schedule a quick call to discuss your marketing goals, feel free to grab a time here: https://calendar.app.google/ELbmUSC49AdBuBQe7
 
 Warmly,
 Tysen Creager
@@ -162,7 +162,7 @@ Elevate Growth Solutions`,
 
   <p>Thanks for getting in touch with Elevate Growth Solutions. We're excited to hear from you.</p>
 
-  <p>I'll personally review your message and get back to you within two business days. In the meantime, if you'd like to schedule a quick call to discuss your marketing goals, feel free to grab a time here: <a href="https://calendly.com/tysencreager/30minutes" style="color: #0066cc;">Book a Call</a></p>
+  <p>I'll personally review your message and get back to you within two business days. In the meantime, if you'd like to schedule a quick call to discuss your marketing goals, feel free to grab a time here: <a href="https://calendar.app.google/ELbmUSC49AdBuBQe7" style="color: #0066cc;">Book a Call</a></p>
 
   <p>Warmly,<br>
   <strong>Tysen Creager</strong><br>

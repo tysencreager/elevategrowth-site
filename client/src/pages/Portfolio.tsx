@@ -7,6 +7,7 @@ import Footer from "@/components/Footer";
 import CTASection from "@/components/CTASection";
 import SEO from "@/components/SEO";
 import ClientMarquee from "@/components/home/ClientMarquee";
+import ScrollRow from "@/components/ScrollRow";
 import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -221,9 +222,10 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
     <>
       <motion.div
         ref={cardRef}
+        className="h-full"
         initial={{ opacity: 0, y: 40 }}
         animate={isInView ? { opacity: 1, y: 0 } : {}}
-        transition={{ delay: index * 0.08, duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+        transition={{ delay: (index % 3) * 0.08, duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
       >
         <Card
           className="h-full border-primary/10 hover:border-primary/30 transition-all duration-300 group overflow-hidden flex flex-col shadow-sm hover:shadow-lg cursor-pointer"
@@ -590,13 +592,19 @@ export default function Portfolio() {
               Here are a few of the custom websites we've built. From full business sites to high-converting ad landing pages, each project is built from the ground up to meet the unique needs of the business.
             </p>
           </motion.div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6">
+          <ScrollRow
+            label="Selected website work"
+            className="-mx-4 sm:-mx-6 lg:-mx-8"
+            itemClassName="w-[280px] sm:w-[330px] lg:w-[360px]"
+            trackClassName="gap-5 md:gap-6 px-4 sm:px-6 lg:px-8 py-3 scroll-pl-4 sm:scroll-pl-6 lg:scroll-pl-8"
+            fadeFrom="from-background"
+          >
             {projects.map((project, index) => (
               <ProjectCard key={project.title} project={project} index={index} />
             ))}
-          </div>
+          </ScrollRow>
           <p className="text-center mt-6 font-serif text-xs text-muted-foreground">
-            Tap any card to see full project details.
+            {projects.length} projects. Swipe or use the arrows, and tap any card for full details.
           </p>
           <motion.p
             className="text-center mt-10 font-serif text-muted-foreground italic"

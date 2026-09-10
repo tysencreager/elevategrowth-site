@@ -4,6 +4,7 @@ import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
 import SchemaMarkup from "@/components/SchemaMarkup";
 import { Button } from "@/components/ui/button";
+import { BOOKING_URL } from "@/lib/booking";
 import { ArrowRight, CheckCircle, MapPin, Clock, Users, Award } from "lucide-react";
 // Optimized WebP images
 import heroImage from "@assets/hero_bw_1920.webp";
@@ -141,7 +142,7 @@ export default function SaltLakeCity() {
         title="Salt Lake City Web Design & Digital Marketing"
         subtitle="Boutique marketing agency serving Utah businesses from Silicon Slopes to Park City"
         ctaText="Get a Free Consultation"
-        ctaHref="https://calendar.app.google/yv9h833QYphwvfmJ7"
+        ctaHref={BOOKING_URL}
         isLCP={true}
       />
 
@@ -299,7 +300,7 @@ export default function SaltLakeCity() {
           <p className="font-serif text-xl text-white/90 mb-8">
             Let's discuss how we can help you generate more leads and build a stronger brand in the Utah market.
           </p>
-          <a href="https://calendar.app.google/yv9h833QYphwvfmJ7" target="_blank" rel="noopener noreferrer">
+          <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer">
             <Button size="lg" className="font-serif font-medium text-lg px-8 py-6 gap-2">
               Schedule a Free Consultation
               <ArrowRight className="h-5 w-5" />
