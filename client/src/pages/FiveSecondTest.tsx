@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import { Link } from "wouter";
 import { AnimateOnScroll, motion } from "@/components/ui/motion";
 
+import womanOnPhone from "@assets/woman-on-phone.webp";
+
 /**
  * Hidden companion page for Tysen's 10-minute WISE WOMEN talk. The
  * audience types the URL from a slide (or scans a QR) on their phones in
@@ -442,8 +444,25 @@ export default function FiveSecondTest() {
       <Ticker />
 
       {/* QUIZ */}
-      <section className="print-hide px-5 py-12 sm:py-16" aria-labelledby="quiz-heading">
-        <div className="max-w-xl mx-auto">
+      <section
+        className="print-hide relative overflow-hidden px-5 py-12 sm:py-16"
+        aria-labelledby="quiz-heading"
+      >
+        {/* Cut-out sits flush with the section's bottom edge, so the crop just
+            below her legs reads as intentional rather than as a hard cut.
+            Hidden below lg: at those widths it would sit on top of the quiz
+            card, and this page is used on phones at the conference. */}
+        <img
+          src={womanOnPhone}
+          alt=""
+          aria-hidden="true"
+          width={900}
+          height={1125}
+          loading="lazy"
+          decoding="async"
+          className="hidden lg:block pointer-events-none select-none absolute bottom-0 right-0 w-[300px] xl:w-[360px] h-auto"
+        />
+        <div className="relative max-w-xl mx-auto">
           <AnimateOnScroll amount={0.2}>
             <span className={`${eyebrow} text-[#3D95B4] block mb-3`}>Take the test</span>
             <h2

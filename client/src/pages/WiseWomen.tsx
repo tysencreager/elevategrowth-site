@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import { AnimateOnScroll, StaggerContainer, StaggerItem, fadeInUp, motion } from "@/components/ui/motion";
 import tysenPhoto from "@assets/tysen_photo_800.webp";
+import faqBg1600 from "@assets/wise-women-faq-bg-1600.webp";
+import faqBg900 from "@assets/wise-women-faq-bg-900.webp";
 // Same six sites as the homepage's Selected Works section.
 import workJulian from "@assets/portfolio-juliandismute.webp";
 import workBodyshop from "@assets/portfolio-bodyshopgym.webp";
@@ -665,11 +667,36 @@ export default function WiseWomen() {
       </section>
 
       {/* FAQ */}
-      <section className="px-5 py-12 sm:py-16" aria-labelledby="faq-heading">
-        <AnimateOnScroll className="max-w-xl mx-auto" amount={0.1}>
+      <section
+        className="relative overflow-hidden px-5 py-14 sm:py-20"
+        aria-labelledby="faq-heading"
+      >
+        {/* Conference crowd photo as the section ground. Grayscale plus a deep
+            teal scrim, matching the treatment used elsewhere on the site, so a
+            busy group shot stays quiet enough for the white cards to read. */}
+        <img
+          src={faqBg1600}
+          srcSet={`${faqBg900} 900w, ${faqBg1600} 1600w`}
+          sizes="100vw"
+          alt=""
+          aria-hidden="true"
+          loading="lazy"
+          decoding="async"
+          className="absolute inset-0 w-full h-full object-cover grayscale"
+        />
+        <div
+          className="absolute inset-0"
+          style={{
+            background:
+              "linear-gradient(180deg, rgba(27,30,32,.90) 0%, rgba(38,109,130,.86) 45%, rgba(27,30,32,.93) 100%)"
+          }}
+          aria-hidden="true"
+        />
+        <div className="absolute inset-0 opacity-[0.07] mix-blend-overlay grain" aria-hidden="true" />
+        <AnimateOnScroll className="relative max-w-xl mx-auto" amount={0.1}>
           <h2
             id="faq-heading"
-            className="font-display font-medium text-2xl sm:text-3xl text-[#1B1E20] [text-wrap:balance] mb-6"
+            className="font-display font-medium text-2xl sm:text-3xl text-white [text-wrap:balance] mb-6"
           >
             Questions you may have:
           </h2>
