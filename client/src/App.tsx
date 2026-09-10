@@ -48,7 +48,7 @@ const StGeorgeWebDesign = lazy(() => import("@/pages/StGeorgeWebDesign"));
 const OgdenWebDesign = lazy(() => import("@/pages/OgdenWebDesign"));
 const SaltLakeCityMarketing = lazy(() => import("@/pages/SaltLakeCityMarketing"));
 
-// Hidden conference pages — reachable only by direct URL (QR codes / slide).
+// Hidden conference pages, reachable only by direct URL (QR codes / slide).
 // Intentionally not linked from any nav, footer, or page on the public site.
 const WiseWomen = lazy(() => import("@/pages/WiseWomen"));
 const FiveSecondTest = lazy(() => import("@/pages/FiveSecondTest"));

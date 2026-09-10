@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import { AnimateOnScroll, StaggerContainer, StaggerItem, fadeInUp, motion } from "@/components/ui/motion";
 import tysenPhoto from "@assets/tysen_photo_800.webp";
+import faqBg1600 from "@assets/wise-women-faq-bg-1600.webp";
+import faqBg900 from "@assets/wise-women-faq-bg-900.webp";
 // Same six sites as the homepage's Selected Works section.
 import workJulian from "@assets/portfolio-juliandismute.webp";
 import workBodyshop from "@assets/portfolio-bodyshopgym.webp";
@@ -198,7 +200,7 @@ function LeadForm() {
         />
         <h3 className="font-display font-semibold text-2xl text-[#1B1E20] mb-3">Got it!</h3>
         <p className={`${body} text-lg leading-relaxed`}>
-          You'll hear from me, actual me, not a bot, within one business day.
+          You'll hear from me within two business days. Can't wait to chat!
         </p>
       </div>
     );
@@ -350,7 +352,7 @@ function LeadForm() {
           {isSubmitting ? "Sending…" : "Claim My Credit"}
         </button>
         <p className={`${body} text-sm text-center text-[#1B1E20]/70`}>
-          You'll hear from me (actual me, not a bot) within one business day.
+          You'll hear from me within two business days. Can't wait to chat!
         </p>
         {error && (
           <p className={`${body} text-sm text-red-700`} role="alert">
@@ -373,7 +375,7 @@ export default function WiseWomen() {
       <header className="relative min-h-[88svh] flex items-center justify-center px-5 py-20 text-center overflow-hidden bg-[#1B1E20]">
         <img
           src="/hero_bw_768.webp"
-          srcSet="/hero_bw_768.webp 768w, /hero_bw_1920.webp 1920w"
+          srcSet="/hero_bw_768.webp 768w, /hero_bw_1920.webp 736w"
           sizes="100vw"
           alt=""
           {...({ fetchpriority: "high" } as React.ImgHTMLAttributes<HTMLImageElement>)}
@@ -398,7 +400,7 @@ export default function WiseWomen() {
             <em className="italic text-[#4AC0D8]">booked &amp; busy.</em>
           </h1>
           <p className="font-['Lora',_Georgia,_serif] text-lg leading-relaxed text-[#F4F7F8]/95 mt-6 max-w-md mx-auto">
-            You grabbed the cup. Now let's make sure your website is doing its part. As a WISE
+            You scanned the code. Now let's make sure your website is doing its part. As a WISE
             WOMEN attendee, you've got{" "}
             <strong className="font-semibold text-[#4AC0D8]">
               $300 toward a custom website build or growth retainer
@@ -517,7 +519,8 @@ export default function WiseWomen() {
                 aria-hidden="true"
               />
               <h2 id="perk-heading" className="font-display font-medium text-2xl sm:text-3xl text-white">
-                The conference perk, <em className="italic text-[#4AC0D8]">in plain English:</em>
+                Here&rsquo;s what you have the chance to claim{" "}
+                <em className="italic text-[#4AC0D8]">if you act on it.</em>
               </h2>
               <ul className="mt-5 flex flex-col gap-3.5">
                 {[
@@ -612,8 +615,8 @@ export default function WiseWomen() {
 
       {/* PROOF: testimonial cards */}
       <section className="bg-white px-5 py-14 sm:py-20 overflow-hidden" aria-labelledby="proof-heading">
-        <div className="max-w-xl mx-auto">
-          <AnimateOnScroll amount={0.2}>
+        <div className="max-w-5xl mx-auto">
+          <AnimateOnScroll amount={0.2} className="max-w-xl">
             <span className={`${eyebrow} text-[#3D95B4] block mb-3`}>Kind words</span>
             <h2
               id="proof-heading"
@@ -623,13 +626,13 @@ export default function WiseWomen() {
               <em className="italic text-[#266D82]">work as hard as they do.</em>
             </h2>
           </AnimateOnScroll>
-          <StaggerContainer className="mt-8 flex flex-col gap-6">
+          <StaggerContainer className="mt-8 grid gap-5 md:grid-cols-3 items-start">
             {testimonials.map((t) => (
               <StaggerItem key={t.author} variants={fadeInUp}>
                 <figure
-                  className={`bg-[#F4F7F8] border border-[#3D95B4]/20 rounded-2xl p-6 shadow-[0_10px_30px_-12px_rgba(38,109,130,0.35)] ${t.tilt} hover:rotate-0 hover:-translate-y-1 transition-transform duration-300`}
+                  className={`h-full bg-[#F4F7F8] border border-[#3D95B4]/20 rounded-2xl p-5 shadow-[0_10px_30px_-12px_rgba(38,109,130,0.35)] ${t.tilt} hover:rotate-0 hover:-translate-y-1 transition-transform duration-300`}
                 >
-                  <div className="flex items-center gap-3 mb-4">
+                  <div className="flex items-center gap-3 mb-3.5">
                     <span
                       className="w-11 h-11 rounded-full flex items-center justify-center font-sans font-bold text-sm text-white flex-none"
                       style={{ backgroundColor: t.avatarBg }}
@@ -653,7 +656,7 @@ export default function WiseWomen() {
                       )}
                     </div>
                   </div>
-                  <blockquote className={`${body} text-base leading-relaxed`}>
+                  <blockquote className={`${body} text-[15px] leading-relaxed`}>
                     "{t.quote}"
                   </blockquote>
                 </figure>
@@ -664,10 +667,38 @@ export default function WiseWomen() {
       </section>
 
       {/* FAQ */}
-      <section className="px-5 py-12 sm:py-16" aria-labelledby="faq-heading">
-        <AnimateOnScroll className="max-w-xl mx-auto" amount={0.1}>
-          <h2 id="faq-heading" className="sr-only">
-            Frequently asked questions
+      <section
+        className="relative overflow-hidden px-5 py-14 sm:py-20"
+        aria-labelledby="faq-heading"
+      >
+        {/* Conference crowd photo as the section ground. Grayscale plus a deep
+            teal scrim, matching the treatment used elsewhere on the site, so a
+            busy group shot stays quiet enough for the white cards to read. */}
+        <img
+          src={faqBg1600}
+          srcSet={`${faqBg900} 900w, ${faqBg1600} 1600w`}
+          sizes="100vw"
+          alt=""
+          aria-hidden="true"
+          loading="lazy"
+          decoding="async"
+          className="absolute inset-0 w-full h-full object-cover grayscale"
+        />
+        <div
+          className="absolute inset-0"
+          style={{
+            background:
+              "linear-gradient(180deg, rgba(27,30,32,.90) 0%, rgba(38,109,130,.86) 45%, rgba(27,30,32,.93) 100%)"
+          }}
+          aria-hidden="true"
+        />
+        <div className="absolute inset-0 opacity-[0.07] mix-blend-overlay grain" aria-hidden="true" />
+        <AnimateOnScroll className="relative max-w-xl mx-auto" amount={0.1}>
+          <h2
+            id="faq-heading"
+            className="font-display font-medium text-2xl sm:text-3xl text-white [text-wrap:balance] mb-6"
+          >
+            Questions you may have:
           </h2>
           <div className="flex flex-col gap-3">
             {faqs.map((faq) => (

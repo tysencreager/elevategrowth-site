@@ -7,8 +7,7 @@ import CTASection from "@/components/CTASection";
 import SEO from "@/components/SEO";
 import ClientMarquee from "@/components/home/ClientMarquee";
 import headerImage from "@assets/testimonials-header.webp";
-
-const testimonialsImage = "https://i.postimg.cc/j50kTV2H/website_photo.png";
+import testimonialsImage from "@assets/testimonials-break.webp";
 
 const whyChooseReasons = [
   {
@@ -358,6 +357,30 @@ export default function Testimonials() {
       {/* Client marquee */}
       <ClientMarquee label="Trusted by businesses like yours" />
 
+      {/* Visual Break Section */}
+      <section className="py-12 md:py-16 bg-background">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="rounded-xl overflow-hidden shadow-lg"
+          >
+            <img
+              src={testimonialsImage}
+              alt="Tysen Creager, founder of Elevate Growth Solutions, working at her laptop"
+              width={1600}
+              height={1067}
+              className="w-full h-auto"
+              loading="lazy"
+              decoding="async"
+            />
+          </motion.div>
+        </div>
+      </section>
+
+
       {/* Testimonials Grid */}
       <section className="py-10 md:py-14 lg:py-16 bg-background">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -421,27 +444,6 @@ export default function Testimonials() {
               </motion.div>
             ))}
           </div>
-        </div>
-      </section>
-
-      {/* Visual Break Section */}
-      <section className="py-12 md:py-16 bg-background">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="rounded-xl overflow-hidden shadow-lg"
-          >
-            <img
-              src={testimonialsImage}
-              alt="Elevate Growth Solutions team at work"
-              className="w-full h-auto"
-              loading="lazy"
-              decoding="async"
-            />
-          </motion.div>
         </div>
       </section>
 

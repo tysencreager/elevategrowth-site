@@ -69,7 +69,7 @@ export default function SaltLakeCityMarketing() {
         {/* Background Image */}
         <img
           src={heroImage}
-          srcSet={`${heroImage768} 768w, ${heroImage} 1920w`}
+          srcSet={`${heroImage768} 768w, ${heroImage} 736w`}
           alt="Salt Lake City marketing agency and web design"
           width={1920}
           height={1080}

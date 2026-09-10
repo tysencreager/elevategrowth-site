@@ -28,8 +28,11 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
     const body = (await context.request.json()) as SubscribeRequest;
     const { email, source } = body;
 
-    if (!email) {
-      return new Response(JSON.stringify({ error: "Email is required" }), {
+    // A malformed address is a hard bounce against our own sending domain, and
+    // bounce rate is what decides whether real mail reaches inboxes. The inputs
+    // are type="email" client-side; this closes the direct-POST path.
+    if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email.trim())) {
+      return new Response(JSON.stringify({ error: "A valid email is required" }), {
         status: 400,
         headers: { "Content-Type": "application/json", ...corsHeaders },
       });
@@ -136,6 +139,13 @@ Elevate Growth Solutions`,
   <p>Warmly,<br>
   <strong>Tysen Creager</strong><br>
   Elevate Growth Solutions</p>
+
+  <p style="color:#666;font-size:12px;border-top:1px solid #e5e5e5;padding-top:12px;margin-top:22px;">
+    You are receiving this because you subscribed at elevategrowth.solutions.
+    If you would rather not hear from us,
+    <a href="mailto:tysen@elevategrowth.solutions?subject=Unsubscribe" style="color:#666;">reply with unsubscribe</a>
+    and we will take you off the list.
+  </p>
 </body>
 </html>
         `,

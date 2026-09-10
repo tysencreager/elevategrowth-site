@@ -15,7 +15,7 @@ const personSchema = {
   "jobTitle": "Founder & Director of Marketing Services",
   "description": "Full-stack marketer with nearly a decade of experience in web design, digital marketing, SEO, and client-centered strategy.",
   "url": "https://www.elevategrowth.solutions/behind-elevate",
-  "image": "https://i.postimg.cc/LsPcdM3R/tysen-photo.jpg",
+  "image": "https://www.elevategrowth.solutions/tysen-headshot-800.webp",
   "worksFor": {"@id": "https://www.elevategrowth.solutions/#organization"},
   "alumniOf": [
     {"@type": "EducationalOrganization", "name": "Digital Marketing Certification Program"},
@@ -93,16 +93,8 @@ export default function BehindElevate() {
                     height={500}
                     loading="eager"
                     decoding="async"
-                    className="w-full h-auto grayscale contrast-[1.04]"
+                    className="w-full h-auto"
                     data-testid="img-tysen-photo"
-                  />
-                  <div
-                    className="absolute inset-0 mix-blend-multiply"
-                    style={{
-                      background:
-                        "linear-gradient(165deg, rgba(38,109,130,.32), rgba(74,192,216,.08) 60%)"
-                    }}
-                    aria-hidden="true"
                   />
                 </div>
               </div>

@@ -372,27 +372,21 @@ export default function Contact() {
               className="flex flex-col gap-8"
             >
               {/* Editorial image */}
-              <figure className="group relative flex-1 flex flex-col">
-                <div className="relative border border-primary/30 p-3 flex-1 flex">
+              <figure className="group relative flex flex-col">
+                <div className="relative border border-primary/30 p-3">
                   <div
                     className="absolute -inset-px border border-primary pointer-events-none transition-transform duration-500 translate-x-2.5 translate-y-2.5 group-hover:translate-x-1 group-hover:translate-y-1"
                     aria-hidden="true"
                   />
-                  <div className="relative overflow-hidden w-full min-h-[300px] sm:min-h-[380px]">
+                  <div className="relative overflow-hidden w-full aspect-[4/5]">
                     <img
                       src={contactSideImage}
-                      alt="Reaching out on a phone to start the conversation"
+                      alt="Tysen Creager, founder of Elevate Growth Solutions"
                       loading="lazy"
                       decoding="async"
-                      className="absolute inset-0 w-full h-full object-cover grayscale contrast-[1.04]"
-                    />
-                    <div
-                      className="absolute inset-0 mix-blend-multiply"
-                      style={{
-                        background:
-                          "linear-gradient(165deg, rgba(38,109,130,.35), rgba(74,192,216,.08) 60%)"
-                      }}
-                      aria-hidden="true"
+                      width={1080}
+                      height={1350}
+                      className="absolute inset-0 w-full h-full object-cover"
                     />
                   </div>
                 </div>

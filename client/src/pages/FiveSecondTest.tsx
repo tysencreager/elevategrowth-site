@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import { Link } from "wouter";
 import { AnimateOnScroll, motion } from "@/components/ui/motion";
 
+import womanOnPhone from "@assets/woman-on-phone.webp";
+
 /**
  * Hidden companion page for Tysen's 10-minute WISE WOMEN talk. The
  * audience types the URL from a slide (or scans a QR) on their phones in
@@ -15,25 +17,25 @@ const eyebrow = "font-sans text-[11px] font-semibold tracking-[0.3em] uppercase"
 const buttonClass =
   "inline-block font-sans font-semibold text-base text-[#1B1E20] bg-[#4AC0D8] rounded-full px-8 py-4 text-center hover:bg-[#3D95B4] hover:text-white transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[#1B1E20] focus-visible:ring-offset-2";
 
-// Live 5-second countdown ring in the hero: the ring drains once while the
-// number ticks 5 -> 0, making the page's premise tangible the moment it
-// opens. Static at "5" for prefers-reduced-motion users.
+// Live 5-second countdown ring in the hero: the ring drains while the number
+// ticks 5 -> 0, then restarts, so the page's premise stays tangible however
+// long someone lingers. Static at "5" for prefers-reduced-motion users.
+//
+// Counting a monotonic tick and deriving the digit from it (rather than
+// mutating state inside the updater) keeps the reset side-effect free. The
+// reset frame drops the CSS transition: without that, going 0 -> 5 animates
+// the ring backwards for a second and reads as a rewind rather than a restart.
 function CountdownRing() {
-  const [count, setCount] = useState(5);
+  const [tick, setTick] = useState(0);
 
   useEffect(() => {
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-    const interval = setInterval(() => {
-      setCount((c) => {
-        if (c <= 0) {
-          clearInterval(interval);
-          return 0;
-        }
-        return c - 1;
-      });
-    }, 1000);
+    const interval = setInterval(() => setTick((t) => t + 1), 1000);
     return () => clearInterval(interval);
   }, []);
+
+  const count = 5 - (tick % 6);
+  const isReset = tick > 0 && tick % 6 === 0;
 
   const r = 44;
   const circumference = 2 * Math.PI * r;
@@ -51,7 +53,7 @@ function CountdownRing() {
           strokeLinecap="round"
           strokeDasharray={circumference}
           strokeDashoffset={circumference * (1 - count / 5)}
-          style={{ transition: "stroke-dashoffset 1s linear" }}
+          style={{ transition: isReset ? "none" : "stroke-dashoffset 1s linear" }}
         />
       </svg>
       <span className="absolute inset-0 flex items-center justify-center font-display font-medium text-4xl text-white">
@@ -340,16 +342,22 @@ function Checklist() {
       <ul className="flex flex-col gap-3">
         {questions.map((q, i) => (
           <li key={q.title}>
-            <label className="flex gap-3.5 items-start bg-white border border-[#3D95B4]/30 rounded-xl p-4 cursor-pointer">
+            <label className="flex gap-3.5 items-start bg-[#F4F7F8] border border-[#3D95B4]/30 rounded-xl p-4 cursor-pointer">
               <input
                 type="checkbox"
                 checked={checked[i]}
                 onChange={() => toggle(i)}
-                className="mt-1 w-5 h-5 accent-[#266D82] flex-none"
+                className="peer mt-1 w-5 h-5 accent-[#266D82] flex-none"
                 data-testid={`checkbox-checklist-${i}`}
               />
+              <span
+                className="font-display italic text-2xl leading-none text-[#3D95B4] w-8 flex-none mt-0.5 peer-checked:text-[#4AC0D8] transition-colors"
+                aria-hidden="true"
+              >
+                {String(i + 1).padStart(2, "0")}
+              </span>
               <span>
-                <span className="font-sans font-bold text-base text-[#266D82] block">
+                <span className="font-sans font-bold text-base text-[#266D82] block peer-checked:line-through peer-checked:text-[#1B1E20]/45">
                   {q.title}
                 </span>
                 <span className={`${body} text-sm leading-relaxed block mt-1`}>{q.detail}</span>
@@ -412,6 +420,7 @@ export default function FiveSecondTest() {
           className="absolute inset-0 bg-gradient-to-b from-[#1B1E20]/85 via-[#266D82]/75 to-[#266D82]/90"
           aria-hidden="true"
         />
+        <div className="absolute inset-0 opacity-[0.07] mix-blend-overlay grain" aria-hidden="true" />
         <motion.div
           className="relative max-w-xl mx-auto"
           initial={{ opacity: 0, y: 18 }}
@@ -435,8 +444,25 @@ export default function FiveSecondTest() {
       <Ticker />
 
       {/* QUIZ */}
-      <section className="print-hide px-5 py-12 sm:py-16" aria-labelledby="quiz-heading">
-        <div className="max-w-xl mx-auto">
+      <section
+        className="print-hide relative overflow-hidden px-5 py-12 sm:py-16"
+        aria-labelledby="quiz-heading"
+      >
+        {/* Cut-out sits flush with the section's bottom edge, so the crop just
+            below her legs reads as intentional rather than as a hard cut.
+            Hidden below lg: at those widths it would sit on top of the quiz
+            card, and this page is used on phones at the conference. */}
+        <img
+          src={womanOnPhone}
+          alt=""
+          aria-hidden="true"
+          width={900}
+          height={1125}
+          loading="lazy"
+          decoding="async"
+          className="hidden lg:block pointer-events-none select-none absolute bottom-0 right-0 w-[300px] xl:w-[360px] h-auto"
+        />
+        <div className="relative max-w-xl mx-auto">
           <AnimateOnScroll amount={0.2}>
             <span className={`${eyebrow} text-[#3D95B4] block mb-3`}>Take the test</span>
             <h2
@@ -454,22 +480,32 @@ export default function FiveSecondTest() {
       </section>
 
       {/* WHAT GOOD LOOKS LIKE */}
-      <section className="print-hide bg-white px-5 py-12 sm:py-16" aria-labelledby="example-heading">
-        <AnimateOnScroll className="max-w-xl mx-auto" amount={0.15}>
-          <span className={`${eyebrow} text-[#3D95B4] block mb-3`}>What good looks like</span>
+      <section
+        className="print-hide relative bg-[#266D82] px-5 py-14 sm:py-20 overflow-hidden"
+        aria-labelledby="example-heading"
+      >
+        <div className="absolute inset-0 opacity-[0.07] mix-blend-overlay grain pointer-events-none" aria-hidden="true" />
+        <div
+          className="absolute -top-16 -right-16 w-56 h-56 bg-[#4AC0D8]/20 rounded-full blur-3xl pointer-events-none"
+          aria-hidden="true"
+        />
+        <AnimateOnScroll className="relative max-w-xl mx-auto" amount={0.15}>
+          <span className={`${eyebrow} text-[#4AC0D8] block mb-3`}>What good looks like</span>
           <h2
             id="example-heading"
-            className="font-display font-medium text-2xl sm:text-3xl text-[#1B1E20] [text-wrap:balance] mb-6"
+            className="font-display font-medium text-2xl sm:text-3xl text-white [text-wrap:balance] mb-6"
           >
             An above-the-fold that{" "}
-            <em className="italic text-[#266D82]">grabs and keeps attention</em>
+            <em className="italic text-[#4AC0D8]">grabs and keeps attention</em>
           </h2>
-          <AboveTheFoldExample />
+          <div className="bg-white rounded-2xl p-5 sm:p-6">
+            <AboveTheFoldExample />
+          </div>
         </AnimateOnScroll>
       </section>
 
       {/* CHECKLIST */}
-      <section id="checklist" className="px-5 py-12 sm:py-16 scroll-mt-6" aria-labelledby="checklist-heading">
+      <section id="checklist" className="bg-white px-5 py-14 sm:py-20 scroll-mt-6" aria-labelledby="checklist-heading">
         <div className="max-w-xl mx-auto">
           <AnimateOnScroll amount={0.1}>
             <span className={`${eyebrow} text-[#3D95B4] block mb-3 print:hidden`}>Keep it forever</span>

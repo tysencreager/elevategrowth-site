@@ -161,7 +161,32 @@ Preferred communication style: Simple, everyday language.
 
 ### Third-Party Services & Social Media
 - **Google Fonts**: Typography (Noto Serif, Lora, Montserrat)
-- **Email**: Contact form uses mailto: links to tysen@elevategrowth.solutions
+- **Brevo** is the only ESP. It powers `functions/api/subscribe.ts`,
+  `functions/api/contact.ts`, and both Wise Women emails (the attendee's credit
+  confirmation and the notification to Tysen). Requires the `BREVO_API_KEY`
+  secret in Cloudflare Pages, set for Production AND Preview. Hardcoded list
+  ids: **3** = Newsletter Subscribers, **4** = Contact Form Leads.
+  `BREVO_WISEWOMEN_LIST_ID` holds the conference list id; if it is unset or
+  wrong, the list write is skipped and logged, and the notification email
+  becomes the only record of that lead.
+- **MailerLite was removed.** The conference funnel previously wrote to a
+  MailerLite group resolved by name at runtime. Everything now goes to Brevo,
+  so there is one suppression list and one authenticated sending domain. The
+  `MAILERLITE_API_KEY` secret is no longer read by any code and can be deleted
+  from Cloudflare Pages.
+- **A Wise Women lead succeeds if EITHER destination accepts it**: the Brevo
+  list write, or the notification email to Tysen. Both failing returns 502 so
+  the form surfaces an error rather than losing the lead silently. The
+  attendee's confirmation email is deliberately excluded from that check: a
+  failed confirmation must never turn a captured lead into an error.
+- **Email sequences are dashboard-only.** This repo can send the FIRST email at
+  form-submit time, because that is a response to an HTTP request. Anything with
+  a delay (waits, multi-step drips, branching) has to be built in the ESP's
+  automation builder: Cloudflare Pages Functions have no cron or scheduled
+  handler, and there is no KV, D1 or Queue here to hold per-subscriber state.
+  If an automation is ever triggered by "contact added to list 3", its first
+  step MUST be a wait, or new subscribers get two welcomes seconds apart.
+- Legacy `mailto:` CTAs still exist in some components (e.g. `LeadMagnet.tsx`).
 - **External Portfolio**: Redirects to tysencreager.com for portfolio showcase
 - **Social Media**: Instagram (@elevategrowthsolutions) and LinkedIn (personal profile) links in footer
 

@@ -13,22 +13,14 @@ const rise = {
 export default function HomeHero() {
   return (
     <header className="relative overflow-hidden min-h-[92vh] flex items-center pt-20">
-      {/* Full-bleed background video */}
-      <video
-        className="absolute inset-0 w-full h-full object-cover grayscale contrast-[1.05] motion-reduce:hidden"
-        src="/home-header.mp4"
-        poster="/home-header-poster.webp"
-        autoPlay
-        muted
-        loop
-        playsInline
-        aria-hidden="true"
-      />
-      {/* Poster fallback for reduced motion */}
+      {/* Full-bleed background photo */}
       <img
-        src="/home-header-poster.webp"
-        alt="Elevate Growth Solutions web design and full-stack marketing"
-        className="absolute inset-0 w-full h-full object-cover grayscale hidden motion-reduce:block"
+        src="/home-header-1920.webp"
+        srcSet="/home-header-768.webp 768w, /home-header-1280.webp 1280w, /home-header-1920.webp 1920w, /home-header-2560.webp 2560w"
+        sizes="100vw"
+        alt="Tysen Creager of Elevate Growth Solutions working at a laptop"
+        className="absolute inset-0 w-full h-full object-cover object-center grayscale contrast-[1.05]"
+        decoding="async"
       />
       {/* Teal-ink duotone + readability overlay */}
       <div

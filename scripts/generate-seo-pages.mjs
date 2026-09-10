@@ -200,7 +200,7 @@ const routes = [
 
 // Hidden conference-funnel pages: prerendered like every other route (so the
 // exact URLs resolve to real 200 pages), but noindexed and NEVER added to
-// sitemap.xml. Do not add them to robots.txt either — a disallow line would
+// sitemap.xml. Do not add them to robots.txt either, because a disallow line would
 // publicly broadcast the paths. `_headers` also sends X-Robots-Tag for them.
 const hiddenRoutes = [
   {
@@ -342,7 +342,7 @@ function injectMeta(template, route) {
 
 // Hidden pages: flip the robots meta to noindex, swap the font request to
 // the pages' own families, and drop the homepage LCP-image preload (it
-// would fetch a large webp these pages never render — they must load in
+// would fetch a large webp these pages never render; they must load in
 // under 3s on conference-floor mobile connections).
 function applyHiddenPageHead(html) {
   html = html.replace(
@@ -354,7 +354,7 @@ function applyHiddenPageHead(html) {
     hiddenFontsUrl
   );
   html = html.replace(
-    /\s*<link\s+rel="preload"\s+as="image"\s+href="\/home-header-poster\.webp"[^>]*>/,
+    /\s*<link\s+rel="preload"\s+as="image"\s+href="\/home-header-[^"]*"[^>]*>/,
     ""
   );
   return html;
