@@ -265,7 +265,7 @@ ${mailerliteOk ? "Added to the MailerLite group \"Wise Women Houston 2026\"." : 
   <p style="margin-top: 20px; color: #666; font-size: 14px;">
     ${mailerliteOk
       ? 'Added to the MailerLite group "Wise Women Houston 2026".'
-      : "<strong>NOT added to MailerLite</strong> (check MAILERLITE_API_KEY in Cloudflare Pages) &mdash; this email is the only record of this lead."}
+      : "<strong>NOT added to MailerLite</strong> (check MAILERLITE_API_KEY in Cloudflare Pages). This email is the only record of this lead."}
   </p>
 
   <p style="margin-top: 20px; color: #666; font-size: 14px;">

@@ -340,16 +340,22 @@ function Checklist() {
       <ul className="flex flex-col gap-3">
         {questions.map((q, i) => (
           <li key={q.title}>
-            <label className="flex gap-3.5 items-start bg-white border border-[#3D95B4]/30 rounded-xl p-4 cursor-pointer">
+            <label className="flex gap-3.5 items-start bg-[#F4F7F8] border border-[#3D95B4]/30 rounded-xl p-4 cursor-pointer">
               <input
                 type="checkbox"
                 checked={checked[i]}
                 onChange={() => toggle(i)}
-                className="mt-1 w-5 h-5 accent-[#266D82] flex-none"
+                className="peer mt-1 w-5 h-5 accent-[#266D82] flex-none"
                 data-testid={`checkbox-checklist-${i}`}
               />
+              <span
+                className="font-display italic text-2xl leading-none text-[#3D95B4] w-8 flex-none mt-0.5 peer-checked:text-[#4AC0D8] transition-colors"
+                aria-hidden="true"
+              >
+                {String(i + 1).padStart(2, "0")}
+              </span>
               <span>
-                <span className="font-sans font-bold text-base text-[#266D82] block">
+                <span className="font-sans font-bold text-base text-[#266D82] block peer-checked:line-through peer-checked:text-[#1B1E20]/45">
                   {q.title}
                 </span>
                 <span className={`${body} text-sm leading-relaxed block mt-1`}>{q.detail}</span>
@@ -412,6 +418,7 @@ export default function FiveSecondTest() {
           className="absolute inset-0 bg-gradient-to-b from-[#1B1E20]/85 via-[#266D82]/75 to-[#266D82]/90"
           aria-hidden="true"
         />
+        <div className="absolute inset-0 opacity-[0.07] mix-blend-overlay grain" aria-hidden="true" />
         <motion.div
           className="relative max-w-xl mx-auto"
           initial={{ opacity: 0, y: 18 }}
@@ -454,22 +461,32 @@ export default function FiveSecondTest() {
       </section>
 
       {/* WHAT GOOD LOOKS LIKE */}
-      <section className="print-hide bg-white px-5 py-12 sm:py-16" aria-labelledby="example-heading">
-        <AnimateOnScroll className="max-w-xl mx-auto" amount={0.15}>
-          <span className={`${eyebrow} text-[#3D95B4] block mb-3`}>What good looks like</span>
+      <section
+        className="print-hide relative bg-[#266D82] px-5 py-14 sm:py-20 overflow-hidden"
+        aria-labelledby="example-heading"
+      >
+        <div className="absolute inset-0 opacity-[0.07] mix-blend-overlay grain pointer-events-none" aria-hidden="true" />
+        <div
+          className="absolute -top-16 -right-16 w-56 h-56 bg-[#4AC0D8]/20 rounded-full blur-3xl pointer-events-none"
+          aria-hidden="true"
+        />
+        <AnimateOnScroll className="relative max-w-xl mx-auto" amount={0.15}>
+          <span className={`${eyebrow} text-[#4AC0D8] block mb-3`}>What good looks like</span>
           <h2
             id="example-heading"
-            className="font-display font-medium text-2xl sm:text-3xl text-[#1B1E20] [text-wrap:balance] mb-6"
+            className="font-display font-medium text-2xl sm:text-3xl text-white [text-wrap:balance] mb-6"
           >
             An above-the-fold that{" "}
-            <em className="italic text-[#266D82]">grabs and keeps attention</em>
+            <em className="italic text-[#4AC0D8]">grabs and keeps attention</em>
           </h2>
-          <AboveTheFoldExample />
+          <div className="bg-white rounded-2xl p-5 sm:p-6">
+            <AboveTheFoldExample />
+          </div>
         </AnimateOnScroll>
       </section>
 
       {/* CHECKLIST */}
-      <section id="checklist" className="px-5 py-12 sm:py-16 scroll-mt-6" aria-labelledby="checklist-heading">
+      <section id="checklist" className="bg-white px-5 py-14 sm:py-20 scroll-mt-6" aria-labelledby="checklist-heading">
         <div className="max-w-xl mx-auto">
           <AnimateOnScroll amount={0.1}>
             <span className={`${eyebrow} text-[#3D95B4] block mb-3 print:hidden`}>Keep it forever</span>

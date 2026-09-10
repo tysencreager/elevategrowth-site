@@ -6,7 +6,7 @@ import tysenBandImg from "@assets/tysen-founder-band.webp";
 /**
  * Founder band. Sits between SelectedWorks and PullQuoteTestimonials so the
  * quotes that say "she" and "Tysen" have a face attached before they appear.
- * bg-background matches SelectedWorks above, so a border-t separates them —
+ * bg-background matches SelectedWorks above, so a border-t separates them;
  * bg-muted would collide with PullQuoteTestimonials directly below.
  */
 export default function FounderBand() {
@@ -60,13 +60,13 @@ export default function FounderBand() {
             </h2>
             <p className="font-serif font-light text-[16px] leading-relaxed text-muted-foreground max-w-[56ch]">
               Tysen Creager founded Elevate Growth Solutions in Salt Lake City, and she still sets
-              the standard for every project that carries the name — the strategy, the design, the
+              the standard for every project that carries the name: the strategy, the design, the
               build, and the SEO behind it. Nearly a decade in, with certifications in digital
               marketing and UX design, she has delivered for large commercial companies and boutique
               brands alike.
             </p>
             <p className="font-serif font-light text-[16px] leading-relaxed text-muted-foreground max-w-[56ch] mt-4">
-              The standard doesn&rsquo;t change with the size of the project — enterprise-level
+              The standard doesn&rsquo;t change with the size of the project. Enterprise-level
               quality, close attention, and her name on the result.
             </p>
             <Link

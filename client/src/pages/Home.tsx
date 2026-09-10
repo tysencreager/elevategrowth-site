@@ -72,7 +72,7 @@ export default function Home() {
           {
             quote:
               "Working with Tysen was seamless from start to finish. She quickly understood the vision for my brand and delivered thoughtful, strategic designs that aligned perfectly with my marketing goals.",
-            author: "Cassidy – Loan Officer"
+            author: "Cassidy, Loan Officer"
           },
           {
             quote:

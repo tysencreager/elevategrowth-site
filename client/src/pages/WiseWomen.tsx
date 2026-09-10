@@ -398,7 +398,7 @@ export default function WiseWomen() {
             <em className="italic text-[#4AC0D8]">booked &amp; busy.</em>
           </h1>
           <p className="font-['Lora',_Georgia,_serif] text-lg leading-relaxed text-[#F4F7F8]/95 mt-6 max-w-md mx-auto">
-            You grabbed the cup. Now let's make sure your website is doing its part. As a WISE
+            You scanned the code. Now let's make sure your website is doing its part. As a WISE
             WOMEN attendee, you've got{" "}
             <strong className="font-semibold text-[#4AC0D8]">
               $300 toward a custom website build or growth retainer
