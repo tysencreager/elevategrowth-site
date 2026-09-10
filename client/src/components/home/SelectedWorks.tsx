@@ -1,6 +1,7 @@
 import { Link } from "wouter";
 import { motion } from "framer-motion";
 import SectionHead from "./SectionHead";
+import ScrollRow from "@/components/ScrollRow";
 
 import julianImg from "@assets/portfolio-juliandismute.webp";
 import bodyshopImg from "@assets/portfolio-bodyshopgym.webp";
@@ -39,45 +40,55 @@ export default function SelectedWorks() {
           }
           lede="A few favorites from a much longer list. Each one designed, built, and still growing."
         />
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
-          {works.map((work, index) => (
-            <motion.div
-              key={work.title}
-              initial={{ opacity: 0, y: 28 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.15 }}
-              transition={{ duration: 0.7, delay: (index % 3) * 0.09, ease: [0.22, 1, 0.36, 1] }}
+      </div>
+
+      <ScrollRow
+        label="Selected website builds"
+        className="max-w-7xl mx-auto"
+        itemClassName="w-[280px] sm:w-[330px] lg:w-[380px]"
+        trackClassName="gap-3 px-4 sm:px-6 lg:px-8 scroll-pl-4 sm:scroll-pl-6 lg:scroll-pl-8"
+        fadeFrom="from-background"
+      >
+        {works.map((work, index) => (
+          <motion.div
+            key={work.title}
+            initial={{ opacity: 0, y: 28 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.15 }}
+            transition={{ duration: 0.7, delay: (index % 3) * 0.09, ease: [0.22, 1, 0.36, 1] }}
+          >
+            <a
+              href={work.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group relative block overflow-hidden aspect-[4/3]"
+              data-testid={`link-work-${work.title.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`}
             >
-              <a
-                href={work.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group relative block overflow-hidden aspect-[4/3]"
-                data-testid={`link-work-${work.title.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`}
-              >
-                {work.badge && (
-                  <span className="absolute top-3 right-3 z-10 bg-primary text-primary-foreground font-sans text-[8.5px] tracking-[0.2em] uppercase px-2.5 py-1.5">
-                    {work.badge}
-                  </span>
-                )}
-                <img
-                  src={work.image}
-                  alt={`${work.title} website by Elevate Growth Solutions`}
-                  loading="lazy"
-                  decoding="async"
-                  className="w-full h-full object-cover object-top grayscale-[0.25] transition-all duration-700 ease-out group-hover:scale-[1.06] group-hover:grayscale-0"
-                />
-                <span className="absolute inset-0 flex flex-col items-center justify-center gap-2 p-5 text-center bg-[#17424F]/[0.88] opacity-0 transition-opacity duration-500 group-hover:opacity-100">
-                  <b className="font-display italic font-normal text-[22px] text-white">{work.title}</b>
-                  <span className="font-sans text-[9.5px] tracking-[0.25em] uppercase text-[#4AC0D8]">
-                    {work.cta ?? "View Live Site"}
-                    <span className="block w-9 h-px bg-[#4AC0D8] mx-auto mt-2" aria-hidden="true" />
-                  </span>
+              {work.badge && (
+                <span className="absolute top-3 right-3 z-10 bg-primary text-primary-foreground font-sans text-[8.5px] tracking-[0.2em] uppercase px-2.5 py-1.5">
+                  {work.badge}
                 </span>
-              </a>
-            </motion.div>
-          ))}
-        </div>
+              )}
+              <img
+                src={work.image}
+                alt={`${work.title} website by Elevate Growth Solutions`}
+                loading="lazy"
+                decoding="async"
+                className="w-full h-full object-cover object-top grayscale-[0.25] transition-all duration-700 ease-out group-hover:scale-[1.06] group-hover:grayscale-0"
+              />
+              <span className="absolute inset-0 flex flex-col items-center justify-center gap-2 p-5 text-center bg-[#17424F]/[0.88] opacity-0 transition-opacity duration-500 group-hover:opacity-100">
+                <b className="font-display italic font-normal text-[22px] text-white">{work.title}</b>
+                <span className="font-sans text-[9.5px] tracking-[0.25em] uppercase text-[#4AC0D8]">
+                  {work.cta ?? "View Live Site"}
+                  <span className="block w-9 h-px bg-[#4AC0D8] mx-auto mt-2" aria-hidden="true" />
+                </span>
+              </span>
+            </a>
+          </motion.div>
+        ))}
+      </ScrollRow>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           className="text-center mt-11"
           initial={{ opacity: 0, y: 20 }}

@@ -275,6 +275,18 @@
  */
 @layer utilities {
 
+  /* Horizontal card rows (ScrollRow) hide the native scrollbar and lean on the
+   * arrow buttons + edge fades instead, which read better than a full-width
+   * grey track under an editorial layout. */
+  .scrollbar-none {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .scrollbar-none::-webkit-scrollbar {
+    display: none;
+  }
+
   /* Subtle film grain texture for photo/video sections */
   .grain {
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");

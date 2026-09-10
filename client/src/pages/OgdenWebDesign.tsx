@@ -6,6 +6,7 @@ import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
+import { BOOKING_URL } from "@/lib/booking";
 import { Shield, Building2, Utensils, Briefcase, Mountain, Factory, ArrowRight, Check } from "lucide-react";
 import heroImage from "@assets/hero_bw_1920.webp";
 import heroImage768 from "@assets/hero_bw_768.webp";
@@ -73,7 +74,7 @@ export default function OgdenWebDesign() {
           width={1920}
           height={1080}
           sizes="100vw"
-          fetchPriority="high"
+          {...({ fetchpriority: "high" } as React.ImgHTMLAttributes<HTMLImageElement>)}
           decoding="sync"
           loading="eager"
           className="absolute inset-0 w-full h-full object-cover"
@@ -267,7 +268,7 @@ export default function OgdenWebDesign() {
             transition={{ duration: 0.6, delay: 0.3 }}
             className="flex flex-col sm:flex-row items-center justify-center gap-4"
           >
-            <a href="https://calendar.app.google/yv9h833QYphwvfmJ7" target="_blank" rel="noopener noreferrer">
+            <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer">
               <motion.div
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.98 }}

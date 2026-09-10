@@ -8,6 +8,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
+import { BOOKING_URL } from "@/lib/booking";
 import {
   Mail,
   Send,
@@ -437,7 +438,7 @@ export default function Contact() {
                   className="w-full font-serif font-medium gap-2"
                 >
                   <a
-                    href="https://calendar.app.google/yv9h833QYphwvfmJ7"
+                    href={BOOKING_URL}
                     target="_blank"
                     rel="noopener noreferrer"
                   >

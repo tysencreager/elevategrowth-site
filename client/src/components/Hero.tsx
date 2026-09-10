@@ -58,7 +58,9 @@ export default function Hero({
           width={1920}
           height={1080}
           sizes="100vw"
-          fetchPriority={isLCP ? "high" : "auto"}
+          // React 18.3 drops the camelCase spelling with a console warning, so the hint
+          // has to go through as the lowercase DOM attribute (same as WiseWomen/FiveSecondTest).
+          {...({ fetchpriority: isLCP ? "high" : "auto" } as React.ImgHTMLAttributes<HTMLImageElement>)}
           decoding={isLCP ? "sync" : "async"}
           loading={isLCP ? "eager" : "lazy"}
           className="absolute inset-0 w-full h-full object-cover"
