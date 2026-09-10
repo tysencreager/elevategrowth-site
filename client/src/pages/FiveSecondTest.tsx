@@ -15,25 +15,25 @@ const eyebrow = "font-sans text-[11px] font-semibold tracking-[0.3em] uppercase"
 const buttonClass =
   "inline-block font-sans font-semibold text-base text-[#1B1E20] bg-[#4AC0D8] rounded-full px-8 py-4 text-center hover:bg-[#3D95B4] hover:text-white transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[#1B1E20] focus-visible:ring-offset-2";
 
-// Live 5-second countdown ring in the hero: the ring drains once while the
-// number ticks 5 -> 0, making the page's premise tangible the moment it
-// opens. Static at "5" for prefers-reduced-motion users.
+// Live 5-second countdown ring in the hero: the ring drains while the number
+// ticks 5 -> 0, then restarts, so the page's premise stays tangible however
+// long someone lingers. Static at "5" for prefers-reduced-motion users.
+//
+// Counting a monotonic tick and deriving the digit from it (rather than
+// mutating state inside the updater) keeps the reset side-effect free. The
+// reset frame drops the CSS transition: without that, going 0 -> 5 animates
+// the ring backwards for a second and reads as a rewind rather than a restart.
 function CountdownRing() {
-  const [count, setCount] = useState(5);
+  const [tick, setTick] = useState(0);
 
   useEffect(() => {
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-    const interval = setInterval(() => {
-      setCount((c) => {
-        if (c <= 0) {
-          clearInterval(interval);
-          return 0;
-        }
-        return c - 1;
-      });
-    }, 1000);
+    const interval = setInterval(() => setTick((t) => t + 1), 1000);
     return () => clearInterval(interval);
   }, []);
+
+  const count = 5 - (tick % 6);
+  const isReset = tick > 0 && tick % 6 === 0;
 
   const r = 44;
   const circumference = 2 * Math.PI * r;
@@ -51,7 +51,7 @@ function CountdownRing() {
           strokeLinecap="round"
           strokeDasharray={circumference}
           strokeDashoffset={circumference * (1 - count / 5)}
-          style={{ transition: "stroke-dashoffset 1s linear" }}
+          style={{ transition: isReset ? "none" : "stroke-dashoffset 1s linear" }}
         />
       </svg>
       <span className="absolute inset-0 flex items-center justify-center font-display font-medium text-4xl text-white">

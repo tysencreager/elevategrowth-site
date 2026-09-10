@@ -198,7 +198,7 @@ function LeadForm() {
         />
         <h3 className="font-display font-semibold text-2xl text-[#1B1E20] mb-3">Got it!</h3>
         <p className={`${body} text-lg leading-relaxed`}>
-          You'll hear from me, actual me, not a bot, within one business day.
+          You'll hear from me within two business days. Can't wait to chat!
         </p>
       </div>
     );
@@ -350,7 +350,7 @@ function LeadForm() {
           {isSubmitting ? "Sending…" : "Claim My Credit"}
         </button>
         <p className={`${body} text-sm text-center text-[#1B1E20]/70`}>
-          You'll hear from me (actual me, not a bot) within one business day.
+          You'll hear from me within two business days. Can't wait to chat!
         </p>
         {error && (
           <p className={`${body} text-sm text-red-700`} role="alert">
@@ -517,7 +517,8 @@ export default function WiseWomen() {
                 aria-hidden="true"
               />
               <h2 id="perk-heading" className="font-display font-medium text-2xl sm:text-3xl text-white">
-                The conference perk, <em className="italic text-[#4AC0D8]">in plain English:</em>
+                Here&rsquo;s what you have the chance to claim{" "}
+                <em className="italic text-[#4AC0D8]">if you act on it.</em>
               </h2>
               <ul className="mt-5 flex flex-col gap-3.5">
                 {[
@@ -612,8 +613,8 @@ export default function WiseWomen() {
 
       {/* PROOF: testimonial cards */}
       <section className="bg-white px-5 py-14 sm:py-20 overflow-hidden" aria-labelledby="proof-heading">
-        <div className="max-w-xl mx-auto">
-          <AnimateOnScroll amount={0.2}>
+        <div className="max-w-5xl mx-auto">
+          <AnimateOnScroll amount={0.2} className="max-w-xl">
             <span className={`${eyebrow} text-[#3D95B4] block mb-3`}>Kind words</span>
             <h2
               id="proof-heading"
@@ -623,13 +624,13 @@ export default function WiseWomen() {
               <em className="italic text-[#266D82]">work as hard as they do.</em>
             </h2>
           </AnimateOnScroll>
-          <StaggerContainer className="mt-8 flex flex-col gap-6">
+          <StaggerContainer className="mt-8 grid gap-5 md:grid-cols-3 items-start">
             {testimonials.map((t) => (
               <StaggerItem key={t.author} variants={fadeInUp}>
                 <figure
-                  className={`bg-[#F4F7F8] border border-[#3D95B4]/20 rounded-2xl p-6 shadow-[0_10px_30px_-12px_rgba(38,109,130,0.35)] ${t.tilt} hover:rotate-0 hover:-translate-y-1 transition-transform duration-300`}
+                  className={`h-full bg-[#F4F7F8] border border-[#3D95B4]/20 rounded-2xl p-5 shadow-[0_10px_30px_-12px_rgba(38,109,130,0.35)] ${t.tilt} hover:rotate-0 hover:-translate-y-1 transition-transform duration-300`}
                 >
-                  <div className="flex items-center gap-3 mb-4">
+                  <div className="flex items-center gap-3 mb-3.5">
                     <span
                       className="w-11 h-11 rounded-full flex items-center justify-center font-sans font-bold text-sm text-white flex-none"
                       style={{ backgroundColor: t.avatarBg }}
@@ -653,7 +654,7 @@ export default function WiseWomen() {
                       )}
                     </div>
                   </div>
-                  <blockquote className={`${body} text-base leading-relaxed`}>
+                  <blockquote className={`${body} text-[15px] leading-relaxed`}>
                     "{t.quote}"
                   </blockquote>
                 </figure>
@@ -666,8 +667,11 @@ export default function WiseWomen() {
       {/* FAQ */}
       <section className="px-5 py-12 sm:py-16" aria-labelledby="faq-heading">
         <AnimateOnScroll className="max-w-xl mx-auto" amount={0.1}>
-          <h2 id="faq-heading" className="sr-only">
-            Frequently asked questions
+          <h2
+            id="faq-heading"
+            className="font-display font-medium text-2xl sm:text-3xl text-[#1B1E20] [text-wrap:balance] mb-6"
+          >
+            Questions you may have:
           </h2>
           <div className="flex flex-col gap-3">
             {faqs.map((faq) => (

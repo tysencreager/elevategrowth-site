@@ -117,7 +117,7 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
 
 Your $300 Wise Women Houston credit is on file for ${businessName}.
 
-This message is the automatic one. The real note comes from me, actual me, within one business day.
+This message is the automatic one. The real note comes from me, actual me, within two business days.
 
 What you claimed:
 * $300 off a custom website build, or $300 off your first growth retainer
@@ -151,7 +151,7 @@ tysen@elevategrowth.solutions`,
 
     <p>Your <strong>$300 Wise Women Houston credit is on file</strong> for ${escapeHtml(businessName)}.</p>
 
-    <p>This message is the automatic one. The real note comes from me, actual me, within one business day.</p>
+    <p>This message is the automatic one. The real note comes from me, actual me, within two business days.</p>
 
     <p><strong>What you claimed:</strong></p>
     <ul style="padding-left: 20px;">
