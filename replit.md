@@ -161,7 +161,25 @@ Preferred communication style: Simple, everyday language.
 
 ### Third-Party Services & Social Media
 - **Google Fonts**: Typography (Noto Serif, Lora, Montserrat)
-- **Email**: Contact form uses mailto: links to tysen@elevategrowth.solutions
+- **Brevo** (transactional + lists): powers `functions/api/subscribe.ts`,
+  `functions/api/contact.ts`, and the Wise Women confirmation and notification
+  emails. Requires the `BREVO_API_KEY` secret in Cloudflare Pages (set it for
+  Production AND Preview). Hardcoded list ids: **3** = Newsletter Subscribers,
+  **4** = Contact Form Leads. Optional `BREVO_WISEWOMEN_LIST_ID` mirrors
+  conference leads into Brevo; unset simply skips that step.
+- **MailerLite** (conference funnel, being retired): `wisewomen-lead.ts` adds
+  leads to the group "Wise Women Houston 2026", resolved BY NAME at runtime and
+  created if missing. That means the group lands in whichever MailerLite account
+  `MAILERLITE_API_KEY` belongs to, so verify the key came from the Elevate
+  Growth Solutions profile and not another client profile on the same login.
+- **Email sequences are dashboard-only.** This repo can send the FIRST email at
+  form-submit time, because that is a response to an HTTP request. Anything with
+  a delay (waits, multi-step drips, branching) has to be built in the ESP's
+  automation builder: Cloudflare Pages Functions have no cron or scheduled
+  handler, and there is no KV, D1 or Queue here to hold per-subscriber state.
+  If an automation is ever triggered by "contact added to list 3", its first
+  step MUST be a wait, or new subscribers get two welcomes seconds apart.
+- Legacy `mailto:` CTAs still exist in some components (e.g. `LeadMagnet.tsx`).
 - **External Portfolio**: Redirects to tysencreager.com for portfolio showcase
 - **Social Media**: Instagram (@elevategrowthsolutions) and LinkedIn (personal profile) links in footer
 
