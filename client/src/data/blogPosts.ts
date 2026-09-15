@@ -16,6 +16,88 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "website-maintenance-cost",
+    title: "How Much Does Website Maintenance Cost in 2026? Real Numbers",
+    excerpt: "Website maintenance costs $5 to $500+ per month in 2026 depending on who does it and what's included. Here's what maintenance actually covers, what fair pricing looks like, and what neglect costs you.",
+    content: `
+The website quote usually gets all the attention, and the maintenance line gets skimmed. Then a year later the plugins are outdated, the contact form quietly broke in March, and nobody has a backup. Maintenance is the unglamorous half of owning a website, so here are the real numbers for 2026: what it costs, what it should include, and when you're overpaying.
+
+## The quick answer
+
+Website maintenance in 2026 costs roughly **$5–$50/month** if you handle it yourself on a builder, **$50–$150/month** for basic professional upkeep of a small business site, and **$150–$500+/month** for managed plans that include content edits and support. E-commerce and complex sites run higher. One-off fixes typically bill at $75–$150/hour.
+
+## What does website maintenance actually include?
+
+Real maintenance covers hosting, SSL certificates, software and security updates, backups, uptime monitoring, bug fixes, and small content changes (swapping photos, updating hours, editing text). On WordPress it also means plugin and theme updates, which are the single most common thing owners neglect. If a "maintenance plan" is just hosting with a markup, it isn't maintenance.
+
+## How much does maintenance cost by site type?
+
+| Site type | DIY cost/mo | Professional cost/mo | What drives it |
+|---|---|---|---|
+| **Builder site** (Squarespace, Wix) | $17–$50 (subscription) | $50–$150 | Platform handles the technical side |
+| **Small business site** (WordPress or custom) | $10–$50 (hosting + tools) | $100–$300 | Updates, backups, security, edits |
+| **E-commerce store** | $39–$300 (platform + apps) | $250–$1,000+ | Products, payments, integrations |
+| **Large or custom web app** | Varies | $500–$5,000+ | Dedicated development time |
+
+For reference, our own [hosting & maintenance plan](/pricing) at Elevate Growth Solutions is **$200/month** on any platform, and it includes managed cloud hosting, SSL, regular backups, security updates, uptime monitoring, and one hour of content edits every month. That last part matters: most owners need a text swap or new photo more often than they need anything technical, and on our plan you just email us the change.
+
+## Why do sites need maintenance at all?
+
+Because the web doesn't stand still. Browsers update, security holes get discovered, software versions expire, and Google keeps raising the bar on speed and experience. A site that's never maintained doesn't stay the same; it slowly degrades. Forms stop delivering, pages slow down, and vulnerabilities pile up until something breaks publicly.
+
+## What happens if you skip maintenance?
+
+The costs of neglect are bigger than the costs of upkeep:
+
+- **Security breaches.** Outdated WordPress plugins are the most hacked software on the internet. Cleanup after a hack routinely costs $500–$5,000, plus the trust you lose if visitors see a warning page.
+- **Silent failures.** The classic: a contact form that stopped sending weeks ago. You didn't lose a website; you lost every lead who tried to reach you.
+- **SEO decay.** Slow, broken, or insecure sites slide down rankings, and recovering positions costs far more than keeping them.
+- **Expensive emergency fixes.** Scheduled maintenance is cheap; 9pm "the site is down" calls are not.
+
+## Is a maintenance plan worth it, or should you pay hourly?
+
+If you touch your site rarely and it's on a builder, hourly help as needed can be enough. A monthly plan wins when your site is on WordPress or custom code, when leads come through the site, or when you'd rather send an email than learn an admin panel. The break-even is simple: at $75–$150/hour, a $200/month plan pays for itself with about 90 minutes of needed work, and the monitoring and backups come free on top.
+
+## How can you keep maintenance costs down?
+
+- **Pick the right platform for your situation.** A builder shifts most technical maintenance onto the platform. We compared the options in our [website builder guide](/blog/best-website-builder-small-business).
+- **Bundle hosting and maintenance with one provider.** Split responsibilities mean finger-pointing when something breaks.
+- **Ask what's included, in writing.** Edits per month, response times, backup frequency, and what counts as "extra."
+- **Don't pay agency rates for platform work.** If you're on Squarespace, you don't need a $300/month WordPress-style plan.
+
+## Frequently asked questions
+
+### How much should a small business budget for a website per year?
+
+All-in (hosting, maintenance, domain), a professionally maintained small business site typically runs **$1,500–$4,000/year** in 2026. DIY on a builder runs $250–$700/year plus your time. Our full [website cost guide](/blog/how-much-does-a-website-cost-2026) breaks down the build side.
+
+### Can I maintain my website myself?
+
+On a builder, mostly yes: the platform updates itself, and you handle content. On WordPress or custom code, you can, but it means staying on top of updates, backups, and security, and one botched plugin update can take a site down. Budget your time honestly before deciding.
+
+### What's usually NOT included in a maintenance plan?
+
+Redesigns, new pages or features, copywriting, SEO campaigns, and large content projects are typically scoped separately. A good provider tells you where the line is before you hit it, not after.
+
+### Do I need maintenance on a brand-new website?
+
+Yes, from day one. New sites need backups and monitoring just like old ones, and the habits you set at launch (updates applied, backups running) are what keep year three from becoming an expensive rebuild.
+
+## The bottom line
+
+Budget $50–$300/month for professional maintenance depending on your site's complexity, make sure the plan actually includes updates, backups, monitoring, and some content edits, and treat it as insurance plus a retainer rather than a fee. If you'd like your site hosted, watched, and updated without thinking about it, [get in touch](/contact): our $200/month plan covers all of it, on whatever platform your site runs.
+`,
+    author: "Tysen Creager",
+    date: "2026-09-15",
+    category: "Web Design",
+    tags: ["Website Maintenance", "Hosting", "Small Business", "Website Costs"],
+    metaTitle: "Website Maintenance Cost in 2026: Real Numbers",
+    metaDescription: "Website maintenance costs $5 to $500+ per month in 2026. See what it should include, fair pricing by site type, and what skipping it really costs.",
+    featured: true,
+    image: "/blog/website-maintenance-cost.jpg",
+    imageAlt: "How much does website maintenance cost in 2026, blog cover with teal background"
+  },
+  {
     slug: "how-to-choose-digital-marketing-agency",
     title: "How to Choose a Digital Marketing Agency (Without Getting Burned)",
     excerpt: "Most bad agency experiences were predictable from the first sales call. Here's how to choose a digital marketing agency in 2026: what to look for, what to run from, and the exact questions to ask.",
