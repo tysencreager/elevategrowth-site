@@ -16,6 +16,84 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "social-media-management-pricing",
+    title: "Social Media Management Pricing in 2026: What Should It Cost?",
+    excerpt: "Social media management runs $400 to $5,000+ per month in 2026. Here's what drives the price, what you should get at each level, and why most agencies (including us) quote it custom.",
+    content: `
+Social media management pricing is famously all over the map. The same "we'll handle your Instagram" promise gets quoted at $300 by one freelancer and $3,500 by an agency across town. Neither is automatically wrong. The difference is what's actually being done each month, and that's the part most proposals blur. Here are the real numbers for 2026 and how to read a quote.
+
+## The quick answer
+
+Most small businesses pay **$400–$1,500 per month** for professional social media management in 2026. Freelancers run $300–$800, boutique agencies $500–$2,500, and larger agencies $2,500–$5,000+. Price scales with posting frequency, content creation (who shoots the photos and videos), platforms covered, and whether community management and reporting are included.
+
+## What does social media management actually include?
+
+A real engagement covers strategy, a content calendar, writing and designing the posts, publishing, responding to comments and messages, and monthly reporting. The biggest cost variable is **content creation**: posts built from photos and videos shot for your business cost more than posts assembled from stock images, and they perform better, because audiences can tell the difference instantly.
+
+## How much does social media management cost by provider?
+
+| Provider | Typical monthly cost | What you usually get |
+|---|---|---|
+| **DIY tools** (scheduler + templates) | $20–$100 | Your time does the real work |
+| **Freelancer** | $300–$800 | 2-3 posts/week, light strategy |
+| **Boutique agency** | $500–$2,500 | Strategy, original content, reporting |
+| **Full-size agency** | $2,500–$5,000+ | Teams, paid social, heavy production |
+
+## Why do most agencies quote social media custom?
+
+Because two businesses asking for "social media management" rarely need the same thing. Posting frequency (2 posts a week vs. daily), platform count (Instagram only vs. Instagram, Facebook, LinkedIn, and TikTok), and content supply (do you send us photos, or do we come shoot them?) can each double the workload. We price it custom for exactly that reason: our [pricing page](/pricing) lists Standard (2-3 posts/week) and Growth (4-5 posts/week) tiers, quoted after a conversation about your goals, with a 3-month minimum so the strategy has time to work.
+
+One honest tip whatever you're quoted: ask the provider to itemize what a month includes. "Social media management: $1,200" tells you nothing. "12 designed posts, 4 reels, community management, monthly report" tells you everything.
+
+## What about the content itself?
+
+This is the piece most owners underestimate. Consistent social media eats content: photos, videos, b-roll, faces. If you don't have a supply, your feed becomes stock images and text graphics, and engagement shows it. That's why we pair social management with a quarterly **content day**: ours runs **$1,700 per quarter** and produces a library of photos and videos shot for your brand, yours to use everywhere (social, website, ads). However you source it, budget for content, not just posting.
+
+## Is social media management worth it for a small business?
+
+It depends on where your customers actually are, and honesty matters here more than anywhere. For restaurants, salons, boutiques, gyms, and anything visual or local, social media drives real discovery and repeat business. For some service businesses, [local SEO](/blog/how-much-does-local-seo-cost) converts better dollar-for-dollar because it catches people actively searching. A good agency will tell you which bucket you're in before taking your money. That's a core test in our guide to [choosing a marketing agency](/blog/how-to-choose-digital-marketing-agency).
+
+## What are the red flags in social media pricing?
+
+- **Follower guarantees.** Bought followers are worse than no followers.
+- **No content plan.** If the proposal doesn't say where photos and videos come from, expect stock images.
+- **Posting without strategy.** Consistency matters, but consistency toward what? Ask what the posts are supposed to accomplish.
+- **No reporting beyond likes.** You want reach, profile actions, website clicks, and inquiries, not vanity numbers.
+- **Month-to-month miracle promises.** Organic social compounds slowly. Anyone promising an explosion in 30 days is selling something else.
+
+## Frequently asked questions
+
+### How many posts per week does my business need?
+
+For most small businesses, 2-3 quality posts per week beats daily filler. Consistency and quality both beat raw volume. Growth-focused accounts (new brands, launches) benefit from 4-5 per week plus stories.
+
+### Can I just do it myself?
+
+Yes, and early on you probably should: nobody knows your business better. The math changes when posting slips to "when I remember" or when the hours cost you more than hiring help. A hybrid also works: you capture raw content, a pro plans, polishes, and publishes it.
+
+### Do I need to be on every platform?
+
+No. One or two platforms done well beat five done badly. Go where your customers actually spend time: Instagram and Facebook for most local businesses, LinkedIn for B2B, TikTok if your audience skews younger and you can feed it video.
+
+### Does social media help SEO?
+
+Indirectly. Social profiles rank for your brand name, active accounts build trust signals, and content gets your business found in social search (which is where a growing share of younger customers look first). It complements search marketing; it doesn't replace it. We covered how the pieces fit in our [full-stack marketing guide](/blog/full-stack-marketing-explained).
+
+## The bottom line
+
+Budget $400–$1,500/month for professional social media management, insist on an itemized scope, and make sure original content is part of the plan. If you want a straight answer on what your business actually needs (frequency, platforms, and whether social is even your best next dollar), [get in touch](/contact) and we'll scope it honestly.
+`,
+    author: "Tysen Creager",
+    date: "2026-09-22",
+    category: "Marketing",
+    tags: ["Social Media", "Pricing", "Small Business", "Marketing Costs"],
+    metaTitle: "Social Media Management Pricing in 2026",
+    metaDescription: "Social media management costs $400 to $5,000+ per month in 2026. See what drives the price, what each tier includes, and the red flags to avoid.",
+    featured: true,
+    image: "/blog/social-media-pricing.jpg",
+    imageAlt: "Social media management pricing in 2026, blog cover with teal background"
+  },
+  {
     slug: "website-maintenance-cost",
     title: "How Much Does Website Maintenance Cost in 2026? Real Numbers",
     excerpt: "Website maintenance costs $5 to $500+ per month in 2026 depending on who does it and what's included. Here's what maintenance actually covers, what fair pricing looks like, and what neglect costs you.",
