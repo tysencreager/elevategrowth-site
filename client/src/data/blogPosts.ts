@@ -16,6 +16,96 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "website-redesign-cost",
+    title: "How Much Does a Website Redesign Cost in 2026?",
+    excerpt: "A website redesign costs $1,500 to $15,000+ in 2026 depending on how much actually changes. Here's how to tell a refresh from a rebuild, what drives the price, and when a redesign pays for itself.",
+    content: `
+"Redesign" is one of the slipperiest words in web design pricing, because it describes everything from swapping colors and photos to tearing a site down to the studs. That's why quotes for the "same" redesign can range from $1,500 to $15,000. Here's how to figure out which project you actually have, what it should cost in 2026, and when it's worth doing at all.
+
+## The quick answer
+
+A small business website redesign costs **$1,500–$5,000** for a visual refresh on the same platform, **$3,000–$10,000** for a full redesign with new structure and copy updates, and **$5,000–$15,000+** when it's really a rebuild (new platform, new pages, migrations). Most agencies, us included, price redesigns like new builds because most of the work is the same.
+
+## Refresh, redesign, or rebuild: which one do you need?
+
+| Project | What changes | Typical cost | When it's right |
+|---|---|---|---|
+| **Refresh** | Colors, fonts, photos, copy touch-ups | $1,500–$5,000 | Design feels dated, bones are good |
+| **Redesign** | Layout, structure, key pages, conversion flow | $3,000–$10,000 | Site looks fine but doesn't produce |
+| **Rebuild** | Platform, architecture, content, everything | $5,000–$15,000+ | Slow, broken, or outgrown site |
+
+Be honest about which row you're in. The most common expensive mistake is paying refresh money for a site whose real problems (speed, structure, message) a coat of paint can't fix.
+
+## What actually drives redesign pricing?
+
+### 1. How much survives from the old site
+
+If your copy, photos, and page structure carry over, you're paying mostly for design and development. If everything needs rewriting and reshooting, you're paying for a new website that happens to replace an old one. This is the single biggest price lever.
+
+### 2. Whether you're switching platforms
+
+Staying on the same platform keeps costs down. Moving (Wix to WordPress, builder to custom code) adds migration work: content, SEO redirects, forms, integrations. It's often worth it, but it belongs in the quote, not as a surprise.
+
+### 3. Page count and functionality
+
+A 5-page brochure redesign and a 20-page site with booking, e-commerce, and gated content are different projects. Prices scale with pages and features, same as new builds. Our full [website cost guide](/blog/how-much-does-a-website-cost-2026) breaks down those levers in detail.
+
+### 4. SEO preservation
+
+This is the invisible line item that separates professionals from paint crews. A redesign done wrong deletes pages, changes URLs without redirects, and torches rankings you spent years earning. Proper redirect mapping, metadata migration, and structure planning cost a little and save a lot.
+
+## How do we price redesigns at Elevate Growth Solutions?
+
+We price them like builds, because that's what they are: conversion-focused single-page sites from **$2,500**, full business websites from **$4,500** (up to 8 pages, then $300 per page), and e-commerce or complex builds from **$7,500**, with base rates assuming you supply final copy and brand assets. Not sure how deep your problems go? Our **$400 Technical Health Check** audits speed, SEO, and structure first, so you find out whether you need a $2,500 fix or a $7,500 rebuild before you commit to either. Details on our [pricing page](/pricing).
+
+## When is a redesign worth the money?
+
+Redesign when the site is costing you business, not when you're bored of it. The signals that pay back:
+
+- **Visitors come but don't convert.** Traffic without calls or form fills is a design and messaging problem.
+- **It's slow or broken on phones.** Most local traffic is mobile; a site that fumbles it leaks leads daily.
+- **You've outgrown the story.** New services, new markets, new prices, and a site still selling 2021.
+- **You're embarrassed to send people there.** If you hesitate before sharing your own URL, customers feel the same thing.
+
+Skip or delay the redesign when the real problem is traffic (that's an SEO or ads problem), or when small fixes (better headlines, faster images, a clearer call to action) would move the needle for a tenth of the price. A good agency will tell you which one you're facing. That honesty test, and others, are in our guide to [choosing a marketing agency](/blog/how-to-choose-digital-marketing-agency).
+
+## How long does a redesign take?
+
+Typical timelines: 2-4 weeks for a refresh, 4-8 weeks for a full redesign, 8-12+ weeks for a rebuild with new content. The schedule usually hinges on content: sites wait on copy and photos far more often than they wait on code. Decide who's producing those before the project starts and your timeline gets dramatically more reliable.
+
+## Frequently asked questions
+
+### Will a redesign hurt my Google rankings?
+
+Done properly, no, and it often helps: faster pages and better structure are ranking factors. The danger is changed URLs without redirects and deleted content. Make sure your quote explicitly includes redirect mapping and SEO migration.
+
+### How often should a website be redesigned?
+
+There's no fixed schedule. A well-built site with maintained content can run strong for 4-6 years; a poorly built one may need rescue in 2. Judge by performance (speed, conversions, rankings), not birthdays. Ongoing [maintenance](/blog/website-maintenance-cost) stretches the lifespan considerably.
+
+### Can I redesign my website in stages?
+
+Yes, and for tight budgets it's smart: fix the homepage and top service pages first, then roll through the rest. It spreads cost while putting improvement where most visitors actually land.
+
+### Should I redesign on the same platform or switch?
+
+If the platform isn't the problem, stay and save the migration cost. Switch when the platform itself is the ceiling: too slow, too limited, or too expensive to extend. An audit answers this question for a lot less than guessing does.
+
+## The bottom line
+
+Name your project honestly (refresh, redesign, or rebuild), expect $1,500–$15,000 accordingly, and never sign a redesign quote that doesn't mention SEO redirects. If you want a straight answer on which your site needs, [get in touch](/contact): a $400 audit beats a $7,500 guess every time.
+`,
+    author: "Tysen Creager",
+    date: "2026-09-29",
+    category: "Web Design",
+    tags: ["Website Redesign", "Pricing", "Small Business", "Website Costs"],
+    metaTitle: "Website Redesign Cost in 2026: What to Expect",
+    metaDescription: "A website redesign costs $1,500 to $15,000+ in 2026. Learn what separates a refresh from a rebuild, what drives pricing, and when it pays off.",
+    featured: true,
+    image: "/blog/website-redesign-cost.jpg",
+    imageAlt: "How much does a website redesign cost in 2026, blog cover with teal background"
+  },
+  {
     slug: "social-media-management-pricing",
     title: "Social Media Management Pricing in 2026: What Should It Cost?",
     excerpt: "Social media management runs $400 to $5,000+ per month in 2026. Here's what drives the price, what you should get at each level, and why most agencies (including us) quote it custom.",
