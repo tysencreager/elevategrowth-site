@@ -104,6 +104,13 @@ export default function Footer() {
                 <Link href="/behind-elevate" data-testid="link-footer-behind-elevate" className={footerLinkClass}>
                   Behind Elevate
                 </Link>
+                <a
+                  href="https://careers.elevategrowth.solutions"
+                  data-testid="link-footer-careers"
+                  className={footerLinkClass}
+                >
+                  Careers
+                </a>
                 <Link href="/why-custom-coded" className={footerLinkClass}>
                   Why Work With Us
                 </Link>
