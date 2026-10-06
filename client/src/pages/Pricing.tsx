@@ -382,7 +382,8 @@ export default function Pricing() {
         { label: "Launch (single-page site)", price: "From $2,500" },
         { label: "Business (up to 8 pages)", price: "From $4,500" },
         { label: "E-commerce & custom builds", price: "From $7,500" },
-        { label: "Hosting & maintenance", price: "$200/mo" }
+        { label: "Hosting & maintenance", price: "$200/mo" },
+        { label: "E-commerce hosting & maintenance", price: "$300/mo" }
       ],
       note: "Base rates assume you provide final copy and brand assets; copywriting and asset creation are scoped separately. Additional pages are $300 each, and larger commercial builds and integrations are quoted per project. Whether you want a custom-coded build, WordPress, or another builder, I can build and maintain it. Hosting includes 1 hour of monthly content edits and uptime monitoring.",
       featured: false
@@ -513,6 +514,19 @@ export default function Pricing() {
         "priceSpecification": {
           "@type": "UnitPriceSpecification",
           "price": "200",
+          "priceCurrency": "USD",
+          "unitText": "per month"
+        }
+      },
+      {
+        "@type": "Offer",
+        "name": "E-Commerce Hosting & Maintenance",
+        "description": "Managed hosting for e-commerce sites with content edits and uptime monitoring",
+        "price": "300",
+        "priceCurrency": "USD",
+        "priceSpecification": {
+          "@type": "UnitPriceSpecification",
+          "price": "300",
           "priceCurrency": "USD",
           "unitText": "per month"
         }
