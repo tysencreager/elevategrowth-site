@@ -12,6 +12,10 @@ https://elevategrowth.solutions/* https://www.elevategrowth.solutions/:splat 301
 /pricing /services 301
 /las-vegas-digital-marketing / 301
 
+# Careers page lives on its own subdomain
+/careers https://careers.elevategrowth.solutions/ 301
+/careers/* https://careers.elevategrowth.solutions/:splat 301
+
 # NOTE (Cloudflare Pages behavior):
 # - Every route, including each blog post, is prerendered to a flat
 #   `<path>.html` file at build time (scripts/generate-seo-pages.mjs), so no
