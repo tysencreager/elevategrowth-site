@@ -16,6 +16,101 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "how-long-does-it-take-to-build-a-website",
+    title: "How Long Does It Take to Build a Website in 2026?",
+    excerpt: "Most small business websites take 2 to 8 weeks to build in 2026, and the biggest delays usually aren't the design or the code. Here's a realistic timeline by project type and how to keep yours on schedule.",
+    content: `
+Ask three web designers how long your website will take and you'll hear "two weeks," "two months," and "it depends." All three might be telling the truth, because website timelines hinge on a few things nobody puts on the sales page. Here's what actually determines the schedule in 2026, realistic timelines by project type, and the one thing that delays more websites than design and development combined.
+
+## The quick answer
+
+A typical small business website takes **2-8 weeks** from kickoff to launch in 2026. Simple one-page or starter sites land in 1-3 weeks, full multi-page business sites in 3-8 weeks, and e-commerce or custom builds in 6-12+ weeks. The schedule depends less on the developer's speed and more on how fast content and feedback arrive.
+
+## How long does each type of website take?
+
+| Project | Typical timeline | What stretches it |
+|---|---|---|
+| **Single-page / starter site** | 1-3 weeks | Waiting on copy and photos |
+| **Business website (5-8 pages)** | 3-8 weeks | Content volume, revision rounds |
+| **E-commerce store** | 6-12 weeks | Product data, payments, shipping setup |
+| **Custom build / web app** | 8-16+ weeks | Features, integrations, testing |
+| **DIY on a builder** | 1 day to never | Your available time and momentum |
+
+Those ranges assume a professional build with a real process. We've built focused sites in days when the content was ready on day one, and that's the honest catch: the timeline above is mostly about how quickly the ingredients show up.
+
+## What are the phases of a website project?
+
+A professional build moves through four phases. Ours look like this, and most good agencies' versions rhyme:
+
+### 1. Discovery (a few days to a week)
+
+Goals, audience, pages, and what the site needs to accomplish. This is a conversation, not paperwork, but skipping it is how sites end up pretty and pointless.
+
+### 2. Design and planning (1-2 weeks)
+
+Site map, wireframes, and visual design. You see mockups before anything is coded, which is where changes are cheapest. One consolidated round of feedback here saves weeks later.
+
+### 3. Development (1-4 weeks)
+
+The approved design becomes a working site, with a staging link you can watch progress on. Speed, mobile layouts, forms, and technical SEO happen here.
+
+### 4. Launch and support (a few days)
+
+Final review, domain and hosting setup, redirects if you're replacing an old site, and go-live checks. Then ongoing [hosting and maintenance](/blog/website-maintenance-cost) keeps it healthy.
+
+## What actually delays websites?
+
+Not the code. In our experience, and most agencies will tell you the same, the top delays are:
+
+- **Content.** Copy, photos, logos, team bios. The site can't launch describing "insert services here." This single bottleneck causes more multi-month projects than everything else combined.
+- **Feedback loops.** A revision round that takes a day keeps momentum; one that takes three weeks resets it. Decide who approves things before the project starts, especially if several people have opinions.
+- **Scope creep.** "While we're at it, can we add..." is how a 6-page site becomes a 15-page site on a 6-page timeline. New ideas are fine; they just move the date or the budget.
+- **Third parties.** Domain access held by an old developer, logins nobody remembers, a booking system that needs support tickets. Round these up in week one.
+
+## How can you keep your website on schedule?
+
+- **Prepare content before kickoff.** Even rough copy and a folder of photos puts you weeks ahead. (Our base pricing assumes you supply final copy and assets, which is also why prepared clients launch fastest. Copywriting can be added when you'd rather hand it off.)
+- **Batch your feedback.** One list of changes per round beats twelve scattered texts.
+- **Name a decision-maker.** Committees build slow websites.
+- **Trust the phase you're in.** Debating button colors during discovery and sitemaps during development both cost time.
+
+## Can a website really be built in a few days?
+
+Yes, with conditions: the scope is focused (a conversion-focused single page or small site), the content is ready, and feedback is same-day. That's the situation our "built in days, not months" sites come from, and it's a big part of why we price builds with content supplied as the baseline (see [our pricing](/pricing): starter sites from $2,500, business sites from $4,500). A rushed site with no content strategy, though, is just a fast mistake. Speed comes from preparation, not shortcuts.
+
+## Frequently asked questions
+
+### How long does a website redesign take compared to a new build?
+
+Usually similar: 2-4 weeks for a visual refresh, 4-8 weeks for a full redesign, longer when platforms change and content needs migrating. We broke down the cost side in our [redesign guide](/blog/website-redesign-cost).
+
+### How long until the website shows up on Google?
+
+Indexing typically takes days to a couple of weeks after launch; competitive rankings take months of SEO work. A properly built site (clean structure, fast pages, submitted sitemap) starts that clock immediately.
+
+### Does a faster build mean lower quality?
+
+Not inherently. Timeline quality comes from process: discovery done, mockups approved, testing before launch. A disciplined two-week build beats a meandering three-month one.
+
+### What should I have ready before contacting a web designer?
+
+Your goals, a rough page list, examples of sites you like, your logo and photos (or a plan to get them), and whoever controls your current domain and hosting. Arrive with those and you're already the fastest client on the roster.
+
+## The bottom line
+
+Plan on 2-8 weeks for a professionally built business website, know that content readiness is the real schedule-setter, and judge providers by their process rather than their promised date. Want a realistic timeline for your specific project? [Get in touch](/contact) and we'll scope it honestly, including what we'd need from you to hit it.
+`,
+    author: "Tysen Creager",
+    date: "2026-10-06",
+    category: "Web Design",
+    tags: ["Website Timeline", "Web Design Process", "Small Business", "Website Planning"],
+    metaTitle: "How Long Does It Take to Build a Website? (2026)",
+    metaDescription: "Most business websites take 2-8 weeks in 2026. See realistic timelines by project type, the four build phases, and what actually causes delays.",
+    featured: true,
+    image: "/blog/website-build-timeline.jpg",
+    imageAlt: "How long does it take to build a website in 2026, blog cover with teal background"
+  },
+  {
     slug: "website-redesign-cost",
     title: "How Much Does a Website Redesign Cost in 2026?",
     excerpt: "A website redesign costs $1,500 to $15,000+ in 2026 depending on how much actually changes. Here's how to tell a refresh from a rebuild, what drives the price, and when a redesign pays for itself.",
