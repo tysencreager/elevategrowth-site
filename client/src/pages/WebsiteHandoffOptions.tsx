@@ -32,7 +32,7 @@ export default function WebsiteHandoffOptions() {
       icon: Users,
       description: "You run your business; we run your website. No worries about breaking the layout, resizing images, or messing up the mobile view. Just email us the change, and it's done.",
       features: [
-        "$200/month includes hosting + 1 hour of monthly edits",
+        "$200/month includes hosting + 1 hour of monthly edits ($300/month for e-commerce)",
         "Uptime monitoring and security updates",
         "Priority support when you need changes",
         "Professional handling of all updates",
@@ -84,7 +84,7 @@ export default function WebsiteHandoffOptions() {
     {
       icon: DollarSign,
       title: "Predictable Costs, No Surprises",
-      description: "We help you keep ongoing costs predictable. Whether you're on a fully custom build or a platform like WordPress or Squarespace, your $200/month plan covers hosting and professional maintenance (not just access to a tool), so there are no surprise fees eating your budget."
+      description: "We help you keep ongoing costs predictable. Whether you're on a fully custom build or a platform like WordPress or Squarespace, your $200/month plan ($300/month for e-commerce sites) covers hosting and professional maintenance (not just access to a tool), so there are no surprise fees eating your budget."
     },
     {
       icon: Wrench,
@@ -403,7 +403,7 @@ export default function WebsiteHandoffOptions() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="font-serif text-xl md:text-2xl text-white/90 mb-10 max-w-2xl mx-auto leading-relaxed"
           >
-            Let's discuss which handoff option makes sense for your business. Custom websites start at $2,500, and hosting is just $200/month with professional support included.
+            Let's discuss which handoff option makes sense for your business. Custom websites start at $2,500, and hosting is just $200/month ($300/month for e-commerce sites) with professional support included.
           </motion.p>
 
           <motion.div

@@ -349,7 +349,7 @@ export default function Websites() {
       ]}
 
       // Pricing
-      pricingSubtitle="Base rates assume you provide final copy and brand assets. Need copywriting, photography, or branding? We'll scope content production alongside your build. Hosting & maintenance is $200/mo on any platform and includes SSL, backups, uptime monitoring, and 1 hour of content edits every month."
+      pricingSubtitle="Base rates assume you provide final copy and brand assets. Need copywriting, photography, or branding? We'll scope content production alongside your build. Hosting & maintenance is $200/mo on any platform ($300/mo for e-commerce sites) and includes SSL, backups, uptime monitoring, and 1 hour of content edits every month."
       pricing={[
         {
           name: "Launch",
