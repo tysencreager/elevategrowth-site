@@ -4,10 +4,9 @@ import { motion } from "framer-motion";
 import tysenBandImg from "@assets/tysen-founder-band.webp";
 
 /**
- * Founder band. Sits between SelectedWorks and PullQuoteTestimonials so the
+ * Founder band. Sits between MissionValues and PullQuoteTestimonials so the
  * quotes that say "she" and "Tysen" have a face attached before they appear.
- * bg-background matches SelectedWorks above, so a border-t separates them;
- * bg-muted would collide with PullQuoteTestimonials directly below.
+ * Both neighbors are bg-muted, so this band stays bg-background.
  */
 export default function FounderBand() {
   return (

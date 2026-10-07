@@ -8,6 +8,7 @@ import ServicesIconGrid from "@/components/home/ServicesIconGrid";
 import ProcessSplit from "@/components/home/ProcessSplit";
 import SelectedWorks from "@/components/home/SelectedWorks";
 import FounderBand from "@/components/home/FounderBand";
+import MissionValues from "@/components/MissionValues";
 import PullQuoteTestimonials from "@/components/home/PullQuoteTestimonials";
 import InquirySection from "@/components/home/InquirySection";
 import ParallaxCTA from "@/components/home/ParallaxCTA";
@@ -62,6 +63,8 @@ export default function Home() {
       />
 
       <SelectedWorks />
+
+      <MissionValues className="bg-muted" />
 
       <FounderBand />
 
