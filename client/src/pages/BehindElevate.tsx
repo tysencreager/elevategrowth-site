@@ -2,6 +2,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
 import SchemaMarkup from "@/components/SchemaMarkup";
+import MissionValues from "@/components/MissionValues";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { GraduationCap, Award, TrendingUp, Building2 } from "lucide-react";
@@ -189,6 +190,8 @@ export default function BehindElevate() {
           </div>
         </div>
       </section>
+
+      <MissionValues showStory className="bg-background" />
 
       <Footer />
     </div>
